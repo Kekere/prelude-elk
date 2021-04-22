@@ -27,7 +27,7 @@ output {
   #stdout {}
 
   elasticsearch {
-    hosts => ["http://db-logs:9200"]
+    hosts => ["http://elasticsearch:9200"]
     ilm_rollover_alias => "logs"
     ilm_pattern => "000001"
     retry_max_interval => 8

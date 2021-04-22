@@ -3,7 +3,7 @@ services:
   injector:
     image: "logstash:7.9.2"
     depends_on:
-      - db-logs
+      - elasticsearch
       - lml
     environment:
       MONITORING_ENABLED:       "false"
@@ -22,7 +22,22 @@ services:
       # on UDP port 514.
       - "514:6514/udp"
 
-  db-logs:
+  kibana:
+    image: "kibana:7.9.2"
+    ports:
+      - "5601:5601"
+    volumes:
+      - elasticsearch:/usr/share/kibana/data
+    depends_on:
+      - elasticsearch
+    networks:
+      - injector2logs
+      - logs
+    environment:
+     SERVER_NAME : kibana
+     ELASTICSEARCH_URL : http://elasticsearch:9200
+
+  elasticsearch:
     image: "elasticsearch:7.9.2"
     environment:
       discovery.type:                       single-node
@@ -37,7 +52,9 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - db-logs:/usr/share/elasticsearch/data
+      - elasticsearch:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
 
   db-alerts:
     image: "postgres:latest"
@@ -110,7 +127,7 @@ services:
     depends_on:
       - db-alerts
       - db-gui
-      - db-logs
+      - elasticsearch
       - injector
       - manager
     environment:
@@ -132,7 +149,7 @@ services:
     depends_on:
       - db-alerts
       - db-gui
-      - db-logs
+      - elasticsearch
       - manager
     environment:
       ALERTS_DB_PASSWORD_FILE:  /run/secrets/alerts_db
@@ -151,7 +168,7 @@ volumes:
     driver: local
   db-gui:
     driver: local
-  db-logs:
+  elasticsearch:
     driver: local
 
 
