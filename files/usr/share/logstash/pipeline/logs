@@ -1,47 +1,76 @@
 input {
   tcp {
     port => 6514
+    tags => [ 'tcp' ]
   }
   udp {
     port => 6514
+    tags => [ 'udp' ]
   }
+  #jdbc {
+        #jdbc_connection_string => "jdbc:postgresql://db-alerts:5432/prelude"
+        #jdbc_user => "prelude"
+	#jdbc_password => "prelude"
+        #jdbc_validate_connection => true
+        #jdbc_driver_library => "/usr/share/logstash/jars/postgresql-42.2.20.jar"
+        #jdbc_driver_class => "org.postgresql.Driver"
+        #statement_filepath => "/usr/share/logstash/jars/query.sql"
+		#last_run_metadata_path => "/usr/share/logstash/last_run_metadata_path"
+        #use_column_value => true
+        #tracking_column => "_id"
+		#clean_run => true
+        #tags => ['jdbc']
+  #}
 }
 
 filter {
-  grok {
-    match => { "message" => "(<%{POSINT:syslog_pri}>)?%{SYSLOGTIMESTAMP:syslog_timestamp} %{SYSLOGHOST:syslog_hostname} %{DATA:syslog_program}(?:\[%{POSINT:syslog_pid}\])?: ?%{GREEDYDATA:syslog_message}" }
-    add_field => [ "received_at", "%{@timestamp}" ]
-    add_field => [ "received_from", "%{host}" ]
-  }
-  date {
-    match => [ "syslog_timestamp", "MMM  d HH:mm:ss", "MMM dd HH:mm:ss" ]
-    timezone => "${SYSLOG_TIMEZONE}"
-  }
-  syslog_pri {}
-  prune {
-    blacklist_names => [ "^(syslog_timestamp|@version|host|port|syslog_severity_code|syslog_facility_code|syslog_pri)$" ]
+  if 'tcp' in [tags] or 'udp' in [tags] {
+	  grok {
+	    match => { "message" => "(<%{POSINT:syslog_pri}>)?%{SYSLOGTIMESTAMP:syslog_timestamp} %{SYSLOGHOST:syslog_hostname} %{DATA:syslog_program}(?:\[%{POSINT:syslog_pid}\])?: ?%{GREEDYDATA:syslog_message}" }
+	    add_field => [ "received_at", "%{@timestamp}" ]
+	    add_field => [ "received_from", "%{host}" ]
+	  }
+	  date {
+	    match => [ "syslog_timestamp", "MMM  d HH:mm:ss", "MMM dd HH:mm:ss" ]
+	    timezone => "${SYSLOG_TIMEZONE}"
+	  }
+	  syslog_pri {}
+	  prune {
+	    blacklist_names => [ "^(syslog_timestamp|@version|host|port|syslog_severity_code|syslog_facility_code|syslog_pri)$" ]
+	  }
   }
 }
 
 output {
   #stdout {}
+  if 'tcp' in [tags] or 'udp' in [tags] {
+	  elasticsearch {
+	    hosts => ["http://elasticsearch:9200"]
+	    ilm_rollover_alias => "logs"
+	    ilm_pattern => "000001"
+	    retry_max_interval => 8
+	    # template => "/usr/share/logstash/template.json"
+	    # template_name => "logs"
+	    template_overwrite => "true"
+	  }
 
-  elasticsearch {
-    hosts => ["http://elasticsearch:9200"]
-    ilm_rollover_alias => "logs"
-    ilm_pattern => "000001"
-    retry_max_interval => 8
-#    template => "/usr/share/logstash/template.json"
-#    template_name => "logs"
-    template_overwrite => "true"
+	  tcp {
+	    host => "lml"
+	    port => 514
+	    reconnect_interval => 1
+	    codec => line {
+		format => "%{message}"
+	    }
+	  }
   }
-
-  tcp {
-    host => "lml"
-    port => 514
-    reconnect_interval => 1
-    codec => line {
-        format => "%{message}"
+  if 'jdbc' in [tags]{
+     stdout { codec => json_lines }
+     elasticsearch { 
+	    hosts => ["http://elasticsearch:9200"] 
+	    #ilm_rollover_alias => "prelude"
+	    #ilm_pattern => "000004"
+            #retry_max_interval => 8
+            index => prelude09
     }
   }
 }

@@ -1,0 +1,3 @@
+Select DISTINCT prelude_classification._message_ident, time as createtime, prelude_classification.ident, prelude_classification.text, prelude_impact.description, prelude_impact.severity, prelude_impact.completion, prelude_impact.type 
+from prelude_createtime inner join prelude_classification on prelude_createtime._message_ident=prelude_classification._message_ident
+ left join prelude_impact on prelude_classification._message_ident=prelude_impact._message_ident where _parent_type='A' and time > :sql_last_value and time < NOW() ORDER BY time ASC;

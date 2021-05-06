@@ -5,6 +5,7 @@ services:
     depends_on:
       - elasticsearch
       - lml
+      - db-alerts
     environment:
       MONITORING_ENABLED:       "false"
       xpack.monitoring.enabled: "false"
@@ -21,6 +22,22 @@ services:
       # Uncomment the next line to accept logs in the syslog format
       # on UDP port 514.
       - "514:6514/udp"
+
+  logstashalert:
+    image: "logstash:7.9.2"
+    depends_on:
+      - elasticsearch
+      - db-alerts
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      alerts:
+         ipv4_address: 172.31.0.5
+      injector2logs:
+      logs:
+    volumes:
+      - ./files/usr/share/logstash/alertsdb/alerts:/usr/share/logstash/pipeline/alerts:ro
+      - ./files/usr/share/logstash/jars/:/usr/share/logstash/jars/:ro
 
   kibana:
     image: "kibana:7.9.2"
@@ -45,8 +62,10 @@ services:
       xpack.monitoring.collection.enabled:  "false"
       ES_JAVA_OPTS: "-Xms512m -Xmx512m"
     networks:
-      - injector2logs
-      - logs
+      alerts:
+         ipv4_address: 172.31.0.4
+      injector2logs:
+      logs:
     ulimits:
       memlock:
         soft: -1
@@ -63,11 +82,14 @@ services:
       POSTGRES_USER:            prelude
       POSTGRES_PASSWORD_FILE:   /run/secrets/alerts_db
     networks:
-      - alerts
+      alerts:
+         ipv4_address: 172.31.0.3
     secrets:
       - alerts_db
     volumes:
       - db-alerts:/var/lib/pgsql/data
+    ports: 
+      - "5432:5432"
 
   db-gui:
     image: "postgres:latest"
@@ -95,8 +117,9 @@ services:
       - "5553:5553"
       - "4690:4690"
     networks:
-      - agents
-      - alerts
+      alerts:
+         ipv4_address: 172.31.0.6
+      agents:
 
   correlator:
     depends_on:
@@ -109,8 +132,9 @@ services:
       - alerts_db
       - sensors
     networks:
-      - agents
-      - alerts
+      alerts:
+         ipv4_address: 172.31.0.7
+      agents:
 
   lml:
     depends_on:
@@ -140,10 +164,11 @@ services:
       - alerts_db
       - gui_db
     networks:
-      - alerts
-      - gui
-      - gui2injector
-      - logs
+      alerts:
+         ipv4_address: 172.31.0.8
+      gui:
+      gui2injector:
+      logs:
 
   prewikka-crontab:
     depends_on:
@@ -158,9 +183,10 @@ services:
       - alerts_db
       - gui_db
     networks:
-      - alerts
-      - gui
-      - logs
+      alerts:
+         ipv4_address: 172.31.0.9
+      gui:
+      logs:
 
 
 volumes:
@@ -175,6 +201,9 @@ volumes:
 networks:
   agents:
   alerts:
+    ipam:
+      config:
+        - subnet: 172.31.0.0/16
   gui:
   gui2injector:
   injector2lml:
