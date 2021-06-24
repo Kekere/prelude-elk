@@ -50,7 +50,7 @@ further instructions.
 The following containers will be spawned during this process:
 
 
-    • prewikka: Prelude's web user interface
+    * prewikka: Prelude's web user interface
     • prewikka-crontab: periodic scheduler used by prewikka
     • manager: Prelude's manager
     • kibana: ELK’s data visualization
