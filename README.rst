@@ -37,7 +37,7 @@ To start the SIEM, go to the newly created folder and run ``docker-compose``:
 
 ..  sourcecode:: console
 
-    cd docker-prelude-siem
+    cd prelude-elk
 
     # Replace "Europe/Paris" with the appropriate timezone for your location.
     SYSLOG_TIMEZONE=Europe/Paris docker-compose up -f docker-compose.yml -f docker-composer.prod.yml \
@@ -49,226 +49,21 @@ further instructions.
 
 The following containers will be spawned during this process:
 
-* ``db-alerts``: database server for IDMEF alerts
-* ``db-gui``: database server for the user interface (Prewikka)
-* ``db-logs``: database used to store logs
-* ``manager``: Prelude OSS' manager
-* ``correlator``: alert correlator
-* ``injector``: entrypoint for logs
-* ``lml``: Prelude's log management lackey
-* ``prewikka``: web user interface
-* ``prewikka-crontab``: periodic scheduler used by prewikka
+
+    • prewikka: Prelude's web user interface
+    • prewikka-crontab: periodic scheduler used by prewikka
+    • manager: Prelude's manager
+    • kibana: ELK’s data visualization
+    • elasticsearch: ELK’s log storage
+    • correlator: alert correlator
+    • injector: entrypoint for logs
+    • lml: Prelude's log management servant
+    • db-alerts: database server for Prelude’s alerts
+    • db-gui: database server for Prewikka
+    • logstashalert: ingestor of alerts 
 
 To stop the SIEM, hit Ctrl+C in the terminal where ``docker-compose``
 was run.
-
-
-Using only docker
-~~~~~~~~~~~~~~~~~
-
-Installation using only docker is a little bit more tedious.
-The following steps will ensure you get an installation identical to the
-``docker-compose`` one presented above. The same container names will be used
-as well.
-
-1.  Create the networks:
-
-    ..  sourcecode:: console
-
-        # This network is used to access the alerts' database.
-        docker network create prelude_alerts
-
-        # This network is used by Prelude's agents to communicate with one another.
-        docker network create prelude_agents
-
-        # This network is used to access the GUI's database.
-        docker network create prelude_gui
-
-        # This network is used by the GUI to send its logs back to the SIEM.
-        docker network create prelude_gui2injector
-
-        # This network is used by the injector to send the logs to Prelude's LML component.
-        docker network create prelude_injector2lml
-
-        # This network is used by the injector to send the logs to the logs' database.
-        docker network create prelude_injector2logs
-
-        # This network is used to access the logs' database.
-        docker network create prelude_logs
-
-2.  Create the volumes:
-
-    ..  sourcecode:: console
-
-        # This volume will serve as storage for the alerts' database.
-        docker volume create --driver local --name prelude_db-alerts
-
-        # This volume will serve as storage for the GUI's database.
-        docker volume create --driver local --name prelude_db-gui
-
-        # This volume will serve as storage for the logs' database.
-        docker volume create --driver local --name prelude_db-logs
-
-3.  Create the various containers based on their respective images:
-
-    ..  sourcecode:: console
-
-        docker create \
-            -v prelude_db-alerts:/var/lib/pgsql/data \
-            -v $(pwd)/secrets/alerts_db:/run/secrets/alerts_db:ro \
-            -e POSTGRES_DB=prelude \
-            -e POSTGRES_USER=prelude \
-            -e POSTGRES_PASSWORD_FILE=/run/secrets/alerts_db \
-            --net=none --name prelude_db-alerts_1         postgres:latest
-
-        docker create \
-            -v prelude_db-gui:/var/lib/pgsql/data \
-            -v $(pwd)/secrets/gui_db:/run/secrets/gui_db:ro \
-            -e POSTGRES_DB=prewikka \
-            -e POSTGRES_USER=prewikka \
-            -e POSTGRES_PASSWORD_FILE=/run/secrets/gui_db \
-            --net=none --name prelude_db-gui_1            postgres:latest
-
-        docker create \
-            -v prelude_db-logs:/usr/share/elasticsearch/data \
-            -e discovery.type=single-node \
-            -e bootstrap.memory_lock=true \
-            -e xpack.monitoring.collection.enabled=false \
-            -e ES_JAVA_OPTS="-Xms512m -Xmx512m" \
-            --ulimit memlock=-1:-1 \
-            --net=none --name prelude_db-logs_1           elasticsearch:7.9.2
-
-        docker create \
-            -p 5553:5553 -p 4690:4690 \
-            -v $(pwd)/secrets/alerts_db:/run/secrets/alerts_db:ro \
-            -v $(pwd)/secrets/sensors:/run/secrets/sensors:ro \
-            -e ALERTS_DB_PASSWORD_FILE=/run/secrets/alerts_db \
-            -e SENSORS_PASSWORD_FILE=/run/secrets/sensors \
-            --net=none --name prelude_manager_1           fpoirotte/prelude-manager
-
-        docker create \
-            -v $(pwd)/secrets/alerts_db:/run/secrets/alerts_db:ro \
-            -v $(pwd)/secrets/sensors:/run/secrets/sensors:ro \
-            -e ALERTS_DB_PASSWORD_FILE=/run/secrets/alerts_db \
-            -e SENSORS_PASSWORD_FILE=/run/secrets/sensors \
-            --net=none --name prelude_correlator_1        fpoirotte/prelude-correlator
-
-        docker create \
-            -p 80:80 \
-            -v $(pwd)/secrets/alerts_db:/run/secrets/alerts_db:ro \
-            -v $(pwd)/secrets/gui_db:/run/secrets/gui_db:ro \
-            -e ALERTS_DB_PASSWORD_FILE=/run/secrets/alerts_db \
-            -e GUI_DB_PASSWORD_FILE=/run/secrets/gui_db \
-            --net=none --name prelude_prewikka_1          fpoirotte/prewikka
-
-        docker create \
-            -v $(pwd)/secrets/alerts_db:/run/secrets/alerts_db:ro \
-            -v $(pwd)/secrets/gui_db:/run/secrets/gui_db:ro \
-            -e ALERTS_DB_PASSWORD_FILE=/run/secrets/alerts_db \
-            -e GUI_DB_PASSWORD_FILE=/run/secrets/gui_db \
-            --net=none --name prelude_prewikka-crontab_1  fpoirotte/prewikka-crontab
-
-        docker create \
-            -v $(pwd)/secrets/sensors:/run/secrets/sensors:ro \
-            -e SENSORS_PASSWORD_FILE=/run/secrets/sensors \
-            --net=none --name prelude_lml_1               fpoirotte/prelude-lml
-
-        # Use the following command to enable the syslog receiver for TCP only.
-        # This is recommended for most installations to avoid potential conflicts
-        # with the host's own syslog server.
-        # Replace "Europe/Paris" with the appropriate timezone for your location.
-        docker create \
-            -p 514:514/tcp \
-            -v $(pwd)/files/usr/share/logstash/pipeline/:/usr/share/logstash/pipeline/:ro \
-            -v $(pwd)/files/usr/share/logstash/template.json:/usr/share/logstash/template.json:ro \
-            -e MONITORING_ENABLED=false \
-            -e xpack.monitoring.enabled=false \
-            -e SYSLOG_TIMEZONE=Europe/Paris \
-            --net=none --name prelude_injector_1         logstash:7.9.2
-
-        # Otherwise, use the following command to expose both the TCP and UDP
-        # ports.
-        docker create \
-            -p 514:514/tcp -p 514:514/udp \
-            -v $(pwd)/files/usr/share/logstash/pipeline/:/usr/share/logstash/pipeline/:ro \
-            -v $(pwd)/files/usr/share/logstash/template.json:/usr/share/logstash/template.json:ro \
-            -e MONITORING_ENABLED=false \
-            -e xpack.monitoring.enabled=false \
-            -e SYSLOG_TIMEZONE=Europe/Paris \
-            --net=none --name prelude_injector_1         logstash:7.9.2
-
-4.  Reconnect the containers to their respective networks:
-
-    ..  sourcecode:: console
-
-        # Disconnect the containers from the default "none" network.
-        docker network disconnect none prelude_correlator_1
-        docker network disconnect none prelude_db-alerts_1
-        docker network disconnect none prelude_db-gui_1
-        docker network disconnect none prelude_db-logs_1
-        docker network disconnect none prelude_injector_1
-        docker network disconnect none prelude_manager_1
-        docker network disconnect none prelude_lml_1
-        docker network disconnect none prelude_prewikka_1
-        docker network disconnect none prelude_prewikka-crontab_1
-
-        docker network connect --alias=correlator           prelude_alerts          prelude_correlator_1
-        docker network connect --alias=db-alerts            prelude_alerts          prelude_db-alerts_1
-        docker network connect --alias=manager              prelude_alerts          prelude_manager_1
-        docker network connect --alias=prewikka             prelude_alerts          prelude_prewikka_1
-        docker network connect --alias=prewikka-crontab     prelude_alerts          prelude_prewikka-crontab_1
-
-        docker network connect --alias=correlator           prelude_agents          prelude_correlator_1
-        docker network connect --alias=lml                  prelude_agents          prelude_lml_1
-        docker network connect --alias=manager              prelude_agents          prelude_manager_1
-
-        docker network connect --alias=db-gui               prelude_gui             prelude_db-gui_1
-        docker network connect --alias=prewikka             prelude_gui             prelude_prewikka_1
-        docker network connect --alias=prewikka-crontab     prelude_gui             prelude_prewikka-crontab_1
-
-        docker network connect --alias=injector             prelude_gui2injector    prelude_injector_1
-        docker network connect --alias=prewikka             prelude_gui2injector    prelude_prewikka_1
-
-        docker network connect --alias=injector             prelude_injector2lml    prelude_injector_1
-        docker network connect --alias=lml                  prelude_injector2lml    prelude_lml_1
-
-        docker network connect --alias=injector             prelude_injector2logs   prelude_injector_1
-        docker network connect --alias=db-logs              prelude_injector2logs   prelude_db-logs_1
-
-        docker network connect --alias=db-logs              prelude_logs            prelude_db-logs_1
-        docker network connect --alias=prewikka             prelude_logs            prelude_prewikka_1
-        docker network connect --alias=prewikka-crontab     prelude_logs            prelude_prewikka-crontab_1
-
-That's it for the installation.
-
-Now, to start the SIEM, run:
-
-..  sourcecode:: console
-
-    docker start prelude_db-alerts_1 prelude_db-gui_1 prelude_db-logs_1 prelude_manager_1 prelude_correlator_1 prelude_lml_1 prelude_injector_1 prelude_prewikka_1 prelude_prewikka-crontab_1
-
-To stop it, run:
-
-..  sourcecode:: console
-
-    docker stop prelude_prewikka_1 prelude_prewikka-crontab_1 prelude_injector_1 prelude_lml_1 prelude_correlator_1 prelude_manager_1 prelude_db-logs_1 prelude_db-gui_1 prelude_db-alerts_1
-
-
-Uninstallation
---------------
-
-Before you install the SIEM, make sure the containers are stopped (see above).
-The following commands will remove most objects used by the SIEM,
-only leaving behind images related to the base OS (``centos``)
-and databases (``centos/postgresql-95-centos7``):
-
-..  sourcecode:: console
-
-    docker          rm  prelude_prewikka_1 prelude_prewikka-crontab_1 prelude_injector_1 prelude_lml_1 prelude_correlator_1 prelude_manager_1 prelude_db-logs_1 prelude_db-gui_1 prelude_db-alerts_1
-    docker network  rm  prelude_agents prelude_alerts prelude_gui prelude_gui2injector prelude_injector2lml prelude_injector2logs prelude_logs
-    docker volume   rm  prelude_db-alerts prelude_db-gui prelude_db-logs
-    docker          rmi fpoirotte/prelude-lml fpoirotte/prelude-correlator fpoirotte/prelude-manager fpoirotte/prewikka fpoirotte/prewikka-crontab
-
 
 Usage
 -----
