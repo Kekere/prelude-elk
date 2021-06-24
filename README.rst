@@ -31,7 +31,7 @@ Clone this repository:
 
 ..  sourcecode:: console
 
-    git clone https://github.com/fpoirotte/docker-prelude-siem.git
+    git clone -b master https://github.com/Kekere/prelude-elk.git
 
 To start the SIEM, go to the newly created folder and run ``docker-compose``:
 
