@@ -10,7 +10,7 @@ Requirements
 This repository relies on the following dependencies:
 
 * docker.io >= 1.13.1
-* docker-compose >= 1.11.0 (optional)
+* docker-compose >= 1.11.0
 
 It has been tested on Debian 10.0 (Buster) against the following
 versions of these dependencies:
