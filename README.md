@@ -157,7 +157,7 @@ The following limitations have been observed while using this project:
 Step to install suricata 5.0.7 on ubuntu 18.04
 ------------------------------------------
 
-In console:
+Execute these following commands to install dependencies:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ sudo apt update
@@ -185,7 +185,7 @@ Comment the following lines in configure:
  CFLAGS="${CFLAGS} -Wno-error=unused-result"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In console
+To install suricata with prelude execute these following commands:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ sudo ./configure --enable-prelude --with-libprelude-prefix=/usr CC="gcc -std=gnu99"
 
@@ -204,7 +204,7 @@ Edit /usr/local/etc/suricata/suricata.yaml file to enable Prelude alerting:
       log-packet-header: yes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In console:
+To connect the agent with Prelude execute these following commands:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ sudo prelude-admin register suricata "idmef:w admin:r" 0.0.0.0:5553 --uid 0 --gid 0
 
