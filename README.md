@@ -156,7 +156,7 @@ The following limitations have been observed while using this project:
   meaning new entries get created on the ``Agents`` page every time a
   sensor is restarted.
   
-Step to install suricata on ubuntu 18.04
+Step to install suricata 5.0.7 on ubuntu 18.04
 ------------------------------------------
 
 In console:
