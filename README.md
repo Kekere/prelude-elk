@@ -6,6 +6,7 @@ This repository contains a dockerized version of Prelude OSS.
 
 Requirements
 ------------
+The host must be Linux OS or MAC OS but there are some limitation for Ubunutu 20.04.
 
 This repository relies on the following dependencies:
 
@@ -29,25 +30,23 @@ Using git and docker-compose
 
 Clone this repository:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-..  sourcecode:: console
-
-    git clone -b master https://github.com/Kekere/prelude-elk.git
+    $ git clone -b master https://github.com/Kekere/prelude-elk.git
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 To start the SIEM, go to the newly created folder and run ``docker-compose``:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-..  sourcecode:: console
 
-    cd prelude-elk
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    $ cd prelude-elk
 
     # Replace "Europe/Paris" with the appropriate timezone for your location.
-    SYSLOG_TIMEZONE=Europe/Paris docker-compose up -f docker-compose.yml -f docker-composer.prod.yml \
+    $ SYSLOG_TIMEZONE=Europe/Paris docker-compose up -f docker-compose.yml -f docker-composer.prod.yml \
                       --build --force-recreate --abort-on-container-exit
     # or if "make" is installed on your system, you can just run "make SYSLOG_TIMEZONE=..."
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``docker-compose`` will recreate the containers, start them and wait for
 further instructions.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 The following containers will be spawned during this process:
 
@@ -90,7 +89,8 @@ contents from the file at ``secrets/sensors``.
     container is stopped and restarted. You may need to register
     the sensors again in that case.
 
-
+Exposed services
+---------------
 
 The following services get exposed to the host:
 
@@ -119,14 +119,13 @@ To test the SIEM, send syslog entries to ``localhost:514`` (TCP).
 
 For example, the following command will produce a ``Remote Login`` alert
 using the predefined rules:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-..  sourcecode:: console
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     logger --stderr -i -t sshd --tcp --port 514 --priority auth.info --rfc3164 --server localhost Failed password for root from ::1 port 45332 ssh2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Customizations
---------------
+# Customizations
+
 
 Detection rules
 --------------
@@ -187,6 +186,7 @@ Comment the following lines in configure:
  STORECFLAGS="${CFLAGS}" 
  CFLAGS="${CFLAGS} -Wno-error=unused-result"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 In console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sudo ./configure --enable-prelude --with-libprelude-prefix=/usr CC="gcc -std=gnu99"
@@ -205,6 +205,7 @@ Edit /usr/local/etc/suricata/suricata.yaml file to enable Prelude alerting:
       log-packet-content: yes
       log-packet-header: yes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 In console:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sudo prelude-admin register suricata "idmef:w admin:r" 0.0.0.0:5553 --uid 0 --gid 0
@@ -224,11 +225,8 @@ repository.
 
 To start Prelude OSS in developer mode, use this command:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-..  sourcecode:: console
-
     make run ENVIRONMENT=dev
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 License
 -------
 
