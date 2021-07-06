@@ -1,4 +1,4 @@
-Dockerized Prelude OSS
+Prelude + ELK
 ======================
 
 This repository contains a dockerized version of Prelude OSS.
@@ -6,13 +6,14 @@ This repository contains a dockerized version of Prelude OSS.
 
 Requirements
 ------------
+The host must be Linux OS or MAC OS but there are some limitation for Ubunutu 20.04.
 
 This repository relies on the following dependencies:
 
 * docker.io >= 1.13.1
 * docker-compose >= 1.11.0
 
-It has been tested on Debian 10.0 (Buster) against the following
+It has been tested on Ubuntu 18.04 against the following
 versions of these dependencies:
 
 * docker.io 19.03.12
@@ -25,27 +26,27 @@ Installation and start/stop instructions
 ----------------------------------------
 
 Using git and docker-compose
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 Clone this repository:
-
-..  sourcecode:: console
-
-    git clone -b master https://github.com/Kekere/prelude-elk.git
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    $ git clone -b master https://github.com/Kekere/prelude-elk.git
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To start the SIEM, go to the newly created folder and run ``docker-compose``:
 
-..  sourcecode:: console
-
-    cd prelude-elk
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    $ cd prelude-elk
 
     # Replace "Europe/Paris" with the appropriate timezone for your location.
-    SYSLOG_TIMEZONE=Europe/Paris docker-compose up -f docker-compose.yml -f docker-composer.prod.yml \
+    $ SYSLOG_TIMEZONE=Europe/Paris docker-compose up -f docker-compose.yml -f docker-composer.prod.yml \
                       --build --force-recreate --abort-on-container-exit
     # or if "make" is installed on your system, you can just run "make SYSLOG_TIMEZONE=..."
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``docker-compose`` will recreate the containers, start them and wait for
 further instructions.
+
 
 The following containers will be spawned during this process:
 
@@ -88,9 +89,8 @@ contents from the file at ``secrets/sensors``.
     container is stopped and restarted. You may need to register
     the sensors again in that case.
 
-
 Exposed services
-----------------
+---------------
 
 The following services get exposed to the host:
 
@@ -120,16 +120,15 @@ To test the SIEM, send syslog entries to ``localhost:514`` (TCP).
 For example, the following command will produce a ``Remote Login`` alert
 using the predefined rules:
 
-..  sourcecode:: console
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     logger --stderr -i -t sshd --tcp --port 514 --priority auth.info --rfc3164 --server localhost Failed password for root from ::1 port 45332 ssh2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+# Customizations
 
-Customizations
---------------
 
 Detection rules
-~~~~~~~~~~~~~~~
+--------------
 
 You can customize the detection rules used by mounting your own folder inside
 the ``lml`` container at ``/etc/prelude-lml/ruleset/``.
@@ -138,7 +137,7 @@ See https://github.com/Prelude-SIEM/prelude-lml-rules/tree/master/ruleset
 to get a sense of the contents of this folder.
 
 Correlation rules
-~~~~~~~~~~~~~~~~~
+--------------
 
 You can enable/disable/customize the correlation rules by mounting your own
 folder containing the rules' configuration files inside the ``correlator``
@@ -156,7 +155,63 @@ The following limitations have been observed while using this project:
 * The sensors are re-registered every time the containers are restarted,
   meaning new entries get created on the ``Agents`` page every time a
   sensor is restarted.
+  
+Step to install suricata 5.0.7 on ubuntu 18.04
+------------------------------------------
 
+In console:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sudo apt update
+sudo apt-get install gcc
+sudo apt-get install -y gnutls-bin 
+sudo apt-get install libpcre3 libpcre3-dev 
+sudo apt-get install libprelude-dev
+sudo apt-get install prelude-manager
+sudo apt-get install libjansson-dev
+sudo apt-get install rustc cargo
+sudo apt-get install libtool libpcap-dev
+sudo apt-get install zlib1g zlib1g-dev
+sudo apt-get install libnet1-dev libyaml-dev
+wget https://www.openinfosecfoundation.org/downloads/suricata-5.0.7.tar.gz
+
+tar -zxvf suricata-5.0.7.tar.gz
+
+cd suricata-5.0.7/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Comment the following lines in configure:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ # Prelude doesn't work with -Werror
+ STORECFLAGS="${CFLAGS}" 
+ CFLAGS="${CFLAGS} -Wno-error=unused-result"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In console
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sudo ./configure --enable-prelude --with-libprelude-prefix=/usr CC="gcc -std=gnu99"
+
+sudo make
+make install-full
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Edit /usr/local/etc/suricata/suricata.yaml file to enable Prelude alerting:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # alert output to prelude (http://www.prelude-technologies.com/) only
+  # available if Suricata has been compiled with --enable-prelude
+  - alert-prelude:
+      enabled: yes
+      profile: suricata
+      log-packet-content: yes
+      log-packet-header: yes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In console:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sudo prelude-admin register suricata "idmef:w admin:r" 0.0.0.0:5553 --uid 0 --gid 0
+
+sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i eth0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Developer mode
 --------------
@@ -169,17 +224,15 @@ This mode is only useful for myself and others who may want to fork this
 repository.
 
 To start Prelude OSS in developer mode, use this command:
-
-..  sourcecode:: console
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     make run ENVIRONMENT=dev
-
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 License
 -------
 
-This project is released under the MIT license.
+We inspire from this dockerized prelude version https://github.com/fpoirotte/docker-prelude-siem released under the MIT license.
 See `LICENSE`_ for more information.
 
 ..  _`LICENSE`:
     https://github.com/fpoirotte/docker-prelude-siem/blob/master/LICENSE
+
