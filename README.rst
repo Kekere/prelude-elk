@@ -6,7 +6,7 @@ This repository contains a dockerized version of Prelude OSS.
 
 Requirements
 ------------
-The host must be Linux OS or MAC OS but there are some limitation for Ubunutu 20.04.
+The host must be Linux OS or macOS but there are some limitation for Ubunutu 20.04.
 
 This repository relies on the following dependencies:
 
@@ -18,6 +18,13 @@ versions of these dependencies:
 
 * docker.io 19.03.12
 * docker-compose 1.25.0
+
+It has also been tested on macOS 10.15 and 10.16 against the following
+versions of these dependencies:
+
+* docker.io 20.10.7
+* docker-compose 1.29.0
+* Docker Desktop 3.5.1
 
 In addition, the host should have at least 6 GB of available RAM.
 
