@@ -82,8 +82,6 @@ for instructions on how to do that for the most commonly used sensors).
 When asked for a password during the registration process, input the
 contents from the file at ``secrets/sensors``.
 
-..  note::
-
     Since the containers are meant to be ephemeral, information about
     the external sensors' registrations is lost when the ``manager``
     container is stopped and restarted. You may need to register
@@ -121,7 +119,7 @@ For example, the following command will produce a ``Remote Login`` alert
 using the predefined rules:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    logger --stderr -i -t sshd --tcp --port 514 --priority auth.info --rfc3164 --server localhost Failed password for root from ::1 port 45332 ssh2
+   $ logger --stderr -i -t sshd --tcp --port 514 --priority auth.info --rfc3164 --server localhost Failed password for root from ::1 port 45332 ssh2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Customizations
@@ -162,22 +160,22 @@ Step to install suricata 5.0.7 on ubuntu 18.04
 In console:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-sudo apt update
-sudo apt-get install gcc
-sudo apt-get install -y gnutls-bin 
-sudo apt-get install libpcre3 libpcre3-dev 
-sudo apt-get install libprelude-dev
-sudo apt-get install prelude-manager
-sudo apt-get install libjansson-dev
-sudo apt-get install rustc cargo
-sudo apt-get install libtool libpcap-dev
-sudo apt-get install zlib1g zlib1g-dev
-sudo apt-get install libnet1-dev libyaml-dev
-wget https://www.openinfosecfoundation.org/downloads/suricata-5.0.7.tar.gz
+$ sudo apt update
+$ sudo apt-get install gcc
+$ sudo apt-get install -y gnutls-bin 
+$ sudo apt-get install libpcre3 libpcre3-dev 
+$ sudo apt-get install libprelude-dev
+$ sudo apt-get install prelude-manager
+$ sudo apt-get install libjansson-dev
+$ sudo apt-get install rustc cargo
+$ sudo apt-get install libtool libpcap-dev
+$ sudo apt-get install zlib1g zlib1g-dev
+$ sudo apt-get install libnet1-dev libyaml-dev
+$ wget https://www.openinfosecfoundation.org/downloads/suricata-5.0.7.tar.gz
 
-tar -zxvf suricata-5.0.7.tar.gz
+$ tar -zxvf suricata-5.0.7.tar.gz
 
-cd suricata-5.0.7/
+$ cd suricata-5.0.7/
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Comment the following lines in configure:
@@ -189,10 +187,10 @@ Comment the following lines in configure:
 
 In console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-sudo ./configure --enable-prelude --with-libprelude-prefix=/usr CC="gcc -std=gnu99"
+$ sudo ./configure --enable-prelude --with-libprelude-prefix=/usr CC="gcc -std=gnu99"
 
-sudo make
-make install-full
+$ sudo make
+$ make install-full
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Edit /usr/local/etc/suricata/suricata.yaml file to enable Prelude alerting:
@@ -208,9 +206,9 @@ Edit /usr/local/etc/suricata/suricata.yaml file to enable Prelude alerting:
 
 In console:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-sudo prelude-admin register suricata "idmef:w admin:r" 0.0.0.0:5553 --uid 0 --gid 0
+$ sudo prelude-admin register suricata "idmef:w admin:r" 0.0.0.0:5553 --uid 0 --gid 0
 
-sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i eth0
+$ sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i eth0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Developer mode
@@ -225,7 +223,7 @@ repository.
 
 To start Prelude OSS in developer mode, use this command:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    make run ENVIRONMENT=dev
+  $   make run ENVIRONMENT=dev
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 License
 -------
