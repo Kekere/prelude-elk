@@ -30,14 +30,12 @@ Using git and docker-compose
 
 Clone this repository:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-..  sourcecode:: console
     $ git clone -b master https://github.com/Kekere/prelude-elk.git
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To start the SIEM, go to the newly created folder and run ``docker-compose``:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-..  sourcecode:: console
     $ cd prelude-elk
 
     # Replace "Europe/Paris" with the appropriate timezone for your location.
@@ -84,8 +82,6 @@ for instructions on how to do that for the most commonly used sensors).
 When asked for a password during the registration process, input the
 contents from the file at ``secrets/sensors``.
 
-..  note::
-
     Since the containers are meant to be ephemeral, information about
     the external sensors' registrations is lost when the ``manager``
     container is stopped and restarted. You may need to register
@@ -123,7 +119,6 @@ For example, the following command will produce a ``Remote Login`` alert
 using the predefined rules:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-..  sourcecode:: console
     logger --stderr -i -t sshd --tcp --port 514 --priority auth.info --rfc3164 --server localhost Failed password for root from ::1 port 45332 ssh2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -165,7 +160,6 @@ Step to install suricata 5.0.7 on ubuntu 18.04
 In console:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-..  sourcecode:: console
 sudo apt update
 sudo apt-get install gcc
 sudo apt-get install -y gnutls-bin 
@@ -193,7 +187,6 @@ Comment the following lines in configure:
 
 In console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-..  sourcecode:: console
 sudo ./configure --enable-prelude --with-libprelude-prefix=/usr CC="gcc -std=gnu99"
 
 sudo make
@@ -213,7 +206,6 @@ Edit /usr/local/etc/suricata/suricata.yaml file to enable Prelude alerting:
 
 In console:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-..  sourcecode:: console
 sudo prelude-admin register suricata "idmef:w admin:r" 0.0.0.0:5553 --uid 0 --gid 0
 
 sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i eth0
@@ -231,7 +223,6 @@ repository.
 
 To start Prelude OSS in developer mode, use this command:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-..  sourcecode:: console
     make run ENVIRONMENT=dev
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 License
