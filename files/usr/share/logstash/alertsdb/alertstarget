@@ -7,42 +7,10 @@ input {
         jdbc_driver_library => "/usr/share/logstash/jars/postgresql-42.2.20.jar"
         jdbc_driver_class => "org.postgresql.Driver"
         schedule => "*/2 * * * * *"
-        statement_filepath => "/usr/share/logstash/jars/query.sql"
-		last_run_metadata_path => "/usr/share/logstash/last_run_metadata_path"
-        use_column_value => true
-	tags => ['alert']
-        tracking_column => "createtime"
-        tracking_column_type => "timestamp"
-		clean_run => true
-  }
-  jdbc {
-        jdbc_connection_string => "jdbc:postgresql://172.31.0.3:5432/prelude"
-        jdbc_user => "prelude"
-	jdbc_password => "prelude"
-        jdbc_validate_connection => true
-        jdbc_driver_library => "/usr/share/logstash/jars/postgresql-42.2.20.jar"
-        jdbc_driver_class => "org.postgresql.Driver"
-        schedule => "*/2 * * * * *"
-        statement_filepath => "/usr/share/logstash/jars/source.sql"
-		last_run_metadata_path => "/usr/share/logstash/last_run_metadata_path"
-        use_column_value => true
-	tags => ['source']
-        tracking_column => "createtime"
-        tracking_column_type => "timestamp"
-		clean_run => true
-  }
-  jdbc {
-        jdbc_connection_string => "jdbc:postgresql://172.31.0.3:5432/prelude"
-        jdbc_user => "prelude"
-	jdbc_password => "prelude"
-        jdbc_validate_connection => true
-        jdbc_driver_library => "/usr/share/logstash/jars/postgresql-42.2.20.jar"
-        jdbc_driver_class => "org.postgresql.Driver"
-        schedule => "*/2 * * * * *"
         statement_filepath => "/usr/share/logstash/jars/target.sql"
 		last_run_metadata_path => "/usr/share/logstash/last_run_metadata_path"
         use_column_value => true
-	tags => ['target']
+	tags => ['source']
         tracking_column => "createtime"
         tracking_column_type => "timestamp"
 		clean_run => true
@@ -51,27 +19,11 @@ input {
 filter{
 }
 output {
-	if 'alert' in [tags]{
-		#stdout { codec => json_lines }
-		elasticsearch { 
-		    hosts => ["http://elasticsearch:9200"] 
-		    index => "prelude09"
-		}
-	}
-	if 'source' in [tags]{
-		#stdout { codec => json_lines }
-		elasticsearch { 
-		    hosts => ["http://elasticsearch:9200"] 
-		    index => "source"
-		}
-	}
-	if 'target' in [tags]{
-		#stdout { codec => json_lines }
-		elasticsearch { 
-		    hosts => ["http://elasticsearch:9200"] 
-		    index => "target"
-		}
-	}
+#stdout { codec => json_lines }
+elasticsearch { 
+    hosts => ["http://elasticsearch:9200"] 
+    index => "preludetarget"
+}
 }
 
 

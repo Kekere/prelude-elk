@@ -4,6 +4,5 @@ set -eu
 
 echo "Creating the 'prelude-lml' profile"
 prelude-admin register "prelude-lml" "idmef:w" manager --uid 0 --gid 0 "--passwd-file=${SENSORS_PASSWORD_FILE}" || :
-
 echo "Starting prelude-lml"
 exec /usr/sbin/prelude-lml

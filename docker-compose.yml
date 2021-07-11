@@ -38,7 +38,7 @@ services:
     volumes:
       - ./files/usr/share/logstash/alertsdb/alerts:/usr/share/logstash/pipeline/alerts:ro
       - ./files/usr/share/logstash/jars/:/usr/share/logstash/jars/:ro
-
+  
   kibana:
     image: "kibana:7.9.2"
     ports:
