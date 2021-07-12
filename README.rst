@@ -6,17 +6,17 @@ This repository contains a dockerized version of Prelude OSS.
 
 Requirements
 ------------
-The host must be Linux OS or macOS but there are some limitation for Ubunutu 20.04.
+The host must be Linux OS or macOS.
 
 This repository relies on the following dependencies:
 
 * docker.io >= 1.13.1
 * docker-compose >= 1.11.0
 
-It has been tested on Ubuntu 18.04 against the following
+It has been tested on Ubuntu 18.04 and 20.04 against the following
 versions of these dependencies:
 
-* docker.io 19.03.12
+* docker.io 20.10.2
 * docker-compose 1.25.0
 
 It has also been tested on macOS 10.15 and 10.16 against the following
