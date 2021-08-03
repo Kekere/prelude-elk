@@ -45,10 +45,7 @@ To start the SIEM, go to the newly created folder and run ``docker-compose``:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     $ cd prelude-elk
 
-    # Replace "Europe/Paris" with the appropriate timezone for your location.
-    $ SYSLOG_TIMEZONE=Europe/Paris docker-compose up -f docker-compose.yml -f docker-composer.prod.yml \
-                      --build --force-recreate --abort-on-container-exit
-    # or if "make" is installed on your system, you can just run "make SYSLOG_TIMEZONE=..."
+    $ make
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``docker-compose`` will recreate the containers, start them and wait for
