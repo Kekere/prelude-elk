@@ -6,17 +6,17 @@ This repository contains a dockerized version of Prelude OSS.
 
 Requirements
 ------------
-The host must be Linux OS or macOS but there are some limitation for Ubunutu 20.04.
+The host must be Linux OS or macOS.
 
 This repository relies on the following dependencies:
 
 * docker.io >= 1.13.1
 * docker-compose >= 1.11.0
 
-It has been tested on Ubuntu 18.04 against the following
+It has been tested on Ubuntu 18.04 and 20.04 against the following
 versions of these dependencies:
 
-* docker.io 19.03.12
+* docker.io 20.10.2
 * docker-compose 1.25.0
 
 It has also been tested on macOS 10.15 and 10.16 against the following
@@ -45,10 +45,7 @@ To start the SIEM, go to the newly created folder and run ``docker-compose``:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     $ cd prelude-elk
 
-    # Replace "Europe/Paris" with the appropriate timezone for your location.
-    $ SYSLOG_TIMEZONE=Europe/Paris docker-compose up -f docker-compose.yml -f docker-composer.prod.yml \
-                      --build --force-recreate --abort-on-container-exit
-    # or if "make" is installed on your system, you can just run "make SYSLOG_TIMEZONE=..."
+    $ make
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``docker-compose`` will recreate the containers, start them and wait for
