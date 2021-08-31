@@ -52,6 +52,8 @@ output {
 	    # template => "/usr/share/logstash/template.json"
 	    # template_name => "logs"
 	    template_overwrite => "true"
+	    user => elastic
+    	    password => prelude
 	  }
 
 	  tcp {
@@ -71,6 +73,8 @@ output {
 	    #ilm_pattern => "000004"
             #retry_max_interval => 8
             index => prelude09
+            user => elastic
+    	    password => prelude
     }
   }
 }

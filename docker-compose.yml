@@ -45,22 +45,29 @@ services:
       - "5601:5601"
     volumes:
       - elasticsearch:/usr/share/kibana/data
+
     depends_on:
       - elasticsearch
     networks:
       - injector2logs
       - logs
     environment:
-     SERVER_NAME : kibana
-     ELASTICSEARCH_URL : http://elasticsearch:9200
-
+       - ELASTICSEARCH_URL=http://localhost:9200
+       - ELASTICSEARCH_USERNAME=elastic
+       - ELASTICSEARCH_PASSWORD=prelude
+    #volumes:
+      #- ./files/usr/share/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml:ro
+     
   elasticsearch:
     image: "elasticsearch:7.9.2"
     environment:
-      discovery.type:                       single-node
-      bootstrap.memory_lock:                "true"
-      xpack.monitoring.collection.enabled:  "false"
-      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+      - discovery.type=single-node
+      - cluster.routing.allocation.disk.threshold_enabled=true
+      - cluster.routing.allocation.disk.watermark.low=65%
+      - cluster.routing.allocation.disk.watermark.high=70%
+      - xpack.security.enabled=true
+      - xpack.security.audit.enabled=true
+      - ELASTIC_PASSWORD=prelude
     networks:
       alerts:
          ipv4_address: 172.31.0.4
@@ -72,6 +79,7 @@ services:
         hard: -1
     volumes:
       - elasticsearch:/usr/share/elasticsearch/data
+      #- ./files/usr/share/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
     ports:
       - "9200:9200"
 

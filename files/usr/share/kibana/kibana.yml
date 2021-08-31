@@ -1,9 +1,19 @@
 server:
-  name: "elk"
+  name: "kibana"
   host: "0.0.0.0"
   port: 5601
-  basePath: /kibana
-  rewriteBasePath: true
-elasticsearch.hosts: ["http://elasticsearch01:9200","http://elasticsearch02:9200"]
-xpack.monitoring.ui.container.elasticsearch.enabled: true
-csp.strict: true
+#  basePath: /kibana
+#  rewriteBasePath: true
+elasticsearch.hosts: ["http://elasticsearch:9200"]
+#xpack.monitoring.ui.container.elasticsearch.enabled: true
+#csp.strict: true
+#xpack.monitoring.enabled: false
+#xpack.ingestManager.enabled: true
+#xpack.ingestManager.fleet.tlsCheckDisabled: true
+xpack.security.enabled: true
+#xpack.encryptedSavedObjects.encryptionKey: "preludeWithELKStackForImpetus2020"
+elasticsearch.username: "elastic"
+elasticsearch.password: "prelude"
+#xpack.monitoring.elasticsearch.username: elastic
+#xpack.monitoring.elasticsearch.password: prelude
+

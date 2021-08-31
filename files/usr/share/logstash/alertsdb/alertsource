@@ -24,6 +24,8 @@ output {
 elasticsearch { 
     hosts => ["http://elasticsearch:9200"] 
     index => "preludesource"
+    user => elastic
+    password => prelude
 }
 }
 

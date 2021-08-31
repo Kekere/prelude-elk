@@ -1,9 +1,8 @@
-Select DISTINCT prelude_classification._message_ident, time as createtime, prelude_classification.ident, prelude_classification.text, prelude_impact.description, prelude_impact.severity, prelude_impact.completion, prelude_impact.type,  prelude_address.address, prelude_target.interface, prelude_userid.type, prelude_userid.name, prelude_user.category 
-from prelude_user inner join prelude_createtime on prelude_user._message_ident=prelude_createtime._message_ident 
-inner join prelude_userid on prelude_createtime._message_ident=prelude_userid._message_ident 
-inner join prelude_classification on prelude_userid._message_ident=prelude_classification._message_ident 
-inner join prelude_impact on prelude_classification._message_ident=prelude_impact._message_ident 
-inner join prelude_node on prelude_impact._message_ident=prelude_node._message_ident 
-inner join prelude_target on prelude_target._message_ident=prelude_target._message_ident 
-inner join prelude_address on prelude_target._message_ident=prelude_address._message_ident 
-where prelude_address._parent_type='T' and prelude_createtime._parent_type='A' and time > :sql_last_value and time < NOW() ORDER BY time ASC;
+Select Distinct prelude_correlationalert._message_ident, prelude_correlationalert.name, prelude_classification.text, address.address, prelude_service.iana_protocol_name, prelude_service.name, prelude_service.port, time as createtime, prelude_impact.description, prelude_impact.severity, prelude_impact.completion
+from prelude_classification left join prelude_correlationalert 
+ on prelude_correlationalert._message_ident=prelude_classification._message_ident
+inner join (Select * from prelude_address where prelude_address._parent_type='T') as address on prelude_classification._message_ident=address._message_ident
+inner join prelude_service on address._message_ident=prelude_service._message_ident
+inner join (Select * from prelude_createtime where prelude_createtime._parent_type='A') as createtime on prelude_service._message_ident=createtime._message_ident
+inner join prelude_impact on createtime._message_ident=prelude_impact._message_ident
+where time > :sql_last_value and time < NOW() ORDER BY time ASC;
