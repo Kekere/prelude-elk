@@ -18,10 +18,10 @@ services:
       - ./files/usr/share/logstash/pipeline/:/usr/share/logstash/pipeline/:ro
       - ./files/usr/share/logstash/template.json:/usr/share/logstash/template.json:ro
     ports:
-      - "514:6514/tcp"
+      - "6514:6514/tcp"
       # Uncomment the next line to accept logs in the syslog format
       # on UDP port 514.
-      - "514:6514/udp"
+      - "6514:6514/udp"
 
   logstashalert:
     image: "logstash:7.9.2"
