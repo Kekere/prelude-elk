@@ -216,6 +216,7 @@ password: prelude
 
 $ sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i eth0
 
+It is really impotant to put eth0 in promiscous mode in order to receive packets from other components of the network.
 Launch Kibana
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 username: elastic
