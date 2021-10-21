@@ -215,6 +215,11 @@ $ sudo prelude-admin register suricata "idmef:w admin:r" 0.0.0.0:5553 --uid 0 --
 password: prelude
 
 $ sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i eth0
+
+Launch Kibana
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+username: elastic
+password: prelude
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Developer mode
