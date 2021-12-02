@@ -169,6 +169,7 @@ $ sudo apt-get install gcc
 $ sudo apt-get install -y gnutls-bin 
 $ sudo apt-get install libpcre3 libpcre3-dev 
 $ sudo apt-get install libprelude-dev
+$ sudo apt install mysql-server
 $ sudo apt-get install prelude-manager
 $ sudo apt-get install libjansson-dev
 $ sudo apt-get install rustc cargo
