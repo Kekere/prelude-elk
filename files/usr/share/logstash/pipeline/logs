@@ -36,7 +36,7 @@ filter {
 	  }
 	  syslog_pri {}
 	  prune {
-	    blacklist_names => [ "^(syslog_timestamp|@version|syslog_severity_code|syslog_facility_code|syslog_pri)$" ]
+	    blacklist_names => [ "^(syslog_timestamp|@version|host|port|syslog_severity_code|syslog_facility_code|syslog_pri)$" ]
 	  }
   }
 }

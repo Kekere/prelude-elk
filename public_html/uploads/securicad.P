@@ -1,0 +1,11 @@
+attackerLocated('internet').
+attackGoal(execCode('157.159.68.44',_)).
+hacl('internet','157.159.68.44',tcp,14135).
+hacl('157.159.68.44',_,_,_).
+
+/* configuration information of PC:157.159.68.125 */
+networkServiceInfo('157.159.68.44', 'windows_7', tcp, 14135, 'andrew').
+vulExists('157.159.68.44', 'CVE-2021-34527', 'windows_7', remoteExploit, privEscalation).
+vulProperty('CVE-2019-0708', 'windows_7', remoteExploit, modify).
+/*vulExists('157.159.68.44', 'CVE-2021-34527', 'windows_7', remoteExploit, deny).
+vulProperty('CVE-2019-0708', 'windows_7', remoteExploit, deny).*/

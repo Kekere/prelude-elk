@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+</head>
+<body>
+
+  <div class="topnav">
+    <a id="home" href="#home">Load</a>
+    <a class="active" href="#graph" id="generate-graph">Generate Graph</a>
+    <a href="#contact">Countermeasures</a>
+    <a href="#about">About</a>
+  </div>
+  
+  
+</body>
+<svg width="1024" height="800"></svg>
+<input type="hidden" id="your-hidden-address" value="replace-me" />
+<input type="hidden" id="your-hidden-protocol" value="replace-me" />
+<input type="hidden" id="your-hidden-port" value="replace-me" />
+<input type="hidden" id="your-hidden-severity" value="replace-me" />
+<input type="hidden" id="your-hidden-addresssource" value="replace-me" />
+<input type="hidden" id="your-hidden-protocolsource" value="replace-me" />
+<input type="hidden" id="your-hidden-portsource" value="replace-me" />
+<!--<input type="hidden" id="your-hidden-severitysource" value="replace-me" />-->
+<input type="hidden" id="your-hidden-jsonlist" value="replace-me" />
+<input type="hidden" id="your-hidden-jsonobj" value="replace-me" />
+<input type="submit" name="submit" class="submit" id="download" value="Download graph">
+<link href="style.css" rel="stylesheet">
+<script src="https://d3js.org/d3.v4.min.js" type="text/javascript"></script>
+<script src="https://d3js.org/d3-selection-multi.v1.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js" ></script>
+<script src="demo.js"></script>
+<script src="callajax.js"></script>
+<script src="graph.js"></script>
+<script src="jsonlist.js"></script>
+<script>
+ 
+// nom du fichier qui sera qui sera généré par le serveur php
+
+//if (token==1){
+var jsonfile="mulval_generated_json.json";
+
+
+// conversion du fichier AttackGraph généré par mulval en Objet Json
+jsonfinal=convertxmltojson("AttackGraph.xml");
+console.log(jsonfinal);
+console.log(jsonfile);
+if(localStorage.getItem('notification')=="true"){
+  
+  console.log(localStorage.getItem('notification'));
+  
+  localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
+        
+  jsonobj={"json":JSON.stringify(jsonfinal,null,4)};
+
+  /* transfert du resultat de la convertion au serveur PHP pour l'écriture
+  dans un fichier json "mulval_generated_json.json" qui sera utilisé comme paramètre de la fonction generategraph
+  */
+  $.ajax({
+    url:"mulval.php",
+    data:jsonobj,
+    datatype:"json",
+    type:"POST",
+    success: function(response){
+      console.log(jsonobj);
+      // après la creation du fichier JSON en php on génère le Graph
+      generateGraph(jsonfile); 
+      localStorage.setItem('notification', false);
+      
+    },
+    failure:function(response){
+      console.log("erreur");
+    }
+  });
+}
+else{
+  generateGraph(jsonfile); 
+  updateGraph();
+}
+  
+
+//var jsonfile="output.json";
+//generateGraph(jsonfile);
+
+</script>

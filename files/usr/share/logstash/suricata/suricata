@@ -1,0 +1,24 @@
+input {
+  file { 
+    path => ["/usr/local/var/log/suricata/eve.json"]
+    #sincedb_path => ["/var/lib/logstash/"]
+    codec =>   json 
+    type => "SuricataIDPS" 
+  }
+
+}
+
+filter {
+ 
+
+}
+
+output { 
+  stdout { codec => json_lines }
+  elasticsearch {
+    hosts => ["http://elasticsearch:9200"] 
+    index => "suricata"
+    user => elastic
+    password => prelude
+  }
+}

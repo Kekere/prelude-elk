@@ -1,5 +1,35 @@
 version: '3.1'
 services:
+  php:
+    build: 
+      context: ./
+      dockerfile: php/Dockerfile
+      args:
+       PHP_VERSION: ${PHP_VERSION}
+    networks:
+      backend:
+      alerts:
+         ipv4_address: 172.31.0.10
+    volumes:
+      - ./public_html/:/var/www/html/
+    container_name: php
+  apache:
+    build:
+      context: ./
+      dockerfile: apache/Dockerfile
+      args:
+       APACHE_VERSION: ${APACHE_VERSION}
+  
+    networks:
+      frontend:
+      backend:
+      alerts:
+         ipv4_address: 172.31.0.11
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./public_html/:/var/www/html/
+    container_name: apache
   injector:
     image: "logstash:7.9.2"
     depends_on:
@@ -18,10 +48,10 @@ services:
       - ./files/usr/share/logstash/pipeline/:/usr/share/logstash/pipeline/:ro
       - ./files/usr/share/logstash/template.json:/usr/share/logstash/template.json:ro
     ports:
-      - "6514:6514/tcp"
+      - "514:6514/tcp"
       # Uncomment the next line to accept logs in the syslog format
       # on UDP port 514.
-      - "6514:6514/udp"
+      - "514:6514/udp"
 
   logstashalert:
     image: "logstash:7.9.2"
@@ -204,7 +234,7 @@ volumes:
     driver: local
   elasticsearch:
     driver: local
-
+  data:
 
 networks:
   agents:
@@ -217,6 +247,8 @@ networks:
   injector2lml:
   injector2logs:
   logs:
+  frontend:
+  backend:
 
 
 secrets:
