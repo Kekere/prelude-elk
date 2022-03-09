@@ -169,7 +169,6 @@ $ sudo apt-get install gcc
 $ sudo apt-get install -y gnutls-bin 
 $ sudo apt-get install libpcre3 libpcre3-dev 
 $ sudo apt-get install libprelude-dev
-$ sudo apt install mysql-server
 $ sudo apt-get install prelude-manager
 $ sudo apt-get install libjansson-dev
 $ sudo apt-get install rustc cargo
@@ -213,15 +212,7 @@ To connect the agent with Prelude execute these following commands:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ sudo prelude-admin register suricata "idmef:w admin:r" 0.0.0.0:5553 --uid 0 --gid 0
 
-password: prelude
-
 $ sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i eth0
-
-It is really impotant to put eth0 in promiscous mode in order to receive packets from other components of the network.
-Launch Kibana
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-username: elastic
-password: prelude
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Developer mode
