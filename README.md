@@ -1,7 +1,7 @@
 Prelude + ELK
 ======================
 
-This repository contains a dockerized version of Prelude OSS.
+This repository contains a dockerized version of Prelude OSS and the attack graph generator interface.
 
 
 Requirements
@@ -66,6 +66,8 @@ The following containers will be spawned during this process:
     • db-alerts: database server for Prelude’s alerts
     • db-gui: database server for Prewikka
     • logstashalert: ingestor of alerts 
+    • apache: web interface of the attack graph generator
+    • php: php service 
 
 To stop the SIEM, hit Ctrl+C in the terminal where ``docker-compose``
 was run.
@@ -108,6 +110,8 @@ The following services get exposed to the host:
   (to connect external sensors like Suricata, OSSEC, ...)
 
 * ``4690/tcp`` (``manager`` container): IDMEF alert receiver
+  (for external sensors)
+* ``8082/tcp`` (``apache`` container): attack graph generator interface
   (for external sensors)
 
 Depending on your use case, you may need to allow these ports inside the host's
@@ -214,7 +218,21 @@ $ sudo prelude-admin register suricata "idmef:w admin:r" 0.0.0.0:5553 --uid 0 --
 
 $ sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i eth0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+Configure and launch the attack graph generator
+-------------
+Execute these commands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ sudo docker-compose up
+$ sudo docker exec -t -i apache /bin/bash
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+And then in the console of the container execute
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ sudo chgrp -R www-data /var/www
+$ sudo chmod -R g+w /var/www
+$ sudo chmod g+s /var/www
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finally launch http://0.0.0.0:8082 and upload a .P file.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Developer mode
 --------------
 
