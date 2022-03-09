@@ -45,7 +45,7 @@ To start the SIEM, go to the newly created folder and run ``docker-compose``:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     $ cd prelude-elk
 
-    $ make
+    $ sudo make
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``docker-compose`` will recreate the containers, start them and wait for
