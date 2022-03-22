@@ -26,7 +26,7 @@ versions of these dependencies:
 * docker-compose 1.29.0
 * Docker Desktop 3.5.1
 
-In addition, the host should have at least 6 GB of available RAM.
+In addition, the host should have at least 8 GB of available RAM.
 
 
 Installation and start/stop instructions
