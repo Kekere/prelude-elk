@@ -126,7 +126,7 @@ function convertxmltojson(xmlfile){
   xhttp.open("GET", xmlfile, false);
   xhttp.send();
   var xmlDoc = xhttp.responseXML;
-  console.log(xmlDoc);
+  //console.log(xmlDoc);
   var sizelinks=xmlDoc.getElementsByTagName("arc").length;
   var arraylinks=[];
   var arraynodes=[]
@@ -173,7 +173,7 @@ function convertxmltojson(xmlfile){
     }
   }
   var jsonfinal={"nodes":arraynodes,"links":arraylinks};
-  console.log(jsonfinal)
+  //console.log(jsonfinal)
   //$('#your-hidden-jsonobj').val(jsonfinal);
   //console.log(document.getElementById("your-hidden-jsonobj").value)
   return jsonfinal;

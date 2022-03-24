@@ -1,64 +1,44 @@
 {
     "nodes": [
         {
-            "id": 3,
-            "group": 4,
-            "label": "vulExists(dmz_host_10,dmz_host_10_localVul_0,localApplication,localExploit,privEscalation):1"
-        },
-        {
-            "id": 2,
-            "group": 2,
-            "label": "RULE 1 (local exploit):0"
-        },
-        {
-            "id": 8,
-            "group": 3,
-            "label": "hacl(internet,dmz_host_10,httpProtocol,httpPort):1"
-        },
-        {
             "id": 7,
+            "group": 3,
+            "label": "canAccessFile(fileServer,root,write,'/export'):1"
+        },
+        {
+            "id": 6,
+            "group": 2,
+            "label": "RULE 12 (execCode implies file access):0"
+        },
+        {
+            "id": 12,
+            "group": 3,
+            "label": "hacl(webServer,fileServer,rpc,100005):1"
+        },
+        {
+            "id": 11,
+            "group": 2,
+            "label": "RULE 7 (multi-hop access):0"
+        },
+        {
+            "id": 17,
+            "group": 3,
+            "label": "hacl(internet,webServer,tcp,80):1"
+        },
+        {
+            "id": 16,
             "group": 2,
             "label": "RULE 8 (direct network access):0"
         },
         {
-            "id": 9,
+            "id": 18,
             "group": 3,
             "label": "attackerLocated(internet):1"
         },
         {
-            "id": 6,
+            "id": 15,
             "group": 1,
-            "label": "netAccess(dmz_host_10,httpProtocol,httpPort):0"
-        },
-        {
-            "id": 5,
-            "group": 2,
-            "label": "RULE 2 (remote exploit of a server program):0"
-        },
-        {
-            "id": 10,
-            "group": 3,
-            "label": "networkServiceInfo(dmz_host_10,serverApplication,httpProtocol,httpPort,user):1"
-        },
-        {
-            "id": 11,
-            "group": 4,
-            "label": "vulExists(dmz_host_10,dmz_host_10_remoteVul_0,serverApplication,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 4,
-            "group": 1,
-            "label": "execCode(dmz_host_10,user):0"
-        },
-        {
-            "id": 12,
-            "group": 2,
-            "label": "RULE 2 (remote exploit of a server program):0"
-        },
-        {
-            "id": 13,
-            "group": 4,
-            "label": "vulExists(dmz_host_10,dmz_host_10_remoteVul_1,serverApplication,remoteExploit,privEscalation):1"
+            "label": "netAccess(webServer,tcp,80):0"
         },
         {
             "id": 14,
@@ -66,211 +46,154 @@
             "label": "RULE 2 (remote exploit of a server program):0"
         },
         {
-            "id": 15,
-            "group": 4,
-            "label": "vulExists(dmz_host_10,dmz_host_10_remoteVul_2,serverApplication,remoteExploit,privEscalation):1"
+            "id": 19,
+            "group": 3,
+            "label": "networkServiceInfo(webServer,httpd,tcp,80,apache):1"
         },
         {
-            "id": 16,
+            "id": 20,
+            "group": 4,
+            "label": "vulExists(webServer,'CAN-2002-0392',httpd,remoteExploit,privEscalation):1"
+        },
+        {
+            "id": 13,
+            "group": 1,
+            "label": "execCode(webServer,apache):0"
+        },
+        {
+            "id": 10,
+            "group": 1,
+            "label": "netAccess(fileServer,rpc,100005):0"
+        },
+        {
+            "id": 9,
             "group": 2,
             "label": "RULE 2 (remote exploit of a server program):0"
         },
         {
-            "id": 17,
+            "id": 21,
+            "group": 3,
+            "label": "networkServiceInfo(fileServer,mountd,rpc,100005,root):1"
+        },
+        {
+            "id": 22,
             "group": 4,
-            "label": "vulExists(dmz_host_10,dmz_host_10_remoteVul_3,serverApplication,remoteExploit,privEscalation):1"
+            "label": "vulExists(fileServer,vulID,mountd,remoteExploit,privEscalation):1"
+        },
+        {
+            "id": 8,
+            "group": 1,
+            "label": "execCode(fileServer,root):0"
+        },
+        {
+            "id": 5,
+            "group": 1,
+            "label": "accessFile(fileServer,write,'/export'):0"
+        },
+        {
+            "id": 24,
+            "group": 3,
+            "label": "hacl(webServer,fileServer,nfsProtocol,nfsPort):1"
+        },
+        {
+            "id": 23,
+            "group": 2,
+            "label": "RULE 19 (NFS shell):0"
+        },
+        {
+            "id": 25,
+            "group": 3,
+            "label": "nfsExportInfo(fileServer,'/export',write,webServer):1"
+        },
+        {
+            "id": 4,
+            "group": 2,
+            "label": "RULE 18 (NFS semantics):0"
+        },
+        {
+            "id": 26,
+            "group": 3,
+            "label": "nfsMounted(workStation,'/usr/local/share',fileServer,'/export',read):1"
+        },
+        {
+            "id": 3,
+            "group": 1,
+            "label": "accessFile(workStation,write,'/usr/local/share'):0"
+        },
+        {
+            "id": 2,
+            "group": 2,
+            "label": "RULE 6 (Trojan horse installation):0"
         },
         {
             "id": 1,
             "group": 1,
-            "label": "execCode(dmz_host_10,root):0"
-        },
-        {
-            "id": 22,
-            "group": 3,
-            "label": "hacl(internet,fileServers_host_10,httpProtocol,httpPort):1"
-        },
-        {
-            "id": 21,
-            "group": 2,
-            "label": "RULE 8 (direct network access):0"
-        },
-        {
-            "id": 20,
-            "group": 1,
-            "label": "netAccess(fileServers_host_10,httpProtocol,httpPort):0"
-        },
-        {
-            "id": 19,
-            "group": 2,
-            "label": "RULE 2 (remote exploit of a server program):0"
-        },
-        {
-            "id": 23,
-            "group": 3,
-            "label": "networkServiceInfo(fileServers_host_10,serverApplication,httpProtocol,httpPort,user):1"
-        },
-        {
-            "id": 24,
-            "group": 4,
-            "label": "vulExists(fileServers_host_10,fileServers_host_10_remoteVul_0,serverApplication,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 18,
-            "group": 1,
-            "label": "execCode(fileServers_host_10,user):0"
-        },
-        {
-            "id": 25,
-            "group": 2,
-            "label": "RULE 2 (remote exploit of a server program):0"
-        },
-        {
-            "id": 26,
-            "group": 4,
-            "label": "vulExists(fileServers_host_10,fileServers_host_10_remoteVul_1,serverApplication,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 27,
-            "group": 2,
-            "label": "RULE 2 (remote exploit of a server program):0"
-        },
-        {
-            "id": 28,
-            "group": 4,
-            "label": "vulExists(fileServers_host_10,fileServers_host_10_remoteVul_2,serverApplication,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 33,
-            "group": 3,
-            "label": "hacl(fileServers_host_10,fileServers_host_9,httpProtocol,httpPort):1"
-        },
-        {
-            "id": 32,
-            "group": 2,
-            "label": "RULE 7 (multi-hop access):0"
-        },
-        {
-            "id": 31,
-            "group": 1,
-            "label": "netAccess(fileServers_host_9,httpProtocol,httpPort):0"
-        },
-        {
-            "id": 30,
-            "group": 2,
-            "label": "RULE 2 (remote exploit of a server program):0"
-        },
-        {
-            "id": 34,
-            "group": 3,
-            "label": "networkServiceInfo(fileServers_host_9,serverApplication,httpProtocol,httpPort,user):1"
-        },
-        {
-            "id": 35,
-            "group": 4,
-            "label": "vulExists(fileServers_host_9,fileServers_host_9_remoteVul_0,serverApplication,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 29,
-            "group": 1,
-            "label": "execCode(fileServers_host_9,user):0"
-        },
-        {
-            "id": 36,
-            "group": 2,
-            "label": "RULE 2 (remote exploit of a server program):0"
-        },
-        {
-            "id": 37,
-            "group": 4,
-            "label": "vulExists(fileServers_host_9,fileServers_host_9_remoteVul_1,serverApplication,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 40,
-            "group": 4,
-            "label": "vulExists(workStation_host_10,workStation_host_10_localVul_0,localApplication,localExploit,privEscalation):1"
-        },
-        {
-            "id": 39,
-            "group": 2,
-            "label": "RULE 1 (local exploit):0"
-        },
-        {
-            "id": 45,
-            "group": 3,
-            "label": "hacl(fileServers_host_10,workStation_host_10,httpProtocol,httpPort):1"
-        },
-        {
-            "id": 44,
-            "group": 2,
-            "label": "RULE 7 (multi-hop access):0"
-        },
-        {
-            "id": 43,
-            "group": 1,
-            "label": "netAccess(workStation_host_10,httpProtocol,httpPort):0"
-        },
-        {
-            "id": 42,
-            "group": 2,
-            "label": "RULE 2 (remote exploit of a server program):0"
-        },
-        {
-            "id": 46,
-            "group": 3,
-            "label": "networkServiceInfo(workStation_host_10,serverApplication,httpProtocol,httpPort,user):1"
-        },
-        {
-            "id": 47,
-            "group": 4,
-            "label": "vulExists(workStation_host_10,workStation_host_10_remoteVul_0,serverApplication,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 41,
-            "group": 1,
-            "label": "execCode(workStation_host_10,user):0"
-        },
-        {
-            "id": 48,
-            "group": 2,
-            "label": "RULE 2 (remote exploit of a server program):0"
-        },
-        {
-            "id": 49,
-            "group": 4,
-            "label": "vulExists(workStation_host_10,workStation_host_10_remoteVul_1,serverApplication,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 38,
-            "group": 1,
-            "label": "execCode(workStation_host_10,root):0"
-        },
-        {
-            "id": 51,
-            "group": 4,
-            "label": "vulExists(workStation_host_10,workStation_host_10_localVul_1,localApplication,localExploit,privEscalation):1"
-        },
-        {
-            "id": 50,
-            "group": 2,
-            "label": "RULE 1 (local exploit):0"
+            "label": "execCode(workStation,root):0"
         }
     ],
     "links": [
         {
-            "source": 3,
-            "target": 2
+            "source": 7,
+            "target": 6
         },
         {
-            "source": 8,
-            "target": 7
+            "source": 12,
+            "target": 11
+        },
+        {
+            "source": 17,
+            "target": 16
+        },
+        {
+            "source": 18,
+            "target": 16
+        },
+        {
+            "source": 16,
+            "target": 15
+        },
+        {
+            "source": 15,
+            "target": 14
+        },
+        {
+            "source": 19,
+            "target": 14
+        },
+        {
+            "source": 20,
+            "target": 14
+        },
+        {
+            "source": 14,
+            "target": 13
+        },
+        {
+            "source": 13,
+            "target": 11
+        },
+        {
+            "source": 11,
+            "target": 10
+        },
+        {
+            "source": 10,
+            "target": 9
+        },
+        {
+            "source": 21,
+            "target": 9
+        },
+        {
+            "source": 22,
+            "target": 9
         },
         {
             "source": 9,
-            "target": 7
+            "target": 8
         },
         {
-            "source": 7,
+            "source": 8,
             "target": 6
         },
         {
@@ -278,11 +201,19 @@
             "target": 5
         },
         {
-            "source": 10,
-            "target": 5
+            "source": 24,
+            "target": 23
         },
         {
-            "source": 11,
+            "source": 25,
+            "target": 23
+        },
+        {
+            "source": 13,
+            "target": 23
+        },
+        {
+            "source": 23,
             "target": 5
         },
         {
@@ -290,232 +221,20 @@
             "target": 4
         },
         {
-            "source": 6,
-            "target": 12
-        },
-        {
-            "source": 10,
-            "target": 12
-        },
-        {
-            "source": 13,
-            "target": 12
-        },
-        {
-            "source": 12,
-            "target": 4
-        },
-        {
-            "source": 6,
-            "target": 14
-        },
-        {
-            "source": 10,
-            "target": 14
-        },
-        {
-            "source": 15,
-            "target": 14
-        },
-        {
-            "source": 14,
-            "target": 4
-        },
-        {
-            "source": 6,
-            "target": 16
-        },
-        {
-            "source": 10,
-            "target": 16
-        },
-        {
-            "source": 17,
-            "target": 16
-        },
-        {
-            "source": 16,
+            "source": 26,
             "target": 4
         },
         {
             "source": 4,
+            "target": 3
+        },
+        {
+            "source": 3,
             "target": 2
         },
         {
             "source": 2,
             "target": 1
-        },
-        {
-            "source": 22,
-            "target": 21
-        },
-        {
-            "source": 9,
-            "target": 21
-        },
-        {
-            "source": 21,
-            "target": 20
-        },
-        {
-            "source": 20,
-            "target": 19
-        },
-        {
-            "source": 23,
-            "target": 19
-        },
-        {
-            "source": 24,
-            "target": 19
-        },
-        {
-            "source": 19,
-            "target": 18
-        },
-        {
-            "source": 20,
-            "target": 25
-        },
-        {
-            "source": 23,
-            "target": 25
-        },
-        {
-            "source": 26,
-            "target": 25
-        },
-        {
-            "source": 25,
-            "target": 18
-        },
-        {
-            "source": 20,
-            "target": 27
-        },
-        {
-            "source": 23,
-            "target": 27
-        },
-        {
-            "source": 28,
-            "target": 27
-        },
-        {
-            "source": 27,
-            "target": 18
-        },
-        {
-            "source": 33,
-            "target": 32
-        },
-        {
-            "source": 18,
-            "target": 32
-        },
-        {
-            "source": 32,
-            "target": 31
-        },
-        {
-            "source": 31,
-            "target": 30
-        },
-        {
-            "source": 34,
-            "target": 30
-        },
-        {
-            "source": 35,
-            "target": 30
-        },
-        {
-            "source": 30,
-            "target": 29
-        },
-        {
-            "source": 31,
-            "target": 36
-        },
-        {
-            "source": 34,
-            "target": 36
-        },
-        {
-            "source": 37,
-            "target": 36
-        },
-        {
-            "source": 36,
-            "target": 29
-        },
-        {
-            "source": 40,
-            "target": 39
-        },
-        {
-            "source": 45,
-            "target": 44
-        },
-        {
-            "source": 18,
-            "target": 44
-        },
-        {
-            "source": 44,
-            "target": 43
-        },
-        {
-            "source": 43,
-            "target": 42
-        },
-        {
-            "source": 46,
-            "target": 42
-        },
-        {
-            "source": 47,
-            "target": 42
-        },
-        {
-            "source": 42,
-            "target": 41
-        },
-        {
-            "source": 43,
-            "target": 48
-        },
-        {
-            "source": 46,
-            "target": 48
-        },
-        {
-            "source": 49,
-            "target": 48
-        },
-        {
-            "source": 48,
-            "target": 41
-        },
-        {
-            "source": 41,
-            "target": 39
-        },
-        {
-            "source": 39,
-            "target": 38
-        },
-        {
-            "source": 51,
-            "target": 50
-        },
-        {
-            "source": 41,
-            "target": 50
-        },
-        {
-            "source": 50,
-            "target": 38
         }
     ]
 }

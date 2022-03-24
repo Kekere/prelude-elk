@@ -43,11 +43,11 @@ var jsonfile="mulval_generated_json.json";
 
 // conversion du fichier AttackGraph généré par mulval en Objet Json
 jsonfinal=convertxmltojson("AttackGraph.xml");
-console.log(jsonfinal);
-console.log(jsonfile);
+//console.log(jsonfinal);
+//console.log(jsonfile);
 if(localStorage.getItem('notification')=="true"){
   
-  console.log(localStorage.getItem('notification'));
+  //console.log(localStorage.getItem('notification'));
   
   localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
         
@@ -62,14 +62,14 @@ if(localStorage.getItem('notification')=="true"){
     datatype:"json",
     type:"POST",
     success: function(response){
-      console.log(jsonobj);
+      //console.log(jsonobj);
       // après la creation du fichier JSON en php on génère le Graph
       generateGraph(jsonfile); 
       localStorage.setItem('notification', false);
       
     },
     failure:function(response){
-      console.log("erreur");
+      //console.log("erreur");
     }
   });
 }

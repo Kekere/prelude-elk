@@ -1,6 +1,6 @@
 function updateGraph(){
   graph = JSON.parse(localStorage.getItem('myjson'))
-  console.log(graph)
+  //console.log(graph)
   var val=0;
   var idvul=0;
   var cve='';
@@ -27,7 +27,7 @@ function updateGraph(){
   if(hacl==0){
     var sep=graph["nodes"][i]["label"].split(',');
     adds=sep[0].split("'")[1];
-    console.log(adds,addresssource,sep[2],protocol,parseInt(sep[3].split("):")[0]),port)
+    //console.log(adds,addresssource,sep[2],protocol,parseInt(sep[3].split("):")[0]),port)
     if(adds==addresssource && sep[2]==protocol && parseInt(sep[3].split("):")[0])==port){
       ch=1
       
@@ -44,21 +44,21 @@ function updateGraph(){
 
       
       product=sep[1].split("'")[0];
-      console.log(product)
+      //console.log(product)
       
     }
     else{
       if(ch==1){
         product=sep[1].split("'")[0];
-        console.log(product);
+        //console.log(product);
         val=1;
         console.log("condition fonctionne pour enrichissement");
       }
       else{
         if(ch==1){
           product=sep[1].split("'")[0];
-          console.log(product);
-          console.log("condition fonctionne pour enrichissement");
+          //console.log(product);
+          //console.log("condition fonctionne pour enrichissement");
         }
         
         /*if(addsource==addresssource && sep[2]==protocolsource && parseInt(sep[3].split("):")[0])==portsource){
@@ -78,7 +78,7 @@ function updateGraph(){
 
       var sep=graph["nodes"][i]["label"].split(',');
       idvul=graph["nodes"][i]["id"];
-      console.log(idvul);
+      //console.log(idvul);
       if(sep[0].split("(")[1].split("'")[1]==address){
         cve=sep[1].split("'")[1];
         impact=sep[4].split(")")[0]
@@ -112,11 +112,11 @@ function updateGraph(){
         })*/
         function namefile(n){
           $.getJSON("vdo/"+n, function(data){
-            console.log(n)
+            //console.log(n)
             precondition=data["Vulnerability"]["hasScenario"][0]["barrier"][0]["barrierType"].split(':')[4];
             newcve=n.split('.')[0];
-            console.log(precondition)
-            console.log(newcve);
+            //console.log(precondition)
+            //console.log(newcve);
             for(var e=0; e<data["Vulnerability"]["hasScenario"].length; e++){
               for(var b=0; b<data["Vulnerability"]["hasScenario"][e]["affectsProduct"]["hasEnumeration"]["values"].length; b++){
                 prod=data["Vulnerability"]["hasScenario"][e]["affectsProduct"]["hasEnumeration"]["values"][b].split(':')[4];
@@ -124,14 +124,14 @@ function updateGraph(){
                 
               }
             }
-            console.log(products);
+            //console.log(products);
             products=[];
           })
           
         }
         
         $.getJSON("vdo/"+cve+".json", function(json) {
-          console.log(localStorage.getItem("someVarKey"))
+          //console.log(localStorage.getItem("someVarKey"))
           if(json["Vulnerability"]["hasIdentity"][0]["value"]==cve && localStorage.getItem('someVarKey')!=cve){
             
             for(var e=0; e<json["Vulnerability"]["hasScenario"].length; e++){
@@ -143,28 +143,28 @@ function updateGraph(){
               }
               
               for(var o=0; o<json["Vulnerability"]["hasScenario"][e]["hasAction"].length; o++){
-                console.log(json["Vulnerability"]["hasScenario"][e]["hasAction"][o])
-                console.log(json["Vulnerability"]["hasScenario"][e]["hasAction"][1]["resultsInImpact"][0]['hasLogicalImpact'])
+                //console.log(json["Vulnerability"]["hasScenario"][e]["hasAction"][o])
+                //console.log(json["Vulnerability"]["hasScenario"][e]["hasAction"][1]["resultsInImpact"][0]['hasLogicalImpact'])
                 if(json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"].length==1){
                   for(var t=0; t<json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"].length; t++){
                     if(o==1){
-                      console.log(json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"][t]["hasLogicalImpact"])
+                      //console.log(json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"][t]["hasLogicalImpact"])
                       check=json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"][t]["hasLogicalImpact"]
-                      console.log(check, seps)
+                      //console.log(check, seps)
                       var isEvery = seps.every(item => check.toLowerCase().includes(item.toLowerCase()));
                       
                       
                       if(isEvery==true && valprod!=0){
                         logicalimpact=json["Vulnerability"]["hasScenario"][e]["hasAction"][1]["resultsInImpact"][t]["hasLogicalImpact"].split("::").slice(-1)[0];
-                        console.log(graph["links"]);
-                        console.log(graph["nodes"])
+                        //console.log(graph["links"]);
+                        //console.log(graph["nodes"])
                         arraylinks=graph["links"];
                         
                         for(var p=0; p<arraylinks.length; p++){
                           if(idvul==arraylinks[p]["source"]){
                             for(var m=0; m<arraylinks.length; m++){
                               if(arraylinks[p]["target"]==arraylinks[m]["source"]){
-                                console.log(arraylinks[p]["target"],arraylinks[m]["source"]);
+                                //console.log(arraylinks[p]["target"],arraylinks[m]["source"]);
                                 arraynodes=graph["nodes"];
                                 newtarget=parseInt(arraynodes.length+1)
                                 newlinkr={"source":parseInt(arraylinks[m]["target"]),"target":newtarget};
@@ -190,7 +190,7 @@ function updateGraph(){
                                
                                 for(var y=0; y<jsonfiles.length; y++){
                                   
-                                  console.log(jsonfiles[y])
+                                  //console.log(jsonfiles[y])
                              
                                   var n=jsonfiles[y];
                                   $.getJSON("vdo/"+n, function(data){
@@ -217,10 +217,10 @@ function updateGraph(){
                                     newnodea={};
                                     newlinka={};
                                     jsonfinal={"nodes":arraynodes,"links":arraylinks};
-                                    console.log(jsonfinal);
+                                    //console.log(jsonfinal);
                                     localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
                                     obj=JSON.parse(localStorage.getItem('myjson')); 
-                                    console.log(obj)
+                                    //console.log(obj)
                                     //$("svg").empty();
                                     generateGraph("output.json");                               
                                   })
@@ -242,23 +242,23 @@ function updateGraph(){
                   newnodea={};
                   newlinka={};
                   jsonfinal={"nodes":arraynodes,"links":arraylinks};
-                  console.log(jsonfinal);
+                  //console.log(jsonfinal);
                   localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
                   obj=JSON.parse(localStorage.getItem('myjson')); 
-                  console.log(obj)
+                  //console.log(obj)
                   //$("svg").empty();
                   generateGraph("output.json");
                 }
                 
                 else{
-                  console.log(json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"])
+                  //console.log(json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"])
                   for(var r=0; r<json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"].length; r++){
                     check=json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"][r]["hasLogicalImpact"]
                     var isEvery = seps.every(item => check.toLowerCase().includes(item.toLowerCase()));
                     if(isEvery==true && valprod!=0){
                       logicalimpact=json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"][r]["hasLogicalImpact"].split("::").slice(-1)[0];
-                      console.log(graph["links"]);
-                      console.log(graph["nodes"])
+                      //console.log(graph["links"]);
+                      //console.log(graph["nodes"])
                       arraylinks=graph["links"];
                       
                       for(var p=0; p<arraylinks.length; p++){
@@ -299,10 +299,10 @@ function updateGraph(){
                   newnodea={};
                   newlinka={};
                   jsonfinal={"nodes":arraynodes,"links":arraylinks};
-                  console.log(jsonfinal);
+                  //console.log(jsonfinal);
                   localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
                   obj=JSON.parse(localStorage.getItem('myjson')); 
-                  console.log(obj)
+                  //console.log(obj)
                   //$("svg").empty();
                   generateGraph("output.json");
                   
