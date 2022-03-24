@@ -23,57 +23,60 @@ function updateGraph(){
   var vul=graph["nodes"][i]["label"].indexOf("vulExists");
   var ch;
   //console.log(vul,graph["nodes"][i]["label"]);
-  
-  if(hacl==0){
-    var sep=graph["nodes"][i]["label"].split(',');
-    adds=sep[0].split("'")[1];
-    //console.log(adds,addresssource,sep[2],protocol,parseInt(sep[3].split("):")[0]),port)
-    if(adds==addresssource && sep[2]==protocol && parseInt(sep[3].split("):")[0])==port){
-      ch=1
+  //console.log(severity);
+  if(severity=="high" || severity=="medium"){
+    if(hacl==0){
+      var sep=graph["nodes"][i]["label"].split(',');
+      adds=sep[0].split("'")[1];
+      //console.log(adds,addresssource,sep[2],protocol,parseInt(sep[3].split("):")[0]),port)
+      if(adds==addresssource && sep[2]==protocol && parseInt(sep[3].split("):")[0])==port){
+        ch=1
+        
+      }
       
     }
-    
-  }
-  if(net==0){
-    var sep=graph["nodes"][i]["label"].split(',');
-    add=sep[0].split("'")[1];
-    addsource=sep[0].split("'")[1];
-    if(add==address && sep[2]==protocol && parseInt(sep[3].split("):")[0])==port){
-      val=1;
-      
-
-      
-      product=sep[1].split("'")[0];
-      //console.log(product)
-      
-    }
-    else{
-      if(ch==1){
-        product=sep[1].split("'")[0];
-        //console.log(product);
+    if(net==0){
+      var sep=graph["nodes"][i]["label"].split(',');
+      add=sep[0].split("'")[1];
+      addsource=sep[0].split("'")[1];
+      if(add==address && sep[2]==protocol && parseInt(sep[3].split("):")[0])==port){
         val=1;
-        console.log("condition fonctionne pour enrichissement");
+        
+  
+        
+        product=sep[1].split("'")[0];
+        //console.log(product)
+        
       }
       else{
         if(ch==1){
           product=sep[1].split("'")[0];
           //console.log(product);
+          val=1;
           //console.log("condition fonctionne pour enrichissement");
         }
-        
-        /*if(addsource==addresssource && sep[2]==protocolsource && parseInt(sep[3].split("):")[0])==portsource){
-           val=1;
-           add=addsource;
-           protocol=protocolsource;
-           port=portsource;
-           product=sep[1].split("'")[0];
-           console.log(portsource);
-        
-        }*/
+        else{
+          if(ch==1){
+            product=sep[1].split("'")[0];
+            //console.log(product);
+            //console.log("condition fonctionne pour enrichissement");
+          }
+          
+          /*if(addsource==addresssource && sep[2]==protocolsource && parseInt(sep[3].split("):")[0])==portsource){
+             val=1;
+             add=addsource;
+             protocol=protocolsource;
+             port=portsource;
+             product=sep[1].split("'")[0];
+             console.log(portsource);
+          
+          }*/
+        }
       }
+      
     }
-    
   }
+  
   if(vul==0 && val==1){
 
       var sep=graph["nodes"][i]["label"].split(',');
