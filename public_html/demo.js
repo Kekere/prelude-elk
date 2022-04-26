@@ -12,7 +12,12 @@ document.getElementById("generate-graph").onclick = function() {
   }
   
 }
-
+document.getElementById("countermeasures").onclick = function() {
+  //console.log(localStorage.getItem('myjson'));
+  var link = document.getElementById("countermeasures");
+  link.setAttribute("href", "RORI/index.html");
+  
+}
 /*document.getElementById("home").onclick = function() {
   var link = document.getElementById("home");
   link.setAttribute("href", "index.html");

@@ -7,8 +7,8 @@
   <div class="topnav">
     <a class="active" id="home" href="#home">Load XML</a>
     <a href="#graph" id="generate-graph">Generate Graph</a>
-    <a href="#contact">Contermeasures</a>
-    <a href="#about">About</a>
+    <a href="#countermeasures" id="countermeasures">Countermeasures</a>
+    <!-- <a href="#about">About</a>-->
   </div>
   
   <!-- <div class="restofbody">
