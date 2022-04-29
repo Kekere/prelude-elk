@@ -1,12 +1,12 @@
 digraph G {
-	1 [label="1:execCode('157.159.68.115',andrew):0",shape=diamond];
+	1 [label="1:execCode('157.159.68.64',andrew):0",shape=diamond];
 	2 [label="2:RULE 2 (remote exploit of a server program):0",shape=ellipse];
-	3 [label="3:netAccess('157.159.68.115',tcp,9000):0",shape=diamond];
+	3 [label="3:netAccess('157.159.68.64',tcp,8000):0",shape=diamond];
 	4 [label="4:RULE 8 (direct network access):0",shape=ellipse];
-	5 [label="5:hacl('157.159.14.77','157.159.68.115',tcp,9000):1",shape=box];
-	6 [label="6:attackerLocated('157.159.14.77'):1",shape=box];
-	7 [label="7:networkServiceInfo('157.159.68.115',windows_server_2016,tcp,9000,andrew):1",shape=box];
-	8 [label="8:vulExists('157.159.68.115','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation):1",shape=box];
+	5 [label="5:hacl('192.241.214.216','157.159.68.64',tcp,8000):1",shape=box];
+	6 [label="6:attackerLocated('192.241.214.216'):1",shape=box];
+	7 [label="7:networkServiceInfo('157.159.68.64',windows_server_2016,tcp,8000,andrew):1",shape=box];
+	8 [label="8:vulExists('157.159.68.64','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation):1",shape=box];
 	5 -> 	4;
 	6 -> 	4;
 	4 -> 	3;

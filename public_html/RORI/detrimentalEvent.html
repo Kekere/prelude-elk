@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <title>Detrimental Event</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/formStyle.css">
+</head>
+
+<body onunload="">
+    <h3>Detrimental Events</h3>
+    <div class="col-6 row">
+        <input type="image" src="icons/Add-medium.png" title="Add Detrimental Event" alt="Add Detrimental Event"
+            class="crudButton" onclick="openAddIncidentForm()">
+        <input type="image" src="icons/Edit-medium.png" title="Edit Detrimental Event" alt="Edit Detrimental Event"
+            class="crudButton" onclick="openEditIncidentForm()">
+        <input type="image" src="icons/Delete-medium.png" title="Delete Detrimental Event"
+            alt="Delete Detrimental Event" class="crudButton" style="margin-right: 1%;"
+            onclick="openDeleteIncidentForm()">
+        <input type="image" src="icons/Incident-Countermeasure-medium.png" title="Assign Mitigation Action"
+            alt="Assign Mitigation Action" class="crudButton" onclick="assignMitigationActionToIncident()">
+    </div>
+    
+    <div class="col-8 row">
+        <table class="list" style="text-align: left; margin-left: 1%;" aria-label="List of all the incidents">
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 35%;">
+                <col style="width: 10%;">
+                <col style="width: 35%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Risk Level</th>
+                    <th scope="col">Assigned Mitigation Action</th>
+                </tr>
+            </thead>
+            <tbody id="incidentsTable" style="cursor: pointer;">
+            </tbody>
+        </table>
+    </div>
+    <div class="col-6 row">
+        <button type="button" onclick="goBack()">Back</button>
+    </div>
+
+    <dialog id="addModal" class="modal">
+        <div class="modal-content container">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <form onsubmit="addIncident(this)" method="dialog">
+                <p>Add detrimental event</p>
+                <label for="addName">
+                    Name: <input type="text" id="addName" name="incidentName" required>
+                </label>
+                <p></p>
+                <label for="addDescription">
+                    Description: <textarea type="text" id="addDescription" name="incidentDescription" rows="6"
+                        style="resize: none;"></textarea>
+                </label>
+                <p></p>
+                <!-- <label for="addRiskLevel">Risk Level: </label>
+                <select id="addRiskLevel" name="incidentRiskLevel" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <p></p> -->
+                <button type="submit" style="margin-right: 1%;">Save Detrimental Event</button>
+                <button type="button" onclick="closeDialog()">Cancel</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="editModal" class="modal">
+        <div class="modal-content container">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <form onsubmit="editIncident(this)" method="dialog">
+                <p>Edit detrimental event</p>
+                <label for="editName">
+                    Name: <input type="text" id="editName" name="incidentName" required>
+                </label>
+                <p></p>
+                <label for="editDescription">
+                    Description: <textarea type="text" id="editDescription" name="incidentDescription" rows="6"
+                        style="resize: none;"></textarea>
+                </label>
+                <p></p>
+                <!-- <label for="editRiskLevel">Risk Level: </label>
+                <select id="editRiskLevel" name="incidentRiskLevel" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <p></p> -->
+                <button type="submit" style="margin-right: 1%;">Update Detrimental Event</button>
+                <button type="button" onclick="closeDialog()">Cancel</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="deleteModal" class="modal">
+        <div class="modal-content container">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <form onsubmit="deleteIncident(this)" method="dialog">
+                <p id="deleteName"></p>
+                <button type="submit" style="margin-right: 1%;">Ok</button>
+                <button type="button" onclick="closeDialog()">Cancel</button>
+            </form>
+        </div>
+    </dialog>
+
+</body>
+
+<script src="scripts/functions.js"></script>
+<script src="scripts/detrimentalEventScript.js"></script>
+
+</html>

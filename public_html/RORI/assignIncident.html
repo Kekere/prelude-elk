@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <title>Assign Detrimental Events to an Organization</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <h3>Assign Detrimental Events to an Organization</h3>
+    <div class="col-10 row">
+        <div style="margin-bottom: 1%;">
+            <input type="image" src="icons/Delete-medium.png" title="Remove Incident" alt="Remove Incident"
+                class="crudButton" onclick="removeIncident()">
+        </div>
+
+        <div class="leftSide" style="width: 45%;">
+            <fieldset>
+                <legend>Detrimental Events</legend>
+                <table style="text-align: left;" aria-label="Available Detrimental Events">
+                    <colgroup>
+                        <col style="width: 30%;">
+                        <col style="width: 50%;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Risk Level</th>
+                        </tr>
+                    </thead>
+                    <tbody id="availableIncidents" style="cursor: pointer;">
+                    </tbody>
+                </table>
+            </fieldset>
+            <p></p>
+            <fieldset>
+                <legend>Detrimental Events of the Organization</legend>
+                <table style="text-align: left;" aria-label="Detrimental events of the selected organization">
+                    <colgroup>
+                        <col style="width: 30%;">
+                        <col style="width: 50%;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Risk Level</th>
+                        </tr>
+                    </thead>
+                    <tbody id="assignedIncidents" style="cursor: pointer;">
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+
+        <div class="rightSide" style="width: 45%;">
+            <fieldset>
+                <legend>Annual Loss Expectanct (ALE)</legend>
+                <form id="aleForm" onsubmit="assignIncident(); return false;" class="assignForm">
+                    <label for="la">
+                        Loss of Assets (LA) <input type="number" id="la" name="Loss of Assets" step="0.01" min="0"
+                            value="0.00" oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <label for="ld">
+                        Loss of Data (LD) <input type="number" id="ld" name="Loss of Data" step="0.01" min="0"
+                            value="0.00" oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <label for="lr">
+                        Loss of Reputation (LR) <input type="number" id="lr" name="Loss of Reputation" step="0.01"
+                            min="0" value="0.00" oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <label for="lp">
+                        Loss of Procedures (LP) <input type="number" id="lp" name="Loss of Procedures" step="0.01"
+                            min="0" value="0.00" oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <label for="lrec">
+                        Loss of revenues from existing clients (LREC) <input type="number" id="lrec"
+                            name="Loss of revenues from existing clients" step="0.01" min="0" value="0.00"
+                            oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <label for="lrpc">
+                        Loss of revenues from potential clients (LRPC) <input type="number" id="lrpc"
+                            name="Loss of revenues from potential clients" step="0.01" min="0" value="0.00"
+                            oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <label for="ol">
+                        Other Losses (OL) <input type="number" id="ol" name="Other Losses" step="0.01" min="0"
+                            value="0.00" oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <label for="ci">
+                        Contracted Insurance (CI) <input type="number" id="ci" name="Contacted Insurance" step="0.01"
+                            min="0" value="0.00" oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <label for="orc">
+                        Annual Rate of Occurrence (ARO) <input type="number" id="aro" name="Annual Rate of Occurrence"
+                            step="0.01" min="0.1" value="0.00" oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <fieldset>
+                        <legend>Give the total ALE value</legend>
+                        <label for="giveTotal">
+                            OK <input type="checkbox" id="giveTotal" name="Total?" onclick="toggleTotal()">
+                        </label>
+                        <p></p>
+                        <label for="totalAleValue">
+                            Total <input type="number" id="totalValue" name="Total" step="0.01" value="0.00" disabled>
+                        </label>
+                    </fieldset>
+                    <p></p>
+                    <button type="submit">Assign</button>
+                </form>
+            </fieldset>
+        </div>
+
+    </div>
+    <br>
+    <div>
+        <button type="button" onclick="goBack()">Back</button>
+    </div>
+</body>
+
+<script src="scripts/functions.js"></script>
+<script src="scripts/assignIncidentScript.js"></script>
+
+</html>

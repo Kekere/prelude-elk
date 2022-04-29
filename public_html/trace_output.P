@@ -29,19 +29,17 @@ meta(cvss,2).
 meta(attackGoal,1).
 meta(advances,2).
 
-attack(execCode('157.159.68.115',andrew)).
+attack(execCode('157.159.68.64',andrew)).
 
-possible_duplicate_trace_step(because(8,rule_desc('direct network access',1.0),netAccess('157.159.68.115',tcp,9000),[hacl('157.159.14.77','157.159.68.115',tcp,9000),attackerLocated('157.159.14.77')])).
+possible_duplicate_trace_step(because(8,rule_desc('direct network access',1.0),netAccess('157.159.68.64',tcp,8000),[hacl('192.241.214.216','157.159.68.64',tcp,8000),attackerLocated('192.241.214.216')])).
 
-possible_duplicate_trace_step(because(8,rule_desc('direct network access',1.0),netAccess('157.159.68.115',tcp,9000),[hacl('157.159.14.77','157.159.68.115',tcp,9000),attackerLocated('157.159.14.77')])).
+possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.64',andrew),[netAccess('157.159.68.64',tcp,8000),networkServiceInfo('157.159.68.64',windows_server_2016,tcp,8000,andrew),vulExists('157.159.68.64','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.115',andrew),[netAccess('157.159.68.115',tcp,9000),networkServiceInfo('157.159.68.115',windows_server_2016,tcp,9000,andrew),vulExists('157.159.68.115','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(7,rule_desc('multi-hop access',0.5),netAccess('157.159.68.64',tcp,8000),[hacl('157.159.68.64','157.159.68.64',tcp,8000),advances('157.159.68.64','157.159.68.64'),execCode('157.159.68.64',andrew)])).
 
-possible_duplicate_trace_step(because(7,rule_desc('multi-hop access',0.5),netAccess('157.159.68.115',tcp,9000),[hacl('157.159.68.115','157.159.68.115',tcp,9000),advances('157.159.68.115','157.159.68.115'),execCode('157.159.68.115',andrew)])).
+possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.64',andrew),[netAccess('157.159.68.64',tcp,8000),networkServiceInfo('157.159.68.64',windows_server_2016,tcp,8000,andrew),vulExists('157.159.68.64','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.115',andrew),[netAccess('157.159.68.115',tcp,9000),networkServiceInfo('157.159.68.115',windows_server_2016,tcp,9000,andrew),vulExists('157.159.68.115','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.64',andrew),[netAccess('157.159.68.64',tcp,8000),networkServiceInfo('157.159.68.64',windows_server_2016,tcp,8000,andrew),vulExists('157.159.68.64','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.115',andrew),[netAccess('157.159.68.115',tcp,9000),networkServiceInfo('157.159.68.115',windows_server_2016,tcp,9000,andrew),vulExists('157.159.68.115','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
-
-possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.115',andrew),[netAccess('157.159.68.115',tcp,9000),networkServiceInfo('157.159.68.115',windows_server_2016,tcp,9000,andrew),vulExists('157.159.68.115','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.64',andrew),[netAccess('157.159.68.64',tcp,8000),networkServiceInfo('157.159.68.64',windows_server_2016,tcp,8000,andrew),vulExists('157.159.68.64','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
 

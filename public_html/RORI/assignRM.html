@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <title>Assign RM to a Mitigation Action</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <h3>Assign Risk Mitigation Value to a Mitigation Action</h3>
+    <div class="col-10 row">
+        <div style="margin-bottom: 1%;">
+            <input type="image" src="icons/Delete-medium.png" title="Remove RM" alt="Remove RM" class="crudButton"
+                onclick="removeRM()">
+        </div>
+
+        <div class="col-5 row">
+            <fieldset>
+                <form onsubmit="assignRM(); return false;" class="assignForm">
+                    <label for="ef">
+                        Effectiveness Factor (EF) (%) <input type="number" id="ef" name="Effectiveness Factor"
+                            step="0.01" min="0" max="100" value="0.00" oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <label for="cov">
+                        Coverage (COV) (%) <input type="number" id="cov" name="Coverage" step="0.01" min="0" max="100"
+                            value="0.00" oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <fieldset>
+                        <legend>Give the total value</legend>
+                        <label for="giveTotal">
+                            OK <input type="checkbox" id="giveTotal" name="Total?" onclick="toggleTotal()">
+                        </label>
+                        <p></p>
+                        <label for="totalValue">
+                            Total (%) <input type="number" id="totalValue" name="Total" step="0.01" value="0.00"
+                                max="100" disabled>
+                        </label>
+                    </fieldset>
+                    <p></p>
+                    <button type="submit">Assign</button>
+                    <button type="button" onclick="goBack()">Cancel</button>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</body>
+
+<script src="scripts/functions.js"></script>
+<script src="scripts/assignRMScript.js"></script>
+
+</html>

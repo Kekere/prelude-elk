@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <title>Mitigation Actions</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/formStyle.css">
+</head>
+
+<body onunload="">
+    <h3>Mitigation Actions</h3>
+    <div class="col-6 row">
+        <input type="image" src="icons/Add-medium.png" title="Add Mitigation Action" alt="Add Mitigation Action"
+            class="crudButton" onclick="openAddCountermeasureForm()">
+        <input type="image" src="icons/Edit-medium.png" title="Edit Mitigation Action" alt="Edit Mitigation Action"
+            class="crudButton" onclick="openEditCountermeasureForm()">
+        <input type="image" src="icons/Delete-medium.png" title="Delete Mitigation Action"
+            alt="Delete Mitigation Action" class="crudButton" style="margin-right: 1%;"
+            onclick="openDeleteCountermeasureForm()">
+        <input type="image" src="icons/colorful_chart-medium.png"
+            title="Assign a Risk Mitigation Value to a Mitigation Action"
+            alt="Assign a Risk Mitigation Value to a Mitigation Action" class="crudButton" onclick="assignRM()">
+        <input type="image" src="icons/cost-medium.png" title="Assign an Annual Response Cost to a Mitigation Action"
+            alt="Assign an Annual Response Cost to a Mitigation Action" class="crudButton" onclick="assignARC()">
+        <input type="image" src="icons/restriction-medium.png" title="Assign Restrictions to a Mitigation Action"
+            alt="Assign Restrictions to a Mitigation Action" class="crudButton" onclick="assignRestrictions()">
+    </div>
+    
+    <div class="col-10 row">
+        <table class="list" style="text-align: left; margin-left: 1%;" aria-label="List of all mitigation actions">
+            <colgroup>
+                <col style="width: 15%;">
+                <col style="width: 40%;">
+                <col style="width: 12.5%;">
+                <col style="width: 12.5%;">
+                <col style="width: 30%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">RM (%)</th>
+                    <th scope="col">ARC</th>
+                    <th scope="col">Restrictions</th>
+                </tr>
+            </thead>
+            <tbody id="countermeasuresTable" style="cursor: pointer;">
+            </tbody>
+        </table>
+    </div>
+    <div class="col-6 row">
+        <button type="button" onclick="goBack()">Back</button>
+    </div>
+
+    <dialog id="addModal" class="modal">
+        <div class="modal-content container">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <form onsubmit="addCountermeasure(this)" method="dialog">
+                <h4>Add Mitigation Action</h4>
+                <label for="addName">
+                    Name: <input type="text" id="addName" name="countermeasureName" required>
+                </label>
+                <p></p>
+                <label for="addDescription">
+                    Description: <textarea type="text" id="addDescription" name="countermeasureDescription" rows="6"
+                        style="resize: none;"></textarea>
+                </label>
+                <p></p>
+                <label for="addTotallyRestrictive">Totally Restrictive</label>
+                <select id="addTotallyRestrictive" name="countermeasureTotallyRestrictive" required>
+                    <option value="yes">Yes</option>
+                    <option value="no" selected>No</option>
+                </select>
+                <p></p>
+                <button type="submit" style="margin-right: 1%;">Save Mitigation Action</button>
+                <button type="button" onclick="closeDialog()">Cancel</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="editModal" class="modal">
+        <div class="modal-content container">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <form onsubmit="editCountermeasure(this)" method="dialog">
+                <h4>Edit Aitigation Action</h4>
+                <label for="editName">
+                    Name: <input type="text" id="editName" name="countermeasureName" required>
+                </label>
+                <p></p>
+                <label for="editDescription">
+                    Description: <textarea type="text" id="editDescription" name="countermeasureDescription" rows="6"
+                        style="resize: none;"></textarea>
+                </label>
+                <p></p>
+                <label for="editTotallyRestrictive">Totally Restrictive: </label>
+                <select id="editTotallyRestrictive" name="countermeasureTotallyRestrictive" required>
+                    <option value="yes">Yes</option>
+                    <option value="no" selected>No</option>
+                </select>
+                <p></p>
+                <button type="submit" style="margin-right: 1%;">Update Mitigation Action</button>
+                <button type="button" onclick="closeDialog()">Cancel</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="deleteModal" class="modal">
+        <div class="modal-content container">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <form onsubmit="deleteCountermeasure(this)" method="dialog">
+                <p id="deleteName"></p>
+                <button type="submit" style="margin-right: 1%;">Ok</button>
+                <button type="button" onclick="closeDialog()">Cancel</button>
+            </form>
+        </div>
+    </dialog>
+</body>
+
+<script src="scripts/functions.js"></script>
+<script src="scripts/mitigationActionScript.js"></script>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Return On Response Investment Evaluation Tool">
+    <title>RORI Tool</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <h3 style="text-align: center;">RORI Engine</h3>
+    <div class="mainDiv row">
+        <table style="width: 100%" aria-label="To group images in a nice way">
+            <colgroup>
+                <col style="width: 33%;">
+                <col style="width: 33%;">
+                <col style="width: 33%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>
+                        <a id="organizationLink" href="organization.html">
+                            <img src="icons/Organization.png" alt="Organization" class="homepageIcon">
+                        </a>
+                    </td>
+                    <td>
+                        <a id="PEPsLink" href="PEPs.html">
+                            <img src="icons/Equipment.png" alt="Equipment" class="homepageIcon">
+                        </a>
+                    </td>
+                    <td>
+                        <a id="detrimentalEventLink" href="detrimentalEvent.html">
+                            <img src="icons/Incident.png" alt="Incident" class="homepageIcon">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Organizations</p>
+                    </td>
+                    <td>
+                        <p>PEPs</p>
+                    </td>
+                    <td>
+                        <p>Detrimental Events</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a id="mitigationActionLink" href="mitigationAction.html">
+                            <img src="icons/Countermeasure.png" alt="Countermeasure" class="homepageIcon">
+                        </a>
+                    </td>
+                    <td>
+                        <a id="calculationLink" href="calculation.html">
+                            <img src="icons/Calculation.png" alt="RORI Calculation" class="homepageIcon">
+                        </a>
+                    </td>
+                    <td>
+                        <a id="graphicalRepresentationLink" href="graphicalRepresentation.html">
+                            <img src="icons/GraphicRepresentation.png" alt="Graphical Representation"
+                                class="homepageIcon">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Mitigation Actions</p>
+                    </td>
+                    <td>
+                        <p>RORI Calculation</p>
+                    </td>
+                    <td>
+                        <p>Graphical Representation</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <label id="xmlExists"></label>
+            <input id="xmlFile" type="file" accept=".xml" onchange="saveXmlAsJsonString(this)"
+                placeholder="Upload XML File">
+        </div>
+        <div style="margin-top: 15px;">
+            <button type="button" onclick="saveToXML()">Save current changes</button>
+        </div>
+    </div>
+</body>
+
+<script src="scripts/functions.js"></script>
+<script src="scripts/fast-xml-parser/parser.min.js"></script>
+<script src="scripts/indexScript.js"></script>
+<script src="scripts/FileSaver.js"></script>
+</html>

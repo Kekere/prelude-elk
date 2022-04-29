@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <title>PEPs</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/formStyle.css">
+</head>
+
+<body onunload="">
+    <h3>PEPs</h3>
+    <div class="col-6 row">
+        <input type="image" src="icons/Add-medium.png" title="Add PEP" alt="Add PEP" class="crudButton"
+            onclick="openAddEquipmentForm()">
+        <input type="image" src="icons/Edit-medium.png" title="Edit PEP" alt="Edit PEP" class="crudButton"
+            onclick="openEditEquipmentForm()">
+        <input type="image" src="icons/Delete-medium.png" title="Delete PEP" alt="Delete PEP" class="crudButton"
+            style="margin-right: 1%;" onclick="openDeleteEquipmentForm()">
+        <input type="image" src="icons/Equipment-Countermeasure-medium.png" title="Assign Mitigation Action To a PEP"
+            alt="Assign Mitigation Action" class="crudButton" onclick="assignMitigationActionToPEP()">
+    </div>
+    
+    <div class="col-8 row">
+        <table class="list" style="text-align: left; margin-left: 1%;" aria-label="List of all the PEPs">
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 30%;">
+                <col style="width: 50%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Assigned Mitigation Action</th>
+                </tr>
+            </thead>
+            <tbody id="equipmentTable" style="cursor: pointer;">
+            </tbody>
+        </table>
+    </div>
+    <div class="col-6 row">
+        <button type="button" onclick="goBack()">Back</button>
+    </div>
+
+    <dialog id="addModal" class="modal">
+        <div class="modal-content container">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <form onsubmit="addEquipment(this)" method="dialog">
+                <p>Add PEP</p>
+                <label for="addName">
+                    Name: <input type="text" id="addName" name="equipmentName" required>
+                </label>
+                <p></p>
+                <label for="addType">
+                    Type: <input type="text" id="addType" name="equipmentType" required>
+                </label>
+                <p></p>
+                <button type="submit" style="margin-right: 1%;">Save PEP</button>
+                <button type="button" onclick="closeDialog()">Cancel</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="editModal" class="modal">
+        <div class="modal-content container">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <form onsubmit="editEquipment(this)" method="dialog">
+                <p>Edit PEP</p>
+                <label for="editName">
+                    Name: <input type="text" id="editName" name="equipmentName" required>
+                </label>
+                <p></p>
+                <label for="editType">
+                    Type: <input type="text" id="editType" name="equipmentType" required>
+                </label>
+                <p></p>
+                <button type="submit" style="margin-right: 1%;">Update PEP</button>
+                <button type="button" onclick="closeDialog()">Cancel</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="deleteModal" class="modal">
+        <div class="modal-content container">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <form onsubmit="deleteEquipment(this)" method="dialog">
+                <p id="deleteName"></p>
+                <button type="submit" style="margin-right: 1%;">Ok</button>
+                <button type="button" onclick="closeDialog()">Cancel</button>
+            </form>
+        </div>
+    </dialog>
+</body>
+
+<script src="scripts/functions.js"></script>
+<script src="scripts/equipmentScript.js"></script>
+
+</html>

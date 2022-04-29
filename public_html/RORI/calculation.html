@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <title>RORI Calculation</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <h3>Return On Response Investment Calculation</h3>
+    <div class="col-6 row">
+        <p>Organizations</p>
+        <p>Select Organization</p>
+        <select id="organizationsList" name="organizationsList" title="Organizations List"
+            onchange="getDetrimentalEvents(this)"></select>
+    </div>
+    <div style="display: flex;" class="col-11 row">
+        <div style="flex: 1;">
+            <strong>Detrimental Events:</strong>
+            <table class="list" style="text-align: left; margin-top: 10px;"
+                aria-label="Detrimental events of the selected orgnaniation">
+                <thead>
+                    <th scope=" col">Name</th>
+                </thead>
+                <tbody id="detrimentalEventsTable" style="cursor: pointer;">
+                </tbody>
+            </table>
+        </div>
+        <div style="flex: 2;">
+            <strong>Mitigation Actions:</strong>
+            <table class="list" style="text-align: left; margin-top: 10px;"
+                aria-label="Countermeasures associated to the selected incident">
+                <thead>
+                    <th scope="col">Name</th>
+                </thead>
+                <tbody id="mitigationActionsTable" style="cursor: pointer;">
+                </tbody>
+            </table>
+        </div>
+        <div id="roriDiv" style="flex: 3;" class="hidden">
+            <h3 style="margin-block-start: 0;">
+                RORI Evaluation for:
+            </h3>
+            <h4 id="individualRoriHeader"></h4>
+            <table class="list" style="text-align: left;" aria-label="Individual RORI">
+                <colgroup>
+                    <col style="width: 10%;">
+                    <col style="width: 40%;">
+                    <col style="width: 30%;">
+                    <col style="width: 20%;">
+                </colgroup>
+                <thead>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">PEP</th>
+                    <th scope="col">RORI</th>
+                </thead>
+                <tbody id="individualRoriTable"></tbody>
+            </table>
+            <h4 id="combinationError" class="hidden"></h4>
+            <h4>RORI Combined Mitigation Action Evaluation</h4>
+            <table class="list" style="text-align: left;" aria-label="Combined RORI">
+                <colgroup>
+                    <col style="width: 20%;">
+                    <col style="width: 20%;">
+                    <col style="width: 20%;">
+                    <col style="width: 20%;">
+                    <col style="width: 20%;">
+                </colgroup>
+                <thead>
+                    <th scope="col">Combinations</th>
+                    <th scope="col">ARC</th>
+                    <th scope="col">COV</th>
+                    <th scope="col">EF</th>
+                    <th scope="col">RM</th>
+                    <th scope="col">RORI Index</th>
+                </thead>
+                <tbody id="combinedRoriTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-6 row">
+        <button id="roriButton" type="button" onclick="performRoriCalculation()" disabled>Perform RORI
+            Evaluation</button>
+    </div>
+    <div class="col-6 row">
+        <button type="button" onclick="goBack()">Back</button>
+    </div>
+</body>
+
+<script src="scripts/functions.js"></script>
+<script src="scripts/calculationScript.js"></script>
+
+</html>

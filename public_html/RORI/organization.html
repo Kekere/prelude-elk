@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <title>Organizations</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/formStyle.css">
+</head>
+
+<body onunload="">
+    <h3>Organizations</h3>
+    <div class="col-6 row">
+        <input type="image" src="icons/Add-medium.png" title="Add Organization" alt="Add Organization"
+            class="crudButton" onclick="openAddOrganizationForm()">
+        <input type="image" src="icons/Edit-medium.png" title="Edit Organization" alt="Edit Organization"
+            class="crudButton" onclick="openEditOrganizationForm()">
+        <input type="image" src="icons/Delete-medium.png" title="Delete Organization" alt="Delete Organization"
+            class="crudButton" style="margin-right: 1%;" onclick="openDeleteOrganizationForm()">
+        <input type="image" src="icons/Organization-Equipment-medium.png" title="Assign PEPs to an Organization"
+            alt="Assign PEPs" class="crudButton" onclick="assignEquipment()">
+        <input type="image" src="icons/Organization-Incident-medium.png"
+            title="Assign Detrimental Events to an Organization" alt="Assign Detrimental Events" class="crudButton"
+            onclick="assignIncident()">
+    </div>
+    
+    <div class="col-8 row">
+        <table class="list" style="text-align: left; margin-left: 1%;" aria-label="List of all the organizations">
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 60%;">
+                <col style="width: 20%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">AIV</th>
+                </tr>
+            </thead>
+            <tbody id="organizationsTable" style="cursor: pointer;">
+            </tbody>
+        </table>
+    </div>
+    <div class="col-6 row">
+        <button type="button" onclick="goBack()">Back</button>
+    </div>
+
+    <dialog id="addModal" class="modal">
+        <div class="modal-content container">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <form onsubmit="addOrganization(this)" method="dialog">
+                <h4>Add organization</h4>
+                <label for="addName">
+                    Name: <input type="text" id="addName" name="organizationName" required>
+                </label>
+                <p></p>
+                <label for="addDescription">
+                    Description: <textarea type="text" id="addDescription" name="organizationDescription" rows="6"
+                        style="resize: none;"></textarea>
+                </label>
+                <p></p>
+                <button type="submit" style="margin-right: 1%;">Save Organization</button>
+                <button type="button" onclick="closeDialog()">Cancel</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="editModal" class="modal">
+        <div class="modal-content container">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <form onsubmit="editOrganization(this)" method="dialog">
+                <h4>Edit organization</h4>
+                <label for="editName">
+                    Name: <input type="text" id="editName" name="organizationName" required>
+                </label>
+                <p></p>
+                <label for="editDescription">
+                    Description: <textarea type="text" id="editDescription" name="organizationDescription" rows="6"
+                        style="resize: none;"></textarea>
+                </label>
+                <p></p>
+                <button type="submit" style="margin-right: 1%;">Update Organization</button>
+                <button type="button" onclick="closeDialog()">Cancel</button>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="deleteModal" class="modal">
+        <div class="modal-content container">
+            <span class="close" onclick="closeDialog()">&times;</span>
+            <form onsubmit="deleteOrganization(this)" method="dialog">
+                <p id="deleteName"></p>
+                <button type="submit" style="margin-right: 1%;">Ok</button>
+                <button type="button" onclick="closeDialog()">Cancel</button>
+            </form>
+        </div>
+    </dialog>
+
+</body>
+
+<script src="scripts/functions.js"></script>
+<script src="scripts/organizationScript.js"></script>
+
+</html>

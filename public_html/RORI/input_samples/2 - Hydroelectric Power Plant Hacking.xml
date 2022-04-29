@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RORI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ORGANIZATIONS>
+	   <organization id="1" name="Naples Telecom" description="Telecommunication Entreprise based in Naples (Italy) operating in the field of Information and Communication Technology" id_equipments="1, 2, 3, 4, 5, 6" xpath="xpath" />
+	</ORGANIZATIONS>
+
+	<EQUIPMENTS>
+	   <equipment id="1" name="PEP.2" type="Sensor Tamper Resistance" AEV="1000" xpath="xpath" />
+	   <equipment id="2" name="PEP.4" type="IDS-IPS" AEV="2500" xpath="xpath" />
+	   <equipment id="3" name="PEP.5" type="Firewall" AEV="2000" xpath="xpath" />
+	   <equipment id="4" name="PEP.7" type="Access Control Mechanisms" AEV="1500" xpath="xpath" />
+	   <equipment id="5" name="PEP.8" type="System Behaviour Monitoring" AEV="1200" xpath="xpath" />
+	   <equipment id="6" name="PEP.9" type="Communication Protocol" AEV="500" xpath="xpath" />
+	</EQUIPMENTS>
+
+	<COUNTERMEASURES>
+	   <countermeasure id="1" name="Do Nothing" description="This Solution considers to accept the risk and does not require any modifications" totally_restrictive="yes" restriction="" id_equipment="" id_rm="1" id_arc="1" xpath="xpath" />
+
+	   <countermeasure id="2" name="Received Signal Strength" description="Depending on the position of the attacker, this alternative can be useful to indicate an abnormal behaviour on the system" totally_restrictive="no" restriction="1,5" id_equipment="5" id_rm="2" id_arc="2" xpath="xpath" />
+           <countermeasure id="3" name="Sensor Tamper Resistance" description="Activate tamper resistance on each sensor improves effectiveness to prevent hydroelectric power plant hacking attacks" totally_restrictive="no" restriction="1,5" id_equipment="1" id_rm="3" id_arc="3" xpath="xpath" />	   
+
+           <countermeasure id="4" name="Activate Protocol Analysis on the Firewall" description="Analyse the packets that go in/out the network, verify if the parameters are correct according to specific protocol norms, and stop them if they are classified as suspicious" totally_restrictive="no" restriction="1,5" id_equipment="3" id_rm="4" id_arc="4" xpath="xpath" />
+
+	   <countermeasure id="5" name="Activate Block-all Options" description="Block all unknown requests if the application is closed" totally_restrictive="yes" restriction="" id_equipment="3" id_rm="5" id_arc="5" xpath="xpath" />
+	   
+	   <countermeasure id="6" name="Activate Back-up Sensors" description="Switch 'off' current sensors and switch 'on' back-up sensors" totally_restrictive="no" restriction="1,5" id_equipment="2" id_rm="6" id_arc="6" xpath="xpath" />
+	</COUNTERMEASURES>
+
+	<RISK_MITIGATION>
+	   <rm id="1" EF="0.00" COV="0.00" RM="" xpath="xpath" />
+	   <rm id="2" EF="0.75" COV="0.40" RM="" xpath="xpath" />
+	   <rm id="3" EF="0.70" COV="0.75" RM="" xpath="xpath" />
+	   <rm id="4" EF="0.85" COV="0.75" RM="" xpath="xpath" />
+	   <rm id="5" EF="0.80" COV="0.80" RM="" xpath="xpath" />
+	   <rm id="6" EF="0.90" COV="0.70" RM="" xpath="xpath" />
+	</RISK_MITIGATION>
+
+	<ANNUAL_RESPONSE_COST>
+	   <arc id="1" COM="" COI="" ODC="" IC="" total="0" xpath="xpath" />
+	   <arc id="2" COM="" COI="" ODC="" IC="" total="500" xpath="xpath" />
+	   <arc id="3" COM="" COI="" ODC="" IC="" total="200" xpath="xpath" />
+	   <arc id="4" COM="" COI="" ODC="" IC="" total="200" xpath="xpath" />
+	   <arc id="5" COM="" COI="" ODC="" IC="" total="300" xpath="xpath" />
+	   <arc id="6" COM="" COI="" ODC="" IC="" total="400" xpath="xpath" />
+	</ANNUAL_RESPONSE_COST>
+
+	<INCIDENTS>
+           <incident id="1" name="Hydroelectric Power Plant Hacking Attack" description="An attacker may intercept and hide the request to the dam control station (using for instance a man-in-the-middle attack to counterfeit and/or delete the request messages). As a result, the dam gates remain open and continue to feed the hydroelectric turbines with water, causing their failure." risk_level="Low" id_countermeasure="1, 2, 3, 4, 5, 6" id_organization="1" id_ale="1" />
+	</INCIDENTS>
+
+	<ANNUAL_LOSS_EXPECTANCY>
+	  <ale id="1" LA="" LD="" LR="" LP="" LREC="" LRPC="" OL="" CI="" ARO="" total="50000" />
+	</ANNUAL_LOSS_EXPECTANCY>
+</RORI>
+

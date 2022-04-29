@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <title>Assign Mitigation Actions to a Detrimental Event</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <h3>Assign Mitigation Actions to a Detrimental Event</h3>
+    <div class="col-10 row">
+        <div style="margin-bottom: 1%;">
+            <input type="image" src="icons/Delete-medium.png" title="Remove Mitigation Action"
+                alt="Remove Mitigation Action" class="crudButton" onclick="removeCountermeasure()">
+        </div>
+
+        <div class="col-8 row">
+            <fieldset>
+                <legend>Mitigation Actions</legend>
+                <table style="text-align: left;" aria-label="Available Mitigation Actions">
+                    <colgroup>
+                        <col style="width: 40%;">
+                        <col style="width: 60%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="availableCountermeasures" style="cursor: pointer;">
+                    </tbody>
+                </table>
+            </fieldset>
+            <p></p>
+            <fieldset>
+                <legend>Mitigation Actions associated to the Detrimental Event</legend>
+                <table style="text-align: left;" aria-label="Mitigation Actions of the selected Detrimental Event">
+                    <colgroup>
+                        <col style="width: 40%;">
+                        <col style="width: 60%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="assignedCountermeasures" style="cursor: pointer;">
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+    </div>
+    <br>
+    <div style="margin-left: 3%;">
+        <button type="button" onclick="assignCountermeasure()" style="margin-right: 5px;">Assign</button>
+        <button type="button" onclick="goBack()">Back</button>
+    </div>
+</body>
+
+<script src="scripts/functions.js"></script>
+<script src="scripts/assignMitigationActionToIncidentScript.js"></script>
+
+</html>

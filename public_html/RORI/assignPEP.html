@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <title>Assign PEP to an Organization</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <h3>Assign PEP to an Organization</h3>
+    <div class="col-10 row">
+        <div style="margin-bottom: 1%;">
+            <input type="image" src="icons/Delete-medium.png" title="Remove PEP" alt="Remove PEP" class="crudButton"
+                onclick="removePEP()">
+        </div>
+
+        <div class="leftSide" style="width: 45%;">
+            <fieldset>
+                <legend>PEPs</legend>
+                <table style="text-align: left;" aria-label="Availabe PEPs">
+                    <colgroup>
+                        <col style="width: 40%;">
+                        <col style="width: 60%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                        </tr>
+                    </thead>
+                    <tbody id="availableEquipment" style="cursor: pointer;">
+                    </tbody>
+                </table>
+            </fieldset>
+            <p></p>
+            <fieldset>
+                <legend>PEPs of the Organization</legend>
+                <table style="text-align: left;" aria-label="PEPs of the selected organization">
+                    <colgroup>
+                        <col style="width: 40%;">
+                        <col style="width: 60%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                        </tr>
+                    </thead>
+                    <tbody id="assignedEquipment" style="cursor: pointer;">
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+
+        <div class="rightSide" style="width: 45%;">
+            <fieldset>
+                <legend>Annual PEP Value (AEV)</legend>
+                <form id="aevForm" onsubmit="assignPEP(); return false;" class="assignForm">
+                    <label for="ec">
+                        PEP Cost (EC) <input type="number" id="ec" name="PEP Cost" step="0.01" min="0" value="0.00"
+                            oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <label for="ld">
+                        Service Cost (SC) <input type="number" id="sc" name="Service Cost" step="0.01" min="0"
+                            value="0.00" oninput="changeTotal()"">
+                    </label>
+                    <p></p>
+                    <label for=" pc">
+                        Personal Cost (PC) <input type="number" id="pc" name="Personal Cost" step="0.01" min="0"
+                            value="0.00" oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <label for="rv">
+                        Resell Cost (RV) <input type="number" id="rv" name="Resell Cost" step="0.01" min="0"
+                            value="0.00" oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <label for="oc">
+                        Other Costs (OC) <input type="number" id="oc" name="Other Costs" step="0.01" min="0"
+                            value="0.00" oninput="changeTotal()">
+                    </label>
+                    <p></p>
+                    <label for="nop">
+                        Number of PEPs <input type="number" id="nop" name="Number of PEPs" step="1" min="0" value="0"
+                            oninput="changeTotal()">
+                    </label>
+                    <p></p>
+
+                    <fieldset>
+                        <legend>Give the total value</legend>
+                        <label for="giveTotal">
+                            OK <input type="checkbox" id="giveTotal" name="Total?" onclick="toggleTotal()">
+                        </label>
+                        <p></p>
+                        <label for="totalValue">
+                            Total <input type="number" id="totalValue" name="Total" step="0.01" step="0.01" value="0.00"
+                                disabled>
+                        </label>
+                    </fieldset>
+                    <p></p>
+                    <button type="submit">Assign</button>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+    <br>
+    <div>
+        <button type="button" onclick="goBack()">Back</button>
+    </div>
+</body>
+
+<script src="scripts/functions.js"></script>
+<script src="scripts/assignPEPScript.js"></script>
+
+</html>
