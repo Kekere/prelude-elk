@@ -197,6 +197,7 @@ $ sudo apt-get install libnet1-dev libyaml-dev
 $ wget https://www.openinfosecfoundation.org/downloads/suricata-5.0.7.tar.gz
 
 # you can download suricata here in mega: https://mega.nz/folder/pjQT3C6J#mBIEYh96bNCyLnXRdmcKrQ
+
 $ tar -zxvf suricata-5.0.7.tar.gz
 
 $ cd suricata-5.0.7/
