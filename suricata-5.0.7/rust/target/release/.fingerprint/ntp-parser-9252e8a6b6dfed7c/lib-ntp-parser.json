@@ -1,0 +1,1 @@
+{"rustc":16470491117271997032,"features":"[]","target":1616621651957475575,"profile":13880564817354787372,"path":17808162222372934791,"deps":[[17626689875996004399,"nom",false,4835960190349723062]],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/ntp-parser-9252e8a6b6dfed7c/dep-lib-ntp-parser"}}],"rustflags":[],"metadata":8072661836226351254,"config":0}

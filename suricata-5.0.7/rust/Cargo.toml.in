@@ -1,0 +1,35 @@
+[package]
+name = "suricata"
+version = "@PACKAGE_VERSION@"
+
+[lib]
+crate-type = ["staticlib"]
+path = "@e_rustdir@/src/lib.rs"
+
+[profile.release]
+debug = true
+
+[features]
+lua = []
+lua_int8 = ["lua"]
+strict = []
+debug = []
+
+[dependencies]
+nom = "~4.2.3"
+bitflags = "~1.0.4"
+byteorder = "~1.3.4"
+crc = "~1.8.1"
+memchr = "~2.2.1"
+num = "~0.2.1"
+num-derive = "~0.2.5"
+num-traits = "~0.2.14"
+widestring = "~0.4.3"
+
+der-parser = "~1.1.1"
+kerberos-parser = "~0.2.0"
+ntp-parser = "~0.3.0"
+ipsec-parser = "~0.4.1"
+snmp-parser = "~0.3.0"
+tls-parser = "~0.8.1"
+x509-parser = "~0.4.3"
