@@ -28,9 +28,13 @@ LABEL maintainer="egidio.docile@linuxconfig.org"
 
 COPY apache/XSB/ /home/XSB/
 COPY apache/mulval/ /home/mulval/
+COPY confluent/kafka/ /var/www/html/confluent/kafka/
 RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone
 RUN apt-get update && apt-get -y upgrade && apt-get -y install sudo && sudo adduser keren && su keren && apt-get -y install g++ \
    && apt-get -y install curl \
+   && apt-get -y install python \
+   && apt-get -y install pip \
+   && pip install confluent-kafka \
    && apt-get -y install php-curl \
    && apt-get -y install make \
    && apt-get -y install nano \

@@ -7,7 +7,7 @@
 
 :-load_dyn('running_rules.P').
 
-:-load_dyn('uploads/inputc.P').
+:-load_dyn('uploads/h2v1s5.P').
 
 :-assert(traceMode(completeTrace2)).
 

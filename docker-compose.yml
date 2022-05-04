@@ -19,7 +19,7 @@ services:
       dockerfile: apache/Dockerfile
       args:
        APACHE_VERSION: ${APACHE_VERSION}
-  
+
     networks:
       frontend:
       backend:
@@ -30,6 +30,7 @@ services:
     volumes:
       - ./public_html/:/var/www/html/
     container_name: apache
+
   injector:
     image: "logstash:7.9.2"
     depends_on:
