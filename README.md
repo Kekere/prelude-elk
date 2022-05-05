@@ -215,7 +215,7 @@ To install suricata with prelude execute these following commands:
 $ sudo ./configure --enable-prelude --with-libprelude-prefix=/usr CC="gcc -std=gnu99"
 
 $ sudo make
-$ make install-full
+$ sudo make install-full
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Edit /usr/local/etc/suricata/suricata.yaml file to enable Prelude alerting:
