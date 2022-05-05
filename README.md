@@ -233,8 +233,8 @@ Edit /usr/local/etc/suricata/suricata.yaml file to enable Prelude alerting:
 To connect the agent with Prelude execute these following commands:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ sudo prelude-admin register suricata "idmef:w admin:r" 0.0.0.0:5553 --uid 0 --gid 0 # The password is prelude
-$sudo ip link set eno1 promisc on
-$ sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i eth0
+$ sudo ip link set eno1 promisc on
+$ sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i eno1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Developer mode
