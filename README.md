@@ -185,11 +185,11 @@ Execute these following commands to install dependencies:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ sudo apt update
 $ sudo apt-get install gcc
-$ sudo apt-get install -y mysql-server
+$ sudo apt-get install -y mysql-server # The password is prelude
 $ sudo apt-get install -y gnutls-bin 
 $ sudo apt-get install libpcre3 libpcre3-dev 
 $ sudo apt-get install libprelude-dev
-$ sudo apt-get install prelude-manager
+$ sudo apt-get install prelude-manager #The name of the user database is prelude and the password is also prelude 
 $ sudo apt-get install libjansson-dev
 $ sudo apt-get install rustc cargo
 $ sudo apt-get install libtool libpcap-dev
@@ -232,7 +232,7 @@ Edit /usr/local/etc/suricata/suricata.yaml file to enable Prelude alerting:
 
 To connect the agent with Prelude execute these following commands:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-$ sudo prelude-admin register suricata "idmef:w admin:r" 0.0.0.0:5553 --uid 0 --gid 0
+$ sudo prelude-admin register suricata "idmef:w admin:r" 0.0.0.0:5553 --uid 0 --gid 0 # The password is prelude
 
 $ sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i eth0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
