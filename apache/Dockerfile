@@ -28,7 +28,7 @@ LABEL maintainer="egidio.docile@linuxconfig.org"
 
 COPY apache/XSB/ /home/XSB/
 COPY apache/mulval/ /home/mulval/
-COPY confluent/kafka/ /var/www/html/confluent/kafka/
+COPY confluent/ /var/www/html/confluent/
 RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone
 RUN apt-get update && apt-get -y upgrade && apt-get -y install sudo && sudo adduser keren && su keren && apt-get -y install g++ \
    && apt-get -y install curl \
