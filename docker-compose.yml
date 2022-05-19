@@ -29,6 +29,7 @@ services:
       - "8082:8082"
     volumes:
       - ./public_html/:/var/www/html/
+      - ./confluent/:/var/www/html/confluent/
     container_name: apache
 
   injector:

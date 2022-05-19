@@ -3,7 +3,7 @@ from kafka import TopicPartition
 import time
 
 try:
-    consumer = KafkaConsumer('ctm',group_id='ctm',bootstrap_servers=['impetus.simavi.ro:9093'],
+    consumer = KafkaConsumer('ctm',bootstrap_servers=['impetus.simavi.ro:9093'],
       security_protocol='SASL_SSL',
       #ssl_check_hostname=True,
       ssl_cafile='/var/www/html/confluent/kafka/config/ca.crt',
