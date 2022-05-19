@@ -8,49 +8,67 @@
     <title>Organizations</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/formStyle.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
 </head>
 
 <body onunload="">
-    <h3>Organizations</h3>
-    <div class="col-6 row">
-        <input type="image" src="icons/Add-medium.png" title="Add Organization" alt="Add Organization"
-            class="crudButton" onclick="openAddOrganizationForm()">
-        <input type="image" src="icons/Edit-medium.png" title="Edit Organization" alt="Edit Organization"
-            class="crudButton" onclick="openEditOrganizationForm()">
-        <input type="image" src="icons/Delete-medium.png" title="Delete Organization" alt="Delete Organization"
-            class="crudButton" style="margin-right: 1%;" onclick="openDeleteOrganizationForm()">
-        <input type="image" src="icons/Organization-Equipment-medium.png" title="Assign PEPs to an Organization"
-            alt="Assign PEPs" class="crudButton" onclick="assignEquipment()">
-        <input type="image" src="icons/Organization-Incident-medium.png"
-            title="Assign Detrimental Events to an Organization" alt="Assign Detrimental Events" class="crudButton"
-            onclick="assignIncident()">
-    </div>
-    
-    <div class="col-8 row">
-        <table class="list" style="text-align: left; margin-left: 1%;" aria-label="List of all the organizations">
-            <colgroup>
-                <col style="width: 20%;">
-                <col style="width: 60%;">
-                <col style="width: 20%;">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">AIV</th>
-                </tr>
-            </thead>
-            <tbody id="organizationsTable" style="cursor: pointer;">
-            </tbody>
-        </table>
-    </div>
-    <div class="col-6 row">
-        <button type="button" onclick="goBack()">Back</button>
+    <div class="d-flex flex-column justify-content-sm-start" style="margin-bottom: 7vh;">
+        <div class="p-3">
+            <h2>Organizations</h2>
+        </div>
+        <div class="d-flex flex-row flex-wrap p-3">
+            <div class="p-1">
+                <input type="image" src="icons/Add-medium.png" title="Add an Organization" alt="Add Organization"
+                    class="crudButton" onclick="openAddOrganizationForm()">
+            </div>
+            <div class="p-1">
+                <input type="image" src="icons/Edit-medium.png" title="Edit an Organization" alt="Edit Organization"
+                    class="crudButton" onclick="openEditOrganizationForm()">
+            </div>
+            <div class="p-1">
+                <input type="image" src="icons/Delete-medium.png" title="Delete an Organization"
+                    alt="Delete Organization" class="crudButton" style="margin-right: 1%;"
+                    onclick="openDeleteOrganizationForm()">
+            </div>
+            <div class="p-1">
+                <input type="image" src="icons/Organization-Equipment-medium.png"
+                    title="Assign a PEP to an Organization" alt="Assign PEP" class="crudButton"
+                    onclick="assignEquipment()">
+            </div>
+            <div class="p-1">
+                <input type="image" src="icons/Organization-Incident-medium.png"
+                    title="Assign a Detrimental Event to an Organization" alt="Assign Detrimental Event"
+                    class="crudButton" onclick="assignIncident()">
+            </div>
+        </div>
+
+        <div class="col-sm-8">
+            <table class="list" style="text-align: left;" aria-label="List of all the organizations">
+                <colgroup>
+                    <col style="width: 20%;">
+                    <col style="width: 60%;">
+                    <col style="width: 20%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">AIV</th>
+                    </tr>
+                </thead>
+                <tbody id="organizationsTable" style="cursor: pointer;">
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <div class="p-3">
+            <button type="button" onclick="goBack()">Back</button>
+        </div>
     </div>
 
     <dialog id="addModal" class="modal">
         <div class="modal-content container">
-            <span class="close" onclick="closeDialog()">&times;</span>
+            <span class="close" onclick="closeDialog()" style="align-self: flex-end;">&times;</span>
             <form onsubmit="addOrganization(this)" method="dialog">
                 <h4>Add organization</h4>
                 <label for="addName">
@@ -70,7 +88,7 @@
 
     <dialog id="editModal" class="modal">
         <div class="modal-content container">
-            <span class="close" onclick="closeDialog()">&times;</span>
+            <span class="close" onclick="closeDialog()" style="align-self: flex-end;">&times;</span>
             <form onsubmit="editOrganization(this)" method="dialog">
                 <h4>Edit organization</h4>
                 <label for="editName">
@@ -90,7 +108,6 @@
 
     <dialog id="deleteModal" class="modal">
         <div class="modal-content container">
-            <span class="close" onclick="closeDialog()">&times;</span>
             <form onsubmit="deleteOrganization(this)" method="dialog">
                 <p id="deleteName"></p>
                 <button type="submit" style="margin-right: 1%;">Ok</button>
@@ -101,6 +118,15 @@
 
 </body>
 
+<script src="scripts/bootstrap/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 <script src="scripts/functions.js"></script>
 <script src="scripts/organizationScript.js"></script>
 

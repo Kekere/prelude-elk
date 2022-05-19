@@ -8,89 +8,80 @@
     <meta name="description" content="Return On Response Investment Evaluation Tool">
     <title>RORI Tool</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
 </head>
 
 <body>
-    <h3 style="text-align: center;">RORI Engine</h3>
-    <div class="mainDiv row">
-        <table style="width: 100%" aria-label="To group images in a nice way">
-            <colgroup>
-                <col style="width: 33%;">
-                <col style="width: 33%;">
-                <col style="width: 33%;">
-            </colgroup>
-            <tbody>
-                <tr>
-                    <td>
-                        <a id="organizationLink" href="organization.html">
-                            <img src="icons/Organization.png" alt="Organization" class="homepageIcon">
-                        </a>
-                    </td>
-                    <td>
-                        <a id="PEPsLink" href="PEPs.html">
-                            <img src="icons/Equipment.png" alt="Equipment" class="homepageIcon">
-                        </a>
-                    </td>
-                    <td>
-                        <a id="detrimentalEventLink" href="detrimentalEvent.html">
-                            <img src="icons/Incident.png" alt="Incident" class="homepageIcon">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>Organizations</p>
-                    </td>
-                    <td>
-                        <p>PEPs</p>
-                    </td>
-                    <td>
-                        <p>Detrimental Events</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a id="mitigationActionLink" href="mitigationAction.html">
-                            <img src="icons/Countermeasure.png" alt="Countermeasure" class="homepageIcon">
-                        </a>
-                    </td>
-                    <td>
-                        <a id="calculationLink" href="calculation.html">
-                            <img src="icons/Calculation.png" alt="RORI Calculation" class="homepageIcon">
-                        </a>
-                    </td>
-                    <td>
-                        <a id="graphicalRepresentationLink" href="graphicalRepresentation.html">
-                            <img src="icons/GraphicRepresentation.png" alt="Graphical Representation"
-                                class="homepageIcon">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>Mitigation Actions</p>
-                    </td>
-                    <td>
-                        <p>RORI Calculation</p>
-                    </td>
-                    <td>
-                        <p>Graphical Representation</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div>
-            <label id="xmlExists"></label>
-            <input id="xmlFile" type="file" accept=".xml" onchange="saveXmlAsJsonString(this)"
-                placeholder="Upload XML File">
+    <div class="d-flex flex-column justify-content-sm-center">
+        <div class="text-center" style="margin-top: 3vh;">
+            <h1 id="myHeader">RORI Engine</h1>
         </div>
-        <div style="margin-top: 15px;">
-            <button type="button" onclick="saveToXML()">Save current changes</button>
+        <div class="d-flex flex-row flex-wrap justify-content-sm-center homepageIconContainer">
+            <div class="p-4 p-4-index text-center">
+                <a id="organizationLink" href="organization.html">
+                    <img src="icons/Organization.png" alt="Organization" class="homepageIcon">
+                </a>
+                <p style="margin-top: 10px;">Organizations</p>
+            </div>
+            <div class="p-4 p-4-index text-center">
+                <a id="PEPsLink" href="PEPs.html">
+                    <img src="icons/Equipment.png" alt="Equipment" class="homepageIcon">
+                </a>
+                <p style="margin-top: 10px;">PEPs</p>
+            </div>
+            <div class="p-4 p-4-index text-center">
+                <a id="detrimentalEventLink" href="detrimentalEvent.html">
+                    <img src="icons/Incident.png" alt="Incident" class="homepageIcon">
+                </a>
+                <p style="margin-top: 10px;">Detrimental<br>Events</p>
+            </div>
+            <div class="p-4 p-4-index text-center">
+                <a id="mitigationActionLink" href="mitigationAction.html">
+                    <img src="icons/Countermeasure.png" alt="Countermeasure" class="homepageIcon">
+                </a>
+                <p style="margin-top: 10px;">Mitigation<br>Actions</p>
+            </div>
+            <div class="p-4 p-4-index text-center">
+                <a id="calculationLink" href="calculation.html">
+                    <img src="icons/Calculation.png" alt="RORI Calculation" class="homepageIcon">
+                </a>
+                <p style="margin-top: 10px;">RORI<br>Calculation</p>
+            </div>
+            <div class="p-4 p-4-index text-center">
+                <a id="graphicalRepresentationLink" href="graphicalRepresentation.html">
+                    <img src="icons/GraphicRepresentation.png" alt="Graphical Representation" class="homepageIcon">
+                </a>
+                <p style="margin-top: 10px;">Graphical<br>Representation</p>
+            </div>
+        </div>
+        <div class="d-flex flex-column text-center justify-content-sm-center">
+            <div class="p-2">
+                <label id="xmlExists"></label>
+                <br>
+                <input id="xmlFile" type="file" accept=".xml" onchange="saveXmlAsJsonString(this)"
+                    placeholder="Upload XML File" style="text-align-last: center;">
+                <p></p>
+                <em>Page will reload after uploading a file.</em>
+            </div>
+            <div class="p-1">
+                <button type="button" onclick="saveToXML()">Save current changes</button>
+            </div>
         </div>
     </div>
 </body>
 
+<script src="scripts/bootstrap/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 <script src="scripts/functions.js"></script>
 <script src="scripts/fast-xml-parser/parser.min.js"></script>
 <script src="scripts/indexScript.js"></script>
 <script src="scripts/FileSaver.js"></script>
+
 </html>

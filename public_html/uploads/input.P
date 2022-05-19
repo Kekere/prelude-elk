@@ -16,8 +16,8 @@ vulProperty(vulID, remoteExploit, privEscalation).
 localFileProtection(fileServer, root, _, _).
 
 /* configuration information of webServer */
-vulExists(webServer, 'CAN-2002-0392', httpd).
-vulProperty('CAN-2002-0392', remoteExploit, privEscalation).
+vulExists(webServer, 'CVE-2017-0148', httpd).
+vulProperty('CVE-2019-0708', remoteExploit, privEscalation).
 networkServiceInfo(webServer , httpd, tcp , 80 , apache).
 
 /* configuration information of workStation */

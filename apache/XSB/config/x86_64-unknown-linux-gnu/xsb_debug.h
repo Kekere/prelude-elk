@@ -1,4 +1,4 @@
-/* /home/keren/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h.  Generated from def_debug.in by configure.  */
+/* /home/keren/prelude-elk/apache/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h.  Generated from def_debug.in by configure.  */
 
 /* Various debug options. They are here rather than in def_config.in to make
    complete recompilation less likely, if the debugging option is requested */

@@ -7,15 +7,15 @@ XSB Version:	   4.0.0
 Code name:	   TaB
 Release date:	   2021-04-01
 Configuration:	   x86_64-unknown-linux-gnu
-Installation date: Fri Jan  7 10:10:58 CET 2022
+Installation date: Mon May 16 14:13:56 CEST 2022
 
-  Build process is looking for XSB sources in:	  /home/keren/XSB
-  XSB should be installed in:			  /home/keren/XSB
-  Configuration-specific executables go in:	  /home/keren/XSB/config/x86_64-unknown-linux-gnu/bin
-  Configuration-specific libraries go in:	  /home/keren/XSB/config/x86_64-unknown-linux-gnu/lib
-  Object code goes in:				  /home/keren/XSB/config/x86_64-unknown-linux-gnu/saved.o
-  Site-specific code goes in:			  /home/keren/XSB/site
-  Site configuration-specific code goes in:	  /home/keren/XSB/site/config/x86_64-unknown-linux-gnu
+  Build process is looking for XSB sources in:	  /home/keren/prelude-elk/apache/XSB
+  XSB should be installed in:			  /home/keren/prelude-elk/apache/XSB
+  Configuration-specific executables go in:	  /home/keren/prelude-elk/apache/XSB/config/x86_64-unknown-linux-gnu/bin
+  Configuration-specific libraries go in:	  /home/keren/prelude-elk/apache/XSB/config/x86_64-unknown-linux-gnu/lib
+  Object code goes in:				  /home/keren/prelude-elk/apache/XSB/config/x86_64-unknown-linux-gnu/saved.o
+  Site-specific code goes in:			  /home/keren/prelude-elk/apache/XSB/site
+  Site configuration-specific code goes in:	  /home/keren/prelude-elk/apache/XSB/site/config/x86_64-unknown-linux-gnu
   XSB will be built with:			  gcc   -O3 -fno-strict-aliasing   -fPIC -Wall -pipe   
   builtin.c will be built with: 		  gcc  -O3 -fno-strict-aliasing   -fPIC -Wall -pipe 
   loader_xsb.c will be built with: 		  gcc  -O3 -fno-strict-aliasing   -fPIC -Wall -pipe 
@@ -51,7 +51,6 @@ Installation date: Fri Jan  7 10:10:58 CET 2022
   Native support for Oracle:			  no
   Support for the old ODBC driver:		  no
 
-  Java compiler:                                  /usr/bin/javac
   Support for InterProlog's native engine:   	  no
   -- JDK may not have been installed or
   -- JAVA_HOME not set. You will still be able
@@ -71,7 +70,7 @@ Installation date: Fri Jan  7 10:10:58 CET 2022
 
 
 
-make[1] : on entre dans le répertoire « /home/keren/XSB/emu »
+make[1] : on entre dans le répertoire « /home/keren/prelude-elk/apache/XSB/emu »
 -e 
 Compiling XSB with gcc using -O3 -fno-strict-aliasing   -fPIC -Wall -pipe   
 
@@ -372,12 +371,11 @@ varstring.c:212:32: note: length computed here
 -e 	[gcc] incr_xsb.c
 -e 	[gcc] call_graph_xsb.c
 
-Making XSB executable /home/keren/XSB/config/x86_64-unknown-linux-gnu/bin/xsb 
+Making XSB executable /home/keren/prelude-elk/apache/XSB/config/x86_64-unknown-linux-gnu/bin/xsb 
 
--e 	[gcc] -o /home/keren/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
-make[1] : on quitte le répertoire « /home/keren/XSB/emu »
-make[1] : on entre dans le répertoire « /home/keren/XSB/gpp »
-
+-e 	[gcc] -o /home/keren/prelude-elk/apache/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
+make[1] : on quitte le répertoire « /home/keren/prelude-elk/apache/XSB/emu »
+make[1] : on entre dans le répertoire « /home/keren/prelude-elk/apache/XSB/gpp »
 -e 	[gcc] gpp.c using  
 gpp.c: In function ‘findCommentEnd’:
 gpp.c:1308:7: warning: format not a string literal and no format arguments [-Wformat-security]
@@ -385,10 +383,10 @@ gpp.c:1308:7: warning: format not a string literal and no format arguments [-Wfo
       |       ^~~~~~~
 -e 	[gcc] -o gpp
 
-make[1] : on quitte le répertoire « /home/keren/XSB/gpp »
-make[1] : on entre dans le répertoire « /home/keren/XSB/packages/xasp »
+make[1] : on quitte le répertoire « /home/keren/prelude-elk/apache/XSB/gpp »
+make[1] : on entre dans le répertoire « /home/keren/prelude-elk/apache/XSB/packages/xasp »
 make[1]: rien à faire pour « nope ».
-make[1] : on quitte le répertoire « /home/keren/XSB/packages/xasp »
+make[1] : on quitte le répertoire « /home/keren/prelude-elk/apache/XSB/packages/xasp »
 
 
 Configuring XSB packages. Wait...

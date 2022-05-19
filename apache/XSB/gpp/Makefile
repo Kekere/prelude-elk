@@ -1,1 +1,1 @@
-/home/keren/XSB/config/x86_64-unknown-linux-gnu/gppMakefile
+/home/keren/prelude-elk/apache/XSB/config/x86_64-unknown-linux-gnu/gppMakefile

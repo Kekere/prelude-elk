@@ -6,7 +6,7 @@
 <body>
 
   <div class="topnav">
-    <a class="active" id="home" href="#home">Load XML</a>
+    <a class="active" id="home" href="#home">Load File</a>
     <a href="#graph" id="generate-graph">Generate Graph</a>
     <a href="#countermeasures" id="countermeasures">Countermeasures</a>
     <!-- <a href="#about">About</a>-->
@@ -17,13 +17,21 @@
       <input type="file" id="file-selector" name="pfile" accept=".P">
       <button id="button" class="buttonload">Generate</button>
   </form> -->
-
+<div class="restofbody">
   <form method="post" action="mulval.php" enctype="multipart/form-data" id="pform">
-    <p><input type="file" name="file" id="file" required></p>
-    <input type="submit" name="submit" class="submit" id="submit" value="Submit">
+    <div class="row">
+      <div class="column">
+        <input type="file" name="file" class="upload" id="file" required>
+      </div>
+      <div class="column">
+        <input type="submit" name="submit" class="buttonload" id="submit" value="Submit">
+      </div>
+      
+    </div>
+
   </form>
 
-  </div>
+</div>
 
 </body>
 <link href="style.css" rel="stylesheet">

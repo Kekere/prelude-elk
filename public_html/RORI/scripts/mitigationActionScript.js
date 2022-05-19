@@ -239,7 +239,7 @@ function assignRM() {
             sessionStorage.clear();
         }
         sessionStorage.setItem("selectedCountermeasure", JSON.stringify(selectedCountermeasure));
-        window.open("/RORI_tool/assignRM.html", "_self");
+        window.open("/RORI/assignRM.html", "_self");
     }
     else {
         alert("Please select a Mitigation Action.");
@@ -262,7 +262,7 @@ function assignARC() {
             sessionStorage.clear();
         }
         sessionStorage.setItem("selectedCountermeasure", JSON.stringify(selectedCountermeasure));
-        window.open("/RORI_tool/assignARC.html", "_self");
+        window.open("/RORI/assignARC.html", "_self");
     }
     else {
         alert("Please select a Mitigation Action.");
@@ -277,7 +277,7 @@ function assignRestrictions() {
             return;
         }
         sessionStorage.setItem("selectedCountermeasure", JSON.stringify(selectedCountermeasure));
-        window.open("/RORI_tool/assignRestrictions.html", "_self");
+        window.open("/RORI/assignRestrictions.html", "_self");
     }
     else {
         alert("Please select a Mitigation Action.");

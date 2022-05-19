@@ -15,8 +15,8 @@ hacl('69.16.175.10','192.168.1.78',_,_).
 networkServiceInfo('216.58.209.227', windows_server_2016, tcp , 45656, 'andrew').
 /* vulExists('216.58.209.227', 'CVE-2021-1675', windows_server_2016, remoteExploit, privEscalation).
 vulProperty('CVE-2021-1675', remoteExploit, privEscalation). */
-vulExists('216.58.209.227', 'CVE-2021-34525', windows_server_2016,remoteExploit, privEscalation).
-vulProperty('CVE-2021-34525', remoteExploit, privEscalation).
+vulExists('216.58.209.227', 'CVE-2021-34527', windows_server_2016,remoteExploit, privEscalation).
+vulProperty('CVE-2021-34527', remoteExploit, privEscalation).
 
 
 

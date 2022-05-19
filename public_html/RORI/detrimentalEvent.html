@@ -8,51 +8,65 @@
     <title>Detrimental Event</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/formStyle.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
 </head>
 
 <body onunload="">
-    <h3>Detrimental Events</h3>
-    <div class="col-6 row">
-        <input type="image" src="icons/Add-medium.png" title="Add Detrimental Event" alt="Add Detrimental Event"
-            class="crudButton" onclick="openAddIncidentForm()">
-        <input type="image" src="icons/Edit-medium.png" title="Edit Detrimental Event" alt="Edit Detrimental Event"
-            class="crudButton" onclick="openEditIncidentForm()">
-        <input type="image" src="icons/Delete-medium.png" title="Delete Detrimental Event"
-            alt="Delete Detrimental Event" class="crudButton" style="margin-right: 1%;"
-            onclick="openDeleteIncidentForm()">
-        <input type="image" src="icons/Incident-Countermeasure-medium.png" title="Assign Mitigation Action"
-            alt="Assign Mitigation Action" class="crudButton" onclick="assignMitigationActionToIncident()">
-    </div>
-    
-    <div class="col-8 row">
-        <table class="list" style="text-align: left; margin-left: 1%;" aria-label="List of all the incidents">
-            <colgroup>
-                <col style="width: 20%;">
-                <col style="width: 35%;">
-                <col style="width: 10%;">
-                <col style="width: 35%;">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Risk Level</th>
-                    <th scope="col">Assigned Mitigation Action</th>
-                </tr>
-            </thead>
-            <tbody id="incidentsTable" style="cursor: pointer;">
-            </tbody>
-        </table>
-    </div>
-    <div class="col-6 row">
-        <button type="button" onclick="goBack()">Back</button>
-    </div>
+    <div class="d-flex flex-column justify-content-sm-start" style="margin-bottom: 7vh;">
+        <div class="p-3">
+            <h2>Detrimental Events</h2>
+        </div>
+        <div class="d-flex flex-row flex-wrap p-3">
+            <div class="p-1">
+                <input type="image" src="icons/Add-medium.png" title="Add a Detrimental Event"
+                    alt="Add a Detrimental Event" class="crudButton" onclick="openAddIncidentForm()">
+            </div>
+            <div class="p-1">
+                <input type="image" src="icons/Edit-medium.png" title="Edit a Detrimental Event"
+                    alt="Edit a Detrimental Event" class="crudButton" onclick="openEditIncidentForm()">
+            </div>
+            <div class="p-1">
+                <input type="image" src="icons/Delete-medium.png" title="Delete a Detrimental Event"
+                    alt="Delete a Detrimental Event" class="crudButton" style="margin-right: 1%;"
+                    onclick="openDeleteIncidentForm()">
+            </div>
+            <div class="p-1">
+                <input type="image" src="icons/Incident-Countermeasure-medium.png"
+                    title="Assign a Mitigation Action to a Detrimental Event" alt="Assign a Mitigation Action"
+                    class="crudButton" onclick="assignMitigationActionToIncident()">
+            </div>
+        </div>
 
+        <div class="col-sm-8">
+            <table class="list" style="text-align: left;" aria-label="List of all the incidents">
+                <colgroup>
+                    <col style="width: 20%;">
+                    <col style="width: 40%;">
+                    <col style="width: 15%;">
+                    <col style="width: 25%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Risk Level</th>
+                        <th scope="col">Assigned Mitigation Action</th>
+                    </tr>
+                </thead>
+                <tbody id="incidentsTable" style="cursor: pointer;">
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <div class="p-3">
+            <button type="button" onclick="goBack()">Back</button>
+        </div>
+    </div> a
     <dialog id="addModal" class="modal">
         <div class="modal-content container">
-            <span class="close" onclick="closeDialog()">&times;</span>
+            <span class="close" onclick="closeDialog()" style="align-self: flex-end;">&times;</span>
             <form onsubmit="addIncident(this)" method="dialog">
-                <p>Add detrimental event</p>
+                <h4>Add detrimental event</h4>
                 <label for="addName">
                     Name: <input type="text" id="addName" name="incidentName" required>
                 </label>
@@ -62,14 +76,8 @@
                         style="resize: none;"></textarea>
                 </label>
                 <p></p>
-                <!-- <label for="addRiskLevel">Risk Level: </label>
-                <select id="addRiskLevel" name="incidentRiskLevel" required>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
-                <p></p> -->
-                <button type="submit" style="margin-right: 1%;">Save Detrimental Event</button>
+                <button type="submit">Save Detrimental Event</button>
+                <p></p>
                 <button type="button" onclick="closeDialog()">Cancel</button>
             </form>
         </div>
@@ -77,9 +85,9 @@
 
     <dialog id="editModal" class="modal">
         <div class="modal-content container">
-            <span class="close" onclick="closeDialog()">&times;</span>
+            <span class="close" onclick="closeDialog()" style="align-self: flex-end;">&times;</span>
             <form onsubmit="editIncident(this)" method="dialog">
-                <p>Edit detrimental event</p>
+                <h4>Edit detrimental event</h4>
                 <label for="editName">
                     Name: <input type="text" id="editName" name="incidentName" required>
                 </label>
@@ -89,14 +97,8 @@
                         style="resize: none;"></textarea>
                 </label>
                 <p></p>
-                <!-- <label for="editRiskLevel">Risk Level: </label>
-                <select id="editRiskLevel" name="incidentRiskLevel" required>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
-                <p></p> -->
-                <button type="submit" style="margin-right: 1%;">Update Detrimental Event</button>
+                <button type="submit">Update Detrimental Event</button>
+                <p></p>
                 <button type="button" onclick="closeDialog()">Cancel</button>
             </form>
         </div>
@@ -104,7 +106,6 @@
 
     <dialog id="deleteModal" class="modal">
         <div class="modal-content container">
-            <span class="close" onclick="closeDialog()">&times;</span>
             <form onsubmit="deleteIncident(this)" method="dialog">
                 <p id="deleteName"></p>
                 <button type="submit" style="margin-right: 1%;">Ok</button>
@@ -115,6 +116,15 @@
 
 </body>
 
+<script src="scripts/bootstrap/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 <script src="scripts/functions.js"></script>
 <script src="scripts/detrimentalEventScript.js"></script>
 

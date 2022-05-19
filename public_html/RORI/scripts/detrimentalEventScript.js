@@ -125,7 +125,6 @@ function openEditIncidentForm() {
             if (incident.id == selectedIncidentId) {
                 document.getElementById("editName").value = incident.name;
                 document.getElementById("editDescription").value = incident.description;
-                // document.getElementById("editRiskLevel").value = incident.risk_level;
             }
         });
     }
@@ -143,7 +142,6 @@ function editIncident(form) {
         if (incident.id == selectedIncidentId) {
             incident.name = form[0].value;
             incident.description = form[1].value;
-            // incident.risk_level = form[2].value;
         }
     });
     RORIObject.incidents = incidents;
@@ -201,7 +199,7 @@ function assignMitigationActionToIncident() {
             }
         })
         sessionStorage.setItem("selectedIncident", JSON.stringify(selectedIncident));
-        window.open("/RORI_tool/assignMitigationActionToIncident.html", "_self");
+        window.open("/RORI/assignMitigationActionToIncident.html", "_self");
     }
     else {
         alert("Please select a Detrimental Event.");

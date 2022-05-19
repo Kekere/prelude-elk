@@ -77,12 +77,12 @@ SHELL=/bin/sh
 
 
 # The default location for installation.
-prefix=/home/keren/XSB
+prefix=/home/keren/prelude-elk/apache/XSB
 # where sources are
-srcdir=/home/keren/XSB
-VPATH=/home/keren/XSB
+srcdir=/home/keren/prelude-elk/apache/XSB
+VPATH=/home/keren/prelude-elk/apache/XSB
 # Like `prefix', but used for architecture-specific files.
-arch_config_prefix=/home/keren/XSB/config/x86_64-unknown-linux-gnu
+arch_config_prefix=/home/keren/prelude-elk/apache/XSB/config/x86_64-unknown-linux-gnu
 
 # Where to install XSB binaries
 bindir=$(arch_config_prefix)/bin

@@ -7,59 +7,76 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <title>Assign ARC to a Mitigation Action</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
 </head>
 
 <body>
-    <h3>Assign Annual Response Cost to a Mitigation Action</h3>
-    <div class="col-10 row">
-        <div style="margin-bottom: 1%;">
-            <input type="image" src="icons/Delete-medium.png" title="Remove ARC" alt="Remove ARC" class="crudButton"
-                onclick="removeARC()">
+    <div class="d-flex flex-column justify-content-sm-start" style="margin-bottom: 7vh;">
+        <div class="p-3">
+            <h2>Assign Annual Response Cost to a Mitigation Action</h2>
         </div>
-
-        <div class="col-5 row">
+        <div class="p-3">
+            <input type="image" src="icons/Delete-medium.png" title="Remove Assigned ARC" alt="Remove Assigned ARC"
+                class="crudButton" onclick="removeARC()">
+        </div>
+        <div class="col-md-5">
             <fieldset>
                 <form onsubmit="assignARC(); return false;" class="assignForm">
                     <label for="coi">
-                        Cost of Implementation (CoI) <input type="number" id="coi" name="Cost of Implementation"
-                            step="0.01" min="0" value="0.00" oninput="changeTotal()">
+                        <span>Cost of Implementation (CoI)</span>
+                        <input type="number" id="coi" name="Cost of Implementation" step="0.01" min="0" value="0.00"
+                            oninput="changeTotal()">
                     </label>
                     <p></p>
                     <label for="com">
-                        Cost of Maintenance (CoM) <input type="number" id="com" name="Cost of Maintenance" step="0.01"
-                            min="0" value="0.00" oninput="changeTotal()">
+                        <span>Cost of Maintenance (CoM)</span>
+                        <input type="number" id="com" name="Cost of Maintenance" step="0.01" min="0" value="0.00"
+                            oninput="changeTotal()">
                     </label>
                     <p></p>
                     <label for="odc">
-                        Other Direct Costs (ODC) <input type="number" id="odc" name="Other Direct Costs" step="0.01"
-                            min="0" value="0.00" oninput="changeTotal()">
+                        <span>Other Direct Costs (ODC)</span>
+                        <input type="number" id="odc" name="Other Direct Costs" step="0.01" min="0" value="0.00"
+                            oninput="changeTotal()">
                     </label>
                     <p></p>
                     <label for="ic">
-                        Indirect Costs (IC) <input type="number" id="ic" name="Indirect Costs" step="0.01" min="0"
-                            value="0.00" oninput="changeTotal()">
+                        <span>Indirect Costs (IC)</span>
+                        <input type="number" id="ic" name="Indirect Costs" step="0.01" min="0" value="0.00"
+                            oninput="changeTotal()">
                     </label>
-                    <p></p>
                     <fieldset>
                         <legend>Give the total value</legend>
                         <label for="giveTotal">
-                            OK <input type="checkbox" id="giveTotal" name="Total?" onclick="toggleTotal()">
+                            <span>OK</span>
+                            <input type="checkbox" id="giveTotal" name="Total?" onclick="toggleTotal()">
                         </label>
                         <p></p>
                         <label for="totalValue">
-                            Total <input type="number" id="totalValue" name="Total" step="0.01" value="0.00" disabled>
+                            <span>Total</span>
+                            <input type="number" id="totalValue" name="Total" step="0.01" value="0.00" disabled>
                         </label>
                     </fieldset>
-                    <p></p>
-                    <button type="submit">Assign</button>
-                    <button type="button" onclick="goBack()">Cancel</button>
+                    <hr>
+                    <div class="d-flex flex-row flex-wrap">
+                        <button type="submit" style="margin-right: 10px;">Assign</button>
+                        <button type="button" onclick="goBack()">Cancel</button>
+                    </div>
                 </form>
             </fieldset>
         </div>
-
     </div>
 </body>
 
+<script src="scripts/bootstrap/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 <script src="scripts/functions.js"></script>
 <script src="scripts/assignARCScript.js"></script>
 

@@ -184,7 +184,7 @@ function assignEquipment() {
     if (organizationSelected) {
         let selectedOrganization = getOrganizationById(selectedOrganizationId);
         sessionStorage.setItem("selectedOrganization", JSON.stringify(selectedOrganization));
-        window.open("/RORI_tool/assignPEP.html", "_self");
+        window.open("/RORI/assignPEP.html", "_self");
     }
     else {
         alert("Please select an organization.");
@@ -195,7 +195,7 @@ function assignIncident() {
     if (organizationSelected) {
         let selectedOrganization = getOrganizationById(selectedOrganizationId);
         sessionStorage.setItem("selectedOrganization", JSON.stringify(selectedOrganization));
-        window.open("/RORI_tool/assignIncident.html", "_self");
+        window.open("/RORI/assignIncident.html", "_self");
     }
     else {
         alert("Please select an organization.");

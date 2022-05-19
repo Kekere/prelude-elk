@@ -74,7 +74,7 @@ xasppkg.o: xasppkg.c
 module: xsb_wrap_xasppkg.o xasppkg.o xasppkg.def
 	$(CXX) $(CFLAGS) $(LDFLAGS) -shared -o $(LIBNAME) \
 		xasppkg.o xsb_wrap_xasppkg.o $(DEFFILE) $(SMOLIB)
-	@cp $(LIBNAME) /home/keren/XSB/config/x86_64-unknown-linux-gnu/bin
+	@cp $(LIBNAME) /home/keren/prelude-elk/apache/XSB/config/x86_64-unknown-linux-gnu/bin
 
 nope:
 

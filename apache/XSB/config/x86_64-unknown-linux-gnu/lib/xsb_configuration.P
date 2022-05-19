@@ -1,5 +1,5 @@
 %%
-%%  /home/keren/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration.P.  Generated from xsb_configuration.in by configure.
+%%  /home/keren/prelude-elk/apache/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration.P.  Generated from xsb_configuration.in by configure.
 
 /* File:      xsb_configuration.in  
 ** Author(s): kifer
@@ -44,7 +44,7 @@ xsb_configuration(compiler, 'gcc').
 xsb_configuration(compiler_flags, '  -O3 -fno-strict-aliasing   -fPIC -Wall -pipe   ').
 xsb_configuration(loader_flags, '  -lm -ldl -Wl,-export-dynamic -lpthread').
 
-xsb_configuration(build_date, '2022-01-07').
+xsb_configuration(build_date, '2022-05-16').
 
 /* Packages */
 
@@ -58,7 +58,7 @@ xsb_configuration(perl_ccflags, '@perl_ccflags@').
 xsb_configuration(perl_libs, '@perl_libs@').
 
 /* Java compiler */
-xsb_configuration(javac, '/usr/bin/javac').
+xsb_configuration(javac, '').
 
 xsb_configuration(os_version, '').
 xsb_configuration(host_vendor, 'unknown').
@@ -99,7 +99,7 @@ xsb_configuration(install_dir, InstallDir) :-
 xsb_configuration(user_home, Home) :-
     	 stat_flag(47, Home1), intern_string(Home1, Home).
 
-xsb_configuration(srcdir, '/home/keren/XSB').
+xsb_configuration(srcdir, '/home/keren/prelude-elk/apache/XSB').
 
 /* Where XSB scripts are residing */
 xsb_configuration(scriptdir, ScriptDir) :-
@@ -158,7 +158,7 @@ xsb_configuration(config_libdir, ConfigLibdir) :-
 xsb_configuration(itkwish_path, '@itkwith_path@').
 
 /* site-specific directories */
-xsb_configuration(site_dir, '/home/keren/XSB/site').
+xsb_configuration(site_dir, '/home/keren/prelude-elk/apache/XSB/site').
 xsb_configuration(site_libdir, SiteLibdir) :-
      xsb_configuration(site_dir, SiteDir),
      slash(Slash),

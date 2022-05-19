@@ -1,0 +1,9 @@
+{
+    "CtmPartition": {
+        "Message" : "New threat detected",
+        "CVEID": "CVE-2019-0708",
+        "IP address": "192.168.10.21",
+        "Product" : "windows 7",
+        "User Name": "Olivia"
+    }
+}

@@ -1,8 +1,8 @@
 
-attackerLocated('192.241.214.216').
-attackGoal(execCode('157.159.68.64',_)).
-hacl('192.241.214.216','157.159.68.64', tcp, 8000).
-hacl('157.159.68.64',_,_,_).
+attackerLocated('216.58.209.227').
+attackGoal(execCode('216.58.209.227',_)).
+hacl('216.58.209.227','216.58.209.227', tcp, 45656).
+hacl('216.58.209.227',_,_,_).
 hacl('192.168.1.78',_,_,_).
 hacl('69.16.175.10',_,_,_).
 hacl('69.16.175.10','192.168.1.78',_,_).
@@ -12,10 +12,10 @@ hacl('69.16.175.10','192.168.1.78',_,_).
 
 /* configuration information of dc */
 
-networkServiceInfo('157.159.68.64', windows_server_2016, tcp , 8000, 'andrew').
-/* vulExists('157.159.68.64', 'CVE-2021-1675', windows_server_2016, remoteExploit, privEscalation).
+networkServiceInfo('216.58.209.227', windows_server_2016, tcp , 45656, 'andrew').
+/* vulExists('216.58.209.227', 'CVE-2021-1675', windows_server_2016, remoteExploit, privEscalation).
 vulProperty('CVE-2021-1675', remoteExploit, privEscalation). */
-vulExists('157.159.68.64', 'CVE-2021-34527', windows_server_2016,remoteExploit, privEscalation).
+vulExists('216.58.209.227', 'CVE-2021-34527', windows_server_2016,remoteExploit, privEscalation).
 vulProperty('CVE-2021-34527', remoteExploit, privEscalation).
 
 

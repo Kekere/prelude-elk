@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
 function getDetrimentalEvents(selectedValue) {
     let organizationId = selectedValue.value;
     let detrimentalEventsTable = document.getElementById("detrimentalEventsTable");
+    clearTable(detrimentalEventsTable);
+    clearTable(document.getElementById("mitigationActionsTable"));
+    document.getElementById("graphButton").disabled = true;
     incidents.forEach(incident => {
         if (incident.id_organization == organizationId) {
             let row = detrimentalEventsTable.insertRow();
@@ -219,32 +222,38 @@ function plot() {
     let allCoordinates = selectedAttackCoordinates.concat(selectedCountermeasuresCoordinates);
     let layout = {
         title: "Attack Volume Representation",
-        height: 700,
-        width: 1000,
+        height: 750,
+        legend: {
+            yanchor: "top",
+            y: 0.99,
+            xanchor: "left",
+            x: 0.01,
+            bgcolor: "rgba(0, 0, 0, 0)"
+        },
         scene: {
             camera: {
                 eye: {
-                    x: 1.8,
+                    x: 2,
                     y: -1.8,
-                    z: 1.3,
+                    z: 1.5,
                 }
             },
             xaxis: {
                 title: "Resource",
-                range: [0, Math.max.apply(Math, allCoordinates.map(function (row) { return Math.max.apply(Math, row.x) })) + 100],
+                range: [0, Math.max.apply(Math, allCoordinates.map(function (row) { return Math.max.apply(Math, row.x) })) + 80],
             },
             yaxis: {
                 title: "Channel",
-                range: [0, Math.max.apply(Math, allCoordinates.map(function (row) { return Math.max.apply(Math, row.y) })) + 100],
+                range: [0, Math.max.apply(Math, allCoordinates.map(function (row) { return Math.max.apply(Math, row.y) })) + 80],
             },
             zaxis: {
                 title: "User Account",
-                range: [0, Math.max.apply(Math, allCoordinates.map(function (row) { return Math.max.apply(Math, row.z) })) + 60],
+                range: [0, Math.max.apply(Math, allCoordinates.map(function (row) { return Math.max.apply(Math, row.z) })) + 100],
             },
-            // autosize: false,
         }
     };
-    Plotly.newPlot('graph', allCoordinates, layout);
+    let config = { responsive: true };
+    Plotly.newPlot('graph', allCoordinates, layout, config);
     // after plotting, the window automatically scrolls to the graph div
     document.getElementById("graph").scrollIntoView({ behavior: "smooth" });
 }

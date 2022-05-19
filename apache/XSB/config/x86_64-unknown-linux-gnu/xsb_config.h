@@ -1,4 +1,4 @@
-/* /home/keren/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h.  Generated from def_config.in by configure.  */
+/* /home/keren/prelude-elk/apache/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h.  Generated from def_config.in by configure.  */
 /* def_config.in.  Generated automatically from configure.in by autoheader.  */
 
 /* Define if on AIX 3.
@@ -193,7 +193,7 @@
 #define HAVE_SOCKET 1
 
 /* Define if you have readline library */
-#define HAVE_READLINE 1
+/* #undef HAVE_READLINE */
 
 /* Define if you have the strdup function.  */
 #define HAVE_STRDUP 1

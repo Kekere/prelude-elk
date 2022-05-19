@@ -212,7 +212,7 @@ function assignMitigationActionToPEP() {
             }
         })
         sessionStorage.setItem("selectedEquipment", JSON.stringify(selectedEquipment));
-        window.open("/RORI_tool/assignMitigationActionToPEP.html", "_self");
+        window.open("/RORI/assignMitigationActionToPEP.html", "_self");
     }
     else {
         alert("Please select a PEP.");

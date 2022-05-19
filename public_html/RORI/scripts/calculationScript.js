@@ -21,6 +21,8 @@ function getDetrimentalEvents(selectedOrg) {
     let organizationId = selectedOrg.value;
     let detrimentalEventsTable = document.getElementById("detrimentalEventsTable");
     clearTable(detrimentalEventsTable);
+    clearTable(document.getElementById("mitigationActionsTable"));
+    document.getElementById("roriButton").disabled = true;
     incidents.forEach(incident => {
         if (incident.id_organization == organizationId) {
             let row = detrimentalEventsTable.insertRow();
@@ -133,8 +135,9 @@ function performRoriCalculation() {
             if (rm.id == rmId) {
                 if (!rm.EF && !rm.COV) {
                     combinationError.removeAttribute("class");
-                    combinationError.innerHTML = "Missing Effectiveness or Coverage. Cannot perfom combination";
+                    combinationError.innerHTML = "Missing Effectiveness and/or Coverage factor(s). Cannot perfom combined RORI evalutation.";
                     clearTable(combinedRoriTable);
+                    window.scrollTo({ top: document.getElementById("roriDiv").offsetTop, behavior: "smooth" });
                     return;
                 }
             }
@@ -142,6 +145,7 @@ function performRoriCalculation() {
     }
     combinationError.setAttribute("class", "hidden");
     performCombinedRori(roriListToCombine);
+    window.scrollTo({ top: document.getElementById("roriDiv").offsetTop, behavior: "smooth" });
 }
 
 /**
@@ -231,7 +235,7 @@ function performIndividualRori() {
     });
 
     let individualRoriHeader = document.getElementById("individualRoriHeader");
-    individualRoriHeader.innerHTML = "'" + selectedIncident.name + "' Detrimental Event at the organization: '" + organization.name + "'";
+    individualRoriHeader.innerHTML = "'" + selectedIncident.name + "' Detrimental Event at the organization '" + organization.name + "'";
     let roriDiv = document.getElementById("roriDiv");
     roriDiv.setAttribute("class", "");
     let individualRoriTable = document.getElementById("individualRoriTable");

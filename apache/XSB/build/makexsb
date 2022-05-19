@@ -61,10 +61,10 @@ do
     esac
 done
 
-#config=`/home/keren/XSB/build/config.guess`
-#dir=/home/keren/XSB/config/`/home/keren/XSB/build/config.sub $config`${suffix}
+#config=`/home/keren/prelude-elk/apache/XSB/build/config.guess`
+#dir=/home/keren/prelude-elk/apache/XSB/config/`/home/keren/prelude-elk/apache/XSB/build/config.sub $config`${suffix}
 config=`./config.guess`
-#dir=/home/keren/XSB/config/`./config.sub $config`${suffix}
+#dir=/home/keren/prelude-elk/apache/XSB/config/`./config.sub $config`${suffix}
 dir=../config/`./config.sub $config`${suffix}
 makefile=${dir}/topMakefile
 

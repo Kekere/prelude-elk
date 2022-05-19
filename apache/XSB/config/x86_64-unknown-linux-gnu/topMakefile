@@ -72,9 +72,9 @@ xsb_obj_extension=.xwam
 # Everything is placed in subdirectories of this directory.
 # The values for many of the variables below are expressed
 # in terms of this one, so you do not need to change them.
-prefix=$(DESTDIR)/home/keren/XSB
+prefix=$(DESTDIR)/home/keren/prelude-elk/apache/XSB
 
-srcdir=/home/keren/XSB
+srcdir=/home/keren/prelude-elk/apache/XSB
 
 
 link_cmd=ln -s 
@@ -102,8 +102,8 @@ install_examples=$(prefix)/examples
 
 
 # Like `prefix', but used for architecture-specific files.
-src_config_prefix=/home/keren/XSB/config/x86_64-unknown-linux-gnu
-install_config_prefix=$(DESTDIR)/home/keren/XSB/config/x86_64-unknown-linux-gnu
+src_config_prefix=/home/keren/prelude-elk/apache/XSB/config/x86_64-unknown-linux-gnu
+install_config_prefix=$(DESTDIR)/home/keren/prelude-elk/apache/XSB/config/x86_64-unknown-linux-gnu
 # we copy the xsb.o module here
 install_config_objlibdir=$(install_config_prefix)/saved.o
 

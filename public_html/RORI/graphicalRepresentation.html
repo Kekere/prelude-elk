@@ -7,49 +7,71 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <title>Graphical Representation</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
 </head>
 
 <body>
-    <h3>Graphical Representation</h3>
-    <div class="col-6 row">
-        <strong>Organizations:</strong>
-        <p>Select Organization</p>
-        <select id="organizationsList" name="organizationsList" title="Organizations List"
-            onchange="getDetrimentalEvents(this)"></select>
-    </div>
-    <div style="display: flex;" class="col-10 row">
-        <div style="flex: 1;">
-            <strong>Detrimental Events:</strong>
-            <table class="list" style="text-align: left; margin-top: 10px;"
-                aria-label="Detrimental events of the selected organization">
-                <thead>
-                    <th scope="col">Name</th>
-                </thead>
-                <tbody id="detrimentalEventsTable" style="cursor: pointer;">
-                </tbody>
-            </table>
+    <div class="d-flex flex-column justify-content-sm-start" style="margin-bottom: 7vh;">
+        <div class="p-3">
+            <h2>Graphical Representation</h2>
+            <hr>
+            <div class="d-flex flex-row flex-wrap">
+                <div class="p-2">
+                    <p>Select Organization: </p>
+                </div>
+                <div class="p-2">
+                    <select id="organizationsList" name="organizationsList" title="Organizations List"
+                        class="custom-select-sm" onchange="getDetrimentalEvents(this)"></select>
+                </div>
+            </div>
         </div>
-        <div style="flex: 2;">
-            <strong>Mitigation Actions:</strong>
-            <table class="list" style="text-align: left; margin-top: 10px;"
-                aria-label="Countermeasures associated to the selected incident">
-                <thead>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                </thead>
-                <tbody id="mitigationActionsTable" style="cursor: pointer;">
-                </tbody>
-            </table>
+        <div class="d-flex flex-row flex-wrap justify-content-sm-start p-2">
+            <div class="col-sm-4" style="min-width: 300px;">
+                <strong>Detrimental Events</strong>
+                <table class="list" style="margin-top: 10px;"
+                    aria-label="Detrimental events of the selected organization">
+                    <thead>
+                        <th scope="col">Name</th>
+                    </thead>
+                    <tbody id="detrimentalEventsTable" style="cursor: pointer;">
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-4" style="min-width: 300px;">
+                <strong>Mitigation Actions</strong>
+                <table class="list" style="margin-top: 10px;"
+                    aria-label="Countermeasures associated to the selected incident">
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col style="width: 80%;">
+                    </colgroup>
+                    <thead>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                    </thead>
+                    <tbody id="mitigationActionsTable" style="cursor: pointer;">
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-4" style="min-width: 300px;">
+                <strong>Options</strong>
+                <p></p>
+                <input id="excelFile" type="file" accept=".xlsx" onchange="excelToJson(this)"
+                    placeholder="Upload Excel File">
+                <p></p>
+                <button id="graphButton" type="button" onclick="plot()" disabled>Display Graphical
+                    Representation</button>
+                <p></p>
+                <button type="button" onclick="goBack()">Back</button>
+
+            </div>
         </div>
-    </div>
-    <div class="col-10">
-        <input id="excelFile" type="file" accept=".xlsx" onchange="excelToJson(this)" placeholder="Upload Excel File">
-        <p></p>
-        <button id="graphButton" type="button" onclick="plot()" disabled>Display Graphical Representation</button>
-        <div class="hidden" id="graph"></div>
-    </div>
-    <div class="col-6 row">
-        <button type="button" onclick="goBack()">Back</button>
+        <div class="p-3">
+            <div class="hidden" id="graph">
+                <hr>
+                <button type="button" onclick="goBack()" style="margin-left: 7px;">Back</button>
+            </div>
+        </div>
     </div>
 </body>
 

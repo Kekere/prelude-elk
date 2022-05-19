@@ -65,3 +65,7 @@
   width: 100%;
   clear: both;
 }
+
+#organizationsList {
+  transition-delay: 0.3s;
+}

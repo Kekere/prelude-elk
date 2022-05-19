@@ -1,0 +1,161 @@
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h794).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h800).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h806).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h812).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h818).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,privEscalation).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h830).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h836).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h842).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h848).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h854).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h860).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h866).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,privEscalation).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h878).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h884).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h890).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h896).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h902).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h908).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h914).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,privEscalation).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h926).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h932).
+
+vulExists('157.159.68.125','CVE-1999-0524',no_products).
+
+vulExists('157.159.68.97','CVE-1999-0524',no_products).
+
+vulExists('157.159.68.75','CVE-1999-0524',no_products).
+
+vulExists('157.159.68.44','CVE-1999-0524',no_products).
+
+vulExists('157.159.68.125','CVE-XXXX-XXXX',windows).
+
+vulExists('157.159.68.125','CVE-XXXX-XXXX','windows samba').
+
+vulExists('157.159.68.97','CVE-XXXX-XXXX',windows).
+
+vulExists('157.159.68.97','CVE-XXXX-XXXX','windows samba').
+
+vulExists('157.159.68.75','CVE-XXXX-XXXX',windows).
+
+vulExists('157.159.68.75','CVE-XXXX-XXXX','windows samba').
+
+cvss('CVE-1999-0524',l).
+
+cvss('CVE-XXXX-XXXX',l).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser).
+
+inCompetent('157.159.68.125_victim').
+hasAccount('157.159.68.125_victim', '157.159.68.125', user).
+attackerLocated(internet).
+attackGoal(execCode('157.159.68.125', _)).
+inCompetent('157.159.68.97_victim').
+hasAccount('157.159.68.97_victim', '157.159.68.97', user).
+attackerLocated(internet).
+attackGoal(execCode('157.159.68.97', _)).
+inCompetent('157.159.68.75_victim').
+hasAccount('157.159.68.75_victim', '157.159.68.75', user).
+attackerLocated(internet).
+attackGoal(execCode('157.159.68.75', _)).
+inCompetent('157.159.68.44_victim').
+hasAccount('157.159.68.44_victim', '157.159.68.44', user).
+attackerLocated(internet).
+attackGoal(execCode('157.159.68.44', _)).
+hacl(_,_,_,_).

@@ -7,49 +7,66 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <title>Assign RM to a Mitigation Action</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
 </head>
 
 <body>
-    <h3>Assign Risk Mitigation Value to a Mitigation Action</h3>
-    <div class="col-10 row">
-        <div style="margin-bottom: 1%;">
-            <input type="image" src="icons/Delete-medium.png" title="Remove RM" alt="Remove RM" class="crudButton"
-                onclick="removeRM()">
+    <div class="d-flex flex-column justify-content-sm-start" style="margin-bottom: 7vh;">
+        <div class="p-3">
+            <h2>Assign Risk Mitigation Value to a Mitigation Action</h2>
         </div>
-
-        <div class="col-5 row">
+        <div class="p-3">
+            <input type="image" src="icons/Delete-medium.png" title="Remove Assigned RM Value"
+                alt="Remove Assigned RM Value" class="crudButton" onclick="removeRM()">
+        </div>
+        <div class="col-md-5">
             <fieldset>
                 <form onsubmit="assignRM(); return false;" class="assignForm">
                     <label for="ef">
-                        Effectiveness Factor (EF) (%) <input type="number" id="ef" name="Effectiveness Factor"
-                            step="0.01" min="0" max="100" value="0.00" oninput="changeTotal()">
+                        <span>Effectiveness Factor (EF) (%)</span>
+                        <input type="number" id="ef" name="Effectiveness Factor" step="0.01" min="0" max="100"
+                            value="0.00" oninput="changeTotal()">
                     </label>
                     <p></p>
                     <label for="cov">
-                        Coverage (COV) (%) <input type="number" id="cov" name="Coverage" step="0.01" min="0" max="100"
-                            value="0.00" oninput="changeTotal()">
+                        <span>Coverage (COV) (%)</span>
+                        <input type="number" id="cov" name="Coverage" step="0.01" min="0" max="100" value="0.00"
+                            oninput="changeTotal()">
                     </label>
                     <p></p>
                     <fieldset>
                         <legend>Give the total value</legend>
                         <label for="giveTotal">
-                            OK <input type="checkbox" id="giveTotal" name="Total?" onclick="toggleTotal()">
+                            <span>OK</span>
+                            <input type="checkbox" id="giveTotal" name="Total?" onclick="toggleTotal()">
                         </label>
                         <p></p>
                         <label for="totalValue">
-                            Total (%) <input type="number" id="totalValue" name="Total" step="0.01" value="0.00"
-                                max="100" disabled>
+                            <span>Total (%)</span>
+                            <input type="number" id="totalValue" name="Total" step="0.01" value="0.00" max="100"
+                                disabled>
                         </label>
                     </fieldset>
-                    <p></p>
-                    <button type="submit">Assign</button>
-                    <button type="button" onclick="goBack()">Cancel</button>
+                    <hr>
+                    <div class="d-flex flex-row flex-wrap">
+                        <button type="submit" style="margin-right: 10px;">Assign</button>
+                        <button type="button" onclick="goBack()">Cancel</button>
+                    </div>
                 </form>
             </fieldset>
         </div>
     </div>
 </body>
 
+<script src="scripts/bootstrap/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 <script src="scripts/functions.js"></script>
 <script src="scripts/assignRMScript.js"></script>
 

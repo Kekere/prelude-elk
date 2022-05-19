@@ -24,7 +24,7 @@ document.getElementById("countermeasures").onclick = function() {
   return true;
 }*/
 function generateGraph(objjson){
-  var svg = d3.select("svg"),
+  var svg = d3.select("#svg1"),
       width = +svg.attr("width"),
       height = +svg.attr("height");
   svg.append('defs').append('marker')
@@ -41,7 +41,7 @@ function generateGraph(objjson){
             .attr('fill', '#999')
             .style('stroke','none');
   
-  var color = ["#32CD32","#FFD700","#FFA500","#FF4500"];
+  var color = ["#32CD32","#FFD700","#FFA500","#FF4500","#b01ac4"];
 
   var simulation = d3.forceSimulation()
       .force("link", d3.forceLink().id(function(d) { return d.id; }))
@@ -119,6 +119,7 @@ function generateGraph(objjson){
     d.fy = null;
   }
 }
+
 function convertxmltojson(xmlfile){
   token=0;
   var xhttp;

@@ -7,20 +7,22 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <title>Assign Restrictions to a Mitigation Action</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
 </head>
 
 <body>
-    <h3>Assign Restrictions to a Mitigation Action</h3>
-    <div class="col-10 row">
-        <div style="margin-bottom: 1%;">
+    <div class="d-flex flex-column justify-content-sm-start" style="margin-bottom: 7vh;">
+        <div class="p-3">
+            <h2>Assign Restrictions to a Mitigation Action</h2>
+        </div>
+        <div class="p-3">
             <input type="image" src="icons/Delete-medium.png" title="Remove Restriction" alt="Remove Restriction"
                 class="crudButton" onclick="removeRestriction()">
         </div>
-
-        <div class="col-8 row">
+        <div class="col-sm-8">
             <fieldset>
                 <legend>Mitigation Actions</legend>
-                <table style="text-align: left;" aria-label="Available Mitigation Actions">
+                <table class="fieldsetTable" aria-label="Available Mitigation Actions">
                     <colgroup>
                         <col style="width: 40%;">
                         <col style="width: 60%;">
@@ -35,10 +37,10 @@
                     </tbody>
                 </table>
             </fieldset>
-            <p></p>
+            <hr>
             <fieldset>
-                <legend>Restrictions of the Mitigation Action</legend>
-                <table style="text-align: left;" aria-label="Resticions of the selected Mitigation Action">
+                <legend>Restrictions of the selected Mitigation Action</legend>
+                <table class="fieldsetTable" aria-label="Resticions of the selected Mitigation Action">
                     <colgroup>
                         <col style="width: 40%;">
                         <col style="width: 60%;">
@@ -53,16 +55,24 @@
                     </tbody>
                 </table>
             </fieldset>
+            <hr>
+            <div class="d-flex flex-row flex-wrap">
+                <button type="button" onclick="assignRestriction()" style="margin-right: 10px;">Assign</button>
+                <button type="button" onclick="goBack()">Back</button>
+            </div>
         </div>
-
-    </div>
-    <br>
-    <div style="margin-left: 3%;">
-        <button type="button" onclick="assignRestriction()">Assign</button>
-        <button type="button" onclick="goBack()" style="margin-left: 1%;">Back</button>
     </div>
 </body>
 
+<script src="scripts/bootstrap/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 <script src="scripts/functions.js"></script>
 <script src="scripts/assignRestrictionsScript.js"></script>
 

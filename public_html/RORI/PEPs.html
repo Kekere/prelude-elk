@@ -8,48 +8,63 @@
     <title>PEPs</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/formStyle.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
 </head>
 
 <body onunload="">
-    <h3>PEPs</h3>
-    <div class="col-6 row">
-        <input type="image" src="icons/Add-medium.png" title="Add PEP" alt="Add PEP" class="crudButton"
-            onclick="openAddEquipmentForm()">
-        <input type="image" src="icons/Edit-medium.png" title="Edit PEP" alt="Edit PEP" class="crudButton"
-            onclick="openEditEquipmentForm()">
-        <input type="image" src="icons/Delete-medium.png" title="Delete PEP" alt="Delete PEP" class="crudButton"
-            style="margin-right: 1%;" onclick="openDeleteEquipmentForm()">
-        <input type="image" src="icons/Equipment-Countermeasure-medium.png" title="Assign Mitigation Action To a PEP"
-            alt="Assign Mitigation Action" class="crudButton" onclick="assignMitigationActionToPEP()">
-    </div>
-    
-    <div class="col-8 row">
-        <table class="list" style="text-align: left; margin-left: 1%;" aria-label="List of all the PEPs">
-            <colgroup>
-                <col style="width: 20%;">
-                <col style="width: 30%;">
-                <col style="width: 50%;">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Assigned Mitigation Action</th>
-                </tr>
-            </thead>
-            <tbody id="equipmentTable" style="cursor: pointer;">
-            </tbody>
-        </table>
-    </div>
-    <div class="col-6 row">
-        <button type="button" onclick="goBack()">Back</button>
+    <div class="d-flex flex-column justify-content-sm-center" style="margin-bottom: 7vh;">
+        <div class="p-3">
+            <h2>PEPs</h2>
+        </div>
+        <div class="d-flex flex-row flex-wrap p-3">
+            <div class="p-1">
+                <input type="image" src="icons/Add-medium.png" title="Add a PEP" alt="Add a PEP" class="crudButton"
+                    onclick="openAddEquipmentForm()">
+            </div>
+            <div class="p-1">
+                <input type="image" src="icons/Edit-medium.png" title="Edit a PEP" alt="Edit a PEP" class="crudButton"
+                    onclick="openEditEquipmentForm()">
+            </div>
+            <div class="p-1">
+                <input type="image" src="icons/Delete-medium.png" title="Delete a PEP" alt="Delete a PEP"
+                    class="crudButton" style="margin-right: 1%;" onclick="openDeleteEquipmentForm()">
+            </div>
+            <div class="p-1">
+                <input type="image" src="icons/Equipment-Countermeasure-medium.png"
+                    title="Assign a Mitigation Action to a PEP" alt="Assign a Mitigation Action" class="crudButton"
+                    onclick="assignMitigationActionToPEP()">
+            </div>
+        </div>
+
+        <div class="col-sm-8">
+            <table class="list" style="text-align: left;" aria-label="List of all the PEPs">
+                <colgroup>
+                    <col style="width: 20%;">
+                    <col style="width: 35%;">
+                    <col style="width: 45%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Assigned Mitigation Action</th>
+                    </tr>
+                </thead>
+                <tbody id="equipmentTable" style="cursor: pointer;">
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <div class="p-3">
+            <button type="button" onclick="goBack()">Back</button>
+        </div>
     </div>
 
     <dialog id="addModal" class="modal">
         <div class="modal-content container">
-            <span class="close" onclick="closeDialog()">&times;</span>
+            <span class="close" onclick="closeDialog()" style="align-self: flex-end;">&times;</span>
             <form onsubmit="addEquipment(this)" method="dialog">
-                <p>Add PEP</p>
+                <h4>Add PEP</h4>
                 <label for="addName">
                     Name: <input type="text" id="addName" name="equipmentName" required>
                 </label>
@@ -66,9 +81,9 @@
 
     <dialog id="editModal" class="modal">
         <div class="modal-content container">
-            <span class="close" onclick="closeDialog()">&times;</span>
+            <span class="close" onclick="closeDialog()" style="align-self: flex-end;">&times;</span>
             <form onsubmit="editEquipment(this)" method="dialog">
-                <p>Edit PEP</p>
+                <h4>Edit PEP</h4>
                 <label for="editName">
                     Name: <input type="text" id="editName" name="equipmentName" required>
                 </label>
@@ -85,7 +100,6 @@
 
     <dialog id="deleteModal" class="modal">
         <div class="modal-content container">
-            <span class="close" onclick="closeDialog()">&times;</span>
             <form onsubmit="deleteEquipment(this)" method="dialog">
                 <p id="deleteName"></p>
                 <button type="submit" style="margin-right: 1%;">Ok</button>
@@ -95,6 +109,15 @@
     </dialog>
 </body>
 
+<script src="scripts/bootstrap/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="scripts/bootstrap/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 <script src="scripts/functions.js"></script>
 <script src="scripts/equipmentScript.js"></script>
 
