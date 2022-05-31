@@ -1,5 +1,5 @@
 <?php
-$dir = "vdo/";
+$dir = "../vdo/";
 $push=array();
 
 // Sort in ascending order - this is default

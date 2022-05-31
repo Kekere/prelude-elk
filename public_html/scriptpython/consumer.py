@@ -1,20 +1,15 @@
 from kafka import KafkaConsumer
 
 # To consume latest messages and auto-commit offsets
-consumer = KafkaConsumer('ctm',group_id='ctm',bootstrap_servers=['impetus.simavi.ro:9093'],
-                            security_protocol='SASL_SSL',
-                            #ssl_check_hostname=True,
-                            ssl_cafile='/home/keren/ca.crt',
-                            sasl_mechanism="PLAIN",
-                            sasl_plain_username='ctm',
-                            sasl_plain_password='mKcC3Uz0EItfXgqrBEqR'
+consumer = KafkaConsumer('bootstrap.servers': 'impetus.simavi.ro:9093',
+                        'group.id': 'ctm',
+                        'client.id': 'ctm',
+                        'security.protocol': 'SASL_SSL',
+                        'sasl.mechanisms': 'PLAIN',
+                        'sasl.username': 'ctm',
+                        'sasl.password': 'mKcC3Uz0EItfXgqrBEqR',
+                        'ssl.ca.location': '/var/www/html/confluent/kafka/config/ca.crt'
                         )
-
-mypartition = TopicPartition("ctm", 0)
-assigned_topic = [smypartition]
-consumer.assign(assigned_topic)
-consumer.seek_to_beginning(mypartition)
-
 for message in consumer:
     # message value and key are raw bytes -- decode if necessary!
     # e.g., for unicode: `message.value.decode('utf-8')`

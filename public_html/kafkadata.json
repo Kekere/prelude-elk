@@ -1,9 +1,29 @@
 {
-    "CtmPartition": {
-        "Message" : "New threat detected",
+
+    "Header": {
+
+        "Source": "CTM",
+
+        "Timestamp": "2022-03-13T12:11:10+01:00",
+
+        "Criticality": "HIGH",
+
+        "Description": "CTM / Cyber Vulnerability"
+
+    },
+
+    "Payload": {
+
         "CVEID": "CVE-2019-0708",
+
         "IP address": "192.168.10.21",
-        "Product" : "windows 7",
-        "User Name": "Olivia"
+
+        "Product": "windows 7",
+
+        "User Name": "Olivia",
+
+        "Countermeasure": "Microsoft has released a set of patches for Windows XP, 2003, 2008, 7, and 2008 R2."
+
     }
+
 }

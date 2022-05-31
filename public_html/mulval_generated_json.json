@@ -1,0 +1,74 @@
+{
+    "nodes": [
+        {
+            "id": 5,
+            "group": 3,
+            "label": "hacl('157.159.14.77','192.168.1.1',udp,53):1"
+        },
+        {
+            "id": 4,
+            "group": 2,
+            "label": "RULE 8 (direct network access):0"
+        },
+        {
+            "id": 6,
+            "group": 3,
+            "label": "attackerLocated('157.159.14.77'):1"
+        },
+        {
+            "id": 3,
+            "group": 1,
+            "label": "netAccess('192.168.1.1',udp,53):0"
+        },
+        {
+            "id": 2,
+            "group": 2,
+            "label": "RULE 2 (remote exploit of a server program):0"
+        },
+        {
+            "id": 7,
+            "group": 3,
+            "label": "networkServiceInfo('192.168.1.1',windows_server_2016,udp,53,andrew):1"
+        },
+        {
+            "id": 8,
+            "group": 4,
+            "label": "vulExists('192.168.1.1','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation):1"
+        },
+        {
+            "id": 1,
+            "group": 1,
+            "label": "execCode('192.168.1.1',andrew):0"
+        }
+    ],
+    "links": [
+        {
+            "source": 5,
+            "target": 4
+        },
+        {
+            "source": 6,
+            "target": 4
+        },
+        {
+            "source": 4,
+            "target": 3
+        },
+        {
+            "source": 3,
+            "target": 2
+        },
+        {
+            "source": 7,
+            "target": 2
+        },
+        {
+            "source": 8,
+            "target": 2
+        },
+        {
+            "source": 2,
+            "target": 1
+        }
+    ]
+}

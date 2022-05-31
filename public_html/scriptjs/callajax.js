@@ -1,6 +1,6 @@
 $.ajax({
     type: 'POST',       
-    url: "prelude.php",
+    url: "../scriptphp/prelude.php",
     dataType: 'json',
     context: document.body,
     global: false,
@@ -13,7 +13,7 @@ $.ajax({
 	      $('#your-hidden-addresssource').val(data["addresssource"]);
         $('#your-hidden-protocolsource').val(data["protocolsource"]);
         $('#your-hidden-portsource').val(data["portsource"]);
-        //$('#your-hidden-severitysource').val(data["severitysource"]);
+        $('#your-hidden-timestamp').val(data["timestamp"]);
         setInterval('refreshPage()', 30000);
     }
 })

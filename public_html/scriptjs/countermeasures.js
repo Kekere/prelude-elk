@@ -95,55 +95,72 @@ function generateCounterGraph(objjson){
     }
   }
 function createContermeasureGraph(){
-    graph = JSON.parse(localStorage.getItem('myjson'))
-    var jsonfinalcounter=convertxmltojson("AttackGraph.xml");
-    for (var i = 0; i < graph["nodes"].length; i++){
-        var hacl=graph["nodes"][i]["label"].indexOf("hacl");
-        var net=graph["nodes"][i]["label"].indexOf("networkServiceInfo");
-        var vul=graph["nodes"][i]["label"].indexOf("vulExists");
+    graphcounter = JSON.parse(localStorage.getItem('myjson'))
+    var jsonfinalcounter=convertxmltojson("../scriptphp/AttackGraph.xml");
+    var arraycves=[]
+    for (var i = 0; i < graphcounter["nodes"].length; i++){
+        var hacl=graphcounter["nodes"][i]["label"].indexOf("hacl");
+        var net=graphcounter["nodes"][i]["label"].indexOf("networkServiceInfo");
+        var vul=graphcounter["nodes"][i]["label"].indexOf("vulExists");
         
 
         if(vul==0){
-            var id=graph["nodes"][i]["id"]
-            var cve=graph["nodes"][i]["label"].split(',')[1].split("'")[1];
             
-            
-            var action="";
-            var privileges="";
-            var asset="";
-            var counternode="";
-            var counterlink="";
-            var counternoder="";
-            var counterlinkr="";
-            var counterarraylink="";
-            var counterarraynode="";
-            var newsource="";
-            
-
-            $.getJSON("vdo/"+cve+".json", function(json) {
-                for(var e=0; e<json["Vulnerability"]["hasScenario"].length; e++){
-                    arraynodes=graph["nodes"];
-                    arraylinks=graph["links"];
-                    action=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["blockedByBarrier"];
-                    privileges=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["neededPrivileges"];
-                    asset=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["relatesToContext"];
-                    newsource=parseInt(arraynodes.length+1);
-                    counterlink={"source":newsource,"target":id};
-                    counternode={id: newsource, group: 5, label: "remove("+action+"("+privileges+" on "+asset+"))"}
-                    arraylinks.push(counterlink);
-                    arraynodes.push(counternode);
-                }
-                jsonfinalcounter={"nodes":arraynodes,"links":arraylinks};
-                //console.log(jsonfinal);
-                localStorage.setItem('myjsoncounter',JSON.stringify(jsonfinalcounter,null,4));
-                objcounter=JSON.parse(localStorage.getItem('myjsoncounter')); 
-                console.log(objcounter)
-                //$("svg").empty();
-                generateCounterGraph("output.json");
-            });
-            
+            var id=graphcounter["nodes"][i]["id"]
+            var cve=graphcounter["nodes"][i]["label"].split(',')[1].split("'")[1];
+            var jsoncves={id:id,cve:cve};
+            arraycves.push(jsoncves);
+                      
         }
     }
+    //console.log(arraycves);  
+    for (i=0; i<arraycves.length; i++){
+      //console.log(arraycves[i]["cve"]);
+      var action="";
+      var privileges="";
+      var asset="";
+      var counternode={};
+      var counterlink={};
+      var counternoder="";
+      var counterlinkr="";
+      var counterarraylink=[];
+      var counterarraynode=[];
+      var newsource="";
+      var newtarget="";
+      
+      //var target=arraycves[i]["id"];
+      $.getJSON("vdo/"+arraycves[i]["cve"]+".json", function(json) {
+          //console.log(json["Vulnerability"]["hasIdentity"][0]["value"]);
+          for(var e=0; e<json["Vulnerability"]["hasScenario"].length; e++){
+              counterarraynode=graphcounter["nodes"];
+              counterarraylink=graphcounter["links"];
+              action=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["blockedByBarrier"];
+              privileges=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["neededPrivileges"];
+              asset=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["relatesToContext"];
+              newsource=parseInt(counterarraynode.length+1);
+              //console.log(newsource);
+
+              for(a=0; a<arraycves.length; a++){
+                if(json["Vulnerability"]["hasIdentity"][0]["value"]==arraycves[a]["cve"]){
+                  newtarget=arraycves[a]["id"];
+                }
+                
+              }
+              counterlink={"source":newsource,"target":newtarget};
+              counternode={id: newsource, group: 5, label: "remove("+action+"("+privileges+" on "+asset+"))"}
+              counterarraylink.push(counterlink);
+              counterarraynode.push(counternode);
+          }
+          jsonfinalcounter={"nodes":counterarraynode,"links":counterarraylink};
+          //console.log(jsonfinal);
+          localStorage.setItem('myjsoncounter',JSON.stringify(jsonfinalcounter,null,4));
+          objcounter=JSON.parse(localStorage.getItem('myjsoncounter')); 
+          //console.log(objcounter)
+          //$("svg").empty();
+          
+      });
+    }
+    generateCounterGraph("mulval_generated_json.json");
 }
 var button = document.getElementById( 'downloadcounter' );
 button.addEventListener( 'click', function() {
@@ -152,7 +169,7 @@ button.addEventListener( 'click', function() {
     a.href = URL.createObjectURL(new Blob([JSON.stringify(objcounter, null, 4)], {
       type: "text/plain"
     }));
-    a.setAttribute("downloadcounter", "data.json");
+    a.setAttribute("downloadcounter", "datacountermesure.json");
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

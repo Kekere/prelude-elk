@@ -29,19 +29,19 @@ meta(cvss,2).
 meta(attackGoal,1).
 meta(advances,2).
 
-attack(execCode('157.159.68.115',andrew)).
+attack(execCode('192.168.1.1',andrew)).
 
-possible_duplicate_trace_step(because(8,rule_desc('direct network access',1.0),netAccess('157.159.68.115',tcp,9000),[hacl('157.159.14.77','157.159.68.115',tcp,9000),attackerLocated('157.159.14.77')])).
+possible_duplicate_trace_step(because(8,rule_desc('direct network access',1.0),netAccess('192.168.1.1',udp,49763),[hacl('157.159.14.77','192.168.1.1',udp,49763),attackerLocated('157.159.14.77')])).
 
-possible_duplicate_trace_step(because(8,rule_desc('direct network access',1.0),netAccess('157.159.68.115',tcp,9000),[hacl('157.159.14.77','157.159.68.115',tcp,9000),attackerLocated('157.159.14.77')])).
+possible_duplicate_trace_step(because(8,rule_desc('direct network access',1.0),netAccess('192.168.1.1',udp,49763),[hacl('157.159.14.77','192.168.1.1',udp,49763),attackerLocated('157.159.14.77')])).
 
-possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.115',andrew),[netAccess('157.159.68.115',tcp,9000),networkServiceInfo('157.159.68.115',windows_server_2016,tcp,9000,andrew),vulExists('157.159.68.115','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('192.168.1.1',andrew),[netAccess('192.168.1.1',udp,49763),networkServiceInfo('192.168.1.1',windows_server_2016,udp,49763,andrew),vulExists('192.168.1.1','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(7,rule_desc('multi-hop access',0.5),netAccess('157.159.68.115',tcp,9000),[hacl('157.159.68.115','157.159.68.115',tcp,9000),advances('157.159.68.115','157.159.68.115'),execCode('157.159.68.115',andrew)])).
+possible_duplicate_trace_step(because(7,rule_desc('multi-hop access',0.5),netAccess('192.168.1.1',udp,49763),[hacl('192.168.1.1','192.168.1.1',udp,49763),advances('192.168.1.1','192.168.1.1'),execCode('192.168.1.1',andrew)])).
 
-possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.115',andrew),[netAccess('157.159.68.115',tcp,9000),networkServiceInfo('157.159.68.115',windows_server_2016,tcp,9000,andrew),vulExists('157.159.68.115','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('192.168.1.1',andrew),[netAccess('192.168.1.1',udp,49763),networkServiceInfo('192.168.1.1',windows_server_2016,udp,49763,andrew),vulExists('192.168.1.1','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.115',andrew),[netAccess('157.159.68.115',tcp,9000),networkServiceInfo('157.159.68.115',windows_server_2016,tcp,9000,andrew),vulExists('157.159.68.115','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('192.168.1.1',andrew),[netAccess('192.168.1.1',udp,49763),networkServiceInfo('192.168.1.1',windows_server_2016,udp,49763,andrew),vulExists('192.168.1.1','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.115',andrew),[netAccess('157.159.68.115',tcp,9000),networkServiceInfo('157.159.68.115',windows_server_2016,tcp,9000,andrew),vulExists('157.159.68.115','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(2,rule_desc('remote exploit of a server program',1.0),execCode('192.168.1.1',andrew),[netAccess('192.168.1.1',udp,49763),networkServiceInfo('192.168.1.1',windows_server_2016,udp,49763,andrew),vulExists('192.168.1.1','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)])).
 

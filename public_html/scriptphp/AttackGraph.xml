@@ -44,7 +44,7 @@
 </vertex>
 <vertex>
 <id>3</id>
-<fact>netAccess('192.168.1.1',udp,49763)</fact>
+<fact>netAccess('192.168.1.1',udp,53)</fact>
 <metric>0</metric>
 <type>OR</type>
 </vertex>
@@ -56,7 +56,7 @@
 </vertex>
 <vertex>
 <id>5</id>
-<fact>hacl('157.159.14.77','192.168.1.1',udp,49763)</fact>
+<fact>hacl('157.159.14.77','192.168.1.1',udp,53)</fact>
 <metric>1</metric>
 <type>LEAF</type>
 </vertex>
@@ -68,7 +68,7 @@
 </vertex>
 <vertex>
 <id>7</id>
-<fact>networkServiceInfo('192.168.1.1',windows_server_2016,udp,49763,andrew)</fact>
+<fact>networkServiceInfo('192.168.1.1',windows_server_2016,udp,53,andrew)</fact>
 <metric>1</metric>
 <type>LEAF</type>
 </vertex>

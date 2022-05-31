@@ -19,7 +19,7 @@ if (isset($_POST['json'])){
 
    // code de generation du fichier Json
    
-   file_put_contents("mulval_generated_json.json", $_POST['json']);
+   file_put_contents("../mulval_generated_json.json", $_POST['json']);
 
 
 }
@@ -29,7 +29,7 @@ else {
 
 // Entree dans le code d'upload du fichier
 
-$dir='./uploads';
+$dir='../uploads';
 if( !file_exists($dir) ) 
 {
    mkdir($dir, 0777, true);
@@ -39,7 +39,7 @@ else
     //The directory already exists
 }
 
-$uploaded_filename = "uploads/" . $_FILES['file']['name'];
+$uploaded_filename = "../uploads/" . $_FILES['file']['name'];
 
 if( move_uploaded_file($_FILES['file']['tmp_name'], $uploaded_filename) )
 
@@ -54,7 +54,7 @@ if( move_uploaded_file($_FILES['file']['tmp_name'], $uploaded_filename) )
 
 // redirection vers la page de génération
    sleep(2);
-   header("location:graph.html");
+   header("location:../graph.html");
 
 }
 else

@@ -1,6 +1,6 @@
 $.ajax({
     type: 'POST',       
-    url: "iterator.php",
+    url: "./scriptphp/iterator.php",
     dataType: 'json',
     context: document.body,
     global: false,

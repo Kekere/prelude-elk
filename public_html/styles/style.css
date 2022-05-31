@@ -115,12 +115,12 @@ body {
 /* Create two equal columns that floats next to each other */
 .columngraph1 {
   float: left;
-  width: 70%;
+  width: 90%;
   
 }
 .columngraph2 {
   float: left;
-  width: 30%;
+  width: 10%;
   
 }
 

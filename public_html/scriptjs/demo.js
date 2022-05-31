@@ -4,7 +4,7 @@ document.getElementById("generate-graph").onclick = function() {
   //console.log(localStorage.getItem('myjson'));
   if (token==1){
     var link = document.getElementById("generate-graph");
-    link.setAttribute("href", "graph.html");
+    link.setAttribute("href", "./graph.html");
     return true;
   }
   else{

@@ -1,0 +1,15 @@
+{
+    "Header": {
+        "Source": "CTM",
+        "Timestamp": "2022-05-28T02:37:53.000Z",
+        "Criticality": "medium",
+        "Description": "CTM / Cyber Vulnerability"
+    },
+    "Payload": {
+        "CVEID": "CVE-2017-0148",
+        "IP address": "192.168.1.1",
+        "Product": "windows_server_2016",
+        "User Name": "andrew",
+        "Countermeasure": "remove PrivilegesRequired from User on Host OS"
+    }
+}

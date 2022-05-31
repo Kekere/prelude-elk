@@ -20,7 +20,7 @@
   dans un fichier json "mulval_generated_json.json" qui sera utilisé comme paramètre de la fonction generategraph
   */
 $.ajax({
-    url:"mulval.php",
+    url:"./scriptphp/mulval.php",
     data:jsonobj,
     datatype:"json",
     type:"POST",

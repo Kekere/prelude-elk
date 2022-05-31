@@ -12,6 +12,9 @@ function updateGraph(){
   var addresssource=document.getElementById("your-hidden-addresssource").value;
   var protocolsource=document.getElementById("your-hidden-protocolsource").value;
   var portsource=document.getElementById("your-hidden-portsource").value;
+  var timestamp=document.getElementById("your-hidden-timestamp").value;
+  var username='';
+  var kafkajson;
   //var severitysource=document.getElementById("your-hidden-severitysource").value;
   //console.log(document.getElementById("your-hidden-jsonobj").value)
   
@@ -22,9 +25,10 @@ function updateGraph(){
   var net=graph["nodes"][i]["label"].indexOf("networkServiceInfo");
   var vul=graph["nodes"][i]["label"].indexOf("vulExists");
   var ch;
+  
   //console.log(vul,graph["nodes"][i]["label"]);
   //console.log(severity);
-  if(severity=="high" || severity=="medium"){
+  if(severity=="high" || severity=="medium" || severity=="low"){
     if(hacl==0){
       var sep=graph["nodes"][i]["label"].split(',');
       adds=sep[0].split("'")[1];
@@ -46,7 +50,8 @@ function updateGraph(){
   
         
         product=sep[1].split("'")[0];
-        // console.log(product)
+        username=sep[4].split(")")[0];
+        
         
       }
       else{
@@ -117,9 +122,36 @@ function updateGraph(){
           }
            
         })*/
+        var name=localStorage.getItem('someVarKey');
+        if(localStorage.getItem('someVarKey')=='null'){
+          //console.log(localStorage.getItem('someVarKey'));
+            kafkajson={"Header": {
+              "Source": "CTM",      
+              "Timestamp": timestamp,      
+              "Criticality": severity,      
+              "Description": "CTM / Cyber Vulnerability"
+          },      
+          "Payload": {      
+              "CVEID": cve,      
+              "IP address": address,      
+              "Product": product,      
+              "User Name": username,      
+              "Countermeasure": "Microsoft has released a set of patches for Windows XP, 2003, 2008, 7, and 2008 R2."
+        }
+        }
+        localStorage.setItem('alerte',JSON.stringify(kafkajson,null,4));
+        //console.log(localStorage.getItem('alerte'));
+        localStorage.setItem('sendalert',1);
+        }
+        else{
+          localStorage.setItem('sendalert',2);
+        }
+        
+       
+      
         function namefile(n){
-          $.getJSON("vdo/"+n, function(data){
-            console.log(n)
+          $.getJSON("./vdo/"+n, function(data){
+            //console.log(n)
             precondition=data["Vulnerability"]["hasScenario"][0]["barrier"][0]["barrierType"].split(':')[4];
             newcve=n.split('.')[0];
             // console.log(precondition)
@@ -137,10 +169,10 @@ function updateGraph(){
           
         }
         
-        $.getJSON("vdo/"+cve+".json", function(json) {
+        $.getJSON("./vdo/"+cve+".json", function(json) {
           // console.log(json)
           if(json["Vulnerability"]["hasIdentity"][0]["value"]==cve && localStorage.getItem('someVarKey')!=cve){
-            
+            localStorage.setItem('sendalert',2);
             for(var e=0; e<json["Vulnerability"]["hasScenario"].length; e++){
               for(var b=0; b<json["Vulnerability"]["hasScenario"][e]["affectsProduct"]["hasEnumeration"]["values"].length; b++){
                 prod=json["Vulnerability"]["hasScenario"][e]["affectsProduct"]["hasEnumeration"]["values"][b].split(':')[4];
@@ -201,9 +233,13 @@ function updateGraph(){
                                   // console.log(jsonfiles[y])
                              
                                   var n=jsonfiles[y];
-                                  $.getJSON("vdo/"+n, function(data){
+                                  $.getJSON("./vdo/"+n, function(data){
                                     precondition=data["Vulnerability"]["hasScenario"][0]["barrier"][0]["barrierType"].split(':')[4];
                                     newcve=data["Vulnerability"]["hasIdentity"][0]["value"];
+                                    var caction;
+                                    var cprivileges;
+                                    var casset;
+
                                     for(var u=0; u<data["Vulnerability"]["hasScenario"].length; u++){
                                       for(var h=0; h<data["Vulnerability"]["hasScenario"][u]["affectsProduct"]["hasEnumeration"]["values"].length; h++){
                                         prod=data["Vulnerability"]["hasScenario"][u]["affectsProduct"]["hasEnumeration"]["values"][h].split(':')[4];
@@ -215,14 +251,39 @@ function updateGraph(){
                                       }
                                       user=data["Vulnerability"]["hasScenario"][u]["barrier"][0]["neededPrivileges"];
                                       newimpact=data["Vulnerability"]["hasScenario"][u]["hasAction"][1]["resultsInImpact"][0]["hasLogicalImpact"].split('::')[1];
+                                      caction=json["Vulnerability"]["hasScenario"][u]["barrier"][0]["blockedByBarrier"];
+                                      cprivileges=json["Vulnerability"]["hasScenario"][u]["barrier"][0]["neededPrivileges"];
+                                      casset=json["Vulnerability"]["hasScenario"][u]["barrier"][0]["relatesToContext"];
                                     }
                                      
                                     
                                     if(weaknesses.includes(precondition) && products.includes(product)){
+                                      localStorage.setItem('newnode',1);
                                       
+                                      localStorage.setItem('counter','remove '+caction+' from '+cprivileges+' on ' + casset);
+                                      localStorage.setItem('newcve',newcve);
+                                      //console.log(address,localStorage.getItem('newcve'),localStorage.getItem('counter'), product,severity,username);
+                                      kafkajson={"Header": {
+                                        "Source": "CTM",      
+                                        "Timestamp": timestamp,      
+                                        "Criticality": severity,      
+                                        "Description": "CTM / Cyber Vulnerability"
+                                      },      
+                                      "Payload": {      
+                                          "CVEID": localStorage.getItem('newcve'),      
+                                          "IP address": address,      
+                                          "Product": product,      
+                                          "User Name": username,      
+                                          "Countermeasure": localStorage.getItem('counter')
+                                      }
+                                      }
+                                      localStorage.setItem('alerte',JSON.stringify(kafkajson,null,4));
+                                      //console.log(localStorage.getItem('alerte'));
+                                      localStorage.setItem('sendalert',1);
+
                                       newtarget=parseInt(arraynodes.length+1)
                                       newlinkr={"source":newtargeta,"target":newtarget};
-                                      newnoder={id: newtarget, group: 4, label: "vulExists"+"('"+address+"',"+newcve+","+product+","+mean+","+newimpact+"):0"}
+                                      newnoder={id: newtarget, group: 4, label: "vulExists"+"('"+address+"',"+"'"+newcve+"'"+","+product+","+mean+","+newimpact+"):0"}
                                       arraylinks.push(newlinkr);
                                       arraynodes.push(newnoder);
                                     }
@@ -236,7 +297,7 @@ function updateGraph(){
                                     obj=JSON.parse(localStorage.getItem('myjson')); 
                                     // console.log(obj)
                                     //$("svg").empty();
-                                    generateGraph("output.json");                               
+                                    //generateGraph("./mulval_generated_json.json");                               
                                   })
                                                    
                                   
@@ -261,7 +322,9 @@ function updateGraph(){
                   obj=JSON.parse(localStorage.getItem('myjson')); 
                   //console.log(obj)
                   //$("svg").empty();
-                  generateGraph("output.json");
+                                    
+                  
+                  //generateGraph("./mulval_generated_json.json");
                 }
                 
                 else{
@@ -318,7 +381,7 @@ function updateGraph(){
                   obj=JSON.parse(localStorage.getItem('myjson')); 
                   //console.log(obj)
                   //$("svg").empty();
-                  generateGraph("output.json");
+                  //generateGraph("./mulval_generated_json.json");
                   
                 }
               }
@@ -329,12 +392,14 @@ function updateGraph(){
       }
   } 
   }
+  generateGraph("./mulval_generated_json.json");
 }
 
 document.getElementById("home").onclick = function() {
-  localStorage.setItem("someVarKey","");
+  localStorage.setItem('sendalert',2);
+  localStorage.setItem("someVarKey",null);
   var link = document.getElementById("home");
-  link.setAttribute("href", "index.html");
+  link.setAttribute("href", "./index.html");
   return true;
 }
 var button = document.getElementById( 'download' );

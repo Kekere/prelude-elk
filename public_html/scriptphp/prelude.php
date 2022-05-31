@@ -2,7 +2,7 @@
 
 use Elasticsearch\ClientBuilder;
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 $hosts = [
     'http://elastic:prelude@172.31.0.4:9200' 
@@ -62,6 +62,8 @@ $addresssource=$responsesource['hits']['hits'][0]['_source']['address'];
 $protocolsource=$responsesource['hits']['hits'][0]['_source']['iana_protocol_name'];
 //$severitysource=$responsesource['hits']['hits'][0]['_source']['severity'];
 $portsource=$responsesource['hits']['hits'][0]['_source']['port'];
+$timestamp=$response['hits']['hits'][0]['_source']['createtime'];
+
 $advert = array(
   'address' => $address,
   'protocol' => $protocol,
@@ -71,6 +73,7 @@ $advert = array(
   'protocolsource' => $protocolsource,
   //'severitysource' => $severitysource,
   'portsource' => $portsource,
+  'timestamp' => $timestamp
 );
 echo json_encode($advert);
 ?>
