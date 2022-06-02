@@ -108,6 +108,9 @@ function updateGraph(){
         var user='';
         var mean='';
         var newimpact='';
+        var donnees={};
+        var arraydonnees=[];
+        var arrayremovenodes=[];
         //var countermeasure="";
         var jsonpost={};
         //var arraypost=[];
@@ -294,40 +297,124 @@ function updateGraph(){
                                   }
                                   
                                 }
-                               
+                                //var donnee={}
                                 for(var y=0; y<jsonfiles.length; y++){
                                   
                                   // console.log(jsonfiles[y])
-                             
+                                  
                                   var n=jsonfiles[y];
-                                  $.getJSON("./vdo/"+n, function(data){
-                                    precondition=data["Vulnerability"]["hasScenario"][0]["barrier"][0]["barrierType"].split(':')[4];
-                                    newcve=data["Vulnerability"]["hasIdentity"][0]["value"];
+                                  console.log(n.split(".json")[0]);
+                                  $.getJSON("./vdo/"+n, function(donnee){
+                                    
+                                    
+                                    precondition=donnee["Vulnerability"]["hasScenario"][0]["barrier"][0]["barrierType"].split(':')[4];
+                                    newcve=donnee["Vulnerability"]["hasIdentity"][0]["value"];
                                     
                                     var caction;
                                     var cprivileges;
                                     var casset;
 
-                                    for(var u=0; u<data["Vulnerability"]["hasScenario"].length; u++){
-                                      for(var h=0; h<data["Vulnerability"]["hasScenario"][u]["affectsProduct"]["hasEnumeration"]["values"].length; h++){
-                                        prod=data["Vulnerability"]["hasScenario"][u]["affectsProduct"]["hasEnumeration"]["values"][h].split(':')[4];
+                                    for(var u=0; u<donnee["Vulnerability"]["hasScenario"].length; u++){
+                                      for(var h=0; h<donnee["Vulnerability"]["hasScenario"][u]["affectsProduct"]["hasEnumeration"]["values"].length; h++){
+                                        prod=donnee["Vulnerability"]["hasScenario"][u]["affectsProduct"]["hasEnumeration"]["values"][h].split(':')[4];
                                         products.push(prod);
                                                                                
                                       }
-                                      if(data["Vulnerability"]["hasScenario"][u]["requiresAttackTheatre"]=="Internet"){
+                                      if(donnee["Vulnerability"]["hasScenario"][u]["requiresAttackTheatre"]=="Internet"){
                                         mean="remoteExploit";
                                       }
-                                      user=data["Vulnerability"]["hasScenario"][u]["barrier"][0]["neededPrivileges"];
-                                      newimpact=data["Vulnerability"]["hasScenario"][u]["hasAction"][1]["resultsInImpact"][0]["hasLogicalImpact"].split('::')[1];
+                                      user=donnee["Vulnerability"]["hasScenario"][u]["barrier"][0]["neededPrivileges"];
+                                      newimpact=donnee["Vulnerability"]["hasScenario"][u]["hasAction"][1]["resultsInImpact"][0]["hasLogicalImpact"].split('::')[1];
                                       caction=json["Vulnerability"]["hasScenario"][u]["barrier"][0]["blockedByBarrier"];
                                       cprivileges=json["Vulnerability"]["hasScenario"][u]["barrier"][0]["neededPrivileges"];
                                       casset=json["Vulnerability"]["hasScenario"][u]["barrier"][0]["relatesToContext"];
+                                      
+                                      //localStorage.setItem("donnees",JSON.stringify(donnees,null,4));
                                     }
-                                     
+                                    donnees={"cve":newcve,"user":user,"newimpact":newimpact,"caction":caction,"cprivileges":cprivileges,"casset":casset,"products":products,"mean":mean,"precondition":precondition}
+                                    arraydonnees.push(donnees);
+                                    //console.log(arraydonnees["cve"]);
                                     
-                                    if(weaknesses.includes(precondition) && products.includes(product)){
+                                    for(z=0; z<arraydonnees.length; z++){
+                                      
+                                      if(weaknesses.includes(arraydonnees[z]["precondition"]) && arraydonnees[z]["products"].includes(product)){
+                                        if(!arrayremovenodes.includes(arraydonnees[z]["cve"])){
+                                          arrayremovenodes.push(arraydonnees[z]["cve"]);
+                                          //localStorage.setItem('newnode',1);
+                                          //console.log(z,arraydonnees[z]["cve"]);
+                                          newtarget=parseInt(arraynodes.length+1)
+                                          newlinkr={"source":newtargeta,"target":newtarget};
+                                          //console.log(address,newcve,newimpact);
+                                          newnoder={id: newtarget, group: 4, label: "vulExists"+"('"+address+"',"+"'"+arraydonnees[z]["cve"]+"'"+","+product+","+arraydonnees[z]["mean"]+","+arraydonnees[z]["newimpact"]+"):0"}
+                                          //console.log(newnoder);
+                                          arraylinks.push(newlinkr);
+                                          arraynodes.push(newnoder);
+                                          localStorage.setItem('counter','remove '+arraydonnees[z]["caction"]+' from '+arraydonnees[z]["cprivileges"]+' on ' + arraydonnees[z]["casset"]);
+                                          localStorage.setItem('newcve',arraydonnees[z]["cve"]);
+                                          //console.log(address,localStorage.getItem('newcve'),localStorage.getItem('counter'), product,severity,username);
+                                          kafkajson={"Header": {
+                                            "Source": "CTM",      
+                                            "Timestamp": timestamp,      
+                                            "Criticality": severity,      
+                                            "Description": "CTM / Cyber Vulnerability"
+                                          },      
+                                          "Payload": {      
+                                              "CVEID": localStorage.getItem('newcve'),      
+                                              "IP address": address,      
+                                              "Product": product,      
+                                              "User Name": username,      
+                                              "Countermeasure": localStorage.getItem('counter')
+                                          }
+                                          }
+                                          localStorage.setItem('alerte',JSON.stringify(kafkajson,null,4));
+                                          //console.log(kafkajson);
+                                          //localStorage.setItem('sendalert',1);
+                                          const alertes =  localStorage.getItem("alerte");
+                                          const jsonString = alertes;
+                                              $.ajax
+                                              ({
+                                                  type: "GET",
+                                                  dataType : 'json',
+                                                  async: false,
+                                                  url: '../scriptphp/savejson.php',
+                                                  data: { data: jsonString},
+                                                  success: function () {},
+                                                  failure: function() {alert("Error!");}
+                                              })
+                                              $.ajax
+                                              ({
+                                                  type: "POST",
+                                                  dataType : 'json',
+                                                  global: false,
+                                                  async:false,
+                                                  url: './scriptphp/executeproducer.php',
+                                                  success: function () {alert("Thanks!"); },
+                                                  failure: function() {alert("Error!");}
+                                              });
+                                          
+                                        
+                                        }
+                                        
+                                      }
+                                      newnoder={};
+                                      newlinkr={};
+                                      newnodea={};
+                                      newlinka={};
+                                      jsonfinal={"nodes":arraynodes,"links":arraylinks};
+                                      // console.log(jsonfinal);
+                                      localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
+                                      obj=JSON.parse(localStorage.getItem('myjson')); 
+                                      // console.log(obj)
+                                      //$("svg").empty();
+                                      //generateGraph("./mulval_generated_json.json");
+                                    }
+
+                                    //localStorage.setItem("donnees",arraydonnees);
+                                    //console.log(localStorage.getItem("donnees")); 
+                                    //console.log(arraydonnees[0]["cve"],arraydonnees[1]["cve"],arraydonnees[2]["cve"]);
+                                   /* if(weaknesses.includes(precondition) && products.includes(product)){
                                       //localStorage.setItem('newnode',1);
-                                      if(localStorage.getItem('newcve')!=newcve){
+                                      
                                         newtarget=parseInt(arraynodes.length+1)
                                         newlinkr={"source":newtargeta,"target":newtarget};
                                         //console.log(address,newcve,newimpact);
@@ -378,7 +465,7 @@ function updateGraph(){
                                                   failure: function() {alert("Error!");}
                                               });
                                         
-                                      }
+                                      
                                       
                                       
                                     }
@@ -392,10 +479,10 @@ function updateGraph(){
                                     obj=JSON.parse(localStorage.getItem('myjson')); 
                                     // console.log(obj)
                                     //$("svg").empty();
-                                    //generateGraph("./mulval_generated_json.json");                               
+                                    //generateGraph("./mulval_generated_json.json");  */                             
                                   })
-                                                   
-                                  
+                                              
+                                  //console.log(localStorage.getItem("donnee"));
                                 }
                                 
                               }

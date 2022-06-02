@@ -4,7 +4,7 @@ from kafka import KafkaConsumer, TopicPartition
 consumer = KafkaConsumer(bootstrap_servers=['impetus.simavi.ro:9093'],
                             security_protocol='SASL_SSL',
                             #ssl_check_hostname=True,
-                            ssl_cafile='/home/keren/prelude-elk/public_html/confluent/kafka/config/ca.crt',
+                            ssl_cafile='/var/www/html/confluent/kafka/config/ca.crt',
                             sasl_mechanism="PLAIN",
                             sasl_plain_username='ctm',
                             sasl_plain_password='mKcC3Uz0EItfXgqrBEqR'
