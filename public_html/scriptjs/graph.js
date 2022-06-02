@@ -107,7 +107,8 @@ function updateGraph(){
         var newcve='';
         var user='';
         var mean='';
-        newimpact='';
+        var newimpact='';
+        //var countermeasure="";
         var jsonpost={};
         //var arraypost=[];
         //console.log(vul,graph["nodes"][i]["label"]);
@@ -123,9 +124,21 @@ function updateGraph(){
            
         })*/
         var name=localStorage.getItem('someVarKey');
+        
         if(localStorage.getItem('someVarKey')=='null'){
           //console.log(localStorage.getItem('someVarKey'));
-            kafkajson={"Header": {
+          
+          $.getJSON("../countermeasurelist.json",function(datacounte){
+            for(var r=0; r<datacounte["counter"].length; r++){
+              ct=datacounte["counter"][r]["cve"];
+              if(ct==cve){
+                localStorage.setItem("cr",datacounte["counter"][r]["countermeasure"]);
+                //console.log(datacounte["counter"][r]["cve"])
+              }
+            }
+          });
+          //console.log();
+          kafkajson={"Header": {
               "Source": "CTM",      
               "Timestamp": timestamp,      
               "Criticality": severity,      
@@ -136,12 +149,14 @@ function updateGraph(){
               "IP address": address,      
               "Product": product,      
               "User Name": username,      
-              "Countermeasure": "Microsoft has released a set of patches for Windows XP, 2003, 2008, 7, and 2008 R2."
+              "Countermeasure": localStorage.getItem("cr")
         }
         }
         localStorage.setItem('alerte',JSON.stringify(kafkajson,null,4));
         //console.log(localStorage.getItem('alerte'));
         localStorage.setItem('sendalert',1);
+        
+                                     
         }
         else{
           localStorage.setItem('sendalert',2);
@@ -170,9 +185,61 @@ function updateGraph(){
         }
         
         $.getJSON("./vdo/"+cve+".json", function(json) {
-          // console.log(json)
+          
           if(json["Vulnerability"]["hasIdentity"][0]["value"]==cve && localStorage.getItem('someVarKey')!=cve){
-            localStorage.setItem('sendalert',2);
+            if(localStorage.getItem('sendalert')=='1'){
+              // console.log(json)
+              const alertes =  localStorage.getItem("alerte");
+              const jsonString = alertes;
+              
+              /*$.ajax({
+                type: "POST",
+                url: '../scriptphp/savejson.php',
+                data: { data: jsonString},
+                success: function(data) {
+                  localStorage.setItem('aj','yes') 
+                }
+              }); 
+              console.log(localStorage.getItem('aj') );
+              if(localStorage.getItem('aj')=='yes'){
+                $.ajax
+                  ({
+                      type: "POST",
+                      dataType : 'json',
+                      global: false,
+                      async:false,
+                      url: './scriptphp/executeproducer.php',
+                      success: function () {
+                        alert("success");
+                        localStorage.setItem('sendalert',2); 
+                        (localStorage.getItem('aj')=='no')
+                      },
+                      failure: function() {alert("Error!");}
+                   });}*/
+                   $.ajax
+                    ({
+                        type: "GET",
+                        dataType : 'json',
+                        async: false,
+                        url: '../scriptphp/savejson.php',
+                        data: { data: jsonString},
+                        success: function () {},
+                        failure: function() {alert("Error!");}
+                    })
+                    $.ajax
+                      ({
+                          type: "POST",
+                          dataType : 'json',
+                          global: false,
+                          async:false,
+                          url: './scriptphp/executeproducer.php',
+                          success: function () {alert("Thanks!"); },
+                          failure: function() {alert("Error!");}
+                      });
+                      localStorage.setItem('sendalert','2') 
+            }
+            
+            
             for(var e=0; e<json["Vulnerability"]["hasScenario"].length; e++){
               for(var b=0; b<json["Vulnerability"]["hasScenario"][e]["affectsProduct"]["hasEnumeration"]["values"].length; b++){
                 prod=json["Vulnerability"]["hasScenario"][e]["affectsProduct"]["hasEnumeration"]["values"][b].split(':')[4];
@@ -236,6 +303,7 @@ function updateGraph(){
                                   $.getJSON("./vdo/"+n, function(data){
                                     precondition=data["Vulnerability"]["hasScenario"][0]["barrier"][0]["barrierType"].split(':')[4];
                                     newcve=data["Vulnerability"]["hasIdentity"][0]["value"];
+                                    
                                     var caction;
                                     var cprivileges;
                                     var casset;
@@ -258,34 +326,61 @@ function updateGraph(){
                                      
                                     
                                     if(weaknesses.includes(precondition) && products.includes(product)){
-                                      localStorage.setItem('newnode',1);
+                                      //localStorage.setItem('newnode',1);
+                                      if(localStorage.getItem('newcve')!=newcve){
+                                        newtarget=parseInt(arraynodes.length+1)
+                                        newlinkr={"source":newtargeta,"target":newtarget};
+                                        //console.log(address,newcve,newimpact);
+                                        newnoder={id: newtarget, group: 4, label: "vulExists"+"('"+address+"',"+"'"+newcve+"'"+","+product+","+mean+","+newimpact+"):0"}
+                                        //console.log(newnoder);
+                                        arraylinks.push(newlinkr);
+                                        arraynodes.push(newnoder);
+                                        localStorage.setItem('counter','remove '+caction+' from '+cprivileges+' on ' + casset);
+                                        localStorage.setItem('newcve',newcve);
+                                        //console.log(address,localStorage.getItem('newcve'),localStorage.getItem('counter'), product,severity,username);
+                                        kafkajson={"Header": {
+                                          "Source": "CTM",      
+                                          "Timestamp": timestamp,      
+                                          "Criticality": severity,      
+                                          "Description": "CTM / Cyber Vulnerability"
+                                        },      
+                                        "Payload": {      
+                                            "CVEID": localStorage.getItem('newcve'),      
+                                            "IP address": address,      
+                                            "Product": product,      
+                                            "User Name": username,      
+                                            "Countermeasure": localStorage.getItem('counter')
+                                        }
+                                        }
+                                        localStorage.setItem('alerte',JSON.stringify(kafkajson,null,4));
+                                        //console.log(kafkajson);
+                                        //localStorage.setItem('sendalert',1);
+                                        const alertes =  localStorage.getItem("alerte");
+                                        const jsonString = alertes;
+                                            $.ajax
+                                            ({
+                                                type: "GET",
+                                                dataType : 'json',
+                                                async: false,
+                                                url: '../scriptphp/savejson.php',
+                                                data: { data: jsonString},
+                                                success: function () {},
+                                                failure: function() {alert("Error!");}
+                                            })
+                                            $.ajax
+                                              ({
+                                                  type: "POST",
+                                                  dataType : 'json',
+                                                  global: false,
+                                                  async:false,
+                                                  url: './scriptphp/executeproducer.php',
+                                                  success: function () {alert("Thanks!"); },
+                                                  failure: function() {alert("Error!");}
+                                              });
+                                        
+                                      }
                                       
-                                      localStorage.setItem('counter','remove '+caction+' from '+cprivileges+' on ' + casset);
-                                      localStorage.setItem('newcve',newcve);
-                                      //console.log(address,localStorage.getItem('newcve'),localStorage.getItem('counter'), product,severity,username);
-                                      kafkajson={"Header": {
-                                        "Source": "CTM",      
-                                        "Timestamp": timestamp,      
-                                        "Criticality": severity,      
-                                        "Description": "CTM / Cyber Vulnerability"
-                                      },      
-                                      "Payload": {      
-                                          "CVEID": localStorage.getItem('newcve'),      
-                                          "IP address": address,      
-                                          "Product": product,      
-                                          "User Name": username,      
-                                          "Countermeasure": localStorage.getItem('counter')
-                                      }
-                                      }
-                                      localStorage.setItem('alerte',JSON.stringify(kafkajson,null,4));
-                                      //console.log(localStorage.getItem('alerte'));
-                                      localStorage.setItem('sendalert',1);
-
-                                      newtarget=parseInt(arraynodes.length+1)
-                                      newlinkr={"source":newtargeta,"target":newtarget};
-                                      newnoder={id: newtarget, group: 4, label: "vulExists"+"('"+address+"',"+"'"+newcve+"'"+","+product+","+mean+","+newimpact+"):0"}
-                                      arraylinks.push(newlinkr);
-                                      arraynodes.push(newnoder);
+                                      
                                     }
                                     newnoder={};
                                     newlinkr={};

@@ -1,4 +1,4 @@
-if(localStorage.getItem('sendalert')=='1'){
+/*if(localStorage.getItem('sendalert')=='1'){
 $.ajax
     ({
         type: "POST",
@@ -9,4 +9,4 @@ $.ajax
         success: function () {alert("Thanks!"); },
         failure: function() {alert("Error!");}
     });
-}
+}*/

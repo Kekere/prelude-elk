@@ -1,8 +1,8 @@
-1,"execCode('192.168.1.1',andrew)","OR",0
+1,"execCode('159.223.154.178',andrew)","OR",0
 2,"RULE 2 (remote exploit of a server program)","AND",0
-3,"netAccess('192.168.1.1',udp,53)","OR",0
+3,"netAccess('159.223.154.178',tcp,57582)","OR",0
 4,"RULE 8 (direct network access)","AND",0
-5,"hacl('157.159.14.77','192.168.1.1',udp,53)","LEAF",1
+5,"hacl('157.159.14.77','159.223.154.178',tcp,57582)","LEAF",1
 6,"attackerLocated('157.159.14.77')","LEAF",1
-7,"networkServiceInfo('192.168.1.1',windows_server_2016,udp,53,andrew)","LEAF",1
-8,"vulExists('192.168.1.1','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)","LEAF",1
+7,"networkServiceInfo('159.223.154.178',windows_server_2016,tcp,57582,andrew)","LEAF",1
+8,"vulExists('159.223.154.178','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)","LEAF",1

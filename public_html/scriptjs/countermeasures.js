@@ -152,6 +152,15 @@ function createContermeasureGraph(){
                     counternode={id: newsource, group: 5, label: "remove("+action+"("+privileges+" on "+asset+"))"}
                     counterarraylink.push(counterlink);
                     counterarraynode.push(counternode);
+                    //console.log(counternode["id"],counterarraynode.length);
+                    if(counterarraynode.length!=counternode["id"]){
+                      counterarraynode.length = counternode["id"];
+                      //console.log(counternode["id"],counterarraynode.length,counternode)
+                    }
+                    else{
+                      //console.log(counternode["id"],counterarraynode.length,counternode)
+                    }
+                    //console.log(counterarraynode)
                   }
                 }
                 

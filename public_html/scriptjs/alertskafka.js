@@ -1,5 +1,5 @@
 
-    //console.log(localStorage.getItem('sendalert'));
+   /* console.log(localStorage.getItem('sendalert'));
     const alertes =  localStorage.getItem("alerte");
     const jsonString = alertes;
     $.ajax
@@ -11,7 +11,7 @@
             data: { data: jsonString},
             success: function () {},
             failure: function() {alert("Error!");}
-        })
+        })*/
 /*const alertes =  localStorage.getItem("alerte");
 const jsonString = JSON.stringify(alertes);
 $.ajax
@@ -23,4 +23,12 @@ $.ajax
         data: { data: jsonString},
         success: function () {},
         failure: function() {alert("Error!");}
+    });*/
+    /*$.ajax({
+        type: "POST",
+        url: '../scriptphp/savejson.php',
+        data: $(this).serialize(),
+        success: function(data) {
+            alert("success")
+        }
     });*/

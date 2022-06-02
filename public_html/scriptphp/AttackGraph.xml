@@ -32,7 +32,7 @@
 <vertices>
 <vertex>
 <id>1</id>
-<fact>execCode('192.168.1.1',andrew)</fact>
+<fact>execCode('159.223.154.178',andrew)</fact>
 <metric>0</metric>
 <type>OR</type>
 </vertex>
@@ -44,7 +44,7 @@
 </vertex>
 <vertex>
 <id>3</id>
-<fact>netAccess('192.168.1.1',udp,53)</fact>
+<fact>netAccess('159.223.154.178',tcp,57582)</fact>
 <metric>0</metric>
 <type>OR</type>
 </vertex>
@@ -56,7 +56,7 @@
 </vertex>
 <vertex>
 <id>5</id>
-<fact>hacl('157.159.14.77','192.168.1.1',udp,53)</fact>
+<fact>hacl('157.159.14.77','159.223.154.178',tcp,57582)</fact>
 <metric>1</metric>
 <type>LEAF</type>
 </vertex>
@@ -68,13 +68,13 @@
 </vertex>
 <vertex>
 <id>7</id>
-<fact>networkServiceInfo('192.168.1.1',windows_server_2016,udp,53,andrew)</fact>
+<fact>networkServiceInfo('159.223.154.178',windows_server_2016,tcp,57582,andrew)</fact>
 <metric>1</metric>
 <type>LEAF</type>
 </vertex>
 <vertex>
 <id>8</id>
-<fact>vulExists('192.168.1.1','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)</fact>
+<fact>vulExists('159.223.154.178','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)</fact>
 <metric>1</metric>
 <type>LEAF</type>
 </vertex>
