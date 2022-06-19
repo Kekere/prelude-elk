@@ -574,6 +574,7 @@ function updateGraph(){
       }
   } 
   }
+  d3.select("g").remove()
   generateGraph("./mulval_generated_json.json");
 }
 

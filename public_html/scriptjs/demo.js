@@ -24,12 +24,19 @@ document.getElementById("countermeasures").onclick = function() {
   return true;
 }*/
 function generateGraph(objjson){
-  var svg = d3.select("#svg1"),
+  // set the dimensions and margins of the graph
+
+  var svg = d3.select("#svg1").attr("viewBox", "0,0,150,400")
+  .call(d3.zoom().on("zoom", function () {
+    svg.attr("transform", d3.event.transform)
+ })).insert('#svg1:g', ':first-child'),
       width = +svg.attr("width"),
       height = +svg.attr("height");
+
+        
   svg.append('defs').append('marker')
       .attrs({'id':'arrowhead',
-                'viewBox':'-0 -5 10 10',
+                'viewBox':'-0 -5 5 10',
                 'refX':13,
                 'refY':0,
                 'orient':'auto',
@@ -196,6 +203,11 @@ function encode( s ) {
 var fileInput = document.getElementById('file');
 
 fileInput.addEventListener('change', function (e) {
+  var file = fileInput.files[0];
+
+  var reader = new FileReader();
+  reader.readAsText(file);
+  console.log(reader.result);
 	/*var file = fileInput.files[0];
 
         var reader = new FileReader();

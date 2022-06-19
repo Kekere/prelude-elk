@@ -13,15 +13,17 @@
   <div class="restofbody">
     <div class="row">
       <div class="columngraph1">
-        <svg width="1024" height="800" id="svg1"></svg>
+        <!--<svg style="width:100%;height:800px" id="svg1"></svg>-->
+        <svg width="1400" height="800" id="svg1"></svg>
       </div>
       <div class="columngraph2">
         <input type="submit" name="submit" class="download" id="download" value="Download graph">
       </div>
     </div>
-    <div>
+    <div class="row">
       <div class="columngraph1">
-        <svg width="1024" height="800" id="svg2"></svg>
+        <!--<svg style="width:100%;height:100%;" id="svg2"></svg>-->
+        <svg width="1400" height="800" id="svg2"></svg>
       </div>
       <div class="columngraph2">
         <input type="submit" name="submit" class="download" id="downloadcounter" value="Download graph">
@@ -66,7 +68,8 @@ var jsonfile="mulval_generated_json.json";
 // conversion du fichier AttackGraph généré par mulval en Objet Json
 jsonfinal=convertxmltojson("scriptphp/AttackGraph.xml");
 console.log(jsonfinal);
-//console.log(jsonfile);
+console.log(JSON.stringify(jsonfinal,null,4));
+console.log(localStorage.getItem('notification'))
 if(localStorage.getItem('notification')=="true"){
   
   //console.log(localStorage.getItem('notification'));

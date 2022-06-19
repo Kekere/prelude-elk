@@ -1,5 +1,8 @@
 function generateCounterGraph(objjson){
-    var svg = d3.select("#svg2"),
+    var svg = d3.select("#svg2").attr("viewBox", "0,0,150,400")
+    .call(d3.zoom().on("zoom", function () {
+      svg.attr("transform", d3.event.transform)
+   })).insert('#svg2:g', ':first-child'),
         width = +svg.attr("width"),
         height = +svg.attr("height");
     svg.append('defs').append('marker')
@@ -209,6 +212,7 @@ function createContermeasureGraph(){
         });
       }
     //$("svg2").empty();
+    //d3.select("g").remove()
     generateCounterGraph("mulval_generated_json.json");
 }
 var button = document.getElementById( 'downloadcounter' );
