@@ -16,21 +16,22 @@ f = open('../general.json')
 # a dictionary
 data = json.load(f)
 # Asynchronous by default
-future = producer.send("ctm", data)
+for e in data:
+    future = producer.send("ctm", e)
+    # Block for 'synchronous' sends
+    try:
+        record_metadata = future.get(timeout=10)
+    except KafkaError:
+        # Decide what to do if produce request failed...
+        log.exception()
+        pass
 
-# Block for 'synchronous' sends
-try:
-    record_metadata = future.get(timeout=10)
-except KafkaError:
-    # Decide what to do if produce request failed...
-    log.exception()
-    pass
-
-# Successful result returns assigned partition and offset
-print (record_metadata.topic)
-print (record_metadata.partition)
-print (record_metadata.offset)
+    # Successful result returns assigned partition and offset
+    print (record_metadata.topic)
+    print (record_metadata.partition)
+    print (record_metadata.offset)
 
 
-# block until all async messages are sent
-producer.flush()
+    # block until all async messages are sent
+    producer.flush()
+

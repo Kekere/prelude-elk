@@ -48,7 +48,7 @@ function generateGraph(objjson){
             .attr('fill', '#999')
             .style('stroke','none');
   
-  var color = ["#32CD32","#FFD700","#FFA500","#FF4500","#b01ac4"];
+  var color = ["#32CD32","#FFD700","#FFA500","#FF4500","#b01ac4","#520603"];
 
   var simulation = d3.forceSimulation()
       .force("link", d3.forceLink().id(function(d) { return d.id; }))
@@ -139,7 +139,7 @@ function convertxmltojson(xmlfile){
   xhttp.open("GET", xmlfile, false);
   xhttp.send();
   var xmlDoc = xhttp.responseXML;
-  //console.log(xmlDoc);
+  console.log(xmlDoc);
   var sizelinks=xmlDoc.getElementsByTagName("arc").length;
   var arraylinks=[];
   var arraynodes=[]
@@ -186,9 +186,7 @@ function convertxmltojson(xmlfile){
     }
   }
   var jsonfinal={"nodes":arraynodes,"links":arraylinks};
-  //console.log(jsonfinal)
-  //$('#your-hidden-jsonobj').val(jsonfinal);
-  //console.log(document.getElementById("your-hidden-jsonobj").value)
+  
   return jsonfinal;
 }
 
@@ -208,82 +206,12 @@ fileInput.addEventListener('change', function (e) {
   var reader = new FileReader();
   reader.readAsText(file);
   console.log(reader.result);
-	/*var file = fileInput.files[0];
-
-        var reader = new FileReader();
-        reader.readAsText(file);
-        reader.onloadend = function(){
-        var xmlDoc = $(reader.result);
-	   
-	  var sizelinks=xmlDoc[0].getElementsByTagName("arc").length;
-	  var arraylinks=[];
-	  var arraynodes=[];
-	  var arrayelements=[];
-	  for (var i = 0; i < sizelinks; i++) {
-
-	    var target = xmlDoc[0].getElementsByTagName("arc")[i].children[0].innerHTML;
-	    var source = xmlDoc[0].getElementsByTagName("arc")[i].children[1].innerHTML;
-	    var jsonelement={"source":parseInt(source),"target":parseInt(target)};
-	    arraylinks.push(jsonelement);
-	    
-	    var sourcel=arrayelements.includes(parseInt(source));
-	    var targel=arrayelements.includes(parseInt(target));
-	    if(sourcel==false){
-	      arrayelements.push(parseInt(source))
-	    }
-	    if(targel==false){
-	      arrayelements.push(parseInt(target));
-	    }
-	  }
-	  for (var i=0; i< arrayelements.length; i++){
-	    for (var y=0; y< arrayelements.length; y++){
-	      if(xmlDoc[0].getElementsByTagName('vertex')[y].getElementsByTagName("id")[0].innerHTML==arrayelements[i]){
-		var nodeAttackGraph=xmlDoc[0].getElementsByTagName('vertex')[y];
-		var test=nodeAttackGraph.getElementsByTagName("fact")[0].innerHTML.indexOf("vulExists");
-		
-		if(nodeAttackGraph.getElementsByTagName("type")[0].innerHTML=="LEAF" && test != 0){
-		  var group=3;
-		}
-		else if(nodeAttackGraph.getElementsByTagName("type")[0].innerHTML=="LEAF" && test == 0){
-		  var group=4;
-		}
-		else if(nodeAttackGraph.getElementsByTagName("type")[0].innerHTML=="AND"){
-		  var group=2;
-		}
-		else if(nodeAttackGraph.getElementsByTagName("type")[0].innerHTML=="OR"){
-		  var group=1;
-		}
-		var labels=nodeAttackGraph.getElementsByTagName("fact")[0].innerHTML+":"+nodeAttackGraph.getElementsByTagName("metric")[0].innerHTML;
-		var jsonnode={"id":arrayelements[i],"group":group,"label":labels};
-		arraynodes.push(jsonnode);
-
-	      }
-	      
-	    }
-	  }
-	  var jsonfinal={"nodes":arraynodes,"links":arraylinks};
-	 console.log(jsonfinal)*/
+	
   
 	var button = document.getElementById( 'submit' );
 	button.addEventListener( 'click', function() {
-    localStorage.setItem('notification', true);
-    //token=1;
-    
-    // conversion du fichier AttackGraph généré par mulval en Objet Json
-    //var newjsonfinal=convertxmltojson("AttackGraph.xml");
-
-    // ecriture du resultat de la conversion dans le local storage
-
-    //localStorage.setItem('myjson',JSON.stringify(newjsonfinal,null,4));
-        
-    //jsonobj={"json":JSON.stringify(newjsonfinal,null,4)};
-    //console.log(newjsonfinal);
- 
-    
-   
-	 
+    localStorage.setItem('notification', true); 
 	});
-       // };*/
 	
  });
 

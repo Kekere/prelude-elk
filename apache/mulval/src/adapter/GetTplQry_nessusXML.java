@@ -26,190 +26,131 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Set;
-
+import java.sql.ResultSetMetaData;
 
 public class GetTplQry_nessusXML {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-String filename="vulInfo.txt";
-File f = new File(filename);
-String path = f.getPath();
-String cvdid="";
-String hostname="";
-try{
-	
-	BufferedReader breader= new BufferedReader(new FileReader(path));
-	ArrayList<String> cvePort= new ArrayList<String>();
-	
-//	hostname=breader.readLine()+"_host";
-	while ((cvdid = breader.readLine()) != null) {
-		
-		cvePort.add(cvdid); //put all of the cve ids and port info into the arrayList
-		
+		String filename = "vulInfo.txt";
+		File f = new File(filename);
+		String path = f.getPath();
+		String cvdid ="";
+		String hostname = "";
+		try {
+			BufferedReader breader= new BufferedReader(new FileReader(path));
+			ArrayList<String> cvePort= new ArrayList<String>();
+			while ((cvdid = breader.readLine()) != null) {
+				cvePort.add(cvdid); //put all of the cve ids and port info into the arrayList
+			}
+			writeTpls(cvePort);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
-	writeTpls(cvePort);
-	
-//	writeAccount(hostname);
-}
 
-catch(Exception e){
-	
-	e.printStackTrace();
-}
-	}
 	public static Connection getConnection() throws SQLException,
 	java.lang.ClassNotFoundException, IOException {
-//String url = "jdbc:mysql://localhost:3306/mulvalDB";
-//String url = "jdbc:mysql://mysql.cis.ksu.edu:3306/zhangs84";
-//String password="8CFQZZyF";
-Class.forName("com.mysql.jdbc.Driver");
-//String userName = "root";
-//String password = "";
-String url="";
-String userName="";
-String password="";
-File f = new File("config.txt");
-String path = f.getPath();
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		String url="";
+		String userName="";
+		String password="";
+		File f = new File("config.txt");
+		String path = f.getPath();
+		BufferedReader breader= new BufferedReader(new FileReader(path));
+		url=breader.readLine();
+		userName=breader.readLine();
+		password=breader.readLine();
+		Connection con = DriverManager.getConnection(url, userName, password);
+		return con;	
+	}
 
-	
-	BufferedReader breader= new BufferedReader(new FileReader(path));
-	
-	url=breader.readLine();
-	userName=breader.readLine();
-	password=breader.readLine();
-	Connection con = DriverManager.getConnection(url, userName, password);
-	return con;	
-
-
-}
-    public static void writeAccount(ArrayList<String> hosts){
-    	
-    	
-    	
-    	try{
-    		
+	public static void writeAccount(ArrayList<String> hosts) {
+    	try {
     		String victim = "";
     		FileWriter fr= new FileWriter("accountinfo.P");
     		Iterator<String> hostItr = hosts.iterator();
-    	String host = "";
-    		while(hostItr.hasNext()){
-    			
+    		String host = "";
+    		while(hostItr.hasNext()) {
     			host = hostItr.next();
-    
-    			System.out.println(host);
-    			 victim = "'"+host +"_victim'";
-            fr.write("inCompetent("+victim+").\n");
-  /*          fr.write("hasAccount(victim, '"+hostname+"', user).\n");
-	    fr.write("hacl('"+hostname+"', internet, httpProtocol, httpPort).\n");
-	    fr.write("hacl(internet, '"+hostname+"', someProtocol, somePort).\n");
-	    fr.write("attackerLocated(internet).\n");
-	    fr.write("attackGoal(execCode('"+hostname+"', _)).\n"); */
-            fr.write("hasAccount("+victim+", '"+host+"', user).\n");
-    	//    fr.write("hacl('"+hostname+"', internet, httpProtocol, httpPort).\n");
-    	//    fr.write("hacl(internet, '"+hostname+"', someProtocol, somePort).\n");
-    	    fr.write("attackerLocated(internet).\n");
-    	    fr.write("attackGoal(execCode('"+host+"', _)).\n");
+    			victim = "'" + host + "_victim'";
+	            fr.write("inCompetent(" + victim+").\n");
+	            fr.write("hasAccount(" + victim + ", '" + host + "', user).\n");
+	    	    fr.write("attackerLocated(internet).\n");
+	    	    fr.write("attackGoal(execCode('" + host + "', _)).\n");
     		}
             fr.close();
-    		
     	}
-    	
-    	catch (Exception e){
-    		
+    	catch (Exception e) {
     		e.printStackTrace();
-    		
     	}
-    	
-    	
-    	
     }
-	public static void writeTpls(ArrayList<String> al){
-		
-		String cveid="";
-		String lose_types="";
-		String range="";
-		String software="";
-		String severity="";
+
+	public static void writeTpls(ArrayList<String> al) throws Exception {
 		String access="";
+		String lose_types="";
+		String severity="";
+		String range="";
+		String products="";
 		String port ="";
 		String prot ="";
 		String host = "";
 		String cve = "";
+		String vulInfos = "";
+		boolean hasvuln_exists_7 = false;
+		boolean hasvuln_exists_9 = false;
 		ArrayList<String> hosts= new ArrayList<String>();
-
-		try{
-		Connection con = getConnection();
-		Statement sql = con.createStatement();
-		int l=al.size();
-		FileWriter fr= new FileWriter("results.P");
-		String tuple="";
-		for(int i=0;i<l;i+=4){
-			
-			host = al.get(i);
-			if(!hosts.contains(host))
-				hosts.add(host);
-			
-			cve = al.get(i+1);
-			port = al.get(i+2);
-		    prot =  al.get(i+3);
-			
-		    
-		String query = "select * from nvd where id=\""+cve+"\"";
-		//System.out.println(query);
-		ResultSet result = sql.executeQuery(query);
-//		System.out.println("can we reach here?");
-//		System.out.println(result.next());
-		if (result.next()){
-			
-		//	System.out.println("can we reach here?");
-		cveid = result.getString("id");
-		lose_types = result.getString("lose_types");
-		range = result.getString("rng");
-		software = result.getString("soft");
-	
-		//avoid empty entry for application 
-		if(software.isEmpty())
-			continue;
-		severity = result.getString("severity");
-		access=result.getString("access");
-	//	System.out.println(range);
-		if(range.contains("remoteExploit")&&(!range.contains("user_action_req"))){
-			
-			tuple="vuln_exists('"+host+"','"+cveid+"','"+software+"',["+range+"],["+lose_types+"],'"+severity+"','"+access+"','"+port+"','"+prot+"').\n";
-
-		}
-		else
-		    tuple="vuln_exists('"+host+"','"+cveid+"','"+software+"',["+range+"],["+lose_types+"],'"+severity+"','"+access+"').\n";
-
-	//	System.out.println(tuple);
-		fr.write(tuple);
-		}
-		else continue;
-
-		}
-		fr.close();
-		writeAccount(hosts);
-		}
-		catch (SQLException ex) {
-			System.err.println("SQLException:" + ex.getMessage());
-		} catch (ClassNotFoundException e) {
-
-			
-			e.printStackTrace();
+		try {
+			int l = al.size();
+			FileWriter fr = new FileWriter("results.P");
+			String tuple = "";
+			for(int i = 0; i < l; i += 5) {
+				host = al.get(i);
+				if(!hosts.contains(host))
+					hosts.add(host);
+				cve = al.get(i+1);
+				
+				//Récupération des infos sur les vulns
+				vulInfos = al.get(i+2);
+				vulInfos = vulInfos.substring(1, vulInfos.length()-1); //On enlève les accolades
+				String[] vulInfos_tmp = vulInfos.split(", ");
+				severity = vulInfos_tmp[0].split("=")[1];
+				lose_types = vulInfos_tmp[1].split("=")[1];
+				access = vulInfos_tmp[2].split("=")[1];
+				range = vulInfos_tmp[3].split("=")[1];
+				if (vulInfos_tmp.length == 5) {
+					products = vulInfos_tmp[4].split("=")[1];
+				} else {
+					products = "no_products";
+				}
+				
+				port = al.get(i+3);
+			    prot =  al.get(i+4);
+			    
+			    if(range.contains("remoteExploit") && (!range.contains("user_action_req"))) {
+					tuple = "vuln_exists('"+host+"','"+cve+"','"+products+"',["+range+"],["+lose_types+"],'"+severity+"','"+access+"','"+port+"','"+prot+"').\n";
+					hasvuln_exists_9 = true;
+				}
+				else {
+					tuple="vuln_exists('"+host+"','"+cve+"','"+products+"',["+range+"],["+lose_types+"],'"+severity+"','"+access+"').\n";
+					hasvuln_exists_7 = true;
+				}
+				System.out.println(tuple);
+				fr.write(tuple);
+			}
+			if (!hasvuln_exists_9) {
+				fr.write("vuln_exists(null,null,null,null,null,null,null,null,null).");
+			}
+			if (!hasvuln_exists_7) {
+				fr.write("vuln_exists(null,null,null,null,null,null,null).");
+			}
+			fr.close();
+			writeAccount(hosts);
 		} catch (IOException e) {
-
 			e.printStackTrace();
 		}
-		
-		
 	}
-
-
 }

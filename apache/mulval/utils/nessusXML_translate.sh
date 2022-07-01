@@ -4,13 +4,8 @@
 # Copyright (C) 2011, Argus Cybersecurity Lab, Kansas State University
 
 export MALLOC_CHECK_=0
-CLASSPATH=$CLASSPATH:$MULVALROOT/lib/dom4j-1.6.1.jar:$MULVALROOT/lib/jaxen-1.1.1.jar:$MULVALROOT/lib/mysql-connector-java-5.1.8-bin.jar:$MULVALROOT/bin/adapter
+CLASSPATH=$CLASSPATH:$MULVALROOT/lib/dom4j-2.1.3.jar:$MULVALROOT/lib/jaxen-1.1.1.jar:$MULVALROOT/lib/mysql-connector-java-8.0.27.jar:$MULVALROOT/bin/adapter
 ADAPTERSRCPATH=$MULVALROOT/src/adapter
-
-if [ ! -r config.txt ]; then
-    echo "config.txt does not exist. Please refer to the README and create config.txt first."
-    exit 1
-fi
 
 java -cp $CLASSPATH NessusXMLParser $1
 

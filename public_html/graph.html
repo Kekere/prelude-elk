@@ -61,19 +61,14 @@
  
 // nom du fichier qui sera qui sera généré par le serveur php
 
-//if (token==1){
 var jsonfile="mulval_generated_json.json";
 
 
 // conversion du fichier AttackGraph généré par mulval en Objet Json
 jsonfinal=convertxmltojson("scriptphp/AttackGraph.xml");
-console.log(jsonfinal);
-console.log(JSON.stringify(jsonfinal,null,4));
-console.log(localStorage.getItem('notification'))
+
 if(localStorage.getItem('notification')=="true"){
-  
-  //console.log(localStorage.getItem('notification'));
-  
+    
   localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
         
   jsonobj={"json":JSON.stringify(jsonfinal,null,4)};
@@ -87,15 +82,15 @@ if(localStorage.getItem('notification')=="true"){
     datatype:"json",
     type:"POST",
     success: function(response){
-      //console.log(jsonobj);
       // après la creation du fichier JSON en php on génère le Graph
+      //console.log(jsonobj);
+      //console.log(jsonfinal);
       generateGraph(jsonfile); 
       createContermeasureGraph();
       localStorage.setItem('notification', false);
       
     },
     failure:function(response){
-      //console.log("erreur");
     }
   });
 }
@@ -105,9 +100,5 @@ else{
   createContermeasureGraph();
   
 }
-  
-
-//var jsonfile="output.json";
-//generateGraph(jsonfile);
 
 </script>

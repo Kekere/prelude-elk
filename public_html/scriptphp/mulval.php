@@ -6,7 +6,8 @@
 // Modifier les variables en fonction des chemins MulvalRoot et XSB selon votre serveur
 
 
-$XsbRoot="/home/XSB/bin";
+//$XsbRoot="/home/XSB";
+$XSBHOME="/home/XSB";
 $MulvalRoot="/home/mulval";
 
 
@@ -48,7 +49,7 @@ if( move_uploaded_file($_FILES['file']['tmp_name'], $uploaded_filename) )
 
    //echo $uploaded_filename; 
 
-    $output = shell_exec("export PATH=\$PATH:".$XsbRoot." && export MULVALROOT=".$MulvalRoot." && export PATH=\$PATH:\$MULVALROOT/utils && export PATH=\$PATH:\$MULVALROOT/bin && graph_gen.sh $uploaded_filename -p -v");
+    $output = shell_exec("export XSBHOME=".$XSBHOME." && export MULVALROOT=".$MulvalRoot." && export PATH=\$PATH:\$MULVALROOT/utils && export PATH=\$PATH:\$MULVALROOT/bin && PATH=\$PATH:\$XSBHOME/bin && nessus_translate.sh $uploaded_filename && graph_gen.sh nessus.P -p -v");
 
    //echo $output;
 

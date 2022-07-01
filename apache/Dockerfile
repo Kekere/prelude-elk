@@ -47,11 +47,11 @@ RUN apt-get update && apt-get -y upgrade && apt-get -y install sudo && sudo addu
    && ./configure \
    && ./makexsb \
    && export MULVALROOT=/home/mulval \
-   && export PATH=$PATH:/home/XSB/bin \
-   && export PATH=$PATH:$MULVALROOT/utils && export PATH=$PATH:$MULVALROOT/bin \
+   && export XSBHOME=/home/XSB \
+   && export PATH=$PATH:$XSBHOME/bin && export PATH=$PATH:$MULVALROOT/utils && export PATH=$PATH:$MULVALROOT/bin \
    && cd /home/mulval \
-   && sudo chmod 777 -R * \
-   && make 
+   && make
+
 
 RUN apt-get update && apt-get -y install apache2 \
    && cd /var/www/html && sudo chmod 777 -R * \

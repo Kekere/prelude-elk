@@ -1,15 +1,32 @@
-{
-    "Header": {
-        "Source": "CTM",
-        "Timestamp": "2022-06-02T02:20:27.000Z",
-        "Criticality": "low",
-        "Description": "CTM / Cyber Vulnerability"
+[
+    {
+        "Header": {
+            "Source": "CTM",
+            "Timestamp": "2022-06-02T02:20:27.000Z",
+            "Criticality": "low",
+            "Description": "CTM / Cyber Vulnerability"
+        },
+        "Payload": {
+            "CVEID": "CVE-2017-0146",
+            "IP address": "159.223.154.178",
+            "Product": "windows_server_2016",
+            "User Name": "andrew",
+            "Countermeasure": "remove PrivilegesRequired from User on Host OS"
+        }
     },
-    "Payload": {
-        "CVEID": "CVE-2017-0148",
-        "IP address": "159.223.154.178",
-        "Product": "windows_server_2016",
-        "User Name": "andrew",
-        "Countermeasure": "remove PrivilegesRequired from User on Host OS"
+    {
+        "Header": {
+            "Source": "CTM",
+            "Timestamp": "2022-06-02T02:20:27.000Z",
+            "Criticality": "low",
+            "Description": "CTM / Cyber Vulnerability"
+        },
+        "Payload": {
+            "CVEID": "CVE-2017-0148",
+            "IP address": "159.223.154.178",
+            "Product": "windows_server_2016",
+            "User Name": "andrew",
+            "Countermeasure": "remove PrivilegesRequired from User on Host OS"
+        }
     }
-}
+]

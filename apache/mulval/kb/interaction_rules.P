@@ -105,22 +105,6 @@ interaction_rule(
 
 interaction_rule(
   (execCode(H, Perm) :-
-	vulExists(H, _, Software, remoteExploit, modify),
-	networkServiceInfo(H, Software, Protocol, Port, Perm),
-	netAccess(H, Protocol, Port)),
-  rule_desc('remote exploit of a server program',
-  1.0)).
-  
-interaction_rule(
-  (execCode(H, Perm) :-
-	vulExists(H, _, Software, remoteExploit, deny),
-	networkServiceInfo(H, Software, Protocol, Port, Perm),
-	netAccess(H, Protocol, Port)),
-  rule_desc('remote exploit of a server program',
-  1.0)).
-  
-interaction_rule(
-  (execCode(H, Perm) :-
         vulExists(H, _, Software, remoteClient, privEscalation),
 	hasAccount(Victim, H, Perm),
         accessMaliciousInput(H, Victim, Software)),

@@ -1,7 +1,3 @@
-
-
-  //console.log(jsonfinal);
-
   // nom du fichier qui sera qui sera généré par le serveur php
 
   var jsonfile="mulval_generated_json.json";

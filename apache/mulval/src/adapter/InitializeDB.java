@@ -17,514 +17,185 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 import java.sql.*;
 
-import javax.sql.*;
-
-
-
 import java.io.BufferedReader;
-
 import java.io.File;
-
-import java.io.FileNotFoundException;
-
 import java.io.FileReader;
-
 import java.io.FileWriter;
-
 import java.io.IOException;
-
 import java.util.ArrayList;
-
 import java.util.Iterator;
-
 import java.util.List;
-
-
+import java.io.Reader;
 
 import org.dom4j.Attribute;
-
 import org.dom4j.Document;
-
 import org.dom4j.DocumentException;
-
 import org.dom4j.Element;
-
 import org.dom4j.io.SAXReader;
-
 import org.dom4j.io.XMLWriter;
 
-
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class InitializeDB {
 
-	/*public static Connection getConnection() throws SQLException,
-
-			java.lang.ClassNotFoundException {
-
-		String url = "jdbc:mysql://localhost:3306/mulvalDB";
-
-		Class.forName("com.mysql.jdbc.Driver");
-
-		String userName = "root";
-
-		String password = "";
-
-
-
-		Connection con = DriverManager.getConnection(url, userName, password);
-
-		return con;
-
-	}*/
-
 	public static Connection getConnection() throws SQLException,
-
-	java.lang.ClassNotFoundException, IOException {
-
-//String url = "jdbc:mysql://localhost:3306/mulvalDB";
-
-Class.forName("com.mysql.jdbc.Driver");
-
-//String userName = "root";
-
-//String password = "";
-
-String url="";
-
-String userName="";
-
-String password="";
-String MulvalRootEnv = System.getenv("MULVALROOT");
-
-//System.out.println(MulvalRootEnv);
-
-//File f = new File(MulvalRootEnv + "/src/dataPreProcessing/translator/config.txt");
-
-File f= new File("config.txt");
-
-String path = f.getPath();
-
-
-
-	
-
-	BufferedReader breader= new BufferedReader(new FileReader(path));
-
-	
-
-	url=breader.readLine();
-
-	userName=breader.readLine();
-
-	password=breader.readLine();
-
-	Connection con = DriverManager.getConnection(url, userName, password);
-
-	return con;	
-
-}
-
-
+	  java.lang.ClassNotFoundException, IOException {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		String url = "";
+		String userName = "";
+		String password = "";
+		String MulvalRootEnv = System.getenv("MULVALROOT");
+		File f = new File("config.txt");
+		String path = f.getPath();
+		BufferedReader breader = new BufferedReader(new FileReader(path));
+		url = breader.readLine();
+		userName = breader.readLine();
+		password = breader.readLine();
+		Connection con = DriverManager.getConnection(url, userName, password);
+		breader.close();
+		return con;	
+	}
 
 	public static void main(String[] args) {
-
-		
-
 		setupDB(Integer.parseInt(args[0]));
-
-		
-
 	}
-
-
 
 	public static void setupDB(int year) {
-
-
-
 		try {
-
-			//String filename = "nvdcve-2008.xml";
-
-
-
 			Connection con = getConnection();
-
 			Statement sql = con.createStatement();
-
 			sql.execute("drop table if exists nvd");                                                                                                                                                                                                        //,primary key(id)
-
-			sql.execute("create table nvd(id varchar(20) not null,soft varchar(160) not null default 'ndefined',rng varchar(100) not null default 'undefined',lose_types varchar(100) not null default 'undefind',severity varchar(20) not null default 'unefined',access varchar(20) not null default 'unefined');");
-
-	
-
-			SAXReader saxReader = new SAXReader();
-
+			sql.execute("create table nvd(id varchar(20) not null,vector varchar(100) not null default 'undefined',availability varchar(100) not null default 'undefind',confidentiality varchar(100) not null default 'undefind',integrity varchar(100) not null default 'undefind',severity varchar(20) not null default 'unefined',complexity varchar(20) not null default 'unefined');");
 			
-
-			
-
-			for(int ct=2002;ct<=year;ct++){
-
-			    //String fname="/transient/mulval/oval/nvd/nvdcve-"+Integer.toString(ct)+".xml";
-				String fname="nvd_xml_files/nvdcve-"+Integer.toString(ct)+".xml";
-
-			
-
-			Document document = saxReader.read(fname);
-
-
-
-			List entry = document.selectNodes("/*[local-name(.)='nvd']/*[local-name(.)='entry']");
-
-			Iterator ent = entry.iterator();
-
-               int act=0;
-
-					while (ent.hasNext()) { // varchar(20) not null default 'name',
-
-				Element id = (Element) ent.next();
-
-
-
-				String cveid = id.attributeValue("name");
-				
-				String cvss = "";
-				
-				
-				
-				
-				
+			for(int ct = 2002; ct <= year; ct++) {
+				String cveID = "";
 				String access = "";
-				
-				
-			//	System.out.println(cveid + access);
-
-				String sev = "";
-
+				String severity = "";
 				String host = "localhost";
-
-				String sftw = "";
-
-				String rge = "";
-
-				String rge_tmp = "";
-
-				String lose_tmp = "";
-
-				String lose_types = "";
-
-				ArrayList<String> subele = new ArrayList<String>();
-
-				ArrayList<String> attr = new ArrayList<String>();
-
-				Iterator ei = id.elementIterator();
-
-				while (ei.hasNext()) { // put all of the subelements'
-
-										// names(subelement of entry) to the
-
-										// array list
-
-
-
-					Element sube = (Element) ei.next();
-
-					subele.add(sube.getName());
-
-
-
+				String vect = "";
+                String vect_tmp = "";
+				String avail = "";
+				String conf = "";
+				String integ = "";
+				String fname="nvd_json_files/nvdcve-1.1-"+Integer.toString(ct)+".json";
+				FileReader reader = new FileReader(fname);
+				JSONParser jsonParser = new JSONParser();
+	            JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
+	 
+	            // get an array from the JSON object
+	            JSONArray cveItems = (JSONArray) jsonObject.get("CVE_Items");
+	 
+	            // take the elements of the json array
+	            for (int i = 0; i < cveItems.size(); i++) {
+	            	JSONObject cve0 = (JSONObject) cveItems.get(i);
+	                
+	                //looking for cveID
+	                JSONObject cve = (JSONObject) cve0.get("cve");
+	                JSONObject cveMetaData = (JSONObject) cve.get("CVE_data_meta");
+	                cveID = (String) cveMetaData.get("ID");
+	                
+	                //Parsing CVSS
+	                JSONObject impact = (JSONObject) cve0.get("impact");
+	                JSONObject bmV3 = (JSONObject) impact.get("baseMetricV3");
+	                JSONObject bmV2 = (JSONObject) impact.get("baseMetricV2");
+	                if (bmV3 == null && bmV2 == null) {
+	                	continue;
+	                } else if (bmV3 == null && bmV2 != null) {
+	                	severity = (String) bmV2.get("severity");
+	                	JSONObject cvssV2 = (JSONObject) bmV2.get("cvssV2");
+	                	access = (String) cvssV2.get("accessComplexity");
+		                
+		                //Attack vector
+		                vect = (String) cvssV2.get("accessVector");
+		                if (vect.equals("ADJACENT_NETWORK"))
+		    				vect_tmp = "lan";
+		    			else if (vect.equals("NETWORK"))
+		    				vect_tmp = "remoteExploit";
+		    			else if (vect.equals("LOCAL"))
+		    				vect_tmp = "local";
+		    			else
+		    				vect_tmp = "other";
+		                vect = vect_tmp;
+		                
+		                //Impact metrics
+		                avail = (String) cvssV2.get("availabilityImpact");
+		                conf = (String) cvssV2.get("confidentialityImpact");
+		                integ = (String) cvssV2.get("integrityImpact");
+	                } else {
+	                	JSONObject cvssV3 = (JSONObject) bmV3.get("cvssV3");
+		                //Attack Severity
+		                severity = (String) cvssV3.get("baseSeverity");
+		                
+		                //Attack complexity
+		                access = (String) cvssV3.get("attackComplexity");
+		                
+		                //Attack vector
+		                vect = (String) cvssV3.get("attackVector");
+		                if (vect.equals("PHYSICAL"))
+		    				vect_tmp = "user_action_req";
+		    			else if (vect.equals("ADJACENT_NETWORK"))
+		    				vect_tmp = "lan";
+		    			else if (vect.equals("NETWORK"))
+		    				vect_tmp = "remoteExploit";
+		    			else if (vect.equals("LOCAL"))
+		    				vect_tmp = "local";
+		    			else
+		    				vect_tmp = "other";
+		                vect = vect_tmp;
+		                
+		                //Impact metrics
+		                avail = (String) cvssV3.get("availabilityImpact");
+		                conf = (String) cvssV3.get("confidentialityImpact");
+		                integ = (String) cvssV3.get("integrityImpact");
+	                }
+	                
+	                //Insert les données dans la table
+	                String insert = "insert nvd values('" + cveID + "','"
+							+ vect + "','" + avail + "','" + conf + "','" + integ
+							+ "','" + severity + "','" + access + "')";
+	                System.out.println(insert);
+					sql.execute(insert);
 				}
-
-				//System.out.println(id.getText());
-
-				Iterator i = id.attributeIterator();
-
-				while (i.hasNext()) { // put the attributes of the entries to
-
-										// the arraylist
-
-
-
-					Attribute att = (Attribute) i.next();
-
-					attr.add(att.getName());
-
-
-
-				}
-
-				if (subele.contains("vuln_soft")) {
-
-					Element vs = (Element) id.element("vuln_soft");
-
-					Iterator itr = vs.elementIterator("prod");
-
-					while (itr.hasNext()) { // record all of the softwares
-
-						Element n = (Element) itr.next();
-
-
-
-						//sftw = sftw + n.attributeValue("name") + ",";
-
-						sftw =n.attributeValue("name");
-
-					if(sftw.contains("'")){
-
-							
-
-							sftw=sftw.replace("'", "''");
-
-						}	
-
-						break;
-
-					}
-
-					//int lsf = sftw.length();
-
-					//sftw = sftw.substring(0, lsf - 1);// delete the last comma
-
-
-
-				}
-
-				if (attr.contains("severity")) {
-
-
-
-					sev = id.attributeValue("severity");
-
-
-
-				}
-				
-				if (attr.contains("CVSS_vector")) 
-				{
-					
-					cvss = id.attributeValue("CVSS_vector");
-					char ac = cvss.charAt(9);
-					if (ac=='L')
-						access="l";
-					else if (ac =='M')
-						access="m";
-					else if (ac=='H')
-						access="h";
-					else ;
-					
-				}
-
-
-
-				if (subele.contains("range")) { // to get the range as a array
-
-					Element vs = (Element) id.element("range");
-
-					Iterator rgi = vs.elementIterator();
-
-					while (rgi.hasNext()) { // record all of the softwares
-
-						Element rg = (Element) rgi.next();
-
-						if (rg.getName().equals("user_init"))
-
-							rge_tmp = "user_action_req";
-
-						else if (rg.getName().equals("local_network"))
-
-							rge_tmp = "lan";
-
-						else if (rg.getName().equals("network"))
-
-							rge_tmp = "remoteExploit";
-
-						else if (rg.getName().equals("local"))
-
-							rge_tmp = "local";
-
-						else
-
-							rge_tmp = "other";
-
-
-
-						rge = rge + "''"+rge_tmp + "'',";
-
-					}
-
-					int lr = rge.length();
-
-					rge = rge.substring(0, lr - 1);// delete the last comma
-
-
-
-				}
-
-				if (subele.contains("loss_types")) {
-
-
-
-					Element lt = (Element) id.element("loss_types");
-
-					Iterator lti = lt.elementIterator();
-
-					while (lti.hasNext()) {
-
-						ArrayList<String> isecat = new ArrayList<String>();
-
-						Element ls = (Element) lti.next();
-
-
-
-						if (ls.getName().equals("avail"))
-
-							lose_tmp = "availability_loss";
-
-						else if (ls.getName().equals("conf"))
-
-							lose_tmp = "data_loss";
-
-
-
-						else if (ls.getName().equals("int"))
-
-							lose_tmp = "data_modification";
-
-
-
-						else
-
-							lose_tmp = "other";
-
-						lose_types = lose_types +"''"+ lose_tmp + "'',";
-
-					}
-
-					int ltp = lose_types.length();
-
-					lose_types = lose_types.substring(0, ltp - 1);// delete the
-
-																	// last
-
-																	// comma
-
-
-
-				}
-
-				//System.out.println(cveid + lose_types + rge + sftw + sev + access);
-
-				String insert = "insert nvd values('" + cveid + "','"
-
-						+ sftw + "','" + rge + "','" + lose_types + "','" + sev
-
-						+ "','" + access+"')";
-
-				sql.execute(insert);
-
-
-
 			}
-
-			}
-
-			sql.close();
-
-			con.close();
-
 			
-
+			sql.close();
+			con.close();
+			
 		} catch (java.lang.ClassNotFoundException e) {
-
 			System.err.println("ClassNotFoundException:" + e.getMessage());
-
 		} catch (SQLException ex) {
-
 			System.err.println("SQLException:" + ex.getMessage());
-
-		} catch (DocumentException e) {
-
-
-
-			e.printStackTrace();
-
 		} catch (IOException e) {
-
-			// TODO Auto-generated catch block
-
 			e.printStackTrace();
-
+		} catch (ParseException e) {
+			e.printStackTrace();
 		}
-
-
-
 	}
-
-
 
 	public static void clearEntryWithVulsoft(String filename) {
-
-
-
 		try {
-
-
-
 			SAXReader saxReader = new SAXReader();
-
 			Document document = saxReader.read(filename);
-
-			
-
-
-
 			List soft = document
-
 					.selectNodes("/*[local-name(.)='nvd']/*[local-name(.)='entry']/*[local-name(.)='vuln_soft']");
-
 			Iterator sft = soft.iterator(); 
-
 			Element nvd = (Element) document
-
 					.selectSingleNode("/*[local-name(.)='nvd']");
-
-
-
 			while (sft.hasNext()) {
-
-
-
 				Element vsft = (Element) sft.next();
-
 				nvd.remove(vsft.getParent());
-
 				XMLWriter output = new XMLWriter(new FileWriter(filename));//
-
 				output.write(document);
-
 				output.flush();
-
 				output.close();
-
-
-
 			}
-
-
-
 		} catch (Exception e) {
-
-
-
 			e.printStackTrace();
-
 		}
-
 	}
-
 }
-

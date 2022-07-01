@@ -16,8 +16,8 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-NVDPATH=nvd_xml_files
-CLASSPATH=$CLASSPATH:$MULVALROOT/lib/dom4j-1.6.1.jar:$MULVALROOT/lib/jaxen-1.1.1.jar:$MULVALROOT/lib/mysql-connector-java-5.1.8-bin.jar:$MULVALROOT/bin/adapter
+NVDPATH=nvd_json_files
+CLASSPATH=$CLASSPATH:$MULVALROOT/lib/dom4j-2.1.3.jar:$MULVALROOT/lib/jaxen-1.1.1.jar:$MULVALROOT/lib/mysql-connector-java-8.0.27.jar:$MULVALROOT/lib/json-simple-1.1.1.jar:$MULVALROOT/bin/adapter
 if [ ! -r config.txt ]; then
     echo "config.txt does not exist. Please refer to the README and create config.txt first."
     exit 1
@@ -44,9 +44,13 @@ i=2002
 
 year=`date +"%Y"`
 while [ $i -le $year ]; do
-      wget  http://nvd.nist.gov/download/nvdcve-$i.xml
+      wget  https://nvd.nist.gov/feeds/json/cve/1.1/nvdcve-1.1-${i}.json.gz
+      gunzip -f nvdcve-1.1-${i}.json.gz
       i=`expr $i + 1`
 done
+
+echo "get cves done"
+
 cd ..
 java -cp $CLASSPATH -Xmx512m InitializeDB $year
 echo "NVD update finished. You can remove the temporary NVD files in $NVDPATH."

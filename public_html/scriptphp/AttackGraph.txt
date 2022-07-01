@@ -1,15 +1,991 @@
-1,"execCode('159.223.154.178',andrew)","OR",0
+1,"execCode('157.159.68.125',someUser)","OR",0
 2,"RULE 2 (remote exploit of a server program)","AND",0
-3,"netAccess('159.223.154.178',tcp,57582)","OR",0
-4,"RULE 8 (direct network access)","AND",0
-5,"hacl('157.159.14.77','159.223.154.178',tcp,57582)","LEAF",1
+3,"netAccess('157.159.68.125',tcp,'0')","OR",0
+4,"RULE 5 (multi-hop access)","AND",0
+5,"hacl('157.159.68.75','157.159.68.125',tcp,'0')","LEAF",1
 4,5,-1
-6,"attackerLocated('157.159.14.77')","LEAF",1
+6,"execCode('157.159.68.75',someUser)","OR",0
+7,"RULE 2 (remote exploit of a server program)","AND",0
+8,"netAccess('157.159.68.75',tcp,'0')","OR",0
+9,"RULE 5 (multi-hop access)","AND",0
+10,"hacl('157.159.68.125','157.159.68.75',tcp,'0')","LEAF",1
+9,10,-1
+9,1,-1
+8,9,-1
+11,"RULE 5 (multi-hop access)","AND",0
+12,"hacl('157.159.68.97','157.159.68.75',tcp,'0')","LEAF",1
+11,12,-1
+13,"execCode('157.159.68.97',someUser)","OR",0
+14,"RULE 2 (remote exploit of a server program)","AND",0
+15,"netAccess('157.159.68.97',tcp,'0')","OR",0
+16,"RULE 5 (multi-hop access)","AND",0
+17,"hacl('157.159.68.125','157.159.68.97',tcp,'0')","LEAF",1
+16,17,-1
+16,1,-1
+15,16,-1
+18,"RULE 5 (multi-hop access)","AND",0
+19,"hacl('157.159.68.75','157.159.68.97',tcp,'0')","LEAF",1
+18,19,-1
+18,6,-1
+15,18,-1
+20,"RULE 6 (direct network access)","AND",0
+21,"hacl(internet,'157.159.68.97',tcp,'0')","LEAF",1
+20,21,-1
+22,"attackerLocated(internet)","LEAF",1
+20,22,-1
+15,20,-1
+14,15,-1
+23,"networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'0',someUser)","LEAF",1
+14,23,-1
+24,"vulExists('157.159.68.97','CVE-2012-0002','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
+14,24,-1
+13,14,-1
+25,"RULE 2 (remote exploit of a server program)","AND",0
+25,15,-1
+25,23,-1
+26,"vulExists('157.159.68.97','CVE-2012-0152','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
+25,26,-1
+13,25,-1
+27,"RULE 2 (remote exploit of a server program)","AND",0
+27,15,-1
+27,23,-1
+28,"vulExists('157.159.68.97','CVE-2019-0708','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
+27,28,-1
+13,27,-1
+29,"RULE 2 (remote exploit of a server program)","AND",0
+29,15,-1
+29,23,-1
+30,"vulExists('157.159.68.97','CVE-XXXX-XXXX','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
+29,30,-1
+13,29,-1
+31,"RULE 2 (remote exploit of a server program)","AND",0
+31,15,-1
+32,"networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser)","LEAF",1
+31,32,-1
+33,"vulExists('157.159.68.97','CVE-XXXX-XXXX','windows samba',remoteExploit,privEscalation)","LEAF",1
+31,33,-1
+13,31,-1
+34,"RULE 2 (remote exploit of a server program)","AND",0
+34,15,-1
+35,"networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser)","LEAF",1
+34,35,-1
+36,"vulExists('157.159.68.97','CVE-2011-0657',windows,remoteExploit,privEscalation)","LEAF",1
+34,36,-1
+13,34,-1
+37,"RULE 2 (remote exploit of a server program)","AND",0
+37,15,-1
+37,35,-1
+38,"vulExists('157.159.68.97','CVE-2017-0143',windows,remoteExploit,privEscalation)","LEAF",1
+37,38,-1
+13,37,-1
+39,"RULE 2 (remote exploit of a server program)","AND",0
+39,15,-1
+39,35,-1
+40,"vulExists('157.159.68.97','CVE-2017-0144',windows,remoteExploit,privEscalation)","LEAF",1
+39,40,-1
+13,39,-1
+41,"RULE 2 (remote exploit of a server program)","AND",0
+41,15,-1
+41,35,-1
+42,"vulExists('157.159.68.97','CVE-2017-0145',windows,remoteExploit,privEscalation)","LEAF",1
+41,42,-1
+13,41,-1
+43,"RULE 2 (remote exploit of a server program)","AND",0
+43,15,-1
+43,35,-1
+44,"vulExists('157.159.68.97','CVE-2017-0146',windows,remoteExploit,privEscalation)","LEAF",1
+43,44,-1
+13,43,-1
+45,"RULE 2 (remote exploit of a server program)","AND",0
+45,15,-1
+45,35,-1
+46,"vulExists('157.159.68.97','CVE-2017-0147',windows,remoteExploit,privEscalation)","LEAF",1
+45,46,-1
+13,45,-1
+47,"RULE 2 (remote exploit of a server program)","AND",0
+47,15,-1
+47,35,-1
+48,"vulExists('157.159.68.97','CVE-2017-0148',windows,remoteExploit,privEscalation)","LEAF",1
+47,48,-1
+13,47,-1
+49,"RULE 2 (remote exploit of a server program)","AND",0
+49,15,-1
+49,35,-1
+50,"vulExists('157.159.68.97','CVE-XXXX-XXXX',windows,remoteExploit,privEscalation)","LEAF",1
+49,50,-1
+13,49,-1
+51,"RULE 2 (remote exploit of a server program)","AND",0
+52,"netAccess('157.159.68.97',tcp,'3389')","OR",0
+53,"RULE 5 (multi-hop access)","AND",0
+54,"hacl('157.159.68.125','157.159.68.97',tcp,'3389')","LEAF",1
+53,54,-1
+53,1,-1
+52,53,-1
+55,"RULE 5 (multi-hop access)","AND",0
+56,"hacl('157.159.68.75','157.159.68.97',tcp,'3389')","LEAF",1
+55,56,-1
+55,6,-1
+52,55,-1
+57,"RULE 6 (direct network access)","AND",0
+58,"hacl(internet,'157.159.68.97',tcp,'3389')","LEAF",1
+57,58,-1
+57,22,-1
+52,57,-1
+51,52,-1
+59,"networkServiceInfo('157.159.68.97','remote_desktop_connection windows_terminal_services_using_rdp',tcp,'3389',someUser)","LEAF",1
+51,59,-1
+60,"vulExists('157.159.68.97','CVE-2005-1794','remote_desktop_connection windows_terminal_services_using_rdp',remoteExploit,privEscalation)","LEAF",1
+51,60,-1
+13,51,-1
+61,"RULE 2 (remote exploit of a server program)","AND",0
+61,52,-1
+62,"networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'3389',someUser)","LEAF",1
+61,62,-1
+61,24,-1
+13,61,-1
+63,"RULE 2 (remote exploit of a server program)","AND",0
+63,52,-1
+63,62,-1
+63,26,-1
+13,63,-1
+64,"RULE 2 (remote exploit of a server program)","AND",0
+64,52,-1
+64,62,-1
+64,28,-1
+13,64,-1
+65,"RULE 2 (remote exploit of a server program)","AND",0
+65,52,-1
+65,62,-1
+65,30,-1
+13,65,-1
+66,"RULE 2 (remote exploit of a server program)","AND",0
+66,52,-1
+67,"networkServiceInfo('157.159.68.97','windows samba',tcp,'3389',someUser)","LEAF",1
+66,67,-1
+66,33,-1
+13,66,-1
+68,"RULE 2 (remote exploit of a server program)","AND",0
+68,52,-1
+69,"networkServiceInfo('157.159.68.97',windows,tcp,'3389',someUser)","LEAF",1
+68,69,-1
+68,36,-1
+13,68,-1
+70,"RULE 2 (remote exploit of a server program)","AND",0
+70,52,-1
+70,69,-1
+70,38,-1
+13,70,-1
+71,"RULE 2 (remote exploit of a server program)","AND",0
+71,52,-1
+71,69,-1
+71,40,-1
+13,71,-1
+72,"RULE 2 (remote exploit of a server program)","AND",0
+72,52,-1
+72,69,-1
+72,42,-1
+13,72,-1
+73,"RULE 2 (remote exploit of a server program)","AND",0
+73,52,-1
+73,69,-1
+73,44,-1
+13,73,-1
+74,"RULE 2 (remote exploit of a server program)","AND",0
+74,52,-1
+74,69,-1
+74,46,-1
+13,74,-1
+75,"RULE 2 (remote exploit of a server program)","AND",0
+75,52,-1
+75,69,-1
+75,48,-1
+13,75,-1
+76,"RULE 2 (remote exploit of a server program)","AND",0
+76,52,-1
+76,69,-1
+76,50,-1
+13,76,-1
+77,"RULE 2 (remote exploit of a server program)","AND",0
+78,"netAccess('157.159.68.97',tcp,'445')","OR",0
+79,"RULE 5 (multi-hop access)","AND",0
+80,"hacl('157.159.68.125','157.159.68.97',tcp,'445')","LEAF",1
+79,80,-1
+79,1,-1
+78,79,-1
+81,"RULE 5 (multi-hop access)","AND",0
+82,"hacl('157.159.68.75','157.159.68.97',tcp,'445')","LEAF",1
+81,82,-1
+81,6,-1
+78,81,-1
+83,"RULE 6 (direct network access)","AND",0
+84,"hacl(internet,'157.159.68.97',tcp,'445')","LEAF",1
+83,84,-1
+83,22,-1
+78,83,-1
+77,78,-1
+85,"networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'445',someUser)","LEAF",1
+77,85,-1
+77,24,-1
+13,77,-1
+86,"RULE 2 (remote exploit of a server program)","AND",0
+86,78,-1
+86,85,-1
+86,26,-1
+13,86,-1
+87,"RULE 2 (remote exploit of a server program)","AND",0
+87,78,-1
+87,85,-1
+87,28,-1
+13,87,-1
+88,"RULE 2 (remote exploit of a server program)","AND",0
+88,78,-1
+88,85,-1
+88,30,-1
+13,88,-1
+89,"RULE 2 (remote exploit of a server program)","AND",0
+89,78,-1
+90,"networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser)","LEAF",1
+89,90,-1
+89,33,-1
+13,89,-1
+91,"RULE 2 (remote exploit of a server program)","AND",0
+91,78,-1
+92,"networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser)","LEAF",1
+91,92,-1
+91,36,-1
+13,91,-1
+93,"RULE 2 (remote exploit of a server program)","AND",0
+93,78,-1
+93,92,-1
+93,38,-1
+13,93,-1
+94,"RULE 2 (remote exploit of a server program)","AND",0
+94,78,-1
+94,92,-1
+94,40,-1
+13,94,-1
+95,"RULE 2 (remote exploit of a server program)","AND",0
+95,78,-1
+95,92,-1
+95,42,-1
+13,95,-1
+96,"RULE 2 (remote exploit of a server program)","AND",0
+96,78,-1
+96,92,-1
+96,44,-1
+13,96,-1
+97,"RULE 2 (remote exploit of a server program)","AND",0
+97,78,-1
+97,92,-1
+97,46,-1
+13,97,-1
+98,"RULE 2 (remote exploit of a server program)","AND",0
+98,78,-1
+98,92,-1
+98,48,-1
+13,98,-1
+99,"RULE 2 (remote exploit of a server program)","AND",0
+99,78,-1
+99,92,-1
+99,50,-1
+13,99,-1
+100,"RULE 2 (remote exploit of a server program)","AND",0
+101,"netAccess('157.159.68.97',udp,'5355')","OR",0
+102,"RULE 5 (multi-hop access)","AND",0
+103,"hacl('157.159.68.125','157.159.68.97',udp,'5355')","LEAF",1
+102,103,-1
+102,1,-1
+101,102,-1
+104,"RULE 5 (multi-hop access)","AND",0
+105,"hacl('157.159.68.75','157.159.68.97',udp,'5355')","LEAF",1
+104,105,-1
+104,6,-1
+101,104,-1
+106,"RULE 6 (direct network access)","AND",0
+107,"hacl(internet,'157.159.68.97',udp,'5355')","LEAF",1
+106,107,-1
+106,22,-1
+101,106,-1
+100,101,-1
+108,"networkServiceInfo('157.159.68.97',windows,udp,'5355',someUser)","LEAF",1
+100,108,-1
+100,36,-1
+13,100,-1
+109,"RULE 2 (remote exploit of a server program)","AND",0
+109,101,-1
+109,108,-1
+109,38,-1
+13,109,-1
+110,"RULE 2 (remote exploit of a server program)","AND",0
+110,101,-1
+110,108,-1
+110,40,-1
+13,110,-1
+111,"RULE 2 (remote exploit of a server program)","AND",0
+111,101,-1
+111,108,-1
+111,42,-1
+13,111,-1
+112,"RULE 2 (remote exploit of a server program)","AND",0
+112,101,-1
+112,108,-1
+112,44,-1
+13,112,-1
+113,"RULE 2 (remote exploit of a server program)","AND",0
+113,101,-1
+113,108,-1
+113,46,-1
+13,113,-1
+114,"RULE 2 (remote exploit of a server program)","AND",0
+114,101,-1
+114,108,-1
+114,48,-1
+13,114,-1
+115,"RULE 2 (remote exploit of a server program)","AND",0
+115,101,-1
+115,108,-1
+115,50,-1
+13,115,-1
+11,13,-1
+8,11,-1
+116,"RULE 6 (direct network access)","AND",0
+117,"hacl(internet,'157.159.68.75',tcp,'0')","LEAF",1
+116,117,-1
+116,22,-1
+8,116,-1
+7,8,-1
+118,"networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'0',someUser)","LEAF",1
+7,118,-1
+119,"vulExists('157.159.68.75','CVE-2012-0002','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
+7,119,-1
+6,7,-1
+120,"RULE 2 (remote exploit of a server program)","AND",0
+120,8,-1
+120,118,-1
+121,"vulExists('157.159.68.75','CVE-2012-0152','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
+120,121,-1
+6,120,-1
+122,"RULE 2 (remote exploit of a server program)","AND",0
+122,8,-1
+122,118,-1
+123,"vulExists('157.159.68.75','CVE-2019-0708','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
+122,123,-1
+6,122,-1
+124,"RULE 2 (remote exploit of a server program)","AND",0
+124,8,-1
+124,118,-1
+125,"vulExists('157.159.68.75','CVE-XXXX-XXXX','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
+124,125,-1
+6,124,-1
+126,"RULE 2 (remote exploit of a server program)","AND",0
+126,8,-1
+127,"networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser)","LEAF",1
+126,127,-1
+128,"vulExists('157.159.68.75','CVE-XXXX-XXXX','windows samba',remoteExploit,privEscalation)","LEAF",1
+126,128,-1
+6,126,-1
+129,"RULE 2 (remote exploit of a server program)","AND",0
+129,8,-1
+130,"networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser)","LEAF",1
+129,130,-1
+131,"vulExists('157.159.68.75','CVE-2011-0657',windows,remoteExploit,privEscalation)","LEAF",1
+129,131,-1
+6,129,-1
+132,"RULE 2 (remote exploit of a server program)","AND",0
+132,8,-1
+132,130,-1
+133,"vulExists('157.159.68.75','CVE-2017-0143',windows,remoteExploit,privEscalation)","LEAF",1
+132,133,-1
+6,132,-1
+134,"RULE 2 (remote exploit of a server program)","AND",0
+134,8,-1
+134,130,-1
+135,"vulExists('157.159.68.75','CVE-2017-0144',windows,remoteExploit,privEscalation)","LEAF",1
+134,135,-1
+6,134,-1
+136,"RULE 2 (remote exploit of a server program)","AND",0
+136,8,-1
+136,130,-1
+137,"vulExists('157.159.68.75','CVE-2017-0145',windows,remoteExploit,privEscalation)","LEAF",1
+136,137,-1
+6,136,-1
+138,"RULE 2 (remote exploit of a server program)","AND",0
+138,8,-1
+138,130,-1
+139,"vulExists('157.159.68.75','CVE-2017-0146',windows,remoteExploit,privEscalation)","LEAF",1
+138,139,-1
+6,138,-1
+140,"RULE 2 (remote exploit of a server program)","AND",0
+140,8,-1
+140,130,-1
+141,"vulExists('157.159.68.75','CVE-2017-0147',windows,remoteExploit,privEscalation)","LEAF",1
+140,141,-1
+6,140,-1
+142,"RULE 2 (remote exploit of a server program)","AND",0
+142,8,-1
+142,130,-1
+143,"vulExists('157.159.68.75','CVE-2017-0148',windows,remoteExploit,privEscalation)","LEAF",1
+142,143,-1
+6,142,-1
+144,"RULE 2 (remote exploit of a server program)","AND",0
+144,8,-1
+144,130,-1
+145,"vulExists('157.159.68.75','CVE-XXXX-XXXX',windows,remoteExploit,privEscalation)","LEAF",1
+144,145,-1
+6,144,-1
+146,"RULE 2 (remote exploit of a server program)","AND",0
+147,"netAccess('157.159.68.75',tcp,'3389')","OR",0
+148,"RULE 5 (multi-hop access)","AND",0
+149,"hacl('157.159.68.125','157.159.68.75',tcp,'3389')","LEAF",1
+148,149,-1
+148,1,-1
+147,148,-1
+150,"RULE 5 (multi-hop access)","AND",0
+151,"hacl('157.159.68.97','157.159.68.75',tcp,'3389')","LEAF",1
+150,151,-1
+150,13,-1
+147,150,-1
+152,"RULE 6 (direct network access)","AND",0
+153,"hacl(internet,'157.159.68.75',tcp,'3389')","LEAF",1
+152,153,-1
+152,22,-1
+147,152,-1
+146,147,-1
+154,"networkServiceInfo('157.159.68.75','remote_desktop_connection windows_terminal_services_using_rdp',tcp,'3389',someUser)","LEAF",1
+146,154,-1
+155,"vulExists('157.159.68.75','CVE-2005-1794','remote_desktop_connection windows_terminal_services_using_rdp',remoteExploit,privEscalation)","LEAF",1
+146,155,-1
+6,146,-1
+156,"RULE 2 (remote exploit of a server program)","AND",0
+156,147,-1
+157,"networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'3389',someUser)","LEAF",1
+156,157,-1
+156,119,-1
+6,156,-1
+158,"RULE 2 (remote exploit of a server program)","AND",0
+158,147,-1
+158,157,-1
+158,121,-1
+6,158,-1
+159,"RULE 2 (remote exploit of a server program)","AND",0
+159,147,-1
+159,157,-1
+159,123,-1
+6,159,-1
+160,"RULE 2 (remote exploit of a server program)","AND",0
+160,147,-1
+160,157,-1
+160,125,-1
+6,160,-1
+161,"RULE 2 (remote exploit of a server program)","AND",0
+161,147,-1
+162,"networkServiceInfo('157.159.68.75','windows samba',tcp,'3389',someUser)","LEAF",1
+161,162,-1
+161,128,-1
+6,161,-1
+163,"RULE 2 (remote exploit of a server program)","AND",0
+163,147,-1
+164,"networkServiceInfo('157.159.68.75',windows,tcp,'3389',someUser)","LEAF",1
+163,164,-1
+163,131,-1
+6,163,-1
+165,"RULE 2 (remote exploit of a server program)","AND",0
+165,147,-1
+165,164,-1
+165,133,-1
+6,165,-1
+166,"RULE 2 (remote exploit of a server program)","AND",0
+166,147,-1
+166,164,-1
+166,135,-1
+6,166,-1
+167,"RULE 2 (remote exploit of a server program)","AND",0
+167,147,-1
+167,164,-1
+167,137,-1
+6,167,-1
+168,"RULE 2 (remote exploit of a server program)","AND",0
+168,147,-1
+168,164,-1
+168,139,-1
+6,168,-1
+169,"RULE 2 (remote exploit of a server program)","AND",0
+169,147,-1
+169,164,-1
+169,141,-1
+6,169,-1
+170,"RULE 2 (remote exploit of a server program)","AND",0
+170,147,-1
+170,164,-1
+170,143,-1
+6,170,-1
+171,"RULE 2 (remote exploit of a server program)","AND",0
+171,147,-1
+171,164,-1
+171,145,-1
+6,171,-1
+172,"RULE 2 (remote exploit of a server program)","AND",0
+173,"netAccess('157.159.68.75',tcp,'445')","OR",0
+174,"RULE 5 (multi-hop access)","AND",0
+175,"hacl('157.159.68.125','157.159.68.75',tcp,'445')","LEAF",1
+174,175,-1
+174,1,-1
+173,174,-1
+176,"RULE 5 (multi-hop access)","AND",0
+177,"hacl('157.159.68.97','157.159.68.75',tcp,'445')","LEAF",1
+176,177,-1
+176,13,-1
+173,176,-1
+178,"RULE 6 (direct network access)","AND",0
+179,"hacl(internet,'157.159.68.75',tcp,'445')","LEAF",1
+178,179,-1
+178,22,-1
+173,178,-1
+172,173,-1
+180,"networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'445',someUser)","LEAF",1
+172,180,-1
+172,119,-1
+6,172,-1
+181,"RULE 2 (remote exploit of a server program)","AND",0
+181,173,-1
+181,180,-1
+181,121,-1
+6,181,-1
+182,"RULE 2 (remote exploit of a server program)","AND",0
+182,173,-1
+182,180,-1
+182,123,-1
+6,182,-1
+183,"RULE 2 (remote exploit of a server program)","AND",0
+183,173,-1
+183,180,-1
+183,125,-1
+6,183,-1
+184,"RULE 2 (remote exploit of a server program)","AND",0
+184,173,-1
+185,"networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser)","LEAF",1
+184,185,-1
+184,128,-1
+6,184,-1
+186,"RULE 2 (remote exploit of a server program)","AND",0
+186,173,-1
+187,"networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser)","LEAF",1
+186,187,-1
+186,131,-1
+6,186,-1
+188,"RULE 2 (remote exploit of a server program)","AND",0
+188,173,-1
+188,187,-1
+188,133,-1
+6,188,-1
+189,"RULE 2 (remote exploit of a server program)","AND",0
+189,173,-1
+189,187,-1
+189,135,-1
+6,189,-1
+190,"RULE 2 (remote exploit of a server program)","AND",0
+190,173,-1
+190,187,-1
+190,137,-1
+6,190,-1
+191,"RULE 2 (remote exploit of a server program)","AND",0
+191,173,-1
+191,187,-1
+191,139,-1
+6,191,-1
+192,"RULE 2 (remote exploit of a server program)","AND",0
+192,173,-1
+192,187,-1
+192,141,-1
+6,192,-1
+193,"RULE 2 (remote exploit of a server program)","AND",0
+193,173,-1
+193,187,-1
+193,143,-1
+6,193,-1
+194,"RULE 2 (remote exploit of a server program)","AND",0
+194,173,-1
+194,187,-1
+194,145,-1
+6,194,-1
+195,"RULE 2 (remote exploit of a server program)","AND",0
+196,"netAccess('157.159.68.75',udp,'5355')","OR",0
+197,"RULE 5 (multi-hop access)","AND",0
+198,"hacl('157.159.68.125','157.159.68.75',udp,'5355')","LEAF",1
+197,198,-1
+197,1,-1
+196,197,-1
+199,"RULE 5 (multi-hop access)","AND",0
+200,"hacl('157.159.68.97','157.159.68.75',udp,'5355')","LEAF",1
+199,200,-1
+199,13,-1
+196,199,-1
+201,"RULE 6 (direct network access)","AND",0
+202,"hacl(internet,'157.159.68.75',udp,'5355')","LEAF",1
+201,202,-1
+201,22,-1
+196,201,-1
+195,196,-1
+203,"networkServiceInfo('157.159.68.75',windows,udp,'5355',someUser)","LEAF",1
+195,203,-1
+195,131,-1
+6,195,-1
+204,"RULE 2 (remote exploit of a server program)","AND",0
+204,196,-1
+204,203,-1
+204,133,-1
+6,204,-1
+205,"RULE 2 (remote exploit of a server program)","AND",0
+205,196,-1
+205,203,-1
+205,135,-1
+6,205,-1
+206,"RULE 2 (remote exploit of a server program)","AND",0
+206,196,-1
+206,203,-1
+206,137,-1
+6,206,-1
+207,"RULE 2 (remote exploit of a server program)","AND",0
+207,196,-1
+207,203,-1
+207,139,-1
+6,207,-1
+208,"RULE 2 (remote exploit of a server program)","AND",0
+208,196,-1
+208,203,-1
+208,141,-1
+6,208,-1
+209,"RULE 2 (remote exploit of a server program)","AND",0
+209,196,-1
+209,203,-1
+209,143,-1
+6,209,-1
+210,"RULE 2 (remote exploit of a server program)","AND",0
+210,196,-1
+210,203,-1
+210,145,-1
+6,210,-1
 4,6,-1
 3,4,-1
+211,"RULE 5 (multi-hop access)","AND",0
+212,"hacl('157.159.68.97','157.159.68.125',tcp,'0')","LEAF",1
+211,212,-1
+211,13,-1
+3,211,-1
+213,"RULE 6 (direct network access)","AND",0
+214,"hacl(internet,'157.159.68.125',tcp,'0')","LEAF",1
+213,214,-1
+213,22,-1
+3,213,-1
 2,3,-1
-7,"networkServiceInfo('159.223.154.178',windows_server_2016,tcp,57582,andrew)","LEAF",1
-2,7,-1
-8,"vulExists('159.223.154.178','CVE-2021-34527',windows_server_2016,remoteExploit,privEscalation)","LEAF",1
-2,8,-1
+215,"networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'0',someUser)","LEAF",1
+2,215,-1
+216,"vulExists('157.159.68.125','CVE-2012-0002','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
+2,216,-1
 1,2,-1
+217,"RULE 2 (remote exploit of a server program)","AND",0
+217,3,-1
+217,215,-1
+218,"vulExists('157.159.68.125','CVE-2012-0152','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
+217,218,-1
+1,217,-1
+219,"RULE 2 (remote exploit of a server program)","AND",0
+219,3,-1
+219,215,-1
+220,"vulExists('157.159.68.125','CVE-2019-0708','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
+219,220,-1
+1,219,-1
+221,"RULE 2 (remote exploit of a server program)","AND",0
+221,3,-1
+221,215,-1
+222,"vulExists('157.159.68.125','CVE-XXXX-XXXX','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
+221,222,-1
+1,221,-1
+223,"RULE 2 (remote exploit of a server program)","AND",0
+223,3,-1
+224,"networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser)","LEAF",1
+223,224,-1
+225,"vulExists('157.159.68.125','CVE-XXXX-XXXX','windows samba',remoteExploit,privEscalation)","LEAF",1
+223,225,-1
+1,223,-1
+226,"RULE 2 (remote exploit of a server program)","AND",0
+226,3,-1
+227,"networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser)","LEAF",1
+226,227,-1
+228,"vulExists('157.159.68.125','CVE-2011-0657',windows,remoteExploit,privEscalation)","LEAF",1
+226,228,-1
+1,226,-1
+229,"RULE 2 (remote exploit of a server program)","AND",0
+229,3,-1
+229,227,-1
+230,"vulExists('157.159.68.125','CVE-2017-0143',windows,remoteExploit,privEscalation)","LEAF",1
+229,230,-1
+1,229,-1
+231,"RULE 2 (remote exploit of a server program)","AND",0
+231,3,-1
+231,227,-1
+232,"vulExists('157.159.68.125','CVE-2017-0144',windows,remoteExploit,privEscalation)","LEAF",1
+231,232,-1
+1,231,-1
+233,"RULE 2 (remote exploit of a server program)","AND",0
+233,3,-1
+233,227,-1
+234,"vulExists('157.159.68.125','CVE-2017-0145',windows,remoteExploit,privEscalation)","LEAF",1
+233,234,-1
+1,233,-1
+235,"RULE 2 (remote exploit of a server program)","AND",0
+235,3,-1
+235,227,-1
+236,"vulExists('157.159.68.125','CVE-2017-0146',windows,remoteExploit,privEscalation)","LEAF",1
+235,236,-1
+1,235,-1
+237,"RULE 2 (remote exploit of a server program)","AND",0
+237,3,-1
+237,227,-1
+238,"vulExists('157.159.68.125','CVE-2017-0147',windows,remoteExploit,privEscalation)","LEAF",1
+237,238,-1
+1,237,-1
+239,"RULE 2 (remote exploit of a server program)","AND",0
+239,3,-1
+239,227,-1
+240,"vulExists('157.159.68.125','CVE-2017-0148',windows,remoteExploit,privEscalation)","LEAF",1
+239,240,-1
+1,239,-1
+241,"RULE 2 (remote exploit of a server program)","AND",0
+241,3,-1
+241,227,-1
+242,"vulExists('157.159.68.125','CVE-XXXX-XXXX',windows,remoteExploit,privEscalation)","LEAF",1
+241,242,-1
+1,241,-1
+243,"RULE 2 (remote exploit of a server program)","AND",0
+244,"netAccess('157.159.68.125',tcp,'3389')","OR",0
+245,"RULE 5 (multi-hop access)","AND",0
+246,"hacl('157.159.68.75','157.159.68.125',tcp,'3389')","LEAF",1
+245,246,-1
+245,6,-1
+244,245,-1
+247,"RULE 5 (multi-hop access)","AND",0
+248,"hacl('157.159.68.97','157.159.68.125',tcp,'3389')","LEAF",1
+247,248,-1
+247,13,-1
+244,247,-1
+249,"RULE 6 (direct network access)","AND",0
+250,"hacl(internet,'157.159.68.125',tcp,'3389')","LEAF",1
+249,250,-1
+249,22,-1
+244,249,-1
+243,244,-1
+251,"networkServiceInfo('157.159.68.125','remote_desktop_connection windows_terminal_services_using_rdp',tcp,'3389',someUser)","LEAF",1
+243,251,-1
+252,"vulExists('157.159.68.125','CVE-2005-1794','remote_desktop_connection windows_terminal_services_using_rdp',remoteExploit,privEscalation)","LEAF",1
+243,252,-1
+1,243,-1
+253,"RULE 2 (remote exploit of a server program)","AND",0
+253,244,-1
+254,"networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',someUser)","LEAF",1
+253,254,-1
+253,216,-1
+1,253,-1
+255,"RULE 2 (remote exploit of a server program)","AND",0
+255,244,-1
+255,254,-1
+255,218,-1
+1,255,-1
+256,"RULE 2 (remote exploit of a server program)","AND",0
+256,244,-1
+256,254,-1
+256,220,-1
+1,256,-1
+257,"RULE 2 (remote exploit of a server program)","AND",0
+257,244,-1
+257,254,-1
+257,222,-1
+1,257,-1
+258,"RULE 2 (remote exploit of a server program)","AND",0
+258,244,-1
+259,"networkServiceInfo('157.159.68.125','windows samba',tcp,'3389',someUser)","LEAF",1
+258,259,-1
+258,225,-1
+1,258,-1
+260,"RULE 2 (remote exploit of a server program)","AND",0
+260,244,-1
+261,"networkServiceInfo('157.159.68.125',windows,tcp,'3389',someUser)","LEAF",1
+260,261,-1
+260,228,-1
+1,260,-1
+262,"RULE 2 (remote exploit of a server program)","AND",0
+262,244,-1
+262,261,-1
+262,230,-1
+1,262,-1
+263,"RULE 2 (remote exploit of a server program)","AND",0
+263,244,-1
+263,261,-1
+263,232,-1
+1,263,-1
+264,"RULE 2 (remote exploit of a server program)","AND",0
+264,244,-1
+264,261,-1
+264,234,-1
+1,264,-1
+265,"RULE 2 (remote exploit of a server program)","AND",0
+265,244,-1
+265,261,-1
+265,236,-1
+1,265,-1
+266,"RULE 2 (remote exploit of a server program)","AND",0
+266,244,-1
+266,261,-1
+266,238,-1
+1,266,-1
+267,"RULE 2 (remote exploit of a server program)","AND",0
+267,244,-1
+267,261,-1
+267,240,-1
+1,267,-1
+268,"RULE 2 (remote exploit of a server program)","AND",0
+268,244,-1
+268,261,-1
+268,242,-1
+1,268,-1
+269,"RULE 2 (remote exploit of a server program)","AND",0
+270,"netAccess('157.159.68.125',tcp,'445')","OR",0
+271,"RULE 5 (multi-hop access)","AND",0
+272,"hacl('157.159.68.75','157.159.68.125',tcp,'445')","LEAF",1
+271,272,-1
+271,6,-1
+270,271,-1
+273,"RULE 5 (multi-hop access)","AND",0
+274,"hacl('157.159.68.97','157.159.68.125',tcp,'445')","LEAF",1
+273,274,-1
+273,13,-1
+270,273,-1
+275,"RULE 6 (direct network access)","AND",0
+276,"hacl(internet,'157.159.68.125',tcp,'445')","LEAF",1
+275,276,-1
+275,22,-1
+270,275,-1
+269,270,-1
+277,"networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'445',someUser)","LEAF",1
+269,277,-1
+269,216,-1
+1,269,-1
+278,"RULE 2 (remote exploit of a server program)","AND",0
+278,270,-1
+278,277,-1
+278,218,-1
+1,278,-1
+279,"RULE 2 (remote exploit of a server program)","AND",0
+279,270,-1
+279,277,-1
+279,220,-1
+1,279,-1
+280,"RULE 2 (remote exploit of a server program)","AND",0
+280,270,-1
+280,277,-1
+280,222,-1
+1,280,-1
+281,"RULE 2 (remote exploit of a server program)","AND",0
+281,270,-1
+282,"networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser)","LEAF",1
+281,282,-1
+281,225,-1
+1,281,-1
+283,"RULE 2 (remote exploit of a server program)","AND",0
+283,270,-1
+284,"networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser)","LEAF",1
+283,284,-1
+283,228,-1
+1,283,-1
+285,"RULE 2 (remote exploit of a server program)","AND",0
+285,270,-1
+285,284,-1
+285,230,-1
+1,285,-1
+286,"RULE 2 (remote exploit of a server program)","AND",0
+286,270,-1
+286,284,-1
+286,232,-1
+1,286,-1
+287,"RULE 2 (remote exploit of a server program)","AND",0
+287,270,-1
+287,284,-1
+287,234,-1
+1,287,-1
+288,"RULE 2 (remote exploit of a server program)","AND",0
+288,270,-1
+288,284,-1
+288,236,-1
+1,288,-1
+289,"RULE 2 (remote exploit of a server program)","AND",0
+289,270,-1
+289,284,-1
+289,238,-1
+1,289,-1
+290,"RULE 2 (remote exploit of a server program)","AND",0
+290,270,-1
+290,284,-1
+290,240,-1
+1,290,-1
+291,"RULE 2 (remote exploit of a server program)","AND",0
+291,270,-1
+291,284,-1
+291,242,-1
+1,291,-1
+292,"RULE 2 (remote exploit of a server program)","AND",0
+293,"netAccess('157.159.68.125',udp,'5355')","OR",0
+294,"RULE 5 (multi-hop access)","AND",0
+295,"hacl('157.159.68.75','157.159.68.125',udp,'5355')","LEAF",1
+294,295,-1
+294,6,-1
+293,294,-1
+296,"RULE 5 (multi-hop access)","AND",0
+297,"hacl('157.159.68.97','157.159.68.125',udp,'5355')","LEAF",1
+296,297,-1
+296,13,-1
+293,296,-1
+298,"RULE 6 (direct network access)","AND",0
+299,"hacl(internet,'157.159.68.125',udp,'5355')","LEAF",1
+298,299,-1
+298,22,-1
+293,298,-1
+292,293,-1
+300,"networkServiceInfo('157.159.68.125',windows,udp,'5355',someUser)","LEAF",1
+292,300,-1
+292,228,-1
+1,292,-1
+301,"RULE 2 (remote exploit of a server program)","AND",0
+301,293,-1
+301,300,-1
+301,230,-1
+1,301,-1
+302,"RULE 2 (remote exploit of a server program)","AND",0
+302,293,-1
+302,300,-1
+302,232,-1
+1,302,-1
+303,"RULE 2 (remote exploit of a server program)","AND",0
+303,293,-1
+303,300,-1
+303,234,-1
+1,303,-1
+304,"RULE 2 (remote exploit of a server program)","AND",0
+304,293,-1
+304,300,-1
+304,236,-1
+1,304,-1
+305,"RULE 2 (remote exploit of a server program)","AND",0
+305,293,-1
+305,300,-1
+305,238,-1
+1,305,-1
+306,"RULE 2 (remote exploit of a server program)","AND",0
+306,293,-1
+306,300,-1
+306,240,-1
+1,306,-1
+307,"RULE 2 (remote exploit of a server program)","AND",0
+307,293,-1
+307,300,-1
+307,242,-1
+1,307,-1

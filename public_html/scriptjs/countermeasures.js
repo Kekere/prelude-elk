@@ -19,7 +19,7 @@ function generateCounterGraph(objjson){
               .attr('fill', '#999')
               .style('stroke','none');
     
-    var color = ["#32CD32","#FFD700","#FFA500","#FF4500","#b01ac4"];
+    var color = ["#32CD32","#FFD700","#FFA500","#FF4500","#b01ac4","#520603"];
   
     var simulation = d3.forceSimulation()
         .force("link", d3.forceLink().id(function(d) { return d.id; }))
@@ -117,9 +117,9 @@ function createContermeasureGraph(){
                       
         }
     }
-    //console.log(arraycves);  
+
     for (i=0; i<arraycves.length; i++){
-      //console.log(arraycves[i]["cve"]);
+
       var action="";
       var privileges="";
       var asset="";
@@ -131,88 +131,50 @@ function createContermeasureGraph(){
       var counterarraynode=[];
       var newsource="";
       var newtarget="";
-      
-      //var target=arraycves[i]["id"];
-     
+        
 
-        $.getJSON("vdo/"+arraycves[i]["cve"]+".json", function(json) {
-          
-            
-            //console.log(arrayremovecves)
-            if(!arrayremovecves.includes(json["Vulnerability"]["hasIdentity"][0]["value"])){
-              arrayremovecves.push(json["Vulnerability"]["hasIdentity"][0]["value"]);
-              for(var e=0; e<json["Vulnerability"]["hasScenario"].length; e++){
-                counterarraynode=graphcounter["nodes"];
-                counterarraylink=graphcounter["links"];
-                action=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["blockedByBarrier"];
-                privileges=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["neededPrivileges"];
-                asset=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["relatesToContext"];
-                newsource=parseInt(counterarraynode.length+1);
-                
-                for(a=0; a<arraycves.length; a++){
-                  if(json["Vulnerability"]["hasIdentity"][0]["value"]==arraycves[a]["cve"]){
-                    counterlink={"source":newsource,"target":arraycves[a]["id"]}
-                    counternode={id: newsource, group: 5, label: "remove("+action+"("+privileges+" on "+asset+"))"}
-                    counterarraylink.push(counterlink);
-                    counterarraynode.push(counternode);
-                    //console.log(counternode["id"],counterarraynode.length);
-                    if(counterarraynode.length!=counternode["id"]){
-                      counterarraynode.length = counternode["id"];
-                      //console.log(counternode["id"],counterarraynode.length,counternode)
-                    }
-                    else{
-                      //console.log(counternode["id"],counterarraynode.length,counternode)
-                    }
-                    //console.log(counterarraynode)
-                  }
-                }
-                
-              }
-            }
-            
-              /*for(var e=0; e<json["Vulnerability"]["hasScenario"].length; e++){
-                counterarraynode=graphcounter["nodes"];
-                counterarraylink=graphcounter["links"];
-                action=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["blockedByBarrier"];
-                privileges=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["neededPrivileges"];
-                asset=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["relatesToContext"];
-                newsource=parseInt(counterarraynode.length+1);
-                console.log(counterarraynode.length,newsource);
-
-                //console.log(arraycves.length);
-                for(a=0; a<arraycves.length; a++){
-                  if(json["Vulnerability"]["hasIdentity"][0]["value"]==arraycves[a]["cve"]){
-                    //if(newtarget!=arraycves[a]["id"]){
-                      newtarget=arraycves[a]["id"];
-                      console.log(newtarget,arraycves[a]["cve"]);
-                      counterlink={"source":newsource,"target":newtarget};
-                      counternode={id: newsource, group: 5, label: "remove("+action+"("+privileges+" on "+asset+"))"}
-                      
-                    //}
-                  }
-                  
+      $.getJSON("vdo/"+arraycves[i]["cve"]+".json", function(json) {
+    
+          if(!arrayremovecves.includes(json["Vulnerability"]["hasIdentity"][0]["value"])){
+            arrayremovecves.push(json["Vulnerability"]["hasIdentity"][0]["value"]);
+            for(var e=0; e<json["Vulnerability"]["hasScenario"].length; e++){
+              counterarraynode=graphcounter["nodes"];
+              counterarraylink=graphcounter["links"];
+              action=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["blockedByBarrier"];
+              privileges=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["neededPrivileges"];
+              asset=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["relatesToContext"];
+              newsource=parseInt(counterarraynode.length+1);
+              
+              for(a=0; a<arraycves.length; a++){
+                if(json["Vulnerability"]["hasIdentity"][0]["value"]==arraycves[a]["cve"]){
+                  counterlink={"source":newsource,"target":arraycves[a]["id"]}
+                  counternode={id: newsource, group: 5, label: "remove("+action+"("+privileges+" on "+asset+"))"}
                   counterarraylink.push(counterlink);
                   counterarraynode.push(counternode);
                   
+                  if(counterarraynode.length!=counternode["id"]){
+                    counterarraynode.length = counternode["id"];
+                    
+                  }
+                  else{
+                    console.log("ok");
+                  }
                   
                 }
-              
-                
               }
-              */
+              
+            }
+          }
+          
             
-            
-            //console.log(arrayremovecves)
-            jsonfinalcounter={"nodes":counterarraynode,"links":counterarraylink};
-            //console.log(jsonfinalcounter);
-            localStorage.setItem('myjsoncounter',JSON.stringify(jsonfinalcounter,null,4));
-            objcounter=JSON.parse(localStorage.getItem('myjsoncounter'));
-            //console.log(objcounter)
-            //$("svg").empty(); */
-        });
+          jsonfinalcounter={"nodes":counterarraynode,"links":counterarraylink};
+          
+          localStorage.setItem('myjsoncounter',JSON.stringify(jsonfinalcounter,null,4));
+          objcounter=JSON.parse(localStorage.getItem('myjsoncounter'));
+       
+      });
       }
-    //$("svg2").empty();
-    //d3.select("g").remove()
+    
     generateCounterGraph("mulval_generated_json.json");
 }
 var button = document.getElementById( 'downloadcounter' );
