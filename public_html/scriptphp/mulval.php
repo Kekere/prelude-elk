@@ -50,13 +50,16 @@ if( move_uploaded_file($_FILES['file']['tmp_name'], $uploaded_filename) )
    //echo $uploaded_filename; 
 
     $output = shell_exec("export XSBHOME=".$XSBHOME." && export MULVALROOT=".$MulvalRoot." && export PATH=\$PATH:\$MULVALROOT/utils && export PATH=\$PATH:\$MULVALROOT/bin && PATH=\$PATH:\$XSBHOME/bin && nessus_translate.sh $uploaded_filename && graph_gen.sh nessus.P -p -v");
+    //$output = shell_exec("export XSBHOME=".$XSBHOME." && export MULVALROOT=".$MulvalRoot." && export PATH=\$PATH:\$MULVALROOT/utils && export PATH=\$PATH:\$MULVALROOT/bin && PATH=\$PATH:\$XSBHOME/bin && graph_gen.sh $uploaded_filename -p -v");
 
    //echo $output;
 
 // redirection vers la page de génération
-   sleep(2);
+   //sleep(2);
+   //header("location:../graph.html");
+   header('Refresh: 1; url=AttackGraph.xml');
+   //header('Refresh: 1; url=../graph.html');
    header("location:../graph.html");
-
 }
 else
 {

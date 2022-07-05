@@ -80,6 +80,7 @@ if(localStorage.getItem('notification')=="true"){
     url:"scriptphp/mulval.php",
     data:jsonobj,
     datatype:"json",
+    async: false,
     type:"POST",
     success: function(response){
       // après la creation du fichier JSON en php on génère le Graph

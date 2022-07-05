@@ -2,31 +2,16 @@
     {
         "Header": {
             "Source": "CTM",
-            "Timestamp": "2022-06-02T02:20:27.000Z",
-            "Criticality": "low",
-            "Description": "CTM / Cyber Vulnerability"
-        },
-        "Payload": {
-            "CVEID": "CVE-2017-0146",
-            "IP address": "159.223.154.178",
-            "Product": "windows_server_2016",
-            "User Name": "andrew",
-            "Countermeasure": "remove PrivilegesRequired from User on Host OS"
-        }
-    },
-    {
-        "Header": {
-            "Source": "CTM",
-            "Timestamp": "2022-06-02T02:20:27.000Z",
-            "Criticality": "low",
+            "Timestamp": "2022-07-01T17:48:40.000Z",
+            "Criticality": "high",
             "Description": "CTM / Cyber Vulnerability"
         },
         "Payload": {
             "CVEID": "CVE-2017-0148",
-            "IP address": "159.223.154.178",
+            "IP address": "51.158.154.169",
             "Product": "windows_server_2016",
             "User Name": "andrew",
-            "Countermeasure": "remove PrivilegesRequired from User on Host OS"
+            "Countermeasure": "Microsoft has released a set of patches for Windows Vista, 2008, 7, 2008 R2, 2012, 8.1, RT 8.1, 2012 R2, 10, and 2016. Microsoft has also released emergency patches for Windows operating systems that are no longer supported, including Windows XP, 2003, and 8. For unsupported Windows operating systems, e.g. Windows XP, Microsoft recommends that users discontinue the use of SMBv1. SMBv1 lacks security features that were included in later SMB versions. SMBv1 can be disabled by following the vendor instructions provided in Microsoft KB2696547. Additionally, US-CERT recommends that users block SMB directly by blocking TCP port 445 on all network boundary devices. For SMB over the NetBIOS API, block TCP ports 137 / 139 and UDP ports 137 / 138 on all network boundary devices."
         }
     }
 ]

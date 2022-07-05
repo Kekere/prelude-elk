@@ -1,146 +1,780 @@
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h794).
+vulProperty('CVE-2005-1794',remoteExploit,_h694).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h800).
+vulProperty('CVE-2005-1794',remoteExploit,_h700).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h806).
+vulProperty('CVE-2005-1794',remoteExploit,_h706).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h812).
+vulProperty('CVE-2005-1794',remoteExploit,_h712).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h818).
+vulProperty('CVE-2005-1794',remoteExploit,_h718).
+
+vulProperty('CVE-2005-1794',remoteExploit,privEscalation).
+
+vulProperty('CVE-2005-1794',remoteExploit,_h1150).
+
+vulProperty('CVE-2005-1794',remoteExploit,_h1156).
+
+vulProperty('CVE-2005-1794',remoteExploit,_h1162).
+
+vulProperty('CVE-2005-1794',remoteExploit,_h1168).
+
+vulProperty('CVE-2005-1794',remoteExploit,_h1174).
+
+vulProperty('CVE-2005-1794',remoteExploit,privEscalation).
+
+vulProperty('CVE-2005-1794',remoteExploit,_h1822).
+
+vulProperty('CVE-2005-1794',remoteExploit,_h1828).
+
+vulProperty('CVE-2005-1794',remoteExploit,_h1834).
+
+vulProperty('CVE-2005-1794',remoteExploit,_h1840).
+
+vulProperty('CVE-2005-1794',remoteExploit,_h1846).
+
+vulProperty('CVE-2005-1794',remoteExploit,privEscalation).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h1114).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h1120).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h1126).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h1132).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h1138).
+
+vulProperty('CVE-2011-0657',remoteExploit,privEscalation).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h1570).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h1576).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h1582).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h1588).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h1594).
+
+vulProperty('CVE-2011-0657',remoteExploit,privEscalation).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h2026).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h2032).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h2038).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h2044).
+
+vulProperty('CVE-2011-0657',remoteExploit,_h2050).
+
+vulProperty('CVE-2011-0657',remoteExploit,privEscalation).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h730).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h736).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h742).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h748).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h754).
+
+vulProperty('CVE-2012-0002',remoteExploit,privEscalation).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h1402).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h1408).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h1414).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h1420).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h1426).
+
+vulProperty('CVE-2012-0002',remoteExploit,privEscalation).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h1858).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h1864).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h1870).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h1876).
+
+vulProperty('CVE-2012-0002',remoteExploit,_h1882).
+
+vulProperty('CVE-2012-0002',remoteExploit,privEscalation).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h766).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h772).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h778).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h784).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h790).
+
+vulProperty('CVE-2012-0152',remoteExploit,privEscalation).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h1438).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h1444).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h1450).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h1456).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h1462).
+
+vulProperty('CVE-2012-0152',remoteExploit,privEscalation).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h1894).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h1900).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h1906).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h1912).
+
+vulProperty('CVE-2012-0152',remoteExploit,_h1918).
+
+vulProperty('CVE-2012-0152',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h802).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h808).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h814).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h820).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h826).
+
+vulProperty('CVE-2017-0143',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h1186).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h1192).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h1198).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h1204).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h1210).
+
+vulProperty('CVE-2017-0143',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h1606).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h1612).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h1618).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h1624).
+
+vulProperty('CVE-2017-0143',remoteExploit,_h1630).
+
+vulProperty('CVE-2017-0143',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h838).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h844).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h850).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h856).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h862).
+
+vulProperty('CVE-2017-0144',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h1222).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h1228).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h1234).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h1240).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h1246).
+
+vulProperty('CVE-2017-0144',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h1642).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h1648).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h1654).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h1660).
+
+vulProperty('CVE-2017-0144',remoteExploit,_h1666).
+
+vulProperty('CVE-2017-0144',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h874).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h880).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h886).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h892).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h898).
+
+vulProperty('CVE-2017-0145',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h1258).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h1264).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h1270).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h1276).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h1282).
+
+vulProperty('CVE-2017-0145',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h1678).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h1684).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h1690).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h1696).
+
+vulProperty('CVE-2017-0145',remoteExploit,_h1702).
+
+vulProperty('CVE-2017-0145',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h910).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h916).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h922).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h928).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h934).
+
+vulProperty('CVE-2017-0146',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h1294).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h1300).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h1306).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h1312).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h1318).
+
+vulProperty('CVE-2017-0146',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h1714).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h1720).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h1726).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h1732).
+
+vulProperty('CVE-2017-0146',remoteExploit,_h1738).
+
+vulProperty('CVE-2017-0146',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h946).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h952).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h958).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h964).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h970).
+
+vulProperty('CVE-2017-0147',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h1330).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h1336).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h1342).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h1348).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h1354).
+
+vulProperty('CVE-2017-0147',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h1750).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h1756).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h1762).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h1768).
+
+vulProperty('CVE-2017-0147',remoteExploit,_h1774).
+
+vulProperty('CVE-2017-0147',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h982).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h988).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h994).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h1000).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h1006).
+
+vulProperty('CVE-2017-0148',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h1366).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h1372).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h1378).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h1384).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h1390).
+
+vulProperty('CVE-2017-0148',remoteExploit,privEscalation).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h1786).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h1792).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h1798).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h1804).
+
+vulProperty('CVE-2017-0148',remoteExploit,_h1810).
+
+vulProperty('CVE-2017-0148',remoteExploit,privEscalation).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1030).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1036).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1042).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1048).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1054).
+
+vulProperty('CVE-2019-0708',remoteExploit,privEscalation).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1486).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1492).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1498).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1504).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1510).
+
+vulProperty('CVE-2019-0708',remoteExploit,privEscalation).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1942).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1948).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1954).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1960).
+
+vulProperty('CVE-2019-0708',remoteExploit,_h1966).
+
+vulProperty('CVE-2019-0708',remoteExploit,privEscalation).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1018).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1024).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1066).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1072).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1078).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1084).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1090).
 
 vulProperty('CVE-XXXX-XXXX',remoteExploit,privEscalation).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h830).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1102).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h836).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1108).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h842).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1474).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h848).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1480).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h854).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1522).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h860).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1528).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h866).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1534).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,privEscalation).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1540).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h878).
-
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h884).
-
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h890).
-
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h896).
-
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h902).
-
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h908).
-
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h914).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1546).
 
 vulProperty('CVE-XXXX-XXXX',remoteExploit,privEscalation).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h926).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1558).
 
-vulProperty('CVE-XXXX-XXXX',remoteExploit,_h932).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1564).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1930).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1936).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1978).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1984).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1990).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h1996).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h2002).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,privEscalation).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h2014).
+
+vulProperty('CVE-XXXX-XXXX',remoteExploit,_h2020).
+
+vulExists('157.159.68.125','CVE-2016-0128',windows).
 
 vulExists('157.159.68.125','CVE-1999-0524',no_products).
 
+vulExists('157.159.68.97','CVE-2016-0128',windows).
+
 vulExists('157.159.68.97','CVE-1999-0524',no_products).
+
+vulExists('157.159.68.75','CVE-2016-0128',windows).
 
 vulExists('157.159.68.75','CVE-1999-0524',no_products).
 
-vulExists('157.159.68.44','CVE-1999-0524',no_products).
+vulExists('157.159.68.125','CVE-2005-1794','remote_desktop_connection windows_terminal_services_using_rdp').
+
+vulExists('157.159.68.125','CVE-2012-0002','windows remote_desktop_protocol').
+
+vulExists('157.159.68.125','CVE-2012-0152','windows remote_desktop_protocol').
+
+vulExists('157.159.68.125','CVE-2017-0143',windows).
+
+vulExists('157.159.68.125','CVE-2017-0144',windows).
+
+vulExists('157.159.68.125','CVE-2017-0145',windows).
+
+vulExists('157.159.68.125','CVE-2017-0146',windows).
+
+vulExists('157.159.68.125','CVE-2017-0147',windows).
+
+vulExists('157.159.68.125','CVE-2017-0148',windows).
+
+vulExists('157.159.68.125','CVE-XXXX-XXXX','windows remote_desktop_protocol').
+
+vulExists('157.159.68.125','CVE-2019-0708','windows remote_desktop_protocol').
 
 vulExists('157.159.68.125','CVE-XXXX-XXXX',windows).
 
 vulExists('157.159.68.125','CVE-XXXX-XXXX','windows samba').
 
+vulExists('157.159.68.125','CVE-2011-0657',windows).
+
+vulExists('157.159.68.97','CVE-2005-1794','remote_desktop_connection windows_terminal_services_using_rdp').
+
+vulExists('157.159.68.97','CVE-2017-0143',windows).
+
+vulExists('157.159.68.97','CVE-2017-0144',windows).
+
+vulExists('157.159.68.97','CVE-2017-0145',windows).
+
+vulExists('157.159.68.97','CVE-2017-0146',windows).
+
+vulExists('157.159.68.97','CVE-2017-0147',windows).
+
+vulExists('157.159.68.97','CVE-2017-0148',windows).
+
+vulExists('157.159.68.97','CVE-2012-0002','windows remote_desktop_protocol').
+
+vulExists('157.159.68.97','CVE-2012-0152','windows remote_desktop_protocol').
+
+vulExists('157.159.68.97','CVE-XXXX-XXXX','windows remote_desktop_protocol').
+
+vulExists('157.159.68.97','CVE-2019-0708','windows remote_desktop_protocol').
+
 vulExists('157.159.68.97','CVE-XXXX-XXXX',windows).
 
 vulExists('157.159.68.97','CVE-XXXX-XXXX','windows samba').
+
+vulExists('157.159.68.97','CVE-2011-0657',windows).
+
+vulExists('157.159.68.75','CVE-2017-0143',windows).
+
+vulExists('157.159.68.75','CVE-2017-0144',windows).
+
+vulExists('157.159.68.75','CVE-2017-0145',windows).
+
+vulExists('157.159.68.75','CVE-2017-0146',windows).
+
+vulExists('157.159.68.75','CVE-2017-0147',windows).
+
+vulExists('157.159.68.75','CVE-2017-0148',windows).
+
+vulExists('157.159.68.75','CVE-2005-1794','remote_desktop_connection windows_terminal_services_using_rdp').
+
+vulExists('157.159.68.75','CVE-2012-0002','windows remote_desktop_protocol').
+
+vulExists('157.159.68.75','CVE-2012-0152','windows remote_desktop_protocol').
+
+vulExists('157.159.68.75','CVE-XXXX-XXXX','windows remote_desktop_protocol').
+
+vulExists('157.159.68.75','CVE-2019-0708','windows remote_desktop_protocol').
 
 vulExists('157.159.68.75','CVE-XXXX-XXXX',windows).
 
 vulExists('157.159.68.75','CVE-XXXX-XXXX','windows samba').
 
+vulExists('157.159.68.75','CVE-2011-0657',windows).
+
 cvss('CVE-1999-0524',l).
+
+cvss('CVE-2005-1794',h).
+
+cvss('CVE-2011-0657',l).
+
+cvss('CVE-2012-0002',m).
+
+cvss('CVE-2012-0152',m).
+
+cvss('CVE-2016-0128',h).
+
+cvss('CVE-2017-0143',h).
+
+cvss('CVE-2017-0144',h).
+
+cvss('CVE-2017-0145',h).
+
+cvss('CVE-2017-0146',h).
+
+cvss('CVE-2017-0147',h).
+
+cvss('CVE-2017-0148',h).
+
+cvss('CVE-2019-0708',l).
+
+cvss('CVE-XXXX-XXXX',h).
 
 cvss('CVE-XXXX-XXXX',l).
 
+cvss('CVE-XXXX-XXXX',h).
+
+cvss('CVE-XXXX-XXXX',l).
+
+cvss('CVE-XXXX-XXXX',h).
+
+cvss('CVE-XXXX-XXXX',l).
+
+networkServiceInfo('157.159.68.125','remote_desktop_connection windows_terminal_services_using_rdp',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'3389',someUser).
+
 networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser).
 
 networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
 
-networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser).
-
-networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+networkServiceInfo('157.159.68.125',windows,tcp,'3389',someUser).
 
 networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser).
 
 networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'3389',someUser).
 
 networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser).
 
 networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser).
 
-networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser).
-
-networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser).
+networkServiceInfo('157.159.68.125','windows samba',tcp,'3389',someUser).
 
 networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser).
 
 networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser).
 
+networkServiceInfo('157.159.68.125','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125',windows,udp,'5355',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','remote_desktop_connection windows_terminal_services_using_rdp',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'3389',someUser).
+
 networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser).
 
 networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
 
-networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser).
-
-networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+networkServiceInfo('157.159.68.75',windows,tcp,'3389',someUser).
 
 networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser).
 
 networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'3389',someUser).
 
 networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser).
 
 networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser).
 
-networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser).
-
-networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser).
+networkServiceInfo('157.159.68.75','windows samba',tcp,'3389',someUser).
 
 networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser).
 
 networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser).
 
+networkServiceInfo('157.159.68.75','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75',windows,udp,'5355',someUser).
+
+networkServiceInfo('157.159.68.97','remote_desktop_connection windows_terminal_services_using_rdp',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'3389',someUser).
+
 networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser).
 
 networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
 
-networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser).
-
-networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
+networkServiceInfo('157.159.68.97',windows,tcp,'3389',someUser).
 
 networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser).
 
 networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'3389',someUser).
 
 networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser).
 
 networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser).
 
-networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser).
-
-networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser).
+networkServiceInfo('157.159.68.97','windows samba',tcp,'3389',someUser).
 
 networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser).
 
 networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97',windows,udp,'5355',someUser).
 
 inCompetent('157.159.68.125_victim').
 hasAccount('157.159.68.125_victim', '157.159.68.125', user).
@@ -154,8 +788,5 @@ inCompetent('157.159.68.75_victim').
 hasAccount('157.159.68.75_victim', '157.159.68.75', user).
 attackerLocated(internet).
 attackGoal(execCode('157.159.68.75', _)).
-inCompetent('157.159.68.44_victim').
-hasAccount('157.159.68.44_victim', '157.159.68.44', user).
-attackerLocated(internet).
-attackGoal(execCode('157.159.68.44', _)).
 hacl(_,_,_,_).
+vulExists('157.159.68.97','CVE-2017-0146','windows samba',remoteExploit,privEscalation):1

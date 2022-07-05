@@ -31,12 +31,13 @@ function updateGraph(){
       var valcve=arraynodes[ncve]["label"].split(",")[1].split("'")[1];
       arrayid.push(id);
       arrayip.push(valip);
+      console.log(valcve);
       arraycve.push(valcve);
     }
     
   }
-  //console.log(arraycve);
-  //console.log(arrayip);
+  console.log(arraycve);
+  console.log(arrayip);
   for (var i = 0; i < graph["nodes"].length; i++){
   var hacl=graph["nodes"][i]["label"].indexOf("hacl");
   var net=graph["nodes"][i]["label"].indexOf("networkServiceInfo");
@@ -49,7 +50,7 @@ function updateGraph(){
       var sep=graph["nodes"][i]["label"].split(',');
       adds=sep[0].split("'")[1];
      
-      if(adds==addresssource && sep[2]==protocol && parseInt(sep[3].split("):")[0])==port){
+      if(adds==addresssource && sep[2]==protocol && parseInt(sep[3].split("):")[0])==parseInt(port)){
         ch=1
         
       }
@@ -60,7 +61,7 @@ function updateGraph(){
       add=sep[0].split("'")[1];
       addsource=sep[0].split("'")[1];
       
-      if(add==address && sep[2]==protocol && parseInt(sep[3].split("):")[0])==port){
+      if(add==address && sep[2]==protocol && parseInt(sep[3].split("):")[0])==parseInt(port)){
         val=1;
         
   
@@ -123,7 +124,11 @@ function updateGraph(){
         var arraykafka=[];
         var lengthdonnee=[];
         var issource=0;
+        var countpostcondition=0;
         var jsonpost={};
+        var privilegesneeded='';
+        var gainedPrivileges='';
+        var prod1="";
         
         
         var name=localStorage.getItem('someVarKey');
@@ -179,42 +184,43 @@ function updateGraph(){
           $.getJSON("./vdo/"+cve+".json", function(json) {
           
             if(json["Vulnerability"]["hasIdentity"][0]["value"]==cve && localStorage.getItem('someVarKey')!=cve){
-              if(localStorage.getItem('sendalert')=='1'){
-               
-                const alertes =  localStorage.getItem("alerte");
-                const jsonString = alertes;
-                
-                
-                     $.ajax
-                      ({
-                          type: "GET",
-                          dataType : 'json',
-                          async: false,
-                          url: '../scriptphp/savejson.php',
-                          data: { data: jsonString},
-                          success: function () {},
-                          failure: function() {alert("Error!");}
-                      })
-                      $.ajax
-                        ({
-                            type: "POST",
-                            dataType : 'json',
-                            global: false,
-                            async:false,
-                            url: './scriptphp/executeproducer.php',
-                            success: function () {alert("Thanks!"); },
-                            failure: function() {alert("Error!");}
-                        });
-                        localStorage.setItem('sendalert','2') 
-              }
-              
-              arraykafka=[];
+             
               
               for(var e=0; e<json["Vulnerability"]["hasScenario"].length; e++){
                 for(var b=0; b<json["Vulnerability"]["hasScenario"][e]["affectsProduct"]["hasEnumeration"]["values"].length; b++){
                   prod=json["Vulnerability"]["hasScenario"][e]["affectsProduct"]["hasEnumeration"]["values"][b].split(':')[4];
                   if(prod==product){
                     valprod=1;
+                    if(localStorage.getItem('sendalert')=='1'){
+               
+                      const alertes =  localStorage.getItem("alerte");
+                      const jsonString = alertes;
+                      
+                      
+                           $.ajax
+                            ({
+                                type: "GET",
+                                dataType : 'json',
+                                async: false,
+                                url: '../scriptphp/savejson.php',
+                                data: { data: jsonString},
+                                success: function () {},
+                                failure: function() {alert("Error!");}
+                            })
+                            $.ajax
+                              ({
+                                  type: "POST",
+                                  dataType : 'json',
+                                  global: false,
+                                  async:false,
+                                  url: './scriptphp/executeproducer.php',
+                                  success: function () {alert("Thanks!"); },
+                                  failure: function() {alert("Error!");}
+                              });
+                              localStorage.setItem('sendalert','2') 
+                    }
+                    
+                    arraykafka=[];
                   }
                 }
                 
@@ -231,7 +237,8 @@ function updateGraph(){
                         
                         if(isEvery==true && valprod!=0){
                           logicalimpact=json["Vulnerability"]["hasScenario"][e]["hasAction"][1]["resultsInImpact"][t]["hasLogicalImpact"].split("::").slice(-1)[0];
-                       
+                          privilegesgained=json["Vulnerability"]["hasScenario"][e]["hasAction"][1]["resultsInImpact"][t]["gainedPrivileges"]
+
                           arraylinks=graph["links"];
                           arraynodes=graph["nodes"];
                                                    
@@ -251,7 +258,7 @@ function updateGraph(){
                                   arraylinks.push(newlinka);
                                   arraynodes.push(newnoder);
                                   arraynodes.push(newnodea);
-                                  
+                                  //console.log(arraynodes);
                                   
                                   var weaknesses=json["Vulnerability"]["hasScenario"][e]["hasExploitedWeakness"];
                                   if(logicalimpact=="Panic" || logicalimpact=="Reboot"){
@@ -272,9 +279,11 @@ function updateGraph(){
                                     //console.log(n.split(".json")[0]);
                                     $.getJSON("./vdo/"+n, function(donnee){
                                       
-                                      
-                                      precondition=donnee["Vulnerability"]["hasScenario"][0]["barrier"][0]["barrierType"].split(':')[4];
+                                      console.log(donnee["Vulnerability"]["hasScenario"][0]["barrier"]);
+                                      //precondition=donnee["Vulnerability"]["hasScenario"][0]["barrier"][0]["barrierType"].split(':')[4];
                                       newcve=donnee["Vulnerability"]["hasIdentity"][0]["value"];
+                                      console.log(donnee["Vulnerability"]["hasScenario"][0]["barrier"][0]);
+                                      privilegesneeded=donnee["Vulnerability"]["hasScenario"][0]["barrier"][0]["neededPrivileges"]
                                       
                                       var caction;
                                       var cprivileges;
@@ -282,8 +291,8 @@ function updateGraph(){
   
                                       for(var u=0; u<donnee["Vulnerability"]["hasScenario"].length; u++){
                                         for(var h=0; h<donnee["Vulnerability"]["hasScenario"][u]["affectsProduct"]["hasEnumeration"]["values"].length; h++){
-                                          prod=donnee["Vulnerability"]["hasScenario"][u]["affectsProduct"]["hasEnumeration"]["values"][h].split(':')[4];
-                                          products.push(prod);
+                                          prod1=donnee["Vulnerability"]["hasScenario"][u]["affectsProduct"]["hasEnumeration"]["values"][h].split(':')[4];
+                                          products.push(prod1);
                                                                                  
                                         }
                                         if(donnee["Vulnerability"]["hasScenario"][u]["requiresAttackTheatre"]=="Internet"){
@@ -291,13 +300,15 @@ function updateGraph(){
                                         }
                                         user=donnee["Vulnerability"]["hasScenario"][u]["barrier"][0]["neededPrivileges"];
                                         newimpact=donnee["Vulnerability"]["hasScenario"][u]["hasAction"][1]["resultsInImpact"][0]["hasLogicalImpact"].split('::')[1];
-                                        caction=json["Vulnerability"]["hasScenario"][u]["barrier"][0]["blockedByBarrier"];
-                                        cprivileges=json["Vulnerability"]["hasScenario"][u]["barrier"][0]["neededPrivileges"];
-                                        casset=json["Vulnerability"]["hasScenario"][u]["barrier"][0]["relatesToContext"];
+                                        caction=donnee["Vulnerability"]["hasScenario"][u]["barrier"][0]["blockedByBarrier"];
+                                        cprivileges=donnee["Vulnerability"]["hasScenario"][u]["barrier"][0]["neededPrivileges"];
+                                        casset=donnee["Vulnerability"]["hasScenario"][u]["barrier"][0]["relatesToContext"];
                                         
                                         
                                       }
-                                      donnees={"cve":newcve,"user":user,"newimpact":newimpact,"caction":caction,"cprivileges":cprivileges,"casset":casset,"products":products,"mean":mean,"precondition":precondition}
+                                      //donnees={"cve":newcve,"user":user,"newimpact":newimpact,"caction":caction,"cprivileges":cprivileges,"casset":casset,"products":products,"mean":mean,"precondition":precondition}
+                                      donnees={"cve":newcve,"user":user,"newimpact":newimpact,"caction":caction,"cprivileges":cprivileges,"casset":casset,"products":products,"mean":mean}
+                                      products=[];
                                       arraydonnees.push(donnees);
                                       
                                       localStorage.setItem('arraydonnees',JSON.stringify(arraydonnees,null,4));                     
@@ -309,17 +320,25 @@ function updateGraph(){
                                   console.log(JSON.parse(localStorage.getItem('arraydonnees')).length);
                                   
                                   for(z=0; z<lengthdonnee.length; z++){
-                                    if(weaknesses.includes(lengthdonnee[z]["precondition"]) && lengthdonnee[z]["products"].includes(product)){
-                                      
+                                    console.log(arraycve,lengthdonnee[z]["cve"]);
+                                    console.log(product,lengthdonnee[z]["products"])
+                                    //if(weaknesses.includes(lengthdonnee[z]["precondition"]) && lengthdonnee[z]["products"].includes(product)){
+                                      if(privilegesgained==lengthdonnee[z]["cprivileges"] && lengthdonnee[z]["products"].includes(product)){
+                                        
                                       if(!arrayremovenodes.includes(lengthdonnee[z]["cve"])){
                                         arrayremovenodes.push(lengthdonnee[z]["cve"]);
+                                        countpostcondition=countpostcondition+1;
                                         if(arraycve.includes(lengthdonnee[z]["cve"])){
-                                          var position=arraycve.findIndex(lengthdonnee[z]["cve"]);
+                                          
+                                          var position=arraycve.findIndex(obj => obj ==lengthdonnee[z]["cve"]);
                                           newtarget=arrayid[position];
+                                          console.log(newtargeta,newtarget);
                                           newlinkr={"source":newtargeta,"target":newtarget};
                                           arraylinks.push(newlinkr);
+                                          console.log(arraylinks);
                                         }
                                         else{
+                                          
                                           newtarget=parseInt(arraynodes.length+1)
                                           newlinkr={"source":newtargeta,"target":newtarget};
                                           
@@ -346,10 +365,12 @@ function updateGraph(){
                                             "Countermeasure": localStorage.getItem('counter')
                                         }
                                         }
+                                        //console.log(arraykafka);
                                         arraykafka.push(kafkajson);
                                         
-                                        
-                                        if(lengthdonnee.length==arraykafka.length){
+                                        console.log(lengthdonnee.length,arraykafka.length,countpostcondition);
+                                        //if(lengthdonnee.length==arraykafka.length){
+                                       if(countpostcondition==arraykafka.length){
                                           localStorage.setItem('alerte',JSON.stringify(arraykafka,null,4));
                                           console.log(localStorage.getItem('alerte'));
                                           const alertes =  localStorage.getItem("alerte");
@@ -394,6 +415,7 @@ function updateGraph(){
                                       }
                                       
                                     }
+                                  
                                     
                                     newnoder={};
                                     newlinkr={};
@@ -421,14 +443,14 @@ function updateGraph(){
                                               
                     }
                     //arraykafka=[];
-                    newnoder={};
+                    /*newnoder={};
                     newlinkr={};
                     newnodea={};
                     newlinka={};
                     jsonfinal={"nodes":arraynodes,"links":arraylinks};
                     //console.log(arraykafka);
                     localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-                    obj=JSON.parse(localStorage.getItem('myjson')); 
+                    obj=JSON.parse(localStorage.getItem('myjson')); */
                    
                   }
                   
