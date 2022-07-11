@@ -26,5 +26,5 @@ cvss('CVE-2021-34527',l).
 
 networkServiceInfo('51.158.154.169', windows_server_2016, tcp , 80, 'andrew').
 /*networkServiceInfo('51.158.154.169', windows_server_2016, tcp , 443, 'andrew').*/
-vulExists('51.158.154.169','CVE-2017-0148','windows_server_2016',remoteExploit,privEscalation).
-cvss('CVE-2017-0148',l).
+vulExists('51.158.154.169','CVE-2017-0146','windows_server_2016',remoteExploit,privEscalation).
+cvss('CVE-2017-0146',l).

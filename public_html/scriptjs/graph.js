@@ -31,13 +31,13 @@ function updateGraph(){
       var valcve=arraynodes[ncve]["label"].split(",")[1].split("'")[1];
       arrayid.push(id);
       arrayip.push(valip);
-      console.log(valcve);
+      //console.log(valcve);
       arraycve.push(valcve);
     }
     
   }
-  console.log(arraycve);
-  console.log(arrayip);
+  //console.log(arraycve);
+  //console.log(arrayip);
   for (var i = 0; i < graph["nodes"].length; i++){
   var hacl=graph["nodes"][i]["label"].indexOf("hacl");
   var net=graph["nodes"][i]["label"].indexOf("networkServiceInfo");
@@ -110,6 +110,8 @@ function updateGraph(){
         var newnoder={};
         var newlinka={};
         var newnodea={};
+        var newlinkv={};
+        var newnodev={};
         var onto="vdo/"+cve+"json";
         var seps=impact.split(/(?=[A-Z])/);
         var precondition='';
@@ -118,6 +120,7 @@ function updateGraph(){
         var user='';
         var mean='';
         var newimpact='';
+        var impactmethod='';
         var donnees={};
         var arraydonnees=[];
         var arrayremovenodes=[];
@@ -180,7 +183,7 @@ function updateGraph(){
           localStorage.setItem('sendalert',2);
         }
         
-        if(issource!=-1){
+        //!=-1){
           $.getJSON("./vdo/"+cve+".json", function(json) {
           
             if(json["Vulnerability"]["hasIdentity"][0]["value"]==cve && localStorage.getItem('someVarKey')!=cve){
@@ -226,7 +229,7 @@ function updateGraph(){
                 
                 for(var o=0; o<json["Vulnerability"]["hasScenario"][e]["hasAction"].length; o++){
                   
-                  if(json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"].length==1){
+                  if(json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"].length>=1){
                     for(var t=0; t<json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"].length; t++){
                       if(o==1){
                         
@@ -245,7 +248,7 @@ function updateGraph(){
                           for(var p=0; p<arraylinks.length; p++){
                             if(idvul==arraylinks[p]["source"]){
                               for(var m=0; m<arraylinks.length; m++){
-                                if(arraylinks[p]["target"]==arraylinks[m]["source"]){
+                                if(arraylinks[p]["target"]==arraylinks[m]["source"] && parseInt(arraylinks[m]["target"])!=1){
                                   
                                   
                                   newtarget=parseInt(arraynodes.length+1)
@@ -253,15 +256,15 @@ function updateGraph(){
                                   newtargeta=parseInt(newtarget+1)
                                   newlinka={"source":newtarget,"target":newtargeta};
                                   newnoder={id: newtarget, group: 2, label: "RULE "+newtarget+" ("+logicalimpact+"):0"}
-                                  newnodea={id: newtargeta, group: 1, label: logicalimpact+"('"+address+"'):0"}
+                                  newnodea={id: newtargeta, group: 1, label: "gainsPrivilege"+"('"+address+"'"+privilegesgained+"):0"}
                                   arraylinks.push(newlinkr);
                                   arraylinks.push(newlinka);
                                   arraynodes.push(newnoder);
                                   arraynodes.push(newnodea);
-                                  //console.log(arraynodes);
+
                                   
                                   var weaknesses=json["Vulnerability"]["hasScenario"][e]["hasExploitedWeakness"];
-                                  if(logicalimpact=="Panic" || logicalimpact=="Reboot"){
+                                  if(logicalimpact=="Service Interrupt"){
                                     for(var z=0; z<arraynodes.length; z++){
                                       if(arraynodes[z]["label"].indexOf("physicalDamage")==0){
                                         newlinkr={"source":newtargeta,"target":arraynodes[z-1]["id"]};
@@ -276,13 +279,12 @@ function updateGraph(){
                                     
                                     
                                     var n=jsonfiles[y];
-                                    //console.log(n.split(".json")[0]);
+                                    
                                     $.getJSON("./vdo/"+n, function(donnee){
                                       
-                                      console.log(donnee["Vulnerability"]["hasScenario"][0]["barrier"]);
-                                      //precondition=donnee["Vulnerability"]["hasScenario"][0]["barrier"][0]["barrierType"].split(':')[4];
+                                      //console.log(donnee["Vulnerability"]["hasScenario"][0]["barrier"]);
                                       newcve=donnee["Vulnerability"]["hasIdentity"][0]["value"];
-                                      console.log(donnee["Vulnerability"]["hasScenario"][0]["barrier"][0]);
+                                      //console.log(donnee["Vulnerability"]["hasScenario"][0]["barrier"][0]);
                                       privilegesneeded=donnee["Vulnerability"]["hasScenario"][0]["barrier"][0]["neededPrivileges"]
                                       
                                       var caction;
@@ -300,6 +302,8 @@ function updateGraph(){
                                         }
                                         user=donnee["Vulnerability"]["hasScenario"][u]["barrier"][0]["neededPrivileges"];
                                         newimpact=donnee["Vulnerability"]["hasScenario"][u]["hasAction"][1]["resultsInImpact"][0]["hasLogicalImpact"].split('::')[1];
+                                        impactmethod=donnee["Vulnerability"]["hasScenario"][u]["hasAction"][1]["hasImpactMethod"];
+                                        //console.log(impactmethod);
                                         caction=donnee["Vulnerability"]["hasScenario"][u]["barrier"][0]["blockedByBarrier"];
                                         cprivileges=donnee["Vulnerability"]["hasScenario"][u]["barrier"][0]["neededPrivileges"];
                                         casset=donnee["Vulnerability"]["hasScenario"][u]["barrier"][0]["relatesToContext"];
@@ -307,7 +311,7 @@ function updateGraph(){
                                         
                                       }
                                       //donnees={"cve":newcve,"user":user,"newimpact":newimpact,"caction":caction,"cprivileges":cprivileges,"casset":casset,"products":products,"mean":mean,"precondition":precondition}
-                                      donnees={"cve":newcve,"user":user,"newimpact":newimpact,"caction":caction,"cprivileges":cprivileges,"casset":casset,"products":products,"mean":mean}
+                                      donnees={"cve":newcve,"user":user,"newimpact":newimpact,"impactmethod":impactmethod,"caction":caction,"cprivileges":cprivileges,"casset":casset,"products":products,"mean":mean}
                                       products=[];
                                       arraydonnees.push(donnees);
                                       
@@ -317,11 +321,11 @@ function updateGraph(){
                                   
                                   }
                                   lengthdonnee=JSON.parse(localStorage.getItem('arraydonnees'));
-                                  console.log(JSON.parse(localStorage.getItem('arraydonnees')).length);
+                                  //console.log(JSON.parse(localStorage.getItem('arraydonnees')).length);
                                   
                                   for(z=0; z<lengthdonnee.length; z++){
-                                    console.log(arraycve,lengthdonnee[z]["cve"]);
-                                    console.log(product,lengthdonnee[z]["products"])
+                                    //console.log(arraycve,lengthdonnee[z]["cve"]);
+                                    //console.log(product,lengthdonnee[z]["products"])
                                     //if(weaknesses.includes(lengthdonnee[z]["precondition"]) && lengthdonnee[z]["products"].includes(product)){
                                       if(privilegesgained==lengthdonnee[z]["cprivileges"] && lengthdonnee[z]["products"].includes(product)){
                                         
@@ -332,20 +336,40 @@ function updateGraph(){
                                           
                                           var position=arraycve.findIndex(obj => obj ==lengthdonnee[z]["cve"]);
                                           newtarget=arrayid[position];
-                                          console.log(newtargeta,newtarget);
+                                          //console.log(newtargeta,newtarget);
                                           newlinkr={"source":newtargeta,"target":newtarget};
                                           arraylinks.push(newlinkr);
-                                          console.log(arraylinks);
+                                          //console.log(arraylinks);
                                         }
                                         else{
                                           
                                           newtarget=parseInt(arraynodes.length+1)
-                                          newlinkr={"source":newtargeta,"target":newtarget};
+                                          newtargeto=parseInt(newtarget+1);
+                                          newtargetv=parseInt(newtargeto+1)
+                                          newlinkr={"source":newtargeta,"target":newtargeto};
+                                          newlinka={"source":newtarget,"target":newtargeto};
+                                          newlinkv={"source":newtargeto,"target":newtargetv};
+                                          //console.log(newlinkv);
+                                          newnoder={id:newtarget, group: 4, label: "vulExists"+"('"+address+"',"+"'"+lengthdonnee[z]["cve"]+"'"+","+product+","+lengthdonnee[z]["mean"]+","+lengthdonnee[z]["newimpact"]+"):0"}
+                                          newnodea={id:newtargeto, group: 2, label: "RULE "+newtargeto+" ("+impactmethod+"):0"};
+                                          if(impactmethod='Code Execution'){
+                                            newnodev={id:newtargetv, group: 1, label: "execCode ('"+address+"',"+lengthdonnee[z]["user"]+")"}
+                                          }
+                                          if(impactmethod='Authentication Bypass'){
+                                            newnodev={id:newtargetv, group: 1, label: "bypassAut ('"+address+"',"+lengthdonnee[z]["user"]+")"}
+                                          }
+                                          if(impactmethod='Context Escape'){
+                                            newnodev={id:newtargetv, group: 1, label: "escapeContext ('"+address+"',"+lengthdonnee[z]["user"]+")"}
+                                          }
                                           
-                                          newnoder={id: newtarget, group: 4, label: "vulExists"+"('"+address+"',"+"'"+lengthdonnee[z]["cve"]+"'"+","+product+","+lengthdonnee[z]["mean"]+","+lengthdonnee[z]["newimpact"]+"):0"}
-                                          
+                                          //console.log(newnodev);
                                           arraylinks.push(newlinkr);
                                           arraynodes.push(newnoder);
+                                          arraylinks.push(newlinka);
+                                          arraynodes.push(newnodea);
+                                          arraylinks.push(newlinkv);
+                                          arraynodes.push(newnodev);
+                                          //console.log(arraynodes);
                                         }
                                         
                                         localStorage.setItem('counter','remove '+lengthdonnee[z]["caction"]+' from '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
@@ -368,11 +392,11 @@ function updateGraph(){
                                         //console.log(arraykafka);
                                         arraykafka.push(kafkajson);
                                         
-                                        console.log(lengthdonnee.length,arraykafka.length,countpostcondition);
+                                        //console.log(lengthdonnee.length,arraykafka.length,countpostcondition);
                                         //if(lengthdonnee.length==arraykafka.length){
                                        if(countpostcondition==arraykafka.length){
                                           localStorage.setItem('alerte',JSON.stringify(arraykafka,null,4));
-                                          console.log(localStorage.getItem('alerte'));
+                                          //console.log(localStorage.getItem('alerte'));
                                           const alertes =  localStorage.getItem("alerte");
                                           const jsonString = alertes;
                                               $.ajax
@@ -395,39 +419,18 @@ function updateGraph(){
                                                   success: function () {alert("Thanks!"); },
                                                   failure: function() {alert("Error!");}
                                               });
-                                        }
-                                        /*for(var z=0; z<arraynodes.length; z++){
-                                          if(arraynodes[z]["label"].indexOf('networkServiceInfo')==0){
-                                            //console.log(address,arraynodes[z]["label"].split("(")[1].split(",")[0].split("'")[1])
-                                            if((arraynodes[z]["label"].split("(")[1].split(",")[0].split("'")[1])==address && arraynodes[z]["label"].split("(")[1].split(",")[1]==product){
-                                              //console.log(arraynodes[z]["label"].split("(")[1].split(",")[1])
-                                              //console.log(arraynodes[z]["id"],newtarget);
-                                              //newlinka={"source":newtargeta,"target":newtarget};
-                                              newlinkr={"source":arraynodes[z]["id"],"target":newtarget};
-                                              //newnodea={id: newtarget, group: 4, label: "vulExists"+"('"+address+"',"+"'"+lengthdonnee[z]["cve"]+"'"+","+product+","+lengthdonnee[z]["mean"]+","+lengthdonnee[z]["newimpact"]+"):0"}
-                                              arraylinks.push(newlinkr);
-                                            }
-                                          }
-  
-                                        }*/
-                                            
-                                      
+                                        }                                         
                                       }
-                                      
                                     }
                                   
-                                    
+
                                     newnoder={};
                                     newlinkr={};
                                     newnodea={};
                                     newlinka={};
+                                    newnodev={};
+                                    newlinkv={};
                                     jsonfinal={"nodes":arraynodes,"links":arraylinks};
-                                    //if(arraykafka.length==arraydonnees.length){
-                                      //console.log(arraykafka);
-                                      //console.log(lengthdonnee);
-                                      //console.log(arraykafka.length,arraydonnees.length,arrayremovenodes.length);
-                                    //}
-                                    
                                     localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
                                     obj=JSON.parse(localStorage.getItem('myjson')); 
                                    
@@ -442,83 +445,21 @@ function updateGraph(){
                       }
                                               
                     }
-                    //arraykafka=[];
-                    /*newnoder={};
-                    newlinkr={};
-                    newnodea={};
-                    newlinka={};
-                    jsonfinal={"nodes":arraynodes,"links":arraylinks};
-                    //console.log(arraykafka);
-                    localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-                    obj=JSON.parse(localStorage.getItem('myjson')); */
                    
                   }
                   
-                  else{
-                    
-                    for(var r=0; r<json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"].length; r++){
-                      check=json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"][r]["hasLogicalImpact"]
-                      var isEvery = seps.every(item => check.toLowerCase().includes(item.toLowerCase()));
-                      if(isEvery==true && valprod!=0){
-                        logicalimpact=json["Vulnerability"]["hasScenario"][e]["hasAction"][o]["resultsInImpact"][r]["hasLogicalImpact"].split("::").slice(-1)[0];
-                        
-                        arraylinks=graph["links"];
-                        
-                        for(var p=0; p<arraylinks.length; p++){
-                          if(idvul==arraylinks[p]["source"]){
-                            for(var m=0; m<arraylinks.length; m++){
-                              if(arraylinks[p]["target"]==arraylinks[m]["source"]){
-                                
-                                arraynodes=graph["nodes"];
-                                newtarget=parseInt(arraynodes.length+1)
-                                newlinkr={"source":parseInt(arraylinks[m]["target"]),"target":newtarget};
-                                newtargeta=parseInt(newtarget+1)
-                                newlinka={"source":newtarget,"target":newtargeta};
-                                newnoder={id: newtarget, group: 2, label: "RULE "+newtarget+" ("+logicalimpact+"):0"}
-                                newnodea={id: newtargeta, group: 1, label: logicalimpact+"('"+address+"'):0"}
-                                arraylinks.push(newlinkr);
-                                arraylinks.push(newlinka);
-                                arraynodes.push(newnoder);
-                                arraynodes.push(newnodea);
-                                if(logicalimpact=="Panic" || logicalimpact=="Reboot"){
-                                  for(var z=0; z<arraynodes.length; z++){
-                                    if(arraynodes[z]["label"].indexOf("physicalDamage")==0){
-                                      newlinkr={"source":newtargeta,"target":arraynodes[z-1]["id"]};
-                                      arraylinks.push(newlinkr);
-                                    } 
-                                  }
-                                  
-                                }
-                              }
-                            }
-                            
-                          }
-                        }
-                      }
-                      
-                    }
-                    newnoder={};
-                    newlinkr={};
-                    newnodea={};
-                    newlinka={};
-                    jsonfinal={"nodes":arraynodes,"links":arraylinks};
                   
-                    localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-                    obj=JSON.parse(localStorage.getItem('myjson')); 
-                  
-                    
-                  }
                 }
               }
               localStorage.setItem("someVarKey", cve);
             }
           });
-        }
-        else{
+        //}
+        //else{
           //create rule based on logical impact of cve and network service info
           //create node for rule
           //create links from vulExists to rule node and fro NetworkServiceInfo to rule
-        }
+        //}
         
       }
   } 
