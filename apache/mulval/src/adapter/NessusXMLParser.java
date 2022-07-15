@@ -27,15 +27,27 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.*;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONArray;
 
 public class NessusXMLParser {
 
 	public static void main(String[] args) {
 		parseNessus(args[0]);
+		//parseNessus("/home/keren/Téléchargements/Cassiopee/CPS_6g6fqs.nessus.xml");
 	}
 
 	public static void parseNessus(String nessusReport) {
+		HashMap<String, String> organization = new HashMap<String, String>();
+		organization.put("name", "TSP");
+		organization.put("description", "École d'ingénieur du numérique");
+		
+		List<String> equipments = new ArrayList<String>();
+		
 		try {
+			//FileWriter json = new FileWriter("countermeasure.json");
+			String json = "countermeasure.json";
+			JSONArray arrayd = new JSONArray();
 			SAXReader saxReader = new SAXReader();
 			FileWriter fr = new FileWriter("vulInfo.txt");
 			Document document = saxReader.read(nessusReport);
@@ -146,11 +158,23 @@ public class NessusXMLParser {
 						fr.write(sube.attribute(0).getText() + "\n");
 						System.out.println("protocol is: " + sube.attribute(2).getText());
 						fr.write(sube.attribute(2).getText() + "\n");
-						System.out.println();
+						/*System.out.println(json);
+						System.out.println(host.attribute(0).getText());
+						System.out.println(products);
+						System.out.println(cve);
+						System.out.println(cve.getText());
+						System.out.println(severity.getText());
+						System.out.println(solution);*/
+						if(cve!=null) {
+							JSONwriter(arrayd, json, host.attribute(0).getText(), products, cve.getText(), severity.getText(), solution);
+						}
+						
+						//JSONwriter(json, host.attribute(0).getText(), products, cve.getText(), severity.getText(), solution);
 					}
 				}
 			}
 			fr.close();
+			
 		} 
 		catch (DocumentException e) {
 			e.printStackTrace();
@@ -295,15 +319,15 @@ public class NessusXMLParser {
 		return res;
 	}
 	
-	public static void XMLremediationConstructor(int nbOrganizations, List<HashMap<String,String>> Organizations, int nbEquipments, List<HashMap<String,String>> Equipments, List<HashMap<String,String>> Countermeasures, int nbIncidents, List<HashMap<String,String>> Incidents) {
+	public static void XMLremediationConstructor(HashMap<String,String> Organization, int nbEquipments, List<String> Equipments, List<HashMap<String,String>> Countermeasures, int nbIncidents, List<HashMap<String,String>> Incidents) {
 		String org_name = "";
 		String org_desc = "";
+		
 		String id_equipments = "";
 		for (int i=1; i<=nbEquipments; i++) {
 			id_equipments += Integer.toString(i) + ", "; 
 		}
 		id_equipments = id_equipments.substring(0,id_equipments.length()-2); //On enlève le dernier espace et la virgule
-		
 		String eq_type = "";
 		
 		String cm_name = "";
@@ -312,35 +336,32 @@ public class NessusXMLParser {
 		String inc_name = "";
 		String inc_desc = "";
 		String inc_risk_level = "";
+		
 		String id_countermeasure = "";
 		for (int i=1; i<=nbEquipments+1; i++) {
 			id_countermeasure += Integer.toString(i) + ", "; 
 		}
 		id_countermeasure = id_countermeasure.substring(0,id_countermeasure.length()-2); //On enlève le dernier espace et la virgule
 		
-		try {
-			FileWriter fr = new FileWriter("Remediations.xml");
-			
+		try (FileWriter fr = new FileWriter("Remediations.xml")) {
 			//Racine du fichier
 			fr.write("<RORI>\n");
-			
+				
 			// élément ORGANIZATIONS
 			fr.write("<ORGANIZATIONS>\n");
-			for (int i=0; i<nbOrganizations; i++) {
-				org_name = Organizations.get(i).get("name");
-				org_desc = Organizations.get(i).get("description");
-				fr.write("<organization id=\"" + Integer.toString(i+1) + "\" name=\"" + org_name + "\" description=\"" + org_desc + "\" id_equipments=\"" + id_equipments + "\" xpath=\"xpath\"/>\n");
-			}
+			org_name = Organization.get("name");
+			org_desc = Organization.get("description");
+			fr.write("<organization id=\"1\" name=\"" + org_name + "\" description=\"" + org_desc + "\" id_equipments=\"" + id_equipments + "\" xpath=\"xpath\"/>\n");
 			fr.write("</ORGANIZATIONS>\n");
-			
+				
 			// élément EQUIPMENTS
 			fr.write("<EQUIPMENTS>\n");
 			for (int i=0; i<nbEquipments; i++) {
-				eq_type = Equipments.get(i).get("type");
+				eq_type = Equipments.get(i);
 				fr.write("<equipment id=\"" + Integer.toString(i+1) + "\" name=\"E" + Integer.toString(i+1) + "\" type=\"" + eq_type + "\" AEV=\"\" xpath=\"xpath\"/>\n");
 			}
 			fr.write("</EQUIPMENTS>\n");
-			
+				
 			// élément COUNTERMEASURES 
 			fr.write("<COUNTERMEASURES>\n");
 			fr.write("<countermeasure id=\"1\" name=\"NOOP\" description=\"This Solution considers to accept the risk and does not require any modifications\" totally_restrictive=\"yes\" restriction=\"\" id_equipment=\"\" id_rm=\"1\" id_arc=\"1\" xpath=\"xpath\"/>\n");
@@ -350,14 +371,14 @@ public class NessusXMLParser {
 				fr.write("<countermeasure id=\"" + Integer.toString(i+2) + "\" name=\"" + cm_name + "\" description=\"" + cm_desc + "\" totally_restrictive=\"no\" restriction=\"1\" id_equipment=\"" + Integer.toString(i+1) + "\" id_rm=\"" + Integer.toString(i+2) + "\" id_arc=\"" + Integer.toString(i+2) + "\" xpath=\"xpath\"/>\n");
 			}
 			fr.write("</COUNTERMEASURES>\n");
-			
+				
 			// élément RISK_MITIGATION
 			fr.write("<RISK_MITIGATION>\n");
 			for (int i=0; i<nbEquipments+1; i++) {
 				fr.write("<rm id=\"" + Integer.toString(i+1) + "\" EF=\"\" COV=\"\" RM=\"\" xpath=\"xpath\"/>\n");
 			}
 			fr.write("</RISK_MITIGATION>\n");
-			
+				
 			// élément ANNUAL_RESPONSE_COST
 			fr.write("<ANNUAL_RESPONSE_COST>\n");
 			fr.write("<arc id=\"1\" COM=\"\" COI=\"\" ODC=\"\" IC=\"\" total=\"0\" xpath=\"xpath\"/>\n");
@@ -365,7 +386,7 @@ public class NessusXMLParser {
 				fr.write("<arc id=\"" + Integer.toString(i+2) + "\" COM=\"\" COI=\"\" ODC=\"\" IC=\"\" total=\"\" xpath=\"xpath\"/>\n");
 			}
 			fr.write("</ANNUAL_RESPONSE_COST>\n");
-			
+				
 			// élément INCIDENTS
 			fr.write("<INCIDENTS>\n");
 			for (int i=0; i<nbIncidents; i++) {
@@ -375,20 +396,76 @@ public class NessusXMLParser {
 				fr.write("<incident id=\"" + Integer.toString(i+1) + "\" name=\"" + inc_name + "\" description=\"" + inc_desc + "\" risk_level=\"" + inc_risk_level + "\" id_countermeasure=\"" + id_countermeasure + "\" id_organization=\"1\" id_ale=\"1\"/>\n");
 			}
 			fr.write("</INCIDENTS>\n");
-			
+				
 			// élément ANNUAL_LOSS_EXPECTANCY 
 			fr.write("<ANNUAL_LOSS_EXPECTANCY>\n");
 			fr.write("<ale id=\"1\" LA=\"\" LD=\"\" LR=\"\" LP=\"\" LREC=\"\" LRPC=\"\" OL=\"\" CI=\"\" ARO=\"\" total=\"\"/>\n");
 			fr.write("</ANNUAL_LOSS_EXPECTANCY>\n");
-			
+				
 			// fin du XML
 			fr.write("</RORI>\n");
 		}
+		
 		catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
+	/*public static void JSONwriter(FileWriter fr, String ip, String product, String cve, String cvss3_base_score, String countermeasure) {
+		try {
+			fr.write("{\n");
+			fr.write("\""+"IP"+"\""+":"+"\""+ip+ "\""+",\n");
+			fr.write("\""+"Product"+"\""+":" +"\""+ product +"\""+ ",\n");
+			//fr.write("CVEs:[\n");
+			//fr.write("{\n");
+			fr.write("\""+"CVE_ID"+"\""+":" + "\""+cve+"\"" + ",\n");
+			fr.write("\""+"CVSS"+"\""+":" + "\""+cvss3_base_score+"\"" + ",\n");
+			fr.write("\""+"Contremesure"+"\""+":" +"\""+ countermeasure.replace("\n", "")+"\"" + "\n");
+			//fr.write("},\n");
+			//fr.write("],\n");
+			fr.write("},\n");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		/*JSONObject jsond = new JSONObject();
+        
+        jsond.put("IP", ip);
+        jsond.put("Product", product);
+        jsond.put("CVEs", cve);
+        jsond.put("CVSS", cvss3_base_score);
+        jsond.put("Countermeasure", countermeasure);
+        
+        System.out.println(jsond);
+        try (PrintWriter out = new PrintWriter(new FileWriter(fr))) {
+            out.write(jsond.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+		
+	//}
+	public static void JSONwriter(JSONArray arrayd, String fr, String ip, String product, String cve, String cvss3_base_score, String countermeasure) {
+		JSONObject jsond = new JSONObject();
+		
+        JSONObject counter =new JSONObject();
+        
+        jsond.put("IP", ip);
+        jsond.put("Product", product);
+        jsond.put("CVE", cve);
+        jsond.put("CVSS", cvss3_base_score);
+        jsond.put("Countermeasure", countermeasure.replace("\n", ""));
+        arrayd.add(jsond);
+        counter.put("counter", arrayd);
+        //System.out.println(jsond);
+        try (PrintWriter out = new PrintWriter(new FileWriter(fr))) {
+            out.write(counter.toString());
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+		
+	}
 	
 
 }

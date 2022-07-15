@@ -1,6 +1,5 @@
 function updateGraph(){
   graph = JSON.parse(localStorage.getItem('myjson'))
-  //console.log(graph)
   var val=0;
   var idvul=0;
   var cve='';
@@ -19,10 +18,8 @@ function updateGraph(){
   var arraycve=[];
   var arrayid=[];
   //var severitysource=document.getElementById("your-hidden-severitysource").value;
-  //console.log(document.getElementById("your-hidden-jsonobj").value)
   
   var jsonfiles=document.getElementById("your-hidden-jsonlist").value.split(',');
-  //arraynodes=graph["nodes"];
   arraynodes=graph["nodes"];
   for(var ncve=0; ncve<arraynodes.length; ncve++){
     if(arraynodes[ncve]["label"].indexOf("vulExists")==0){
@@ -31,13 +28,10 @@ function updateGraph(){
       var valcve=arraynodes[ncve]["label"].split(",")[1].split("'")[1];
       arrayid.push(id);
       arrayip.push(valip);
-      //console.log(valcve);
       arraycve.push(valcve);
     }
     
   }
-  //console.log(arraycve);
-  //console.log(arrayip);
   for (var i = 0; i < graph["nodes"].length; i++){
   var hacl=graph["nodes"][i]["label"].indexOf("hacl");
   var net=graph["nodes"][i]["label"].indexOf("networkServiceInfo");
@@ -136,23 +130,21 @@ function updateGraph(){
         
         var name=localStorage.getItem('someVarKey');
         
-        if(localStorage.getItem('someVarKey')=='null'){
-          //Find index of specific object using findIndex method.    
+        if(localStorage.getItem('someVarKey')=='null'){   
           objIndex = graph["nodes"].findIndex((obj => obj.id == idvul));
 
-          //Log object to Console.
-          //console.log("Before update: ", graph["nodes"][objIndex]);
           issource=graph["links"].findIndex(obj => obj.source == idvul);
           
-          //Update object's name property.
           graph["nodes"][objIndex].group = 6;
           
           
-          $.getJSON("../countermeasurelist.json",function(datacounte){
+          $.getJSON("../scriptphp/countermeasure.json",function(datacounte){
+            console.log(datacounte);
             for(var r=0; r<datacounte["counter"].length; r++){
-              ct=datacounte["counter"][r]["cve"];
+              ct=datacounte["counter"][r]["CVE"];
+              console.log(ct);
               if(ct==cve){
-                localStorage.setItem("cr",datacounte["counter"][r]["countermeasure"]);
+                localStorage.setItem("cr",datacounte["counter"][r]["Countermeasure"]);
                
               }
             }
@@ -173,7 +165,6 @@ function updateGraph(){
         }
         }
         arraykafka.push(kafkajson);
-        //localStorage.setItem('alerte',JSON.stringify(kafkajson,null,4));
         localStorage.setItem('alerte',JSON.stringify(arraykafka,null,4));
         localStorage.setItem('sendalert',1);
         
@@ -183,7 +174,7 @@ function updateGraph(){
           localStorage.setItem('sendalert',2);
         }
         
-        //!=-1){
+        //if(issource!=-1){
           $.getJSON("./vdo/"+cve+".json", function(json) {
           
             if(json["Vulnerability"]["hasIdentity"][0]["value"]==cve && localStorage.getItem('someVarKey')!=cve){
@@ -282,9 +273,7 @@ function updateGraph(){
                                     
                                     $.getJSON("./vdo/"+n, function(donnee){
                                       
-                                      //console.log(donnee["Vulnerability"]["hasScenario"][0]["barrier"]);
                                       newcve=donnee["Vulnerability"]["hasIdentity"][0]["value"];
-                                      //console.log(donnee["Vulnerability"]["hasScenario"][0]["barrier"][0]);
                                       privilegesneeded=donnee["Vulnerability"]["hasScenario"][0]["barrier"][0]["neededPrivileges"]
                                       
                                       var caction;
@@ -303,7 +292,6 @@ function updateGraph(){
                                         user=donnee["Vulnerability"]["hasScenario"][u]["barrier"][0]["neededPrivileges"];
                                         newimpact=donnee["Vulnerability"]["hasScenario"][u]["hasAction"][1]["resultsInImpact"][0]["hasLogicalImpact"].split('::')[1];
                                         impactmethod=donnee["Vulnerability"]["hasScenario"][u]["hasAction"][1]["hasImpactMethod"];
-                                        //console.log(impactmethod);
                                         caction=donnee["Vulnerability"]["hasScenario"][u]["barrier"][0]["blockedByBarrier"];
                                         cprivileges=donnee["Vulnerability"]["hasScenario"][u]["barrier"][0]["neededPrivileges"];
                                         casset=donnee["Vulnerability"]["hasScenario"][u]["barrier"][0]["relatesToContext"];
@@ -321,11 +309,8 @@ function updateGraph(){
                                   
                                   }
                                   lengthdonnee=JSON.parse(localStorage.getItem('arraydonnees'));
-                                  //console.log(JSON.parse(localStorage.getItem('arraydonnees')).length);
                                   
                                   for(z=0; z<lengthdonnee.length; z++){
-                                    //console.log(arraycve,lengthdonnee[z]["cve"]);
-                                    //console.log(product,lengthdonnee[z]["products"])
                                     //if(weaknesses.includes(lengthdonnee[z]["precondition"]) && lengthdonnee[z]["products"].includes(product)){
                                       if(privilegesgained==lengthdonnee[z]["cprivileges"] && lengthdonnee[z]["products"].includes(product)){
                                         
@@ -336,10 +321,9 @@ function updateGraph(){
                                           
                                           var position=arraycve.findIndex(obj => obj ==lengthdonnee[z]["cve"]);
                                           newtarget=arrayid[position];
-                                          //console.log(newtargeta,newtarget);
+                                          console.log(newtarget);
                                           newlinkr={"source":newtargeta,"target":newtarget};
                                           arraylinks.push(newlinkr);
-                                          //console.log(arraylinks);
                                         }
                                         else{
                                           
@@ -349,27 +333,24 @@ function updateGraph(){
                                           newlinkr={"source":newtargeta,"target":newtargeto};
                                           newlinka={"source":newtarget,"target":newtargeto};
                                           newlinkv={"source":newtargeto,"target":newtargetv};
-                                          //console.log(newlinkv);
                                           newnoder={id:newtarget, group: 4, label: "vulExists"+"('"+address+"',"+"'"+lengthdonnee[z]["cve"]+"'"+","+product+","+lengthdonnee[z]["mean"]+","+lengthdonnee[z]["newimpact"]+"):0"}
-                                          newnodea={id:newtargeto, group: 2, label: "RULE "+newtargeto+" ("+impactmethod+"):0"};
-                                          if(impactmethod='Code Execution'){
+                                          newnodea={id:newtargeto, group: 2, label: "RULE "+newtargeto+" ("+lengthdonnee[z]["impactmethod"][0]+"):0"};
+                                          if(lengthdonnee[z]["impactmethod"][0]=='Code Execution'){
                                             newnodev={id:newtargetv, group: 1, label: "execCode ('"+address+"',"+lengthdonnee[z]["user"]+")"}
                                           }
-                                          if(impactmethod='Authentication Bypass'){
+                                          if(lengthdonnee[z]["impactmethod"][0]=='Authentication Bypass'){
                                             newnodev={id:newtargetv, group: 1, label: "bypassAut ('"+address+"',"+lengthdonnee[z]["user"]+")"}
                                           }
-                                          if(impactmethod='Context Escape'){
+                                          if(lengthdonnee[z]["impactmethod"][0]=='Context Escape'){
                                             newnodev={id:newtargetv, group: 1, label: "escapeContext ('"+address+"',"+lengthdonnee[z]["user"]+")"}
                                           }
                                           
-                                          //console.log(newnodev);
                                           arraylinks.push(newlinkr);
                                           arraynodes.push(newnoder);
                                           arraylinks.push(newlinka);
                                           arraynodes.push(newnodea);
                                           arraylinks.push(newlinkv);
                                           arraynodes.push(newnodev);
-                                          //console.log(arraynodes);
                                         }
                                         
                                         localStorage.setItem('counter','remove '+lengthdonnee[z]["caction"]+' from '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
@@ -389,14 +370,11 @@ function updateGraph(){
                                             "Countermeasure": localStorage.getItem('counter')
                                         }
                                         }
-                                        //console.log(arraykafka);
                                         arraykafka.push(kafkajson);
                                         
-                                        //console.log(lengthdonnee.length,arraykafka.length,countpostcondition);
                                         //if(lengthdonnee.length==arraykafka.length){
                                        if(countpostcondition==arraykafka.length){
                                           localStorage.setItem('alerte',JSON.stringify(arraykafka,null,4));
-                                          //console.log(localStorage.getItem('alerte'));
                                           const alertes =  localStorage.getItem("alerte");
                                           const jsonString = alertes;
                                               $.ajax

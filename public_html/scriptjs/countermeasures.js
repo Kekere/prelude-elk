@@ -157,7 +157,7 @@ function createContermeasureGraph(){
                     
                   }
                   else{
-                    console.log("ok");
+                    //console.log("ok");
                   }
                   
                 }

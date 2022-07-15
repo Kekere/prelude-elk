@@ -17,7 +17,7 @@
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 export MALLOC_CHECK_=0
-CLASSPATH=$CLASSPATH:$MULVALROOT/lib/dom4j-2.1.3.jar:$MULVALROOT/lib/jaxen-1.1.1.jar:$MULVALROOT/lib/mysql-connector-java-8.0.27.jar:$MULVALROOT/bin/adapter
+CLASSPATH=$CLASSPATH:$MULVALROOT/lib/dom4j-2.1.3.jar:$MULVALROOT/lib/json-simple-1.1.1.jar:$MULVALROOT/lib/jaxen-1.1.1.jar:$MULVALROOT/lib/mysql-connector-java-8.0.27.jar:$MULVALROOT/bin/adapter
 ADAPTERSRCPATH=$MULVALROOT/src/adapter
 
 if [ -z "$XSBHOME" ]; then

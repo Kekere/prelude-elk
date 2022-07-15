@@ -139,7 +139,7 @@ function convertxmltojson(xmlfile){
   xhttp.open("GET", xmlfile, false);
   xhttp.send();
   var xmlDoc = xhttp.responseXML;
-  console.log(xmlDoc);
+  //console.log(xmlDoc);
   var sizelinks=xmlDoc.getElementsByTagName("arc").length;
   var arraylinks=[];
   var arraynodes=[]
@@ -205,7 +205,7 @@ fileInput.addEventListener('change', function (e) {
 
   var reader = new FileReader();
   reader.readAsText(file);
-  console.log(reader.result);
+  //console.log(reader.result);
 	
   
 	var button = document.getElementById( 'submit' );
