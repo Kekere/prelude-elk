@@ -102,6 +102,8 @@ function createContermeasureGraph(){
     var jsonfinalcounter=convertxmltojson("../scriptphp/AttackGraph.xml");
     var arraycves=[]
     var arrayremovecves=[];
+    var spliced =[];
+    var newarraycves=[];
     for (var i = 0; i < graphcounter["nodes"].length; i++){
         var hacl=graphcounter["nodes"][i]["label"].indexOf("hacl");
         var net=graphcounter["nodes"][i]["label"].indexOf("networkServiceInfo");
@@ -132,8 +134,54 @@ function createContermeasureGraph(){
       var newsource="";
       var newtarget="";
         
-
-      $.getJSON("vdo/"+arraycves[i]["cve"]+".json", function(json) {
+      $.getJSON("../scriptphp/countermeasure.json",function(datacounte){
+        //console.log(datacounte);
+        counterarraynode=graphcounter["nodes"];
+        counterarraylink=graphcounter["links"];
+        for(var r=0; r<datacounte["counter"].length; r++){
+          ct=datacounte["counter"][r]["CVE"];
+          newsource=parseInt(counterarraynode.length+1);
+          if(!arrayremovecves.includes(ct)){
+            arrayremovecves.push(ct);
+            for(a=0; a<arraycves.length; a++){
+              //console.log(ct,arraycves[a]["cve"]);
+              if(ct==arraycves[a]["cve"]){
+                //console.log(ct);
+                
+                counterlink={"source":newsource,"target":arraycves[a]["id"]}
+                counternode={id: newsource, group: 5, label: datacounte["counter"][r]["Countermeasure"]}
+                counterarraylink.push(counterlink);
+                counterarraynode.push(counternode);
+                var indr = arraycves.findIndex((obj => obj.cve == ct));
+                //console.log(indr);
+                //spliced = arrayRemove(arraycves, ct);
+                
+                spliced = arraycves.splice(indr, 1);
+                localStorage.setItem('newarray',JSON.stringify(arraycves,null,4));
+                //console.log(spliced,arraycves);
+                
+                if(counterarraynode.length!=counternode["id"]){
+                  counterarraynode.length = counternode["id"];
+                  
+                }
+                else{
+                  //console.log("ok");
+                }
+              }
+              
+            }
+          }
+          
+        }
+       
+        jsonfinalcounter={"nodes":counterarraynode,"links":counterarraylink};
+          
+        localStorage.setItem('myjsoncounter',JSON.stringify(jsonfinalcounter,null,4));
+        objcounter=JSON.parse(localStorage.getItem('myjsoncounter'));
+        //console.log(arraycves);
+        //console.log(spliced);
+      });
+      /*$.getJSON("vdo/"+arraycves[i]["cve"]+".json", function(json) {
     
           if(!arrayremovecves.includes(json["Vulnerability"]["hasIdentity"][0]["value"])){
             arrayremovecves.push(json["Vulnerability"]["hasIdentity"][0]["value"]);
@@ -172,10 +220,106 @@ function createContermeasureGraph(){
           localStorage.setItem('myjsoncounter',JSON.stringify(jsonfinalcounter,null,4));
           objcounter=JSON.parse(localStorage.getItem('myjsoncounter'));
        
-      });
+      });*/
       }
+    newarraycves=JSON.parse(localStorage.getItem('newarray'));
+    for(var ze=0; ze<newarraycves.length; ze++){
+      console.log(JSON.parse(localStorage.getItem('newarray'))[ze]["cve"])
+      $.getJSON("vdo/"+newarraycves[ze]["cve"]+".json", function(json) {
+    
+        if(!arrayremovecves.includes(json["Vulnerability"]["hasIdentity"][0]["value"])){
+          arrayremovecves.push(json["Vulnerability"]["hasIdentity"][0]["value"]);
+          for(var e=0; e<json["Vulnerability"]["hasScenario"].length; e++){
+            counterarraynode=graphcounter["nodes"];
+            counterarraylink=graphcounter["links"];
+            action=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["blockedByBarrier"];
+            privileges=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["neededPrivileges"];
+            asset=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["relatesToContext"];
+            newsource=parseInt(counterarraynode.length+1);
+            
+            for(a=0; a<arraycves.length; a++){
+              if(json["Vulnerability"]["hasIdentity"][0]["value"]==arraycves[a]["cve"]){
+                counterlink={"source":newsource,"target":arraycves[a]["id"]}
+                counternode={id: newsource, group: 5, label: "remove("+action+"("+privileges+" on "+asset+"))"}
+                counterarraylink.push(counterlink);
+                counterarraynode.push(counternode);
+                
+                if(counterarraynode.length!=counternode["id"]){
+                  counterarraynode.length = counternode["id"];
+                  
+                }
+                else{
+                  //console.log("ok");
+                }
+                
+              }
+            }
+            
+          }
+        }
+        
+          
+        jsonfinalcounter={"nodes":counterarraynode,"links":counterarraylink};
+        
+        localStorage.setItem('myjsoncounter',JSON.stringify(jsonfinalcounter,null,4));
+        objcounter=JSON.parse(localStorage.getItem('myjsoncounter'));
+        //onsole.log(objcounter);
+      });
+    }
+      
+    /*var newarraycves=JSON.parse(localStorage.getItem('newarray'));
+    for(var tr=0; newarraycves.length; tr++){
+      $.getJSON("vdo/"+newarraycves[tr]["cve"]+".json", function(json) {
+    
+        if(!arrayremovecves.includes(json["Vulnerability"]["hasIdentity"][0]["value"])){
+          arrayremovecves.push(json["Vulnerability"]["hasIdentity"][0]["value"]);
+          for(var e=0; e<json["Vulnerability"]["hasScenario"].length; e++){
+            counterarraynode=graphcounter["nodes"];
+            counterarraylink=graphcounter["links"];
+            action=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["blockedByBarrier"];
+            privileges=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["neededPrivileges"];
+            asset=json["Vulnerability"]["hasScenario"][e]["barrier"][0]["relatesToContext"];
+            newsource=parseInt(counterarraynode.length+1);
+            
+            for(a=0; a<arraycves.length; a++){
+              if(json["Vulnerability"]["hasIdentity"][0]["value"]==arraycves[a]["cve"]){
+                counterlink={"source":newsource,"target":arraycves[a]["id"]}
+                counternode={id: newsource, group: 5, label: "remove("+action+"("+privileges+" on "+asset+"))"}
+                counterarraylink.push(counterlink);
+                counterarraynode.push(counternode);
+                
+                if(counterarraynode.length!=counternode["id"]){
+                  counterarraynode.length = counternode["id"];
+                  
+                }
+                else{
+                  //console.log("ok");
+                }
+                
+              }
+            }
+            
+          }
+        }
+        
+          
+        jsonfinalcounter={"nodes":counterarraynode,"links":counterarraylink};
+        
+        localStorage.setItem('myjsoncounter',JSON.stringify(jsonfinalcounter,null,4));
+        objcounter=JSON.parse(localStorage.getItem('myjsoncounter'));
+        console.log(objcounter);
+      });
+    }*/
     
     generateCounterGraph("mulval_generated_json.json");
+}
+// Using filter method to create a remove method
+function arrayRemove(arr, value) {
+ 
+  return arr.filter(function(geeks){
+      return geeks != value;
+  });
+
 }
 var button = document.getElementById( 'downloadcounter' );
 button.addEventListener( 'click', function() {
