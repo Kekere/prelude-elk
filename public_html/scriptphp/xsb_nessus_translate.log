@@ -1,0 +1,72 @@
+
+++Warning[XSB]: [Runtime/C] Cannot create directory `/home/XSB/.xsb'!
+           XSB uses this directory to store data.
+
+++Warning[XSB]: [Runtime/C] Cannot create directory `/home/XSB/.xsb/config'!
+           XSB uses this directory to store data.
+
+++Warning[XSB]: [Runtime/C] Cannot create directory `/home/XSB/.xsb/config/x86_64-unknown-linux-gnu'!
+           XSB uses this directory to store data.
+[xsb_configuration loaded]
+[sysinitrc loaded]
+[xsbbrat loaded]
+
+XSB Version 4.0.0 (TaB) of April 1, 2021
+[x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
+[Build date: 2022-07-15]
+
+| ?- [Compiling ./results]
+[results compiled, cpu time used: 0.029 seconds]
+[results loaded]
+
+yes
+| ?- [libmulval loaded]
+
+yes
+| ?- [nessus_translator loaded]
+
+yes
+| ?- 
+++Warning[XSB]: [Runtime/C] str_match/5 (static predicate) had been defined in module: string; those clauses lost in the context of usermod.
+
+++Warning[XSB]: [Runtime/C] substring/4 (static predicate) had been defined in module: string; those clauses lost in the context of usermod.
+
+++Warning[XSB]: [Runtime/C] str_cat/3 (static predicate) had been defined in module: string; those clauses lost in the context of usermod.
+
+++Warning[XSB]: [Runtime/C] string_substitute/4 (static predicate) had been defined in module: string; those clauses lost in the context of usermod.
+[machine loaded, cpu time used: 0.001 seconds]
+
+yes
+| ?- 
+yes
+| ?- 
+A = _h258
+B = _h278
+C = _h298
+L = [vulProperty(CVE-2015-4000,remoteExploit,_h694),vulProperty(CVE-2015-4000,remoteExploit,_h700),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h706),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h712),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h718),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h724),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h730),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h736),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h742),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h748),vulProperty(CVE-2004-2761,remoteExploit,_h754),vulProperty(CVE-2004-2761,remoteExploit,_h760),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h766),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h772),vulProperty(CVE-2003-1567,remoteExploit,_h778),vulProperty(CVE-2003-1567,remoteExploit,_h784),vulProperty(CVE-2004-2320,remoteExploit,_h790),vulProperty(CVE-2004-2320,remoteExploit,_h796),vulProperty(CVE-2010-0386,remoteExploit,_h802),vulProperty(CVE-2010-0386,remoteExploit,_h808),vulProperty(CVE-2003-1567,remoteExploit,_h814),vulProperty(CVE-2003-1567,remoteExploit,_h820),vulProperty(CVE-2004-2320,remoteExploit,_h826),vulProperty(CVE-2004-2320,remoteExploit,_h832),vulProperty(CVE-2010-0386,remoteExploit,_h838),vulProperty(CVE-2010-0386,remoteExploit,_h844),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h850),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h856),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h862),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h868),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h874),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h880),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h886),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h892),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h898),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h904),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h910),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h916)]
+P = [vulProperty(CVE-2003-1567,remoteExploit,_h778),vulProperty(CVE-2003-1567,remoteExploit,_h784),vulProperty(CVE-2003-1567,remoteExploit,_h814),vulProperty(CVE-2003-1567,remoteExploit,_h820),vulProperty(CVE-2004-2320,remoteExploit,_h790),vulProperty(CVE-2004-2320,remoteExploit,_h796),vulProperty(CVE-2004-2320,remoteExploit,_h826),vulProperty(CVE-2004-2320,remoteExploit,_h832),vulProperty(CVE-2004-2761,remoteExploit,_h754),vulProperty(CVE-2004-2761,remoteExploit,_h760),vulProperty(CVE-2010-0386,remoteExploit,_h802),vulProperty(CVE-2010-0386,remoteExploit,_h808),vulProperty(CVE-2010-0386,remoteExploit,_h838),vulProperty(CVE-2010-0386,remoteExploit,_h844),vulProperty(CVE-2015-4000,remoteExploit,_h694),vulProperty(CVE-2015-4000,remoteExploit,_h700),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h706),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h712),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h718),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h724),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h730),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h736),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h742),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h748),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h766),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h772),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h850),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h856),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h862),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h868),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h874),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h880),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h886),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h892),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h898),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h904),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h910),vulProperty(CVE-XXXX-XXXX,remoteExploit,_h916)]
+yes
+| ?- 
+A = _h258
+B = _h278
+C = _h298
+L = [vulExists(null,null,null),vulExists(127.0.0.1,CVE-2015-4000,openssl),vulExists(127.0.0.1,CVE-XXXX-XXXX,no_products),vulExists(127.0.0.1,CVE-XXXX-XXXX,no_products),vulExists(127.0.0.1,CVE-2004-2761,md5 x.509_certificate),vulExists(127.0.0.1,CVE-XXXX-XXXX,no_products),vulExists(127.0.0.1,CVE-2003-1567,no_products),vulExists(127.0.0.1,CVE-2004-2320,no_products),vulExists(127.0.0.1,CVE-2010-0386,no_products),vulExists(127.0.0.1,CVE-2003-1567,no_products),vulExists(127.0.0.1,CVE-2004-2320,no_products),vulExists(127.0.0.1,CVE-2010-0386,no_products),vulExists(127.0.0.1,CVE-XXXX-XXXX,no_products),vulExists(127.0.0.1,CVE-XXXX-XXXX,no_products),vulExists(127.0.0.1,CVE-XXXX-XXXX,no_products)]
+yes
+| ?- 
+CVE = _h258
+AC = _h278
+L = [cvss(null,null),cvss(CVE-2015-4000,h),cvss(CVE-XXXX-XXXX,h),cvss(CVE-XXXX-XXXX,l),cvss(CVE-2004-2761,l),cvss(CVE-XXXX-XXXX,l),cvss(CVE-2003-1567,l),cvss(CVE-2004-2320,l),cvss(CVE-2010-0386,l),cvss(CVE-2003-1567,l),cvss(CVE-2004-2320,l),cvss(CVE-2010-0386,l),cvss(CVE-XXXX-XXXX,l),cvss(CVE-XXXX-XXXX,h),cvss(CVE-XXXX-XXXX,l)]
+P = [cvss(CVE-2003-1567,l),cvss(CVE-2004-2320,l),cvss(CVE-2004-2761,l),cvss(CVE-2010-0386,l),cvss(CVE-2015-4000,h),cvss(CVE-XXXX-XXXX,h),cvss(CVE-XXXX-XXXX,l),cvss(CVE-XXXX-XXXX,h),cvss(CVE-XXXX-XXXX,l),cvss(null,null)]
+yes
+| ?- 
+Host = _h258
+Program = _h278
+Protocol = _h298
+Port = _h318
+L = [networkServiceInfo(127.0.0.1,openssl,tcp,44215,someUser),networkServiceInfo(127.0.0.1,openssl,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,md5 x.509_certificate,tcp,44215,someUser),networkServiceInfo(127.0.0.1,md5 x.509_certificate,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(...,...,...,...,...)|...]
+P = [networkServiceInfo(127.0.0.1,openssl,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,md5 x.509_certificate,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser)]
+yes
+| ?- 
+yes
+| ?- 
+End XSB (cputime 0.08 secs, elapsetime 0.10 secs)

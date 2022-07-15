@@ -1,0 +1,323 @@
+vulExists('157.159.68.125','157.159.68.1250','remote_desktop_connection windows_terminal_services_using_rdp').
+vulProperty('157.159.68.1250',remoteExploit,_h343).
+capability_required('157.159.68.1250',h).
+
+vulExists('157.159.68.125','157.159.68.1251','remote_desktop_connection windows_terminal_services_using_rdp').
+vulProperty('157.159.68.1251',remoteExploit,privEscalation).
+capability_required('157.159.68.1251',h).
+
+vulExists('157.159.68.125','157.159.68.1252',windows).
+vulProperty('157.159.68.1252',remoteExploit,_h367).
+capability_required('157.159.68.1252',l).
+
+vulExists('157.159.68.125','157.159.68.1253',windows).
+vulProperty('157.159.68.1253',remoteExploit,privEscalation).
+capability_required('157.159.68.1253',l).
+
+vulExists('157.159.68.125','157.159.68.1254','windows remote_desktop_protocol').
+vulProperty('157.159.68.1254',remoteExploit,_h419).
+capability_required('157.159.68.1254',l).
+
+vulExists('157.159.68.125','157.159.68.1255','windows remote_desktop_protocol').
+vulProperty('157.159.68.1255',remoteExploit,privEscalation).
+capability_required('157.159.68.1255',l).
+
+vulExists('157.159.68.125','157.159.68.1256','windows samba').
+vulProperty('157.159.68.1256',remoteExploit,_h455).
+capability_required('157.159.68.1256',h).
+
+vulExists('157.159.68.125','157.159.68.1257','windows samba').
+vulProperty('157.159.68.1257',remoteExploit,privEscalation).
+capability_required('157.159.68.1257',h).
+
+vulExists('157.159.68.75','157.159.68.758','remote_desktop_connection windows_terminal_services_using_rdp').
+vulProperty('157.159.68.758',remoteExploit,_h479).
+capability_required('157.159.68.758',h).
+
+vulExists('157.159.68.75','157.159.68.759','remote_desktop_connection windows_terminal_services_using_rdp').
+vulProperty('157.159.68.759',remoteExploit,privEscalation).
+capability_required('157.159.68.759',h).
+
+vulExists('157.159.68.75','157.159.68.7510',windows).
+vulProperty('157.159.68.7510',remoteExploit,_h503).
+capability_required('157.159.68.7510',l).
+
+vulExists('157.159.68.75','157.159.68.7511',windows).
+vulProperty('157.159.68.7511',remoteExploit,privEscalation).
+capability_required('157.159.68.7511',l).
+
+vulExists('157.159.68.75','157.159.68.7512','windows remote_desktop_protocol').
+vulProperty('157.159.68.7512',remoteExploit,_h555).
+capability_required('157.159.68.7512',l).
+
+vulExists('157.159.68.75','157.159.68.7513','windows remote_desktop_protocol').
+vulProperty('157.159.68.7513',remoteExploit,privEscalation).
+capability_required('157.159.68.7513',l).
+
+vulExists('157.159.68.75','157.159.68.7514','windows samba').
+vulProperty('157.159.68.7514',remoteExploit,_h591).
+capability_required('157.159.68.7514',h).
+
+vulExists('157.159.68.75','157.159.68.7515','windows samba').
+vulProperty('157.159.68.7515',remoteExploit,privEscalation).
+capability_required('157.159.68.7515',h).
+
+vulExists('157.159.68.97','157.159.68.9716','remote_desktop_connection windows_terminal_services_using_rdp').
+vulProperty('157.159.68.9716',remoteExploit,_h615).
+capability_required('157.159.68.9716',h).
+
+vulExists('157.159.68.97','157.159.68.9717','remote_desktop_connection windows_terminal_services_using_rdp').
+vulProperty('157.159.68.9717',remoteExploit,privEscalation).
+capability_required('157.159.68.9717',h).
+
+vulExists('157.159.68.97','157.159.68.9718',windows).
+vulProperty('157.159.68.9718',remoteExploit,_h639).
+capability_required('157.159.68.9718',l).
+
+vulExists('157.159.68.97','157.159.68.9719',windows).
+vulProperty('157.159.68.9719',remoteExploit,privEscalation).
+capability_required('157.159.68.9719',l).
+
+vulExists('157.159.68.97','157.159.68.9720','windows remote_desktop_protocol').
+vulProperty('157.159.68.9720',remoteExploit,_h691).
+capability_required('157.159.68.9720',l).
+
+vulExists('157.159.68.97','157.159.68.9721','windows remote_desktop_protocol').
+vulProperty('157.159.68.9721',remoteExploit,privEscalation).
+capability_required('157.159.68.9721',l).
+
+vulExists('157.159.68.97','157.159.68.9722','windows samba').
+vulProperty('157.159.68.9722',remoteExploit,_h727).
+capability_required('157.159.68.9722',h).
+
+vulExists('157.159.68.97','157.159.68.9723','windows samba').
+vulProperty('157.159.68.9723',remoteExploit,privEscalation).
+capability_required('157.159.68.9723',h).
+
+networkServiceInfo('157.159.68.125','remote_desktop_connection windows_terminal_services_using_rdp',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.125',windows,udp,'5355',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','remote_desktop_connection windows_terminal_services_using_rdp',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.75',windows,udp,'5355',someUser).
+
+networkServiceInfo('157.159.68.97','remote_desktop_connection windows_terminal_services_using_rdp',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser).
+
+networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('157.159.68.97',windows,udp,'5355',someUser).
+
+hacl(_h650,_h651,_h652,_h653).
+
+hasAccount('157.159.68.125_victim','157.159.68.125',user).
+
+hasAccount('157.159.68.97_victim','157.159.68.97',user).
+
+hasAccount('157.159.68.75_victim','157.159.68.75',user).
+
+inCompetent('157.159.68.125_victim').
+
+inCompetent('157.159.68.97_victim').
+
+inCompetent('157.159.68.75_victim').
+
+attackGoal(execCode('157.159.68.125',_h469)).
+
+attackGoal(execCode('157.159.68.97',_h476)).
+
+attackGoal(execCode('157.159.68.75',_h483)).
+
+attackerLocated(internet).
+
+attackerLocated(internet).
+
+attackerLocated(internet).
+
+inCompetent('157.159.68.125_victim').
+hasAccount('157.159.68.125_victim', '157.159.68.125', user).
+attackerLocated(internet).
+attackGoal(execCode('157.159.68.125', _)).
+inCompetent('157.159.68.97_victim').
+hasAccount('157.159.68.97_victim', '157.159.68.97', user).
+attackerLocated(internet).
+attackGoal(execCode('157.159.68.97', _)).
+inCompetent('157.159.68.75_victim').
+hasAccount('157.159.68.75_victim', '157.159.68.75', user).
+attackerLocated(internet).
+attackGoal(execCode('157.159.68.75', _)).
+hacl(_,_,_,_).

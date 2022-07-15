@@ -1,0 +1,98 @@
+<1>||--execCode('127.0.0.1',someUser)
+   (2) RULE 2 : remote exploit of a server program
+      <3>||--netAccess('127.0.0.1',tcp,'40665')
+         (4) RULE 5 : multi-hop access
+            [5]-hacl('127.0.0.1','127.0.0.1',tcp,'40665')
+            execCode('127.0.0.1',someUser)==><1>
+         (6) RULE 6 : direct network access
+            [7]-hacl(internet,'127.0.0.1',tcp,'40665')
+            [8]-attackerLocated(internet)
+      [9]-networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser)
+      [10]-vulExists('127.0.0.1','CVE-2003-1567',no_products,remoteExploit,privEscalation)
+   (11) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'40665')==><3>
+      [9]-networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser)
+      [12]-vulExists('127.0.0.1','CVE-2004-2320',no_products,remoteExploit,privEscalation)
+   (13) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'40665')==><3>
+      [9]-networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser)
+      [14]-vulExists('127.0.0.1','CVE-2010-0386',no_products,remoteExploit,privEscalation)
+   (15) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'40665')==><3>
+      [9]-networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser)
+      [16]-vulExists('127.0.0.1','CVE-XXXX-XXXX',no_products,remoteExploit,privEscalation)
+   (17) RULE 2 : remote exploit of a server program
+      <18>||--netAccess('127.0.0.1',tcp,'44215')
+         (19) RULE 5 : multi-hop access
+            [20]-hacl('127.0.0.1','127.0.0.1',tcp,'44215')
+            execCode('127.0.0.1',someUser)==><1>
+         (21) RULE 6 : direct network access
+            [22]-hacl(internet,'127.0.0.1',tcp,'44215')
+            [8]-attackerLocated(internet)
+      [23]-networkServiceInfo('127.0.0.1','md5 x.509_certificate',tcp,'44215',someUser)
+      [24]-vulExists('127.0.0.1','CVE-2004-2761','md5 x.509_certificate',remoteExploit,privEscalation)
+   (25) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'44215')==><18>
+      [26]-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser)
+      [10]-vulExists('127.0.0.1','CVE-2003-1567',no_products,remoteExploit,privEscalation)
+   (27) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'44215')==><18>
+      [26]-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser)
+      [12]-vulExists('127.0.0.1','CVE-2004-2320',no_products,remoteExploit,privEscalation)
+   (28) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'44215')==><18>
+      [26]-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser)
+      [14]-vulExists('127.0.0.1','CVE-2010-0386',no_products,remoteExploit,privEscalation)
+   (29) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'44215')==><18>
+      [26]-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser)
+      [16]-vulExists('127.0.0.1','CVE-XXXX-XXXX',no_products,remoteExploit,privEscalation)
+   (30) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'44215')==><18>
+      [31]-networkServiceInfo('127.0.0.1',openssl,tcp,'44215',someUser)
+      [32]-vulExists('127.0.0.1','CVE-2015-4000',openssl,remoteExploit,privEscalation)
+   (33) RULE 2 : remote exploit of a server program
+      <34>||--netAccess('127.0.0.1',tcp,'631')
+         (35) RULE 5 : multi-hop access
+            [36]-hacl('127.0.0.1','127.0.0.1',tcp,'631')
+            execCode('127.0.0.1',someUser)==><1>
+         (37) RULE 6 : direct network access
+            [38]-hacl(internet,'127.0.0.1',tcp,'631')
+            [8]-attackerLocated(internet)
+      [39]-networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser)
+      [10]-vulExists('127.0.0.1','CVE-2003-1567',no_products,remoteExploit,privEscalation)
+   (40) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'631')==><34>
+      [39]-networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser)
+      [12]-vulExists('127.0.0.1','CVE-2004-2320',no_products,remoteExploit,privEscalation)
+   (41) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'631')==><34>
+      [39]-networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser)
+      [14]-vulExists('127.0.0.1','CVE-2010-0386',no_products,remoteExploit,privEscalation)
+   (42) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'631')==><34>
+      [39]-networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser)
+      [16]-vulExists('127.0.0.1','CVE-XXXX-XXXX',no_products,remoteExploit,privEscalation)
+   (43) RULE 2 : remote exploit of a server program
+      <44>||--netAccess('127.0.0.1',tcp,'8834')
+         (45) RULE 5 : multi-hop access
+            [46]-hacl('127.0.0.1','127.0.0.1',tcp,'8834')
+            execCode('127.0.0.1',someUser)==><1>
+         (47) RULE 6 : direct network access
+            [48]-hacl(internet,'127.0.0.1',tcp,'8834')
+            [8]-attackerLocated(internet)
+      [49]-networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser)
+      [10]-vulExists('127.0.0.1','CVE-2003-1567',no_products,remoteExploit,privEscalation)
+   (50) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'8834')==><44>
+      [49]-networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser)
+      [12]-vulExists('127.0.0.1','CVE-2004-2320',no_products,remoteExploit,privEscalation)
+   (51) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'8834')==><44>
+      [49]-networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser)
+      [14]-vulExists('127.0.0.1','CVE-2010-0386',no_products,remoteExploit,privEscalation)
+   (52) RULE 2 : remote exploit of a server program
+      netAccess('127.0.0.1',tcp,'8834')==><44>
+      [49]-networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser)
+      [16]-vulExists('127.0.0.1','CVE-XXXX-XXXX',no_products,remoteExploit,privEscalation)
+

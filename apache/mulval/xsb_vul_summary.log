@@ -1,0 +1,60 @@
+[xsb_configuration loaded]
+[sysinitrc loaded]
+[xsbbrat loaded]
+
+XSB Version 4.0.0 (TaB) of April 1, 2021
+[x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
+[Build date: 2022-01-07]
+
+| ?- [libmulval loaded]
+
+yes
+| ?- [auxiliary loaded]
+
+yes
+| ?- [vul_summary loaded]
+
+yes
+| ?- [/home/keren/Téléchargements/Cassiopee/mulval/nessus.P dynamically loaded, cpu time used: 0.061 seconds]
+
+yes
+| ?- 
+yes
+| ?- 
+yes
+| ?- 
+Host = _h282
+Program = _h302
+Protocol = _h322
+Port = _h342
+L = [networkServiceInfo(157.159.68.125,remote_desktop_connection windows_terminal_services_using_rdp,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,udp,5355,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,remote_desktop_connection windows_terminal_services_using_rdp,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows,udp,5355,someUser),networkServiceInfo(...,...,...,...,...)|...]
+yes
+| ?- 
+Host = _h282
+Host1 = _h302
+Protocol = _h322
+Port = _h342
+L = [hacl(_h650,_h651,_h652,_h653)]
+yes
+| ?- 
+A = _h282
+B = _h302
+C = _h322
+L = [hasAccount(157.159.68.125_victim,157.159.68.125,user),hasAccount(157.159.68.97_victim,157.159.68.97,user),hasAccount(157.159.68.75_victim,157.159.68.75,user)]
+yes
+| ?- 
+A = _h282
+L = [inCompetent(157.159.68.125_victim),inCompetent(157.159.68.97_victim),inCompetent(157.159.68.75_victim)]
+yes
+| ?- 
+A = _h282
+L = [attackGoal(execCode(157.159.68.125,_h469)),attackGoal(execCode(157.159.68.97,_h476)),attackGoal(execCode(157.159.68.75,_h483))]
+yes
+| ?- 
+A = _h282
+L = [attackerLocated(internet),attackerLocated(internet),attackerLocated(internet)]
+yes
+| ?- 
+yes
+| ?- 
+End XSB (cputime 0.16 secs, elapsetime 0.16 secs)

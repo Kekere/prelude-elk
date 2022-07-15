@@ -1,0 +1,126 @@
+<1>||--execCode('157.159.68.125',someUser)
+   (2) RULE 2 : remote exploit of a server program
+      <3>||--netAccess('157.159.68.125',tcp,'0')
+         (4) RULE 5 : multi-hop access
+            [5]-hacl('157.159.68.125','157.159.68.125',tcp,'0')
+            execCode('157.159.68.125',someUser)==><1>
+         (6) RULE 5 : multi-hop access
+            [7]-hacl('157.159.68.75','157.159.68.125',tcp,'0')
+            <8>||--execCode('157.159.68.75',someUser)
+               (9) RULE 2 : remote exploit of a server program
+                  <10>||--netAccess('157.159.68.75',tcp,'0')
+                     (11) RULE 5 : multi-hop access
+                        [12]-hacl('157.159.68.125','157.159.68.75',tcp,'0')
+                        execCode('157.159.68.125',someUser)==><1>
+                     (13) RULE 5 : multi-hop access
+                        [14]-hacl('157.159.68.75','157.159.68.75',tcp,'0')
+                        execCode('157.159.68.75',someUser)==><8>
+                     (15) RULE 5 : multi-hop access
+                        [16]-hacl('157.159.68.97','157.159.68.75',tcp,'0')
+                        <17>||--execCode('157.159.68.97',someUser)
+                           (18) RULE 2 : remote exploit of a server program
+                              <19>||--netAccess('157.159.68.97',tcp,'0')
+                                 (20) RULE 5 : multi-hop access
+                                    [21]-hacl('157.159.68.125','157.159.68.97',tcp,'0')
+                                    execCode('157.159.68.125',someUser)==><1>
+                                 (22) RULE 5 : multi-hop access
+                                    [23]-hacl('157.159.68.75','157.159.68.97',tcp,'0')
+                                    execCode('157.159.68.75',someUser)==><8>
+                                 (24) RULE 5 : multi-hop access
+                                    [25]-hacl('157.159.68.97','157.159.68.97',tcp,'0')
+                                    execCode('157.159.68.97',someUser)==><17>
+                                 (26) RULE 6 : direct network access
+                                    [27]-hacl(internet,'157.159.68.97',tcp,'0')
+                                    [28]-attackerLocated(internet)
+                              [29]-networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser)
+                              [30]-vulExists('157.159.68.97','CVE-XXXX-XXXX','windows samba',remoteExploit,privEscalation)
+                           (31) RULE 2 : remote exploit of a server program
+                              netAccess('157.159.68.97',tcp,'0')==><19>
+                              [32]-networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser)
+                              [33]-vulExists('157.159.68.97','CVE-XXXX-XXXX',windows,remoteExploit,privEscalation)
+                           (34) RULE 2 : remote exploit of a server program
+                              <35>||--netAccess('157.159.68.97',tcp,'445')
+                                 (36) RULE 5 : multi-hop access
+                                    [37]-hacl('157.159.68.125','157.159.68.97',tcp,'445')
+                                    execCode('157.159.68.125',someUser)==><1>
+                                 (38) RULE 5 : multi-hop access
+                                    [39]-hacl('157.159.68.75','157.159.68.97',tcp,'445')
+                                    execCode('157.159.68.75',someUser)==><8>
+                                 (40) RULE 5 : multi-hop access
+                                    [41]-hacl('157.159.68.97','157.159.68.97',tcp,'445')
+                                    execCode('157.159.68.97',someUser)==><17>
+                                 (42) RULE 6 : direct network access
+                                    [43]-hacl(internet,'157.159.68.97',tcp,'445')
+                                    [28]-attackerLocated(internet)
+                              [44]-networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser)
+                              [30]-vulExists('157.159.68.97','CVE-XXXX-XXXX','windows samba',remoteExploit,privEscalation)
+                           (45) RULE 2 : remote exploit of a server program
+                              netAccess('157.159.68.97',tcp,'445')==><35>
+                              [46]-networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser)
+                              [33]-vulExists('157.159.68.97','CVE-XXXX-XXXX',windows,remoteExploit,privEscalation)
+                     (47) RULE 6 : direct network access
+                        [48]-hacl(internet,'157.159.68.75',tcp,'0')
+                        [28]-attackerLocated(internet)
+                  [49]-networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser)
+                  [50]-vulExists('157.159.68.75','CVE-XXXX-XXXX','windows samba',remoteExploit,privEscalation)
+               (51) RULE 2 : remote exploit of a server program
+                  netAccess('157.159.68.75',tcp,'0')==><10>
+                  [52]-networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser)
+                  [53]-vulExists('157.159.68.75','CVE-XXXX-XXXX',windows,remoteExploit,privEscalation)
+               (54) RULE 2 : remote exploit of a server program
+                  <55>||--netAccess('157.159.68.75',tcp,'445')
+                     (56) RULE 5 : multi-hop access
+                        [57]-hacl('157.159.68.125','157.159.68.75',tcp,'445')
+                        execCode('157.159.68.125',someUser)==><1>
+                     (58) RULE 5 : multi-hop access
+                        [59]-hacl('157.159.68.75','157.159.68.75',tcp,'445')
+                        execCode('157.159.68.75',someUser)==><8>
+                     (60) RULE 5 : multi-hop access
+                        [61]-hacl('157.159.68.97','157.159.68.75',tcp,'445')
+                        execCode('157.159.68.97',someUser)==><17>
+                     (62) RULE 6 : direct network access
+                        [63]-hacl(internet,'157.159.68.75',tcp,'445')
+                        [28]-attackerLocated(internet)
+                  [64]-networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser)
+                  [50]-vulExists('157.159.68.75','CVE-XXXX-XXXX','windows samba',remoteExploit,privEscalation)
+               (65) RULE 2 : remote exploit of a server program
+                  netAccess('157.159.68.75',tcp,'445')==><55>
+                  [66]-networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser)
+                  [53]-vulExists('157.159.68.75','CVE-XXXX-XXXX',windows,remoteExploit,privEscalation)
+         (67) RULE 5 : multi-hop access
+            [68]-hacl('157.159.68.97','157.159.68.125',tcp,'0')
+            execCode('157.159.68.97',someUser)==><17>
+         (69) RULE 6 : direct network access
+            [70]-hacl(internet,'157.159.68.125',tcp,'0')
+            [28]-attackerLocated(internet)
+      [71]-networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser)
+      [72]-vulExists('157.159.68.125','CVE-XXXX-XXXX','windows samba',remoteExploit,privEscalation)
+   (73) RULE 2 : remote exploit of a server program
+      netAccess('157.159.68.125',tcp,'0')==><3>
+      [74]-networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser)
+      [75]-vulExists('157.159.68.125','CVE-XXXX-XXXX',windows,remoteExploit,privEscalation)
+   (76) RULE 2 : remote exploit of a server program
+      <77>||--netAccess('157.159.68.125',tcp,'445')
+         (78) RULE 5 : multi-hop access
+            [79]-hacl('157.159.68.125','157.159.68.125',tcp,'445')
+            execCode('157.159.68.125',someUser)==><1>
+         (80) RULE 5 : multi-hop access
+            [81]-hacl('157.159.68.75','157.159.68.125',tcp,'445')
+            execCode('157.159.68.75',someUser)==><8>
+         (82) RULE 5 : multi-hop access
+            [83]-hacl('157.159.68.97','157.159.68.125',tcp,'445')
+            execCode('157.159.68.97',someUser)==><17>
+         (84) RULE 6 : direct network access
+            [85]-hacl(internet,'157.159.68.125',tcp,'445')
+            [28]-attackerLocated(internet)
+      [86]-networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser)
+      [72]-vulExists('157.159.68.125','CVE-XXXX-XXXX','windows samba',remoteExploit,privEscalation)
+   (87) RULE 2 : remote exploit of a server program
+      netAccess('157.159.68.125',tcp,'445')==><77>
+      [88]-networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser)
+      [75]-vulExists('157.159.68.125','CVE-XXXX-XXXX',windows,remoteExploit,privEscalation)
+
+execCode('157.159.68.75',someUser)==><8>
+
+execCode('157.159.68.97',someUser)==><17>
+

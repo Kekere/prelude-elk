@@ -1,0 +1,10 @@
+vuln_exists('157.159.68.125','CVE-XXXX-XXXX','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.8','l','0','tcp').
+vuln_exists('157.159.68.125','CVE-XXXX-XXXX','windows samba',['remoteExploit'],['data_modification'],'5.3','l','445','tcp').
+vuln_exists('157.159.68.125','CVE-1999-0524','no_products',['localExploit'],['no_loss'],'0.0','l').
+vuln_exists('157.159.68.97','CVE-XXXX-XXXX','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.8','l','0','tcp').
+vuln_exists('157.159.68.97','CVE-XXXX-XXXX','windows samba',['remoteExploit'],['data_modification'],'5.3','l','445','tcp').
+vuln_exists('157.159.68.97','CVE-1999-0524','no_products',['localExploit'],['no_loss'],'0.0','l').
+vuln_exists('157.159.68.75','CVE-XXXX-XXXX','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.8','l','0','tcp').
+vuln_exists('157.159.68.75','CVE-XXXX-XXXX','windows samba',['remoteExploit'],['data_modification'],'5.3','l','445','tcp').
+vuln_exists('157.159.68.75','CVE-1999-0524','no_products',['localExploit'],['no_loss'],'0.0','l').
+vuln_exists('157.159.68.44','CVE-1999-0524','no_products',['localExploit'],['no_loss'],'0.0','l').

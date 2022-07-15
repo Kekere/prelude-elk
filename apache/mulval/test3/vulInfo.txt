@@ -1,0 +1,50 @@
+157.159.68.125
+CVE-XXXX-XXXX
+{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows}
+0
+tcp
+157.159.68.125
+CVE-XXXX-XXXX
+{severity=5.3, lose_types='data_modification', access=l, range='remoteExploit', products=windows samba}
+445
+tcp
+157.159.68.125
+CVE-1999-0524
+{severity=0.0, lose_types='no_loss', access=l, range='localExploit'}
+0
+icmp
+157.159.68.97
+CVE-XXXX-XXXX
+{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows}
+0
+tcp
+157.159.68.97
+CVE-XXXX-XXXX
+{severity=5.3, lose_types='data_modification', access=l, range='remoteExploit', products=windows samba}
+445
+tcp
+157.159.68.97
+CVE-1999-0524
+{severity=0.0, lose_types='no_loss', access=l, range='localExploit'}
+0
+icmp
+157.159.68.75
+CVE-XXXX-XXXX
+{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows}
+0
+tcp
+157.159.68.75
+CVE-XXXX-XXXX
+{severity=5.3, lose_types='data_modification', access=l, range='remoteExploit', products=windows samba}
+445
+tcp
+157.159.68.75
+CVE-1999-0524
+{severity=0.0, lose_types='no_loss', access=l, range='localExploit'}
+0
+icmp
+157.159.68.44
+CVE-1999-0524
+{severity=0.0, lose_types='no_loss', access=l, range='localExploit'}
+0
+icmp

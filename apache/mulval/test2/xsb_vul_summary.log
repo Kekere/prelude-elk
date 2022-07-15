@@ -1,0 +1,60 @@
+[xsb_configuration loaded]
+[sysinitrc loaded]
+[xsbbrat loaded]
+
+XSB Version 4.0.0 (TaB) of April 1, 2021
+[x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
+[Build date: 2022-05-16]
+
+| ?- [libmulval loaded]
+
+yes
+| ?- [auxiliary loaded]
+
+yes
+| ?- [vul_summary loaded]
+
+yes
+| ?- [/home/keren/Cassiopee/mulval/test2/nessus.P dynamically loaded, cpu time used: 0.022 seconds]
+
+yes
+| ?- 
+yes
+| ?- 
+yes
+| ?- 
+Host = _h358
+Program = _h378
+Protocol = _h398
+Port = _h418
+L = [networkServiceInfo(127.0.0.1,openssl,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,md5 x.509_certificate,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser)]
+yes
+| ?- 
+Host = _h358
+Host1 = _h378
+Protocol = _h398
+Port = _h418
+L = [hacl(_h726,_h727,_h728,_h729)]
+yes
+| ?- 
+A = _h358
+B = _h378
+C = _h398
+L = [hasAccount(127.0.0.1_victim,127.0.0.1,user)]
+yes
+| ?- 
+A = _h358
+L = [inCompetent(127.0.0.1_victim)]
+yes
+| ?- 
+A = _h358
+L = [attackGoal(execCode(127.0.0.1,_h545))]
+yes
+| ?- 
+A = _h358
+L = [attackerLocated(internet)]
+yes
+| ?- 
+yes
+| ?- 
+End XSB (cputime 0.07 secs, elapsetime 0.07 secs)
