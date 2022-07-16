@@ -224,7 +224,7 @@ function createContermeasureGraph(){
       }
     newarraycves=JSON.parse(localStorage.getItem('newarray'));
     for(var ze=0; ze<newarraycves.length; ze++){
-      console.log(JSON.parse(localStorage.getItem('newarray'))[ze]["cve"])
+      //console.log(JSON.parse(localStorage.getItem('newarray'))[ze]["cve"])
       $.getJSON("vdo/"+newarraycves[ze]["cve"]+".json", function(json) {
     
         if(!arrayremovecves.includes(json["Vulnerability"]["hasIdentity"][0]["value"])){
@@ -263,7 +263,7 @@ function createContermeasureGraph(){
         
         localStorage.setItem('myjsoncounter',JSON.stringify(jsonfinalcounter,null,4));
         objcounter=JSON.parse(localStorage.getItem('myjsoncounter'));
-        //onsole.log(objcounter);
+        //console.log(objcounter);
       });
     }
       
