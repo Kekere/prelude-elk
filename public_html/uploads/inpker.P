@@ -1,13 +1,13 @@
-attackerLocated('157.159.14.77').
-attackGoal(execCode('51.158.154.169',_)).
-hacl('157.159.14.77','51.158.154.169', tcp, 80).
-hacl('51.158.154.169',_,_,_).
+attackerLocated('13.225.195.118').
+attackGoal(execCode('192.168.1.66',_)).
+hacl('13.225.195.118','192.168.1.66', tcp, 80).
+hacl('192.168.1.66',_,_,_).
 hacl('192.168.1.78',_,_,_).
-hacl('157.159.14.77',_,_,_).
-hacl('157.159.14.77','192.168.1.78',_,_).
-hacl('157.159.14.77','192.168.1.78',_,_).
-inCompetent('51.158.154.169_victim').
-hasAccount('51.158.154.169_victim', '51.158.154.169', user).
+hacl('13.225.195.118',_,_,_).
+hacl('13.225.195.118','192.168.1.78',_,_).
+hacl('13.225.195.118','192.168.1.78',_,_).
+inCompetent('192.168.1.66_victim').
+hasAccount('192.168.1.66_victim', '192.168.1.66', user).
 
 
 /* configuration information of dc */
@@ -15,16 +15,16 @@ hasAccount('51.158.154.169_victim', '51.158.154.169', user).
 /*vulProperty('CVE-2017-0148', remoteExploit, privEscalation).*/
 vulProperty('CVE-2021-34527', remoteExploit, privEscalation).
 /*vulProperty('CVE-2017-0146', remoteExploit, privEscalation).*/
-vulExists('51.158.154.169', 'CVE-2021-34527', windows_server_2016).
-/*vulExists('51.158.154.169', 'CVE-2017-0146', windows_server_2016).*/
-/*vulExists('51.158.154.169','CVE-2017-0148','windows_server_2016').*/
+vulExists('192.168.1.66', 'CVE-2021-34527', microsoft).
+/*vulExists('192.168.1.66', 'CVE-2017-0146', windows_server_2016).*/
+/*vulExists('192.168.1.66','CVE-2017-0148','windows_server_2016').*/
 
 cvss('CVE-2021-34527',l).
 
 
 
 
-networkServiceInfo('51.158.154.169', windows_server_2016, tcp , 80, 'andrew').
-/*networkServiceInfo('51.158.154.169', windows_server_2016, tcp , 443, 'andrew').*/
-vulExists('51.158.154.169','CVE-2017-0146','windows_server_2016',remoteExploit,privEscalation).
+networkServiceInfo('192.168.1.66', microsoft, tcp , 80, 'andrew').
+/*networkServiceInfo('192.168.1.66', windows_server_2016, tcp , 443, 'andrew').*/
+vulExists('192.168.1.66','CVE-2017-0146','windows_server_2016',remoteExploit,privEscalation).
 cvss('CVE-2017-0146',l).

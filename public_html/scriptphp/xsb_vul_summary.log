@@ -7,7 +7,7 @@
 
 ++Warning[XSB]: [Runtime/C] Cannot create directory `/home/XSB/.xsb/config/x86_64-unknown-linux-gnu'!
            XSB uses this directory to store data.
-[xsb_configuration loaded, cpu time used: 0.001 seconds]
+[xsb_configuration loaded]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
@@ -24,7 +24,7 @@ yes
 | ?- [vul_summary loaded]
 
 yes
-| ?- [/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.021 seconds]
+| ?- [/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.020 seconds]
 
 yes
 | ?- 
@@ -36,7 +36,7 @@ Host = _h258
 Program = _h278
 Protocol = _h298
 Port = _h318
-L = [networkServiceInfo(127.0.0.1,openssl,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,md5 x.509_certificate,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser)]
+L = [networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.97,windows,tcp,0,someUser),networkServiceInfo(157.159.68.97,windows,tcp,445,someUser),networkServiceInfo(157.159.68.97,windows,tcp,0,someUser),networkServiceInfo(157.159.68.97,windows,tcp,445,someUser),networkServiceInfo(157.159.68.97,windows,tcp,0,someUser),networkServiceInfo(157.159.68.97,windows,tcp,445,someUser),networkServiceInfo(157.159.68.97,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.97,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.97,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.97,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.97,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.97,windows samba,tcp,445,someUser)]
 yes
 | ?- 
 Host = _h258
@@ -49,21 +49,21 @@ yes
 A = _h258
 B = _h278
 C = _h298
-L = [hasAccount(127.0.0.1_victim,127.0.0.1,user)]
+L = [hasAccount(157.159.68.125_victim,157.159.68.125,user),hasAccount(157.159.68.97_victim,157.159.68.97,user),hasAccount(157.159.68.75_victim,157.159.68.75,user),hasAccount(157.159.68.44_victim,157.159.68.44,user)]
 yes
 | ?- 
 A = _h258
-L = [inCompetent(127.0.0.1_victim)]
+L = [inCompetent(157.159.68.125_victim),inCompetent(157.159.68.97_victim),inCompetent(157.159.68.75_victim),inCompetent(157.159.68.44_victim)]
 yes
 | ?- 
 A = _h258
-L = [attackGoal(execCode(127.0.0.1,_h445))]
+L = [attackGoal(execCode(157.159.68.125,_h445)),attackGoal(execCode(157.159.68.97,_h452)),attackGoal(execCode(157.159.68.75,_h459)),attackGoal(execCode(157.159.68.44,_h466))]
 yes
 | ?- 
 A = _h258
-L = [attackerLocated(internet)]
+L = [attackerLocated(internet),attackerLocated(internet),attackerLocated(internet),attackerLocated(internet)]
 yes
 | ?- 
 yes
 | ?- 
-End XSB (cputime 0.07 secs, elapsetime 0.08 secs)
+End XSB (cputime 0.06 secs, elapsetime 0.08 secs)
