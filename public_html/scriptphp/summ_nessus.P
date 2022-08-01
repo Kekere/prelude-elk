@@ -1,171 +1,99 @@
-vulExists('157.159.68.125','157.159.68.1250',windows).
-vulProperty('157.159.68.1250',remoteExploit,_h319).
-capability_required('157.159.68.1250',l).
+vulExists('127.0.0.1','127.0.0.10','md5 x.509_certificate').
+vulProperty('127.0.0.10',remoteExploit,writeDirect).
+capability_required('127.0.0.10',l).
 
-vulExists('157.159.68.125','157.159.68.1251',windows).
-vulProperty('157.159.68.1251',remoteExploit,privEscalation).
-capability_required('157.159.68.1251',l).
+vulExists('127.0.0.1','127.0.0.11',no_products).
+vulProperty('127.0.0.11',remoteExploit,privEscalation).
+capability_required('127.0.0.11',h).
 
-vulExists('157.159.68.125','157.159.68.1252','windows samba').
-vulProperty('157.159.68.1252',remoteExploit,_h343).
-capability_required('157.159.68.1252',l).
+vulExists('127.0.0.1','127.0.0.12',no_products).
+vulProperty('127.0.0.12',remoteExploit,resourceRemoval).
+capability_required('127.0.0.12',l).
 
-vulExists('157.159.68.125','157.159.68.1253','windows samba').
-vulProperty('157.159.68.1253',remoteExploit,privEscalation).
-capability_required('157.159.68.1253',l).
+vulExists('127.0.0.1','127.0.0.13',no_products).
+vulProperty('127.0.0.13',remoteExploit,writeDirect).
+capability_required('127.0.0.13',h).
 
-vulExists('157.159.68.75','157.159.68.754',windows).
-vulProperty('157.159.68.754',remoteExploit,_h367).
-capability_required('157.159.68.754',l).
+vulExists('127.0.0.1','127.0.0.14',openssl).
+vulProperty('127.0.0.14',remoteExploit,writeDirect).
+capability_required('127.0.0.14',h).
 
-vulExists('157.159.68.75','157.159.68.755',windows).
-vulProperty('157.159.68.755',remoteExploit,privEscalation).
-capability_required('157.159.68.755',l).
+networkServiceInfo('127.0.0.1',openssl,tcp,'44215',someUser).
 
-vulExists('157.159.68.75','157.159.68.756','windows samba').
-vulProperty('157.159.68.756',remoteExploit,_h391).
-capability_required('157.159.68.756',l).
+networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
 
-vulExists('157.159.68.75','157.159.68.757','windows samba').
-vulProperty('157.159.68.757',remoteExploit,privEscalation).
-capability_required('157.159.68.757',l).
+networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser).
 
-vulExists('157.159.68.97','157.159.68.978',windows).
-vulProperty('157.159.68.978',remoteExploit,_h415).
-capability_required('157.159.68.978',l).
+networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser).
 
-vulExists('157.159.68.97','157.159.68.979',windows).
-vulProperty('157.159.68.979',remoteExploit,privEscalation).
-capability_required('157.159.68.979',l).
+networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
 
-vulExists('157.159.68.97','157.159.68.9710','windows samba').
-vulProperty('157.159.68.9710',remoteExploit,_h439).
-capability_required('157.159.68.9710',l).
+networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser).
 
-vulExists('157.159.68.97','157.159.68.9711','windows samba').
-vulProperty('157.159.68.9711',remoteExploit,privEscalation).
-capability_required('157.159.68.9711',l).
+networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser).
 
-networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser).
+networkServiceInfo('127.0.0.1','md5 x.509_certificate',tcp,'44215',someUser).
 
-networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
 
-networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser).
 
-networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser).
 
-networkServiceInfo('157.159.68.125',windows,tcp,'0',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
 
-networkServiceInfo('157.159.68.125',windows,tcp,'445',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser).
 
-networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
 
-networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser).
 
-networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
 
-networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser).
 
-networkServiceInfo('157.159.68.125','windows samba',tcp,'0',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
 
-networkServiceInfo('157.159.68.125','windows samba',tcp,'445',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser).
 
-networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
 
-networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser).
 
-networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
 
-networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser).
 
-networkServiceInfo('157.159.68.75',windows,tcp,'0',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
 
-networkServiceInfo('157.159.68.75',windows,tcp,'445',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser).
 
-networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser).
 
-networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
 
-networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser).
 
-networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser).
 
-networkServiceInfo('157.159.68.75','windows samba',tcp,'0',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
 
-networkServiceInfo('157.159.68.75','windows samba',tcp,'445',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser).
 
-networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser).
-
-networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
-
-networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser).
-
-networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
-
-networkServiceInfo('157.159.68.97',windows,tcp,'0',someUser).
-
-networkServiceInfo('157.159.68.97',windows,tcp,'445',someUser).
-
-networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser).
-
-networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser).
-
-networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser).
-
-networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser).
-
-networkServiceInfo('157.159.68.97','windows samba',tcp,'0',someUser).
-
-networkServiceInfo('157.159.68.97','windows samba',tcp,'445',someUser).
+networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser).
 
 hacl(_h626,_h627,_h628,_h629).
 
-hasAccount('157.159.68.125_victim','157.159.68.125',user).
+hasAccount('127.0.0.1_victim','127.0.0.1',user).
 
-hasAccount('157.159.68.97_victim','157.159.68.97',user).
+inCompetent('127.0.0.1_victim').
 
-hasAccount('157.159.68.75_victim','157.159.68.75',user).
-
-hasAccount('157.159.68.44_victim','157.159.68.44',user).
-
-inCompetent('157.159.68.125_victim').
-
-inCompetent('157.159.68.97_victim').
-
-inCompetent('157.159.68.75_victim').
-
-inCompetent('157.159.68.44_victim').
-
-attackGoal(execCode('157.159.68.125',_h445)).
-
-attackGoal(execCode('157.159.68.97',_h452)).
-
-attackGoal(execCode('157.159.68.75',_h459)).
-
-attackGoal(execCode('157.159.68.44',_h466)).
+attackGoal(execCode('127.0.0.1',_h445)).
 
 attackerLocated(internet).
 
+inCompetent('127.0.0.1_victim').
+hasAccount('127.0.0.1_victim', '127.0.0.1', user).
 attackerLocated(internet).
-
-attackerLocated(internet).
-
-attackerLocated(internet).
-
-inCompetent('157.159.68.125_victim').
-hasAccount('157.159.68.125_victim', '157.159.68.125', user).
-attackerLocated(internet).
-attackGoal(execCode('157.159.68.125', _)).
-inCompetent('157.159.68.97_victim').
-hasAccount('157.159.68.97_victim', '157.159.68.97', user).
-attackerLocated(internet).
-attackGoal(execCode('157.159.68.97', _)).
-inCompetent('157.159.68.75_victim').
-hasAccount('157.159.68.75_victim', '157.159.68.75', user).
-attackerLocated(internet).
-attackGoal(execCode('157.159.68.75', _)).
-inCompetent('157.159.68.44_victim').
-hasAccount('157.159.68.44_victim', '157.159.68.44', user).
-attackerLocated(internet).
-attackGoal(execCode('157.159.68.44', _)).
+attackGoal(execCode('127.0.0.1', _)).
 hacl(_,_,_,_).

@@ -7,7 +7,7 @@
   <div class="topnav">
     <a id="home" href="#home">Load </a>
     <a class="active" href="#graph" id="generate-graph">Generate Graph</a>
-    <a href="#countermeasures" id="countermeasures">Countermeasures</a>
+    <!--<a href="#countermeasures" id="countermeasures">Countermeasures</a>-->
     <!-- <a href="#about">About</a>-->
   </div>
   <div class="restofbody">
@@ -55,21 +55,20 @@
 <script src="scriptjs/callajax.js"></script>
 <script src="scriptjs/graph.js"></script>
 <script src="scriptjs/jsonlist.js"></script>
-<script src="scriptjs/alertskafka.js"></script>
-<script src="scriptjs/executeshellkafka.js"></script>
+<!--<script src="scriptjs/alertskafka.js"></script>-->
+<!--<script src="scriptjs/executeshellkafka.js"></script>-->
 <script>
  
 // nom du fichier qui sera qui sera généré par le serveur php
 
 var jsonfile="mulval_generated_json.json";
 
-
 // conversion du fichier AttackGraph généré par mulval en Objet Json
 jsonfinal=convertxmltojson("scriptphp/AttackGraph.xml");
-//console.log(jsonfinal);
-
+console.log(jsonfinal);
+console.log(localStorage.getItem('notification')); 
 if(localStorage.getItem('notification')=="true"){
-    
+  console.log(localStorage.getItem('notification'));  
   localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
         
   jsonobj={"json":JSON.stringify(jsonfinal,null,4)};

@@ -1,24 +1,24 @@
-[xsb_configuration loaded]
+[xsb_configuration loaded, cpu time used: 0.001 seconds]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
 XSB Version 4.0.0 (TaB) of April 1, 2021
 [x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
-[Build date: 2022-01-22]
+[Build date: 2022-01-07]
 
 | ?- [Compiling ./run]
-[run compiled, cpu time used: 0.008 seconds]
+[run compiled, cpu time used: 0.029 seconds]
 [run loaded]
 [libmulval loaded]
-[translate loaded, cpu time used: 0.001 seconds]
+[translate loaded]
 [attack_trace loaded]
 [auxiliary loaded]
-[/home/bemba/tools/mulval/running_rules.P dynamically loaded, cpu time used: 0.006 seconds]
-[/home/bemba/tools/mulval/testcases/3host/input.P dynamically loaded, cpu time used: 0.002 seconds]
-[/home/bemba/tools/mulval/src/analyzer/advances_notrim.P dynamically loaded, cpu time used: 0.000 seconds]
+[/home/keren/Téléchargements/Cassiopee/mulval/running_rules.P dynamically loaded, cpu time used: 0.025 seconds]
+[/home/keren/Téléchargements/Cassiopee/mulval/nessus.P dynamically loaded, cpu time used: 0.015 seconds]
+[/home/keren/Téléchargements/Cassiopee/mulval/src/analyzer/advances_notrim.P dynamically loaded, cpu time used: 0.001 seconds]
 @@@@@@@@@@@@@@Done transforming in mode dynamic_decl
 
-[/home/bemba/tools/mulval/dynamic_decl.gen dynamically loaded, cpu time used: 0.000 seconds]
+[/home/keren/Téléchargements/Cassiopee/mulval/dynamic_decl.gen dynamically loaded, cpu time used: 0.007 seconds]
 @@@@@@@@@@@@@@Done transforming in mode completeTrace2
 
 @@@@@@@@@@@@@@Done transforming in mode completeTrace2
@@ -29,4 +29,4 @@ Running attack simulation...
 
 yes
 | ?- 
-End XSB (cputime 0.04 secs, elapsetime 0.05 secs)
+End XSB (cputime 0.14 secs, elapsetime 0.14 secs)

@@ -134,6 +134,7 @@
             "type": "string",
             "enum": [
                 "Low",
+                "Medium",
                 "High"
             ]
         },

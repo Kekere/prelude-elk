@@ -1,50 +1,70 @@
-157.159.68.125
-CVE-XXXX-XXXX
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows}
-0
+127.0.0.1
+CVE-2015-4000
+{severity=3.7, lose_types='data_modification', access=h, range='remoteExploit', products=openssl}
+44215
 tcp
-157.159.68.125
+127.0.0.1
 CVE-XXXX-XXXX
-{severity=5.3, lose_types='data_modification', access=l, range='remoteExploit', products=windows samba}
-445
+{severity=6.5, lose_types='data_loss','data_modification', access=h, range='remoteExploit'}
+44215
 tcp
-157.159.68.125
-CVE-1999-0524
-{severity=0.0, lose_types='no_loss', access=l, range='localExploit'}
-0
-icmp
-157.159.68.97
+127.0.0.1
 CVE-XXXX-XXXX
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows}
-0
+{severity=6.5, lose_types='data_loss','data_modification', access=l, range='remoteExploit'}
+44215
 tcp
-157.159.68.97
+127.0.0.1
+CVE-2004-2761
+{severity=7.5, lose_types='data_modification', access=l, range='remoteExploit', products=md5 x.509_certificate}
+44215
+tcp
+127.0.0.1
 CVE-XXXX-XXXX
-{severity=5.3, lose_types='data_modification', access=l, range='remoteExploit', products=windows samba}
-445
+{severity=5.3, lose_types='data_modification', access=l, range='remoteExploit'}
+44215
 tcp
-157.159.68.97
-CVE-1999-0524
-{severity=0.0, lose_types='no_loss', access=l, range='localExploit'}
-0
-icmp
-157.159.68.75
+127.0.0.1
+CVE-2003-1567
+{severity=5.3, lose_types='data_loss', access=l, range='remoteExploit'}
+44215
+tcp
+127.0.0.1
+CVE-2004-2320
+{severity=5.3, lose_types='data_loss', access=l, range='remoteExploit'}
+44215
+tcp
+127.0.0.1
+CVE-2010-0386
+{severity=5.3, lose_types='data_loss', access=l, range='remoteExploit'}
+44215
+tcp
+127.0.0.1
+CVE-2003-1567
+{severity=5.3, lose_types='data_loss', access=l, range='remoteExploit'}
+40665
+tcp
+127.0.0.1
+CVE-2004-2320
+{severity=5.3, lose_types='data_loss', access=l, range='remoteExploit'}
+40665
+tcp
+127.0.0.1
+CVE-2010-0386
+{severity=5.3, lose_types='data_loss', access=l, range='remoteExploit'}
+40665
+tcp
+127.0.0.1
 CVE-XXXX-XXXX
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows}
-0
+{severity=6.5, lose_types='data_loss','data_modification', access=l, range='remoteExploit'}
+8834
 tcp
-157.159.68.75
+127.0.0.1
 CVE-XXXX-XXXX
-{severity=5.3, lose_types='data_modification', access=l, range='remoteExploit', products=windows samba}
-445
+{severity=6.5, lose_types='data_loss','data_modification', access=h, range='remoteExploit'}
+631
 tcp
-157.159.68.75
-CVE-1999-0524
-{severity=0.0, lose_types='no_loss', access=l, range='localExploit'}
-0
-icmp
-157.159.68.44
-CVE-1999-0524
-{severity=0.0, lose_types='no_loss', access=l, range='localExploit'}
-0
-icmp
+127.0.0.1
+CVE-XXXX-XXXX
+{severity=6.5, lose_types='data_loss','data_modification', access=l, range='remoteExploit'}
+631
+tcp

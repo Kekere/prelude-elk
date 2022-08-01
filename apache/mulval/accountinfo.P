@@ -1,12 +1,4 @@
-inCompetent('157.159.68.125_victim').
-hasAccount('157.159.68.125_victim', '157.159.68.125', user).
+inCompetent('127.0.0.1_victim').
+hasAccount('127.0.0.1_victim', '127.0.0.1', user).
 attackerLocated(internet).
-attackGoal(execCode('157.159.68.125', _)).
-inCompetent('157.159.68.97_victim').
-hasAccount('157.159.68.97_victim', '157.159.68.97', user).
-attackerLocated(internet).
-attackGoal(execCode('157.159.68.97', _)).
-inCompetent('157.159.68.75_victim').
-hasAccount('157.159.68.75_victim', '157.159.68.75', user).
-attackerLocated(internet).
-attackGoal(execCode('157.159.68.75', _)).
+attackGoal(execCode('127.0.0.1', _)).

@@ -257,15 +257,15 @@ public class NessusXMLParser {
 			}
 			
 			//lose_types
-			if(metrics[3].charAt(2)!='L') {
+			if(metrics[3].charAt(2)!='N') {
 				lose_types += "'data_loss',";
 			}
 	
-			if(metrics[4].charAt(2)!='L') {
+			if(metrics[4].charAt(2)!='N') {
 				lose_types += "'data_modification',";
 			}
 			
-			if(metrics[5].charAt(2)!='L') {
+			if(metrics[5].charAt(2)!='N') {
 				lose_types += "'availability_loss',";
 			}
 			int ltp = lose_types.length();

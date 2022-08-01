@@ -12,12 +12,12 @@ document.getElementById("generate-graph").onclick = function() {
   }
   
 }
-document.getElementById("countermeasures").onclick = function() {
+/*document.getElementById("countermeasures").onclick = function() {
   //console.log(localStorage.getItem('myjson'));
   var link = document.getElementById("countermeasures");
   link.setAttribute("href", "RORI/index.html");
   
-}
+}*/
 /*document.getElementById("home").onclick = function() {
   var link = document.getElementById("home");
   link.setAttribute("href", "index.html");
@@ -208,8 +208,8 @@ fileInput.addEventListener('change', function (e) {
   //console.log(reader.result);
 	
   
-	var button = document.getElementById( 'submit' );
-	button.addEventListener( 'click', function() {
+	var buttonsubmit = document.getElementById( 'submit' );
+	buttonsubmit.addEventListener( 'click', function() {
     localStorage.setItem('notification', true); 
 	});
 	

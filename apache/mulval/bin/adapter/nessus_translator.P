@@ -1,7 +1,8 @@
 :- import member/2 from lists.
-hasEffect(privEscalation).
-hasConfEffect(IndirDisclosure).
+:- import length/2 from lists.
 hasIntegEffect(ResRemoval).
+hasConfEffect(IndirDisclosure).
+hasEffect(privEscalation).
 hasIntegEffect(WritePerm).
 hasConfEffect(ReadPerm).
 hasAvailEffect(ServInterrupt).
@@ -37,23 +38,22 @@ vulProperty(CVE, remoteClient, Effect):-
   lossTypetoEffect(Losstype, Effect).
 
 
-lossTypetoEffect(Losstype, Effect):-
+lossTypetoEffect(Losstype, writeDirect):-
             member('data_modification', Losstype),
-            hasConfEffect(Effect).
+	    length(Losstype, 1).
 
-lossTypetoEffect(Losstype, Effect):-
+lossTypetoEffect(Losstype, privEscalation):-
             member('data_loss', Losstype),
-            hasIntegEffect(Effect).
+            length(Losstype, 3).
 
-lossTypetoEffect(Losstype, Effect):-
+lossTypetoEffect(Losstype, resourceRemoval):-
+            member('data_loss', Losstype),
+            length(Losstype, 1).
+
+lossTypetoEffect(Losstype, serviceInterrupt):-
             member('availability_loss', Losstype),
-            hasAvailEffect(Effect).
+            length(Losstype, 1).
             
-lossTypetoEffect(Losstype, Effect):-
-            member('data_loss', Losstype),
-            member('availability_loss', Losstype),
-            member('data_modification', Losstype),
-            hasEffect(Effect).
 
 cvss(CVE, AC):-
 	vuln_exists(Host, CVE, Prog, _RangeList, _Losstype, _Severity, AC ).
