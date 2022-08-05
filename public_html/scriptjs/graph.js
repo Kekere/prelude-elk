@@ -38,7 +38,7 @@ function updateGraph(){
   var ch;
   
  
-  if(severity=="high" || severity=="medium" || severity=="low"){
+  if(severity=="high" || severity=="medium"){
     if(hacl==0){
       var sep=graph["nodes"][i]["label"].split(',');
       adds=sep[0].split("'")[1];
@@ -240,6 +240,7 @@ function updateGraph(){
                                           //console.log(privilegesgained);
                                           
                                           var weaknesses=json["Vulnerability"]["hasScenario"][e]["hasExploitedWeakness"];
+                                          
                                           if(logicalimpact=="Service Interrupt"){
                                             for(var z=0; z<arraynodes.length; z++){
                                               if(arraynodes[z]["label"].indexOf("physicalDamage")==0){

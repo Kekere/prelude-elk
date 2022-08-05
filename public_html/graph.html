@@ -64,14 +64,16 @@
 var jsonfile="mulval_generated_json.json";
 
 // conversion du fichier AttackGraph généré par mulval en Objet Json
-jsonfinal=convertxmltojson("scriptphp/AttackGraph.xml");
-console.log(jsonfinal);
-console.log(localStorage.getItem('notification')); 
+//jsonfinal=convertxmltojson("scriptphp/AttackGraph.xml");
+convertxmltojson("scriptphp/AttackGraph.xml");
+//console.log(JSON.stringify(localStorage.getItem('graph'),null,4));
+//console.log(localStorage.getItem('notification')); 
 if(localStorage.getItem('notification')=="true"){
-  console.log(localStorage.getItem('notification'));  
-  localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
+  //console.log(localStorage.getItem('notification'));  
+  //localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
         
-  jsonobj={"json":JSON.stringify(jsonfinal,null,4)};
+  //jsonobj={"json":JSON.stringify(jsonfinal,null,4)};
+  jsonobj=JSON.stringify(localStorage.getItem('myjson'),null,4)
 
   /* transfert du resultat de la convertion au serveur PHP pour l'écriture
   dans un fichier json "mulval_generated_json.json" qui sera utilisé comme paramètre de la fonction generategraph
@@ -80,8 +82,8 @@ if(localStorage.getItem('notification')=="true"){
     url:"scriptphp/mulval.php",
     data:jsonobj,
     datatype:"json",
-    async: false,
     type:"POST",
+    async:true,
     success: function(response){
       // après la creation du fichier JSON en php on génère le Graph
       //console.log(jsonobj);

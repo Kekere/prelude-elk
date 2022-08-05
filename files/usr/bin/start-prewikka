@@ -47,6 +47,7 @@ done
 
 prelude-wait4injector
 
-TZ="${SYSLOG_TIMEZONE-UTC}" logger -it prewikka-container --rfc3164 -T -P 6514 -n injector Starting Prelude GUI
+TZ="${SYSLOG_TIMEZONE-Europe/Paris}" logger -it prewikka-container --rfc3164 -T -P 6514 -n injector Starting Prelude GUI
+echo TZ
 echo "Starting the HTTP daemon"
 exec /usr/sbin/apachectl -DFOREGROUND

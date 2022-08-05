@@ -209,6 +209,7 @@ services:
       gui:
       gui2injector:
       logs:
+   
 
   prewikka-crontab:
     depends_on:
