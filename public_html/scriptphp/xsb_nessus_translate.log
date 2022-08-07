@@ -7,7 +7,7 @@
 
 ++Warning[XSB]: [Runtime/C] Cannot create directory `/home/XSB/.xsb/config/x86_64-unknown-linux-gnu'!
            XSB uses this directory to store data.
-[xsb_configuration loaded, cpu time used: 0.001 seconds]
+[xsb_configuration loaded]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
@@ -16,8 +16,8 @@ XSB Version 4.0.0 (TaB) of April 1, 2021
 [Build date: 2022-08-04]
 
 | ?- [Compiling ./results]
-[results compiled, cpu time used: 0.053 seconds]
-[results loaded, cpu time used: 0.001 seconds]
+[results compiled, cpu time used: 0.050 seconds]
+[results loaded]
 
 yes
 | ?- [libmulval loaded]
@@ -34,7 +34,7 @@ yes
 ++Warning[XSB]: [Runtime/C] str_cat/3 (static predicate) had been defined in module: string; those clauses lost in the context of usermod.
 
 ++Warning[XSB]: [Runtime/C] string_substitute/4 (static predicate) had been defined in module: string; those clauses lost in the context of usermod.
-[machine loaded]
+[machine loaded, cpu time used: 0.001 seconds]
 
 yes
 | ?- 
@@ -69,4 +69,4 @@ yes
 | ?- 
 yes
 | ?- 
-End XSB (cputime 0.11 secs, elapsetime 0.14 secs)
+End XSB (cputime 0.12 secs, elapsetime 0.14 secs)

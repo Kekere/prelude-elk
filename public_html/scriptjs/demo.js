@@ -129,7 +129,7 @@ function generateGraph(objjson){
 
 function convertxmltojson(xmlfile){
   token=0;
-  /*var xhttp;
+  var xhttp;
   if (window.XMLHttpRequest) { // Create an instance of XMLHttpRequest object. 
       //code for IE7+, Firefox, Chrome, Opera, Safari
       xhttp  =  new XMLHttpRequest();
@@ -187,9 +187,9 @@ function convertxmltojson(xmlfile){
   }
   var jsonfinal={"nodes":arraynodes,"links":arraylinks};
   
-  return jsonfinal;*/
+  return jsonfinal;
   //console.log(xmlfile.toString())
-  $.ajax({
+ /* $.ajax({
     type: "GET" ,
     url: xmlfile ,
     dataType: "xml" ,
@@ -249,7 +249,7 @@ function convertxmltojson(xmlfile){
       //return jsonfinal;
       localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
     }       
-});
+});*/
 }
 
 function encode( s ) {

@@ -2,16 +2,16 @@
     {
         "Header": {
             "Source": "CTM",
-            "Timestamp": "2022-07-19T13:12:34.000Z",
-            "Criticality": "high",
+            "Timestamp": "2022-08-06T11:52:17.000Z",
+            "Criticality": "low",
             "Description": "CTM / Cyber Vulnerability"
         },
         "Payload": {
-            "CVEID": "CVE-2021-34527",
-            "IP address": "192.168.1.66",
-            "Product": "microsoft",
-            "User Name": "andrew",
-            "Countermeasure": "Reconfigure the service to use a unique Diffie-Hellman moduli of 2048 bits or greater.",
+            "CVEID": "CVE-2005-1794",
+            "IP address": "157.159.68.97",
+            "Product": "remote_desktop_connection",
+            "User Name": "someUser",
+            "Countermeasure": "- Force the use of SSL as a transport layer for this service if supported, or/and- Select the 'Allow connections only from computers running Remote Desktop with Network Level Authentication' setting if it is available.",
             "Status": "Exploited"
         }
     }

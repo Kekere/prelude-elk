@@ -1,26 +1,24 @@
 attackerLocated(internet).
-attackGoal(execCode('51.158.154.168',_)).
+attackGoal(execCode(workStation,_)).
 
-hacl(internet, '51.158.154.169', tcp, 80).
-hacl('51.158.154.169', _,  _, _).
-hacl('51.158.154.167', _, _, _).
-hacl('51.158.154.168', _, _, _).
+hacl(internet, webServer, tcp, 80).
+hacl(webServer, _,  _, _).
+hacl(fileServer, _, _, _).
+hacl(workStation, _, _, _).
 hacl(H,H,_,_).
 
-/* configuration information of '51.158.154.169' */
-vulExists('51.158.154.169', 'CVE-2021-34527', windows_server_2016).
-vulProperty('CVE-2021-34527', remoteExploit, privEscalation).
-networkServiceInfo('51.158.154.169' , windows_server_2016, tcp , 80 , apache).
+/* configuration information of fileServer */
+networkServiceInfo(fileServer, mountd, rpc, 100005, root).
+nfsExportInfo(fileServer, '/export', _anyAccess, workStation).
+nfsExportInfo(fileServer, '/export', _anyAccess, webServer).
+vulExists(fileServer, vulID, mountd).
+vulProperty(vulID, remoteExploit, privEscalation).
+localFileProtection(fileServer, root, _, _).
 
-/* configuration information of '51.158.154.167' */
-networkServiceInfo('51.158.154.167', 'windows_server_2016', rpc, 100005, root).
-nfsExportInfo('51.158.154.167', '/export', _anyAccess, '51.158.154.168').
-nfsExportInfo('51.158.154.167', '/export', _anyAccess, '51.158.154.169').
-vulExists('51.158.154.167', 'CVE-2017-0146', 'windows_server_2016').
-vulProperty('CVE-2017-0146', remoteExploit, privEscalation).
-localFileProtection('51.158.154.167', root, _, _).
+/* configuration information of webServer */
+vulExists(webServer, 'CVE-2017-0148', httpd).
+vulProperty('CVE-2019-0708', remoteExploit, privEscalation).
+networkServiceInfo(webServer , httpd, tcp , 80 , apache).
 
-
-
-/* configuration information of '51.158.154.168' */
-nfsMounted('51.158.154.168', '/usr/local/share', '51.158.154.167', '/export', read).
+/* configuration information of workStation */
+nfsMounted(workStation, '/usr/local/share', fileServer, '/export', read).

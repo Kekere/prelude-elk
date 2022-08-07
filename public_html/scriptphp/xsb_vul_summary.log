@@ -18,7 +18,7 @@ XSB Version 4.0.0 (TaB) of April 1, 2021
 | ?- [libmulval loaded]
 
 yes
-| ?- [auxiliary loaded, cpu time used: 0.001 seconds]
+| ?- [auxiliary loaded]
 
 yes
 | ?- [vul_summary loaded]
@@ -66,4 +66,4 @@ yes
 | ?- 
 yes
 | ?- 
-End XSB (cputime 0.10 secs, elapsetime 0.11 secs)
+End XSB (cputime 0.09 secs, elapsetime 0.11 secs)
