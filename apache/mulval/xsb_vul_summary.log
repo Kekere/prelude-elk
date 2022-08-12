@@ -1,10 +1,10 @@
-[xsb_configuration loaded, cpu time used: 0.001 seconds]
+[xsb_configuration loaded]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
 XSB Version 4.0.0 (TaB) of April 1, 2021
 [x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
-[Build date: 2022-01-07]
+[Build date: 2022-05-16]
 
 | ?- [libmulval loaded]
 
@@ -15,7 +15,7 @@ yes
 | ?- [vul_summary loaded]
 
 yes
-| ?- [/home/keren/Téléchargements/Cassiopee/mulval/nessus.P dynamically loaded, cpu time used: 0.017 seconds]
+| ?- [/home/keren/Téléchargements/Cassiopee/mulval/nessus.P dynamically loaded, cpu time used: 0.023 seconds]
 
 yes
 | ?- 
@@ -23,38 +23,38 @@ yes
 | ?- 
 yes
 | ?- 
-Host = _h282
-Program = _h302
-Protocol = _h322
-Port = _h342
-L = [networkServiceInfo(127.0.0.1,openssl,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,md5 x.509_certificate,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,40665,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,44215,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,8834,someUser),networkServiceInfo(127.0.0.1,no_products,tcp,631,someUser)]
+Host = _h358
+Program = _h378
+Protocol = _h398
+Port = _h418
+L = [networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,no_products,tcp,443,someUser)]
 yes
 | ?- 
-Host = _h282
-Host1 = _h302
-Protocol = _h322
-Port = _h342
-L = [hacl(_h650,_h651,_h652,_h653)]
+Host = _h358
+Host1 = _h378
+Protocol = _h398
+Port = _h418
+L = [hacl(_h726,_h727,_h728,_h729)]
 yes
 | ?- 
-A = _h282
-B = _h302
-C = _h322
-L = [hasAccount(127.0.0.1_victim,127.0.0.1,user)]
+A = _h358
+B = _h378
+C = _h398
+L = [hasAccount(192.168.32.192_victim,192.168.32.192,user)]
 yes
 | ?- 
-A = _h282
-L = [inCompetent(127.0.0.1_victim)]
+A = _h358
+L = [inCompetent(192.168.32.192_victim)]
 yes
 | ?- 
-A = _h282
-L = [attackGoal(execCode(127.0.0.1,_h469))]
+A = _h358
+L = [attackGoal(execCode(192.168.32.192,_h545))]
 yes
 | ?- 
-A = _h282
+A = _h358
 L = [attackerLocated(internet)]
 yes
 | ?- 
 yes
 | ?- 
-End XSB (cputime 0.06 secs, elapsetime 0.06 secs)
+End XSB (cputime 0.06 secs, elapsetime 0.07 secs)

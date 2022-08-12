@@ -1,4 +1,4 @@
-inCompetent('127.0.0.1_victim').
-hasAccount('127.0.0.1_victim', '127.0.0.1', user).
+inCompetent('192.168.32.192_victim').
+hasAccount('192.168.32.192_victim', '192.168.32.192', user).
 attackerLocated(internet).
-attackGoal(execCode('127.0.0.1', _)).
+attackGoal(execCode('192.168.32.192', _)).

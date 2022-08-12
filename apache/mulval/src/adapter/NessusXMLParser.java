@@ -34,13 +34,13 @@ public class NessusXMLParser {
 
 	public static void main(String[] args) {
 		parseNessus(args[0]);
-		//parseNessus("/home/keren/Téléchargements/Cassiopee/CPS_6g6fqs.nessus.xml");
+		
 	}
 
 	public static void parseNessus(String nessusReport) {
 		HashMap<String, String> organization = new HashMap<String, String>();
 		organization.put("name", "TSP");
-		organization.put("description", "École d'ingénieur du numérique");
+		organization.put("description", "Ecole d'ingenieur du numerique");
 		
 		List<String> equipments = new ArrayList<String>();
 		
@@ -62,7 +62,7 @@ public class NessusXMLParser {
 				Iterator ei = host.elementIterator();
 				// Put all of the subelements' names(subelement of entry) to an array list(subele)
 				while (ei.hasNext()) {
-					// Va nous servir pour distinguer les cas où une vulnérabilité n'a pas d'ID CVE associé
+					
 					boolean hasCve = false;
 					
 					Element sube = (Element) ei.next();
@@ -102,7 +102,7 @@ public class NessusXMLParser {
 							fr.write("CVE-XXXX-XXXX\n");
 						}
 						
-						//On récupère le vecteur CVSS 
+						 
 						Element cvss;
 						if (subele.contains("cvss3_vector")) {
 							if (hasCve) {
@@ -133,7 +133,7 @@ public class NessusXMLParser {
 							vuln.put("products", products);
 						}
 						
-						//Récupérer la séverité 
+						
 						Element severity;
 						if (subele.contains("cvss3_base_score")) {
 							severity = (Element) sube.elementIterator("cvss3_base_score").next();
@@ -142,7 +142,7 @@ public class NessusXMLParser {
 						}
 						vuln.put("severity", severity.getText());
 						
-						//On récupère la solution
+						
 						String solution;
 						if (subele.contains("solution")) {
 							solution = sube.elementIterator("solution").next().getText();
@@ -210,7 +210,7 @@ public class NessusXMLParser {
 			}
 			
 			if(metrics[4].charAt(3) == 'R') {
-				range += "',user_action_req'";
+				range += ",'user_action_req'";
 			}
 			
 			res.put("range", range);
@@ -241,7 +241,7 @@ public class NessusXMLParser {
 				res.put("access", "h");
 			}
 			
-			//Au cas où le score CVSS3 n'est pas présent (jamais vu), on utilise le CVSS2
+			
 		} else if (metrics[0].split("#")[0].equals("CVSS2")){
 			//Range
 			switch(metrics[0].charAt(9)) {
@@ -327,7 +327,7 @@ public class NessusXMLParser {
 		for (int i=1; i<=nbEquipments; i++) {
 			id_equipments += Integer.toString(i) + ", "; 
 		}
-		id_equipments = id_equipments.substring(0,id_equipments.length()-2); //On enlève le dernier espace et la virgule
+		id_equipments = id_equipments.substring(0,id_equipments.length()-2); 
 		String eq_type = "";
 		
 		String cm_name = "";
@@ -341,20 +341,19 @@ public class NessusXMLParser {
 		for (int i=1; i<=nbEquipments+1; i++) {
 			id_countermeasure += Integer.toString(i) + ", "; 
 		}
-		id_countermeasure = id_countermeasure.substring(0,id_countermeasure.length()-2); //On enlève le dernier espace et la virgule
+		id_countermeasure = id_countermeasure.substring(0,id_countermeasure.length()-2);
 		
 		try (FileWriter fr = new FileWriter("Remediations.xml")) {
 			//Racine du fichier
 			fr.write("<RORI>\n");
-				
-			// élément ORGANIZATIONS
+
 			fr.write("<ORGANIZATIONS>\n");
 			org_name = Organization.get("name");
 			org_desc = Organization.get("description");
 			fr.write("<organization id=\"1\" name=\"" + org_name + "\" description=\"" + org_desc + "\" id_equipments=\"" + id_equipments + "\" xpath=\"xpath\"/>\n");
 			fr.write("</ORGANIZATIONS>\n");
 				
-			// élément EQUIPMENTS
+			
 			fr.write("<EQUIPMENTS>\n");
 			for (int i=0; i<nbEquipments; i++) {
 				eq_type = Equipments.get(i);
@@ -362,7 +361,7 @@ public class NessusXMLParser {
 			}
 			fr.write("</EQUIPMENTS>\n");
 				
-			// élément COUNTERMEASURES 
+			 
 			fr.write("<COUNTERMEASURES>\n");
 			fr.write("<countermeasure id=\"1\" name=\"NOOP\" description=\"This Solution considers to accept the risk and does not require any modifications\" totally_restrictive=\"yes\" restriction=\"\" id_equipment=\"\" id_rm=\"1\" id_arc=\"1\" xpath=\"xpath\"/>\n");
 			for (int i=0; i<nbEquipments; i++) {
@@ -372,14 +371,14 @@ public class NessusXMLParser {
 			}
 			fr.write("</COUNTERMEASURES>\n");
 				
-			// élément RISK_MITIGATION
+			
 			fr.write("<RISK_MITIGATION>\n");
 			for (int i=0; i<nbEquipments+1; i++) {
 				fr.write("<rm id=\"" + Integer.toString(i+1) + "\" EF=\"\" COV=\"\" RM=\"\" xpath=\"xpath\"/>\n");
 			}
 			fr.write("</RISK_MITIGATION>\n");
 				
-			// élément ANNUAL_RESPONSE_COST
+			
 			fr.write("<ANNUAL_RESPONSE_COST>\n");
 			fr.write("<arc id=\"1\" COM=\"\" COI=\"\" ODC=\"\" IC=\"\" total=\"0\" xpath=\"xpath\"/>\n");
 			for (int i=0; i<nbEquipments; i++) {
@@ -387,7 +386,7 @@ public class NessusXMLParser {
 			}
 			fr.write("</ANNUAL_RESPONSE_COST>\n");
 				
-			// élément INCIDENTS
+			
 			fr.write("<INCIDENTS>\n");
 			for (int i=0; i<nbIncidents; i++) {
 				inc_name = Incidents.get(i).get("name");
@@ -397,7 +396,6 @@ public class NessusXMLParser {
 			}
 			fr.write("</INCIDENTS>\n");
 				
-			// élément ANNUAL_LOSS_EXPECTANCY 
 			fr.write("<ANNUAL_LOSS_EXPECTANCY>\n");
 			fr.write("<ale id=\"1\" LA=\"\" LD=\"\" LR=\"\" LP=\"\" LREC=\"\" LRPC=\"\" OL=\"\" CI=\"\" ARO=\"\" total=\"\"/>\n");
 			fr.write("</ANNUAL_LOSS_EXPECTANCY>\n");

@@ -3,15 +3,15 @@
         "Header": {
             "Source": "CTM",
             "Timestamp": "2022-08-06T11:52:17.000Z",
-            "Criticality": "low",
+            "Criticality": "high",
             "Description": "CTM / Cyber Vulnerability"
         },
         "Payload": {
-            "CVEID": "CVE-2005-1794",
-            "IP address": "157.159.68.97",
-            "Product": "remote_desktop_connection",
+            "CVEID": "CVE-2022-2068",
+            "IP address": "192.168.32.192",
+            "Product": "openssl",
             "User Name": "someUser",
-            "Countermeasure": "- Force the use of SSL as a transport layer for this service if supported, or/and- Select the 'Allow connections only from computers running Remote Desktop with Network Level Authentication' setting if it is available.",
+            "Countermeasure": "Upgrade to OpenSSL version 1.1.1p or later.",
             "Status": "Exploited"
         }
     }

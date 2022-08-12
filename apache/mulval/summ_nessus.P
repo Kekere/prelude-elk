@@ -1,99 +1,133 @@
-vulExists('127.0.0.1','127.0.0.10','md5 x.509_certificate').
-vulProperty('127.0.0.10',remoteExploit,writeDirect).
-capability_required('127.0.0.10',l).
+vulExists('192.168.32.192','192.168.32.1920',network_camera_firmware).
+vulProperty('192.168.32.1920',remoteClient,privEscalation).
+capability_required('192.168.32.1920',l).
 
-vulExists('127.0.0.1','127.0.0.11',no_products).
-vulProperty('127.0.0.11',remoteExploit,privEscalation).
-capability_required('127.0.0.11',h).
+vulExists('192.168.32.192','192.168.32.1921',no_products).
+vulProperty('192.168.32.1921',remoteExploit,privEscalation).
+capability_required('192.168.32.1921',l).
 
-vulExists('127.0.0.1','127.0.0.12',no_products).
-vulProperty('127.0.0.12',remoteExploit,resourceRemoval).
-capability_required('127.0.0.12',l).
+vulExists('192.168.32.192','192.168.32.1922',openssl).
+vulProperty('192.168.32.1922',remoteExploit,privEscalation).
+capability_required('192.168.32.1922',l).
 
-vulExists('127.0.0.1','127.0.0.13',no_products).
-vulProperty('127.0.0.13',remoteExploit,writeDirect).
-capability_required('127.0.0.13',h).
+vulExists('192.168.32.192','192.168.32.1923',openssl).
+vulProperty('192.168.32.1923',remoteExploit,resourceRemoval).
+capability_required('192.168.32.1923',l).
 
-vulExists('127.0.0.1','127.0.0.14',openssl).
-vulProperty('127.0.0.14',remoteExploit,writeDirect).
-capability_required('127.0.0.14',h).
+vulExists('192.168.32.192','192.168.32.1924',openssl).
+vulProperty('192.168.32.1924',remoteExploit,serviceInterrupt).
+capability_required('192.168.32.1924',l).
 
-networkServiceInfo('127.0.0.1',openssl,tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1','md5 x.509_certificate',tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'40665',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'44215',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'8834',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-networkServiceInfo('127.0.0.1',no_products,tcp,'631',someUser).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-hacl(_h650,_h651,_h652,_h653).
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-hasAccount('127.0.0.1_victim','127.0.0.1',user).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
 
-inCompetent('127.0.0.1_victim').
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
 
-attackGoal(execCode('127.0.0.1',_h469)).
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+
+networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+
+networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+
+networkServiceInfo('192.168.32.192',no_products,tcp,'443',someUser).
+
+hacl(_h726,_h727,_h728,_h729).
+
+hasAccount('192.168.32.192_victim','192.168.32.192',user).
+
+inCompetent('192.168.32.192_victim').
+
+attackGoal(execCode('192.168.32.192',_h545)).
 
 attackerLocated(internet).
 
-inCompetent('127.0.0.1_victim').
-hasAccount('127.0.0.1_victim', '127.0.0.1', user).
+inCompetent('192.168.32.192_victim').
+hasAccount('192.168.32.192_victim', '192.168.32.192', user).
 attackerLocated(internet).
-attackGoal(execCode('127.0.0.1', _)).
+attackGoal(execCode('192.168.32.192', _)).
 hacl(_,_,_,_).
