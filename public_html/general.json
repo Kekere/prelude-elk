@@ -7,12 +7,44 @@
             "Description": "CTM / Cyber Vulnerability"
         },
         "Payload": {
-            "CVEID": "CVE-2022-2068",
-            "IP address": "192.168.32.192",
-            "Product": "openssl",
+            "CVEID": "CVE-2017-0143",
+            "IP address": "157.159.68.97",
+            "Product": "windows",
             "User Name": "someUser",
-            "Countermeasure": "Upgrade to OpenSSL version 1.1.1p or later.",
-            "Status": "Exploited"
+            "Countermeasure": "remove Privileged as Privileged on Host OS",
+            "Status": "Post-condition of CVE-2005-1794"
+        }
+    },
+    {
+        "Header": {
+            "Source": "CTM",
+            "Timestamp": "2022-08-06T11:52:17.000Z",
+            "Criticality": "high",
+            "Description": "CTM / Cyber Vulnerability"
+        },
+        "Payload": {
+            "CVEID": "CVE-2017-0146",
+            "IP address": "157.159.68.97",
+            "Product": "windows",
+            "User Name": "someUser",
+            "Countermeasure": "remove Privileged as Privileged on Host OS",
+            "Status": "Post-condition of CVE-2005-1794"
+        }
+    },
+    {
+        "Header": {
+            "Source": "CTM",
+            "Timestamp": "2022-08-06T11:52:17.000Z",
+            "Criticality": "high",
+            "Description": "CTM / Cyber Vulnerability"
+        },
+        "Payload": {
+            "CVEID": "CVE-2017-0148",
+            "IP address": "157.159.68.97",
+            "Product": "windows",
+            "User Name": "someUser",
+            "Countermeasure": "remove Privileged as Privileged on Host OS",
+            "Status": "Post-condition of CVE-2005-1794"
         }
     }
 ]

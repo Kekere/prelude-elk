@@ -55,6 +55,7 @@ $response = $client->search($params3);
 $responsesource = $client->search($params2);
 #print_r($response);
 $address=$response['hits']['hits'][0]['_source']['address'];
+$id=$response['hits']['hits'][0];
 $protocol=$response['hits']['hits'][0]['_source']['iana_protocol_name'];
 $severity=$response['hits']['hits'][0]['_source']['severity'];
 $port=$response['hits']['hits'][0]['_source']['port'];
@@ -73,7 +74,8 @@ $advert = array(
   'protocolsource' => $protocolsource,
   //'severitysource' => $severitysource,
   'portsource' => $portsource,
-  'timestamp' => $timestamp
+  'timestamp' => $timestamp,
+  'id'=>$id
 );
 echo json_encode($advert);
 ?>
