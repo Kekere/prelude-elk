@@ -9,7 +9,7 @@
            XSB uses this directory to store data.
 [xsb_configuration loaded]
 [sysinitrc loaded]
-[xsbbrat loaded]
+[xsbbrat loaded, cpu time used: 0.001 seconds]
 
 XSB Version 4.0.0 (TaB) of April 1, 2021
 [x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
@@ -66,4 +66,4 @@ yes
 | ?- 
 yes
 | ?- 
-End XSB (cputime 0.09 secs, elapsetime 0.11 secs)
+End XSB (cputime 0.10 secs, elapsetime 0.11 secs)

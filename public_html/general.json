@@ -12,7 +12,7 @@
             "Product": "windows",
             "User Name": "someUser",
             "Countermeasure": "remove Privileged as Privileged on Host OS",
-            "Status": "Post-condition of CVE-2005-1794"
+            "Status": "Post-condition of CVE-2012-0152"
         }
     },
     {
@@ -28,7 +28,7 @@
             "Product": "windows",
             "User Name": "someUser",
             "Countermeasure": "remove Privileged as Privileged on Host OS",
-            "Status": "Post-condition of CVE-2005-1794"
+            "Status": "Post-condition of CVE-2012-0152"
         }
     },
     {
@@ -44,7 +44,7 @@
             "Product": "windows",
             "User Name": "someUser",
             "Countermeasure": "remove Privileged as Privileged on Host OS",
-            "Status": "Post-condition of CVE-2005-1794"
+            "Status": "Post-condition of CVE-2012-0152"
         }
     }
 ]
