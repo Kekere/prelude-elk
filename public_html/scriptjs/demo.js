@@ -188,68 +188,6 @@ function convertxmltojson(xmlfile){
   var jsonfinal={"nodes":arraynodes,"links":arraylinks};
   
   return jsonfinal;
-  //console.log(xmlfile.toString())
- /* $.ajax({
-    type: "GET" ,
-    url: xmlfile ,
-    dataType: "xml" ,
-    success: function(xmlDoc) {
-
-      var sizelinks=$(xmlDoc).find("arc").length;
-      //console.log(sizelinks);
-      var arraylinks=[];
-      var arraynodes=[]
-      var arrayelements=[];
-      for (var i = 0; i < sizelinks; i++) {
-    
-        var target = $(xmlDoc).find("arc")[i].children[0].innerHTML;
-        var source = $(xmlDoc).find("arc")[i].children[1].innerHTML;
-        var jsonelement={"source":parseInt(source),"target":parseInt(target)};
-        arraylinks.push(jsonelement);
-        
-        var sourcel=arrayelements.includes(parseInt(source));
-        var targel=arrayelements.includes(parseInt(target));
-        if(sourcel==false){
-          arrayelements.push(parseInt(source))
-        }
-        if(targel==false){
-          arrayelements.push(parseInt(target));
-        }
-      }
-      for (var i=0; i< arrayelements.length; i++){
-        for (var y=0; y< arrayelements.length; y++){
-   
-          if($(xmlDoc).find('vertex')[y].getElementsByTagName("id")[0].innerHTML==arrayelements[i]){
-            var nodeAttackGraph=$(xmlDoc).find('vertex')[y];
-            var test=$(nodeAttackGraph).find("fact")[0].innerHTML.indexOf("vulExists");
-            //console.log(test);
-            if($(nodeAttackGraph).find("type")[0].innerHTML=="LEAF" && test != 0){
-              var group=3;
-            }
-            else if($(nodeAttackGraph).find("type")[0].innerHTML=="LEAF" && test == 0){
-              var group=4;
-            }
-            else if($(nodeAttackGraph).find("type")[0].innerHTML=="AND"){
-              var group=2;
-            }
-            else if($(nodeAttackGraph).find("type")[0].innerHTML=="OR"){
-              var group=1;
-            }
-            var labels=$(nodeAttackGraph).find("fact")[0].innerHTML+":"+$(nodeAttackGraph).find("metric")[0].innerHTML;
-            var jsonnode={"id":arrayelements[i],"group":group,"label":labels};
-            arraynodes.push(jsonnode);
-    
-          }
-          
-        }
-      }
-      var jsonfinal={"nodes":arraynodes,"links":arraylinks};
-      //console.log(jsonfinal);
-      
-      //return jsonfinal;
-      localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-    }       
-});*/
 }
 
 function encode( s ) {
