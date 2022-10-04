@@ -7,7 +7,7 @@
 
 ++Warning[XSB]: [Runtime/C] Cannot create directory `/home/XSB/.xsb/config/x86_64-unknown-linux-gnu'!
            XSB uses this directory to store data.
-[xsb_configuration loaded]
+[xsb_configuration loaded, cpu time used: 0.001 seconds]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
@@ -22,12 +22,12 @@ XSB Version 4.0.0 (TaB) of April 1, 2021
 [translate loaded]
 [attack_trace loaded]
 [auxiliary loaded]
-[/var/www/html/scriptphp/running_rules.P dynamically loaded, cpu time used: 0.022 seconds]
-[/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.047 seconds]
+[/var/www/html/scriptphp/running_rules.P dynamically loaded, cpu time used: 0.019 seconds]
+[/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.044 seconds]
 [/home/mulval/src/analyzer/advances_notrim.P dynamically loaded, cpu time used: 0.001 seconds]
 @@@@@@@@@@@@@@Done transforming in mode dynamic_decl
 
-[/var/www/html/scriptphp/dynamic_decl.gen dynamically loaded, cpu time used: 0.005 seconds]
+[/var/www/html/scriptphp/dynamic_decl.gen dynamically loaded, cpu time used: 0.006 seconds]
 @@@@@@@@@@@@@@Done transforming in mode completeTrace2
 
 @@@@@@@@@@@@@@Done transforming in mode completeTrace2
@@ -38,4 +38,4 @@ Running attack simulation...
 
 yes
 | ?- 
-End XSB (cputime 0.28 secs, elapsetime 0.29 secs)
+End XSB (cputime 0.26 secs, elapsetime 0.28 secs)
