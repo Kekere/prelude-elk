@@ -1,8 +1,12 @@
-inCompetent('192.168.32.101_victim').
-hasAccount('192.168.32.101_victim', '192.168.32.101', user).
+inCompetent('192.168.196.35_victim').
+hasAccount('192.168.196.35_victim', '192.168.196.35', user).
 attackerLocated(internet).
-attackGoal(execCode('192.168.32.101', _)).
-inCompetent('192.168.32.1_victim').
-hasAccount('192.168.32.1_victim', '192.168.32.1', user).
+attackGoal(execCode('192.168.196.35', _)).
+inCompetent('192.168.196.32_victim').
+hasAccount('192.168.196.32_victim', '192.168.196.32', user).
 attackerLocated(internet).
-attackGoal(execCode('192.168.32.1', _)).
+attackGoal(execCode('192.168.196.32', _)).
+inCompetent('192.168.196.21_victim').
+hasAccount('192.168.196.21_victim', '192.168.196.21', user).
+attackerLocated(internet).
+attackGoal(execCode('192.168.196.21', _)).

@@ -1,520 +1,175 @@
-192.168.32.101
-CVE-2022-26700
-{severity=6.1, lose_types='data_loss','data_modification', access=l, range='remoteExploit','user_action_req', products=ubuntu_linux}
-0
+192.168.196.35
+CVE-2002-0576
+{severity=5.0, lose_types='data_loss', access=l, range='remoteExploit', products=coldfusion_server}
+8080
 tcp
-192.168.32.101
-CVE-2022-26709
-{severity=6.1, lose_types='data_loss','data_modification', access=l, range='remoteExploit','user_action_req', products=ubuntu_linux}
-0
+192.168.196.35
+CVE-2016-2183
+{severity=7.5, lose_types='data_loss', access=l, range='remoteExploit'}
+3389
 tcp
-192.168.32.101
-CVE-2022-26716
-{severity=6.1, lose_types='data_loss','data_modification', access=l, range='remoteExploit','user_action_req', products=ubuntu_linux}
-0
-tcp
-192.168.32.101
-CVE-2022-26717
-{severity=6.1, lose_types='data_loss','data_modification', access=l, range='remoteExploit','user_action_req', products=ubuntu_linux}
-0
-tcp
-192.168.32.101
-CVE-2022-26719
-{severity=6.1, lose_types='data_loss','data_modification', access=l, range='remoteExploit','user_action_req', products=ubuntu_linux}
-0
-tcp
-192.168.32.101
-CVE-2019-8842
-{severity=5.5, lose_types='data_loss', access=l, range='localExploit','user_action_req', products=ubuntu_linux}
-0
-tcp
-192.168.32.101
-CVE-2020-10001
-{severity=5.5, lose_types='data_loss', access=l, range='localExploit','user_action_req', products=ubuntu_linux}
-0
-tcp
-192.168.32.101
-CVE-2022-26691
-{severity=5.5, lose_types='data_loss', access=l, range='localExploit','user_action_req', products=ubuntu_linux}
-0
-tcp
-192.168.32.101
+192.168.196.35
 CVE-XXXX-XXXX
 {severity=6.5, lose_types='data_loss','data_modification', access=h, range='remoteExploit'}
-4690
+3389
 tcp
-192.168.32.101
+192.168.196.35
 CVE-XXXX-XXXX
 {severity=6.5, lose_types='data_loss','data_modification', access=h, range='remoteExploit'}
-5553
+3389
 tcp
-192.168.32.101
-CVE-2019-17571
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2020-9488
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23302
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23305
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23307
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2019-17571
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2020-9488
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23302
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23305
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23307
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2019-17571
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2020-9488
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23302
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23305
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23307
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2019-17571
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2020-9488
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23302
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23305
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23307
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2019-17571
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2020-9488
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23302
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23305
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23307
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2019-17571
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2020-9488
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23302
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23305
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23307
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2019-17571
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2020-9488
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23302
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23305
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2022-23307
-{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-44832
-{severity=6.6, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-44832
-{severity=6.6, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-44832
-{severity=6.6, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-44832
-{severity=6.6, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-44832
-{severity=6.6, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-44832
-{severity=6.6, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-44832
-{severity=6.6, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-44832
-{severity=6.6, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45105
-{severity=5.9, lose_types='availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45105
-{severity=5.9, lose_types='availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45105
-{severity=5.9, lose_types='availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45105
-{severity=5.9, lose_types='availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45105
-{severity=5.9, lose_types='availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45105
-{severity=5.9, lose_types='availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45105
-{severity=5.9, lose_types='availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45105
-{severity=5.9, lose_types='availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-4104
-{severity=7.5, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-4104
-{severity=7.5, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-4104
-{severity=7.5, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-4104
-{severity=7.5, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-4104
-{severity=7.5, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-4104
-{severity=7.5, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-4104
-{severity=7.5, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45046
-{severity=9.0, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45046
-{severity=9.0, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45046
-{severity=9.0, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45046
-{severity=9.0, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45046
-{severity=9.0, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45046
-{severity=9.0, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-45046
-{severity=9.0, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
+192.168.196.35
 CVE-XXXX-XXXX
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
+{severity=5.3, lose_types='data_modification', access=l, range='remoteExploit'}
+8081
 tcp
-192.168.32.101
+192.168.196.35
 CVE-XXXX-XXXX
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
+{severity=5.3, lose_types='data_modification', access=l, range='remoteExploit'}
+8080
 tcp
-192.168.32.101
-CVE-XXXX-XXXX
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-XXXX-XXXX
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-XXXX-XXXX
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-XXXX-XXXX
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-XXXX-XXXX
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=log4j}
-0
-tcp
-192.168.32.101
-CVE-2021-44228
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=linux}
-0
-tcp
-192.168.32.101
-CVE-2021-44228
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=linux}
-0
-tcp
-192.168.32.101
-CVE-2021-44228
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=linux}
-0
-tcp
-192.168.32.101
-CVE-2021-44228
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=linux}
-0
-tcp
-192.168.32.101
-CVE-2021-44228
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=linux}
-0
-tcp
-192.168.32.101
-CVE-2021-44228
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=linux}
-0
-tcp
-192.168.32.101
-CVE-2021-44228
-{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=linux}
-0
-tcp
-192.168.32.101
-CVE-2020-11022
-{severity=6.1, lose_types='data_loss','data_modification', access=l, range='remoteExploit','user_action_req'}
-80
-tcp
-192.168.32.101
-CVE-2020-11023
-{severity=6.1, lose_types='data_loss','data_modification', access=l, range='remoteExploit','user_action_req'}
-80
-tcp
-192.168.32.101
-CVE-XXXX-XXXX
-{severity=6.5, lose_types='data_loss','data_modification', access=h, range='remoteExploit'}
-4690
-tcp
-192.168.32.101
-CVE-XXXX-XXXX
-{severity=6.5, lose_types='data_loss','data_modification', access=h, range='remoteExploit'}
-5553
-tcp
-192.168.32.101
+192.168.196.35
 CVE-XXXX-XXXX
 {severity=6.5, lose_types='data_loss','data_modification', access=l, range='remoteExploit'}
-4690
+3389
 tcp
-192.168.32.101
+192.168.196.35
 CVE-XXXX-XXXX
 {severity=6.5, lose_types='data_loss','data_modification', access=l, range='remoteExploit'}
-8834
+8081
 tcp
-192.168.32.101
-CVE-2007-1858
+192.168.196.35
+CVE-XXXX-XXXX
+{severity=6.5, lose_types='data_loss','data_modification', access=l, range='remoteExploit'}
+8080
+tcp
+192.168.196.35
+CVE-XXXX-XXXX
+{severity=6.5, lose_types='data_loss','data_modification', access=l, range='remoteExploit'}
+3389
+tcp
+192.168.196.35
+CVE-XXXX-XXXX
+{severity=6.5, lose_types='data_loss','data_modification', access=l, range='remoteExploit'}
+8081
+tcp
+192.168.196.35
+CVE-XXXX-XXXX
+{severity=6.5, lose_types='data_loss','data_modification', access=l, range='remoteExploit'}
+8080
+tcp
+192.168.196.35
+CVE-XXXX-XXXX
+{severity=5.3, lose_types='data_modification', access=l, range='remoteExploit', products=windows samba}
+445
+tcp
+192.168.196.32
+CVE-2016-0128
+{severity=6.8, lose_types='data_loss','data_modification', access=h, range='remoteExploit','user_action_req', products=windows}
+51281
+tcp
+192.168.196.32
+CVE-2016-0128
+{severity=6.8, lose_types='data_loss','data_modification', access=h, range='remoteExploit','user_action_req', products=windows}
+49156
+tcp
+192.168.196.32
+CVE-2016-2183
+{severity=7.5, lose_types='data_loss', access=l, range='remoteExploit'}
+3389
+tcp
+192.168.196.32
+CVE-2013-2566
 {severity=5.9, lose_types='data_loss', access=h, range='remoteExploit'}
-5553
+3389
 tcp
-192.168.32.101
-CVE-2003-1567
-{severity=5.3, lose_types='data_loss', access=l, range='remoteExploit'}
-80
+192.168.196.32
+CVE-2015-2808
+{severity=5.9, lose_types='data_loss', access=h, range='remoteExploit'}
+3389
 tcp
-192.168.32.101
-CVE-2004-2320
-{severity=5.3, lose_types='data_loss', access=l, range='remoteExploit'}
-80
+192.168.196.32
+CVE-2005-1794
+{severity=5.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=remote_desktop_connection windows_terminal_services_using_rdp}
+3389
 tcp
-192.168.32.101
-CVE-2010-0386
-{severity=5.3, lose_types='data_loss', access=l, range='remoteExploit'}
-80
+192.168.196.32
+CVE-XXXX-XXXX
+{severity=6.5, lose_types='data_loss','data_modification', access=h, range='remoteExploit'}
+3389
 tcp
-192.168.32.101
-CVE-2000-0649
-{severity=3.1, lose_types='data_loss', access=h, range='remoteExploit','user_action_req', products=iis}
-80
+192.168.196.32
+CVE-XXXX-XXXX
+{severity=6.5, lose_types='data_loss','data_modification', access=h, range='remoteExploit'}
+3389
 tcp
-192.168.32.1
-CVE-2020-11022
-{severity=6.1, lose_types='data_loss','data_modification', access=l, range='remoteExploit','user_action_req'}
-80
+192.168.196.32
+CVE-XXXX-XXXX
+{severity=4.0, lose_types='data_loss', access=h, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
 tcp
-192.168.32.1
-CVE-2020-11023
-{severity=6.1, lose_types='data_loss','data_modification', access=l, range='remoteExploit','user_action_req'}
-80
+192.168.196.32
+CVE-XXXX-XXXX
+{severity=6.5, lose_types='data_loss','data_modification', access=l, range='remoteExploit'}
+3389
 tcp
-192.168.32.1
-CVE-1999-0511
-{severity=6.5, lose_types='data_loss','data_modification','availability_loss', access=l, range='adjacentExploit'}
-0
+192.168.196.32
+CVE-XXXX-XXXX
+{severity=6.5, lose_types='data_loss','data_modification', access=l, range='remoteExploit'}
+3389
 tcp
-192.168.32.1
-CVE-1999-0524
-{severity=0.0, lose_types='no_loss', access=l, range='localExploit'}
-0
-icmp
+192.168.196.32
+CVE-2004-2761
+{severity=7.5, lose_types='data_modification', access=l, range='remoteExploit', products=md5 x.509_certificate}
+3389
+tcp
+192.168.196.32
+CVE-XXXX-XXXX
+{severity=5.3, lose_types='data_modification', access=l, range='remoteExploit', products=windows samba}
+445
+tcp
+192.168.196.21
+CVE-2016-2183
+{severity=7.5, lose_types='data_loss', access=l, range='remoteExploit'}
+3389
+tcp
+192.168.196.21
+CVE-2013-2566
+{severity=5.9, lose_types='data_loss', access=h, range='remoteExploit'}
+3389
+tcp
+192.168.196.21
+CVE-2015-2808
+{severity=5.9, lose_types='data_loss', access=h, range='remoteExploit'}
+3389
+tcp
+192.168.196.21
+CVE-XXXX-XXXX
+{severity=6.5, lose_types='data_loss','data_modification', access=h, range='remoteExploit'}
+3389
+tcp
+192.168.196.21
+CVE-XXXX-XXXX
+{severity=6.5, lose_types='data_loss','data_modification', access=h, range='remoteExploit'}
+3389
+tcp
+192.168.196.21
+CVE-XXXX-XXXX
+{severity=4.0, lose_types='data_loss', access=h, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
+tcp
+192.168.196.21
+CVE-XXXX-XXXX
+{severity=6.5, lose_types='data_loss','data_modification', access=l, range='remoteExploit'}
+3389
+tcp
+192.168.196.21
+CVE-XXXX-XXXX
+{severity=6.5, lose_types='data_loss','data_modification', access=l, range='remoteExploit'}
+3389
+tcp
+192.168.196.21
+CVE-XXXX-XXXX
+{severity=5.3, lose_types='data_modification', access=l, range='remoteExploit', products=windows samba}
+445
+tcp

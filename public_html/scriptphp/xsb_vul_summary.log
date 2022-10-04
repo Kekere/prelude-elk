@@ -7,7 +7,7 @@
 
 ++Warning[XSB]: [Runtime/C] Cannot create directory `/home/XSB/.xsb/config/x86_64-unknown-linux-gnu'!
            XSB uses this directory to store data.
-[xsb_configuration loaded]
+[xsb_configuration loaded, cpu time used: 0.001 seconds]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
@@ -24,7 +24,7 @@ yes
 | ?- [vul_summary loaded]
 
 yes
-| ?- [/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.047 seconds]
+| ?- [/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.076 seconds]
 
 yes
 | ?- 
@@ -36,7 +36,7 @@ Host = _h258
 Program = _h278
 Protocol = _h298
 Port = _h318
-L = [networkServiceInfo(192.168.32.101,no_products,tcp,4690,someUser),networkServiceInfo(192.168.32.101,no_products,tcp,5553,someUser),networkServiceInfo(192.168.32.101,no_products,tcp,0,someUser),networkServiceInfo(192.168.32.101,no_products,tcp,4690,someUser),networkServiceInfo(192.168.32.101,no_products,tcp,5553,someUser),networkServiceInfo(192.168.32.101,no_products,tcp,4690,someUser),networkServiceInfo(192.168.32.101,no_products,tcp,8834,someUser),networkServiceInfo(192.168.32.101,no_products,tcp,4690,someUser),networkServiceInfo(192.168.32.101,no_products,tcp,5553,someUser),networkServiceInfo(192.168.32.101,no_products,tcp,0,someUser),networkServiceInfo(192.168.32.101,no_products,tcp,4690,someUser),networkServiceInfo(192.168.32.101,no_products,tcp,5553,someUser),networkServiceInfo(192.168.32.101,no_products,tcp,4690,someUser),networkServiceInfo(192.168.32.101,no_products,tcp,8834,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,0,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,0,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,8834,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,0,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,8834,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,0,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,8834,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,0,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,8834,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,0,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,8834,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,0,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,8834,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,0,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,5553,someUser),networkServiceInfo(192.168.32.101,log4j,tcp,4690,someUser),networkServiceInfo(...,...,...,...,...)|...]
+L = [networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,8081,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,8080,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,8081,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,8080,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,8081,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,8080,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(...,...,...,...,...)|...]
 yes
 | ?- 
 Host = _h258
@@ -49,21 +49,21 @@ yes
 A = _h258
 B = _h278
 C = _h298
-L = [hasAccount(192.168.32.101_victim,192.168.32.101,user),hasAccount(192.168.32.1_victim,192.168.32.1,user)]
+L = [hasAccount(192.168.196.35_victim,192.168.196.35,user),hasAccount(192.168.196.32_victim,192.168.196.32,user),hasAccount(192.168.196.21_victim,192.168.196.21,user)]
 yes
 | ?- 
 A = _h258
-L = [inCompetent(192.168.32.101_victim),inCompetent(192.168.32.1_victim)]
+L = [inCompetent(192.168.196.35_victim),inCompetent(192.168.196.32_victim),inCompetent(192.168.196.21_victim)]
 yes
 | ?- 
 A = _h258
-L = [attackGoal(execCode(192.168.32.101,_h445)),attackGoal(execCode(192.168.32.1,_h452))]
+L = [attackGoal(execCode(192.168.196.35,_h445)),attackGoal(execCode(192.168.196.32,_h452)),attackGoal(execCode(192.168.196.21,_h459))]
 yes
 | ?- 
 A = _h258
-L = [attackerLocated(internet),attackerLocated(internet)]
+L = [attackerLocated(internet),attackerLocated(internet),attackerLocated(internet)]
 yes
 | ?- 
 yes
 | ?- 
-End XSB (cputime 0.10 secs, elapsetime 0.11 secs)
+End XSB (cputime 0.14 secs, elapsetime 0.15 secs)

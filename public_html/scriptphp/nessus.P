@@ -1,310 +1,124 @@
-vulProperty('CVE-2000-0649',remoteClient,resourceRemoval).
+vulProperty('CVE-2002-0576',remoteExploit,resourceRemoval).
 
-vulProperty('CVE-2003-1567',remoteExploit,resourceRemoval).
+vulProperty('CVE-2004-2761',remoteExploit,writeDirect).
 
-vulProperty('CVE-2004-2320',remoteExploit,resourceRemoval).
+vulProperty('CVE-2005-1794',remoteExploit,privEscalation).
 
-vulProperty('CVE-2007-1858',remoteExploit,resourceRemoval).
+vulProperty('CVE-2013-2566',remoteExploit,resourceRemoval).
 
-vulProperty('CVE-2010-0386',remoteExploit,resourceRemoval).
+vulProperty('CVE-2015-2808',remoteExploit,resourceRemoval).
 
-vulProperty('CVE-2019-17571',remoteExploit,privEscalation).
+vulProperty('CVE-2016-0128',remoteClient,privEscalation).
 
-vulProperty('CVE-2020-11022',remoteClient,privEscalation).
-
-vulProperty('CVE-2020-11023',remoteClient,privEscalation).
-
-vulProperty('CVE-2020-9488',remoteExploit,privEscalation).
-
-vulProperty('CVE-2021-4104',remoteExploit,privEscalation).
-
-vulProperty('CVE-2021-44228',remoteExploit,privEscalation).
-
-vulProperty('CVE-2021-44832',remoteExploit,privEscalation).
-
-vulProperty('CVE-2021-45046',remoteExploit,privEscalation).
-
-vulProperty('CVE-2021-45105',remoteExploit,serviceInterrupt).
-
-vulProperty('CVE-2022-23302',remoteExploit,privEscalation).
-
-vulProperty('CVE-2022-23305',remoteExploit,privEscalation).
-
-vulProperty('CVE-2022-23307',remoteExploit,privEscalation).
-
-vulProperty('CVE-2022-26700',remoteClient,privEscalation).
-
-vulProperty('CVE-2022-26709',remoteClient,privEscalation).
-
-vulProperty('CVE-2022-26716',remoteClient,privEscalation).
-
-vulProperty('CVE-2022-26717',remoteClient,privEscalation).
-
-vulProperty('CVE-2022-26719',remoteClient,privEscalation).
+vulProperty('CVE-2016-2183',remoteExploit,resourceRemoval).
 
 vulProperty('CVE-XXXX-XXXX',remoteExploit,privEscalation).
 
-vulExists('192.168.32.101','CVE-2022-26700',ubuntu_linux).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,writeDirect).
 
-vulExists('192.168.32.101','CVE-2022-26709',ubuntu_linux).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,privEscalation).
 
-vulExists('192.168.32.101','CVE-2022-26716',ubuntu_linux).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,writeDirect).
 
-vulExists('192.168.32.101','CVE-2022-26717',ubuntu_linux).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,privEscalation).
 
-vulExists('192.168.32.101','CVE-2022-26719',ubuntu_linux).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,resourceRemoval).
 
-vulExists('192.168.32.101','CVE-2019-8842',ubuntu_linux).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,privEscalation).
 
-vulExists('192.168.32.101','CVE-2020-10001',ubuntu_linux).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,writeDirect).
 
-vulExists('192.168.32.101','CVE-2022-26691',ubuntu_linux).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,privEscalation).
 
-vulExists('192.168.32.101','CVE-2020-11022',no_products).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,resourceRemoval).
 
-vulExists('192.168.32.101','CVE-2020-11023',no_products).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,privEscalation).
 
-vulExists('192.168.32.101','CVE-2000-0649',iis).
+vulProperty('CVE-XXXX-XXXX',remoteExploit,writeDirect).
 
-vulExists('192.168.32.1','CVE-2020-11022',no_products).
+vulExists('192.168.196.32','CVE-2016-0128',windows).
 
-vulExists('192.168.32.1','CVE-2020-11023',no_products).
+vulExists('192.168.196.32','CVE-2016-0128',windows).
 
-vulExists('192.168.32.1','CVE-1999-0511',no_products).
+vulExists('192.168.196.35','CVE-2002-0576',coldfusion_server).
 
-vulExists('192.168.32.1','CVE-1999-0524',no_products).
+vulExists('192.168.196.35','CVE-2016-2183',no_products).
 
-vulExists('192.168.32.101','CVE-XXXX-XXXX',no_products).
+vulExists('192.168.196.35','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-XXXX-XXXX',no_products).
+vulExists('192.168.196.35','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2019-17571',log4j).
+vulExists('192.168.196.35','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2020-9488',log4j).
+vulExists('192.168.196.35','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23302',log4j).
+vulExists('192.168.196.35','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23305',log4j).
+vulExists('192.168.196.35','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23307',log4j).
+vulExists('192.168.196.35','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2019-17571',log4j).
+vulExists('192.168.196.35','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2020-9488',log4j).
+vulExists('192.168.196.35','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23302',log4j).
+vulExists('192.168.196.35','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23305',log4j).
+vulExists('192.168.196.35','CVE-XXXX-XXXX','windows samba').
 
-vulExists('192.168.32.101','CVE-2022-23307',log4j).
+vulExists('192.168.196.32','CVE-2016-2183',no_products).
 
-vulExists('192.168.32.101','CVE-2019-17571',log4j).
+vulExists('192.168.196.32','CVE-2013-2566',no_products).
 
-vulExists('192.168.32.101','CVE-2020-9488',log4j).
+vulExists('192.168.196.32','CVE-2015-2808',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23302',log4j).
+vulExists('192.168.196.32','CVE-2005-1794','remote_desktop_connection windows_terminal_services_using_rdp').
 
-vulExists('192.168.32.101','CVE-2022-23305',log4j).
+vulExists('192.168.196.32','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23307',log4j).
+vulExists('192.168.196.32','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2019-17571',log4j).
+vulExists('192.168.196.32','CVE-XXXX-XXXX','windows remote_desktop_protocol').
 
-vulExists('192.168.32.101','CVE-2020-9488',log4j).
+vulExists('192.168.196.32','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23302',log4j).
+vulExists('192.168.196.32','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23305',log4j).
+vulExists('192.168.196.32','CVE-2004-2761','md5 x.509_certificate').
 
-vulExists('192.168.32.101','CVE-2022-23307',log4j).
+vulExists('192.168.196.32','CVE-XXXX-XXXX','windows samba').
 
-vulExists('192.168.32.101','CVE-2019-17571',log4j).
+vulExists('192.168.196.21','CVE-2016-2183',no_products).
 
-vulExists('192.168.32.101','CVE-2020-9488',log4j).
+vulExists('192.168.196.21','CVE-2013-2566',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23302',log4j).
+vulExists('192.168.196.21','CVE-2015-2808',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23305',log4j).
+vulExists('192.168.196.21','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23307',log4j).
+vulExists('192.168.196.21','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2019-17571',log4j).
+vulExists('192.168.196.21','CVE-XXXX-XXXX','windows remote_desktop_protocol').
 
-vulExists('192.168.32.101','CVE-2020-9488',log4j).
+vulExists('192.168.196.21','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23302',log4j).
+vulExists('192.168.196.21','CVE-XXXX-XXXX',no_products).
 
-vulExists('192.168.32.101','CVE-2022-23305',log4j).
+vulExists('192.168.196.21','CVE-XXXX-XXXX','windows samba').
 
-vulExists('192.168.32.101','CVE-2022-23307',log4j).
+cvss('CVE-2002-0576',l).
 
-vulExists('192.168.32.101','CVE-2019-17571',log4j).
+cvss('CVE-2004-2761',l).
 
-vulExists('192.168.32.101','CVE-2020-9488',log4j).
+cvss('CVE-2005-1794',h).
 
-vulExists('192.168.32.101','CVE-2022-23302',log4j).
+cvss('CVE-2013-2566',h).
 
-vulExists('192.168.32.101','CVE-2022-23305',log4j).
+cvss('CVE-2015-2808',h).
 
-vulExists('192.168.32.101','CVE-2022-23307',log4j).
+cvss('CVE-2016-0128',h).
 
-vulExists('192.168.32.101','CVE-2021-44832',log4j).
-
-vulExists('192.168.32.101','CVE-2021-44832',log4j).
-
-vulExists('192.168.32.101','CVE-2021-44832',log4j).
-
-vulExists('192.168.32.101','CVE-2021-44832',log4j).
-
-vulExists('192.168.32.101','CVE-2021-44832',log4j).
-
-vulExists('192.168.32.101','CVE-2021-44832',log4j).
-
-vulExists('192.168.32.101','CVE-2021-44832',log4j).
-
-vulExists('192.168.32.101','CVE-2021-44832',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45105',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45105',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45105',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45105',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45105',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45105',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45105',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45105',log4j).
-
-vulExists('192.168.32.101','CVE-2021-4104',log4j).
-
-vulExists('192.168.32.101','CVE-2021-4104',log4j).
-
-vulExists('192.168.32.101','CVE-2021-4104',log4j).
-
-vulExists('192.168.32.101','CVE-2021-4104',log4j).
-
-vulExists('192.168.32.101','CVE-2021-4104',log4j).
-
-vulExists('192.168.32.101','CVE-2021-4104',log4j).
-
-vulExists('192.168.32.101','CVE-2021-4104',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45046',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45046',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45046',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45046',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45046',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45046',log4j).
-
-vulExists('192.168.32.101','CVE-2021-45046',log4j).
-
-vulExists('192.168.32.101','CVE-XXXX-XXXX',log4j).
-
-vulExists('192.168.32.101','CVE-XXXX-XXXX',log4j).
-
-vulExists('192.168.32.101','CVE-XXXX-XXXX',log4j).
-
-vulExists('192.168.32.101','CVE-XXXX-XXXX',log4j).
-
-vulExists('192.168.32.101','CVE-XXXX-XXXX',log4j).
-
-vulExists('192.168.32.101','CVE-XXXX-XXXX',log4j).
-
-vulExists('192.168.32.101','CVE-XXXX-XXXX',log4j).
-
-vulExists('192.168.32.101','CVE-2021-44228',linux).
-
-vulExists('192.168.32.101','CVE-2021-44228',linux).
-
-vulExists('192.168.32.101','CVE-2021-44228',linux).
-
-vulExists('192.168.32.101','CVE-2021-44228',linux).
-
-vulExists('192.168.32.101','CVE-2021-44228',linux).
-
-vulExists('192.168.32.101','CVE-2021-44228',linux).
-
-vulExists('192.168.32.101','CVE-2021-44228',linux).
-
-vulExists('192.168.32.101','CVE-XXXX-XXXX',no_products).
-
-vulExists('192.168.32.101','CVE-XXXX-XXXX',no_products).
-
-vulExists('192.168.32.101','CVE-XXXX-XXXX',no_products).
-
-vulExists('192.168.32.101','CVE-XXXX-XXXX',no_products).
-
-vulExists('192.168.32.101','CVE-2007-1858',no_products).
-
-vulExists('192.168.32.101','CVE-2003-1567',no_products).
-
-vulExists('192.168.32.101','CVE-2004-2320',no_products).
-
-vulExists('192.168.32.101','CVE-2010-0386',no_products).
-
-cvss('CVE-1999-0511',l).
-
-cvss('CVE-1999-0524',l).
-
-cvss('CVE-2000-0649',h).
-
-cvss('CVE-2003-1567',l).
-
-cvss('CVE-2004-2320',l).
-
-cvss('CVE-2007-1858',h).
-
-cvss('CVE-2010-0386',l).
-
-cvss('CVE-2019-17571',l).
-
-cvss('CVE-2019-8842',l).
-
-cvss('CVE-2020-10001',l).
-
-cvss('CVE-2020-11022',l).
-
-cvss('CVE-2020-11023',l).
-
-cvss('CVE-2020-9488',l).
-
-cvss('CVE-2021-4104',h).
-
-cvss('CVE-2021-44228',l).
-
-cvss('CVE-2021-44832',h).
-
-cvss('CVE-2021-45046',h).
-
-cvss('CVE-2021-45105',h).
-
-cvss('CVE-2022-23302',l).
-
-cvss('CVE-2022-23305',l).
-
-cvss('CVE-2022-23307',l).
-
-cvss('CVE-2022-26691',l).
-
-cvss('CVE-2022-26700',l).
-
-cvss('CVE-2022-26709',l).
-
-cvss('CVE-2022-26716',l).
-
-cvss('CVE-2022-26717',l).
-
-cvss('CVE-2022-26719',l).
+cvss('CVE-2016-2183',l).
 
 cvss('CVE-XXXX-XXXX',h).
 
@@ -314,202 +128,672 @@ cvss('CVE-XXXX-XXXX',h).
 
 cvss('CVE-XXXX-XXXX',l).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+cvss('CVE-XXXX-XXXX',h).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'5553',someUser).
+cvss('CVE-XXXX-XXXX',l).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'8834',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'8834',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'8834',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'8834',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'8834',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'8834',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21','windows remote_desktop_protocol',tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'8834',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'8834',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',log4j,tcp,'8834',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',linux,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'8834',someUser).
+networkServiceInfo('192.168.196.21',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'8834',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'0',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'8834',someUser).
+networkServiceInfo('192.168.196.21','windows samba',tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.32','remote_desktop_connection windows_terminal_services_using_rdp',tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'0',someUser).
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.32',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.32',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'4690',someUser).
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'8834',someUser).
+networkServiceInfo('192.168.196.32',no_products,tcp,'8081',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'5553',someUser).
+networkServiceInfo('192.168.196.32',no_products,tcp,'8080',someUser).
 
-networkServiceInfo('192.168.32.101',no_products,tcp,'80',someUser).
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
 
-inCompetent('192.168.32.101_victim').
-hasAccount('192.168.32.101_victim', '192.168.32.101', user).
+networkServiceInfo('192.168.196.32',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32','windows remote_desktop_protocol',tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32','md5 x.509_certificate',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.32','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',coldfusion_server,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35',no_products,tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'8081',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'8080',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'3389',someUser).
+
+networkServiceInfo('192.168.196.35','windows samba',tcp,'445',someUser).
+
+inCompetent('192.168.196.35_victim').
+hasAccount('192.168.196.35_victim', '192.168.196.35', user).
 attackerLocated(internet).
-attackGoal(execCode('192.168.32.101', _)).
-inCompetent('192.168.32.1_victim').
-hasAccount('192.168.32.1_victim', '192.168.32.1', user).
+attackGoal(execCode('192.168.196.35', _)).
+inCompetent('192.168.196.32_victim').
+hasAccount('192.168.196.32_victim', '192.168.196.32', user).
 attackerLocated(internet).
-attackGoal(execCode('192.168.32.1', _)).
+attackGoal(execCode('192.168.196.32', _)).
+inCompetent('192.168.196.21_victim').
+hasAccount('192.168.196.21_victim', '192.168.196.21', user).
+attackerLocated(internet).
+attackGoal(execCode('192.168.196.21', _)).
 hacl(_,_,_,_).
