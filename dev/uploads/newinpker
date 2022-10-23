@@ -1,0 +1,19 @@
+attackerLocated('157.159.14.77').
+attackGoal(execCode('157.159.68.115',_)).
+hacl('157.159.14.77','157.159.68.115', tcp, 1023).
+hacl('157.159.68.115',_,_,_).
+hacl('192.168.1.78',_,_,_).
+hacl('157.159.14.77',_,_,_).
+hacl('157.159.14.77','192.168.1.78',_,_).
+hacl('157.159.14.77','192.168.1.78',_,_).
+
+
+
+/* configuration information of dc */
+
+networkServiceInfo('157.159.68.115', windows_server_2016, tcp , 1023, 'andrew').
+/* vulExists('157.159.68.115', 'CVE-2021-1675', windows_server_2016, remoteExploit, privEscalation).
+vulProperty('CVE-2021-1675', remoteExploit, privEscalation). */
+vulExists('157.159.68.115', 'CVE-2021-34527', windows_server_2016,remoteExploit, privEscalation).
+vulProperty('CVE-2021-34527', remoteExploit, privEscalation).
+
