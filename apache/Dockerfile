@@ -36,6 +36,8 @@ RUN apt-get update && apt-get -y upgrade && apt-get -y install sudo && sudo addu
    && apt-get -y install pip \
    && pip install confluent-kafka \
    && pip install kafka-python \
+   && pip install owlready2 \
+   && pip install rdflib \
    && apt-get -y install php-curl \
    && apt-get -y install make \
    && apt-get -y install nano \

@@ -7,13 +7,16 @@
 
 ++Warning[XSB]: [Runtime/C] Cannot create directory `/home/XSB/.xsb/config/x86_64-unknown-linux-gnu'!
            XSB uses this directory to store data.
+[Compiling /home/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration]
+% Specialising partially instantiated calls to xsb_configuration/2
+[Module xsb_configuration compiled, cpu time used: 0.052 seconds]
 [xsb_configuration loaded, cpu time used: 0.001 seconds]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
 XSB Version 4.0.0 (TaB) of April 1, 2021
 [x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
-[Build date: 2022-08-11]
+[Build date: 2022-10-20]
 
 | ?- [libmulval loaded]
 
@@ -24,7 +27,7 @@ yes
 | ?- [vul_summary loaded]
 
 yes
-| ?- [/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.076 seconds]
+| ?- [/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.034 seconds]
 
 yes
 | ?- 
@@ -36,7 +39,7 @@ Host = _h258
 Program = _h278
 Protocol = _h298
 Port = _h318
-L = [networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,8081,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,8080,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,8081,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,8080,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,8081,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,8080,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(192.168.196.21,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,445,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8081,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,8080,someUser),networkServiceInfo(192.168.196.21,no_products,tcp,3389,someUser),networkServiceInfo(...,...,...,...,...)|...]
+L = [networkServiceInfo(157.159.68.125,remote_desktop_connection windows_terminal_services_using_rdp,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,udp,5355,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,remote_desktop_connection windows_terminal_services_using_rdp,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows,udp,5355,someUser),networkServiceInfo(...,...,...,...,...)|...]
 yes
 | ?- 
 Host = _h258
@@ -49,15 +52,15 @@ yes
 A = _h258
 B = _h278
 C = _h298
-L = [hasAccount(192.168.196.35_victim,192.168.196.35,user),hasAccount(192.168.196.32_victim,192.168.196.32,user),hasAccount(192.168.196.21_victim,192.168.196.21,user)]
+L = [hasAccount(157.159.68.125_victim,157.159.68.125,user),hasAccount(157.159.68.97_victim,157.159.68.97,user),hasAccount(157.159.68.75_victim,157.159.68.75,user)]
 yes
 | ?- 
 A = _h258
-L = [inCompetent(192.168.196.35_victim),inCompetent(192.168.196.32_victim),inCompetent(192.168.196.21_victim)]
+L = [inCompetent(157.159.68.125_victim),inCompetent(157.159.68.97_victim),inCompetent(157.159.68.75_victim)]
 yes
 | ?- 
 A = _h258
-L = [attackGoal(execCode(192.168.196.35,_h445)),attackGoal(execCode(192.168.196.32,_h452)),attackGoal(execCode(192.168.196.21,_h459))]
+L = [attackGoal(execCode(157.159.68.125,_h445)),attackGoal(execCode(157.159.68.97,_h452)),attackGoal(execCode(157.159.68.75,_h459))]
 yes
 | ?- 
 A = _h258
@@ -66,4 +69,4 @@ yes
 | ?- 
 yes
 | ?- 
-End XSB (cputime 0.14 secs, elapsetime 0.15 secs)
+End XSB (cputime 0.14 secs, elapsetime 0.16 secs)

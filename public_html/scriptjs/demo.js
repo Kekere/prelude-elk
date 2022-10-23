@@ -1,7 +1,6 @@
 var token;
 var jsonobj;
 document.getElementById("generate-graph").onclick = function() {
-  //console.log(localStorage.getItem('myjson'));
   if (token==1){
     var link = document.getElementById("generate-graph");
     link.setAttribute("href", "./graph.html");
@@ -10,21 +9,8 @@ document.getElementById("generate-graph").onclick = function() {
   else{
     return false;
   }
-  
 }
-/*document.getElementById("countermeasures").onclick = function() {
-  //console.log(localStorage.getItem('myjson'));
-  var link = document.getElementById("countermeasures");
-  link.setAttribute("href", "RORI/index.html");
-  
-}*/
-/*document.getElementById("home").onclick = function() {
-  var link = document.getElementById("home");
-  link.setAttribute("href", "index.html");
-  return true;
-}*/
 function generateGraph(objjson){
-  // set the dimensions and margins of the graph
 
   var svg = d3.select("#svg1").attr("viewBox", "0,0,150,400")
   .call(d3.zoom().on("zoom", function () {
@@ -131,7 +117,6 @@ function convertxmltojson(xmlfile){
   token=0;
   var xhttp;
   if (window.XMLHttpRequest) { // Create an instance of XMLHttpRequest object. 
-      //code for IE7+, Firefox, Chrome, Opera, Safari
       xhttp  =  new XMLHttpRequest();
   } else { // code for IE6, IE5 
       xhttp  =  new ActiveXObject("Microsoft.XMLHTTP");
@@ -139,7 +124,6 @@ function convertxmltojson(xmlfile){
   xhttp.open("GET", xmlfile, false);
   xhttp.send();
   var xmlDoc = xhttp.responseXML;
-  //console.log(xmlDoc);
   var sizelinks=xmlDoc.getElementsByTagName("arc").length;
   var arraylinks=[];
   var arraynodes=[]
@@ -204,10 +188,8 @@ fileInput.addEventListener('change', function (e) {
   var file = fileInput.files[0];
 
   var reader = new FileReader();
-  reader.readAsText(file);
-  //console.log(reader.result);
-	
-  
+  reader.readAsText(file);	
+
 	var buttonsubmit = document.getElementById( 'submit' );
 	buttonsubmit.addEventListener( 'click', function() {
     localStorage.setItem('notification', true); 
@@ -222,6 +204,3 @@ function encode( s ) {
     }
     return new Uint8Array( out );
 }
-
-
-
