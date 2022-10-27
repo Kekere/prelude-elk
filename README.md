@@ -260,3 +260,5 @@ See `LICENSE`_ for more information.
 ..  _`LICENSE`:
     https://github.com/fpoirotte/docker-prelude-siem/blob/master/LICENSE
 
+We integrate the MulVal logical reasonner in this work:
+    http://www.arguslab.org/software/mulval.html
