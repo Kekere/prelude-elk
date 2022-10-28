@@ -298,6 +298,9 @@
         <NamedIndividual IRI="#CVE3"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#CVE4"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#CWE-20"/>
     </Declaration>
     <Declaration>
@@ -670,6 +673,10 @@
     <ClassAssertion>
         <Class IRI="#Vulnerability"/>
         <NamedIndividual IRI="#CVE3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Vulnerability"/>
+        <NamedIndividual IRI="#CVE4"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#ExploitedWeakness"/>
@@ -1100,6 +1107,11 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasOriginatedProduct"/>
+        <NamedIndividual IRI="#CVE-2019-0708"/>
+        <NamedIndividual IRI="#Product1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOriginatedProduct"/>
         <NamedIndividual IRI="#CVE-2021-34527"/>
         <NamedIndividual IRI="#Product1"/>
     </ObjectPropertyAssertion>
@@ -1132,6 +1144,16 @@
         <ObjectProperty IRI="#hasScenario"/>
         <NamedIndividual IRI="#CVE3"/>
         <NamedIndividual IRI="#Sce2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIdentity"/>
+        <NamedIndividual IRI="#CVE4"/>
+        <NamedIndividual IRI="#CVE-2019-0708"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasScenario"/>
+        <NamedIndividual IRI="#CVE4"/>
+        <NamedIndividual IRI="#Sce1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isLimitedRemoteType"/>

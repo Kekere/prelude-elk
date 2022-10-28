@@ -23,8 +23,72 @@
             "Description": "CTM / Cyber Vulnerability"
         },
         "Payload": {
+            "CVEID": "CVE-2017-0146",
+            "IP address": "157.159.68.75",
+            "Product": "windows",
+            "User Name": "someUser",
+            "Countermeasure": "remove someUser as Privileged on windows",
+            "Status": "Post-condition of CVE-2012-0152"
+        }
+    },
+    {
+        "Header": {
+            "Source": "CTM",
+            "Timestamp": "2022-09-26T15:31:06.000Z",
+            "Criticality": "high",
+            "Description": "CTM / Cyber Vulnerability"
+        },
+        "Payload": {
+            "CVEID": "CVE-2017-0146",
+            "IP address": "157.159.68.125",
+            "Product": "windows",
+            "User Name": "someUser",
+            "Countermeasure": "remove someUser as Privileged on windows",
+            "Status": "Post-condition of CVE-2012-0152"
+        }
+    },
+    {
+        "Header": {
+            "Source": "CTM",
+            "Timestamp": "2022-09-26T15:31:06.000Z",
+            "Criticality": "high",
+            "Description": "CTM / Cyber Vulnerability"
+        },
+        "Payload": {
             "CVEID": "CVE-2017-0143",
             "IP address": "157.159.68.97",
+            "Product": "windows",
+            "User Name": "someUser",
+            "Countermeasure": "remove someUser as Privileged on windows",
+            "Status": "Post-condition of CVE-2012-0152"
+        }
+    },
+    {
+        "Header": {
+            "Source": "CTM",
+            "Timestamp": "2022-09-26T15:31:06.000Z",
+            "Criticality": "high",
+            "Description": "CTM / Cyber Vulnerability"
+        },
+        "Payload": {
+            "CVEID": "CVE-2017-0143",
+            "IP address": "157.159.68.75",
+            "Product": "windows",
+            "User Name": "someUser",
+            "Countermeasure": "remove someUser as Privileged on windows",
+            "Status": "Post-condition of CVE-2012-0152"
+        }
+    },
+    {
+        "Header": {
+            "Source": "CTM",
+            "Timestamp": "2022-09-26T15:31:06.000Z",
+            "Criticality": "high",
+            "Description": "CTM / Cyber Vulnerability"
+        },
+        "Payload": {
+            "CVEID": "CVE-2017-0143",
+            "IP address": "157.159.68.125",
             "Product": "windows",
             "User Name": "someUser",
             "Countermeasure": "remove someUser as Privileged on windows",

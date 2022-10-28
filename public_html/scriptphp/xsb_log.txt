@@ -9,8 +9,8 @@
            XSB uses this directory to store data.
 [Compiling /home/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration]
 % Specialising partially instantiated calls to xsb_configuration/2
-[Module xsb_configuration compiled, cpu time used: 0.060 seconds]
-[xsb_configuration loaded, cpu time used: 0.001 seconds]
+[Module xsb_configuration compiled, cpu time used: 0.071 seconds]
+[xsb_configuration loaded]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
@@ -19,18 +19,18 @@ XSB Version 4.0.0 (TaB) of April 1, 2021
 [Build date: 2022-10-20]
 
 | ?- [Compiling ./run]
-[run compiled, cpu time used: 0.008 seconds]
+[run compiled, cpu time used: 0.009 seconds]
 [run loaded]
 [libmulval loaded]
 [translate loaded]
 [attack_trace loaded]
-[auxiliary loaded]
-[/var/www/html/scriptphp/running_rules.P dynamically loaded, cpu time used: 0.137 seconds]
-[/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.053 seconds]
-[/home/mulval/src/analyzer/advances_notrim.P dynamically loaded, cpu time used: 0.001 seconds]
+[auxiliary loaded, cpu time used: 0.001 seconds]
+[/var/www/html/scriptphp/running_rules.P dynamically loaded, cpu time used: 0.038 seconds]
+[/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.042 seconds]
+[/home/mulval/src/analyzer/advances_notrim.P dynamically loaded, cpu time used: 0.002 seconds]
 @@@@@@@@@@@@@@Done transforming in mode dynamic_decl
 
-[/var/www/html/scriptphp/dynamic_decl.gen dynamically loaded, cpu time used: 0.026 seconds]
+[/var/www/html/scriptphp/dynamic_decl.gen dynamically loaded, cpu time used: 0.009 seconds]
 @@@@@@@@@@@@@@Done transforming in mode completeTrace2
 
 @@@@@@@@@@@@@@Done transforming in mode completeTrace2
@@ -41,4 +41,4 @@ Running attack simulation...
 
 yes
 | ?- 
-End XSB (cputime 0.50 secs, elapsetime 0.52 secs)
+End XSB (cputime 0.41 secs, elapsetime 0.42 secs)
