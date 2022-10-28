@@ -456,7 +456,7 @@ function updateGraph(){
   }
   
   }
-  /*for (var i = 0; i < graph["nodes"].length; i++){
+  for (var i = 0; i < graph["nodes"].length; i++){
     var hacl=graph["nodes"][i]["label"].indexOf("hacl");
     var net=graph["nodes"][i]["label"].indexOf("networkServiceInfo");
     var acc=graph["nodes"][i]["label"].indexOf("hasAccount");
@@ -549,9 +549,8 @@ function updateGraph(){
                     var name=localStorage.getItem('someVarKey');
       
                     if(localStorage.getItem('someVarKey')=="null" && cve!="CVE-XXXX-XXXX"){   
-      
+                
                       objIndex = graph["nodes"].findIndex((obj => obj.id == idvul));
-            
                       graph["nodes"][objIndex].group = 6;
                       $.ajax({
                         dataType: "json",
@@ -607,9 +606,9 @@ function updateGraph(){
                                 });
                                 cveliste.push(cve);
                                 localStorage.setItem("cveliste",JSON.stringify(cveliste));
-                               
                             }
-                            listcve=JSON.parse(localStorage.getItem("cveliste"));                    
+                            
+                            listcve=JSON.parse(localStorage.getItem("cveliste"));            
                             $.ajax({
                               type: 'POST',
                               url: "../scriptphp/executequerypos.php",
@@ -619,15 +618,14 @@ function updateGraph(){
                               data :{cveid:cve, prod:product},
                               context: document.body,
                               success: function(){
-                                
+                                arraykafka=[];
                                 $.getJSON("./postcon.json",function(post){
+                                  
                                   for(var op=0; op<post.length; op++){
                                     if(post[op]["mean"]=="Internet"){
                                       mean="remoteExploit";
                                     }
-                                    
-                                    user=post[op]["privilege"];
-                                                          
+                                    user=post[op]["privilege"];                         
                                     newimpact=post[op]["impact"];
                                     impactmethod=post[op]["impactMethod"];
                                     caction=post[op]["barrier"];
@@ -637,137 +635,216 @@ function updateGraph(){
                                     var newidvul=lastcve;
                                     newcve=post[op]["postcondition"];
                                     datapost={"lastcve":lastcve,"cve":newcve,"user":user,"newimpact":newimpact,"impactmethod":impactmethod,"caction":caction,"cprivileges":cprivileges,"casset":casset,"mean":mean}
+                                   
                                     products=[];
                                     arraypost.push(datapost);
-
+      
                                     localStorage.setItem('arraypost',JSON.stringify(arraypost,null,4));
                                     lengthdonnee=JSON.parse(localStorage.getItem('arraypost'));
                                     arraylinks=graph["links"];
-                                    arraynodes=graph["nodes"];   
+                                    arraynodes=graph["nodes"]; 
+                                      
                                     for(var t=0; t<arraynodes.length; t++){
                                       if(arraynodes[t]["label"].indexOf("vulExists")==0){
                                         
                                         var newIndex = arraynodes[t]["label"].split(",")[1];
-                                        
-                                        
                                         if(newIndex.split("'")[1]==newidvul){
+                                          
                                           var newid=arraynodes[t]["id"];
-                                    
-                                                issource=newid;             
-                                                for(z=0; z<lengthdonnee.length; z++){
-                                                  
-                                                  
-                                                  if(!arrayremovenodes.includes(lengthdonnee[z]["cve"])){
+                                          issource=newid;  
                                                     
-                                                    arrayremovenodes.push(lengthdonnee[z]["cve"]);
+                                          for(z=0; z<lengthdonnee.length; z++){
+                                            if(lengthdonnee[z]["cprivileges"]=="Privileged"||lengthdonnee[z]["cprivileges"]=="Administrator"){
+                                                    
+                                              
+                                              
+                                              if(arraycve.includes(lengthdonnee[z]["cve"])){
+                                                                                         
+                                                var result = [];
+                                                
+                                                arraycve.forEach((car, index) => car === lengthdonnee[z]["cve"] ? result.push(index) : null)
+      
+                                                
+                                                if(!arrayremovenodes.includes(lengthdonnee[z]["lastcve"])){
+                                                  
+                                                  arrayremovenodes.push(lengthdonnee[z]["lastcve"]);
+                                                  
+                                                  //result.forEach(el=>console.log(arrayid[el]));
+                                                  newtarget=parseInt(arraynodes.length+1)
+                                                  newlinkr={"source":parseInt(issource),"target":newtarget};
+                                                        
+                                                  newnoder={id: newtarget, group: 1, label: "gainsPrivilege"+"('"+address+"'"+lengthdonnee[z]["cprivileges"]+"):0"}
+                                                        
+                                                  arraylinks.push(newlinkr);
+                                                  arraynodes.push(newnoder);
+                                                                                              
+                                                }
+                                                if(!arrayremovenodes.includes(lengthdonnee[z]["cve"])){
+                                                  arrayremovenodes.push(lengthdonnee[z]["cve"]);
+                                                  var listaddress=[];
+                                                  arraynodes.forEach((label)=>label["label"].indexOf("vulExists")==0?label["label"].split(",")[1].split("'")[1]==lengthdonnee[z]["cve"]?listaddress.push(label["label"].split(",")[0].split("(")[1].split("'")[1]):null:null);
+                                                  //arraynodes.forEach((label,cve)=>label === lengthdonnee[z]["cve"] ? result.push(index) : null)
+                                                  for(el=0; el<result.length; el++){
+                                                    //console.log(listaddress[el]);
                                                     countpostcondition=countpostcondition+1;
+                                                    var position=result[el];
+                                                    newtargeta=arrayid[position]; 
+                                                    newlinkr={"source":newtarget,"target":newtargeta};
+                                                    arraylinks.push(newlinkr);
                                                     
-                                                    if(arraycve.includes(lengthdonnee[z]["cve"])){
-                                                      newtarget=parseInt(arraynodes.length+1)
-                                                      newlinkr={"source":parseInt(issource),"target":newtarget};
-                                                      
-                                                      newnoder={id: newtarget, group: 1, label: "gainsPrivilege"+"('"+address+"'"+lengthdonnee[z]["cprivileges"]+"):0"}
-                                                      
-                                                      arraylinks.push(newlinkr);
-                                                      arraynodes.push(newnoder);
-                                                      var position=arraycve.findIndex(obj => obj ==lengthdonnee[z]["cve"]);
-                                                      
-                                                      newtargeta=arrayid[position];
-                                                    
-                                                      newlinkr={"source":newtarget,"target":newtargeta};
-                                                      arraylinks.push(newlinkr);
-          
-                                                    }
-                                                    else{
-                                                      
-                                                      newtarget=parseInt(arraynodes.length+1)
-                                                      newtargeto=parseInt(newtarget+1);
-                                                      newtargetv=parseInt(newtargeto+1)
-                                                      newlinkr={"source":newtargeta,"target":newtargeto};
-                                                      newlinka={"source":newtarget,"target":newtargeto};
-                                                      newlinkv={"source":newtargeto,"target":newtargetv};
-                                                      newnoder={id:newtarget, group: 4, label: "vulExists"+"('"+address+"',"+"'"+lengthdonnee[z]["cve"]+"'"+","+product+","+lengthdonnee[z]["mean"]+","+lengthdonnee[z]["newimpact"]+"):0"}
-                                                      newnodea={id:newtargeto, group: 2, label: "RULE "+newtargeto+" ("+lengthdonnee[z]["impactmethod"][0]+"):0"};
-                                                      if(lengthdonnee[z]["impactmethod"][0]=='Code Execution'){
-                                                        newnodev={id:newtargetv, group: 1, label: "execCode ('"+address+"',"+lengthdonnee[z]["user"]+")"}
-                                                      }
-                                                      if(lengthdonnee[z]["impactmethod"][0]=='Authentication Bypass'){
-                                                        newnodev={id:newtargetv, group: 1, label: "bypassAut ('"+address+"',"+lengthdonnee[z]["user"]+")"}
-                                                      }
-                                                      if(lengthdonnee[z]["impactmethod"][0]=='Context Escape'){
-                                                        newnodev={id:newtargetv, group: 1, label: "escapeContext ('"+address+"',"+lengthdonnee[z]["user"]+")"}
-                                                      }
-                                                      
-                                                      arraylinks.push(newlinkr);
-                                                      arraynodes.push(newnoder);
-                                                      arraylinks.push(newlinka);
-                                                      arraynodes.push(newnodea);
-                                                      arraylinks.push(newlinkv);
-                                                      arraynodes.push(newnodev);
-                                                    
-                                                    }
-                                                    
+                                                    //console.log(countpostcondition,arraykafka.length);
                                                     localStorage.setItem('counter','remove '+username+' as '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
                                                     localStorage.setItem('newcve',lengthdonnee[z]["cve"]);
                                                     localStorage.setItem('lastcve',lengthdonnee[z]["lastcve"]);
-                                 
                                                     kafkajson={"Header": {
                                                       "Source": "CTM",      
                                                       "Timestamp": timestamp,      
                                                       "Criticality": severity,      
                                                       "Description": "CTM / Cyber Vulnerability"
-                                                    },      
-                                                    "Payload": {      
+                                                      },      
+                                                      "Payload": {      
+                                                      "CVEID": localStorage.getItem('newcve'),      
+                                                      "IP address": listaddress[el],      
+                                                      "Product": product,      
+                                                      "User Name": username,      
+                                                      "Countermeasure": localStorage.getItem('counter'),
+                                                      "Status": "Post-condition of "+localStorage.getItem('lastcve')
+                                                      }
+                                                      }
+                                                    arraykafka.push(kafkajson);
+                                                  }   
+                                                  
+                                                } 
+                                                
+                                                      
+                                                if(countpostcondition==arraykafka.length){
+                                                  localStorage.setItem('alerte',JSON.stringify(arraykafka,null,4));
+                                                  const alertes =  localStorage.getItem("alerte");
+                                                  const jsonString = alertes;
+                                                  $.ajax
+                                                  ({
+                                                    type: "GET",
+                                                    dataType : 'json',
+                                                    async: false,
+                                                    url: '../scriptphp/savejson.php',
+                                                    data: { data: jsonString},
+                                                    success: function () {},
+                                                    failure: function() {alert("Error!");}
+                                                  })
+                                                  $.ajax
+                                                  ({
+                                                    type: "POST",
+                                                    dataType : 'json',
+                                                    global: false,
+                                                    async:false,
+                                                    url: './scriptphp/executeproducer.php',
+                                                    success: function () {alert("Thanks!"); },
+                                                    failure: function() {alert("Error!");}
+                                                  });
+                                                }       
+                                              }
+                                            }
+                                            else{
+                                              if(arraycve.includes(lengthdonnee[z]["cve"])){
+                                                                                         
+                                                var result = [];
+                                                
+                                                arraycve.forEach((car, index) => car === lengthdonnee[z]["cve"] ? result.push(index) : null)
+      
+                                                
+                                                if(!arrayremovenodes.includes(lengthdonnee[z]["lastcve"])){
+                                                  
+                                                  arrayremovenodes.push(lengthdonnee[z]["lastcve"]);
+                                                  
+                                                  //result.forEach(el=>console.log(arrayid[el]));
+                                                  newtarget=parseInt(arraynodes.length+1)
+                                                  newlinkr={"source":parseInt(issource),"target":newtarget};
+                                                        
+                                                  newnoder={id: newtarget, group: 1, label: "gainsPrivilege"+"('"+address+"'"+lengthdonnee[z]["cprivileges"]+"):0"}
+                                                        
+                                                  arraylinks.push(newlinkr);
+                                                  arraynodes.push(newnoder);
+                                                                                              
+                                                }
+                                                if(!arrayremovenodes.includes(lengthdonnee[z]["cve"])){
+                                                  arrayremovenodes.push(lengthdonnee[z]["cve"]);
+                                                  var listaddress=[];
+                                                  arraynodes.forEach((label)=>label["label"].indexOf("vulExists")==0?label["label"].split(",")[1].split("'")[1]==lengthdonnee[z]["cve"]?listaddress.push(label["label"].split(",")[0].split("(")[1].split("'")[1]):null:null);
+                                                  //arraynodes.forEach((label,cve)=>label === lengthdonnee[z]["cve"] ? result.push(index) : null)
+                                                  for(el=0; el<result.length; el++){
+                                                    if(listaddress[el]==address){
+                                                      countpostcondition=countpostcondition+1;
+                                                      var position=result[el];
+                                                      newtargeta=arrayid[position]; 
+                                                      newlinkr={"source":newtarget,"target":newtargeta};
+                                                      arraylinks.push(newlinkr);
+                                                      
+                                                      //console.log(countpostcondition,arraykafka.length);
+                                                      localStorage.setItem('counter','remove '+username+' as '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
+                                                      localStorage.setItem('newcve',lengthdonnee[z]["cve"]);
+                                                      localStorage.setItem('lastcve',lengthdonnee[z]["lastcve"]);
+                                                      kafkajson={"Header": {
+                                                        "Source": "CTM",      
+                                                        "Timestamp": timestamp,      
+                                                        "Criticality": severity,      
+                                                        "Description": "CTM / Cyber Vulnerability"
+                                                        },      
+                                                        "Payload": {      
                                                         "CVEID": localStorage.getItem('newcve'),      
-                                                        "IP address": address,      
+                                                        "IP address": listaddress[el],      
                                                         "Product": product,      
                                                         "User Name": username,      
                                                         "Countermeasure": localStorage.getItem('counter'),
                                                         "Status": "Post-condition of "+localStorage.getItem('lastcve')
-                                                    }
-                                                    }
-                                                    arraykafka.push(kafkajson);
-                                                    
-                                                    
-                                                    if(countpostcondition==arraykafka.length){
-                                                        localStorage.setItem('alerte',JSON.stringify(arraykafka,null,4));
-                                                        const alertes =  localStorage.getItem("alerte");
-                                                        const jsonString = alertes;
-                                                        $.ajax
-                                                        ({
-                                                            type: "GET",
-                                                            dataType : 'json',
-                                                            async: false,
-                                                            url: '../scriptphp/savejson.php',
-                                                            data: { data: jsonString},
-                                                            success: function () {},
-                                                            failure: function() {alert("Error!");}
-                                                        })
-                                                        $.ajax
-                                                        ({
-                                                            type: "POST",
-                                                            dataType : 'json',
-                                                            global: false,
-                                                            async:false,
-                                                            url: './scriptphp/executeproducer.php',
-                                                            success: function () {alert("Thanks!"); },
-                                                            failure: function() {alert("Error!");}
-                                                        });
-                                                    }
+                                                        }
+                                                        }
+                                                      arraykafka.push(kafkajson);
+                                                    } 
                                                   }
-                                                  newnoder={};
-                                                  newlinkr={};
-                                                  newnodea={};
-                                                  newlinka={};
-                                                  newnodev={};
-                                                  newlinkv={};
-                                                  jsonfinal={"nodes":arraynodes,"links":arraylinks};
                                                   
-                                                  localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-                                                  obj=JSON.parse(localStorage.getItem('myjson'));
-                                                                                    
+                                                } 
+                                                
+                                                      
+                                                if(countpostcondition==arraykafka.length){
+                                                  localStorage.setItem('alerte',JSON.stringify(arraykafka,null,4));
+                                                  const alertes =  localStorage.getItem("alerte");
+                                                  const jsonString = alertes;
+                                                  $.ajax
+                                                  ({
+                                                    type: "GET",
+                                                    dataType : 'json',
+                                                    async: false,
+                                                    url: '../scriptphp/savejson.php',
+                                                    data: { data: jsonString},
+                                                    success: function () {},
+                                                    failure: function() {alert("Error!");}
+                                                  })
+                                                  $.ajax
+                                                  ({
+                                                    type: "POST",
+                                                    dataType : 'json',
+                                                    global: false,
+                                                    async:false,
+                                                    url: './scriptphp/executeproducer.php',
+                                                    success: function () {alert("Thanks!"); },
+                                                    failure: function() {alert("Error!");}
+                                                  });
+                                                }       
+                                              }
+                                            }
+                                                  
+                                            newnoder={};
+                                            newlinkr={};
+                                            newnodea={};
+                                            newlinka={};
+                                            newnodev={};
+                                            newlinkv={};
+                                            jsonfinal={"nodes":arraynodes,"links":arraylinks};
                                             
-                                        } 
+                                            localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
+                                            obj=JSON.parse(localStorage.getItem('myjson'));
+                                            //console.log(obj);                                
+                                          } 
                                           
                                         }
                                       }
@@ -777,16 +854,19 @@ function updateGraph(){
                                   }
                                   localStorage.setItem("someVarKey", cve);
                                   localStorage.setItem('sendalert',2);
+                                
                                 })
                               }
-                            })                        
+                            })                 
                         }
                       });
+                      
                       arraynodes=graph["nodes"]; 
                       arraylinks=graph["links"];
-                      jsonfinal={"nodes":arraynodes,"links":arraylinks};
-                      localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-                      obj=JSON.parse(localStorage.getItem('myjson'));                      
+                      //jsonfinal={"nodes":arraynodes,"links":arraylinks};
+                      //localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
+                      //obj=JSON.parse(localStorage.getItem('myjson'));     
+                                 
                     }
                     else{
                       localStorage.setItem('sendalert',2);
@@ -801,7 +881,7 @@ function updateGraph(){
         
       }
     }
-    }*/
+    }
   d3.select("g").remove()
   generateGraph("./mulval_generated_json.json");
   var millis = Date.now() - start;
