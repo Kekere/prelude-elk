@@ -7,7 +7,14 @@
 
 ++Warning[XSB]: [Runtime/C] Cannot create directory `/home/XSB/.xsb/config/x86_64-unknown-linux-gnu'!
            XSB uses this directory to store data.
+<<<<<<< HEAD
 [xsb_configuration loaded]
+=======
+[Compiling /home/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration]
+% Specialising partially instantiated calls to xsb_configuration/2
+[Module xsb_configuration compiled, cpu time used: 0.048 seconds]
+[xsb_configuration loaded, cpu time used: 0.001 seconds]
+>>>>>>> e1e6ff2d6170510a1802f628b69460b9cdcee339
 [sysinitrc loaded]
 [xsbbrat loaded, cpu time used: 0.001 seconds]
 
@@ -16,7 +23,11 @@ XSB Version 4.0.0 (TaB) of April 1, 2021
 [Build date: 2022-11-22]
 
 | ?- [Compiling ./results]
+<<<<<<< HEAD
 [results compiled, cpu time used: 0.041 seconds]
+=======
+[results compiled, cpu time used: 0.040 seconds]
+>>>>>>> e1e6ff2d6170510a1802f628b69460b9cdcee339
 [results loaded]
 
 yes
@@ -151,4 +162,8 @@ Forward Continuation...
 | ?- 
 yes
 | ?- 
+<<<<<<< HEAD
 End XSB (cputime 0.36 secs, elapsetime 2.01 secs)
+=======
+End XSB (cputime 0.15 secs, elapsetime 0.18 secs)
+>>>>>>> e1e6ff2d6170510a1802f628b69460b9cdcee339
