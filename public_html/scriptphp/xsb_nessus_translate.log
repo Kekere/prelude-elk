@@ -7,69 +7,148 @@
 
 ++Warning[XSB]: [Runtime/C] Cannot create directory `/home/XSB/.xsb/config/x86_64-unknown-linux-gnu'!
            XSB uses this directory to store data.
-[Compiling /home/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration]
-% Specialising partially instantiated calls to xsb_configuration/2
-[Module xsb_configuration compiled, cpu time used: 0.049 seconds]
-[xsb_configuration loaded, cpu time used: 0.001 seconds]
+[xsb_configuration loaded]
 [sysinitrc loaded]
-[xsbbrat loaded]
+[xsbbrat loaded, cpu time used: 0.001 seconds]
 
 XSB Version 4.0.0 (TaB) of April 1, 2021
 [x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
-[Build date: 2022-10-20]
+[Build date: 2022-11-22]
 
 | ?- [Compiling ./results]
-[results compiled, cpu time used: 0.044 seconds]
+[results compiled, cpu time used: 0.041 seconds]
 [results loaded]
 
 yes
-| ?- [libmulval loaded]
-
+| ?- [Compiling /home/mulval/lib/libmulval]
+++Warning[XSB]: [Compiler] /home/mulval/lib/libmulval : Singleton variable Fact in a clause of output_metric/1
+++Error[XSB/Runtime/P]: [Permission (Operation) open[mode=w,errno= EACCES: Permission denied] on file: /home/mulval/lib/libmulval.xwam.6519b47f936e-299]  in open/3
+Forward Continuation...
+... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
+... standard:open/3  From /home/XSB/syslib/standard.xwam
+... compile:compile1/9  From /home/XSB/cmplib/compile.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... consult:compile_f/7  From /home/XSB/syslib/consult.xwam
+... consult:reconsult0/3  From /home/XSB/syslib/consult.xwam
+... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
+... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
+... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
+... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+| ?- [Compiling /home/mulval/src/adapter/nessus_translator]
+++Warning[XSB]: [Compiler] /home/mulval/src/adapter/nessus_translator : Singleton variable ResRemoval in a clause of hasIntegEffect/1
+++Warning[XSB]: [Compiler] /home/mulval/src/adapter/nessus_translator : Singleton variable IndirDisclosure in a clause of hasConfEffect/1
+++Warning[XSB]: [Compiler] /home/mulval/src/adapter/nessus_translator : Singleton variable WritePerm in a clause of hasIntegEffect/1
+++Warning[XSB]: [Compiler] /home/mulval/src/adapter/nessus_translator : Singleton variable ReadPerm in a clause of hasConfEffect/1
+++Warning[XSB]: [Compiler] /home/mulval/src/adapter/nessus_translator : Singleton variable ServInterrupt in a clause of hasAvailEffect/1
+++Warning[XSB]: [Compiler] /home/mulval/src/adapter/nessus_translator : Singleton variable Port in a clause of vulExists/3
+++Warning[XSB]: [Compiler] /home/mulval/src/adapter/nessus_translator : Singleton variable Prot in a clause of vulExists/3
+++Warning[XSB]: [Compiler] /home/mulval/src/adapter/nessus_translator : Singleton variable Host in a clause of cvss/2
+++Warning[XSB]: [Compiler] /home/mulval/src/adapter/nessus_translator : Singleton variable Prog in a clause of cvss/2
+++Warning[XSB]: [Compiler] /home/mulval/src/adapter/nessus_translator : Singleton variable RangeList in a clause of cvss/2
+++Warning[XSB]: [Compiler] /home/mulval/src/adapter/nessus_translator : Singleton variable Losstype in a clause of cvss/2
+++Warning[XSB]: [Compiler] /home/mulval/src/adapter/nessus_translator : Singleton variable Port in a clause of cvss/2
+++Warning[XSB]: [Compiler] /home/mulval/src/adapter/nessus_translator : Singleton variable Prot in a clause of cvss/2
+% Specialising partially instantiated calls to vulProperty/5
+++Error[XSB/Runtime/P]: [Permission (Operation) open[mode=w,errno= EACCES: Permission denied] on file: /home/mulval/src/adapter/nessus_translator.xwam.6519b47f936e-299]  in open/3
+Forward Continuation...
+... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
+... standard:open/3  From /home/XSB/syslib/standard.xwam
+... compile:compile1/9  From /home/XSB/cmplib/compile.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... consult:compile_f/7  From /home/XSB/syslib/consult.xwam
+... consult:reconsult0/3  From /home/XSB/syslib/consult.xwam
+... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
+... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
+... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
+... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+| ?- [Compiling /home/XSB/syslib/machine]
+[gpp: Preprocessing /home/XSB/syslib/machine.P]
+++Error[XSB/Runtime/P]: [Permission (Operation) open[mode=w,errno= EACCES: Permission denied] on file: /home/XSB/syslib/machine.xwam.6519b47f936e-299]  in open/3
+Forward Continuation...
+... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
+... standard:open/3  From /home/XSB/syslib/standard.xwam
+... compile:compile1/9  From /home/XSB/cmplib/compile.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... consult:compile_f/7  From /home/XSB/syslib/consult.xwam
+... consult:reconsult0/3  From /home/XSB/syslib/consult.xwam
+... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
+... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
+... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
+... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+| ?- 
 yes
-| ?- [nessus_translator loaded]
-
+| ?- ++Error[XSB/Runtime/P]: [Existence (No predicate usermod : vulProperty / 3 exists)] []
+Forward Continuation...
+... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:call_c/1  From /home/XSB/syslib/standard.xwam
+... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
+... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
+... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
+... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+| ?- ++Error[XSB/Runtime/P]: [Existence (No predicate usermod : vulExists / 3 exists)] []
+Forward Continuation...
+... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:call_c/1  From /home/XSB/syslib/standard.xwam
+... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
+... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
+... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
+... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+| ?- ++Error[XSB/Runtime/P]: [Existence (No predicate usermod : cvss / 2 exists)] []
+Forward Continuation...
+... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:call_c/1  From /home/XSB/syslib/standard.xwam
+... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
+... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
+... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
+... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+| ?- ++Error[XSB/Runtime/P]: [Existence (No predicate usermod : networkServiceInfo / 5 exists)] []
+Forward Continuation...
+... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:call_c/1  From /home/XSB/syslib/standard.xwam
+... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
+... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
+... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
+... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+| ?- 
 yes
 | ?- 
-++Warning[XSB]: [Runtime/C] str_match/5 (static predicate) had been defined in module: string; those clauses lost in the context of usermod.
-
-++Warning[XSB]: [Runtime/C] substring/4 (static predicate) had been defined in module: string; those clauses lost in the context of usermod.
-
-++Warning[XSB]: [Runtime/C] str_cat/3 (static predicate) had been defined in module: string; those clauses lost in the context of usermod.
-
-++Warning[XSB]: [Runtime/C] string_substitute/4 (static predicate) had been defined in module: string; those clauses lost in the context of usermod.
-[machine loaded, cpu time used: 0.001 seconds]
-
-yes
-| ?- 
-yes
-| ?- 
-A = _h258
-B = _h278
-C = _h298
-L = [vulProperty(CVE-2005-1794,remoteExploit,privEscalation),vulProperty(CVE-2012-0002,remoteExploit,privEscalation),vulProperty(CVE-2012-0152,remoteExploit,privEscalation),vulProperty(CVE-2017-0143,remoteExploit,privEscalation),vulProperty(CVE-2017-0144,remoteExploit,privEscalation),vulProperty(CVE-2017-0145,remoteExploit,privEscalation),vulProperty(CVE-2017-0146,remoteExploit,privEscalation),vulProperty(CVE-2017-0147,remoteExploit,privEscalation),vulProperty(CVE-2017-0148,remoteExploit,privEscalation),vulProperty(CVE-XXXX-XXXX,remoteExploit,resourceRemoval),vulProperty(CVE-2019-0708,remoteExploit,privEscalation),vulProperty(CVE-XXXX-XXXX,remoteExploit,privEscalation),vulProperty(CVE-XXXX-XXXX,remoteExploit,writeDirect),vulProperty(CVE-2011-0657,remoteExploit,privEscalation),vulProperty(CVE-2005-1794,remoteExploit,privEscalation),vulProperty(CVE-2017-0143,remoteExploit,privEscalation),vulProperty(CVE-2017-0144,remoteExploit,privEscalation),vulProperty(CVE-2017-0145,remoteExploit,privEscalation),vulProperty(CVE-2017-0146,remoteExploit,privEscalation),vulProperty(CVE-2017-0147,remoteExploit,privEscalation),vulProperty(CVE-2017-0148,remoteExploit,privEscalation),vulProperty(CVE-2012-0002,remoteExploit,privEscalation),vulProperty(CVE-2012-0152,remoteExploit,privEscalation),vulProperty(CVE-XXXX-XXXX,remoteExploit,resourceRemoval),vulProperty(CVE-2019-0708,remoteExploit,privEscalation),vulProperty(CVE-XXXX-XXXX,remoteExploit,privEscalation),vulProperty(CVE-XXXX-XXXX,remoteExploit,writeDirect),vulProperty(CVE-2011-0657,remoteExploit,privEscalation),vulProperty(CVE-2017-0143,remoteExploit,privEscalation),vulProperty(CVE-2017-0144,remoteExploit,privEscalation),vulProperty(CVE-2017-0145,remoteExploit,privEscalation),vulProperty(CVE-2017-0146,remoteExploit,privEscalation),vulProperty(CVE-2017-0147,remoteExploit,privEscalation),vulProperty(CVE-2017-0148,remoteExploit,privEscalation),vulProperty(CVE-2005-1794,remoteExploit,privEscalation),vulProperty(CVE-2012-0002,remoteExploit,privEscalation),vulProperty(CVE-2012-0152,remoteExploit,privEscalation),vulProperty(CVE-XXXX-XXXX,remoteExploit,resourceRemoval),vulProperty(CVE-2019-0708,remoteExploit,privEscalation),vulProperty(CVE-XXXX-XXXX,remoteExploit,privEscalation),vulProperty(CVE-XXXX-XXXX,remoteExploit,writeDirect),vulProperty(CVE-2011-0657,remoteExploit,privEscalation),vulProperty(CVE-2016-0128,remoteClient,privEscalation),vulProperty(CVE-2016-0128,remoteClient,privEscalation),vulProperty(CVE-2016-0128,remoteClient,privEscalation)]
-P = [vulProperty(CVE-2005-1794,remoteExploit,privEscalation),vulProperty(CVE-2011-0657,remoteExploit,privEscalation),vulProperty(CVE-2012-0002,remoteExploit,privEscalation),vulProperty(CVE-2012-0152,remoteExploit,privEscalation),vulProperty(CVE-2016-0128,remoteClient,privEscalation),vulProperty(CVE-2017-0143,remoteExploit,privEscalation),vulProperty(CVE-2017-0144,remoteExploit,privEscalation),vulProperty(CVE-2017-0145,remoteExploit,privEscalation),vulProperty(CVE-2017-0146,remoteExploit,privEscalation),vulProperty(CVE-2017-0147,remoteExploit,privEscalation),vulProperty(CVE-2017-0148,remoteExploit,privEscalation),vulProperty(CVE-2019-0708,remoteExploit,privEscalation),vulProperty(CVE-XXXX-XXXX,remoteExploit,resourceRemoval),vulProperty(CVE-XXXX-XXXX,remoteExploit,privEscalation),vulProperty(CVE-XXXX-XXXX,remoteExploit,writeDirect),vulProperty(CVE-XXXX-XXXX,remoteExploit,resourceRemoval),vulProperty(CVE-XXXX-XXXX,remoteExploit,privEscalation),vulProperty(CVE-XXXX-XXXX,remoteExploit,writeDirect),vulProperty(CVE-XXXX-XXXX,remoteExploit,resourceRemoval),vulProperty(CVE-XXXX-XXXX,remoteExploit,privEscalation),vulProperty(CVE-XXXX-XXXX,remoteExploit,writeDirect)]
-yes
-| ?- 
-A = _h258
-B = _h278
-C = _h298
-L = [vulExists(157.159.68.125,CVE-2016-0128,windows),vulExists(157.159.68.125,CVE-1999-0524,no_products),vulExists(157.159.68.97,CVE-2016-0128,windows),vulExists(157.159.68.97,CVE-1999-0524,no_products),vulExists(157.159.68.75,CVE-2016-0128,windows),vulExists(157.159.68.75,CVE-1999-0524,no_products),vulExists(157.159.68.125,CVE-2005-1794,remote_desktop_connection windows_terminal_services_using_rdp),vulExists(157.159.68.125,CVE-2012-0002,windows remote_desktop_protocol),vulExists(157.159.68.125,CVE-2012-0152,windows remote_desktop_protocol),vulExists(157.159.68.125,CVE-2017-0143,windows),vulExists(157.159.68.125,CVE-2017-0144,windows),vulExists(157.159.68.125,CVE-2017-0145,windows),vulExists(157.159.68.125,CVE-2017-0146,windows),vulExists(157.159.68.125,CVE-2017-0147,windows),vulExists(157.159.68.125,CVE-2017-0148,windows),vulExists(157.159.68.125,CVE-XXXX-XXXX,windows remote_desktop_protocol),vulExists(157.159.68.125,CVE-2019-0708,windows remote_desktop_protocol),vulExists(157.159.68.125,CVE-XXXX-XXXX,windows),vulExists(157.159.68.125,CVE-XXXX-XXXX,windows samba),vulExists(157.159.68.125,CVE-2011-0657,windows),vulExists(157.159.68.97,CVE-2005-1794,remote_desktop_connection windows_terminal_services_using_rdp),vulExists(157.159.68.97,CVE-2017-0143,windows),vulExists(157.159.68.97,CVE-2017-0144,windows),vulExists(157.159.68.97,CVE-2017-0145,windows),vulExists(157.159.68.97,CVE-2017-0146,windows),vulExists(157.159.68.97,CVE-2017-0147,windows),vulExists(157.159.68.97,CVE-2017-0148,windows),vulExists(157.159.68.97,CVE-2012-0002,windows remote_desktop_protocol),vulExists(157.159.68.97,CVE-2012-0152,windows remote_desktop_protocol),vulExists(157.159.68.97,CVE-XXXX-XXXX,windows remote_desktop_protocol),vulExists(157.159.68.97,CVE-2019-0708,windows remote_desktop_protocol),vulExists(157.159.68.97,CVE-XXXX-XXXX,windows),vulExists(157.159.68.97,CVE-XXXX-XXXX,windows samba),vulExists(157.159.68.97,CVE-2011-0657,windows),vulExists(157.159.68.75,CVE-2017-0143,windows),vulExists(157.159.68.75,CVE-2017-0144,windows),vulExists(157.159.68.75,CVE-2017-0145,windows),vulExists(157.159.68.75,CVE-2017-0146,windows),vulExists(157.159.68.75,CVE-2017-0147,windows),vulExists(157.159.68.75,CVE-2017-0148,windows),vulExists(157.159.68.75,CVE-2005-1794,remote_desktop_connection windows_terminal_services_using_rdp),vulExists(157.159.68.75,CVE-2012-0002,windows remote_desktop_protocol),vulExists(157.159.68.75,CVE-2012-0152,windows remote_desktop_protocol),vulExists(157.159.68.75,CVE-XXXX-XXXX,windows remote_desktop_protocol),vulExists(157.159.68.75,CVE-2019-0708,windows remote_desktop_protocol),vulExists(157.159.68.75,CVE-XXXX-XXXX,windows),vulExists(157.159.68.75,CVE-XXXX-XXXX,windows samba),vulExists(157.159.68.75,CVE-2011-0657,windows)]
-yes
-| ?- 
-CVE = _h258
-AC = _h278
-L = [cvss(CVE-2016-0128,h),cvss(CVE-1999-0524,l),cvss(CVE-2016-0128,h),cvss(CVE-1999-0524,l),cvss(CVE-2016-0128,h),cvss(CVE-1999-0524,l),cvss(CVE-2005-1794,h),cvss(CVE-2012-0002,m),cvss(CVE-2012-0152,m),cvss(CVE-2017-0143,h),cvss(CVE-2017-0144,h),cvss(CVE-2017-0145,h),cvss(CVE-2017-0146,h),cvss(CVE-2017-0147,h),cvss(CVE-2017-0148,h),cvss(CVE-XXXX-XXXX,h),cvss(CVE-2019-0708,l),cvss(CVE-XXXX-XXXX,l),cvss(CVE-XXXX-XXXX,l),cvss(CVE-2011-0657,l),cvss(CVE-2005-1794,h),cvss(CVE-2017-0143,h),cvss(CVE-2017-0144,h),cvss(CVE-2017-0145,h),cvss(CVE-2017-0146,h),cvss(CVE-2017-0147,h),cvss(CVE-2017-0148,h),cvss(CVE-2012-0002,m),cvss(CVE-2012-0152,m),cvss(CVE-XXXX-XXXX,h),cvss(CVE-2019-0708,l),cvss(CVE-XXXX-XXXX,l),cvss(CVE-XXXX-XXXX,l),cvss(CVE-2011-0657,l),cvss(CVE-2017-0143,h),cvss(CVE-2017-0144,h),cvss(CVE-2017-0145,h),cvss(CVE-2017-0146,h),cvss(CVE-2017-0147,h),cvss(CVE-2017-0148,h),cvss(CVE-2005-1794,h),cvss(CVE-2012-0002,m),cvss(CVE-2012-0152,m),cvss(CVE-XXXX-XXXX,h),cvss(CVE-2019-0708,l),cvss(CVE-XXXX-XXXX,l),cvss(CVE-XXXX-XXXX,l),cvss(CVE-2011-0657,l)]
-P = [cvss(CVE-1999-0524,l),cvss(CVE-2005-1794,h),cvss(CVE-2011-0657,l),cvss(CVE-2012-0002,m),cvss(CVE-2012-0152,m),cvss(CVE-2016-0128,h),cvss(CVE-2017-0143,h),cvss(CVE-2017-0144,h),cvss(CVE-2017-0145,h),cvss(CVE-2017-0146,h),cvss(CVE-2017-0147,h),cvss(CVE-2017-0148,h),cvss(CVE-2019-0708,l),cvss(CVE-XXXX-XXXX,h),cvss(CVE-XXXX-XXXX,l),cvss(CVE-XXXX-XXXX,h),cvss(CVE-XXXX-XXXX,l),cvss(CVE-XXXX-XXXX,h),cvss(CVE-XXXX-XXXX,l)]
-yes
-| ?- 
-Host = _h258
-Program = _h278
-Protocol = _h298
-Port = _h318
-L = [networkServiceInfo(157.159.68.125,remote_desktop_connection windows_terminal_services_using_rdp,tcp,3389,someUser),networkServiceInfo(157.159.68.125,remote_desktop_connection windows_terminal_services_using_rdp,tcp,3389,someUser),networkServiceInfo(157.159.68.125,remote_desktop_connection windows_terminal_services_using_rdp,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,udp,5355,someUser),networkServiceInfo(157.159.68.125,windows,udp,5355,someUser),networkServiceInfo(157.159.68.125,windows,udp,5355,someUser),networkServiceInfo(157.159.68.97,remote_desktop_connection windows_terminal_services_using_rdp,tcp,3389,someUser),networkServiceInfo(157.159.68.97,remote_desktop_connection windows_terminal_services_using_rdp,tcp,3389,someUser),networkServiceInfo(157.159.68.97,remote_desktop_connection windows_terminal_services_using_rdp,tcp,3389,someUser),networkServiceInfo(...,...,...,...,...)|...]
-P = [networkServiceInfo(157.159.68.125,remote_desktop_connection windows_terminal_services_using_rdp,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.125,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.125,windows,udp,5355,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,remote_desktop_connection windows_terminal_services_using_rdp,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows remote_desktop_protocol,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,3389,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,0,someUser),networkServiceInfo(157.159.68.75,windows samba,tcp,445,someUser),networkServiceInfo(157.159.68.75,windows,udp,5355,someUser),networkServiceInfo(...,...,...,...,...)|...]
-yes
-| ?- 
-yes
-| ?- 
-End XSB (cputime 0.15 secs, elapsetime 0.17 secs)
+End XSB (cputime 0.36 secs, elapsetime 2.01 secs)

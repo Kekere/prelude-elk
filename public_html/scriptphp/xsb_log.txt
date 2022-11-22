@@ -7,38 +7,41 @@
 
 ++Warning[XSB]: [Runtime/C] Cannot create directory `/home/XSB/.xsb/config/x86_64-unknown-linux-gnu'!
            XSB uses this directory to store data.
-[Compiling /home/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration]
-% Specialising partially instantiated calls to xsb_configuration/2
-[Module xsb_configuration compiled, cpu time used: 0.048 seconds]
-[xsb_configuration loaded]
+[xsb_configuration loaded, cpu time used: 0.001 seconds]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
 XSB Version 4.0.0 (TaB) of April 1, 2021
 [x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
-[Build date: 2022-10-20]
+[Build date: 2022-11-22]
 
 | ?- [Compiling ./run]
-[run compiled, cpu time used: 0.006 seconds]
+[run compiled, cpu time used: 0.029 seconds]
 [run loaded]
-[libmulval loaded]
-[translate loaded]
-[attack_trace loaded]
-[auxiliary loaded]
-[/var/www/html/scriptphp/running_rules.P dynamically loaded, cpu time used: 0.028 seconds]
-[/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.031 seconds]
-[/home/mulval/src/analyzer/advances_notrim.P dynamically loaded, cpu time used: 0.000 seconds]
-@@@@@@@@@@@@@@Done transforming in mode dynamic_decl
-
-[/var/www/html/scriptphp/dynamic_decl.gen dynamically loaded, cpu time used: 0.006 seconds]
-@@@@@@@@@@@@@@Done transforming in mode completeTrace2
-
-@@@@@@@@@@@@@@Done transforming in mode completeTrace2
-
-@@@@@@@@@@@@@@Done transforming in mode stripExplanation
-
-Running attack simulation...
-
-yes
+[Compiling /home/mulval/lib/libmulval]
+++Warning[XSB]: [Compiler] /home/mulval/lib/libmulval : Singleton variable Fact in a clause of output_metric/1
+++Error[XSB/Runtime/P]: [Permission (Operation) open[mode=w,errno= EACCES: Permission denied] on file: /home/mulval/lib/libmulval.xwam.6519b47f936e-461]  in open/3
+Forward Continuation...
+... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
+... standard:open/3  From /home/XSB/syslib/standard.xwam
+... compile:compile1/9  From /home/XSB/cmplib/compile.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... consult:compile_f/7  From /home/XSB/syslib/consult.xwam
+... consult:reconsult0/3  From /home/XSB/syslib/consult.xwam
+... consult:reconsult/1  From /home/XSB/syslib/consult.xwam
+... consult:./2  From /home/XSB/syslib/consult.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+... consult:load_exec/3  From /home/XSB/syslib/consult.xwam
+... consult:reconsult0/3  From /home/XSB/syslib/consult.xwam
+... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
+... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
+... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
+... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
+... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
+... standard:call/1  From /home/XSB/syslib/standard.xwam
+... standard:catch/3  From /home/XSB/syslib/standard.xwam
 | ?- 
-End XSB (cputime 0.28 secs, elapsetime 0.30 secs)
+End XSB (cputime 0.11 secs, elapsetime 0.95 secs)
