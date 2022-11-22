@@ -9,7 +9,7 @@
            XSB uses this directory to store data.
 [Compiling /home/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration]
 % Specialising partially instantiated calls to xsb_configuration/2
-[Module xsb_configuration compiled, cpu time used: 0.064 seconds]
+[Module xsb_configuration compiled, cpu time used: 0.049 seconds]
 [xsb_configuration loaded]
 [sysinitrc loaded]
 [xsbbrat loaded]
@@ -27,7 +27,7 @@ yes
 | ?- [vul_summary loaded]
 
 yes
-| ?- [/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.045 seconds]
+| ?- [/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.037 seconds]
 
 yes
 | ?- 
@@ -69,4 +69,4 @@ yes
 | ?- 
 yes
 | ?- 
-End XSB (cputime 0.18 secs, elapsetime 0.20 secs)
+End XSB (cputime 0.15 secs, elapsetime 0.16 secs)

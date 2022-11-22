@@ -14,7 +14,7 @@ mypartition = TopicPartition("ctm", 0)
 assigned_topic = [mypartition]
 consumer.assign(assigned_topic)
 consumer.seek_to_beginning(mypartition)
-new_pos=2000
+new_pos=7000
 #consumer.seek(mypartition, new_pos)
 
 for message in consumer:

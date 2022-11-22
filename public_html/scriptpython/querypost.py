@@ -18,41 +18,41 @@ class SparqlQueries:
         #Search query is given here
         #Base URL of your ontology has to be given here
         query = "base <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4> " \
-        "SELECT DISTINCT ?v ?val ?priv ?impmethod ?at ?aut ?log ?sce1" \
+        "SELECT DISTINCT ?v ?pos ?priv ?im ?impmethod ?at ?aut ?log ?sce ?cpe ?sce1" \
         "WHERE { " \
-        "?vl <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasIdentity> ?postcondition . " \
-        "?vl <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasScenario> ?sce1 ." \
-        "?postcondition <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#value> ?val ."\
-        "?sce1 <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#affectsProduct> ?prod ." \
-        "?sce1 <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#blockedByBarrier> ?bar ." \
-        "?bar <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#barrierType> ?aut ." \
-        "?bar <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#neededPrivileges> ?priv ." \
+        "?vul <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasIdentity> ?vulid . " \
+        "?vulid <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#value> ?v . " \
+        "?vul <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasScenario> ?sce . " \
+        "?sce <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasAction> ?ac ." \
+        "?sce  <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#affectsProduct> ?prod ." \
         "?prod <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasProductEnumeration> ?prodEn ." \
         "?prodEn <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#values> ?cpe ." \
         "{" \
-        "SELECT ?v ?priv ?impmethod ?at ?log ?sce" \
-        "WHERE {" \
-        "?vul <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasIdentity> ?vulid ." \
-        "?vul <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasScenario> ?sce ." \
-        "?vulid <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#value> ?v ." \
-        "?sce <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasAction> ?ac ." \
-        "?sce <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#requiresAttackTheater> ?at ." \
-        "?ac <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#resultsInImpact> ?im ." \
+        "SELECT ?pos ?at ?aut ?im ?log ?imp ?impmethod ?priv ?sce1" \
+        "WHERE {"\
+        "?vl <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasIdentity> ?vulid2 ."\
+        "?vl <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasScenario> ?sce1 ." \
+        "?vulid2 <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#value> ?pos ." \
+        "?sce1 <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasAction> ?ac1 ." \
+        "?sce1 <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#requiresAttackTheater> ?at ." \
+        "?sce1 <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#blockedByBarrier> ?bar ." \
+        "?bar <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#barrierType> ?aut ." \
+        "?ac1 <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#resultsInImpact> ?im ." \
         "?im <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasLogicalImpact> ?log ." \
-        "?ac <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasImpactMethod> ?imp ." \
+        "?ac1 <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasImpactMethod> ?imp ." \
         "?imp <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#value> ?impmethod ." \
         "?im <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#gainedPrivileges> ?priv ." \
+        "}" \
+        "}" \
         "FILTER (str(?v) = '"+cveid+"') ." \
-        "}" \
-        "}" \
         "FILTER regex(?cpe, '"+prod+"', 'i')" \
-        "}"
+        "}" 
         #query is being run
         resultsList = self.graph.query(query)
         #creating json object
         response = []
         for item in resultsList:
-            s = str(item['val'].toPython())
+            s = str(item['pos'].toPython())
             s = re.sub(r'.*#',"",s)
 
             p = str(item['priv'].toPython())

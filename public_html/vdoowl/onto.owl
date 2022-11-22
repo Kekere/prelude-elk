@@ -253,6 +253,9 @@
         <NamedIndividual IRI="#Action2"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Action3"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Administrator"/>
     </Declaration>
     <Declaration>
@@ -283,6 +286,9 @@
         <NamedIndividual IRI="#CVE-2017-0146"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#CVE-2017-0148"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#CVE-2019-0708"/>
     </Declaration>
     <Declaration>
@@ -299,6 +305,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#CVE4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CVE5"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#CWE-20"/>
@@ -484,10 +493,16 @@
         <NamedIndividual IRI="#ProdEnum1"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#ProdEnum3"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Product1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Product2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Product3"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Public_Administration"/>
@@ -515,6 +530,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Sce2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sce3"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Secondary"/>
@@ -619,6 +637,10 @@
         <NamedIndividual IRI="#Action2"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Action"/>
+        <NamedIndividual IRI="#Action3"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#PrivilegeLevel"/>
         <NamedIndividual IRI="#Administrator"/>
     </ClassAssertion>
@@ -656,6 +678,10 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#VulnerabilityIdentifier"/>
+        <NamedIndividual IRI="#CVE-2017-0148"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#VulnerabilityIdentifier"/>
         <NamedIndividual IRI="#CVE-2019-0708"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -677,6 +703,10 @@
     <ClassAssertion>
         <Class IRI="#Vulnerability"/>
         <NamedIndividual IRI="#CVE4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Vulnerability"/>
+        <NamedIndividual IRI="#CVE5"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#ExploitedWeakness"/>
@@ -923,6 +953,10 @@
         <NamedIndividual IRI="#Product2"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Product"/>
+        <NamedIndividual IRI="#Product3"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#SectorOfInterest"/>
         <NamedIndividual IRI="#Public_Administration"/>
     </ClassAssertion>
@@ -1071,6 +1105,11 @@
         <NamedIndividual IRI="#Code_Execution"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#resultsInImpact"/>
+        <NamedIndividual IRI="#Action3"/>
+        <NamedIndividual IRI="#Imp1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#barrierType"/>
         <NamedIndividual IRI="#Barrier1"/>
         <NamedIndividual IRI="#Privileges_Required"/>
@@ -1096,29 +1135,14 @@
         <NamedIndividual IRI="#Limited_Remote"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasOriginatedProduct"/>
-        <NamedIndividual IRI="#CVE-2017-0143"/>
-        <NamedIndividual IRI="#Product1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasOriginatedProduct"/>
-        <NamedIndividual IRI="#CVE-2017-0146"/>
-        <NamedIndividual IRI="#Product1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasOriginatedProduct"/>
-        <NamedIndividual IRI="#CVE-2019-0708"/>
-        <NamedIndividual IRI="#Product1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasOriginatedProduct"/>
-        <NamedIndividual IRI="#CVE-2021-34527"/>
-        <NamedIndividual IRI="#Product1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasIdentity"/>
         <NamedIndividual IRI="#CVE1"/>
         <NamedIndividual IRI="#CVE-2021-34527"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOriginatedProduct"/>
+        <NamedIndividual IRI="#CVE1"/>
+        <NamedIndividual IRI="#Product1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasScenario"/>
@@ -1131,6 +1155,11 @@
         <NamedIndividual IRI="#CVE-2017-0146"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOriginatedProduct"/>
+        <NamedIndividual IRI="#CVE2"/>
+        <NamedIndividual IRI="#Product1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasScenario"/>
         <NamedIndividual IRI="#CVE2"/>
         <NamedIndividual IRI="#Sce2"/>
@@ -1139,6 +1168,11 @@
         <ObjectProperty IRI="#hasIdentity"/>
         <NamedIndividual IRI="#CVE3"/>
         <NamedIndividual IRI="#CVE-2017-0143"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOriginatedProduct"/>
+        <NamedIndividual IRI="#CVE3"/>
+        <NamedIndividual IRI="#Product1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasScenario"/>
@@ -1151,9 +1185,29 @@
         <NamedIndividual IRI="#CVE-2019-0708"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOriginatedProduct"/>
+        <NamedIndividual IRI="#CVE4"/>
+        <NamedIndividual IRI="#Product3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasScenario"/>
         <NamedIndividual IRI="#CVE4"/>
-        <NamedIndividual IRI="#Sce1"/>
+        <NamedIndividual IRI="#Sce3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIdentity"/>
+        <NamedIndividual IRI="#CVE5"/>
+        <NamedIndividual IRI="#CVE-2017-0148"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOriginatedProduct"/>
+        <NamedIndividual IRI="#CVE5"/>
+        <NamedIndividual IRI="#Product1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasScenario"/>
+        <NamedIndividual IRI="#CVE5"/>
+        <NamedIndividual IRI="#Sce2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isLimitedRemoteType"/>
@@ -1201,6 +1255,11 @@
         <NamedIndividual IRI="#ProdEnum1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProductEnumeration"/>
+        <NamedIndividual IRI="#Product3"/>
+        <NamedIndividual IRI="#ProdEnum3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#affectsProduct"/>
         <NamedIndividual IRI="#Sce1"/>
         <NamedIndividual IRI="#Product1"/>
@@ -1236,6 +1295,11 @@
         <NamedIndividual IRI="#Barrier2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAction"/>
+        <NamedIndividual IRI="#Sce2"/>
+        <NamedIndividual IRI="#Action1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasExploitedWeakness"/>
         <NamedIndividual IRI="#Sce2"/>
         <NamedIndividual IRI="#CWE-20"/>
@@ -1246,10 +1310,30 @@
         <NamedIndividual IRI="#Remote"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#affectsProduct"/>
+        <NamedIndividual IRI="#Sce3"/>
+        <NamedIndividual IRI="#Product1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#affectsProduct"/>
+        <NamedIndividual IRI="#Sce3"/>
+        <NamedIndividual IRI="#Product3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAction"/>
+        <NamedIndividual IRI="#Sce3"/>
+        <NamedIndividual IRI="#Action3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isLimitedRemoteType"/>
         <NamedIndividual IRI="#Wireless"/>
         <NamedIndividual IRI="#Limited_Remote"/>
     </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#scheme"/>
+        <NamedIndividual IRI="#CVE-2017-0143"/>
+        <Literal>http://cve.mitre.org</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#value"/>
         <NamedIndividual IRI="#CVE-2017-0143"/>
@@ -1267,13 +1351,23 @@
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#scheme"/>
+        <NamedIndividual IRI="#CVE-2017-0148"/>
+        <Literal>http://cve.mitre.org</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#value"/>
+        <NamedIndividual IRI="#CVE-2017-0148"/>
+        <Literal>CVE-2017-0148</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#scheme"/>
         <NamedIndividual IRI="#CVE-2019-0708"/>
         <Literal>http://cve.mitre.org</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#value"/>
         <NamedIndividual IRI="#CVE-2019-0708"/>
-        <Literal>CVE-2019-0708</Literal>
+        <Literal>CVE-2005-1794</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#scheme"/>
@@ -1314,6 +1408,16 @@
         <DataProperty IRI="#values"/>
         <NamedIndividual IRI="#ProdEnum1"/>
         <Literal>cpe:2.3:o:microsoft:windows_10:21h1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#values"/>
+        <NamedIndividual IRI="#ProdEnum3"/>
+        <Literal>cpe:2.3:a:microsoft:remote_desktop_connection:5.1.2600.2180:*:windows_xp:*:*:*:*:*</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#values"/>
+        <NamedIndividual IRI="#ProdEnum3"/>
+        <Literal>cpe:2.3:a:microsoft:windows_terminal_services_using_rdp:5.2:*:*:*:*:*:*:*</Literal>
     </DataPropertyAssertion>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasLimitedRemoteTypes"/>
