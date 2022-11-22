@@ -9,7 +9,7 @@
            XSB uses this directory to store data.
 [Compiling /home/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration]
 % Specialising partially instantiated calls to xsb_configuration/2
-[Module xsb_configuration compiled, cpu time used: 0.049 seconds]
+[Module xsb_configuration compiled, cpu time used: 0.048 seconds]
 [xsb_configuration loaded, cpu time used: 0.001 seconds]
 [sysinitrc loaded]
 [xsbbrat loaded]
@@ -19,7 +19,7 @@ XSB Version 4.0.0 (TaB) of April 1, 2021
 [Build date: 2022-10-20]
 
 | ?- [Compiling ./results]
-[results compiled, cpu time used: 0.044 seconds]
+[results compiled, cpu time used: 0.040 seconds]
 [results loaded]
 
 yes
@@ -72,4 +72,4 @@ yes
 | ?- 
 yes
 | ?- 
-End XSB (cputime 0.15 secs, elapsetime 0.17 secs)
+End XSB (cputime 0.15 secs, elapsetime 0.18 secs)
