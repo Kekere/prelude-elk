@@ -295,9 +295,6 @@
         <NamedIndividual IRI="#CVE-2021-34527"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#CVE1"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#CVE2"/>
     </Declaration>
     <Declaration>
@@ -305,9 +302,6 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#CVE4"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#CVE5"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#CWE-20"/>
@@ -690,10 +684,6 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Vulnerability"/>
-        <NamedIndividual IRI="#CVE1"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Vulnerability"/>
         <NamedIndividual IRI="#CVE2"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -703,10 +693,6 @@
     <ClassAssertion>
         <Class IRI="#Vulnerability"/>
         <NamedIndividual IRI="#CVE4"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Vulnerability"/>
-        <NamedIndividual IRI="#CVE5"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#ExploitedWeakness"/>
@@ -1127,27 +1113,12 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#neededPrivileges"/>
         <NamedIndividual IRI="#Barrier2"/>
-        <NamedIndividual IRI="#Privileged"/>
+        <NamedIndividual IRI="#User"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isLimitedRemoteType"/>
         <NamedIndividual IRI="#Bluetooth"/>
         <NamedIndividual IRI="#Limited_Remote"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasIdentity"/>
-        <NamedIndividual IRI="#CVE1"/>
-        <NamedIndividual IRI="#CVE-2021-34527"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasOriginatedProduct"/>
-        <NamedIndividual IRI="#CVE1"/>
-        <NamedIndividual IRI="#Product1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasScenario"/>
-        <NamedIndividual IRI="#CVE1"/>
-        <NamedIndividual IRI="#Sce1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasIdentity"/>
@@ -1195,21 +1166,6 @@
         <NamedIndividual IRI="#Sce3"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasIdentity"/>
-        <NamedIndividual IRI="#CVE5"/>
-        <NamedIndividual IRI="#CVE-2017-0148"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasOriginatedProduct"/>
-        <NamedIndividual IRI="#CVE5"/>
-        <NamedIndividual IRI="#Product1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasScenario"/>
-        <NamedIndividual IRI="#CVE5"/>
-        <NamedIndividual IRI="#Sce2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isLimitedRemoteType"/>
         <NamedIndividual IRI="#Cellular"/>
         <NamedIndividual IRI="#Limited_Remote"/>
@@ -1217,7 +1173,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#gainedPrivileges"/>
         <NamedIndividual IRI="#Imp1"/>
-        <NamedIndividual IRI="#Privileged"/>
+        <NamedIndividual IRI="#User"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasLogicalImpact"/>
@@ -1297,7 +1253,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasAction"/>
         <NamedIndividual IRI="#Sce2"/>
-        <NamedIndividual IRI="#Action1"/>
+        <NamedIndividual IRI="#Action2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasExploitedWeakness"/>
@@ -1322,7 +1278,7 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasAction"/>
         <NamedIndividual IRI="#Sce3"/>
-        <NamedIndividual IRI="#Action3"/>
+        <NamedIndividual IRI="#Action1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isLimitedRemoteType"/>
