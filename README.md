@@ -238,21 +238,21 @@ $ sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Start docker container
--------
-sudo docker start portainer
-sudo docker start php
-sudo docker start apache
-sudo docker start prelude-elk_elasticsearch_1
-sudo docker start prelude-elk_db-alerts_1
-sudo docker start prelude-elk_manager_1
-sudo docker start prelude-elk_correlator_1
-sudo docker start prelude-elk_db-gui_1
-sudo docker start prelude-elk_injector_1
-sudo docker start prelude-elk_logstashalert_1
-sudo docker start prelude-elk_correlator_1
-sudo docker start prelude-elk_prewikka-crontab_1
-sudo docker start prelude-elk_prewikka_1
-sudo docker start prelude-elk_lml_1
+----------------------------
+$ sudo docker start portainer
+$ sudo docker start php
+$ sudo docker start apache
+$ sudo docker start prelude-elk_elasticsearch_1
+$ sudo docker start prelude-elk_db-alerts_1
+$ sudo docker start prelude-elk_manager_1
+$ sudo docker start prelude-elk_correlator_1
+$ sudo docker start prelude-elk_db-gui_1
+$ sudo docker start prelude-elk_injector_1
+$ sudo docker start prelude-elk_logstashalert_1
+$ sudo docker start prelude-elk_correlator_1
+$ sudo docker start prelude-elk_prewikka-crontab_1
+$ sudo docker start prelude-elk_prewikka_1
+$ sudo docker start prelude-elk_lml_1
 
 License
 -------
