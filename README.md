@@ -255,8 +255,10 @@ $ sudo docker start prelude-elk_prewikka-crontab_1
 $ sudo docker start prelude-elk_prewikka_1
 $ sudo docker start prelude-elk_lml_1
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 License
 -------
+If you use this repository please cite our contribution: Kéren Saint-Hilaire, Frédéric Cuppens, Nora Cuppens, Joaquin Garcia‐alfaro. Ontology-based attack graph enrichment. TIEMS 2021: 28th International Emergency Management Society annual conference, Dec 2021, Online, France. 
 
 We inspire from this dockerized prelude version https://github.com/fpoirotte/docker-prelude-siem released under the MIT license.
 See `LICENSE`_ for more information.
