@@ -237,8 +237,9 @@ $ sudo ip link set eno1 promisc on
 $ sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i eno1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start docker container
-----------------------------
+Start docker containers:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ sudo docker start portainer
 $ sudo docker start php
 $ sudo docker start apache
