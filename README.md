@@ -258,9 +258,9 @@ $ sudo docker start prelude-elk_lml_1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Install and configure Nessus
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 Follow this link to install and configure Nessus 8.15.7 : https://docs.tenable.com/nessus/Content/InstallNessusLinux.htm
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 License
 -------
 If you use this repository please cite our contribution: Kéren Saint-Hilaire, Frédéric Cuppens, Nora Cuppens, Joaquin Garcia‐alfaro. Ontology-based attack graph enrichment. TIEMS 2021: 28th International Emergency Management Society annual conference, Dec 2021, Online, France. 
