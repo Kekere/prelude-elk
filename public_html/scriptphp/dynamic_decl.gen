@@ -1,60 +1,40 @@
-:-(dynamic(inCompetent(_h3726))).
+:-(dynamic(inCompetent(_h3955))).
 
-:-(dynamic(competent(_h3726))).
+:-(dynamic(competent(_h3955))).
 
-:-(dynamic(clientProgram(_h3726,_h3727))).
+:-(dynamic(clientProgram(_h3955,_h3956))).
 
-:-(dynamic(vulExists(_h3726,_h3727,_h3728))).
+:-(dynamic(vulExists(_h3955,_h3956,_h3957))).
 
-:-(dynamic(vulProperty(_h3726,_h3727,_h3728))).
+:-(dynamic(vulProperty(_h3955,_h3956,_h3957))).
 
-:-(dynamic(hacl(_h3726,_h3727,_h3728,_h3729))).
+:-(dynamic(hacl(_h3955,_h3956,_h3957,_h3958))).
 
-:-(dynamic(attackerLocated(_h3726))).
+:-(dynamic(attackerLocated(_h3955))).
 
-:-(dynamic(hasAccount(_h3726,_h3727,_h3728))).
+:-(dynamic(hasAccount(_h3955,_h3956,_h3957))).
 
-:-(dynamic(networkServiceInfo(_h3726,_h3727,_h3728,_h3729,_h3730))).
+:-(dynamic(networkServiceInfo(_h3955,_h3956,_h3957,_h3958,_h3959))).
 
-:-(dynamic(setuidProgramInfo(_h3726,_h3727,_h3728))).
+:-(dynamic(setuidProgramInfo(_h3955,_h3956,_h3957))).
 
-:-(dynamic(nfsExportInfo(_h3726,_h3727,_h3728,_h3729))).
+:-(dynamic(nfsExportInfo(_h3955,_h3956,_h3957,_h3958))).
 
-:-(dynamic(nfsMounted(_h3726,_h3727,_h3728,_h3729,_h3730))).
+:-(dynamic(nfsMounted(_h3955,_h3956,_h3957,_h3958,_h3959))).
 
-:-(dynamic(localFileProtection(_h3726,_h3727,_h3728,_h3729))).
+:-(dynamic(localFileProtection(_h3955,_h3956,_h3957,_h3958))).
 
-:-(dynamic(dependsOn(_h3726,_h3727,_h3728))).
+:-(dynamic(dependsOn(_h3955,_h3956,_h3957))).
 
-:-(dynamic(installed(_h3726,_h3727))).
+:-(dynamic(installed(_h3955,_h3956))).
 
-:-(dynamic(bugHyp(_h3726,_h3727,_h3728,_h3729))).
+:-(dynamic(bugHyp(_h3955,_h3956,_h3957,_h3958))).
 
-:-(dynamic(vulExists(_h3726,_h3727,_h3728,_h3729,_h3730))).
+:-(dynamic(vulExists(_h3955,_h3956,_h3957,_h3958,_h3959))).
 
-:-(dynamic(canAccessFile(_h3726,_h3727,_h3728,_h3729))).
+:-(dynamic(canAccessFile(_h3955,_h3956,_h3957,_h3958))).
 
-:-(dynamic(isWebServer(_h3726))).
+:-(dynamic(isWebServer(_h3955))).
 
-:-(dynamic(successExploit(_h3726,_h3727))).
-
-:-(dynamic(neededPrivileges(_h3726,_h3727))).
-
-:-(dynamic(successExploit(_h3726,_h3727))).
-
-:-(dynamic(neededPrivileges(_h3726,_h3727))).
-
-:-(dynamic(successExploit(_h3726,_h3727))).
-
-:-(dynamic(neededPrivileges(_h3726,_h3727))).
-
-:-(dynamic(successExploit(_h3726,_h3727))).
-
-:-(dynamic(neededPrivileges(_h3726,_h3727))).
-
-:-(dynamic(successExploit(_h3726,_h3727))).
-
-:-(dynamic(neededPrivileges(_h3726,_h3727))).
-
-:-(dynamic(trace_step(_h3670,_h3671))).
+:-(dynamic(trace_step(_h3899,_h3900))).
 

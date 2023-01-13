@@ -7,96 +7,24 @@
 
 ++Warning[XSB]: [Runtime/C] Cannot create directory `/home/XSB/.xsb/config/x86_64-unknown-linux-gnu'!
            XSB uses this directory to store data.
-<<<<<<< HEAD
-=======
-[Compiling /home/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration]
-% Specialising partially instantiated calls to xsb_configuration/2
-<<<<<<< HEAD
-[Module xsb_configuration compiled, cpu time used: 0.044 seconds]
-=======
-[Module xsb_configuration compiled, cpu time used: 0.045 seconds]
->>>>>>> e1e6ff2d6170510a1802f628b69460b9cdcee339
->>>>>>> 52c9052ed762393c8304ccda8c33217173cc3dad
 [xsb_configuration loaded]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
 XSB Version 4.0.0 (TaB) of April 1, 2021
 [x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
-[Build date: 2022-11-22]
+[Build date: 2022-11-28]
 
-| ?- [Compiling /home/mulval/lib/libmulval]
-++Warning[XSB]: [Compiler] /home/mulval/lib/libmulval : Singleton variable Fact in a clause of output_metric/1
-++Error[XSB/Runtime/P]: [Permission (Operation) open[mode=w,errno= EACCES: Permission denied] on file: /home/mulval/lib/libmulval.xwam.6519b47f936e-351]  in open/3
-Forward Continuation...
-... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
-... standard:open/3  From /home/XSB/syslib/standard.xwam
-... compile:compile1/9  From /home/XSB/cmplib/compile.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... consult:compile_f/7  From /home/XSB/syslib/consult.xwam
-... consult:reconsult0/3  From /home/XSB/syslib/consult.xwam
-... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
-... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
-... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
-... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-| ?- [Compiling /home/mulval/src/analyzer/auxiliary]
-++Warning[XSB]: [Compiler] /home/mulval/src/analyzer/auxiliary : Singleton variable Fact in a clause of cost/2
-++Error[XSB/Runtime/P]: [Permission (Operation) open[mode=w,errno= EACCES: Permission denied] on file: /home/mulval/src/analyzer/auxiliary.xwam.6519b47f936e-351]  in open/3
-Forward Continuation...
-... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
-... standard:open/3  From /home/XSB/syslib/standard.xwam
-... compile:compile1/9  From /home/XSB/cmplib/compile.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... consult:compile_f/7  From /home/XSB/syslib/consult.xwam
-... consult:reconsult0/3  From /home/XSB/syslib/consult.xwam
-... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
-... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
-... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
-... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-| ?- [Compiling /home/mulval/src/adapter/vul_summary]
-++Error[XSB/Runtime/P]: [Permission (Operation) open[mode=w,errno= EACCES: Permission denied] on file: /home/mulval/src/adapter/vul_summary.xwam.6519b47f936e-351]  in open/3
-Forward Continuation...
-... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
-... standard:open/3  From /home/XSB/syslib/standard.xwam
-... compile:compile1/9  From /home/XSB/cmplib/compile.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... consult:compile_f/7  From /home/XSB/syslib/consult.xwam
-... consult:reconsult0/3  From /home/XSB/syslib/consult.xwam
-... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
-... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
-... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
-... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-| ?- [/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.004 seconds]
+| ?- [libmulval loaded]
 
 yes
-<<<<<<< HEAD
-| ?- [auxiliary loaded, cpu time used: 0.001 seconds]
-=======
-<<<<<<< HEAD
-=======
 | ?- [auxiliary loaded]
->>>>>>> 52c9052ed762393c8304ccda8c33217173cc3dad
 
 yes
 | ?- [vul_summary loaded]
 
 yes
-| ?- [/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.033 seconds]
+| ?- [/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.054 seconds]
 
 yes
 | ?- 
@@ -131,104 +59,11 @@ yes
 A = _h258
 L = [attackGoal(execCode(157.159.68.125,_h445)),attackGoal(execCode(157.159.68.97,_h452)),attackGoal(execCode(157.159.68.75,_h459))]
 yes
->>>>>>> e1e6ff2d6170510a1802f628b69460b9cdcee339
 | ?- 
+A = _h258
+L = [attackerLocated(internet),attackerLocated(internet),attackerLocated(internet)]
 yes
-| ?- ++Error[XSB/Runtime/P]: [Existence (No predicate usermod : summarize_vuln / 1 exists)] []
-Forward Continuation...
-... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
-... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
-... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
-... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
-... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-| ?- ++Error[XSB/Runtime/P]: [Existence (No predicate usermod : networkServiceInfo / 5 exists)] []
-Forward Continuation...
-... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:call_c/1  From /home/XSB/syslib/standard.xwam
-... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
-... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
-... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
-... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-| ?- ++Error[XSB/Runtime/P]: [Existence (No predicate usermod : list_apply / 2 exists)] []
-Forward Continuation...
-... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
-... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
-... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
-... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
-... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-| ?- ++Error[XSB/Runtime/P]: [Existence (No predicate usermod : list_apply / 2 exists)] []
-Forward Continuation...
-... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
-... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
-... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
-... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
-... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-| ?- ++Error[XSB/Runtime/P]: [Existence (No predicate usermod : list_apply / 2 exists)] []
-Forward Continuation...
-... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
-... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
-... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
-... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
-... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-| ?- ++Error[XSB/Runtime/P]: [Existence (No predicate usermod : list_apply / 2 exists)] []
-Forward Continuation...
-... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
-... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
-... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
-... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
-... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-| ?- ++Error[XSB/Runtime/P]: [Existence (No predicate usermod : list_apply / 2 exists)] []
-Forward Continuation...
-... machine:xsb_backtrace/1  From /home/XSB/syslib/machine.xwam
-... x_interp:_$call/1  From /home/XSB/syslib/x_interp.xwam
-... x_interp:call_query/1  From /home/XSB/syslib/x_interp.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
-... x_interp:interpreter/0  From /home/XSB/syslib/x_interp.xwam
-... loader:ll_code_call/3  From /home/XSB/syslib/loader.xwam
-... loader:find_ofile_and_load/5  From /home/XSB/syslib/loader.xwam
-... standard:call/1  From /home/XSB/syslib/standard.xwam
-... standard:catch/3  From /home/XSB/syslib/standard.xwam
 | ?- 
 yes
 | ?- 
-<<<<<<< HEAD
-End XSB (cputime 0.14 secs, elapsetime 0.16 secs)
-=======
-<<<<<<< HEAD
-End XSB (cputime 0.21 secs, elapsetime 2.44 secs)
-=======
-End XSB (cputime 0.14 secs, elapsetime 0.15 secs)
->>>>>>> e1e6ff2d6170510a1802f628b69460b9cdcee339
->>>>>>> 52c9052ed762393c8304ccda8c33217173cc3dad
+End XSB (cputime 0.13 secs, elapsetime 0.15 secs)
