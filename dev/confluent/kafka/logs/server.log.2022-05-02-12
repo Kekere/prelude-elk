@@ -1,4 +1,0 @@
-[2022-05-02 14:16:37,871] INFO Expiring session 0x100074cb83c0000, timeout of 18000ms exceeded (org.apache.zookeeper.server.ZooKeeperServer)
-[2022-05-02 14:16:40,504] INFO Invalid session 0x100074cb83c0000 for client /127.0.0.1:53336, probably expired (org.apache.zookeeper.server.ZooKeeperServer)
-[2022-05-02 14:16:41,534] WARN fsync-ing the write ahead log in SyncThread:0 took 1018ms which will adversely effect operation latency.File size is 67108880 bytes. See the ZooKeeper troubleshooting guide (org.apache.zookeeper.server.persistence.FileTxnLog)
-[2022-05-02 14:16:43,863] WARN fsync-ing the write ahead log in SyncThread:0 took 1347ms which will adversely effect operation latency.File size is 67108880 bytes. See the ZooKeeper troubleshooting guide (org.apache.zookeeper.server.persistence.FileTxnLog)

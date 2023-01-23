@@ -1,48 +1,10 @@
-vuln_exists('157.159.68.125','CVE-2005-1794','remote_desktop_connection windows_terminal_services_using_rdp',['remoteExploit'],['data_loss','data_modification','availability_loss'],'5.1','h','3389','tcp').
-vuln_exists('157.159.68.125','CVE-2012-0002','windows remote_desktop_protocol',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.3','m','3389','tcp').
-vuln_exists('157.159.68.125','CVE-2012-0152','windows remote_desktop_protocol',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.3','m','3389','tcp').
-vuln_exists('157.159.68.125','CVE-2017-0143','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.125','CVE-2017-0144','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.125','CVE-2017-0145','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.125','CVE-2017-0146','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.125','CVE-2017-0147','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.125','CVE-2017-0148','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.125','CVE-XXXX-XXXX','windows remote_desktop_protocol',['remoteExploit'],['data_loss'],'4.0','h','3389','tcp').
-vuln_exists('157.159.68.125','CVE-2016-0128','windows',['remoteExploit'',user_action_req'],['data_loss','data_modification'],'6.8','h').
-vuln_exists('157.159.68.125','CVE-2019-0708','windows remote_desktop_protocol',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.8','l','3389','tcp').
 vuln_exists('157.159.68.125','CVE-XXXX-XXXX','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.8','l','0','tcp').
 vuln_exists('157.159.68.125','CVE-XXXX-XXXX','windows samba',['remoteExploit'],['data_modification'],'5.3','l','445','tcp').
-vuln_exists('157.159.68.125','CVE-2011-0657','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'10.0','l','5355','udp').
 vuln_exists('157.159.68.125','CVE-1999-0524','no_products',['localExploit'],['no_loss'],'0.0','l').
-vuln_exists('157.159.68.97','CVE-2005-1794','remote_desktop_connection windows_terminal_services_using_rdp',['remoteExploit'],['data_loss','data_modification','availability_loss'],'5.1','h','3389','tcp').
-vuln_exists('157.159.68.97','CVE-2017-0143','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.97','CVE-2017-0144','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.97','CVE-2017-0145','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.97','CVE-2017-0146','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.97','CVE-2017-0147','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.97','CVE-2017-0148','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.97','CVE-2012-0002','windows remote_desktop_protocol',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.3','m','3389','tcp').
-vuln_exists('157.159.68.97','CVE-2012-0152','windows remote_desktop_protocol',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.3','m','3389','tcp').
-vuln_exists('157.159.68.97','CVE-2016-0128','windows',['remoteExploit'',user_action_req'],['data_loss','data_modification'],'6.8','h').
-vuln_exists('157.159.68.97','CVE-XXXX-XXXX','windows remote_desktop_protocol',['remoteExploit'],['data_loss'],'4.0','h','3389','tcp').
-vuln_exists('157.159.68.97','CVE-2019-0708','windows remote_desktop_protocol',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.8','l','3389','tcp').
 vuln_exists('157.159.68.97','CVE-XXXX-XXXX','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.8','l','0','tcp').
 vuln_exists('157.159.68.97','CVE-XXXX-XXXX','windows samba',['remoteExploit'],['data_modification'],'5.3','l','445','tcp').
-vuln_exists('157.159.68.97','CVE-2011-0657','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'10.0','l','5355','udp').
 vuln_exists('157.159.68.97','CVE-1999-0524','no_products',['localExploit'],['no_loss'],'0.0','l').
-vuln_exists('157.159.68.75','CVE-2017-0143','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.75','CVE-2017-0144','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.75','CVE-2017-0145','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.75','CVE-2017-0146','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.75','CVE-2017-0147','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.75','CVE-2017-0148','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'8.1','h','445','tcp').
-vuln_exists('157.159.68.75','CVE-2005-1794','remote_desktop_connection windows_terminal_services_using_rdp',['remoteExploit'],['data_loss','data_modification','availability_loss'],'5.1','h','3389','tcp').
-vuln_exists('157.159.68.75','CVE-2016-0128','windows',['remoteExploit'',user_action_req'],['data_loss','data_modification'],'6.8','h').
-vuln_exists('157.159.68.75','CVE-2012-0002','windows remote_desktop_protocol',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.3','m','3389','tcp').
-vuln_exists('157.159.68.75','CVE-2012-0152','windows remote_desktop_protocol',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.3','m','3389','tcp').
-vuln_exists('157.159.68.75','CVE-XXXX-XXXX','windows remote_desktop_protocol',['remoteExploit'],['data_loss'],'4.0','h','3389','tcp').
-vuln_exists('157.159.68.75','CVE-2019-0708','windows remote_desktop_protocol',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.8','l','3389','tcp').
 vuln_exists('157.159.68.75','CVE-XXXX-XXXX','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'9.8','l','0','tcp').
 vuln_exists('157.159.68.75','CVE-XXXX-XXXX','windows samba',['remoteExploit'],['data_modification'],'5.3','l','445','tcp').
-vuln_exists('157.159.68.75','CVE-2011-0657','windows',['remoteExploit'],['data_loss','data_modification','availability_loss'],'10.0','l','5355','udp').
 vuln_exists('157.159.68.75','CVE-1999-0524','no_products',['localExploit'],['no_loss'],'0.0','l').
+vuln_exists('157.159.68.44','CVE-1999-0524','no_products',['localExploit'],['no_loss'],'0.0','l').

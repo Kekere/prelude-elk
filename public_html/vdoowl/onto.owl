@@ -1071,6 +1071,11 @@
         <NamedIndividual IRI="#Remote"/>
     </DifferentIndividuals>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#affectsContext"/>
+        <NamedIndividual IRI="#Action1"/>
+        <NamedIndividual IRI="#Host_OS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasImpactMethod"/>
         <NamedIndividual IRI="#Action1"/>
         <NamedIndividual IRI="#Code_Execution"/>
@@ -1086,9 +1091,19 @@
         <NamedIndividual IRI="#Imp2"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#affectsContext"/>
+        <NamedIndividual IRI="#Action2"/>
+        <NamedIndividual IRI="#Application"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasImpactMethod"/>
         <NamedIndividual IRI="#Action2"/>
         <NamedIndividual IRI="#Code_Execution"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#affectsContext"/>
+        <NamedIndividual IRI="#Action3"/>
+        <NamedIndividual IRI="#Host_OS"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#resultsInImpact"/>
@@ -1176,9 +1191,19 @@
         <NamedIndividual IRI="#User"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEscapeContext"/>
+        <NamedIndividual IRI="#Imp1"/>
+        <NamedIndividual IRI="#Host_OS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasLogicalImpact"/>
         <NamedIndividual IRI="#Imp1"/>
         <NamedIndividual IRI="#PrivilegeEscalation"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasEscapeContext"/>
+        <NamedIndividual IRI="#Imp2"/>
+        <NamedIndividual IRI="#Host_OS"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasLogicalImpact"/>
@@ -1438,7 +1463,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEscapeContext"/>
-        <Class IRI="#Action"/>
+        <Class IRI="#ImpactMethod"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasExploitedWeakness"/>
@@ -1519,6 +1544,10 @@
         <Class IRI="#Action"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#affectsContext"/>
+        <Class IRI="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#affectsProduct"/>
         <Class IRI="#Product"/>
     </ObjectPropertyRange>
@@ -1562,6 +1591,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasEntityRole"/>
         <Class IRI="#EntityRole"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEscapeContext"/>
+        <Class IRI="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasExploitedWeakness"/>

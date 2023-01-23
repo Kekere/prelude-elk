@@ -71,9 +71,6 @@ if(localStorage.getItem('notification')=="true"){
   localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
         
   jsonobj={"json":JSON.stringify(jsonfinal,null,4)};
-  //console.log(jsonobj);
-  //jsonobj=JSON.stringify(localStorage.getItem('myjson'),null,4)
-  //console.log(jsonobj);
   /* transfert du resultat de la convertion au serveur PHP pour l'écriture
   dans un fichier json "mulval_generated_json.json" qui sera utilisé comme paramètre de la fonction generategraph
   */
@@ -85,8 +82,6 @@ if(localStorage.getItem('notification')=="true"){
     async: true,
     success: function(response){
       // après la creation du fichier JSON en php on génère le Graph
-      //console.log(jsonobj);
-      //console.log(jsonfinal);
       generateGraph(jsonfile); 
       createContermeasureGraph();
       localStorage.setItem('notification', false); 
@@ -96,7 +91,6 @@ if(localStorage.getItem('notification')=="true"){
   });
 }
 else{
-  //console.log(localStorage.getItem('myjson'),null,4);
   generateGraph(jsonfile); 
   updateGraph();
   createContermeasureGraph();
