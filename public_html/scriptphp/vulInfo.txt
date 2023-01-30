@@ -1,4 +1,64 @@
 157.159.68.125
+CVE-2005-1794
+{severity=5.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=remote_desktop_connection windows_terminal_services_using_rdp}
+3389
+tcp
+157.159.68.125
+CVE-2012-0002
+{severity=9.3, lose_types='data_loss','data_modification','availability_loss', access=m, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
+tcp
+157.159.68.125
+CVE-2012-0152
+{severity=9.3, lose_types='data_loss','data_modification','availability_loss', access=m, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
+tcp
+157.159.68.125
+CVE-2017-0143
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.125
+CVE-2017-0144
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.125
+CVE-2017-0145
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.125
+CVE-2017-0146
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.125
+CVE-2017-0147
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.125
+CVE-2017-0148
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.125
+CVE-XXXX-XXXX
+{severity=4.0, lose_types='data_loss', access=h, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
+tcp
+157.159.68.125
+CVE-2016-0128
+{severity=6.8, lose_types='data_loss','data_modification', access=h, range='remoteExploit'',user_action_req', products=windows}
+49154
+tcp
+157.159.68.125
+CVE-2019-0708
+{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
+tcp
+157.159.68.125
 CVE-XXXX-XXXX
 {severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows}
 0
@@ -9,10 +69,75 @@ CVE-XXXX-XXXX
 445
 tcp
 157.159.68.125
+CVE-2011-0657
+{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows}
+5355
+udp
+157.159.68.125
 CVE-1999-0524
 {severity=0.0, lose_types='no_loss', access=l, range='localExploit'}
 0
 icmp
+157.159.68.97
+CVE-2005-1794
+{severity=5.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=remote_desktop_connection windows_terminal_services_using_rdp}
+3389
+tcp
+157.159.68.97
+CVE-2017-0143
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.97
+CVE-2017-0144
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.97
+CVE-2017-0145
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.97
+CVE-2017-0146
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.97
+CVE-2017-0147
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.97
+CVE-2017-0148
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.97
+CVE-2012-0002
+{severity=9.3, lose_types='data_loss','data_modification','availability_loss', access=m, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
+tcp
+157.159.68.97
+CVE-2012-0152
+{severity=9.3, lose_types='data_loss','data_modification','availability_loss', access=m, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
+tcp
+157.159.68.97
+CVE-2016-0128
+{severity=6.8, lose_types='data_loss','data_modification', access=h, range='remoteExploit'',user_action_req', products=windows}
+49154
+tcp
+157.159.68.97
+CVE-XXXX-XXXX
+{severity=4.0, lose_types='data_loss', access=h, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
+tcp
+157.159.68.97
+CVE-2019-0708
+{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
+tcp
 157.159.68.97
 CVE-XXXX-XXXX
 {severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows}
@@ -24,10 +149,75 @@ CVE-XXXX-XXXX
 445
 tcp
 157.159.68.97
+CVE-2011-0657
+{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows}
+5355
+udp
+157.159.68.97
 CVE-1999-0524
 {severity=0.0, lose_types='no_loss', access=l, range='localExploit'}
 0
 icmp
+157.159.68.75
+CVE-2017-0143
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.75
+CVE-2017-0144
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.75
+CVE-2017-0145
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.75
+CVE-2017-0146
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.75
+CVE-2017-0147
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.75
+CVE-2017-0148
+{severity=8.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=windows}
+445
+tcp
+157.159.68.75
+CVE-2005-1794
+{severity=5.1, lose_types='data_loss','data_modification','availability_loss', access=h, range='remoteExploit', products=remote_desktop_connection windows_terminal_services_using_rdp}
+3389
+tcp
+157.159.68.75
+CVE-2016-0128
+{severity=6.8, lose_types='data_loss','data_modification', access=h, range='remoteExploit'',user_action_req', products=windows}
+49153
+tcp
+157.159.68.75
+CVE-2012-0002
+{severity=9.3, lose_types='data_loss','data_modification','availability_loss', access=m, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
+tcp
+157.159.68.75
+CVE-2012-0152
+{severity=9.3, lose_types='data_loss','data_modification','availability_loss', access=m, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
+tcp
+157.159.68.75
+CVE-XXXX-XXXX
+{severity=4.0, lose_types='data_loss', access=h, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
+tcp
+157.159.68.75
+CVE-2019-0708
+{severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows remote_desktop_protocol}
+3389
+tcp
 157.159.68.75
 CVE-XXXX-XXXX
 {severity=9.8, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows}
@@ -39,11 +229,11 @@ CVE-XXXX-XXXX
 445
 tcp
 157.159.68.75
-CVE-1999-0524
-{severity=0.0, lose_types='no_loss', access=l, range='localExploit'}
-0
-icmp
-157.159.68.44
+CVE-2011-0657
+{severity=10.0, lose_types='data_loss','data_modification','availability_loss', access=l, range='remoteExploit', products=windows}
+5355
+udp
+157.159.68.75
 CVE-1999-0524
 {severity=0.0, lose_types='no_loss', access=l, range='localExploit'}
 0

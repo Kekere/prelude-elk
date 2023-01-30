@@ -208,7 +208,10 @@ function updateGraph(){
                               
                             var newid=0;
                             arraylinks.forEach((label)=>label["source"]==idvul?newid=label["target"]:null);
-                            issource=newid;          
+                            //console.log(newid);
+                            arraylinks.forEach((label)=>label["source"]==newid?idvul=label["target"]:null);
+                            //console.log(idvul);
+                            issource=idvul;          
                             for(z=0; z<lengthdonnee.length; z++){
                               if(lengthdonnee[z]["cprivileges"]=="Privileged"||lengthdonnee[z]["cprivileges"]=="Administrator"){
                                       
@@ -227,8 +230,9 @@ function updateGraph(){
                                     newtarget=parseInt(arraynodes.length+1)
                                     newlinkr={"source":parseInt(issource),"target":newtarget};
                                           
-                                    newnoder={id: newtarget, group: 1, label: "gainsPrivilege"+"('"+address+"'"+lengthdonnee[z]["cprivileges"]+"):0"}
-                                          
+                                    //newnoder={id: newtarget, group: 1, label: "gainsPrivilege"+"('"+address+"'"+lengthdonnee[z]["cprivileges"]+"):0"}
+                                    newnoder={id: newtarget, group: 2, label: "RULE 9 (gain privilege):0"} 
+
                                     arraylinks.push(newlinkr);
                                     arraynodes.push(newnoder);
                                                                                 
@@ -247,8 +251,9 @@ function updateGraph(){
                                       newtargeta=arrayid[position]; 
                                       var idrule=0;
                                       arraylinks.forEach((label)=>label["source"]==arrayid[position]?idrule=label["target"]:null);
-                                      
-                                      newlinkr={"source":newtarget,"target":idrule};
+                                      newidrule=0;
+                                      arraylinks.forEach((label)=>label["source"]==idrule?newidrule=label["target"]:null);
+                                      newlinkr={"source":newtarget,"target":newidrule};
                                       
                                       arraylinks.push(newlinkr);
                                       
@@ -320,8 +325,9 @@ function updateGraph(){
                                       newtarget=parseInt(arraynodes.length+1)
                                       newlinkr={"source":parseInt(issource),"target":newtarget};
                                             
-                                      newnoder={id: newtarget, group: 1, label: "gainsPrivilege"+"('"+address+"'"+lengthdonnee[z]["cprivileges"]+"):0"}
-                                            
+                                      //newnoder={id: newtarget, group: 1, label: "gainsPrivilege"+"('"+address+"'"+lengthdonnee[z]["cprivileges"]+"):0"}
+                                      newnoder={id: newtarget, group: 2, label: "RULE 9 (gain privilege):0"} 
+
                                       arraylinks.push(newlinkr);
                                       arraynodes.push(newnoder);
                                                                                   
@@ -338,8 +344,9 @@ function updateGraph(){
                                           newtargeta=arrayid[position]; 
                                           var idrule=0;
                                           arraylinks.forEach((label)=>label["source"]==arrayid[position]?idrule=label["target"]:null);
-                                          
-                                          newlinkr={"source":newtarget,"target":idrule};
+                                          newidrule=0;
+                                          arraylinks.forEach((label)=>label["source"]==idrule?newidrule=label["target"]:null);
+                                          newlinkr={"source":newtarget,"target":newidrule};
                                           arraylinks.push(newlinkr);
                                           
                                           localStorage.setItem('counter','remove '+username+' as '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
@@ -643,7 +650,8 @@ function updateGraph(){
                                     
                                   var newid=0;
                                   arraylinks.forEach((label)=>label["source"]==idvul?newid=label["target"]:null);
-                                  issource=newid;          
+                                  arraylinks.forEach((label)=>label["source"]==newid?idvul=label["target"]:null);
+                                  issource=idvul;          
                                   for(z=0; z<lengthdonnee.length; z++){
                                     if(lengthdonnee[z]["cprivileges"]=="Privileged"||lengthdonnee[z]["cprivileges"]=="Administrator"){
                                       if(arraycve.includes(lengthdonnee[z]["cve"])){
@@ -659,8 +667,9 @@ function updateGraph(){
                                           newtarget=parseInt(arraynodes.length+1)
                                           newlinkr={"source":parseInt(issource),"target":newtarget};
                                                 
-                                          newnoder={id: newtarget, group: 1, label: "gainsPrivilege"+"('"+address+"'"+lengthdonnee[z]["cprivileges"]+"):0"}
-                                                
+                                          //newnoder={id: newtarget, group: 1, label: "gainsPrivilege"+"('"+address+"'"+lengthdonnee[z]["cprivileges"]+"):0"}
+                                          newnoder={id: newtarget, group: 2, label: "RULE 9 (gain privilege):0"}      
+
                                           arraylinks.push(newlinkr);
                                           arraynodes.push(newnoder);
                                                                                       
@@ -679,8 +688,9 @@ function updateGraph(){
                                             newtargeta=arrayid[position]; 
                                             var idrule=0;
                                             arraylinks.forEach((label)=>label["source"]==arrayid[position]?idrule=label["target"]:null);
-                                            
-                                            newlinkr={"source":newtarget,"target":idrule};
+                                            newidrule=0;
+                                            arraylinks.forEach((label)=>label["source"]==idrule?newidrule=label["target"]:null);
+                                            newlinkr={"source":newtarget,"target":newidrule};
                                             
                                             arraylinks.push(newlinkr);
                                             
@@ -752,8 +762,9 @@ function updateGraph(){
                                             newtarget=parseInt(arraynodes.length+1)
                                             newlinkr={"source":parseInt(issource),"target":newtarget};
                                                   
-                                            newnoder={id: newtarget, group: 1, label: "gainsPrivilege"+"('"+address+"'"+lengthdonnee[z]["cprivileges"]+"):0"}
-                                                  
+                                            //newnoder={id: newtarget, group: 1, label: "gainsPrivilege"+"('"+address+"'"+lengthdonnee[z]["cprivileges"]+"):0"}
+                                            newnoder={id: newtarget, group: 2, label: "RULE 9 (gain privilege):0"} 
+
                                             arraylinks.push(newlinkr);
                                             arraynodes.push(newnoder);
                                                                                         
@@ -770,8 +781,9 @@ function updateGraph(){
                                                 newtargeta=arrayid[position]; 
                                                 var idrule=0;
                                                 arraylinks.forEach((label)=>label["source"]==arrayid[position]?idrule=label["target"]:null);
-                                                
-                                                newlinkr={"source":newtarget,"target":idrule};
+                                                newidrule=0;
+                                                arraylinks.forEach((label)=>label["source"]==idrule?newidrule=label["target"]:null);
+                                                newlinkr={"source":newtarget,"target":newidrule};
                                                 arraylinks.push(newlinkr);
                                                 
                                                 localStorage.setItem('counter','remove '+username+' as '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
