@@ -48,6 +48,7 @@ function updateGraph(){
       var sep=graph["nodes"][i]["label"].split(',');
       add=sep[0].split("'")[1];
       addsource=sep[0].split("'")[1];
+      portnet=parseInt(sep[3].split("):")[0].split("'")[1]);
       if(sep[1]!="no_products" && add==address && sep[2]==protocol && parseInt(sep[3].split("):")[0].split("'")[1])==parseInt(port)){
         
   
@@ -56,14 +57,21 @@ function updateGraph(){
         username=sep[4].split(")")[0];
         for (var i = 0; i < graph["nodes"].length; i++){
           var vul=graph["nodes"][i]["label"].indexOf("vulExists");
-          
-          if(vul==0){
-            addvul=graph["nodes"][i]["label"].split(',')[0].split("'")[1];
+          addvul=graph["nodes"][i]["label"].split(',')[0].split("'")[1];
+          if(vul==0 && addvul==add){
+            
             prodvul=graph["nodes"][i]["label"].split(',')[2];
+            //console.log(graph["nodes"][i]["label"],addvul,prodvul,add,portnet)
             cve=graph["nodes"][i]["label"].split(",")[1].split("'")[1];
+            console.log(cve)
+            idvul=graph["nodes"][i]["id"];
+            //idtarget=0
+            //idsource=[]
+            //graph["links"].forEach((label)=>label["source"]==idvul?idtarget=label["target"]:null);
+            //graph["links"].forEach((label)=>label["target"]==idtarget?idsource.push(label["source"]):null);
+                      
             impact=graph["nodes"][i]["label"].split(',')[4].split(")")[0];
-            if(addvul==add && prodvul==pros){
-              idvul=graph["nodes"][i]["id"];
+            if(prodvul==pros){
               val=1;
               val=0;
               valprod=0;
@@ -205,7 +213,7 @@ function updateGraph(){
                             arraylinks=graph["links"];
                             arraynodes=graph["nodes"]; 
                             arraykafka=[];    
-                              
+                            arraynewid=[]  
                             var newid=0;
                             arraylinks.forEach((label)=>label["source"]==idvul?newid=label["target"]:null);
                             //console.log(newid);
@@ -245,7 +253,7 @@ function updateGraph(){
 
                                     
                                     for(el=0; el<result.length; el++){
-
+                                      
                                       countpostcondition=countpostcondition+1;
                                       var position=result[el];
                                       newtargeta=arrayid[position]; 
@@ -253,12 +261,12 @@ function updateGraph(){
                                       arraylinks.forEach((label)=>label["source"]==arrayid[position]?idrule=label["target"]:null);
                                       newidrule=0;
                                       arraylinks.forEach((label)=>label["source"]==idrule?newidrule=label["target"]:null);
-                                      newlinkr={"source":newtarget,"target":newidrule};
-                                      
-                                      arraylinks.push(newlinkr);
-                                      
-                                      
-                                    
+                                      if(!arraynewid.includes(newidrule)){
+                                        newlinkr={"source":newtarget,"target":newidrule};
+                                        arraynewid.push(newidrule);
+                                        arraylinks.push(newlinkr);
+                                      }
+
                                       localStorage.setItem('counter','remove '+username+' as '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
                                       localStorage.setItem('newcve',lengthdonnee[z]["cve"]);
                                       localStorage.setItem('lastcve',lengthdonnee[z]["lastcve"]);
@@ -346,8 +354,11 @@ function updateGraph(){
                                           arraylinks.forEach((label)=>label["source"]==arrayid[position]?idrule=label["target"]:null);
                                           newidrule=0;
                                           arraylinks.forEach((label)=>label["source"]==idrule?newidrule=label["target"]:null);
-                                          newlinkr={"source":newtarget,"target":newidrule};
-                                          arraylinks.push(newlinkr);
+                                          if(!arraynewid.includes(newidrule)){
+                                            newlinkr={"source":newtarget,"target":newidrule};
+                                            arraynewid.push(newidrule);
+                                            arraylinks.push(newlinkr);
+                                          }
                                           
                                           localStorage.setItem('counter','remove '+username+' as '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
                                           localStorage.setItem('newcve',lengthdonnee[z]["cve"]);
@@ -647,13 +658,18 @@ function updateGraph(){
                                   arraylinks=graph["links"];
                                   arraynodes=graph["nodes"]; 
                                   arraykafka=[];    
-                                    
+                                  arraynewid=[]  
                                   var newid=0;
                                   arraylinks.forEach((label)=>label["source"]==idvul?newid=label["target"]:null);
+                                  //console.log(newid);
                                   arraylinks.forEach((label)=>label["source"]==newid?idvul=label["target"]:null);
+                                  //console.log(idvul);
                                   issource=idvul;          
                                   for(z=0; z<lengthdonnee.length; z++){
                                     if(lengthdonnee[z]["cprivileges"]=="Privileged"||lengthdonnee[z]["cprivileges"]=="Administrator"){
+                                            
+                                      
+                                      
                                       if(arraycve.includes(lengthdonnee[z]["cve"])){
                                                                                   
                                         var result = [];
@@ -668,8 +684,8 @@ function updateGraph(){
                                           newlinkr={"source":parseInt(issource),"target":newtarget};
                                                 
                                           //newnoder={id: newtarget, group: 1, label: "gainsPrivilege"+"('"+address+"'"+lengthdonnee[z]["cprivileges"]+"):0"}
-                                          newnoder={id: newtarget, group: 2, label: "RULE 9 (gain privilege):0"}      
-
+                                          newnoder={id: newtarget, group: 2, label: "RULE 9 (gain privilege):0"} 
+      
                                           arraylinks.push(newlinkr);
                                           arraynodes.push(newnoder);
                                                                                       
@@ -682,7 +698,7 @@ function updateGraph(){
       
                                           
                                           for(el=0; el<result.length; el++){
-      
+                                            
                                             countpostcondition=countpostcondition+1;
                                             var position=result[el];
                                             newtargeta=arrayid[position]; 
@@ -690,12 +706,12 @@ function updateGraph(){
                                             arraylinks.forEach((label)=>label["source"]==arrayid[position]?idrule=label["target"]:null);
                                             newidrule=0;
                                             arraylinks.forEach((label)=>label["source"]==idrule?newidrule=label["target"]:null);
-                                            newlinkr={"source":newtarget,"target":newidrule};
-                                            
-                                            arraylinks.push(newlinkr);
-                                            
-                                            
-                                          
+                                            if(!arraynewid.includes(newidrule)){
+                                              newlinkr={"source":newtarget,"target":newidrule};
+                                              arraynewid.push(newidrule);
+                                              arraylinks.push(newlinkr);
+                                            }
+      
                                             localStorage.setItem('counter','remove '+username+' as '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
                                             localStorage.setItem('newcve',lengthdonnee[z]["cve"]);
                                             localStorage.setItem('lastcve',lengthdonnee[z]["lastcve"]);
@@ -764,7 +780,7 @@ function updateGraph(){
                                                   
                                             //newnoder={id: newtarget, group: 1, label: "gainsPrivilege"+"('"+address+"'"+lengthdonnee[z]["cprivileges"]+"):0"}
                                             newnoder={id: newtarget, group: 2, label: "RULE 9 (gain privilege):0"} 
-
+      
                                             arraylinks.push(newlinkr);
                                             arraynodes.push(newnoder);
                                                                                         
@@ -783,8 +799,11 @@ function updateGraph(){
                                                 arraylinks.forEach((label)=>label["source"]==arrayid[position]?idrule=label["target"]:null);
                                                 newidrule=0;
                                                 arraylinks.forEach((label)=>label["source"]==idrule?newidrule=label["target"]:null);
-                                                newlinkr={"source":newtarget,"target":newidrule};
-                                                arraylinks.push(newlinkr);
+                                                if(!arraynewid.includes(newidrule)){
+                                                  newlinkr={"source":newtarget,"target":newidrule};
+                                                  arraynewid.push(newidrule);
+                                                  arraylinks.push(newlinkr);
+                                                }
                                                 
                                                 localStorage.setItem('counter','remove '+username+' as '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
                                                 localStorage.setItem('newcve',lengthdonnee[z]["cve"]);
@@ -809,7 +828,8 @@ function updateGraph(){
                                             }
                                             
                                           } 
-                                                  
+                                          
+                                                
                                           if(countpostcondition==arraykafka.length){
                                             localStorage.setItem('alerte',JSON.stringify(arraykafka,null,4));
                                             const alertes =  localStorage.getItem("alerte");

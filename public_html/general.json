@@ -2,7 +2,7 @@
     {
         "Header": {
             "Source": "CTM",
-            "Timestamp": "2023-01-30T21:21:55.000Z",
+            "Timestamp": "2023-01-27T14:58:38.000Z",
             "Criticality": "high",
             "Description": "CTM / Cyber Vulnerability"
         },
@@ -18,7 +18,7 @@
     {
         "Header": {
             "Source": "CTM",
-            "Timestamp": "2023-01-30T21:21:55.000Z",
+            "Timestamp": "2023-01-27T14:58:38.000Z",
             "Criticality": "high",
             "Description": "CTM / Cyber Vulnerability"
         },

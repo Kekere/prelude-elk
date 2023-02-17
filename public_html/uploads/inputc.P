@@ -1,26 +1,24 @@
+vulProperty('CVE-2019-0708',remoteExploit,privEscalation).
+vulProperty('CVE-2005-1794',remoteExploit,privEscalation).
+vulProperty('CVE-2017-0146',remoteExploit,privEscalation).
+vulProperty('CVE-2017-0148',remoteExploit,privEscalation).
 
-attackerLocated('216.58.209.227').
-attackGoal(execCode('216.58.209.227',_)).
-hacl('216.58.209.227','216.58.209.227', tcp, 45656).
-hacl('216.58.209.227',_,_,_).
-hacl('192.168.1.78',_,_,_).
-hacl('69.16.175.10',_,_,_).
-hacl('69.16.175.10','192.168.1.78',_,_).
-hacl('69.16.175.10','192.168.1.78',_,_).
+vulExists('192.168.245.24','CVE-2019-0708','windows remote_desktop_protocol').
+vulExists('192.168.245.24','CVE-2005-1794','remote_desktop_connection windows_terminal_services_using_rdp').
+vulExists('192.168.245.24','CVE-2017-0146','windows').
+vulExists('192.168.245.24','CVE-2017-0148','windows').
 
+cvss('CVE-2005-1794',l).
+cvss('CVE-2019-0708',l).
+cvss('CVE-2017-0146',l).
+cvss('CVE-2017-0148',l).
 
+networkServiceInfo('192.168.245.24','remote_desktop_connection windows_terminal_services_using_rdp',tcp,'3389',someUser).
+networkServiceInfo('192.168.245.24','windows remote_desktop_protocol',tcp,'3389',someUser).
+networkServiceInfo('192.168.245.24',windows,tcp,'445',someUser).
 
-/* configuration information of dc */
-
-networkServiceInfo('216.58.209.227', windows_server_2016, tcp , 45656, 'andrew').
-/* vulExists('216.58.209.227', 'CVE-2021-1675', windows_server_2016, remoteExploit, privEscalation).
-vulProperty('CVE-2021-1675', remoteExploit, privEscalation). */
-vulExists('216.58.209.227', 'CVE-2021-34527', windows_server_2016,remoteExploit, privEscalation).
-vulProperty('CVE-2021-34527', remoteExploit, privEscalation).
-
-
-
-
-
-
-
+inCompetent('192.168.245.24_victim').
+hasAccount('192.168.245.24_victim', '192.168.245.24', someUser).
+attackerLocated('192.168.245.118').
+attackGoal(execCode('192.168.245.24',_)).
+hacl('192.168.245.118','192.168.245.24', tcp, _).
