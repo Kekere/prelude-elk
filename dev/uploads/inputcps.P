@@ -1,0 +1,31 @@
+attackerLocated('internet').
+attackGoal(physicalDamage(patient)).
+
+hacl('internet', 'Olivia', tcp, 3389).
+hacl('Alex', _, _, _).
+hacl('Alex', 'Olivia', tcp, 3389).
+hacl('Olivia', _, _, _).
+hacl('Alex', 'Fred', tcp, 135).
+hacl('Fred', _, _, _).
+
+/* configuration information of Alex */
+networkServiceInfo('Alex', rdp, tcp, 3389, 'admin').
+isAdmin('admin').
+
+/* configuration information of Olivia */
+networkServiceInfo('Olivia' , rdp, tcp , 3389, 'olivia').
+vulExists('Olivia', 'CVE-2019-0708', rdp).
+vulProperty('CVE-2019-0708', remoteExploit, serviceInterrupt).
+hasCredentialsOnMemory('Olivia', 'admin').
+
+
+/* configuration information of Fred */
+networkServiceInfo('Fred' , rdp, tcp , 3389, 'fred').
+ipv6Able('Fred').
+
+/* configuration information of Aws Access Key */
+isActive('8022554456', 'bn8022554456').
+hasAccessKeyOnMemory('Fred', 'awsaccesskey').
+
+/* configuration information of Aws user */
+awsUserProperty('8022554456', 'hffffjkk').

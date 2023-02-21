@@ -1,0 +1,1740 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4"
+     xml:base="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-4="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#affectsContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#affectsContext">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#affectsProduct -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#affectsProduct">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scenario"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#barrierType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#barrierType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Barrier"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Authentication"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#BoundaryProtections"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Obfuscation"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#State"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#blockedByBarrier -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#blockedByBarrier">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scenario"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Barrier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#doesNotResultInImpact -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#doesNotResultInImpact">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#evidencedBySource -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#evidencedBySource">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scenario"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ResourceReference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#gainedPrivileges -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#gainedPrivileges">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasLogicalImpact"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LogicalImpact"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PrivilegeLevel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasAction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasAction">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scenario"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasCPEApplicabilityStatement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasCPEApplicabilityStatement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CPEApplicabilityStatement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasCriticality -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasCriticality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Criticality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasEngineeringMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasEngineeringMethod"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasEntityRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasEntityRole">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#EntityRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasEscapeContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasEscapeContext">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ImpactMethod"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasExploitedWeakness -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasExploitedWeakness">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scenario"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#ExploitedWeakness"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasIdentity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasIdentity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#VulnerabilityIdentifier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasImpactMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasImpactMethod">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ImpactMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasKnownChain -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasKnownChain">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#VulnerabilityIdentifier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasLimitedRemoteTypes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasLimitedRemoteTypes">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#isLimitedRemoteType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasLocation">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasLogicalImpact"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LogicalImpact"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Location"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasPhysicalImpact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasLogicalImpact -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasLogicalImpact">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LogicalImpact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasOriginatedProduct -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasOriginatedProduct">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasPhysicalImpact -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasPhysicalImpact">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PhysicalImpact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasProductEnumeration -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasProductEnumeration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProductEnumeration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasRemoteTypes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasRemoteTypes">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#isRemoteType"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasScenario -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasScenario">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scenario"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasScope -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasScope">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scope"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasSectorOfInterest -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasSectorOfInterest">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#SectorOfInterest"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#id -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#id"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#isLimitedRemoteType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#isLimitedRemoteType"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#isRemoteType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#isRemoteType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#RemoteTypes"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#AttackTheater"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#neededPrivileges -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#neededPrivileges">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Barrier"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#barrierType"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Authentication"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PrivilegeLevel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#relatesToContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#relatesToContext">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#BoundaryProtections"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#requiresAttackTheater -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#requiresAttackTheater">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scenario"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#AttackTheater"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#resultsInImpact -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#resultsInImpact">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#scheme -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#scheme"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#value -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#value"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#scheme -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#scheme">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#value">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#values -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#values"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2021/7/vdo#ExploitedWeakness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#ExploitedWeakness"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ApplicationTypes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ApplicationTypes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#AttackTheater -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#AttackTheater"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Authentication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Authentication"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Barrier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Barrier"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#BoundaryProtections -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#BoundaryProtections"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CPEApplicabilityStatement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CPEApplicabilityStatement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ComponentTypes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ComponentTypes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#EntityRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Criticality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Criticality"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#EngineeringMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#EngineeringMethod"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#EntityRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#EntityRole"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#HumanInjuryLevelType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#HumanInjuryLevelType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PhysicalImpact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impact"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ImpactMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ImpactMethod"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ImpersonationTypes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ImpersonationTypes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Authentication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LimitedRemoteTypes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LimitedRemoteTypes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#AttackTheater"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Location"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LogicalImpact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LogicalImpact">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PhysicalImpact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Obfuscation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Obfuscation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PhysicalConsumptionTypes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PhysicalConsumptionTypes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PhysicalImpact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PhysicalImpact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PhysicalImpact"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PrivilegeLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PrivilegeLevel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProductEnumeration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProductEnumeration"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#RaceConditionType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#RaceConditionType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#State"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#RemoteTypes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#RemoteTypes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#AttackTheater"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ResourceReference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ResourceReference"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scenario -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scenario"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scope -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scope"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#SectorOfInterest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#SectorOfInterest"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#SecurityAuthorityTypes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#SecurityAuthorityTypes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#EntityRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ServiceInterruptTypes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ServiceInterruptTypes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LogicalImpact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#State -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#State"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#TrustFailureType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#TrustFailureType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ImpactMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Vulnerability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Vulnerability"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#VulnerabilityIdentifier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#VulnerabilityIdentifier"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ASLR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ASLR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Obfuscation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action"/>
+        <untitled-ontology-4:affectsContext rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Host_OS"/>
+        <untitled-ontology-4:hasImpactMethod rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Code_Execution"/>
+        <untitled-ontology-4:resultsInImpact rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Imp1"/>
+        <untitled-ontology-4:resultsInImpact rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Imp2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action"/>
+        <untitled-ontology-4:affectsContext rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Application"/>
+        <untitled-ontology-4:hasImpactMethod rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Code_Execution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action"/>
+        <untitled-ontology-4:affectsContext rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Host_OS"/>
+        <untitled-ontology-4:resultsInImpact rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Imp1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action"/>
+        <untitled-ontology-4:affectsContext rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Host_OS"/>
+        <untitled-ontology-4:resultsInImpact rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Imp4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Administrator -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Administrator">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PrivilegeLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Anonymous -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Anonymous">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PrivilegeLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Application -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Application">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Assets -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Assets">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PhysicalConsumptionTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Automotive -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Automotive">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#SectorOfInterest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Barrier1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Barrier1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Barrier"/>
+        <untitled-ontology-4:barrierType rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Privileges_Required"/>
+        <untitled-ontology-4:neededPrivileges rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#User"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Barrier2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Barrier2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Barrier"/>
+        <untitled-ontology-4:barrierType rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Privileges_Required"/>
+        <untitled-ontology-4:neededPrivileges rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#User"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Bluetooth -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Bluetooth">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LimitedRemoteTypes"/>
+        <untitled-ontology-4:isLimitedRemoteType rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Limited_Remote"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2017-0143 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2017-0143">
+        <untitled-ontology-4:scheme>http://cve.mitre.org</untitled-ontology-4:scheme>
+        <untitled-ontology-4:value>CVE-2017-0143</untitled-ontology-4:value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2017-0146 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2017-0146">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#VulnerabilityIdentifier"/>
+        <untitled-ontology-4:scheme>http://cve.mitre.org</untitled-ontology-4:scheme>
+        <untitled-ontology-4:value>CVE-2017-0146</untitled-ontology-4:value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2017-0148 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2017-0148">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#VulnerabilityIdentifier"/>
+        <untitled-ontology-4:scheme>http://cve.mitre.org</untitled-ontology-4:scheme>
+        <untitled-ontology-4:value>CVE-2017-0148</untitled-ontology-4:value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2019-0708 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2019-0708">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#VulnerabilityIdentifier"/>
+        <untitled-ontology-4:scheme>http://cve.mitre.org</untitled-ontology-4:scheme>
+        <untitled-ontology-4:value>CVE-2005-1794</untitled-ontology-4:value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2021-34527 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2021-34527">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#VulnerabilityIdentifier"/>
+        <untitled-ontology-4:scheme>http://cve.mitre.org</untitled-ontology-4:scheme>
+        <untitled-ontology-4:value>CVE-2012-0152</untitled-ontology-4:value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2022-3786 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2022-3786">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#VulnerabilityIdentifier"/>
+        <untitled-ontology-4:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CVE-2022-3786</untitled-ontology-4:value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Vulnerability"/>
+        <untitled-ontology-4:hasIdentity rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2017-0146"/>
+        <untitled-ontology-4:hasOriginatedProduct rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product1"/>
+        <untitled-ontology-4:hasScenario rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Sce2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Vulnerability"/>
+        <untitled-ontology-4:hasIdentity rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2017-0143"/>
+        <untitled-ontology-4:hasOriginatedProduct rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product1"/>
+        <untitled-ontology-4:hasScenario rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Sce2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Vulnerability"/>
+        <untitled-ontology-4:hasIdentity rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2019-0708"/>
+        <untitled-ontology-4:hasOriginatedProduct rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product3"/>
+        <untitled-ontology-4:hasScenario rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Sce3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Vulnerability"/>
+        <untitled-ontology-4:hasIdentity rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE-2022-3786"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CWE-20 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CWE-20">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#ExploitedWeakness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CWE-269 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CWE-269">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#ExploitedWeakness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Catastrophic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Catastrophic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#HumanInjuryLevelType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Cellular -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Cellular">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LimitedRemoteTypes"/>
+        <untitled-ontology-4:isLimitedRemoteType rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Limited_Remote"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Channel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Channel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Code_Execution -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Code_Execution">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ImpactMethod"/>
+        <untitled-ontology-4:value>Code Execution</untitled-ontology-4:value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Component -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Component">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#EntityRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Container -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Container">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ApplicationTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Critical -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Critical">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#HumanInjuryLevelType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Database -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Database">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ApplicationTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Dynamic_Compilation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Dynamic_Compilation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Obfuscation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Electricity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Electricity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PhysicalConsumptionTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Encryption -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Encryption">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Authentication"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Environmental_Condition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Environmental_Condition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Failure_to_Establish_Trust -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Failure_to_Establish_Trust">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#TrustFailureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Failure_to_Verify_Content -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Failure_to_Verify_Content">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#TrustFailureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Failure_to_Verify_Receiver -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Failure_to_Verify_Receiver">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#TrustFailureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Failure_to_Verify_Transmitter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Failure_to_Verify_Transmitter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#TrustFailureType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#FileSystem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#FileSystem"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#File_System -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#File_System">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Location"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Finance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Finance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#SectorOfInterest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Firmware -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Firmware">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Full_Control -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Full_Control">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#RaceConditionType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Generic_Trust -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Generic_Trust">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PrivilegeLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Guest_OS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Guest_OS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Hang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Hang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ServiceInterruptTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Health_Care -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Health_Care">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#SectorOfInterest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Host_OS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Host_OS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Hypervisor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Hypervisor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Imp1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Imp1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impact"/>
+        <untitled-ontology-4:gainedPrivileges rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#User"/>
+        <untitled-ontology-4:hasEscapeContext rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Host_OS"/>
+        <untitled-ontology-4:hasLogicalImpact rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PrivilegeEscalation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Imp2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Imp2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impact"/>
+        <untitled-ontology-4:hasEscapeContext rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Host_OS"/>
+        <untitled-ontology-4:hasLogicalImpact rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Shutdown"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Imp4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Imp4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impact"/>
+        <untitled-ontology-4:hasEscapeContext rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Host_OS"/>
+        <untitled-ontology-4:hasLogicalImpact rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Service_Interrupt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impacted -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impacted">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ComponentTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impersonation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Impersonation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Authentication"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Indirect_Discloure -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Indirect_Discloure">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LogicalImpact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Internet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Internet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#RemoteTypes"/>
+        <untitled-ontology-4:isRemoteType rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Remote"/>
+        <rdfs:label>Internet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Intranet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Intranet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#RemoteTypes"/>
+        <untitled-ontology-4:isRemoteType rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Remote"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Limited_Remote -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Limited_Remote">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#AttackTheater"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Line-of-Sight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Line-of-Sight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LimitedRemoteTypes"/>
+        <untitled-ontology-4:isLimitedRemoteType rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Limited_Remote"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Local -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Local">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#AttackTheater"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Local_Network -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Local_Network">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#RemoteTypes"/>
+        <untitled-ontology-4:isRemoteType rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Remote"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Malicious_Application -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Malicious_Application">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#EngineeringMethod"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Malicious_File -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Malicious_File">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#EngineeringMethod"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Malicious_Link -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Malicious_Link">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#EngineeringMethod"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Malicious_Website_Content -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Malicious_Website_Content">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#EngineeringMethod"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Man-in-the-Middle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Man-in-the-Middle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ImpersonationTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Memory -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Memory">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Location"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Minor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Minor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#HumanInjuryLevelType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Module -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Module">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ApplicationTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Negligible -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Negligible">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#HumanInjuryLevelType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Network_Traffic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Network_Traffic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Location"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#No_Control -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#No_Control">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#RaceConditionType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Panic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Panic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ServiceInterruptTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Partial_Control -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Partial_Control">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#RaceConditionType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Physical -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Physical"/>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Physical_Hardware -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Physical_Hardware">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2021/7/vdo#Context"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Precondition_Required -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Precondition_Required">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Primary -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Primary">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#SecurityAuthorityTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PrivilegeEscalation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PrivilegeEscalation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LogicalImpact"/>
+        <untitled-ontology-4:value>Privilege Escalation</untitled-ontology-4:value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Privileged -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Privileged">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PrivilegeLevel"/>
+        <untitled-ontology-4:value>Privileged</untitled-ontology-4:value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Privileges_Required -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Privileges_Required">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Authentication"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProdEnum1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProdEnum1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProductEnumeration"/>
+        <untitled-ontology-4:values>cpe:2.3:o:microsoft:windows_10</untitled-ontology-4:values>
+        <untitled-ontology-4:values>cpe:2.3:o:microsoft:windows_10:20h2</untitled-ontology-4:values>
+        <untitled-ontology-4:values>cpe:2.3:o:microsoft:windows_10:21h1</untitled-ontology-4:values>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProdEnum2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProdEnum2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProductEnumeration"/>
+        <untitled-ontology-4:values rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cpe:2.3:a:openssl:openssl</untitled-ontology-4:values>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProdEnum3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProdEnum3">
+        <untitled-ontology-4:values>cpe:2.3:a:microsoft:remote_desktop_connection:5.1.2600.2180:*:windows_xp:*:*:*:*:*</untitled-ontology-4:values>
+        <untitled-ontology-4:values>cpe:2.3:a:microsoft:windows_terminal_services_using_rdp:5.2:*:*:*:*:*:*:*</untitled-ontology-4:values>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product"/>
+        <untitled-ontology-4:hasProductEnumeration rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProdEnum1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product"/>
+        <untitled-ontology-4:hasProductEnumeration rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProdEnum3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Public_Administration -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Public_Administration">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#SectorOfInterest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Race_Condition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Race_Condition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Read-Direct -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Read-Direct">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LogicalImpact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Reboot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Reboot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ServiceInterruptTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Remote -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Remote">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#AttackTheater"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Resource_Removal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Resource_Removal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LogicalImpact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Sandbox -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Sandbox">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#BoundaryProtections"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Sce1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Sce1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scenario"/>
+        <untitled-ontology-4:affectsProduct rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product1"/>
+        <untitled-ontology-4:blockedByBarrier rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Barrier1"/>
+        <untitled-ontology-4:hasAction rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action1"/>
+        <untitled-ontology-4:hasExploitedWeakness rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CWE-269"/>
+        <untitled-ontology-4:requiresAttackTheater rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Internet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Sce2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Sce2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scenario"/>
+        <untitled-ontology-4:affectsProduct rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product1"/>
+        <untitled-ontology-4:blockedByBarrier rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Barrier2"/>
+        <untitled-ontology-4:hasAction rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action2"/>
+        <untitled-ontology-4:hasExploitedWeakness rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CWE-20"/>
+        <untitled-ontology-4:requiresAttackTheater rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Remote"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Sce3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Sce3">
+        <untitled-ontology-4:affectsProduct rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product1"/>
+        <untitled-ontology-4:affectsProduct rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Product3"/>
+        <untitled-ontology-4:hasAction rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Sce4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Sce4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Scenario"/>
+        <untitled-ontology-4:affectsProduct rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ProdEnum3"/>
+        <untitled-ontology-4:hasAction rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Action4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Secondary -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Secondary">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#SecurityAuthorityTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Security_Authority -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Security_Authority">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#EntityRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Serious -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Serious">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#HumanInjuryLevelType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Service_Interrupt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Service_Interrupt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LogicalImpact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Shutdown -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Shutdown">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ServiceInterruptTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Social_Engineering -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Social_Engineering">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ImpersonationTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Specialized_Condition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Specialized_Condition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Unrecoverable -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Unrecoverable">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ServiceInterruptTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#User -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#User">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PrivilegeLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Vulnerable -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Vulnerable">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ComponentTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Water -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Water">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#PhysicalConsumptionTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Web_Server -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Web_Server">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#ApplicationTypes"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Wireless -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Wireless">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LimitedRemoteTypes"/>
+        <untitled-ontology-4:isLimitedRemoteType rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Limited_Remote"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Write-Direct -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Write-Direct">
+        <rdf:type rdf:resource="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#LogicalImpact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Internet"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Intranet"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Internet"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Local_Network"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Intranet"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Local_Network"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Limited_Remote"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Local"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Limited_Remote"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Physical"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Limited_Remote"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Remote"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Local"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Physical"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Local"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Remote"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Physical"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#Remote"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
