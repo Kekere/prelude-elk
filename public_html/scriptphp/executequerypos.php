@@ -4,8 +4,8 @@
 $output = shell_exec($command);
 $cveid = $_POST['cveid'];
 $prod = $_POST['prod'];
-//$cveid="CVE-2012-0142";
-//$prod="remote_desktop_connection";
+#$cveid="CVE-2005-1794";
+#$prod="windows";
 //$output=shell_exec("python3 ../scriptpython/querypost.py");
 $output = shell_exec("python3 ../scriptpython/querypost.py $cveid $prod");
 echo $output;
