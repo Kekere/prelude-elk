@@ -38,6 +38,12 @@ primitive(bugHyp(_,_,_,_)).
 primitive(vulExists(_machine,_vulID,_program,_range,_consequence)).
 primitive(canAccessFile(_host, _user, _access, _path)).
 primitive(isWebServer(_host)).
+primitive(hasCredentialsOnMemory(_host, _lastuser)).
+primitive(isAdmin(_user)).
+primitive(ipv6Able(_host)).
+primitive(isActive(_accountid, _accesskeyid)).
+primitive(awsUserProperty(_accountid, _userid)).
+primitive(hasAccessKeyOnMemory(_host, _awsaccesskey)).
 meta(cvss(_vulID, _ac)).
 
 
@@ -49,6 +55,13 @@ derived(accessMaliciousInput(_host, _principal, _program)).
 derived(principalCompromised(_victim)).
 derived(dos(_host)).
 derived(logInService(_host, _protocol, _port)).
+derived(harvestCredentials(_host, _lastuser)).
+derived(logOn(_h, _user)).
+derived(obtainControl(_host,_user)).
+derived(modify(_host, _info)).
+derived(physicalDamage(_host)).
+derived(stealAwsAccessKey(_host, _accountid, _accesskeyid, _awsaccesskey)).
+derived(awsUserCompromise(_accountid, _userid)).
 
 meta(attackGoal(_)).
 meta(advances(_, _)).
@@ -66,12 +79,75 @@ meta(advances(_, _)).
 :- table principalCompromised/1.
 :- table vulExists/5.
 :- table logInService/3.
-
+:- table harvestCredentials/2.
+:- table logOn/2.
+:- table obtainControl/2.
+:- table modify/2.
+:- table physicalDamage/1.
+:- table stealAwsAccessKey/4.
+:- table awsUserCompromise/2.
 
 
 /******************************************************/
 /****         Interaction Rules                   *****/
 /******************************************************/
+/****** New rules added for the proposed scenario ******
+*/
+interaction_rule(
+   (awsUserCompromise(_accountid, _userid) :-
+        stealAwsAccessKey(_host, _accountid, _accesskeyid, _awsaccesskey),
+	awsUserProperty(_accountid, _userid)),
+   rule_desc('Steal Aws Access Key',
+   0.5)).
+
+interaction_rule(
+   (stealAwsAccessKey(_host, _accountid, _accesskeyid, _awsaccesskey) :-
+        isActive(_accountid, _accesskeyid),
+        hasAccessKeyOnMemory(_host, _awsaccesskey),
+        obtainControl(_host,_user)),
+   rule_desc('Steal Aws Access Key',
+   0.5)).
+
+interaction_rule(
+   (physicalDamage(_host) :-
+	modify(_host, _info)),
+   rule_desc('Physical damage',
+   0.5)).
+
+interaction_rule(
+   (modify(_host, _info) :-
+	obtainControl(_host,_user)),
+   rule_desc('Modify bus info',
+   0.5)).
+
+interaction_rule(
+   (obtainControl(_host,_user) :-
+        isAdmin(_user),
+	execCode(_host, _user),
+        ipv6Able(_host)),
+   rule_desc('Obtain control of network traffic',
+   0.5)).
+
+interaction_rule(
+   (execCode(_host, _user) :-
+        logOn(_h, _user),
+        hacl(_h, _host, _protocol, _port)),
+   rule_desc('Execute code remotely on server',
+   0.5)).
+
+interaction_rule(
+   (logOn(_host, _user) :-
+        networkServiceInfo(_host, _program, _protocol, _port, _user),
+        hacl(_host, _h, _protocol, _port),
+	harvestCredentials(_h, _user)),
+   rule_desc('Remote login on host by reusing credentials',
+   0.5)).
+
+interaction_rule(
+   (harvestCredentials(_host, _lastuser) :-
+	execCode(_host, _),
+	hasCredentialsOnMemory(_host, _lastuser)),
+   rule_desc('Credentials harvesting of the last user connected remotely',1.0)).
 
 /****** Section execCode ******
 interaction_rule(

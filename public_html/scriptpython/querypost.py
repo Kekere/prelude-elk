@@ -18,7 +18,7 @@ class SparqlQueries:
         #Search query is given here
         #Base URL of your ontology has to be given here
         query = "base <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4> " \
-        "SELECT DISTINCT ?v ?pos ?priv ?im ?impmethod ?at ?aut ?log ?sce ?cpe ?imp ?impmethod ?priv1 ?priv ?sce1" \
+        "SELECT DISTINCT ?v ?pos ?priv ?im ?impmethod ?at ?aut ?log ?sce ?cpe ?imp ?priv1 ?priv ?sce1" \
         "WHERE { " \
         "?vul <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasIdentity> ?vulid . " \
         "?vulid <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#value> ?v . " \

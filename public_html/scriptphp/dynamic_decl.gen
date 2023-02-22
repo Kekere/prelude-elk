@@ -1,40 +1,52 @@
-:-(dynamic(inCompetent(_h3947))).
+:-(dynamic(inCompetent(_h3965))).
 
-:-(dynamic(competent(_h3947))).
+:-(dynamic(competent(_h3965))).
 
-:-(dynamic(clientProgram(_h3947,_h3948))).
+:-(dynamic(clientProgram(_h3965,_h3966))).
 
-:-(dynamic(vulExists(_h3947,_h3948,_h3949))).
+:-(dynamic(vulExists(_h3965,_h3966,_h3967))).
 
-:-(dynamic(vulProperty(_h3947,_h3948,_h3949))).
+:-(dynamic(vulProperty(_h3965,_h3966,_h3967))).
 
-:-(dynamic(hacl(_h3947,_h3948,_h3949,_h3950))).
+:-(dynamic(hacl(_h3965,_h3966,_h3967,_h3968))).
 
-:-(dynamic(attackerLocated(_h3947))).
+:-(dynamic(attackerLocated(_h3965))).
 
-:-(dynamic(hasAccount(_h3947,_h3948,_h3949))).
+:-(dynamic(hasAccount(_h3965,_h3966,_h3967))).
 
-:-(dynamic(networkServiceInfo(_h3947,_h3948,_h3949,_h3950,_h3951))).
+:-(dynamic(networkServiceInfo(_h3965,_h3966,_h3967,_h3968,_h3969))).
 
-:-(dynamic(setuidProgramInfo(_h3947,_h3948,_h3949))).
+:-(dynamic(setuidProgramInfo(_h3965,_h3966,_h3967))).
 
-:-(dynamic(nfsExportInfo(_h3947,_h3948,_h3949,_h3950))).
+:-(dynamic(nfsExportInfo(_h3965,_h3966,_h3967,_h3968))).
 
-:-(dynamic(nfsMounted(_h3947,_h3948,_h3949,_h3950,_h3951))).
+:-(dynamic(nfsMounted(_h3965,_h3966,_h3967,_h3968,_h3969))).
 
-:-(dynamic(localFileProtection(_h3947,_h3948,_h3949,_h3950))).
+:-(dynamic(localFileProtection(_h3965,_h3966,_h3967,_h3968))).
 
-:-(dynamic(dependsOn(_h3947,_h3948,_h3949))).
+:-(dynamic(dependsOn(_h3965,_h3966,_h3967))).
 
-:-(dynamic(installed(_h3947,_h3948))).
+:-(dynamic(installed(_h3965,_h3966))).
 
-:-(dynamic(bugHyp(_h3947,_h3948,_h3949,_h3950))).
+:-(dynamic(bugHyp(_h3965,_h3966,_h3967,_h3968))).
 
-:-(dynamic(vulExists(_h3947,_h3948,_h3949,_h3950,_h3951))).
+:-(dynamic(vulExists(_h3965,_h3966,_h3967,_h3968,_h3969))).
 
-:-(dynamic(canAccessFile(_h3947,_h3948,_h3949,_h3950))).
+:-(dynamic(canAccessFile(_h3965,_h3966,_h3967,_h3968))).
 
-:-(dynamic(isWebServer(_h3947))).
+:-(dynamic(isWebServer(_h3965))).
 
-:-(dynamic(trace_step(_h3891,_h3892))).
+:-(dynamic(hasCredentialsOnMemory(_h3965,_h3966))).
+
+:-(dynamic(isAdmin(_h3965))).
+
+:-(dynamic(ipv6Able(_h3965))).
+
+:-(dynamic(isActive(_h3965,_h3966))).
+
+:-(dynamic(awsUserProperty(_h3965,_h3966))).
+
+:-(dynamic(hasAccessKeyOnMemory(_h3965,_h3966))).
+
+:-(dynamic(trace_step(_h3909,_h3910))).
 

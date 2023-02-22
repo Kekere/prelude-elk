@@ -2890,7 +2890,7 @@
 </vertex>
 <vertex>
 <id>2</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -2902,7 +2902,7 @@
 </vertex>
 <vertex>
 <id>4</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -2914,7 +2914,7 @@
 </vertex>
 <vertex>
 <id>6</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -2932,7 +2932,7 @@
 </vertex>
 <vertex>
 <id>9</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -2944,7 +2944,7 @@
 </vertex>
 <vertex>
 <id>11</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -2956,7 +2956,7 @@
 </vertex>
 <vertex>
 <id>13</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -2968,7 +2968,7 @@
 </vertex>
 <vertex>
 <id>15</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -2986,7 +2986,7 @@
 </vertex>
 <vertex>
 <id>18</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -2998,7 +2998,7 @@
 </vertex>
 <vertex>
 <id>20</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3010,7 +3010,7 @@
 </vertex>
 <vertex>
 <id>22</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3022,7 +3022,7 @@
 </vertex>
 <vertex>
 <id>24</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3034,7 +3034,7 @@
 </vertex>
 <vertex>
 <id>26</id>
-<fact>RULE 6 (direct network access)</fact>
+<fact>RULE 14 (direct network access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3064,7 +3064,7 @@
 </vertex>
 <vertex>
 <id>31</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3076,7 +3076,7 @@
 </vertex>
 <vertex>
 <id>33</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3088,7 +3088,7 @@
 </vertex>
 <vertex>
 <id>35</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3100,7 +3100,7 @@
 </vertex>
 <vertex>
 <id>37</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3118,7 +3118,7 @@
 </vertex>
 <vertex>
 <id>40</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3136,7 +3136,7 @@
 </vertex>
 <vertex>
 <id>43</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3148,7 +3148,7 @@
 </vertex>
 <vertex>
 <id>45</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3160,7 +3160,7 @@
 </vertex>
 <vertex>
 <id>47</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3172,7 +3172,7 @@
 </vertex>
 <vertex>
 <id>49</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3184,7 +3184,7 @@
 </vertex>
 <vertex>
 <id>51</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3196,7 +3196,7 @@
 </vertex>
 <vertex>
 <id>53</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3208,7 +3208,7 @@
 </vertex>
 <vertex>
 <id>55</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3220,7 +3220,7 @@
 </vertex>
 <vertex>
 <id>57</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3232,7 +3232,7 @@
 </vertex>
 <vertex>
 <id>59</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3244,7 +3244,7 @@
 </vertex>
 <vertex>
 <id>61</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3256,7 +3256,7 @@
 </vertex>
 <vertex>
 <id>63</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3268,7 +3268,7 @@
 </vertex>
 <vertex>
 <id>65</id>
-<fact>RULE 6 (direct network access)</fact>
+<fact>RULE 14 (direct network access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3292,7 +3292,7 @@
 </vertex>
 <vertex>
 <id>69</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3304,25 +3304,25 @@
 </vertex>
 <vertex>
 <id>71</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>72</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>73</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>74</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3334,7 +3334,7 @@
 </vertex>
 <vertex>
 <id>76</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3346,49 +3346,49 @@
 </vertex>
 <vertex>
 <id>78</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>79</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>80</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>81</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>82</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>83</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>84</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>85</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3400,7 +3400,7 @@
 </vertex>
 <vertex>
 <id>87</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3412,7 +3412,7 @@
 </vertex>
 <vertex>
 <id>89</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3424,7 +3424,7 @@
 </vertex>
 <vertex>
 <id>91</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3436,7 +3436,7 @@
 </vertex>
 <vertex>
 <id>93</id>
-<fact>RULE 6 (direct network access)</fact>
+<fact>RULE 14 (direct network access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3454,25 +3454,25 @@
 </vertex>
 <vertex>
 <id>96</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>97</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>98</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>99</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3484,7 +3484,7 @@
 </vertex>
 <vertex>
 <id>101</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3496,49 +3496,49 @@
 </vertex>
 <vertex>
 <id>103</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>104</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>105</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>106</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>107</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>108</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>109</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>110</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3550,7 +3550,7 @@
 </vertex>
 <vertex>
 <id>112</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3562,7 +3562,7 @@
 </vertex>
 <vertex>
 <id>114</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3574,7 +3574,7 @@
 </vertex>
 <vertex>
 <id>116</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3586,7 +3586,7 @@
 </vertex>
 <vertex>
 <id>118</id>
-<fact>RULE 6 (direct network access)</fact>
+<fact>RULE 14 (direct network access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3604,49 +3604,49 @@
 </vertex>
 <vertex>
 <id>121</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>122</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>123</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>124</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>125</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>126</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>127</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>128</id>
-<fact>RULE 6 (direct network access)</fact>
+<fact>RULE 14 (direct network access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3670,7 +3670,7 @@
 </vertex>
 <vertex>
 <id>132</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3682,7 +3682,7 @@
 </vertex>
 <vertex>
 <id>134</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3694,7 +3694,7 @@
 </vertex>
 <vertex>
 <id>136</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3706,7 +3706,7 @@
 </vertex>
 <vertex>
 <id>138</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3724,7 +3724,7 @@
 </vertex>
 <vertex>
 <id>141</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3742,7 +3742,7 @@
 </vertex>
 <vertex>
 <id>144</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3754,7 +3754,7 @@
 </vertex>
 <vertex>
 <id>146</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3766,7 +3766,7 @@
 </vertex>
 <vertex>
 <id>148</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3778,7 +3778,7 @@
 </vertex>
 <vertex>
 <id>150</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3790,7 +3790,7 @@
 </vertex>
 <vertex>
 <id>152</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3802,7 +3802,7 @@
 </vertex>
 <vertex>
 <id>154</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3814,7 +3814,7 @@
 </vertex>
 <vertex>
 <id>156</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3826,7 +3826,7 @@
 </vertex>
 <vertex>
 <id>158</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3838,7 +3838,7 @@
 </vertex>
 <vertex>
 <id>160</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3850,7 +3850,7 @@
 </vertex>
 <vertex>
 <id>162</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3862,7 +3862,7 @@
 </vertex>
 <vertex>
 <id>164</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3874,7 +3874,7 @@
 </vertex>
 <vertex>
 <id>166</id>
-<fact>RULE 6 (direct network access)</fact>
+<fact>RULE 14 (direct network access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3898,7 +3898,7 @@
 </vertex>
 <vertex>
 <id>170</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3910,25 +3910,25 @@
 </vertex>
 <vertex>
 <id>172</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>173</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>174</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>175</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3940,7 +3940,7 @@
 </vertex>
 <vertex>
 <id>177</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -3952,49 +3952,49 @@
 </vertex>
 <vertex>
 <id>179</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>180</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>181</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>182</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>183</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>184</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>185</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>186</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4006,7 +4006,7 @@
 </vertex>
 <vertex>
 <id>188</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4018,7 +4018,7 @@
 </vertex>
 <vertex>
 <id>190</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4030,7 +4030,7 @@
 </vertex>
 <vertex>
 <id>192</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4042,7 +4042,7 @@
 </vertex>
 <vertex>
 <id>194</id>
-<fact>RULE 6 (direct network access)</fact>
+<fact>RULE 14 (direct network access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4060,25 +4060,25 @@
 </vertex>
 <vertex>
 <id>197</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>198</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>199</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>200</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4090,7 +4090,7 @@
 </vertex>
 <vertex>
 <id>202</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4102,49 +4102,49 @@
 </vertex>
 <vertex>
 <id>204</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>205</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>206</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>207</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>208</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>209</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>210</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>211</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4156,7 +4156,7 @@
 </vertex>
 <vertex>
 <id>213</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4168,7 +4168,7 @@
 </vertex>
 <vertex>
 <id>215</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4180,7 +4180,7 @@
 </vertex>
 <vertex>
 <id>217</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4192,7 +4192,7 @@
 </vertex>
 <vertex>
 <id>219</id>
-<fact>RULE 6 (direct network access)</fact>
+<fact>RULE 14 (direct network access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4210,49 +4210,49 @@
 </vertex>
 <vertex>
 <id>222</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>223</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>224</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>225</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>226</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>227</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>228</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>229</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4264,7 +4264,7 @@
 </vertex>
 <vertex>
 <id>231</id>
-<fact>RULE 6 (direct network access)</fact>
+<fact>RULE 14 (direct network access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4288,7 +4288,7 @@
 </vertex>
 <vertex>
 <id>235</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4300,7 +4300,7 @@
 </vertex>
 <vertex>
 <id>237</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4312,7 +4312,7 @@
 </vertex>
 <vertex>
 <id>239</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4324,7 +4324,7 @@
 </vertex>
 <vertex>
 <id>241</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4342,7 +4342,7 @@
 </vertex>
 <vertex>
 <id>244</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4360,7 +4360,7 @@
 </vertex>
 <vertex>
 <id>247</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4372,7 +4372,7 @@
 </vertex>
 <vertex>
 <id>249</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4384,7 +4384,7 @@
 </vertex>
 <vertex>
 <id>251</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4396,7 +4396,7 @@
 </vertex>
 <vertex>
 <id>253</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4408,7 +4408,7 @@
 </vertex>
 <vertex>
 <id>255</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4420,7 +4420,7 @@
 </vertex>
 <vertex>
 <id>257</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4432,7 +4432,7 @@
 </vertex>
 <vertex>
 <id>259</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4444,7 +4444,7 @@
 </vertex>
 <vertex>
 <id>261</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4456,7 +4456,7 @@
 </vertex>
 <vertex>
 <id>263</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4468,7 +4468,7 @@
 </vertex>
 <vertex>
 <id>265</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4480,7 +4480,7 @@
 </vertex>
 <vertex>
 <id>267</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4492,7 +4492,7 @@
 </vertex>
 <vertex>
 <id>269</id>
-<fact>RULE 6 (direct network access)</fact>
+<fact>RULE 14 (direct network access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4516,7 +4516,7 @@
 </vertex>
 <vertex>
 <id>273</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4528,25 +4528,25 @@
 </vertex>
 <vertex>
 <id>275</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>276</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>277</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>278</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4558,7 +4558,7 @@
 </vertex>
 <vertex>
 <id>280</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4570,49 +4570,49 @@
 </vertex>
 <vertex>
 <id>282</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>283</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>284</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>285</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>286</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>287</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>288</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>289</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4624,7 +4624,7 @@
 </vertex>
 <vertex>
 <id>291</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4636,7 +4636,7 @@
 </vertex>
 <vertex>
 <id>293</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4648,7 +4648,7 @@
 </vertex>
 <vertex>
 <id>295</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4660,7 +4660,7 @@
 </vertex>
 <vertex>
 <id>297</id>
-<fact>RULE 6 (direct network access)</fact>
+<fact>RULE 14 (direct network access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4678,25 +4678,25 @@
 </vertex>
 <vertex>
 <id>300</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>301</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>302</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>303</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4708,7 +4708,7 @@
 </vertex>
 <vertex>
 <id>305</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4720,49 +4720,49 @@
 </vertex>
 <vertex>
 <id>307</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>308</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>309</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>310</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>311</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>312</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>313</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>314</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4774,7 +4774,7 @@
 </vertex>
 <vertex>
 <id>316</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4786,7 +4786,7 @@
 </vertex>
 <vertex>
 <id>318</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4798,7 +4798,7 @@
 </vertex>
 <vertex>
 <id>320</id>
-<fact>RULE 5 (multi-hop access)</fact>
+<fact>RULE 13 (multi-hop access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4810,7 +4810,7 @@
 </vertex>
 <vertex>
 <id>322</id>
-<fact>RULE 6 (direct network access)</fact>
+<fact>RULE 14 (direct network access)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
@@ -4828,43 +4828,43 @@
 </vertex>
 <vertex>
 <id>325</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>326</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>327</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>328</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>329</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>330</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>
 <vertex>
 <id>331</id>
-<fact>RULE 2 (remote exploit of a server program)</fact>
+<fact>RULE 10 (remote exploit of a server program)</fact>
 <metric>0</metric>
 <type>AND</type>
 </vertex>

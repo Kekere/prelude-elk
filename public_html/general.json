@@ -2,39 +2,7 @@
     {
         "Header": {
             "Source": "CTM",
-            "Timestamp": "2023-01-27T14:58:38.000Z",
-            "Criticality": "high",
-            "Description": "CTM / Cyber Vulnerability"
-        },
-        "Payload": {
-            "CVEID": "CVE-2017-0146",
-            "IP address": "157.159.68.97",
-            "Product": "remote_desktop_connection",
-            "User Name": "someUser",
-            "Countermeasure": "remove someUser as Privileged on remote_desktop_connection",
-            "Status": "Post-condition of CVE-2005-1794"
-        }
-    },
-    {
-        "Header": {
-            "Source": "CTM",
-            "Timestamp": "2023-01-27T14:58:38.000Z",
-            "Criticality": "high",
-            "Description": "CTM / Cyber Vulnerability"
-        },
-        "Payload": {
-            "CVEID": "CVE-2017-0146",
-            "IP address": "157.159.68.75",
-            "Product": "remote_desktop_connection",
-            "User Name": "someUser",
-            "Countermeasure": "remove someUser as Privileged on remote_desktop_connection",
-            "Status": "Post-condition of CVE-2005-1794"
-        }
-    },
-    {
-        "Header": {
-            "Source": "CTM",
-            "Timestamp": "2023-01-27T14:58:38.000Z",
+            "Timestamp": "2023-02-22T15:40:22.000Z",
             "Criticality": "high",
             "Description": "CTM / Cyber Vulnerability"
         },
@@ -43,55 +11,7 @@
             "IP address": "157.159.68.125",
             "Product": "remote_desktop_connection",
             "User Name": "someUser",
-            "Countermeasure": "remove someUser as Privileged on remote_desktop_connection",
-            "Status": "Post-condition of CVE-2005-1794"
-        }
-    },
-    {
-        "Header": {
-            "Source": "CTM",
-            "Timestamp": "2023-01-27T14:58:38.000Z",
-            "Criticality": "high",
-            "Description": "CTM / Cyber Vulnerability"
-        },
-        "Payload": {
-            "CVEID": "CVE-2017-0143",
-            "IP address": "157.159.68.97",
-            "Product": "remote_desktop_connection",
-            "User Name": "someUser",
-            "Countermeasure": "remove someUser as Privileged on remote_desktop_connection",
-            "Status": "Post-condition of CVE-2005-1794"
-        }
-    },
-    {
-        "Header": {
-            "Source": "CTM",
-            "Timestamp": "2023-01-27T14:58:38.000Z",
-            "Criticality": "high",
-            "Description": "CTM / Cyber Vulnerability"
-        },
-        "Payload": {
-            "CVEID": "CVE-2017-0143",
-            "IP address": "157.159.68.75",
-            "Product": "remote_desktop_connection",
-            "User Name": "someUser",
-            "Countermeasure": "remove someUser as Privileged on remote_desktop_connection",
-            "Status": "Post-condition of CVE-2005-1794"
-        }
-    },
-    {
-        "Header": {
-            "Source": "CTM",
-            "Timestamp": "2023-01-27T14:58:38.000Z",
-            "Criticality": "high",
-            "Description": "CTM / Cyber Vulnerability"
-        },
-        "Payload": {
-            "CVEID": "CVE-2017-0143",
-            "IP address": "157.159.68.125",
-            "Product": "remote_desktop_connection",
-            "User Name": "someUser",
-            "Countermeasure": "remove someUser as Privileged on remote_desktop_connection",
+            "Countermeasure": "remove someUser as User on remote_desktop_connection",
             "Status": "Post-condition of CVE-2005-1794"
         }
     }
