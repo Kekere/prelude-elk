@@ -116,14 +116,14 @@ interaction_rule(
 
 interaction_rule(
    (modify(_host, _info) :-
-	obtainControl(_host,_user)),
+	    obtainControl(_host,_user)),
    rule_desc('Modify bus info',
    0.5)).
 
 interaction_rule(
    (obtainControl(_host,_user) :-
         isAdmin(_user),
-	execCode(_host, _user),
+	      execCode(_host, _user),
         ipv6Able(_host)),
    rule_desc('Obtain control of network traffic',
    0.5)).

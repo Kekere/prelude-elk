@@ -548,21 +548,22 @@ function updateGraph(){
                     newtargeta=parseInt(newtarget+1)
                     newlinka={"source":newtarget,"target":newtargeta}
                     newnodea={id: newtargeta, group: 1, label: lengthdonnee2[z]["newimpact"]+"("+address+")"} 
-                    arraylinks.push(newlinkr);
-                    arraynodes.push(newnoder);
-                    arraylinks.push(newlinka);
-                    arraynodes.push(newnodea);
-                    newnoder={};
+                    
+                     /*newnoder={};
                     newlinkr={};
                     newnodea={};
                     newlinka={};
                     jsonfinal={"nodes":arraynodes,"links":arraylinks};
                     localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-                    obj=JSON.parse(localStorage.getItem('myjson'));
+                    obj=JSON.parse(localStorage.getItem('myjson')); */
 
                     if(lengthdonnee2[z]["newimpact"]=="Panic" || lengthdonnee2[z]["newimpact"]=="Reboot" || lengthdonnee2[z]["newimpact"]){
                       for(var z=0; z<arraynodes.length; z++){
                         if(arraynodes[z]["label"].indexOf("physicalDamage")==0){
+                          arraylinks.push(newlinkr);
+                          arraynodes.push(newnoder);
+                          arraylinks.push(newlinka);
+                          arraynodes.push(newnodea);
                           var idfact=arraynodes[z]["id"];
                           arraylinks.forEach((label)=>label["target"]==idfact?newid=label["source"]:null);
                           //console.log(newid);
