@@ -1,0 +1,32 @@
+attackerLocated('157.159.68.125').
+attackGoal(physicalDamage('157.159.68.75')).
+
+hacl('157.159.68.75', _, _, _).
+hacl('157.159.68.75', '157.159.68.125', tcp, '3389').
+hacl('157.159.68.125', '157.159.68.75', tcp, '3389').
+hacl('157.159.68.125', _, _, _).
+hacl('157.159.68.75', '157.159.68.97', tcp, '135').
+hacl('157.159.68.97', _, _, _).
+
+/* configuration information of 157.159.68.75 */
+networkServiceInfo('157.159.68.75', 'windows', tcp, '3389', alex).
+isAdmin(alex).
+ipv6Able('157.159.68.75').
+
+/* configuration information of 157.159.68.125 */
+networkServiceInfo('157.159.68.125' , windows, tcp , '3389', olivia).
+vulExists('157.159.68.125', 'CVE-2005-1794', windows).
+vulProperty('CVE-2005-1794', remoteExploit, privEscalation).
+hasCredentialsOnMemory('157.159.68.125', alex).
+
+
+/* configuration information of 157.159.68.97 */
+networkServiceInfo('157.159.68.97' , 'windows, tcp' , '3389', fred).
+hasDomainCredentialsOnMemory('157.159.68.97', '157.159.68.97aws').
+
+/* configuration information of Aws Access Key */
+isActive('8022554456', 'bn8022554456').
+hasAccessKeyOnMemory('157.159.68.97', 'awsaccesskey').
+
+/* configuration information of Aws user */
+awsUserProperty('157.159.68.97aws', '8022554456', 'hffffjkk').
