@@ -186,7 +186,7 @@ var fileInput = document.getElementById('file');
 
 fileInput.addEventListener('change', function (e) {
   var file = fileInput.files[0];
-
+  console.log(file);
   var reader = new FileReader();
   reader.readAsText(file);	
 
@@ -204,3 +204,9 @@ function encode( s ) {
     }
     return new Uint8Array( out );
 }
+$(document).ready(function(){
+  $('input[type="file"]').change(function(e){
+      var fileName = e.target.files[0].name;
+      alert('The file "' + fileName +  '" has been selected.');
+  });
+});

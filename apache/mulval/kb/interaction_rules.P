@@ -59,7 +59,7 @@ derived(harvestCredentials(_host, _lastuser)).
 derived(logOn(_h, _user)).
 derived(obtainControl(_host,_user)).
 derived(modify(_host, _info)).
-derived(physicalDamage(_host)).
+derived(physicalDamage(_bus)).
 derived(stealAwsAccessKey(_host, _accountid, _accesskeyid, _awsaccesskey)).
 derived(awsUserCompromise(_accountid, _userid)).
 
@@ -109,7 +109,7 @@ interaction_rule(
    0.5)).
 
 interaction_rule(
-   (physicalDamage(_host) :-
+   (physicalDamage(_bus) :-
 	modify(_host, _info)),
    rule_desc('Physical damage',
    0.5)).
@@ -123,20 +123,20 @@ interaction_rule(
 interaction_rule(
    (obtainControl(_host,_user) :-
         isAdmin(_user),
-	      execCode(_host, _user),
+	      execCode(_h, _user),
         ipv6Able(_host)),
    rule_desc('Obtain control of network traffic',
    0.5)).
 
-interaction_rule(
+/*interaction_rule(
    (execCode(_host, _user) :-
         logOn(_h, _user),
         hacl(_h, _host, _protocol, _port)),
    rule_desc('Execute code remotely on server',
-   0.5)).
+   0.5)).*/
 
 interaction_rule(
-   (logOn(_host, _user) :-
+   (execCode(_host, _user) :-
         networkServiceInfo(_host, _program, _protocol, _port, _user),
         hacl(_host, _h, _protocol, _port),
 	harvestCredentials(_h, _user)),

@@ -222,6 +222,3 @@ function encode( s ) {
     }
     return new Uint8Array( out );
 }
-
-
-

@@ -297,8 +297,8 @@ function updateGraph(){
                       arraynewid=[]  
                       var newid=0;
                       arraylinks.forEach((label)=>label["source"]==idvul?newid=label["target"]:null);
-                      arraylinks.forEach((label)=>label["source"]==newid?idvul=label["target"]:null);
-                      issource=idvul;          
+                      arraylinks.forEach((label)=>label["source"]==newid?issource=label["target"]:null);
+                      //issource=idvul;          
                       for(z=0; z<lengthdonnee.length; z++){
                         if(lengthdonnee[z]["cprivileges"]=="Privileged"||lengthdonnee[z]["cprivileges"]=="Administrator"){
                                 
@@ -536,10 +536,12 @@ function updateGraph(){
                   arraykafka=[];    
                   arraynewid=[]  
                   var newid=0;
+                  var idn=0;
+                  arraylinks.forEach((label)=>label["source"]==idvul?idn=label["target"]:null);
+                  arraylinks.forEach((label)=>label["source"]==idn?issource=label["target"]:null);
+                  //issource=idvul; 
                   //console.log(idvul);
-                  arraylinks.forEach((label)=>label["source"]==idvul?newid=label["target"]:null);
-                  arraylinks.forEach((label)=>label["source"]==newid?idvul=label["target"]:null);
-                  issource=idvul; 
+                  console.log(idvul,issource);
                   for(z=0; z<lengthdonnee2.length; z++){
                     //console.log(lengthdonnee2[z]["newimpact"]);
                     newtarget=parseInt(arraynodes.length+1)
@@ -548,14 +550,30 @@ function updateGraph(){
                     newtargeta=parseInt(newtarget+1)
                     newlinka={"source":newtarget,"target":newtargeta}
                     newnodea={id: newtargeta, group: 1, label: lengthdonnee2[z]["newimpact"]+"("+address+")"} 
-                    
-                     /*newnoder={};
+                    /*console.log(address);
+                    $.ajax
+                    ({
+                        type: "POST",
+                        dataType : 'json',
+                        async: true,
+                        url: './scriptphp/newrules.php',
+                        global:"false",
+                        data : {address: address},
+                        context :document.body,
+                        success: function(response){
+                          
+                        },
+                        failure:function(response){
+                          console.log(response);
+                        }
+                    });
+                    newnoder={};
                     newlinkr={};
                     newnodea={};
                     newlinka={};
                     jsonfinal={"nodes":arraynodes,"links":arraylinks};
                     localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-                    obj=JSON.parse(localStorage.getItem('myjson')); */
+                    obj=JSON.parse(localStorage.getItem('myjson'));*/
 
                     if(lengthdonnee2[z]["newimpact"]=="Panic" || lengthdonnee2[z]["newimpact"]=="Reboot" || lengthdonnee2[z]["newimpact"]){
                       for(var z=0; z<arraynodes.length; z++){
@@ -568,9 +586,14 @@ function updateGraph(){
                           arraylinks.forEach((label)=>label["target"]==idfact?newid=label["source"]:null);
                           //console.log(newid);
                           //var idtarget = graph["nodes"].findIndex((obj => obj.id == newid));
-                          newlinkv={"source":newtargeta,"target":newid};
-                          arraylinks.push(newlinkv)
-                    
+                          var newtargetv=newtargeta+1;
+                          newnodev={id: newtargetv, group: 2, label: "RULE 9 (Physical Damage):0"} ;
+                          newlinkv={"source":newtargeta,"target":newtargetv};
+                          arraylinks.push(newlinkv);
+                          arraynodes.push(newnodev);
+                          var newlinkt={"source":newtargetv,"target":idfact};
+                          arraylinks.push(newlinkt);
+
                           newnoder={};
                           newlinkr={};
                           newnodea={};

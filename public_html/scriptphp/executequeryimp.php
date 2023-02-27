@@ -2,8 +2,8 @@
 //ini_set('display_errors', 1);
 //$command = escapeshellcmd('../scriptpython/query.py');
 $output = shell_exec($command);
-$cveid = $_POST['cveid'];
-#$cveid="CVE-2005-1794";
+#$cveid = $_POST['cveid'];
+$cveid="CVE-2005-1794";
 
 //$output=shell_exec("python3 ../scriptpython/querypost.py");
 $output = shell_exec("python3 ../scriptpython/queryimp.py $cveid");

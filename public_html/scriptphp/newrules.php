@@ -1,28 +1,30 @@
 <?php
-$file = '/home/mulval/kb/interaction_rules.P';
+$file = '../uploads/ifipsec.P';
+$rules = '/home/mulval/kb/interaction_rules.P';
+//$address = $_POST['address'];
+$address = '157.159.68.125';
 // Ouvre un fichier pour lire un contenu existant
-$current = file_get_contents($file);
+$current = file_get_contents($rules);
 // Ajoute une personne
-$current .= "\nprimitive(successExploit(_host,_vulID)).
-primitive(neededPrivileges(_host,_user)).
-derived(gainsPrivileges(_host, _user, _priv)).
-:- table gainsPrivileges/3.\n
+$current .= "\nderived(shutdown(_host)).
+:- table shutdown/1.\n
 interaction_rule(
-    (gainsPrivileges(Host, Perm, admin) :-
-          successExploit('157.159.68.97', 'CVE-2012-0152'),
-          networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'445',someUser),
-          vulExists('157.159.68.97','CVE-2012-0152','windows remote_desktop_protocol',remoteExploit,privEscalation),
-          netAccess('157.159.68.97', tcp, 445)),
-    rule_desc('Gain Privileges',
-    1.0)).\n
-  interaction_rule(
-    (execCode(Host, Perm) :-
-      vulExists('157.159.68.97','CVE-2017-0143','windows',remoteExploit,privEscalation),	
-      gainsPrivileges('157.159.68.97',Perm,admin),
-      neededPrivileges('157.159.68.97',_),
-      networkServiceInfo('157.159.68.97','windows remote_desktop_protocol',tcp,'445',someUser)),
-    rule_desc('remote exploit of a server program',
-    1.0)).";
+  (physicalDamage(_bus) :-
+ shutdown(_host)),
+  rule_desc('Physical damage',
+  0.5)).\n
+interaction_rule(
+  (shutdown(_host) :-
+  execCode('".$address."', _user)),
+  rule_desc('Shutdown',
+  0.5)).";
 // Écrit le résultat dans le fichier
-file_put_contents($file, $current);
+file_put_contents($rules, $current);
+$XSBHOME="/home/XSB";
+$MulvalRoot="/home/mulval";
+// reception du fichier issu de la conversion xmlToJson depuis le client en JS
+
+
+$output = shell_exec("export XSBHOME=".$XSBHOME." && export MULVALROOT=".$MulvalRoot." && export PATH=\$PATH:\$MULVALROOT/utils && export PATH=\$PATH:\$MULVALROOT/bin && PATH=\$PATH:\$XSBHOME/bin && graph_gen.sh ".$file." -l");
+echo $output;
 ?>

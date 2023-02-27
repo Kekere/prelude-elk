@@ -42,73 +42,33 @@ meta(cvss,2).
 meta(attackGoal,1).
 meta(advances,2).
 
-attack(physicalDamage('157.159.68.75')).
+attack(physicalDamage(_h4569)).
 
-possible_duplicate_trace_step(because(14,rule_desc('direct network access',1.0),netAccess('157.159.68.125',tcp,'3389'),[hacl('157.159.68.125','157.159.68.125',tcp,'3389'),attackerLocated('157.159.68.125')])).
+possible_duplicate_trace_step(because(13,rule_desc('direct network access',1.0),netAccess('157.159.68.125',tcp,'3389'),[hacl('157.159.68.75','157.159.68.125',tcp,'3389'),attackerLocated('157.159.68.75')])).
 
-possible_duplicate_trace_step(because(15,rule_desc('direct on-host access',1.0),netAccess('157.159.68.125',tcp,'3389'),[attackerLocated('157.159.68.125')])).
+possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125',windows,tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2005-1794',windows,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125',windows,tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2005-1794',windows,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(6,rule_desc('Credentials harvesting of the last user connected remotely',1.0),harvestCredentials('157.159.68.125',admin),[hasCredentialsOnMemory('157.159.68.125',admin),execCode('157.159.68.125',olivia)])).
 
-possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125',windows,tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2005-1794',windows,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125',windows,tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2005-1794',windows,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(13,rule_desc('multi-hop access',0.5),netAccess('157.159.68.125',tcp,'3389'),[hacl('157.159.68.125','157.159.68.125',tcp,'3389'),advances('157.159.68.125','157.159.68.125'),execCode('157.159.68.125',olivia)])).
+possible_duplicate_trace_step(because(5,rule_desc('Remote login on host by reusing credentials',0.5),execCode('157.159.68.75',admin),[harvestCredentials('157.159.68.125',admin),hacl('157.159.68.75','157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.75',windows,tcp,'3389',admin)])).
 
-possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125',windows,tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2005-1794',windows,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(5,rule_desc('Remote login on host by reusing credentials',0.5),execCode('157.159.68.75',admin),[harvestCredentials('157.159.68.125',admin),hacl('157.159.68.75','157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.75',windows,tcp,'3389',admin)])).
 
-possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125',windows,tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2005-1794',windows,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(12,rule_desc('multi-hop access',0.5),netAccess('157.159.68.125',tcp,'3389'),[hacl('157.159.68.75','157.159.68.125',tcp,'3389'),advances('157.159.68.75','157.159.68.125'),execCode('157.159.68.75',admin)])).
 
-possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125',windows,tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2005-1794',windows,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125',windows,tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2005-1794',windows,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125',windows,tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2005-1794',windows,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125',windows,tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2005-1794',windows,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(7,rule_desc('Credentials harvesting of the last user connected remotely',1.0),harvestCredentials('157.159.68.125',alex),[hasCredentialsOnMemory('157.159.68.125',alex),execCode('157.159.68.125',olivia)])).
+possible_duplicate_trace_step(because(6,rule_desc('Credentials harvesting of the last user connected remotely',1.0),harvestCredentials('157.159.68.125',admin),[hasCredentialsOnMemory('157.159.68.125',admin),execCode('157.159.68.125',olivia)])).
 
-possible_duplicate_trace_step(because(6,rule_desc('Remote login on host by reusing credentials',0.5),logOn('157.159.68.75',alex),[harvestCredentials('157.159.68.125',alex),hacl('157.159.68.75','157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.75',windows,tcp,'3389',alex)])).
+possible_duplicate_trace_step(because(5,rule_desc('Remote login on host by reusing credentials',0.5),execCode('157.159.68.75',admin),[harvestCredentials('157.159.68.125',admin),hacl('157.159.68.75','157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.75',windows,tcp,'3389',admin)])).
 
-possible_duplicate_trace_step(because(7,rule_desc('Credentials harvesting of the last user connected remotely',1.0),harvestCredentials('157.159.68.125',alex),[hasCredentialsOnMemory('157.159.68.125',alex),execCode('157.159.68.125',olivia)])).
+possible_duplicate_trace_step(because(4,rule_desc('Obtain control of network traffic',0.5),obtainControl('157.159.68.97',admin),[ipv6Able('157.159.68.97'),execCode('157.159.68.75',admin),isAdmin(admin)])).
 
-possible_duplicate_trace_step(because(5,rule_desc('Execute code remotely on server',0.5),execCode(_h4876,alex),[hacl('157.159.68.75',_h4876,_h4983,_h4984),logOn('157.159.68.75',alex)])).
+possible_duplicate_trace_step(because(3,rule_desc('Modify bus info',0.5),modify('157.159.68.97',_h4724),[obtainControl('157.159.68.97',admin)])).
 
-possible_duplicate_trace_step(because(5,rule_desc('Execute code remotely on server',0.5),execCode('157.159.68.125',alex),[hacl('157.159.68.75','157.159.68.125',tcp,'3389'),logOn('157.159.68.75',alex)])).
-
-possible_duplicate_trace_step(because(5,rule_desc('Execute code remotely on server',0.5),execCode('157.159.68.97',alex),[hacl('157.159.68.75','157.159.68.97',tcp,'135'),logOn('157.159.68.75',alex)])).
-
-possible_duplicate_trace_step(because(5,rule_desc('Execute code remotely on server',0.5),execCode('157.159.68.75',alex),[hacl('157.159.68.75','157.159.68.75',_h5601,_h5602),logOn('157.159.68.75',alex)])).
-
-possible_duplicate_trace_step(because(5,rule_desc('Execute code remotely on server',0.5),execCode('157.159.68.125',alex),[hacl('157.159.68.75','157.159.68.125',_h5137,_h5138),logOn('157.159.68.75',alex)])).
-
-possible_duplicate_trace_step(because(5,rule_desc('Execute code remotely on server',0.5),execCode('157.159.68.125',alex),[hacl('157.159.68.75','157.159.68.125',tcp,'3389'),logOn('157.159.68.75',alex)])).
-
-possible_duplicate_trace_step(because(7,rule_desc('Credentials harvesting of the last user connected remotely',1.0),harvestCredentials('157.159.68.125',alex),[hasCredentialsOnMemory('157.159.68.125',alex),execCode('157.159.68.125',alex)])).
-
-possible_duplicate_trace_step(because(6,rule_desc('Remote login on host by reusing credentials',0.5),logOn('157.159.68.75',alex),[harvestCredentials('157.159.68.125',alex),hacl('157.159.68.75','157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.75',windows,tcp,'3389',alex)])).
-
-possible_duplicate_trace_step(because(7,rule_desc('Credentials harvesting of the last user connected remotely',1.0),harvestCredentials('157.159.68.125',alex),[hasCredentialsOnMemory('157.159.68.125',alex),execCode('157.159.68.125',alex)])).
-
-possible_duplicate_trace_step(because(7,rule_desc('Credentials harvesting of the last user connected remotely',1.0),harvestCredentials('157.159.68.125',alex),[hasCredentialsOnMemory('157.159.68.125',alex),execCode('157.159.68.125',alex)])).
-
-possible_duplicate_trace_step(because(13,rule_desc('multi-hop access',0.5),netAccess('157.159.68.125',tcp,'3389'),[hacl('157.159.68.75','157.159.68.125',tcp,'3389'),advances('157.159.68.75','157.159.68.125'),execCode('157.159.68.75',alex)])).
-
-possible_duplicate_trace_step(because(13,rule_desc('multi-hop access',0.5),netAccess('157.159.68.125',tcp,'3389'),[hacl('157.159.68.75','157.159.68.125',tcp,'3389'),advances('157.159.68.75','157.159.68.125'),execCode('157.159.68.75',alex)])).
-
-possible_duplicate_trace_step(because(13,rule_desc('multi-hop access',0.5),netAccess('157.159.68.125',tcp,'3389'),[hacl('157.159.68.125','157.159.68.125',tcp,'3389'),advances('157.159.68.125','157.159.68.125'),execCode('157.159.68.125',alex)])).
-
-possible_duplicate_trace_step(because(13,rule_desc('multi-hop access',0.5),netAccess('157.159.68.125',tcp,'3389'),[hacl('157.159.68.97','157.159.68.125',tcp,'3389'),advances('157.159.68.97','157.159.68.125'),execCode('157.159.68.97',alex)])).
-
-possible_duplicate_trace_step(because(13,rule_desc('multi-hop access',0.5),netAccess('157.159.68.125',tcp,'3389'),[hacl('157.159.68.125','157.159.68.125',tcp,'3389'),advances('157.159.68.125','157.159.68.125'),execCode('157.159.68.125',alex)])).
-
-possible_duplicate_trace_step(because(13,rule_desc('multi-hop access',0.5),netAccess('157.159.68.125',tcp,'3389'),[hacl('157.159.68.97','157.159.68.125',tcp,'3389'),advances('157.159.68.97','157.159.68.125'),execCode('157.159.68.97',alex)])).
-
-possible_duplicate_trace_step(because(6,rule_desc('Remote login on host by reusing credentials',0.5),logOn('157.159.68.75',alex),[harvestCredentials('157.159.68.125',alex),hacl('157.159.68.75','157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.75',windows,tcp,'3389',alex)])).
-
-possible_duplicate_trace_step(because(6,rule_desc('Remote login on host by reusing credentials',0.5),logOn('157.159.68.75',alex),[harvestCredentials('157.159.68.125',alex),hacl('157.159.68.75','157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.75',windows,tcp,'3389',alex)])).
-
-possible_duplicate_trace_step(because(5,rule_desc('Execute code remotely on server',0.5),execCode('157.159.68.75',alex),[hacl('157.159.68.75','157.159.68.75',_h4831,_h4832),logOn('157.159.68.75',alex)])).
-
-possible_duplicate_trace_step(because(4,rule_desc('Obtain control of network traffic',0.5),obtainControl('157.159.68.75',alex),[ipv6Able('157.159.68.75'),execCode('157.159.68.75',alex),isAdmin(alex)])).
-
-possible_duplicate_trace_step(because(3,rule_desc('Modify bus info',0.5),modify('157.159.68.75',_h4714),[obtainControl('157.159.68.75',alex)])).
-
-possible_duplicate_trace_step(because(2,rule_desc('Physical damage',0.5),physicalDamage('157.159.68.75'),[modify('157.159.68.75',_h4714)])).
+possible_duplicate_trace_step(because(2,rule_desc('Physical damage',0.5),physicalDamage(_h4569),[modify('157.159.68.97',_h4724)])).
 
