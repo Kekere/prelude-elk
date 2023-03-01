@@ -9,8 +9,8 @@
         "Payload": {
             "CVEID": "CVE-2005-1794",
             "IP address": "157.159.68.125",
-            "Product": "",
-            "User Name": "olivia",
+            "Product": "remote_desktop_connection",
+            "User Name": "someUser",
             "Countermeasure": "- Force the use of SSL as a transport layer for this service if supported, or/and- Select the 'Allow connections only from computers running Remote Desktop with Network Level Authentication' setting if it is available.",
             "Status": "Exploited"
         }

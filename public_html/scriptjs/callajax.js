@@ -14,7 +14,7 @@ $.ajax({
         $('#your-hidden-protocolsource').val(data["protocolsource"]);
         $('#your-hidden-portsource').val(data["portsource"]);
         $('#your-hidden-timestamp').val(data["timestamp"]);
-        setInterval('refreshPage()', 150000);
+        setInterval('refreshPage()', 15000);
     }
 })
 function refreshPage() {

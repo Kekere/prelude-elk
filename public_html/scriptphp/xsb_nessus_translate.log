@@ -13,10 +13,10 @@
 
 XSB Version 4.0.0 (TaB) of April 1, 2021
 [x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
-[Build date: 2023-02-22]
+[Build date: 2023-02-24]
 
 | ?- [Compiling ./results]
-[results compiled, cpu time used: 0.085 seconds]
+[results compiled, cpu time used: 0.069 seconds]
 [results loaded]
 
 yes
@@ -34,7 +34,7 @@ yes
 ++Warning[XSB]: [Runtime/C] str_cat/3 (static predicate) had been defined in module: string; those clauses lost in the context of usermod.
 
 ++Warning[XSB]: [Runtime/C] string_substitute/4 (static predicate) had been defined in module: string; those clauses lost in the context of usermod.
-[machine loaded, cpu time used: 0.002 seconds]
+[machine loaded, cpu time used: 0.001 seconds]
 
 yes
 | ?- 
@@ -69,4 +69,4 @@ yes
 | ?- 
 yes
 | ?- 
-End XSB (cputime 0.18 secs, elapsetime 0.21 secs)
+End XSB (cputime 0.14 secs, elapsetime 0.34 secs)
