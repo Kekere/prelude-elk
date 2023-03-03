@@ -30,7 +30,9 @@ function updateGraph(){
   var listeidvul=[];
   var listeallcve=[];
   var listeproduct=[];
+  var listeproductfin=[];
   var consequence="";
+  var productfin="";
   var jsonfiles=document.getElementById("your-hidden-jsonlist").value.split(',');
   arraynodes=graph["nodes"];
   for(var ncve=0; ncve<arraynodes.length; ncve++){
@@ -149,7 +151,9 @@ function updateGraph(){
         var maxcvss=listecvss.max();
         listecvss.forEach((car, index) => car === maxcvss ? cve=listecve[index] : null)
         listecvss.forEach((car, index) => car === maxcvss ? idvul=listevul[index] : null)
-        listecvss.forEach((car, index) => car === maxcvss ? product=listeproduct[index] : null)
+        listecvss.forEach((car, index) => car === maxcvss ? username=listeusername[index] : null)
+        listecvss.forEach((car, index) => car === maxcvss ? productfin=listeproductfin[index] : null)
+
         val=1;
         val=0;
         valprod=0;
@@ -317,9 +321,11 @@ function updateGraph(){
                               newtarget=parseInt(arraynodes.length+1)
                               newlinkr={"source":parseInt(issource),"target":newtarget};
                               newnoder={id: newtarget, group: 2, label: "RULE 9 (gain privilege):0"} 
-
+                              newtargeta=parseInt(newtarget+1);
+                              newnodea={id: newtargeta, group: 1, label: "gainsPrivileges("+username+")"};
                               arraylinks.push(newlinkr);
                               arraynodes.push(newnoder);
+                              arraynodes.push(newnodea)
                                                                           
                             }
                             if(!arrayremovenodes.includes(lengthdonnee[z]["cve"])){
@@ -338,11 +344,33 @@ function updateGraph(){
                                 arraylinks.forEach((label)=>label["source"]==arrayid[position]?idrule=label["target"]:null);
                                 newidrule=0;
                                 arraylinks.forEach((label)=>label["source"]==idrule?newidrule=label["target"]:null);
-                                if(!arraynewid.includes(newidrule)){
-                                  newlinkr={"source":newtarget,"target":newidrule};
-                                  arraynewid.push(newidrule);
-                                  arraylinks.push(newlinkr);
-                                }
+                                var labelvul="";
+                                arraynodes.forEach((label)=>label["id"]==arrayid[position]?labelvul=label["label"].split(',')[2]:null);
+                                
+                                newlinka={"source":newtarget,"target":newtargeta};
+                                newtargetv=parseInt(arraynodes.length+1);
+                                newnodev={id: newtargetv, group: 2, label: "Remote exploit"};
+                                newlinkv={"source":newtargeta,"target":newtargetv};
+                                newlinkr={"source":arrayid[position],"target":newtargetv};
+                                
+                                var newlinkt={"source":newtargetv,"target":newidrule};
+
+                                arraylinks.push(newlinkr);
+                                arraylinks.push(newlinkv);
+                                arraylinks.push(newlinkt);
+                                arraylinks.push(newlinka);
+                                
+                                arraynodes.push(newnodev);
+                                newnoder={};
+                                newlinkr={};
+                                newnodea={};
+                                newlinka={};
+                                newnodev={};
+                                newlinkv={};
+                                jsonfinal={"nodes":arraynodes,"links":arraylinks};
+                                
+                                localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
+                                obj=JSON.parse(localStorage.getItem('myjson'));
 
                                 localStorage.setItem('counter','remove '+username+' as '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
                                 localStorage.setItem('newcve',lengthdonnee[z]["cve"]);
@@ -411,9 +439,11 @@ function updateGraph(){
                                 newlinkr={"source":parseInt(issource),"target":newtarget};
                                       
                                 newnoder={id: newtarget, group: 2, label: "RULE 9 (gain privilege):0"} 
-
+                                newtargeta=parseInt(newtarget+1);
+                                newnodea={id: newtargeta, group: 1, label: "gainsPrivileges("+username+")"};
                                 arraylinks.push(newlinkr);
                                 arraynodes.push(newnoder);
+                                arraynodes.push(newnodea);
                                                                             
                               }
                               if(!arrayremovenodes.includes(lengthdonnee[z]["cve"])){
@@ -425,16 +455,44 @@ function updateGraph(){
                                   if(listaddress[el]==address){
                                     countpostcondition=countpostcondition+1;
                                     var position=result[el];
-                                    newtargeta=arrayid[position]; 
+                                    //newtargeta=arrayid[position]; 
+                                    
                                     var idrule=0;
                                     arraylinks.forEach((label)=>label["source"]==arrayid[position]?idrule=label["target"]:null);
                                     newidrule=0;
                                     arraylinks.forEach((label)=>label["source"]==idrule?newidrule=label["target"]:null);
-                                    if(!arraynewid.includes(newidrule)){
+                                    var labelvul="";
+                                    arraynodes.forEach((label)=>label["id"]==arrayid[position]?labelvul=label["label"].split(',')[2]:null);
+                                    
+                                    newlinka={"source":newtarget,"target":newtargeta};
+                                    newtargetv=parseInt(arraynodes.length+1);
+                                    newnodev={id: newtargetv, group: 2, label: "Remote exploit"};
+                                    newlinkv={"source":newtargeta,"target":newtargetv};
+                                    newlinkr={"source":arrayid[position],"target":newtargetv};
+                                    
+                                    var newlinkt={"source":newtargetv,"target":newidrule};
+
+                                    arraylinks.push(newlinkr);
+                                    arraylinks.push(newlinkv);
+                                    arraylinks.push(newlinkt);
+                                    arraylinks.push(newlinka);
+                                    
+                                    arraynodes.push(newnodev);
+                                    newnoder={};
+                                    newlinkr={};
+                                    newnodea={};
+                                    newlinka={};
+                                    newnodev={};
+                                    newlinkv={};
+                                    jsonfinal={"nodes":arraynodes,"links":arraylinks};
+                                    
+                                    localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
+                                    obj=JSON.parse(localStorage.getItem('myjson'));   
+                                    /*if(!arraynewid.includes(newidrule)){
                                       newlinkr={"source":newtarget,"target":newidrule};
                                       arraynewid.push(newidrule);
                                       arraylinks.push(newlinkr);
-                                    }
+                                    }*/
                                     
                                     localStorage.setItem('counter','remove '+username+' as '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
                                     localStorage.setItem('newcve',lengthdonnee[z]["cve"]);
@@ -490,16 +548,7 @@ function updateGraph(){
                           }
                         }
                               
-                        newnoder={};
-                        newlinkr={};
-                        newnodea={};
-                        newlinka={};
-                        newnodev={};
-                        newlinkv={};
-                        jsonfinal={"nodes":arraynodes,"links":arraylinks};
-                        
-                        localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-                        obj=JSON.parse(localStorage.getItem('myjson'));                                
+                                                     
                       } 
 
                       localStorage.setItem("someVarKey", cve);
@@ -544,12 +593,8 @@ function updateGraph(){
                   console.log(idvul,issource);
                   for(z=0; z<lengthdonnee2.length; z++){
                     //console.log(lengthdonnee2[z]["newimpact"]);
-                    newtarget=parseInt(arraynodes.length+1)
-                    newlinkr={"source":parseInt(issource),"target":newtarget};                           
-                    newnoder={id: newtarget, group: 2, label: "RULE 9 ("+lengthdonnee2[z]["newimpact"]+"):0"} 
-                    newtargeta=parseInt(newtarget+1)
-                    newlinka={"source":newtarget,"target":newtargeta}
-                    newnodea={id: newtargeta, group: 1, label: lengthdonnee2[z]["newimpact"]+"("+address+")"} 
+                    
+                    
                     /*console.log(address);
                     $.ajax
                     ({
@@ -566,22 +611,32 @@ function updateGraph(){
                         failure:function(response){
                           console.log(response);
                         }
-                    });
-                    newnoder={};
+                    });*/
+                    /*newnoder={};
                     newlinkr={};
                     newnodea={};
                     newlinka={};
                     jsonfinal={"nodes":arraynodes,"links":arraylinks};
                     localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
                     obj=JSON.parse(localStorage.getItem('myjson'));*/
-
+                    var imprule=lengthdonnee2[z]["newimpact"];
                     if(lengthdonnee2[z]["newimpact"]=="Panic" || lengthdonnee2[z]["newimpact"]=="Reboot" || lengthdonnee2[z]["newimpact"]){
                       for(var z=0; z<arraynodes.length; z++){
                         if(arraynodes[z]["label"].indexOf("physicalDamage")==0){
+                          newtarget=parseInt(arraynodes.length+1)
+                          newlinkr={"source":parseInt(issource),"target":newtarget};                           
+                          newnoder={id: newtarget, group: 2, label: "RULE 9 ("+imprule+"):0"} 
+                          newtargeta=parseInt(newtarget+1)
+                          newlinka={"source":newtarget,"target":newtargeta}
+                          newnodea={id: newtargeta, group: 1, label: imprule+"("+address+")"}
                           arraylinks.push(newlinkr);
                           arraynodes.push(newnoder);
                           arraylinks.push(newlinka);
                           arraynodes.push(newnodea);
+                          newnoder={};
+                          newlinkr={};
+                          newnodea={};
+                          newlinka={};
                           var idfact=arraynodes[z]["id"];
                           arraylinks.forEach((label)=>label["target"]==idfact?newid=label["source"]:null);
                           //console.log(newid);
@@ -594,16 +649,14 @@ function updateGraph(){
                           var newlinkt={"source":newtargetv,"target":idfact};
                           arraylinks.push(newlinkt);
 
-                          newnoder={};
-                          newlinkr={};
-                          newnodea={};
-                          newlinka={};
+                          
                           newnodev={};
                           newlinkv={};
+                          newlinkt={};
                           jsonfinal={"nodes":arraynodes,"links":arraylinks};
                           
                           localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-                          obj=JSON.parse(localStorage.getItem('myjson'));                  
+                          obj=JSON.parse(localStorage.getItem('myjson'));            
                         } 
                       }
                     }

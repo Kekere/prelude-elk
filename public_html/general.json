@@ -2,15 +2,15 @@
     {
         "Header": {
             "Source": "CTM",
-            "Timestamp": "2023-01-30T21:21:55.000Z",
+            "Timestamp": "2023-02-22T15:40:22.000Z",
             "Criticality": "high",
             "Description": "CTM / Cyber Vulnerability"
         },
         "Payload": {
             "CVEID": "CVE-2005-1794",
             "IP address": "157.159.68.125",
-            "Product": "remote_desktop_connection",
-            "User Name": "someUser",
+            "Product": "",
+            "User Name": "olivia",
             "Countermeasure": "- Force the use of SSL as a transport layer for this service if supported, or/and- Select the 'Allow connections only from computers running Remote Desktop with Network Level Authentication' setting if it is available.",
             "Status": "Exploited"
         }

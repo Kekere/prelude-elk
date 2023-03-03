@@ -13,11 +13,11 @@
 
 XSB Version 4.0.0 (TaB) of April 1, 2021
 [x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
-[Build date: 2023-02-24]
+[Build date: 2023-02-22]
 
 | ?- [Compiling ./results]
-[results compiled, cpu time used: 0.069 seconds]
-[results loaded]
+[results compiled, cpu time used: 0.075 seconds]
+[results loaded, cpu time used: 0.001 seconds]
 
 yes
 | ?- [libmulval loaded]
@@ -69,4 +69,4 @@ yes
 | ?- 
 yes
 | ?- 
-End XSB (cputime 0.14 secs, elapsetime 0.34 secs)
+End XSB (cputime 0.16 secs, elapsetime 0.20 secs)

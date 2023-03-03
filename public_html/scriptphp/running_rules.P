@@ -59,7 +59,7 @@ derived(harvestCredentials(_host, _lastuser)).
 derived(logOn(_h, _user)).
 derived(obtainControl(_host,_user)).
 derived(modify(_host, _info)).
-derived(physicalDamage(_bus)).
+derived(physicalDamage(_host)).
 derived(stealAwsAccessKey(_host, _accountid, _accesskeyid, _awsaccesskey)).
 derived(awsUserCompromise(_accountid, _userid)).
 
@@ -109,34 +109,34 @@ interaction_rule(
    0.5)).
 
 interaction_rule(
-   (physicalDamage(_bus) :-
+   (physicalDamage(_host) :-
 	modify(_host, _info)),
    rule_desc('Physical damage',
    0.5)).
 
 interaction_rule(
    (modify(_host, _info) :-
-	    obtainControl(_host,_user)),
+	obtainControl(_host,_user)),
    rule_desc('Modify bus info',
    0.5)).
 
 interaction_rule(
    (obtainControl(_host,_user) :-
         isAdmin(_user),
-	execCode(_h, _user),
+	execCode(_host, _user),
         ipv6Able(_host)),
    rule_desc('Obtain control of network traffic',
    0.5)).
 
-/*interaction_rule(
+interaction_rule(
    (execCode(_host, _user) :-
         logOn(_h, _user),
         hacl(_h, _host, _protocol, _port)),
    rule_desc('Execute code remotely on server',
-   0.5)).*/
+   0.5)).
 
 interaction_rule(
-   (execCode(_host, _user) :-
+   (logOn(_host, _user) :-
         networkServiceInfo(_host, _program, _protocol, _port, _user),
         hacl(_host, _h, _protocol, _port),
 	harvestCredentials(_h, _user)),
@@ -440,31 +440,3 @@ interaction_rule(
    0.4)).
 
 */
-
-
-derived(gainsPrivileges(_host)).
-:- table gainsPrivileges/1.
-
-  interaction_rule(
-    (gainsPrivileges('157.159.68.125') :-
-        networkServiceInfo('157.159.68.125','remote_desktop_connection windows_terminal_services_using_rdp',tcp,'3389',someUser),
-        vulExists('157.159.68.125','CVE-2005-1794','remote_desktop_connection windows_terminal_services_using_rdp',remoteExploit,privEscalation),	
-        netAccess('157.159.68.125', tcp, '3389')),
-    rule_desc('Gain Privileges',
-    1.0)).
-
-  interaction_rule(
-    (execCode('157.159.68.125', someUser) :-
-        vulExists('157.159.68.125','CVE-2017-0146',windows,remoteExploit,privEscalation),		
-        gainsPrivileges('157.159.68.125'),
-        networkServiceInfo('157.159.68.125',windows,tcp,_,someUser)),
-    rule_desc('remote exploit of a server program',
-    1.0)).
-
-  interaction_rule(
-    (execCode('157.159.68.125', someUser) :-
-        vulExists('157.159.68.125','CVE-2017-0143',windows,remoteExploit,privEscalation),		
-        gainsPrivileges('157.159.68.125'),
-        networkServiceInfo('157.159.68.125',windows,tcp,_,someUser)),
-    rule_desc('remote exploit of a server program',
-    1.0)).
