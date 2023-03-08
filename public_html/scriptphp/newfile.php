@@ -1,7 +1,7 @@
 <?php
 //exec_shell("rm general.P");
 $rulesinit = '/home/mulval/kb/interaction_rules.P';
-$rules = 'running_rules.P';
+$rules = 'general.P';
 $address = $_POST['address'];
 $port = $_POST['port'];
 $protocol = $_POST['protocol'];

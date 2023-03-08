@@ -2,16 +2,16 @@
     {
         "Header": {
             "Source": "CTM",
-            "Timestamp": "2023-02-22T15:40:22.000Z",
+            "Timestamp": "2023-03-08T10:26:34.000Z",
             "Criticality": "high",
             "Description": "CTM / Cyber Vulnerability"
         },
         "Payload": {
-            "CVEID": "CVE-2005-1794",
+            "CVEID": "CVE-2019-0708",
             "IP address": "157.159.68.125",
-            "Product": "",
+            "Product": "windows",
             "User Name": "olivia",
-            "Countermeasure": "- Force the use of SSL as a transport layer for this service if supported, or/and- Select the 'Allow connections only from computers running Remote Desktop with Network Level Authentication' setting if it is available.",
+            "Countermeasure": "Microsoft has released a set of patches for Windows XP, 2003, 2008, 7, and 2008 R2.",
             "Status": "Exploited"
         }
     }

@@ -1,5 +1,6 @@
 <?php
-$file = 'nessus.P';
+$file = '../uploads/'.$_POST['filename'];
+//$file = 'nessus.P';
 $XSBHOME="/home/XSB";
 $MulvalRoot="/home/mulval";
 // reception du fichier issu de la conversion xmlToJson depuis le client en JS

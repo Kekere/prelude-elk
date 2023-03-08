@@ -442,29 +442,16 @@ interaction_rule(
 */
 
 
-derived(gainsPrivileges(_host)).
-:- table gainsPrivileges/1.
+derived(shutdown(_host)).
+:- table shutdown/1.
 
-  interaction_rule(
-    (gainsPrivileges('157.159.68.125') :-
-        networkServiceInfo('157.159.68.125','remote_desktop_connection windows_terminal_services_using_rdp',tcp,'3389',someUser),
-        vulExists('157.159.68.125','CVE-2005-1794','remote_desktop_connection windows_terminal_services_using_rdp',remoteExploit,privEscalation),	
-        netAccess('157.159.68.125', tcp, '3389')),
-    rule_desc('Gain Privileges',
-    1.0)).
+interaction_rule(
+  (physicalDamage(_bus) :-
+ shutdown('157.159.68.125')),
+  rule_desc('Physical damage',
+  0.5)).
 
-  interaction_rule(
-    (execCode('157.159.68.125', someUser) :-
-        vulExists('157.159.68.125','CVE-2017-0146',windows,remoteExploit,privEscalation),		
-        gainsPrivileges('157.159.68.125'),
-        networkServiceInfo('157.159.68.125',windows,tcp,_,someUser)),
-    rule_desc('remote exploit of a server program',
-    1.0)).
-
-  interaction_rule(
-    (execCode('157.159.68.125', someUser) :-
-        vulExists('157.159.68.125','CVE-2017-0143',windows,remoteExploit,privEscalation),		
-        gainsPrivileges('157.159.68.125'),
-        networkServiceInfo('157.159.68.125',windows,tcp,_,someUser)),
-    rule_desc('remote exploit of a server program',
-    1.0)).
+interaction_rule(
+  (shutdown(_host) :-
+  execCode('157.159.68.125', _user)),
+  rule_desc('Shutdown',0.5)).

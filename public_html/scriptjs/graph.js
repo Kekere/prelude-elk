@@ -122,7 +122,6 @@ function updateGraph(){
       pros=listeprod[i];
       username=listeusername[i];
       prot=listeprotnet[i];     
-      //console.log(prot);
       if(pros!="no_products" && add==address && prot==protocol && parseInt(portnet)==parseInt(port)){
         for(var e= 0; e < listeallcve.length; e++){
           cve=listeallcve[e];
@@ -140,7 +139,8 @@ function updateGraph(){
                 listecvss.push(parseFloat(data["counter"][countermeasure]["CVSS"]))
                 listecve.push(data["counter"][countermeasure]["CVE"])
                 listevul.push(idvul); 
-                listeproduct.push(pros.split("'")[1].split(" ")[0].replace("'",""));                  
+                listeproduct.push(pros.split("'")[1].split(" ")[0].replace("'",""));       
+                listeproductfin.push(pros);           
               }   
             }
           });
@@ -151,9 +151,9 @@ function updateGraph(){
         var maxcvss=listecvss.max();
         listecvss.forEach((car, index) => car === maxcvss ? cve=listecve[index] : null)
         listecvss.forEach((car, index) => car === maxcvss ? idvul=listevul[index] : null)
+        listecvss.forEach((car, index) => car === maxcvss ? product=listeproduct[index] : null)
         listecvss.forEach((car, index) => car === maxcvss ? username=listeusername[index] : null)
         listecvss.forEach((car, index) => car === maxcvss ? productfin=listeproductfin[index] : null)
-
         val=1;
         val=0;
         valprod=0;
@@ -271,6 +271,18 @@ function updateGraph(){
                     //console.log(data)
                   }
                 })  
+                $.ajax
+                ({
+                  url: './scriptphp/generategeneral.php',
+                  type: "POST",
+                  dataType : 'json',
+                  success: function(response){
+                    
+                  },
+                  failure:function(response){
+                    console.log('erreur');
+                  }
+                }) 
                 $.getJSON("../scriptphp/postcon.json",function(post){
                       
                       for(var op=0; op<post.length; op++){
@@ -304,6 +316,7 @@ function updateGraph(){
                       arraylinks.forEach((label)=>label["source"]==newid?issource=label["target"]:null);
                       //issource=idvul;          
                       for(z=0; z<lengthdonnee.length; z++){
+                        console.log(product,username,productfin);
                         if(lengthdonnee[z]["cprivileges"]=="Privileged"||lengthdonnee[z]["cprivileges"]=="Administrator"){
                                 
                           
@@ -317,25 +330,44 @@ function updateGraph(){
                             if(!arrayremovenodes.includes(lengthdonnee[z]["lastcve"])){
                               
                               arrayremovenodes.push(lengthdonnee[z]["lastcve"]);
-                              
-                              newtarget=parseInt(arraynodes.length+1)
-                              newlinkr={"source":parseInt(issource),"target":newtarget};
-                              newnoder={id: newtarget, group: 2, label: "RULE 9 (gain privilege):0"} 
-                              newtargeta=parseInt(newtarget+1);
-                              newnodea={id: newtargeta, group: 1, label: "gainsPrivileges("+username+")"};
-                              arraylinks.push(newlinkr);
-                              arraynodes.push(newnoder);
-                              arraynodes.push(newnodea)
-                                                                          
+
+                              $.ajax
+                              ({
+                                url: './scriptphp/newfile.php',
+                                type: "POST",
+                                data:{cve:lengthdonnee[z]["lastcve"],product:pros,port:port,address:address,protocol:protocol,username:username},
+                                context: document.body,
+                                dataType : 'json',
+                                success: function(response){
+                                  
+                                },
+                                failure:function(response){
+                                  console.log('erreur');
+                                }
+                              }) 
+                                                                       
                             }
                             if(!arrayremovenodes.includes(lengthdonnee[z]["cve"])){
                               
                               arrayremovenodes.push(lengthdonnee[z]["cve"]);
                               var listaddress=[];
                               arraynodes.forEach((label)=>label["label"].indexOf("vulExists")==0?label["label"].split(",")[1].split("'")[1]==lengthdonnee[z]["cve"]?listaddress.push(label["label"].split(",")[0].split("(")[1].split("'")[1]):null:null);
-
+                              $.ajax
+                              ({
+                                url: './scriptphp/executefile.php',
+                                type: "POST",
+                                data:{cve:lengthdonnee[z]["cve"],product:productfin,port:port,address:address,protocol:protocol,username:username},
+                                context: document.body,
+                                dataType : 'json',
+                                success: function(response){
+                                  
+                                },
+                                failure:function(response){
+                                  console.log('erreur');
+                                }
+                              })   
                               
-                              for(el=0; el<result.length; el++){
+                              /*for(el=0; el<result.length; el++){
                                 
                                 countpostcondition=countpostcondition+1;
                                 var position=result[el];
@@ -344,33 +376,11 @@ function updateGraph(){
                                 arraylinks.forEach((label)=>label["source"]==arrayid[position]?idrule=label["target"]:null);
                                 newidrule=0;
                                 arraylinks.forEach((label)=>label["source"]==idrule?newidrule=label["target"]:null);
-                                var labelvul="";
-                                arraynodes.forEach((label)=>label["id"]==arrayid[position]?labelvul=label["label"].split(',')[2]:null);
-                                
-                                newlinka={"source":newtarget,"target":newtargeta};
-                                newtargetv=parseInt(arraynodes.length+1);
-                                newnodev={id: newtargetv, group: 2, label: "Remote exploit"};
-                                newlinkv={"source":newtargeta,"target":newtargetv};
-                                newlinkr={"source":arrayid[position],"target":newtargetv};
-                                
-                                var newlinkt={"source":newtargetv,"target":newidrule};
-
-                                arraylinks.push(newlinkr);
-                                arraylinks.push(newlinkv);
-                                arraylinks.push(newlinkt);
-                                arraylinks.push(newlinka);
-                                
-                                arraynodes.push(newnodev);
-                                newnoder={};
-                                newlinkr={};
-                                newnodea={};
-                                newlinka={};
-                                newnodev={};
-                                newlinkv={};
-                                jsonfinal={"nodes":arraynodes,"links":arraylinks};
-                                
-                                localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-                                obj=JSON.parse(localStorage.getItem('myjson'));
+                                if(!arraynewid.includes(newidrule)){
+                                  newlinkr={"source":newtarget,"target":newidrule};
+                                  arraynewid.push(newidrule);
+                                  arraylinks.push(newlinkr);
+                                }
 
                                 localStorage.setItem('counter','remove '+username+' as '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
                                 localStorage.setItem('newcve',lengthdonnee[z]["cve"]);
@@ -391,11 +401,11 @@ function updateGraph(){
                                   }
                                   }
                                 arraykafka.push(kafkajson);
-                              }   
+                              } */  
                               
                             } 
 
-                            if(countpostcondition==arraykafka.length){
+                            /*if(countpostcondition==arraykafka.length){
                               localStorage.setItem('alerte',JSON.stringify(arraykafka,null,4));
                               const alertes =  localStorage.getItem("alerte");
                               const jsonString = alertes;
@@ -420,7 +430,7 @@ function updateGraph(){
                                 success: function () {alert("Thanks!"); },
                                 failure: function() {alert("Error!");}
                               });
-                            }       
+                            }*/       
                           }
                         }
                         else{
@@ -428,71 +438,66 @@ function updateGraph(){
                             if(arraycve.includes(lengthdonnee[z]["cve"])){
                                                                       
                               var result = [];
-                              
+                              var idv=0;
                               arraycve.forEach((car, index) => car === lengthdonnee[z]["cve"] ? result.push(index) : null)
+                              arraycve.forEach((car, index) => car === lengthdonnee[z]["cve"] ? idv=index : null)
                               
+                              var labelvul="";
+                              arraynodes.forEach((label)=>label["id"]==arrayid[idv]?labelvul=label["label"].split(',')[2]:null);
+                              console.log(labelvul);
                               if(!arrayremovenodes.includes(lengthdonnee[z]["lastcve"])){
                                 
                                 arrayremovenodes.push(lengthdonnee[z]["lastcve"]);
                                 
-                                newtarget=parseInt(arraynodes.length+1)
-                                newlinkr={"source":parseInt(issource),"target":newtarget};
-                                      
-                                newnoder={id: newtarget, group: 2, label: "RULE 9 (gain privilege):0"} 
-                                newtargeta=parseInt(newtarget+1);
-                                newnodea={id: newtargeta, group: 1, label: "gainsPrivileges("+username+")"};
-                                arraylinks.push(newlinkr);
-                                arraynodes.push(newnoder);
-                                arraynodes.push(newnodea);
+                                $.ajax
+                                ({
+                                  url: './scriptphp/newfile.php',
+                                  type: "POST",
+                                  data:{cve:lengthdonnee[z]["lastcve"],product:productfin,port:port,address:address,protocol:protocol,username:username},
+                                  context: document.body,
+                                  dataType : 'json',
+                                  success: function(response){
+                                    
+                                  },
+                                  failure:function(response){
+                                    console.log('erreur');
+                                  }
+                                })  
                                                                             
                               }
                               if(!arrayremovenodes.includes(lengthdonnee[z]["cve"])){
                                 arrayremovenodes.push(lengthdonnee[z]["cve"]);
+                                console.log(pros,address,pros);
                                 var listaddress=[];
                                 arraynodes.forEach((label)=>label["label"].indexOf("vulExists")==0?label["label"].split(",")[1].split("'")[1]==lengthdonnee[z]["cve"]?listaddress.push(label["label"].split(",")[0].split("(")[1].split("'")[1]):null:null);
-
-                                for(el=0; el<result.length; el++){
+                                $.ajax
+                                ({
+                                  url: './scriptphp/executefile.php',
+                                  type: "POST",
+                                  data:{cve:lengthdonnee[z]["cve"],product:labelvul,port:port,address:address,protocol:protocol,username:username},
+                                  context: document.body,
+                                  dataType : 'json',
+                                  success: function(response){
+                                    
+                                  },
+                                  failure:function(response){
+                                    console.log('erreur');
+                                  }
+                                })
+                                /*for(el=0; el<result.length; el++){
                                   if(listaddress[el]==address){
                                     countpostcondition=countpostcondition+1;
                                     var position=result[el];
-                                    //newtargeta=arrayid[position]; 
-                                    
+                                    newtargeta=arrayid[position]; 
                                     var idrule=0;
                                     arraylinks.forEach((label)=>label["source"]==arrayid[position]?idrule=label["target"]:null);
                                     newidrule=0;
                                     arraylinks.forEach((label)=>label["source"]==idrule?newidrule=label["target"]:null);
-                                    var labelvul="";
-                                    arraynodes.forEach((label)=>label["id"]==arrayid[position]?labelvul=label["label"].split(',')[2]:null);
-                                    
-                                    newlinka={"source":newtarget,"target":newtargeta};
-                                    newtargetv=parseInt(arraynodes.length+1);
-                                    newnodev={id: newtargetv, group: 2, label: "Remote exploit"};
-                                    newlinkv={"source":newtargeta,"target":newtargetv};
-                                    newlinkr={"source":arrayid[position],"target":newtargetv};
-                                    
-                                    var newlinkt={"source":newtargetv,"target":newidrule};
-
-                                    arraylinks.push(newlinkr);
-                                    arraylinks.push(newlinkv);
-                                    arraylinks.push(newlinkt);
-                                    arraylinks.push(newlinka);
-                                    
-                                    arraynodes.push(newnodev);
-                                    newnoder={};
-                                    newlinkr={};
-                                    newnodea={};
-                                    newlinka={};
-                                    newnodev={};
-                                    newlinkv={};
-                                    jsonfinal={"nodes":arraynodes,"links":arraylinks};
-                                    
-                                    localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-                                    obj=JSON.parse(localStorage.getItem('myjson'));   
-                                    /*if(!arraynewid.includes(newidrule)){
+                                    if(!arraynewid.includes(newidrule)){
                                       newlinkr={"source":newtarget,"target":newidrule};
                                       arraynewid.push(newidrule);
                                       arraylinks.push(newlinkr);
-                                    }*/
+                                    }
                                     
                                     localStorage.setItem('counter','remove '+username+' as '+lengthdonnee[z]["cprivileges"]+' on ' + lengthdonnee[z]["casset"]);
                                     localStorage.setItem('newcve',lengthdonnee[z]["cve"]);
@@ -514,12 +519,12 @@ function updateGraph(){
                                       }
                                     arraykafka.push(kafkajson);
                                   } 
-                                }
+                                }*/
                                 
                               } 
                               
                                     
-                              if(countpostcondition==arraykafka.length){
+                              /*if(countpostcondition==arraykafka.length){
                                 localStorage.setItem('alerte',JSON.stringify(arraykafka,null,4));
                                 const alertes =  localStorage.getItem("alerte");
                                 const jsonString = alertes;
@@ -543,12 +548,10 @@ function updateGraph(){
                                   success: function () {alert("Thanks!"); },
                                   failure: function() {alert("Error!");}
                                 });
-                              }       
+                              }*/       
                             }
                           }
-                        }
-                              
-                                                     
+                        }                              
                       } 
 
                       localStorage.setItem("someVarKey", cve);
@@ -565,7 +568,6 @@ function updateGraph(){
                   context: document.body,
                   success: function(data){
                     arraykafka=[];
-                    //console.log(data)
                   }
                 })
                 $.getJSON("../scriptphp/impact.json",function(impact){
@@ -588,97 +590,60 @@ function updateGraph(){
                   var idn=0;
                   arraylinks.forEach((label)=>label["source"]==idvul?idn=label["target"]:null);
                   arraylinks.forEach((label)=>label["source"]==idn?issource=label["target"]:null);
-                  //issource=idvul; 
-                  //console.log(idvul);
-                  console.log(idvul,issource);
+                  console.log(idvul,issource,lengthdonnee2);
                   for(z=0; z<lengthdonnee2.length; z++){
-                    //console.log(lengthdonnee2[z]["newimpact"]);
+                       
                     
-                    
-                    /*console.log(address);
-                    $.ajax
-                    ({
-                        type: "POST",
-                        dataType : 'json',
-                        async: true,
-                        url: './scriptphp/newrules.php',
-                        global:"false",
-                        data : {address: address},
-                        context :document.body,
-                        success: function(response){
-                          
-                        },
-                        failure:function(response){
-                          console.log(response);
-                        }
-                    });*/
-                    /*newnoder={};
-                    newlinkr={};
-                    newnodea={};
-                    newlinka={};
-                    jsonfinal={"nodes":arraynodes,"links":arraylinks};
-                    localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-                    obj=JSON.parse(localStorage.getItem('myjson'));*/
                     var imprule=lengthdonnee2[z]["newimpact"];
+
                     if(lengthdonnee2[z]["newimpact"]=="Panic" || lengthdonnee2[z]["newimpact"]=="Reboot" || lengthdonnee2[z]["newimpact"]){
                       for(var z=0; z<arraynodes.length; z++){
                         if(arraynodes[z]["label"].indexOf("physicalDamage")==0){
-                          newtarget=parseInt(arraynodes.length+1)
-                          newlinkr={"source":parseInt(issource),"target":newtarget};                           
-                          newnoder={id: newtarget, group: 2, label: "RULE 9 ("+imprule+"):0"} 
-                          newtargeta=parseInt(newtarget+1)
-                          newlinka={"source":newtarget,"target":newtargeta}
-                          newnodea={id: newtargeta, group: 1, label: imprule+"("+address+")"}
-                          arraylinks.push(newlinkr);
-                          arraynodes.push(newnoder);
-                          arraylinks.push(newlinka);
-                          arraynodes.push(newnodea);
-                          newnoder={};
-                          newlinkr={};
-                          newnodea={};
-                          newlinka={};
-                          var idfact=arraynodes[z]["id"];
-                          arraylinks.forEach((label)=>label["target"]==idfact?newid=label["source"]:null);
-                          //console.log(newid);
-                          //var idtarget = graph["nodes"].findIndex((obj => obj.id == newid));
-                          var newtargetv=newtargeta+1;
-                          newnodev={id: newtargetv, group: 2, label: "RULE 9 (Physical Damage):0"} ;
-                          newlinkv={"source":newtargeta,"target":newtargetv};
-                          arraylinks.push(newlinkv);
-                          arraynodes.push(newnodev);
-                          var newlinkt={"source":newtargetv,"target":idfact};
-                          arraylinks.push(newlinkt);
-
                           
-                          newnodev={};
-                          newlinkv={};
-                          newlinkt={};
-                          jsonfinal={"nodes":arraynodes,"links":arraylinks};
-                          
-                          localStorage.setItem('myjson',JSON.stringify(jsonfinal,null,4));
-                          obj=JSON.parse(localStorage.getItem('myjson'));            
+                          $.ajax
+                          ({
+                            url: './scriptphp/newrules.php',
+                            type: "POST",
+                            dataType : 'json',
+                            data : {address:address,fact:imprule.toLowerCase(),rule:"rule_desc('"+imprule+"',0.5)"},
+                            context: document.body,
+                            success: function(response){
+                              
+                            },
+                            failure:function(response){
+                              console.log('erreur');
+                            }
+                          }); 
+                                      
                         } 
                       }
                     }
-
-                    
-                    
-                    /*arraylinks.push(newlinkr);
-                    arraynodes.push(newnoder);
-                    arraylinks.push(newlinka);
-                    arraynodes.push(newnodea);*/
-                                  
+                                 
                  
-                  }
+                  } 
+                  console.log(localStorage.getItem("filename"));
                   localStorage.setItem("someVarKey", cve);
                   localStorage.setItem('sendalert',2);
+                  $.ajax
+                  ({
+                    url: './scriptphp/generategraph.php',
+                    type: "POST",
+                    dataType : 'json',
+                    data :{filename:localStorage.getItem("filename")},
+                    context: document.body,
+                    success: function(response){
+                      
+                    },
+                    failure:function(response){
+                      console.log('erreur');
+                    }
+                  });
                 });
             }
           });
           
           arraynodes=graph["nodes"]; 
-          arraylinks=graph["links"];    
-                     
+          arraylinks=graph["links"];          
         }
         else{
           localStorage.setItem('sendalert',2);
@@ -691,6 +656,9 @@ function updateGraph(){
   }
   d3.select("g").remove()
   generateGraph("./mulval_generated_json.json");
+  var jsonfinal2=convertxmltojson("./scriptphp/AttackGraph.xml");
+  console.log(jsonfinal2);
+  localStorage.setItem('myjson',JSON.stringify(jsonfinal2,null,4));  
 }
 document.getElementById("home").onclick = function() {
   localStorage.setItem('sendalert',2);
