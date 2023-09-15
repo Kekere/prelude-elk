@@ -1,0 +1,5 @@
+attackerLocated(internet).
+attackGoal(execCode(osboxes , _)).
+hacl(internet, osboxes, _, _).
+vulExists(internet, osboxes,certifi, remoteExploit, privEscalation).
+cvss(osboxes,h).

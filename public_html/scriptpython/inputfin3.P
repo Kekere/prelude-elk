@@ -1,0 +1,6 @@
+attackerLocated(internet).
+attackGoal(execCode(osboxes ,_)).
+hacl(internet, osboxes, _, _).
+vulExists(osboxes, 'CVE-2023-37920', certifi, remoteExploit, privEscalation).
+cvss('CVE-2023-37920',c).
+networkServiceInfo(osboxes,certifi, _, _, _).
