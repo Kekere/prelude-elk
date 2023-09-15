@@ -123,7 +123,7 @@ interaction_rule(
 interaction_rule(
    (obtainControl(_host,_user) :-
         isAdmin(_user),
-	execCode(_h, _user),
+	      execCode(_h, _user),
         ipv6Able(_host)),
    rule_desc('Obtain control of network traffic',
    0.5)).
@@ -440,18 +440,3 @@ interaction_rule(
    0.4)).
 
 */
-
-
-derived(shutdown(_host)).
-:- table shutdown/1.
-
-interaction_rule(
-  (physicalDamage(_bus) :-
- shutdown('157.159.68.125')),
-  rule_desc('Physical damage',
-  0.5)).
-
-interaction_rule(
-  (shutdown(_host) :-
-  execCode('157.159.68.125', _user)),
-  rule_desc('Shutdown',0.5)).

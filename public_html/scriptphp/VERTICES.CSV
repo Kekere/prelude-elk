@@ -1,26 +1,8 @@
-1,"physicalDamage(_)","OR",0
-2,"RULE 2 (Physical damage)","AND",0
-3,"modify('157.159.68.97',_)","OR",0
-4,"RULE 3 (Modify bus info)","AND",0
-5,"obtainControl('157.159.68.97',admin)","OR",0
-6,"RULE 4 (Obtain control of network traffic)","AND",0
-7,"ipv6Able('157.159.68.97')","LEAF",1
-8,"execCode('157.159.68.75',admin)","OR",0
-9,"RULE 5 (Remote login on host by reusing credentials)","AND",0
-10,"harvestCredentials('157.159.68.125',admin)","OR",0
-11,"RULE 6 (Credentials harvesting of the last user connected remotely)","AND",0
-12,"hasCredentialsOnMemory('157.159.68.125',admin)","LEAF",1
-13,"execCode('157.159.68.125',olivia)","OR",0
-14,"RULE 9 (remote exploit of a server program)","AND",0
-15,"netAccess('157.159.68.125',tcp,'3389')","OR",0
-16,"RULE 12 (multi-hop access)","AND",0
-17,"hacl('157.159.68.75','157.159.68.125',tcp,'3389')","LEAF",1
-18,"RULE 13 (direct network access)","AND",0
-19,"attackerLocated('157.159.68.75')","LEAF",1
-20,"networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',olivia)","LEAF",1
-21,"vulExists('157.159.68.125','CVE-2019-0708','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
-22,"networkServiceInfo('157.159.68.75',windows,tcp,'3389',admin)","LEAF",1
-23,"isAdmin(admin)","LEAF",1
-24,"RULE 32 (Physical damage)","AND",0
-25,"shutdown('157.159.68.125')","OR",0
-26,"RULE 33 (Shutdown)","AND",0
+1,"execCode(osboxes,_)","OR",0
+2,"RULE 10 (remote exploit of a server program)","AND",0
+3,"netAccess(osboxes,_,_)","OR",0
+4,"RULE 14 (direct network access)","AND",0
+5,"hacl(internet,osboxes,_,_)","LEAF",1
+6,"attackerLocated(internet)","LEAF",1
+7,"networkServiceInfo(osboxes,certifi,_,_,_)","LEAF",1
+8,"vulExists(osboxes,'CVE-2023-37920',certifi,remoteExploit,privEscalation)","LEAF",1

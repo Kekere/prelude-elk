@@ -1,12 +1,16 @@
-inCompetent('157.159.68.125_victim').
-hasAccount('157.159.68.125_victim', '157.159.68.125', user).
+inCompetent('10.2.96.92_victim').
+hasAccount('10.2.96.92_victim', '10.2.96.92', user).
 attackerLocated(internet).
-attackGoal(execCode('157.159.68.125', _)).
-inCompetent('157.159.68.97_victim').
-hasAccount('157.159.68.97_victim', '157.159.68.97', user).
+attackGoal(execCode('10.2.96.92', _)).
+inCompetent('10.2.96.57_victim').
+hasAccount('10.2.96.57_victim', '10.2.96.57', user).
 attackerLocated(internet).
-attackGoal(execCode('157.159.68.97', _)).
-inCompetent('157.159.68.75_victim').
-hasAccount('157.159.68.75_victim', '157.159.68.75', user).
+attackGoal(execCode('10.2.96.57', _)).
+inCompetent('10.2.96.56_victim').
+hasAccount('10.2.96.56_victim', '10.2.96.56', user).
 attackerLocated(internet).
-attackGoal(execCode('157.159.68.75', _)).
+attackGoal(execCode('10.2.96.56', _)).
+inCompetent('10.2.96.55_victim').
+hasAccount('10.2.96.55_victim', '10.2.96.55', user).
+attackerLocated(internet).
+attackGoal(execCode('10.2.96.55', _)).
