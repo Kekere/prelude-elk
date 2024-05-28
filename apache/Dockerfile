@@ -48,6 +48,7 @@ RUN apt-get update && apt-get -y upgrade && apt-get -y install sudo && sudo addu
    && sudo chmod 777 -R * \
    && ./configure \
    && ./makexsb \
+   && cd ../.. \
    && export MULVALROOT=/home/mulval \
    && export XSBHOME=/home/XSB \
    && export PATH=$PATH:$XSBHOME/bin && export PATH=$PATH:$MULVALROOT/utils && export PATH=$PATH:$MULVALROOT/bin \

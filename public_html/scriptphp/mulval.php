@@ -50,7 +50,7 @@ if($extension=='xlsx'){
    shell_exec("python3 ../scriptpython/generatefile.py");
    //$output = shell_exec("python3 ../scriptpython/generatefile.py");
    //echo $output;
-   $output = shell_exec("export XSBHOME=".$XSBHOME." && export MULVALROOT=".$MulvalRoot." && export PATH=\$PATH:\$MULVALROOT/utils && export PATH=\$PATH:\$MULVALROOT/bin && PATH=\$PATH:\$XSBHOME/bin && graph_gen.sh input.P -p -l");
+   $output = shell_exec("export XSBHOME=".$XSBHOME." && export MULVALROOT=".$MulvalRoot." && export PATH=\$PATH:\$MULVALROOT/utils && export PATH=\$PATH:\$MULVALROOT/bin && PATH=\$PATH:\$XSBHOME/bin && graph_gen.sh input.P -l");
 
    //echo $output;
    header('Refresh: 1; url=AttackGraph.xml');
@@ -64,10 +64,10 @@ else{
 
       //echo $uploaded_filename; 
 
-      //$output = shell_exec("export XSBHOME=".$XSBHOME." && export MULVALROOT=".$MulvalRoot." && export PATH=\$PATH:\$MULVALROOT/utils && export PATH=\$PATH:\$MULVALROOT/bin && PATH=\$PATH:\$XSBHOME/bin && nessus_translate.sh $uploaded_filename && graph_gen.sh nessus.P -l");
-      $output = shell_exec("export XSBHOME=".$XSBHOME." && export MULVALROOT=".$MulvalRoot." && export PATH=\$PATH:\$MULVALROOT/utils && export PATH=\$PATH:\$MULVALROOT/bin && PATH=\$PATH:\$XSBHOME/bin && graph_gen.sh $uploaded_filename -p -l");
+      $output = shell_exec("export XSBHOME=".$XSBHOME." && export MULVALROOT=".$MulvalRoot." && export PATH=\$PATH:\$MULVALROOT/utils && export PATH=\$PATH:\$MULVALROOT/bin && PATH=\$PATH:\$XSBHOME/bin && nessus_translate.sh $uploaded_filename && graph_gen.sh nessus.P -l");
+      //$output = shell_exec("export XSBHOME=".$XSBHOME." && export MULVALROOT=".$MulvalRoot." && export PATH=\$PATH:\$MULVALROOT/utils && export PATH=\$PATH:\$MULVALROOT/bin && PATH=\$PATH:\$XSBHOME/bin && graph_gen.sh $uploaded_filename -l");
 
-      echo $output;
+      //echo $output;
 
    // redirection vers la page de génération
       //sleep(2);

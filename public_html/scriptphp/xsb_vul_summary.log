@@ -7,13 +7,13 @@
 
 ++Warning[XSB]: [Runtime/C] Cannot create directory `/home/XSB/.xsb/config/x86_64-unknown-linux-gnu'!
            XSB uses this directory to store data.
-[xsb_configuration loaded, cpu time used: 0.001 seconds]
+[xsb_configuration loaded]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
 XSB Version 4.0.0 (TaB) of April 1, 2021
 [x86_64-unknown-linux-gnu 64 bits; mode: optimal; engine: slg-wam; scheduling: local]
-[Build date: 2023-02-22]
+[Build date: 2024-05-28]
 
 | ?- [libmulval loaded]
 
@@ -24,7 +24,7 @@ yes
 | ?- [vul_summary loaded]
 
 yes
-| ?- [/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.093 seconds]
+| ?- [/var/www/html/scriptphp/nessus.P dynamically loaded, cpu time used: 0.026 seconds]
 
 yes
 | ?- 
@@ -36,7 +36,7 @@ Host = _h258
 Program = _h278
 Protocol = _h298
 Port = _h318
-L = [networkServiceInfo(10.2.96.55,windows_xp,tcp,0,someUser),networkServiceInfo(10.2.96.55,windows_xp,tcp,1433,someUser),networkServiceInfo(10.2.96.55,windows_xp,tcp,445,someUser),networkServiceInfo(10.2.96.55,windows_xp,tcp,8099,someUser),networkServiceInfo(10.2.96.55,windows_xp,tcp,8098,someUser),networkServiceInfo(10.2.96.55,windows_xp,tcp,80,someUser),networkServiceInfo(10.2.96.55,windows_xp,tcp,8098,someUser),networkServiceInfo(10.2.96.55,windows_xp,tcp,80,someUser),networkServiceInfo(10.2.96.55,windows_xp,tcp,0,someUser),networkServiceInfo(10.2.96.55,windows_xp,tcp,1433,someUser),networkServiceInfo(10.2.96.55,windows_xp,tcp,445,someUser),networkServiceInfo(10.2.96.55,windows,tcp,0,someUser),networkServiceInfo(10.2.96.55,windows,tcp,1433,someUser),networkServiceInfo(10.2.96.55,windows,tcp,445,someUser),networkServiceInfo(10.2.96.55,windows,tcp,8099,someUser),networkServiceInfo(10.2.96.55,windows,tcp,8098,someUser),networkServiceInfo(10.2.96.55,windows,tcp,80,someUser),networkServiceInfo(10.2.96.55,windows,tcp,8098,someUser),networkServiceInfo(10.2.96.55,windows,tcp,80,someUser),networkServiceInfo(10.2.96.55,windows,tcp,0,someUser),networkServiceInfo(10.2.96.55,windows,tcp,1433,someUser),networkServiceInfo(10.2.96.55,windows,tcp,445,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,0,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,1433,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,445,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,8099,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,8098,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,80,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,8098,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,80,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,0,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,1433,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,445,someUser),networkServiceInfo(10.2.96.55,sql_server,tcp,0,someUser),networkServiceInfo(10.2.96.55,sql_server,tcp,1433,someUser),networkServiceInfo(10.2.96.55,sql_server,tcp,445,someUser),networkServiceInfo(10.2.96.55,sql_server,tcp,8099,someUser),networkServiceInfo(10.2.96.55,sql_server,tcp,8098,someUser),networkServiceInfo(10.2.96.55,sql_server,tcp,80,someUser),networkServiceInfo(10.2.96.55,sql_server,tcp,8098,someUser),networkServiceInfo(10.2.96.55,sql_server,tcp,80,someUser),networkServiceInfo(10.2.96.55,sql_server,tcp,0,someUser),networkServiceInfo(10.2.96.55,sql_server,tcp,1433,someUser),networkServiceInfo(10.2.96.55,sql_server,tcp,445,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,0,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,1433,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,445,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,8099,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,8098,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,80,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,8098,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,80,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,0,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,1433,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,445,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,0,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,1433,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,445,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,8099,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,8098,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,80,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,8098,someUser),networkServiceInfo(10.2.96.55,no_products,tcp,80,someUser),networkServiceInfo(...,...,...,...,...)|...]
+L = [networkServiceInfo(192.168.32.185,no_products,tcp,443,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,80,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,445,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,443,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,445,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,443,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,80,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,445,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,443,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,445,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,443,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,80,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,445,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,443,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,445,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,443,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,80,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,445,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,443,someUser),networkServiceInfo(192.168.32.185,no_products,tcp,445,someUser),networkServiceInfo(192.168.32.185,md5 x.509_certificate,tcp,443,someUser),networkServiceInfo(192.168.32.185,windows samba,tcp,443,someUser),networkServiceInfo(192.168.32.185,windows samba,tcp,80,someUser),networkServiceInfo(192.168.32.185,windows samba,tcp,445,someUser),networkServiceInfo(192.168.32.185,windows samba,tcp,443,someUser),networkServiceInfo(192.168.32.185,windows samba,tcp,445,someUser),networkServiceInfo(192.168.32.187,httpd http_server,tcp,80,someUser),networkServiceInfo(192.168.32.187,http_server,tcp,443,someUser),networkServiceInfo(192.168.32.187,http_server,tcp,80,someUser),networkServiceInfo(192.168.32.187,http_server,tcp,445,someUser),networkServiceInfo(192.168.32.187,http_server,tcp,443,someUser),networkServiceInfo(192.168.32.187,http_server,tcp,445,someUser),networkServiceInfo(192.168.32.187,http_server,tcp,443,someUser),networkServiceInfo(192.168.32.187,http_server,tcp,80,someUser),networkServiceInfo(192.168.32.187,http_server,tcp,445,someUser),networkServiceInfo(192.168.32.187,http_server,tcp,443,someUser),networkServiceInfo(192.168.32.187,http_server,tcp,445,someUser),networkServiceInfo(192.168.32.187,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.187,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.187,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.187,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.187,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.187,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.187,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.187,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.187,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.187,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.187,php,tcp,80,someUser),networkServiceInfo(192.168.32.187,no_products,tcp,80,someUser),networkServiceInfo(192.168.32.187,windows samba,tcp,443,someUser),networkServiceInfo(192.168.32.187,windows samba,tcp,80,someUser),networkServiceInfo(192.168.32.187,windows samba,tcp,445,someUser),networkServiceInfo(192.168.32.187,windows samba,tcp,443,someUser),networkServiceInfo(192.168.32.187,windows samba,tcp,445,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,80,someUser),networkServiceInfo(192.168.32.192,openssl,tcp,443,someUser),networkServiceInfo(...,...,...,...,...)|...]
 yes
 | ?- 
 Host = _h258
@@ -49,21 +49,21 @@ yes
 A = _h258
 B = _h278
 C = _h298
-L = [hasAccount(10.2.96.92_victim,10.2.96.92,user),hasAccount(10.2.96.57_victim,10.2.96.57,user),hasAccount(10.2.96.56_victim,10.2.96.56,user),hasAccount(10.2.96.55_victim,10.2.96.55,user)]
+L = [hasAccount(192.168.32.192_victim,192.168.32.192,user),hasAccount(192.168.32.187_victim,192.168.32.187,user),hasAccount(192.168.32.185_victim,192.168.32.185,user)]
 yes
 | ?- 
 A = _h258
-L = [inCompetent(10.2.96.92_victim),inCompetent(10.2.96.57_victim),inCompetent(10.2.96.56_victim),inCompetent(10.2.96.55_victim)]
+L = [inCompetent(192.168.32.192_victim),inCompetent(192.168.32.187_victim),inCompetent(192.168.32.185_victim)]
 yes
 | ?- 
 A = _h258
-L = [attackGoal(execCode(10.2.96.92,_h445)),attackGoal(execCode(10.2.96.57,_h452)),attackGoal(execCode(10.2.96.56,_h459)),attackGoal(execCode(10.2.96.55,_h466))]
+L = [attackGoal(execCode(192.168.32.192,_h445)),attackGoal(execCode(192.168.32.187,_h452)),attackGoal(execCode(192.168.32.185,_h459))]
 yes
 | ?- 
 A = _h258
-L = [attackerLocated(internet),attackerLocated(internet),attackerLocated(internet),attackerLocated(internet)]
+L = [attackerLocated(internet),attackerLocated(internet),attackerLocated(internet)]
 yes
 | ?- 
 yes
 | ?- 
-End XSB (cputime 0.19 secs, elapsetime 0.20 secs)
+End XSB (cputime 0.06 secs, elapsetime 0.22 secs)

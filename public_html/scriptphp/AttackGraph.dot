@@ -1,17 +1,75 @@
 digraph G {
-	1 [label="1:execCode('157.159.68.44',andrew):0",shape=diamond];
-	2 [label="2:RULE 2 (remote exploit of a server program):0",shape=ellipse];
-	3 [label="3:netAccess('157.159.68.44',tcp,14135):0",shape=diamond];
-	4 [label="4:RULE 6 (direct network access):0",shape=ellipse];
-	5 [label="5:hacl(internet,'157.159.68.44',tcp,14135):1",shape=box];
-	6 [label="6:attackerLocated(internet):1",shape=box];
-	7 [label="7:networkServiceInfo('157.159.68.44',windows_7,tcp,14135,andrew):1",shape=box];
-	8 [label="8:vulExists('157.159.68.44','CVE-2021-34527',windows_7,remoteExploit,privEscalation):1",shape=box];
+1,"execCode('192.168.32.192',someUser)",diamond,0
+2,RULE 9 (remote exploit of a server program),ellipse,0
+3,"netAccess('192.168.32.192',tcp,'443')",diamond,0
+4,RULE 12 (multi-hop access),ellipse,0
+5,"hacl('192.168.32.192','192.168.32.192',tcp,'443')",box,1
+6,"execCode('192.168.32.192',user)",diamond,0
+7,RULE 10 (remote exploit for a client program),ellipse,0
+8,"accessMaliciousInput('192.168.32.192','192.168.32.192_victim',network_camera_firmware)",diamond,0
+9,RULE 29 (Browsing a malicious website),ellipse,0
+10,attackerLocated(internet),box,1
+11,"hacl('192.168.32.192',internet,httpProtocol,httpPort)",box,1
+12,inCompetent('192.168.32.192_victim'),box,1
+13,"hasAccount('192.168.32.192_victim','192.168.32.192',user)",box,1
+14,"vulExists('192.168.32.192','CVE-2021-31986',network_camera_firmware,remoteClient,privEscalation)",box,1
+15,RULE 10 (remote exploit for a client program),ellipse,0
+16,"vulExists('192.168.32.192','CVE-2021-31987',network_camera_firmware,remoteClient,privEscalation)",box,1
+17,RULE 10 (remote exploit for a client program),ellipse,0
+18,"vulExists('192.168.32.192','CVE-2021-31988',network_camera_firmware,remoteClient,privEscalation)",box,1
+19,RULE 13 (direct network access),ellipse,0
+20,"hacl(internet,'192.168.32.192',tcp,'443')",box,1
+21,"networkServiceInfo('192.168.32.192',no_products,tcp,'443',someUser)",box,1
+22,"vulExists('192.168.32.192','CVE-2002-0142',pi3,remoteExploit,privEscalation)",box,1
+23,RULE 9 (remote exploit of a server program),ellipse,0
+24,"networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser)",box,1
+25,"vulExists('192.168.32.192','CVE-2021-3449',openssl,remoteExploit,privEscalation)",box,1
+26,RULE 9 (remote exploit of a server program),ellipse,0
+27,"vulExists('192.168.32.192','CVE-2021-3450',openssl,remoteExploit,privEscalation)",box,1
+28,RULE 9 (remote exploit of a server program),ellipse,0
+29,"vulExists('192.168.32.192','CVE-2021-3711',openssl,remoteExploit,privEscalation)",box,1
+30,RULE 9 (remote exploit of a server program),ellipse,0
+31,"vulExists('192.168.32.192','CVE-2021-3712',openssl,remoteExploit,privEscalation)",box,1
+32,RULE 9 (remote exploit of a server program),ellipse,0
+33,"vulExists('192.168.32.192','CVE-2022-1292',openssl,remoteExploit,privEscalation)",box,1
+34,RULE 9 (remote exploit of a server program),ellipse,0
+35,"vulExists('192.168.32.192','CVE-2022-2068',openssl,remoteExploit,privEscalation)",box,1
+36,RULE 9 (remote exploit of a server program),ellipse,0
+37,"netAccess('192.168.32.192',tcp,'80')",diamond,0
+38,RULE 12 (multi-hop access),ellipse,0
+39,"hacl('192.168.32.192','192.168.32.192',tcp,'80')",box,1
+40,RULE 13 (direct network access),ellipse,0
+41,"hacl(internet,'192.168.32.192',tcp,'80')",box,1
+42,"networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser)",box,1
+43,RULE 9 (remote exploit of a server program),ellipse,0
+44,RULE 9 (remote exploit of a server program),ellipse,0
+45,RULE 9 (remote exploit of a server program),ellipse,0
+46,RULE 9 (remote exploit of a server program),ellipse,0
+47,RULE 9 (remote exploit of a server program),ellipse,0
+	7 -> 	6;
+	12 -> 	11;
+	17 -> 	16;
+	18 -> 	16;
+	16 -> 	15;
+	15 -> 	14;
+	19 -> 	14;
+	20 -> 	14;
+	14 -> 	13;
+	13 -> 	11;
+	11 -> 	10;
+	10 -> 	9;
+	21 -> 	9;
+	22 -> 	9;
+	9 -> 	8;
+	8 -> 	6;
+	6 -> 	5;
+	24 -> 	23;
+	25 -> 	23;
+	13 -> 	23;
+	23 -> 	5;
 	5 -> 	4;
-	6 -> 	4;
+	26 -> 	4;
 	4 -> 	3;
 	3 -> 	2;
-	7 -> 	2;
-	8 -> 	2;
 	2 -> 	1;
 }
