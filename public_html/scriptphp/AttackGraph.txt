@@ -1,0 +1,20 @@
+1,"execCode('157.159.68.44',andrew)","OR",0
+2,"RULE 9 (remote exploit of a server program)","AND",0
+3,"netAccess('157.159.68.44',tcp,14135)","OR",0
+4,"RULE 12 (multi-hop access)","AND",0
+5,"hacl('157.159.68.44','157.159.68.44',tcp,14135)","LEAF",1
+4,5,-1
+4,1,-1
+3,4,-1
+6,"RULE 13 (direct network access)","AND",0
+7,"hacl(internet,'157.159.68.44',tcp,14135)","LEAF",1
+6,7,-1
+8,"attackerLocated(internet)","LEAF",1
+6,8,-1
+3,6,-1
+2,3,-1
+9,"networkServiceInfo('157.159.68.44',windows_7,tcp,14135,andrew)","LEAF",1
+2,9,-1
+10,"vulExists('157.159.68.44','CVE-2021-34527',windows_7,remoteExploit,privEscalation)","LEAF",1
+2,10,-1
+1,2,-1

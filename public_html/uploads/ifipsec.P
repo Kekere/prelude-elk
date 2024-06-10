@@ -13,7 +13,7 @@ networkServiceInfo('157.159.68.75', 'windows', tcp, '3389', _).
 
 /* configuration information of 157.159.68.125 */
 networkServiceInfo('157.159.68.125' , 'windows remote_desktop_protocol', tcp , '3389', olivia).
-vulExists('157.159.68.125', 'CVE-2019-0708', 'windows remote_desktop_protocol').
+vulExists('157.159.68.125', 'CVE-2021-21277', 'windows remote_desktop_protocol').
 vulProperty('CVE-2019-0708', remoteExploit, privEscalation).
 hasCredentialsOnMemory('157.159.68.125', admin).
 isAdmin(admin).

@@ -97,14 +97,14 @@ Configure and launch the attack graph generator
 ---------------------------------------
 Execute these commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-$ sudo docker-compose up
-$ sudo docker exec -t -i apache /bin/bash
+sudo docker-compose up
+sudo docker exec -t -i apache /bin/bash
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 And then in the console of the container execute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-$ sudo chgrp -R www-data /var/www
-$ sudo chmod -R g+w /var/www
-$ sudo chmod g+s /var/www
+sudo chgrp -R www-data /var/www
+sudo chmod -R g+w /var/www
+sudo chmod g+s /var/www
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Finally launch http://0.0.0.0:8082 and upload a .P file.
 

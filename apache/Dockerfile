@@ -31,6 +31,8 @@ COPY apache/mulval/ /home/mulval/
 COPY confluent/ /var/www/html/confluent/
 RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone
 RUN apt-get update && apt-get -y upgrade && apt-get -y install sudo && sudo adduser keren && su keren && apt-get -y install g++ \
+   && apt-get update \
+   && apt-get install -y docker.io \
    && apt-get -y install curl \
    && apt-get -y install python \
    && apt-get -y install pip \
@@ -54,7 +56,6 @@ RUN apt-get update && apt-get -y upgrade && apt-get -y install sudo && sudo addu
    && export PATH=$PATH:$XSBHOME/bin && export PATH=$PATH:$MULVALROOT/utils && export PATH=$PATH:$MULVALROOT/bin \
    && cd /home/mulval \
    && make
-
 
 RUN apt-get update && apt-get -y install apache2 \
    && cd /var/www/html && sudo chmod 777 -R * \

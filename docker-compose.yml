@@ -30,8 +30,9 @@ services:
     volumes:
       - ./public_html/:/var/www/html/
       - ./confluent/:/var/www/html/confluent/
+      - /var/run/docker.socket:/var/run/docker.socket
+      - /var/lib/docker:/var/lib/docker
     container_name: apache
-
   injector:
     image: "logstash:7.9.2"
     depends_on:
@@ -228,6 +229,20 @@ services:
          ipv4_address: 172.31.0.9
       gui:
       logs:
+  adg:
+    build:
+      context: ./
+      dockerfile: dashapp/Dockerfile
+    networks:
+      frontend:
+      backend:
+      alerts:
+         ipv4_address: 172.31.0.20
+    ports:
+      - "8050:8050"
+    volumes:
+      - ./public_html/:/var/www/html/
+    container_name: adg
 
 
 volumes:
