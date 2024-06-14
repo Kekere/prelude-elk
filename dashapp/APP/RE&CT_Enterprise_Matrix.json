@@ -1,0 +1,2008 @@
+{
+	"name": "RE&CT Enterprise Matrix",
+	"version": "2.2",
+	"domain": "atc-react",
+	"description": "Response Stages and Response Actions, colorized by Categories",
+	"filters": {
+		"stages": [
+			"act"
+		],
+		"platforms": [
+			"Windows",
+			"Linux",
+			"macOS"
+		]
+	},
+	"sorting": 2,
+	"viewMode": 0,
+	"hideDisabled": true,
+	"techniques": [
+		{
+			"techniqueID": "RA1001",
+			"tactic": "preparation",
+			"score": 1,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1002",
+			"tactic": "preparation",
+			"score": 2,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1003",
+			"tactic": "preparation",
+			"score": 3,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1004",
+			"tactic": "preparation",
+			"score": 4,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1005",
+			"tactic": "preparation",
+			"score": 5,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1006",
+			"tactic": "preparation",
+			"score": 6,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1007",
+			"tactic": "preparation",
+			"score": 7,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1008",
+			"tactic": "preparation",
+			"score": 8,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1009",
+			"tactic": "preparation",
+			"score": 9,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1010",
+			"tactic": "preparation",
+			"score": 10,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1011",
+			"tactic": "preparation",
+			"score": 11,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1012",
+			"tactic": "preparation",
+			"score": 12,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1013",
+			"tactic": "preparation",
+			"score": 13,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1014",
+			"tactic": "preparation",
+			"score": 14,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1101",
+			"tactic": "preparation",
+			"score": 101,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1102",
+			"tactic": "preparation",
+			"score": 102,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1103",
+			"tactic": "preparation",
+			"score": 103,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1104",
+			"tactic": "preparation",
+			"score": 104,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1105",
+			"tactic": "preparation",
+			"score": 105,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1106",
+			"tactic": "preparation",
+			"score": 106,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1107",
+			"tactic": "preparation",
+			"score": 107,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1108",
+			"tactic": "preparation",
+			"score": 108,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1109",
+			"tactic": "preparation",
+			"score": 109,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1110",
+			"tactic": "preparation",
+			"score": 110,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1111",
+			"tactic": "preparation",
+			"score": 111,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1112",
+			"tactic": "preparation",
+			"score": 112,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1113",
+			"tactic": "preparation",
+			"score": 113,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1114",
+			"tactic": "preparation",
+			"score": 114,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1115",
+			"tactic": "preparation",
+			"score": 115,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1116",
+			"tactic": "preparation",
+			"score": 116,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1117",
+			"tactic": "preparation",
+			"score": 117,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1118",
+			"tactic": "preparation",
+			"score": 118,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1119",
+			"tactic": "preparation",
+			"score": 119,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1120",
+			"tactic": "preparation",
+			"score": 120,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1121",
+			"tactic": "preparation",
+			"score": 121,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1122",
+			"tactic": "preparation",
+			"score": 122,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1123",
+			"tactic": "preparation",
+			"score": 123,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1124",
+			"tactic": "preparation",
+			"score": 124,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1125",
+			"tactic": "preparation",
+			"score": 125,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1126",
+			"tactic": "preparation",
+			"score": 126,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1127",
+			"tactic": "preparation",
+			"score": 127,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1128",
+			"tactic": "preparation",
+			"score": 128,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1201",
+			"tactic": "preparation",
+			"score": 201,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1202",
+			"tactic": "preparation",
+			"score": 202,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1203",
+			"tactic": "preparation",
+			"score": 203,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1204",
+			"tactic": "preparation",
+			"score": 204,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1205",
+			"tactic": "preparation",
+			"score": 205,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1206",
+			"tactic": "preparation",
+			"score": 206,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1207",
+			"tactic": "preparation",
+			"score": 207,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1208",
+			"tactic": "preparation",
+			"score": 208,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1301",
+			"tactic": "preparation",
+			"score": 301,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1302",
+			"tactic": "preparation",
+			"score": 302,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1303",
+			"tactic": "preparation",
+			"score": 303,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1304",
+			"tactic": "preparation",
+			"score": 304,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1305",
+			"tactic": "preparation",
+			"score": 305,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1306",
+			"tactic": "preparation",
+			"score": 306,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1307",
+			"tactic": "preparation",
+			"score": 307,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1308",
+			"tactic": "preparation",
+			"score": 308,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1309",
+			"tactic": "preparation",
+			"score": 309,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1310",
+			"tactic": "preparation",
+			"score": 310,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1311",
+			"tactic": "preparation",
+			"score": 311,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1312",
+			"tactic": "preparation",
+			"score": 312,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1313",
+			"tactic": "preparation",
+			"score": 313,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1314",
+			"tactic": "preparation",
+			"score": 314,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1315",
+			"tactic": "preparation",
+			"score": 315,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1316",
+			"tactic": "preparation",
+			"score": 316,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1317",
+			"tactic": "preparation",
+			"score": 317,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1318",
+			"tactic": "preparation",
+			"score": 318,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1319",
+			"tactic": "preparation",
+			"score": 319,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1320",
+			"tactic": "preparation",
+			"score": 320,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1321",
+			"tactic": "preparation",
+			"score": 321,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1322",
+			"tactic": "preparation",
+			"score": 322,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1323",
+			"tactic": "preparation",
+			"score": 323,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1324",
+			"tactic": "preparation",
+			"score": 324,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1325",
+			"tactic": "preparation",
+			"score": 325,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1401",
+			"tactic": "preparation",
+			"score": 401,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1402",
+			"tactic": "preparation",
+			"score": 402,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1403",
+			"tactic": "preparation",
+			"score": 403,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1404",
+			"tactic": "preparation",
+			"score": 404,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1405",
+			"tactic": "preparation",
+			"score": 405,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1406",
+			"tactic": "preparation",
+			"score": 406,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1407",
+			"tactic": "preparation",
+			"score": 407,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1408",
+			"tactic": "preparation",
+			"score": 408,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1409",
+			"tactic": "preparation",
+			"score": 409,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1410",
+			"tactic": "preparation",
+			"score": 410,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1411",
+			"tactic": "preparation",
+			"score": 411,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1501",
+			"tactic": "preparation",
+			"score": 501,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1502",
+			"tactic": "preparation",
+			"score": 502,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1503",
+			"tactic": "preparation",
+			"score": 503,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1504",
+			"tactic": "preparation",
+			"score": 504,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1505",
+			"tactic": "preparation",
+			"score": 505,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1506",
+			"tactic": "preparation",
+			"score": 506,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1507",
+			"tactic": "preparation",
+			"score": 507,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1508",
+			"tactic": "preparation",
+			"score": 508,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1509",
+			"tactic": "preparation",
+			"score": 509,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1510",
+			"tactic": "preparation",
+			"score": 510,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1511",
+			"tactic": "preparation",
+			"score": 511,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1601",
+			"tactic": "preparation",
+			"score": 601,
+			"color": "#482569",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1602",
+			"tactic": "preparation",
+			"score": 602,
+			"color": "#482569",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1603",
+			"tactic": "preparation",
+			"score": 603,
+			"color": "#482569",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1604",
+			"tactic": "preparation",
+			"score": 604,
+			"color": "#482569",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1605",
+			"tactic": "preparation",
+			"score": 605,
+			"color": "#482569",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA1606",
+			"tactic": "preparation",
+			"score": 606,
+			"color": "#482569",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2001",
+			"tactic": "identification",
+			"score": 1,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2002",
+			"tactic": "identification",
+			"score": 2,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2003",
+			"tactic": "identification",
+			"score": 3,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2101",
+			"tactic": "identification",
+			"score": 101,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2102",
+			"tactic": "identification",
+			"score": 102,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2103",
+			"tactic": "identification",
+			"score": 103,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2104",
+			"tactic": "identification",
+			"score": 104,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2105",
+			"tactic": "identification",
+			"score": 105,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2106",
+			"tactic": "identification",
+			"score": 106,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2107",
+			"tactic": "identification",
+			"score": 107,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2108",
+			"tactic": "identification",
+			"score": 108,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2109",
+			"tactic": "identification",
+			"score": 109,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2110",
+			"tactic": "identification",
+			"score": 110,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2111",
+			"tactic": "identification",
+			"score": 111,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2112",
+			"tactic": "identification",
+			"score": 112,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2113",
+			"tactic": "identification",
+			"score": 113,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2114",
+			"tactic": "identification",
+			"score": 114,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2115",
+			"tactic": "identification",
+			"score": 115,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2116",
+			"tactic": "identification",
+			"score": 116,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2117",
+			"tactic": "identification",
+			"score": 117,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2118",
+			"tactic": "identification",
+			"score": 118,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2201",
+			"tactic": "identification",
+			"score": 201,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2202",
+			"tactic": "identification",
+			"score": 202,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2203",
+			"tactic": "identification",
+			"score": 203,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2204",
+			"tactic": "identification",
+			"score": 204,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2205",
+			"tactic": "identification",
+			"score": 205,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2206",
+			"tactic": "identification",
+			"score": 206,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2301",
+			"tactic": "identification",
+			"score": 301,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2302",
+			"tactic": "identification",
+			"score": 302,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2303",
+			"tactic": "identification",
+			"score": 303,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2304",
+			"tactic": "identification",
+			"score": 304,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2305",
+			"tactic": "identification",
+			"score": 305,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2306",
+			"tactic": "identification",
+			"score": 306,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2307",
+			"tactic": "identification",
+			"score": 307,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2308",
+			"tactic": "identification",
+			"score": 308,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2309",
+			"tactic": "identification",
+			"score": 309,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2310",
+			"tactic": "identification",
+			"score": 310,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2311",
+			"tactic": "identification",
+			"score": 311,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2312",
+			"tactic": "identification",
+			"score": 312,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2313",
+			"tactic": "identification",
+			"score": 313,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2314",
+			"tactic": "identification",
+			"score": 314,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2315",
+			"tactic": "identification",
+			"score": 315,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2316",
+			"tactic": "identification",
+			"score": 316,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2317",
+			"tactic": "identification",
+			"score": 317,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2318",
+			"tactic": "identification",
+			"score": 318,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2319",
+			"tactic": "identification",
+			"score": 319,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2320",
+			"tactic": "identification",
+			"score": 320,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2401",
+			"tactic": "identification",
+			"score": 401,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2402",
+			"tactic": "identification",
+			"score": 402,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2403",
+			"tactic": "identification",
+			"score": 403,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2404",
+			"tactic": "identification",
+			"score": 404,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2405",
+			"tactic": "identification",
+			"score": 405,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2406",
+			"tactic": "identification",
+			"score": 406,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2501",
+			"tactic": "identification",
+			"score": 501,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2502",
+			"tactic": "identification",
+			"score": 502,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2503",
+			"tactic": "identification",
+			"score": 503,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2504",
+			"tactic": "identification",
+			"score": 504,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2505",
+			"tactic": "identification",
+			"score": 505,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2506",
+			"tactic": "identification",
+			"score": 506,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2507",
+			"tactic": "identification",
+			"score": 507,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2508",
+			"tactic": "identification",
+			"score": 508,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2601",
+			"tactic": "identification",
+			"score": 601,
+			"color": "#482569",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA2602",
+			"tactic": "identification",
+			"score": 602,
+			"color": "#482569",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3001",
+			"tactic": "containment",
+			"score": 1,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3101",
+			"tactic": "containment",
+			"score": 101,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3102",
+			"tactic": "containment",
+			"score": 102,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3103",
+			"tactic": "containment",
+			"score": 103,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3104",
+			"tactic": "containment",
+			"score": 104,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3105",
+			"tactic": "containment",
+			"score": 105,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3106",
+			"tactic": "containment",
+			"score": 106,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3107",
+			"tactic": "containment",
+			"score": 107,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3108",
+			"tactic": "containment",
+			"score": 108,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3109",
+			"tactic": "containment",
+			"score": 109,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3110",
+			"tactic": "containment",
+			"score": 110,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3111",
+			"tactic": "containment",
+			"score": 111,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3201",
+			"tactic": "containment",
+			"score": 201,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3202",
+			"tactic": "containment",
+			"score": 202,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3203",
+			"tactic": "containment",
+			"score": 203,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3301",
+			"tactic": "containment",
+			"score": 301,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3302",
+			"tactic": "containment",
+			"score": 302,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3303",
+			"tactic": "containment",
+			"score": 303,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3304",
+			"tactic": "containment",
+			"score": 304,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3401",
+			"tactic": "containment",
+			"score": 401,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3402",
+			"tactic": "containment",
+			"score": 402,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3403",
+			"tactic": "containment",
+			"score": 403,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3404",
+			"tactic": "containment",
+			"score": 404,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3405",
+			"tactic": "containment",
+			"score": 405,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3501",
+			"tactic": "containment",
+			"score": 501,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA3601",
+			"tactic": "containment",
+			"score": 601,
+			"color": "#482569",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA4001",
+			"tactic": "eradication",
+			"score": 1,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA4101",
+			"tactic": "eradication",
+			"score": 101,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA4201",
+			"tactic": "eradication",
+			"score": 201,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA4301",
+			"tactic": "eradication",
+			"score": 301,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA4501",
+			"tactic": "eradication",
+			"score": 501,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA4502",
+			"tactic": "eradication",
+			"score": 502,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA4601",
+			"tactic": "eradication",
+			"score": 601,
+			"color": "#482569",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA4602",
+			"tactic": "eradication",
+			"score": 602,
+			"color": "#482569",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5001",
+			"tactic": "recovery",
+			"score": 1,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5002",
+			"tactic": "recovery",
+			"score": 2,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5101",
+			"tactic": "recovery",
+			"score": 101,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5102",
+			"tactic": "recovery",
+			"score": 102,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5103",
+			"tactic": "recovery",
+			"score": 103,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5104",
+			"tactic": "recovery",
+			"score": 104,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5105",
+			"tactic": "recovery",
+			"score": 105,
+			"color": "#abc530",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5201",
+			"tactic": "recovery",
+			"score": 201,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5202",
+			"tactic": "recovery",
+			"score": 202,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5203",
+			"tactic": "recovery",
+			"score": 203,
+			"color": "#01c26d",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5301",
+			"tactic": "recovery",
+			"score": 301,
+			"color": "#007b84",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5401",
+			"tactic": "recovery",
+			"score": 401,
+			"color": "#075190",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5501",
+			"tactic": "recovery",
+			"score": 501,
+			"color": "#86308c",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA5601",
+			"tactic": "recovery",
+			"score": 601,
+			"color": "#482569",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA6001",
+			"tactic": "lessons-learned",
+			"score": 1,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		},
+		{
+			"techniqueID": "RA6002",
+			"tactic": "lessons-learned",
+			"score": 2,
+			"color": "#ffd300",
+			"comment": "",
+			"enabled": true,
+			"metadata": []
+		}
+	],
+	"gradient": {
+		"colors": [
+			"#ff6666",
+			"#ffe766",
+			"#8ec843"
+		],
+		"minValue": 0,
+		"maxValue": 100
+	},
+	"legendItems": [
+		{
+			"color": "#FFD300",
+			"label": "General cagetory"
+		},
+		{
+			"color": "#ABC530",
+			"label": "Network cagetory"
+		},
+		{
+			"color": "#01C26D",
+			"label": "Email cagetory"
+		},
+		{
+			"color": "#007B84",
+			"label": "File cagetory"
+		},
+		{
+			"color": "#075190",
+			"label": "Process cagetory"
+		},
+		{
+			"color": "#86308C",
+			"label": "Configuration cagetory"
+		},
+		{
+			"color": "#482569",
+			"label": "Identity cagetory"
+		}
+	],
+	"metadata": [],
+	"showTacticRowBackground": false,
+	"tacticRowBackground": "#dddddd",
+	"selectTechniquesAcrossTactics": true
+}
