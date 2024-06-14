@@ -105,6 +105,17 @@ And then in the console of the container execute
 sudo chgrp -R www-data /var/www
 sudo chmod -R g+w /var/www
 sudo chmod g+s /var/www
+cd /home/XSB/build 
+sudo chmod 777 -R * 
+./configure 
+./makexsb 
+cd ../..
+export MULVALROOT=/home/mulval
+export XSBHOME=/home/XSB
+export PATH=$PATH:$XSBHOME/bin && export PATH=$PATH:$MULVALROOT/utils && export PATH=$PATH:$MULVALROOT/bin
+cd /home/mulval
+make
+graph_gen.sh nessus.P
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Finally launch http://0.0.0.0:8082 and upload a .P file.
 

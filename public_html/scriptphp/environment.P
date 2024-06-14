@@ -7,7 +7,7 @@
 
 :-load_dyn('running_rules.P').
 
-:-load_dyn('../uploads/securicad.P').
+:-load_dyn('../uploads/input.P').
 
 :-assert(traceMode(completeTrace2)).
 

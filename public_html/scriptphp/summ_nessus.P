@@ -1,350 +1,622 @@
-vulExists('192.168.32.185','192.168.32.1850','md5 x.509_certificate').
-vulProperty('192.168.32.1850',remoteExploit,writeDirect).
-capability_required('192.168.32.1850',l).
-
-vulExists('192.168.32.185','192.168.32.1851',no_products).
-vulProperty('192.168.32.1851',remoteExploit,privEscalation).
-capability_required('192.168.32.1851',l).
+vulExists('10.2.96.55','10.2.96.550','md5 x.509_certificate').
+vulProperty('10.2.96.550',remoteExploit,writeDirect).
+capability_required('10.2.96.550',l).
+
+vulExists('10.2.96.55','10.2.96.551',no_products).
+vulProperty('10.2.96.551',remoteExploit,privEscalation).
+capability_required('10.2.96.551',l).
+
+vulExists('10.2.96.55','10.2.96.552',no_products).
+vulProperty('10.2.96.552',remoteExploit,resourceRemoval).
+capability_required('10.2.96.552',l).
+
+vulExists('10.2.96.55','10.2.96.553',no_products).
+vulProperty('10.2.96.553',remoteExploit,writeDirect).
+capability_required('10.2.96.553',l).
+
+vulExists('10.2.96.55','10.2.96.554',sql_server).
+vulProperty('10.2.96.554',remoteExploit,privEscalation).
+capability_required('10.2.96.554',l).
+
+vulExists('10.2.96.55','10.2.96.555',sql_server).
+vulProperty('10.2.96.555',remoteExploit,resourceRemoval).
+capability_required('10.2.96.555',l).
+
+vulExists('10.2.96.55','10.2.96.556',sql_server).
+vulProperty('10.2.96.556',remoteExploit,writeDirect).
+capability_required('10.2.96.556',l).
+
+vulExists('10.2.96.55','10.2.96.557',windows).
+vulProperty('10.2.96.557',remoteExploit,privEscalation).
+capability_required('10.2.96.557',l).
+
+vulExists('10.2.96.55','10.2.96.558',windows).
+vulProperty('10.2.96.558',remoteExploit,resourceRemoval).
+capability_required('10.2.96.558',l).
+
+vulExists('10.2.96.55','10.2.96.559',windows).
+vulProperty('10.2.96.559',remoteExploit,writeDirect).
+capability_required('10.2.96.559',l).
 
-vulExists('192.168.32.185','192.168.32.1852',no_products).
-vulProperty('192.168.32.1852',remoteExploit,resourceRemoval).
-capability_required('192.168.32.1852',l).
+vulExists('10.2.96.55','10.2.96.5510','windows samba').
+vulProperty('10.2.96.5510',remoteExploit,privEscalation).
+capability_required('10.2.96.5510',l).
 
-vulExists('192.168.32.185','192.168.32.1853',no_products).
-vulProperty('192.168.32.1853',remoteExploit,writeDirect).
-capability_required('192.168.32.1853',l).
+vulExists('10.2.96.55','10.2.96.5511',windows_xp).
+vulProperty('10.2.96.5511',remoteExploit,privEscalation).
+capability_required('10.2.96.5511',l).
 
-vulExists('192.168.32.185','192.168.32.1854','windows samba').
-vulProperty('192.168.32.1854',remoteExploit,privEscalation).
-capability_required('192.168.32.1854',l).
+vulExists('10.2.96.55','10.2.96.5512',windows_xp).
+vulProperty('10.2.96.5512',remoteExploit,resourceRemoval).
+capability_required('10.2.96.5512',l).
 
-vulExists('192.168.32.185','192.168.32.1855','windows samba').
-vulProperty('192.168.32.1855',remoteExploit,resourceRemoval).
-capability_required('192.168.32.1855',l).
+vulExists('10.2.96.55','10.2.96.5513',windows_xp).
+vulProperty('10.2.96.5513',remoteExploit,writeDirect).
+capability_required('10.2.96.5513',l).
 
-vulExists('192.168.32.185','192.168.32.1856','windows samba').
-vulProperty('192.168.32.1856',remoteExploit,writeDirect).
-capability_required('192.168.32.1856',l).
+vulExists('10.2.96.56','10.2.96.5614',iis).
+vulProperty('10.2.96.5614',remoteExploit,privEscalation).
+capability_required('10.2.96.5614',l).
 
-vulExists('192.168.32.187','192.168.32.1877',http_server).
-vulProperty('192.168.32.1877',remoteExploit,privEscalation).
-capability_required('192.168.32.1877',l).
+vulExists('10.2.96.56','10.2.96.5615',iis).
+vulProperty('10.2.96.5615',remoteExploit,resourceRemoval).
+capability_required('10.2.96.5615',l).
 
-vulExists('192.168.32.187','192.168.32.1878',http_server).
-vulProperty('192.168.32.1878',remoteExploit,resourceRemoval).
-capability_required('192.168.32.1878',l).
+vulExists('10.2.96.56','10.2.96.5616',iis).
+vulProperty('10.2.96.5616',remoteExploit,writeDirect).
+capability_required('10.2.96.5616',l).
 
-vulExists('192.168.32.187','192.168.32.1879',http_server).
-vulProperty('192.168.32.1879',remoteExploit,writeDirect).
-capability_required('192.168.32.1879',l).
+vulExists('10.2.96.56','10.2.96.5617',no_products).
+vulProperty('10.2.96.5617',remoteExploit,privEscalation).
+capability_required('10.2.96.5617',l).
 
-vulExists('192.168.32.187','192.168.32.18710','httpd http_server').
-vulProperty('192.168.32.18710',remoteExploit,privEscalation).
-capability_required('192.168.32.18710',l).
+vulExists('10.2.96.56','10.2.96.5618',no_products).
+vulProperty('10.2.96.5618',remoteExploit,resourceRemoval).
+capability_required('10.2.96.5618',l).
 
-vulExists('192.168.32.187','192.168.32.18711',no_products).
-vulProperty('192.168.32.18711',remoteExploit,resourceRemoval).
-capability_required('192.168.32.18711',l).
+vulExists('10.2.96.56','10.2.96.5619',no_products).
+vulProperty('10.2.96.5619',remoteExploit,writeDirect).
+capability_required('10.2.96.5619',l).
 
-vulExists('192.168.32.187','192.168.32.18712',openssl).
-vulProperty('192.168.32.18712',remoteExploit,privEscalation).
-capability_required('192.168.32.18712',l).
+vulExists('10.2.96.56','10.2.96.5620',sql_server).
+vulProperty('10.2.96.5620',remoteExploit,privEscalation).
+capability_required('10.2.96.5620',l).
 
-vulExists('192.168.32.187','192.168.32.18713',openssl).
-vulProperty('192.168.32.18713',remoteExploit,resourceRemoval).
-capability_required('192.168.32.18713',l).
+vulExists('10.2.96.56','10.2.96.5621',sql_server).
+vulProperty('10.2.96.5621',remoteExploit,resourceRemoval).
+capability_required('10.2.96.5621',l).
 
-vulExists('192.168.32.187','192.168.32.18714',openssl).
-vulProperty('192.168.32.18714',remoteExploit,serviceInterrupt).
-capability_required('192.168.32.18714',l).
+vulExists('10.2.96.56','10.2.96.5622',sql_server).
+vulProperty('10.2.96.5622',remoteExploit,writeDirect).
+capability_required('10.2.96.5622',l).
 
-vulExists('192.168.32.187','192.168.32.18715',php).
-vulProperty('192.168.32.18715',remoteExploit,privEscalation).
-capability_required('192.168.32.18715',l).
+vulExists('10.2.96.56','10.2.96.5623',windows).
+vulProperty('10.2.96.5623',remoteExploit,privEscalation).
+capability_required('10.2.96.5623',l).
 
-vulExists('192.168.32.187','192.168.32.18716',php).
-vulProperty('192.168.32.18716',remoteExploit,resourceRemoval).
-capability_required('192.168.32.18716',l).
+vulExists('10.2.96.56','10.2.96.5624',windows).
+vulProperty('10.2.96.5624',remoteExploit,resourceRemoval).
+capability_required('10.2.96.5624',l).
 
-vulExists('192.168.32.187','192.168.32.18717','windows samba').
-vulProperty('192.168.32.18717',remoteExploit,privEscalation).
-capability_required('192.168.32.18717',l).
+vulExists('10.2.96.56','10.2.96.5625',windows).
+vulProperty('10.2.96.5625',remoteExploit,writeDirect).
+capability_required('10.2.96.5625',l).
 
-vulExists('192.168.32.187','192.168.32.18718','windows samba').
-vulProperty('192.168.32.18718',remoteExploit,resourceRemoval).
-capability_required('192.168.32.18718',l).
+vulExists('10.2.96.56','10.2.96.5626','windows exchange_server').
+vulProperty('10.2.96.5626',remoteExploit,serviceInterrupt).
+capability_required('10.2.96.5626',l).
 
-vulExists('192.168.32.187','192.168.32.18719','windows samba').
-vulProperty('192.168.32.18719',remoteExploit,writeDirect).
-capability_required('192.168.32.18719',l).
+vulExists('10.2.96.56','10.2.96.5627','windows samba').
+vulProperty('10.2.96.5627',remoteExploit,privEscalation).
+capability_required('10.2.96.5627',l).
 
-vulExists('192.168.32.192','192.168.32.19220',no_products).
-vulProperty('192.168.32.19220',remoteExploit,privEscalation).
-capability_required('192.168.32.19220',l).
+vulExists('10.2.96.56','10.2.96.5628',windows_2003_server).
+vulProperty('10.2.96.5628',remoteExploit,privEscalation).
+capability_required('10.2.96.5628',l).
 
-vulExists('192.168.32.192','192.168.32.19221',no_products).
-vulProperty('192.168.32.19221',remoteExploit,resourceRemoval).
-capability_required('192.168.32.19221',l).
+vulExists('10.2.96.56','10.2.96.5629',windows_2003_server).
+vulProperty('10.2.96.5629',remoteExploit,resourceRemoval).
+capability_required('10.2.96.5629',l).
 
-vulExists('192.168.32.192','192.168.32.19222',no_products).
-vulProperty('192.168.32.19222',remoteExploit,writeDirect).
-capability_required('192.168.32.19222',l).
+vulExists('10.2.96.56','10.2.96.5630',windows_2003_server).
+vulProperty('10.2.96.5630',remoteExploit,writeDirect).
+capability_required('10.2.96.5630',l).
 
-vulExists('192.168.32.192','192.168.32.19223',openssl).
-vulProperty('192.168.32.19223',remoteExploit,privEscalation).
-capability_required('192.168.32.19223',l).
+vulExists('10.2.96.57','10.2.96.5731',windows).
+vulProperty('10.2.96.5731',remoteExploit,privEscalation).
+capability_required('10.2.96.5731',l).
 
-vulExists('192.168.32.192','192.168.32.19224',openssl).
-vulProperty('192.168.32.19224',remoteExploit,resourceRemoval).
-capability_required('192.168.32.19224',l).
+vulExists('10.2.96.57','10.2.96.5732',windows).
+vulProperty('10.2.96.5732',remoteExploit,resourceRemoval).
+capability_required('10.2.96.5732',l).
 
-vulExists('192.168.32.192','192.168.32.19225',openssl).
-vulProperty('192.168.32.19225',remoteExploit,serviceInterrupt).
-capability_required('192.168.32.19225',l).
+vulExists('10.2.96.57','10.2.96.5733',windows).
+vulProperty('10.2.96.5733',remoteExploit,writeDirect).
+capability_required('10.2.96.5733',l).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',windows_xp,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',windows_xp,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',windows_xp,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',windows_xp,tcp,'8099',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',windows_xp,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',windows_xp,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',windows_xp,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',windows_xp,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',windows_xp,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',windows_xp,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',windows_xp,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',windows,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',windows,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',windows,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',windows,tcp,'8099',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',windows,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',windows,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',windows,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',windows,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.185',no_products,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',windows,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.185','md5 x.509_certificate',tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',windows,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.185','windows samba',tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',windows,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.185','windows samba',tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.185','windows samba',tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.185','windows samba',tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.185','windows samba',tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8099',someUser).
 
-networkServiceInfo('192.168.32.187','httpd http_server',tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.187',http_server,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.187',http_server,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.187',http_server,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.187',http_server,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.187',http_server,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.187',http_server,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.187',http_server,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',sql_server,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.187',http_server,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',sql_server,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.187',http_server,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',sql_server,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.187',http_server,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',sql_server,tcp,'8099',someUser).
 
-networkServiceInfo('192.168.32.187',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',sql_server,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.187',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',sql_server,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.187',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',sql_server,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.187',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',sql_server,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.187',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',sql_server,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.187',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',sql_server,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.187',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',sql_server,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.187',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.187',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.187',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.187',php,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8099',someUser).
 
-networkServiceInfo('192.168.32.187',no_products,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.187','windows samba',tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.187','windows samba',tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.187','windows samba',tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.187','windows samba',tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.187','windows samba',tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8099',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55','md5 x.509_certificate',tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8099',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8099',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8099',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.192',no_products,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.192',no_products,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
 
-networkServiceInfo('192.168.32.192',no_products,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8099',someUser).
 
-networkServiceInfo('192.168.32.192',no_products,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.192',no_products,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.192',no_products,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'8098',someUser).
 
-networkServiceInfo('192.168.32.192',no_products,tcp,'80',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'80',someUser).
 
-networkServiceInfo('192.168.32.192',no_products,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'0',someUser).
 
-networkServiceInfo('192.168.32.192',no_products,tcp,'443',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'1433',someUser).
 
-networkServiceInfo('192.168.32.192',no_products,tcp,'445',someUser).
+networkServiceInfo('10.2.96.55',no_products,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.55',windows,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.55','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',windows_2003_server,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',windows_2003_server,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',windows_2003_server,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',windows_2003_server,tcp,'8099',someUser).
+
+networkServiceInfo('10.2.96.56',windows_2003_server,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',windows_2003_server,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',windows_2003_server,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',windows_2003_server,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',windows_2003_server,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',windows_2003_server,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',windows_2003_server,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',windows,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',windows,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',windows,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',windows,tcp,'8099',someUser).
+
+networkServiceInfo('10.2.96.56',windows,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',windows,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',windows,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',windows,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',windows,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',windows,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',windows,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',sql_server,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',sql_server,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',sql_server,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',sql_server,tcp,'8099',someUser).
+
+networkServiceInfo('10.2.96.56',sql_server,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',sql_server,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',sql_server,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',sql_server,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',sql_server,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',sql_server,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',sql_server,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'25',someUser).
+
+networkServiceInfo('10.2.96.56','windows exchange_server',tcp,'25',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'8099',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'8099',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'8099',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'8099',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',no_products,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'8099',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'8099',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.56',iis,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56',windows,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.56','windows samba',tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.57',windows,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.57',windows,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.57',windows,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.57',windows,tcp,'8099',someUser).
+
+networkServiceInfo('10.2.96.57',windows,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.57',windows,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.57',windows,tcp,'8098',someUser).
+
+networkServiceInfo('10.2.96.57',windows,tcp,'80',someUser).
+
+networkServiceInfo('10.2.96.57',windows,tcp,'0',someUser).
+
+networkServiceInfo('10.2.96.57',windows,tcp,'1433',someUser).
+
+networkServiceInfo('10.2.96.57',windows,tcp,'445',someUser).
+
+networkServiceInfo('10.2.96.57',windows,udp,'5355',someUser).
 
 hacl(_h626,_h627,_h628,_h629).
 
-hasAccount('192.168.32.192_victim','192.168.32.192',user).
+hasAccount('10.2.96.92_victim','10.2.96.92',user).
 
-hasAccount('192.168.32.187_victim','192.168.32.187',user).
+hasAccount('10.2.96.57_victim','10.2.96.57',user).
 
-hasAccount('192.168.32.185_victim','192.168.32.185',user).
+hasAccount('10.2.96.56_victim','10.2.96.56',user).
 
-inCompetent('192.168.32.192_victim').
+hasAccount('10.2.96.55_victim','10.2.96.55',user).
 
-inCompetent('192.168.32.187_victim').
+inCompetent('10.2.96.92_victim').
 
-inCompetent('192.168.32.185_victim').
+inCompetent('10.2.96.57_victim').
 
-attackGoal(execCode('192.168.32.192',_h445)).
+inCompetent('10.2.96.56_victim').
 
-attackGoal(execCode('192.168.32.187',_h452)).
+inCompetent('10.2.96.55_victim').
 
-attackGoal(execCode('192.168.32.185',_h459)).
+attackGoal(execCode('10.2.96.92',_h445)).
+
+attackGoal(execCode('10.2.96.57',_h452)).
+
+attackGoal(execCode('10.2.96.56',_h459)).
+
+attackGoal(execCode('10.2.96.55',_h466)).
 
 attackerLocated(internet).
 
@@ -352,16 +624,22 @@ attackerLocated(internet).
 
 attackerLocated(internet).
 
-inCompetent('192.168.32.192_victim').
-hasAccount('192.168.32.192_victim', '192.168.32.192', user).
 attackerLocated(internet).
-attackGoal(execCode('192.168.32.192', _)).
-inCompetent('192.168.32.187_victim').
-hasAccount('192.168.32.187_victim', '192.168.32.187', user).
+
+inCompetent('10.2.96.92_victim').
+hasAccount('10.2.96.92_victim', '10.2.96.92', user).
 attackerLocated(internet).
-attackGoal(execCode('192.168.32.187', _)).
-inCompetent('192.168.32.185_victim').
-hasAccount('192.168.32.185_victim', '192.168.32.185', user).
+attackGoal(execCode('10.2.96.92', _)).
+inCompetent('10.2.96.57_victim').
+hasAccount('10.2.96.57_victim', '10.2.96.57', user).
 attackerLocated(internet).
-attackGoal(execCode('192.168.32.185', _)).
+attackGoal(execCode('10.2.96.57', _)).
+inCompetent('10.2.96.56_victim').
+hasAccount('10.2.96.56_victim', '10.2.96.56', user).
+attackerLocated(internet).
+attackGoal(execCode('10.2.96.56', _)).
+inCompetent('10.2.96.55_victim').
+hasAccount('10.2.96.55_victim', '10.2.96.55', user).
+attackerLocated(internet).
+attackGoal(execCode('10.2.96.55', _)).
 hacl(_,_,_,_).
