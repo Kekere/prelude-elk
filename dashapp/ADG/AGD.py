@@ -312,7 +312,7 @@ def are_elements_in_column(df,column_name,elements):
     return all(element in df[column_name].values for element in elements)
 def find_play_list(G,predicates):
     cont=pd.read_excel('/var/www/html/ADG/countermeasures.xlsx', engine='openpyxl')
-    #print(cont['CVE'])
+
     filename = "play.owl"
     path = "/var/www/html/ADG/" + filename
     vulner=get_vulname(G,predicates)
@@ -323,23 +323,27 @@ def find_play_list(G,predicates):
         vul=v.split(',')[1]
         # Define the regex pattern for CVE identifiers
         cve_pattern = r'CVE-\d{4}-\d{4,7}'
+        #print(vul)
         # Use re.findall to find all occurrences of the pattern in the text
-        cve_identifiers = re.findall(cve_pattern, vul.split("'")[1])
+        #cve_identifiers = re.findall(cve_pattern, vul.split("'")[1])
+        cve_identifiers=re.findall(cve_pattern, vul)
         if len(cve_identifiers)!=0:
             list_vul.append(cve_identifiers[0])
     
-    if all(element in list_vul for element in cont['CVE'])==True:
-           countermeasure_list=pd.read_excel('/var/www/html/ADG/countermeasures.xlsx', engine='openpyxl')
+    if all(element in list_vul for element in cont['CVE'])==True and len(cont['CVE'])!=0:
+            #print(cont)
+            countermeasure_list=pd.read_excel('/var/www/html/ADG/countermeasures.xlsx', engine='openpyxl')
     else:
         for v in vulner:
 
             vul=v.split(',')[1]
+            #print(vul)
             # Define the regex pattern for CVE identifiers
             cve_pattern = r'CVE-\d{4}-\d{4,7}'
 
             # Use re.findall to find all occurrences of the pattern in the text
-            cve_identifiers = re.findall(cve_pattern, vul.split("'")[1])
-            
+            #cve_identifiers = re.findall(cve_pattern, vul.split("'")[1])
+            cve_identifiers=re.findall(cve_pattern, vul)
             if len(cve_identifiers)!=0:
                 ontology = Graph()
                 ontology.parse(path, format="ttl")
@@ -353,7 +357,7 @@ def find_play_list(G,predicates):
                         for predic in predicates:
                             if predic[1].startswith('vulExists'):
                                 if str(predic[1].split('(')[1].split(',')[1])==vul:
-                                    cve_file=vul.split("'")[1]+".json"
+                                    cve_file="/var/www/html/ADG/"+vul.split("'")[1]+".json"
                                     vulname=vul
                                     pos=predic[1].split('(')[1].split(',')[3].split('Exploit')[0]
                                     equip=predic[1].split('(')[1].split(',')[2]
@@ -366,6 +370,7 @@ def find_play_list(G,predicates):
                                     #print(cve_file)
                                     with open(cve_file, 'w') as file:
                                         json.dump(jsoncve, file, indent=4)
+                                        #print(vul)
                                     generateplaybook.genplay(vul.split("'")[1])
                                     ontology2 = Graph()
                                     ontology2.parse(path, format="ttl")
@@ -373,6 +378,7 @@ def find_play_list(G,predicates):
                 jsonplay={"CVE":vul,"Playbook":playbook}
                 playbooks.append(jsonplay)
                 #for l in listID:
+        #print(playbooks)
         c=0
         # determining the name of the file
         file_name = '/var/www/html/ADG/predicatesTable.xlsx'
@@ -415,6 +421,7 @@ def find_play_list(G,predicates):
         file_name = '/var/www/html/ADG/countermeasures.xlsx'
         #print(countermeasure_list)
         # saving the excel
+        #print(countermeasure_list)
         countermeasure_list.to_excel(file_name)
     return countermeasure_list
 
@@ -521,9 +528,10 @@ def create_graph(G, pos,colors,labels,node_colors,data):
     elements = []
     
     for node in G.nodes():
-        print(node_colors,data[get_position_of_sublist(data,node)][2],get_position_of_sublist(data,node),node,data[get_position_of_sublist(data,node)])
+        #print(node_colors,data[get_position_of_sublist(data,node)][2],get_position_of_sublist(data,node),node,data[get_position_of_sublist(data,node)])
         col=node_colors[data[get_position_of_sublist(data,node)][2]]
         if type(node)==int:
+            print(col,labels[node])
             elements.append({
                 'data': {'id': str(node), 'label': str(labels[node])},
                 'style': {'background-color': col}
@@ -536,6 +544,7 @@ def create_graph(G, pos,colors,labels,node_colors,data):
     for edge in G.edges():
         #print(edge)
         elements.append({'data': {'source': str(edge[0]), 'target': str(edge[1])}})
+    print(elements)
     return elements
 
 def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_count,predecessors_count):
@@ -548,7 +557,7 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
     #net=19
     act=list(alertsinfo[1])
     #act=15
-    print(act,net)
+    #print(act,net)
 
     new_G = nx.DiGraph()
     vectorlist2=[]
@@ -584,6 +593,7 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
                         #if pred[0]==l:
                             #print(pred[1])
                         for counter in range(len(countermeasure_list['Predicates'])):
+                            #print(counter)
                             if pred[1].split('(')[0]==countermeasure_list['Predicates'][counter].split('(')[0]:
                                 contpred=countermeasure_list['Countermeasures'][counter].split('(')[0]
                                 if contpred.startswith('patch'):
@@ -644,17 +654,20 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
         if vector_value < level_occurrence:
             predecessors_V=list(G.predecessors(j))
             for k in predecessors_V:
+                
                 flow_value_between_nodes = get_flow_value(flow_matrix, k-1, j-1)
+                #print(k,flow_value_between_nodes)
                 if flow_value_between_nodes==1:
                     for pred in predicates:
-                        #print(pred)
                         if pred[2]!='AND' and pred[0]==k:
                             #if pred[0]==k:
                             #print(countermeasure_list['Predicates'])
-                            for counter in range(len(countermeasure_list['Predicates'])):                                
+                            for counter in range(len(countermeasure_list['Predicates'])):       
+                                #print(countermeasure_list['Predicates'][counter])                         
                                 if pred[1].split('(')[0]==countermeasure_list['Predicates'][counter].split('(')[0]:
                                     #print(pred[1])
                                     contpred=countermeasure_list['Countermeasures'][counter].split('(')[0]
+                                    #print(contpred)
                                     if contpred.startswith('patch'):
                                         if str(pred[1].split('(')[1].split(',')[1]).split("'")[1]==countermeasure_list['CVE'][counter]:
                                             listpredparam=pred[1].split('(')[1].split(')')[0].split(',')
@@ -670,10 +683,10 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
                                             new_edges.append((counterm, pred[0]))
                                             predecesseur=list(G.predecessors(j))
                                     if contpred.startswith('unblock') or contpred.startswith('restore') or contpred.startswith('enable'):
-                                        #print(get_vulname(G))
                                         cont=list(countermeasure_list.loc[countermeasure_list['Countermeasures'] == 'patchVul(_host, _vulID, _program)', 'CVE'])
                                         #commonlist=[x for x in countermeasure_list['CVE'] if x in ]
                                         notinplay=[x.split('(')[1].split(',')[1].split("'")[1] for x in get_vulname(G,predicates) if x.split('(')[1].split(',')[1].split("'")[1] not in cont]
+                                        #print(cont)
                                         if len(notinplay)==0:
                                             listpredparam=pred[1].split('(')[1].split(')')[0].split(',')
                                             listcontrparam=countermeasure_list['Countermeasures'][counter].split('(')[1].split(')')[0].split(',')
@@ -717,6 +730,7 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
             new_G.add_nodes_from(old_nodes)
             new_G.add_edges_from(old_edges)
     return new_G, nets, acts, DF_flow  
+
 file_path,csv_file=[],[]
 G,predicates,G_multilevel,node_colors,data,pos,colors,labels=nx.DiGraph(),[],[],[],[],[],[],[]
 occcount, succ, pred=[],[],[]
@@ -728,7 +742,7 @@ file_path = '/var/www/html/scriptphp/ARCS.CSV'  # Change this to your CSV file p
 csv_file = '/var/www/html/scriptphp/VERTICES.CSV'  # Replace 'data.csv' with your CSV file name
 G,predicates,G_multilevel,node_colors,data,pos,colors,labels=generate_graph(file_path,csv_file)
 #print(G)
-timegen=get_file_creation_time(file_path)
+"""timegen=get_file_creation_time(file_path)
 requestalerts.alerts()
 checknewalert=take_alerts('/var/www/html/ADG/alerts.xlsx')
 if len(checknewalert[0])!=0 or len(checknewalert[1])!=0:
@@ -750,7 +764,8 @@ else:
         #print(DF_flow)
         val=True
     else:
-        val=False
+        val=False"""
+val=True
 # Initialize the Dash app
 app = dash.Dash(__name__)
 # Define the app layout
@@ -797,6 +812,7 @@ app.layout = html.Div([
     Output('cytoscape-graph', 'elements'),
     [Input('interval-component', 'n_intervals')]
 )
+
 def update_graph(n_intervals):  
     file_path,csv_file=[],[]
     G,predicates,G_multilevel,node_colors,data,pos,colors,labels=nx.DiGraph(),[],[],[],[],[],[],[]
@@ -812,15 +828,19 @@ def update_graph(n_intervals):
     timegen=get_file_creation_time(file_path)
     requestalerts.alerts()
     checknewalert=take_alerts('/var/www/html/ADG/alerts.xlsx')
+    #print(n_intervals)
     if len(checknewalert[0])!=0 or len(checknewalert[1])!=0:
             for i in range(len(checknewalert)):
                 checknewalert[i][np.isnan(checknewalert[i])] = int(0)
     #img_src = create_graph(G,pos,colors)
     occcount, succ, pred=pred_and_succ(G_multilevel)
+    
     #print(occcount)
-    countermeasures_list=find_play_list(G,predicates)
+    #countermeasures_list=find_play_list(G,predicates)
     #print(checknewalert)
     if len(checknewalert[1])==0 and len(checknewalert[0])==0 :
+            n_intervals=0
+            countermeasures_list=find_play_list(G,predicates)
             val=True
     else:
         nets_equality_comparison = set(G[1])==set(list(checknewalert)[0])
@@ -829,6 +849,8 @@ def update_graph(n_intervals):
             flow_matrix = convert_to_flow_matrix(G,list(checknewalert[0]),list(checknewalert[1]),predicates)
             DF_flow = pd.DataFrame(flow_matrix, index=range(1, flow_matrix.shape[0] + 1), columns=range(1, flow_matrix.shape[1] + 1))
             #print(DF_flow)
+            n_intervals=0
+            countermeasures_list=find_play_list(G,predicates)
             val=True
         else:
             val=False
@@ -837,6 +859,7 @@ def update_graph(n_intervals):
         raise dash.exceptions.PreventUpdatew
     #print(val)
     #print(G)
+    #print(n_intervals,val)
     up_G=[]
     new_G=[]
     new_colors = []
@@ -856,8 +879,9 @@ def update_graph(n_intervals):
         up_G[3].to_excel(file_name)
 
         new_G=up_G[0]
+        #print(new_G)
         checknewalert=take_alerts('/var/www/html/ADG/alerts.xlsx')
-        print(len(checknewalert[0]))
+        #print(len(checknewalert[0]))
         if len(checknewalert[0])!=0 or len(checknewalert[1])!=0:
             for i in range(len(checknewalert)):
                 checknewalert[i][np.isnan(checknewalert[i])] = int(0)
@@ -877,7 +901,7 @@ def update_graph(n_intervals):
         else:
             flow_matrix = convert_to_flow_matrix(G,list(checknewalert[0]),list(checknewalert[1]),predicates)
             DF_flow = pd.DataFrame(flow_matrix, index=range(1, flow_matrix.shape[0] + 1), columns=range(1, flow_matrix.shape[1] + 1))
-            print(DF_flow)
+            #print(DF_flow)
             #val=False"""
         for  node in new_G.nodes():
             if isinstance(node, str):
@@ -904,16 +928,18 @@ def update_graph(n_intervals):
         pos = nx.spring_layout(new_G, k=0.3)
         is_zero_matrix = np.all(up_G[3] == 0)
         if is_zero_matrix==True:
-            print(is_zero_matrix)
+            #print(is_zero_matrix)
             val=False
         else:
             val=True
         #img_src = create_graph(new_G,pos,new_colors,labels,node_colors,datanew)
+        #print(img_src)
         return create_graph(new_G,pos,new_colors,labels,node_colors,datanew)
     else:
         # Return the same image if no update is needed
-        print(val)
+        #print(val)
         return dash.no_update
+    return create_graph(G,pos,colors,labels,node_colors,data)
 # Callback to display node data on click
 @app.callback(
     Output('node-data', 'children'),

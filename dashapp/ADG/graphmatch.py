@@ -175,7 +175,7 @@ def extractcve(cveid):
           impactmethod='Code_Execution'
         if 'bypass' in word_tokenize(i.lower()) and impactmethod=='':
           impactmethod='Authentication_Bypass'
-      owl_file_path='/var/www/html/ADG/rdfxmlgraph.owl'
+      owl_file_path='rdfxmlgraph.owl'
       # Read the OWL file
       with open(owl_file_path, 'r') as file:
           contents = file.read()
@@ -606,7 +606,7 @@ def takesubclassof(namefile,parentclass):
             for p_class in parent_class.subclasses():
                 # Écrire les données dans le fichier TSV
                 if p_class not in off:
-                    writer.writerow([id_counter, "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#"+p_class.name])
+                    writer.writerow([id_counter, "http://d3fend.mitre.org/ontologies/d3fend.owl#"+p_class.name])
                     id_counter += 1
                     off.append(p_class)
 
@@ -621,7 +621,7 @@ graph1 = my_world1.as_rdflib_graph()
 def searchtech(techn):
     technique=[]
     sparql = """select ?a where{
-                    <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#"""+techn+"""> <http://www.w3.org/2000/01/rdf-schema#label> ?a.
+                    <http://d3fend.mitre.org/ontologies/d3fend.owl#"""+techn+"""> <http://www.w3.org/2000/01/rdf-schema#label> ?a.
                 }"""
     #query is being run
     resultsList = graph1.query(sparql)
@@ -633,8 +633,8 @@ def searchtech(techn):
 def searchimpact(techn):
     technique=[]
     sparql = """select ?a where{
-                    <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#"""+techn+"""> <http://www.w3.org/2000/01/rdf-schema#label> ?a.
-                    <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#"""+techn+"""> rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#ImpactTechnique> .
+                    <http://d3fend.mitre.org/ontologies/d3fend.owl#"""+techn+"""> <http://www.w3.org/2000/01/rdf-schema#label> ?a.
+                    <http://d3fend.mitre.org/ontologies/d3fend.owl#"""+techn+"""> rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies/d3fend.owl#ImpactTechnique> .
                 }"""
     #query is being run
     resultsList = graph1.query(sparql)
@@ -646,8 +646,8 @@ def searchimpact(techn):
 def searchpriv(techn):
     technique=[]
     sparql = """select ?a where{
-                    <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#"""+techn+"""> <http://www.w3.org/2000/01/rdf-schema#label> ?a.
-                    <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#"""+techn+"""> rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#PrivilegeEscalationTechnique> .
+                    <http://d3fend.mitre.org/ontologies/d3fend.owl#"""+techn+"""> <http://www.w3.org/2000/01/rdf-schema#label> ?a.
+                    <http://d3fend.mitre.org/ontologies/d3fend.owl#"""+techn+"""> rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies/d3fend.owl#PrivilegeEscalationTechnique> .
                 }"""
     #query is being run
     resultsList = graph1.query(sparql)
@@ -675,18 +675,18 @@ def searchar(t):
     sparql = """select Distinct ?l where{
           {
               ?sb rdfs:subClassOf ?of.
-              ?of rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#OffensiveTechnique> .
+              ?of rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies/d3fend.owl#OffensiveTechnique> .
               ?of <http://www.w3.org/2000/01/rdf-schema#label> '"""+t+"""' .
               ?sb ?p ?b .
-              ?b rdfs:subClassOf* <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#Artifact> .
+              ?b rdfs:subClassOf* <http://d3fend.mitre.org/ontologies/d3fend.owl#Artifact> .
               ?b <http://www.w3.org/2000/01/rdf-schema#label> ?l .
           }
           UNION
           {
-              ?of rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#OffensiveTechnique> .
+              ?of rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies/d3fend.owl#OffensiveTechnique> .
               ?of <http://www.w3.org/2000/01/rdf-schema#label> '"""+t+"""' .
               ?of ?p ?b .
-              ?b rdfs:subClassOf* <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#Artifact> .
+              ?b rdfs:subClassOf* <http://d3fend.mitre.org/ontologies/d3fend.owl#Artifact> .
               ?b <http://www.w3.org/2000/01/rdf-schema#label> ?l .
           }
         }"""
@@ -700,22 +700,22 @@ def search(asset):
     countermeasure=[]
     propriete=[]
     sparql = """select ?label ?def ?desc ?p where {
-    <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#"""+asset+"""> rdfs:subClassOf* ?class .
-    ?class2 rdfs:subClassOf* <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#"""+asset+"""> .
+    <http://d3fend.mitre.org/ontologies/d3fend.owl#"""+asset+"""> rdfs:subClassOf* ?class .
+    ?class2 rdfs:subClassOf* <http://d3fend.mitre.org/ontologies/d3fend.owl#"""+asset+"""> .
         {
             select ?label ?def ?desc ?p where{
                 {
-                    ?def rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#DefensiveTechnique> .
+                    ?def rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies/d3fend.owl#DefensiveTechnique> .
                     ?def ?p ?class .
                     ?def rdfs:label ?label .
-                    ?def <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#definition> ?desc .
+                    ?def <http://d3fend.mitre.org/ontologies/d3fend.owl#definition> ?desc .
                 }
                 UNION
                 {
-                    ?def rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#DefensiveTechnique> .
+                    ?def rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies/d3fend.owl#DefensiveTechnique> .
                     ?def ?p ?class2 .
                     ?def rdfs:label ?label .
-                    ?def <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#definition> ?desc .
+                    ?def <http://d3fend.mitre.org/ontologies/d3fend.owl#definition> ?desc .
                 }
             }
         }
@@ -732,7 +732,7 @@ def search(asset):
 def searchartifact():
     countermeasure=[]
     sparql = """select ?a where{
-                    ?ar rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#Artifact> .
+                    ?ar rdfs:subClassOf+ <http://d3fend.mitre.org/ontologies/d3fend.owl#Artifact> .
                     ?ar <http://www.w3.org/2000/01/rdf-schema#label> ?a .
                 }"""
     #query is being run
@@ -831,7 +831,7 @@ for entity in entitiesdef:
 
 def askcveexist(val):
     countermeasure=[]
-    sparql = """SELECT ?i
+    sparql = """SELECT Distinct ?i
               WHERE{
                     ?i <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasIdentity> <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#"""+val+"""> .
                     ?im rdf:type <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#VulnerabilityIdentifier> .
@@ -938,107 +938,107 @@ def matchgraph(cve):
             "/var/www/html/ADG/d3fend.owl",
           literals=[
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#executes",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#executes",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#invokes",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#invokes",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-modify",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#may-modify",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#modifies",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#modifies",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#accesses",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#accesses",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-access",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#may-access",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#runs",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#runs",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#adds",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#adds",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-add",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#may-add",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#produces",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#produces",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#creates",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#creates",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-create",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#may-create",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#uses",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#uses",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#copies",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#copies",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-transfer",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#may-transfer",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#reads",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#reads",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#loads",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#loads",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-invoke",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#may-invoke",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#queries",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#queries",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#interprets",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#interprets",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#installs",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#installs",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#hides",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#hides",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#injects",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#injects",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#forges",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#forges",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#connects",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#connects",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
                 [
-                    "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#unmounts",
+                    "http://d3fend.mitre.org/ontologies/d3fend.owl#unmounts",
                     "http://www.w3.org/2000/01/rdf-schema#label"
                 ],
             ],
@@ -1271,13 +1271,13 @@ def matchgraph(cve):
     propriete=[]
     phase=""
     category=""
-    eradicationverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#deletes","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#evicts","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#terminates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-evict"]
-    #identificationverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#monitors","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#detects","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#analyzes", "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#verifies", "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#identifies", "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#evaluates"]
-    identificationverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#evaluates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#validates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#monitors","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#detects","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#neutralizes", "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#verifies","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#analyzes","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#restricts","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#spoofs","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#deceives-with"]
-    containmentverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#updates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#suspends","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-contain","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#use-limits","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#obfuscates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#disables","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-disable","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#use-limits","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#encrypts","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#limits","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#authenticates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#filters","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#isolates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#hardens","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#blocks"]
-    #containmentverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#validates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-contain","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#use-limits","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#encrypts","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#restricts","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#limits""http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#authenticates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#filters","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#isolates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#hardens","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#blocks","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#spoofs","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#deceives-with"]
-    recoveryverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#strengthens","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#enables","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#regenerates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#restores"]
-    preparationverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-access","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#manages"]
+    eradicationverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#deletes","http://d3fend.mitre.org/ontologies/d3fend.owl#evicts","http://d3fend.mitre.org/ontologies/d3fend.owl#terminates","http://d3fend.mitre.org/ontologies/d3fend.owl#may-evict"]
+    #identificationverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#monitors","http://d3fend.mitre.org/ontologies/d3fend.owl#detects","http://d3fend.mitre.org/ontologies/d3fend.owl#analyzes", "http://d3fend.mitre.org/ontologies/d3fend.owl#verifies", "http://d3fend.mitre.org/ontologies/d3fend.owl#identifies", "http://d3fend.mitre.org/ontologies/d3fend.owl#evaluates"]
+    identificationverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#evaluates","http://d3fend.mitre.org/ontologies/d3fend.owl#validates","http://d3fend.mitre.org/ontologies/d3fend.owl#monitors","http://d3fend.mitre.org/ontologies/d3fend.owl#detects","http://d3fend.mitre.org/ontologies/d3fend.owl#neutralizes", "http://d3fend.mitre.org/ontologies/d3fend.owl#verifies","http://d3fend.mitre.org/ontologies/d3fend.owl#analyzes","http://d3fend.mitre.org/ontologies/d3fend.owl#restricts","http://d3fend.mitre.org/ontologies/d3fend.owl#spoofs","http://d3fend.mitre.org/ontologies/d3fend.owl#deceives-with"]
+    containmentverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#updates","http://d3fend.mitre.org/ontologies/d3fend.owl#suspends","http://d3fend.mitre.org/ontologies/d3fend.owl#may-contain","http://d3fend.mitre.org/ontologies/d3fend.owl#use-limits","http://d3fend.mitre.org/ontologies/d3fend.owl#obfuscates","http://d3fend.mitre.org/ontologies/d3fend.owl#disables","http://d3fend.mitre.org/ontologies/d3fend.owl#may-disable","http://d3fend.mitre.org/ontologies/d3fend.owl#use-limits","http://d3fend.mitre.org/ontologies/d3fend.owl#encrypts","http://d3fend.mitre.org/ontologies/d3fend.owl#limits","http://d3fend.mitre.org/ontologies/d3fend.owl#authenticates","http://d3fend.mitre.org/ontologies/d3fend.owl#filters","http://d3fend.mitre.org/ontologies/d3fend.owl#isolates","http://d3fend.mitre.org/ontologies/d3fend.owl#hardens","http://d3fend.mitre.org/ontologies/d3fend.owl#blocks"]
+    #containmentverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#validates","http://d3fend.mitre.org/ontologies/d3fend.owl#may-contain","http://d3fend.mitre.org/ontologies/d3fend.owl#use-limits","http://d3fend.mitre.org/ontologies/d3fend.owl#encrypts","http://d3fend.mitre.org/ontologies/d3fend.owl#restricts","http://d3fend.mitre.org/ontologies/d3fend.owl#limits""http://d3fend.mitre.org/ontologies/d3fend.owl#authenticates","http://d3fend.mitre.org/ontologies/d3fend.owl#filters","http://d3fend.mitre.org/ontologies/d3fend.owl#isolates","http://d3fend.mitre.org/ontologies/d3fend.owl#hardens","http://d3fend.mitre.org/ontologies/d3fend.owl#blocks","http://d3fend.mitre.org/ontologies/d3fend.owl#spoofs","http://d3fend.mitre.org/ontologies/d3fend.owl#deceives-with"]
+    recoveryverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#strengthens","http://d3fend.mitre.org/ontologies/d3fend.owl#enables","http://d3fend.mitre.org/ontologies/d3fend.owl#regenerates","http://d3fend.mitre.org/ontologies/d3fend.owl#restores"]
+    preparationverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#may-access","http://d3fend.mitre.org/ontologies/d3fend.owl#manages"]
     for result in listresultfinal:
         for res in result['Artifact']:
             request=search(res.replace(" ", ""))
@@ -1342,7 +1342,7 @@ def matchgraph(cve):
                           phase=""
     #output
     #Nouvelle approche
-    #tsv_file = open("./countermeasureexec.tsv", "w")
+    #tsv_file = open("countermeasureexec.tsv", "w")
     #tsv_writer = csv.writer(tsv_file, delimiter='\t')
     #print(datasetcounter)
     #tsv_writer.writerow(datasetcounter[0].keys()) # write the header
@@ -1393,107 +1393,107 @@ def matchgraph(cve):
               "/var/www/html/ADG/d3fend.owl",
             literals=[
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#executes",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#executes",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#invokes",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#invokes",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-modify",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#may-modify",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#modifies",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#modifies",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#accesses",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#accesses",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-access",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#may-access",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#runs",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#runs",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#adds",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#adds",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-add",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#may-add",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#produces",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#produces",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#creates",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#creates",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-create",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#may-create",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#uses",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#uses",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#copies",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#copies",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-transfer",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#may-transfer",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#reads",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#reads",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#loads",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#loads",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-invoke",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#may-invoke",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#queries",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#queries",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#interprets",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#interprets",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#installs",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#installs",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#hides",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#hides",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#injects",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#injects",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#forges",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#forges",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#connects",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#connects",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
                   [
-                      "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#unmounts",
+                      "http://d3fend.mitre.org/ontologies/d3fend.owl#unmounts",
                       "http://www.w3.org/2000/01/rdf-schema#label"
                   ],
               ],
@@ -1729,13 +1729,13 @@ def matchgraph(cve):
       propriete=[]
       phase=""
       category=""
-      eradicationverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#deletes","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#evicts","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#terminates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-evict"]
-      #identificationverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#monitors","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#detects","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#analyzes", "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#verifies", "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#identifies", "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#evaluates"]
-      identificationverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#evaluates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#validates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#monitors","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#detects","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#neutralizes", "http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#verifies","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#analyzes","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#restricts","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#spoofs","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#deceives-with"]
-      containmentverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#updates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#suspends","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-contain","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#use-limits","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#obfuscates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#disables","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-disable","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#use-limits","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#encrypts","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#limits","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#authenticates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#filters","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#isolates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#hardens","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#blocks"]
-      #containmentverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#validates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-contain","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#use-limits","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#encrypts","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#restricts","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#limits""http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#authenticates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#filters","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#isolates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#hardens","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#blocks","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#spoofs","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#deceives-with"]
-      recoveryverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#strengthens","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#enables","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#regenerates","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#restores"]
-      preparationverb=["http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#may-access","http://d3fend.mitre.org/ontologies//var/www/html/ADG/d3fend.owl#manages"]
+      eradicationverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#deletes","http://d3fend.mitre.org/ontologies/d3fend.owl#evicts","http://d3fend.mitre.org/ontologies/d3fend.owl#terminates","http://d3fend.mitre.org/ontologies/d3fend.owl#may-evict"]
+      #identificationverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#monitors","http://d3fend.mitre.org/ontologies/d3fend.owl#detects","http://d3fend.mitre.org/ontologies/d3fend.owl#analyzes", "http://d3fend.mitre.org/ontologies/d3fend.owl#verifies", "http://d3fend.mitre.org/ontologies/d3fend.owl#identifies", "http://d3fend.mitre.org/ontologies/d3fend.owl#evaluates"]
+      identificationverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#evaluates","http://d3fend.mitre.org/ontologies/d3fend.owl#validates","http://d3fend.mitre.org/ontologies/d3fend.owl#monitors","http://d3fend.mitre.org/ontologies/d3fend.owl#detects","http://d3fend.mitre.org/ontologies/d3fend.owl#neutralizes", "http://d3fend.mitre.org/ontologies/d3fend.owl#verifies","http://d3fend.mitre.org/ontologies/d3fend.owl#analyzes","http://d3fend.mitre.org/ontologies/d3fend.owl#restricts","http://d3fend.mitre.org/ontologies/d3fend.owl#spoofs","http://d3fend.mitre.org/ontologies/d3fend.owl#deceives-with"]
+      containmentverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#updates","http://d3fend.mitre.org/ontologies/d3fend.owl#suspends","http://d3fend.mitre.org/ontologies/d3fend.owl#may-contain","http://d3fend.mitre.org/ontologies/d3fend.owl#use-limits","http://d3fend.mitre.org/ontologies/d3fend.owl#obfuscates","http://d3fend.mitre.org/ontologies/d3fend.owl#disables","http://d3fend.mitre.org/ontologies/d3fend.owl#may-disable","http://d3fend.mitre.org/ontologies/d3fend.owl#use-limits","http://d3fend.mitre.org/ontologies/d3fend.owl#encrypts","http://d3fend.mitre.org/ontologies/d3fend.owl#limits","http://d3fend.mitre.org/ontologies/d3fend.owl#authenticates","http://d3fend.mitre.org/ontologies/d3fend.owl#filters","http://d3fend.mitre.org/ontologies/d3fend.owl#isolates","http://d3fend.mitre.org/ontologies/d3fend.owl#hardens","http://d3fend.mitre.org/ontologies/d3fend.owl#blocks"]
+      #containmentverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#validates","http://d3fend.mitre.org/ontologies/d3fend.owl#may-contain","http://d3fend.mitre.org/ontologies/d3fend.owl#use-limits","http://d3fend.mitre.org/ontologies/d3fend.owl#encrypts","http://d3fend.mitre.org/ontologies/d3fend.owl#restricts","http://d3fend.mitre.org/ontologies/d3fend.owl#limits""http://d3fend.mitre.org/ontologies/d3fend.owl#authenticates","http://d3fend.mitre.org/ontologies/d3fend.owl#filters","http://d3fend.mitre.org/ontologies/d3fend.owl#isolates","http://d3fend.mitre.org/ontologies/d3fend.owl#hardens","http://d3fend.mitre.org/ontologies/d3fend.owl#blocks","http://d3fend.mitre.org/ontologies/d3fend.owl#spoofs","http://d3fend.mitre.org/ontologies/d3fend.owl#deceives-with"]
+      recoveryverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#strengthens","http://d3fend.mitre.org/ontologies/d3fend.owl#enables","http://d3fend.mitre.org/ontologies/d3fend.owl#regenerates","http://d3fend.mitre.org/ontologies/d3fend.owl#restores"]
+      preparationverb=["http://d3fend.mitre.org/ontologies/d3fend.owl#may-access","http://d3fend.mitre.org/ontologies/d3fend.owl#manages"]
       for result in listresultfinal:
           print(result)
           for res in result['Artifact']:

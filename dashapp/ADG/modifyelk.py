@@ -3,7 +3,7 @@ from elasticsearch.exceptions import NotFoundError
 
 # Define the Elasticsearch connection parameters
 es = Elasticsearch(
-    ["http://192.168.1.12:9200/"],  # Your Elasticsearch server URL
+    ["http://172.31.0.4:9200/"],  # Your Elasticsearch server URL
     http_auth=('elastic', 'prelude')  # If authentication is required
 )
 
