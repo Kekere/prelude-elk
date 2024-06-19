@@ -530,16 +530,15 @@ def create_graph(G, pos,colors,labels,node_colors,data):
     for node in G.nodes():
         #print(node_colors,data[get_position_of_sublist(data,node)][2],get_position_of_sublist(data,node),node,data[get_position_of_sublist(data,node)])
         col=node_colors[data[get_position_of_sublist(data,node)][2]]
+        type_n=data[get_position_of_sublist(data,node)][2]
         if type(node)==int:
             print(col,labels[node])
             elements.append({
-                'data': {'id': str(node), 'label': str(labels[node])},
-                'style': {'background-color': col}
+                'data': {'id': str(node), 'label': str(labels[node]), 'type':type_n}
             })
         else:
             elements.append({
-                'data': {'id': str(node), 'label': str(node)},
-                'style': {'background-color': col}
+                'data': {'id': str(node), 'label': str(node), 'type':type_n}
             })
     for edge in G.edges():
         #print(edge)
@@ -796,6 +795,30 @@ app.layout = html.Div([
                     'line-color': 'gray',
                     'target-arrow-color': 'gray'
                 }
+            },
+            {
+                'selector':'node[type="LEAF"]',
+                'style':{
+                    'background-color':'#1fad3c'
+                }
+            },
+             {
+                'selector':'node[type="OR"]',
+                'style':{
+                    'background-color':'#15b0e8'
+                }
+            },
+             {
+                'selector':'node[type="AND"]',
+                'style':{
+                    'background-color':'#d10fb1'
+                }
+            },
+             {
+                'selector':'node[type="C"]',
+                'style':{
+                    'background-color':'#de5c0b'
+                }
             }
         ]
     ),
@@ -806,7 +829,6 @@ app.layout = html.Div([
     ),
     html.Div(id='node-data')
 ])
-
 # Callback to update the graph periodically
 @app.callback(
     Output('cytoscape-graph', 'elements'),
