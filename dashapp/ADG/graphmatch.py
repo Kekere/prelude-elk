@@ -175,7 +175,7 @@ def extractcve(cveid):
           impactmethod='Code_Execution'
         if 'bypass' in word_tokenize(i.lower()) and impactmethod=='':
           impactmethod='Authentication_Bypass'
-      owl_file_path='rdfxmlgraph.owl'
+      owl_file_path='/var/www/html/ADG/rdfxmlgraph.owl'
       # Read the OWL file
       with open(owl_file_path, 'r') as file:
           contents = file.read()

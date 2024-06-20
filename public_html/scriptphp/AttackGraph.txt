@@ -1,48 +1,152 @@
-1,"physicalDamage(_)","OR",0
-2,"RULE 2 (Physical damage)","AND",0
-3,"modify('157.159.68.97',_)","OR",0
-4,"RULE 3 (Modify bus info)","AND",0
-5,"obtainControl('157.159.68.97',admin)","OR",0
-6,"RULE 4 (Obtain control of network traffic)","AND",0
-7,"ipv6Able('157.159.68.97')","LEAF",1
-6,7,-1
-8,"execCode('157.159.68.75',admin)","OR",0
-9,"RULE 5 (Remote login on host by reusing credentials)","AND",0
-10,"harvestCredentials('157.159.68.125',admin)","OR",0
-11,"RULE 6 (Credentials harvesting of the last user connected remotely)","AND",0
-12,"hasCredentialsOnMemory('157.159.68.125',admin)","LEAF",1
-11,12,-1
-13,"execCode('157.159.68.125',olivia)","OR",0
-14,"RULE 9 (remote exploit of a server program)","AND",0
-15,"netAccess('157.159.68.125',tcp,'3389')","OR",0
-16,"RULE 12 (multi-hop access)","AND",0
-17,"hacl('157.159.68.75','157.159.68.125',tcp,'3389')","LEAF",1
-16,17,-1
-16,8,-1
-15,16,-1
-18,"RULE 13 (direct network access)","AND",0
-18,17,-1
-19,"attackerLocated('157.159.68.75')","LEAF",1
-18,19,-1
-15,18,-1
-14,15,-1
-20,"networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',olivia)","LEAF",1
-14,20,-1
-21,"vulExists('157.159.68.125','CVE-2019-0708','windows remote_desktop_protocol',remoteExploit,privEscalation)","LEAF",1
-14,21,-1
-13,14,-1
-11,13,-1
-10,11,-1
-9,10,-1
-9,17,-1
-22,"networkServiceInfo('157.159.68.75',windows,tcp,'3389',admin)","LEAF",1
-9,22,-1
-8,9,-1
-6,8,-1
-23,"isAdmin(admin)","LEAF",1
-6,23,-1
-5,6,-1
+1,"execCode('192.168.32.192',someUser)","OR",0
+2,"RULE 9 (remote exploit of a server program)","AND",0
+3,"netAccess('192.168.32.192',tcp,'443')","OR",0
+4,"RULE 12 (multi-hop access)","AND",0
+5,"hacl('192.168.32.192','192.168.32.192',tcp,'443')","LEAF",1
 4,5,-1
+4,1,-1
 3,4,-1
+6,"RULE 12 (multi-hop access)","AND",0
+6,5,-1
+7,"execCode('192.168.32.192',user)","OR",0
+8,"RULE 10 (remote exploit for a client program)","AND",0
+9,"accessMaliciousInput('192.168.32.192','192.168.32.192_victim',network_camera_firmware)","OR",0
+10,"RULE 29 (Browsing a malicious website)","AND",0
+11,"attackerLocated(internet)","LEAF",1
+10,11,-1
+12,"hacl('192.168.32.192',internet,httpProtocol,httpPort)","LEAF",1
+10,12,-1
+13,"inCompetent('192.168.32.192_victim')","LEAF",1
+10,13,-1
+9,10,-1
+8,9,-1
+14,"hasAccount('192.168.32.192_victim','192.168.32.192',user)","LEAF",1
+8,14,-1
+15,"vulExists('192.168.32.192','CVE-2021-31986',network_camera_firmware,remoteClient,privEscalation)","LEAF",1
+8,15,-1
+7,8,-1
+16,"RULE 10 (remote exploit for a client program)","AND",0
+16,9,-1
+16,14,-1
+17,"vulExists('192.168.32.192','CVE-2021-31987',network_camera_firmware,remoteClient,privEscalation)","LEAF",1
+16,17,-1
+7,16,-1
+18,"RULE 10 (remote exploit for a client program)","AND",0
+18,9,-1
+18,14,-1
+19,"vulExists('192.168.32.192','CVE-2021-31988',network_camera_firmware,remoteClient,privEscalation)","LEAF",1
+18,19,-1
+7,18,-1
+20,"RULE 7 (When a principal is compromised any machine he has an account on will also be compromised)","AND",0
+21,"canAccessHost('192.168.32.192')","OR",0
+22,"RULE 15 (Access a host through executing code on the machine)","AND",0
+22,1,-1
+21,22,-1
+23,"RULE 15 (Access a host through executing code on the machine)","AND",0
+23,7,-1
+21,23,-1
+20,21,-1
+20,14,-1
+24,"principalCompromised('192.168.32.192_victim')","OR",0
+25,"RULE 19 (password sniffing)","AND",0
+25,7,-1
+25,14,-1
+24,25,-1
+20,24,-1
+7,20,-1
+6,7,-1
+3,6,-1
+26,"RULE 13 (direct network access)","AND",0
+27,"hacl(internet,'192.168.32.192',tcp,'443')","LEAF",1
+26,27,-1
+26,11,-1
+3,26,-1
 2,3,-1
+28,"networkServiceInfo('192.168.32.192',no_products,tcp,'443',someUser)","LEAF",1
+2,28,-1
+29,"vulExists('192.168.32.192','CVE-XXXX-XXXX',no_products,remoteExploit,privEscalation)","LEAF",1
+2,29,-1
 1,2,-1
+30,"RULE 9 (remote exploit of a server program)","AND",0
+30,3,-1
+31,"networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser)","LEAF",1
+30,31,-1
+32,"vulExists('192.168.32.192','CVE-2021-3449',openssl,remoteExploit,privEscalation)","LEAF",1
+30,32,-1
+1,30,-1
+33,"RULE 9 (remote exploit of a server program)","AND",0
+33,3,-1
+33,31,-1
+34,"vulExists('192.168.32.192','CVE-2021-3450',openssl,remoteExploit,privEscalation)","LEAF",1
+33,34,-1
+1,33,-1
+35,"RULE 9 (remote exploit of a server program)","AND",0
+35,3,-1
+35,31,-1
+36,"vulExists('192.168.32.192','CVE-2021-3711',openssl,remoteExploit,privEscalation)","LEAF",1
+35,36,-1
+1,35,-1
+37,"RULE 9 (remote exploit of a server program)","AND",0
+37,3,-1
+37,31,-1
+38,"vulExists('192.168.32.192','CVE-2021-3712',openssl,remoteExploit,privEscalation)","LEAF",1
+37,38,-1
+1,37,-1
+39,"RULE 9 (remote exploit of a server program)","AND",0
+39,3,-1
+39,31,-1
+40,"vulExists('192.168.32.192','CVE-2022-1292',openssl,remoteExploit,privEscalation)","LEAF",1
+39,40,-1
+1,39,-1
+41,"RULE 9 (remote exploit of a server program)","AND",0
+41,3,-1
+41,31,-1
+42,"vulExists('192.168.32.192','CVE-2022-2068',openssl,remoteExploit,privEscalation)","LEAF",1
+41,42,-1
+1,41,-1
+43,"RULE 9 (remote exploit of a server program)","AND",0
+44,"netAccess('192.168.32.192',tcp,'80')","OR",0
+45,"RULE 12 (multi-hop access)","AND",0
+46,"hacl('192.168.32.192','192.168.32.192',tcp,'80')","LEAF",1
+45,46,-1
+45,1,-1
+44,45,-1
+47,"RULE 12 (multi-hop access)","AND",0
+47,46,-1
+47,7,-1
+44,47,-1
+48,"RULE 13 (direct network access)","AND",0
+49,"hacl(internet,'192.168.32.192',tcp,'80')","LEAF",1
+48,49,-1
+48,11,-1
+44,48,-1
+43,44,-1
+50,"networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser)","LEAF",1
+43,50,-1
+43,32,-1
+1,43,-1
+51,"RULE 9 (remote exploit of a server program)","AND",0
+51,44,-1
+51,50,-1
+51,34,-1
+1,51,-1
+52,"RULE 9 (remote exploit of a server program)","AND",0
+52,44,-1
+52,50,-1
+52,36,-1
+1,52,-1
+53,"RULE 9 (remote exploit of a server program)","AND",0
+53,44,-1
+53,50,-1
+53,38,-1
+1,53,-1
+54,"RULE 9 (remote exploit of a server program)","AND",0
+54,44,-1
+54,50,-1
+54,40,-1
+1,54,-1
+55,"RULE 9 (remote exploit of a server program)","AND",0
+55,44,-1
+55,50,-1
+55,42,-1
+1,55,-1
