@@ -1,0 +1,13 @@
+{
+  "label_smoothing":0.0,
+  "labels":[
+    "VERB",
+    "NOUN",
+    "ADJ",
+    "ADP",
+    "ADj",
+    "SYM"
+  ],
+  "neg_prefix":"!",
+  "overwrite":false
+}

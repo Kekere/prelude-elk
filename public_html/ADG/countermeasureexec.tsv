@@ -1,0 +1,285 @@
+CVEID	Method or Impact	Context	Artifact	Countermeasure	Phase	Category
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Restore Configuration	Recovery	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Application Configuration Hardening	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	System Init Config Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	File Encryption	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Local File Permissions	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Decoy File	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	File Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	File Removal	Eradication	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	File Integrity Monitoring	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Restore File	Recovery	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	User Session Init Config Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Certificate Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Container Image Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Dynamic Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Emulated File Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Email Filtering	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Email Removal	Eradication	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Homoglyph Detection	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Sender MTA Reputation Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Sender Reputation Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Restore Email	Recovery	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Executable Allowlisting	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Executable Denylisting	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	System File Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	IO Port Restriction	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Input Device Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Decoy Network Resource	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Process Spawn Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Process Lineage Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Process Self-Modification Detection	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Hardware-based Process Isolation	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Mandatory Access Control	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Host Shutdown	Eradication	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Host Reboot	Eradication	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Process Suspension	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Process Termination	Eradication	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Domain Trust Policy	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Script Execution Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	System Daemon Monitoring	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Account Locking	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Biometric Authentication	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Multi-factor Authentication	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	One-time Password	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Strong Password Policy	Recovery	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	User Account Permissions	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Restore User Account Access	Recovery	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Unlock Account	Recovery	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Domain Account Monitoring	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Local Account Monitoring	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	System Call Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	System Call Filtering	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	File Creation Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Authentication Cache Invalidation	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Credential Revoking	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Credential Compromise Scope Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Credential Rotation	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Credential Transmission Scoping	Eradication	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Decoy User Credential	Eradication	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Reissue Credential	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Decoy Session Token	Recovery	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Operational Dependency Mapping	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Organization Mapping	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Data Exchange Mapping	Recovery	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Service Dependency Mapping	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	System Dependency Mapping	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	User Geolocation Logon Pattern Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Network Traffic Filtering	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Administrative Network Activity Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Connection Attempt Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Broadcast Domain Isolation	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	IPC Traffic Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	DNS Denylisting	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	DNS Traffic Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	DNS Allowlisting	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Forward Resolution Domain Denylisting	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Reverse Resolution IP Denylisting	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	File Carving	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Inbound Traffic Filtering	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Inbound Session Volume Analysis	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Forward Resolution IP Denylisting	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Reverse Resolution Domain Denylisting	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Relay Pattern Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	RPC Traffic Analysis	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Outbound Traffic Filtering	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Authentication Event Thresholding	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Resource Access Pattern Analysis	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Session Duration Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Authorization Event Thresholding	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Job Function Access Pattern Analysis	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	User Data Transfer Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Web Session Activity Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	File Access Pattern Analysis	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Decoy Persona	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Process Segment Execution Prevention	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Segment Address Offset Randomization	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Process Code Segment Verification	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Memory Boundary Tracking	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Restore Database	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	System Configuration Permissions	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Decoy Environment	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	System Vulnerability Assessment	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Disk Encryption	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Driver Load Integrity Checking	Recovery	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Network Node Inventory	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Endpoint Health Beacon	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Logical Link Mapping	Preparation	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Physical Link Mapping	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Restore Network Access	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Hardware Component Inventory	Containment	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Connected Honeynet	Identification	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Standalone Honeynet	Recovery	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Message Authentication	Preparation	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Message Encryption	Preparation	General
+CVE-2019-0708	Code Execution	nan	Digital Information Bearer	Shadow Stack Comparisons	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Restore Configuration	Recovery	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Application Configuration Hardening	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	System Init Config Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	File Encryption	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Local File Permissions	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Decoy File	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	File Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	File Removal	Eradication	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	File Integrity Monitoring	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Restore File	Recovery	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	User Session Init Config Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Certificate Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Container Image Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Dynamic Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Emulated File Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Email Filtering	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Email Removal	Eradication	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Homoglyph Detection	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Sender MTA Reputation Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Sender Reputation Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Restore Email	Recovery	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Executable Allowlisting	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Executable Denylisting	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	System File Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	IO Port Restriction	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Input Device Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Decoy Network Resource	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Process Spawn Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Process Lineage Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Process Self-Modification Detection	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Hardware-based Process Isolation	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Mandatory Access Control	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Host Shutdown	Eradication	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Host Reboot	Eradication	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Process Suspension	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Process Termination	Eradication	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Domain Trust Policy	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Script Execution Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	System Daemon Monitoring	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Account Locking	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Biometric Authentication	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Multi-factor Authentication	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	One-time Password	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Strong Password Policy	Recovery	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	User Account Permissions	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Restore User Account Access	Recovery	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Unlock Account	Recovery	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Domain Account Monitoring	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Local Account Monitoring	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	System Call Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	System Call Filtering	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	File Creation Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Authentication Cache Invalidation	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Credential Revoking	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Credential Compromise Scope Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Credential Rotation	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Credential Transmission Scoping	Eradication	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Decoy User Credential	Eradication	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Reissue Credential	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Decoy Session Token	Recovery	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Operational Dependency Mapping	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Organization Mapping	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Data Exchange Mapping	Recovery	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Service Dependency Mapping	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	System Dependency Mapping	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	User Geolocation Logon Pattern Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Network Traffic Filtering	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Administrative Network Activity Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Connection Attempt Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Broadcast Domain Isolation	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	IPC Traffic Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	DNS Denylisting	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	DNS Traffic Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	DNS Allowlisting	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Forward Resolution Domain Denylisting	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Reverse Resolution IP Denylisting	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	File Carving	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Inbound Traffic Filtering	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Inbound Session Volume Analysis	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Forward Resolution IP Denylisting	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Reverse Resolution Domain Denylisting	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Relay Pattern Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	RPC Traffic Analysis	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Outbound Traffic Filtering	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Authentication Event Thresholding	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Resource Access Pattern Analysis	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Session Duration Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Authorization Event Thresholding	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Job Function Access Pattern Analysis	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	User Data Transfer Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Web Session Activity Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	File Access Pattern Analysis	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Decoy Persona	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Process Segment Execution Prevention	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Segment Address Offset Randomization	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Process Code Segment Verification	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Memory Boundary Tracking	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Restore Database	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	System Configuration Permissions	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Decoy Environment	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	System Vulnerability Assessment	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Disk Encryption	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Driver Load Integrity Checking	Recovery	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Network Node Inventory	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Endpoint Health Beacon	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Logical Link Mapping	Preparation	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Physical Link Mapping	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Restore Network Access	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Hardware Component Inventory	Containment	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Connected Honeynet	Identification	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Standalone Honeynet	Recovery	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Message Authentication	Preparation	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Message Encryption	Preparation	General
+CVE-2019-0708	Shutdown	nan	Digital Information Bearer	Shadow Stack Comparisons	Identification	General
+CVE-2019-0708	Manipulation	nan	File	File Encryption	Containment	File
+CVE-2019-0708	Manipulation	nan	File	Local File Permissions	Identification	File
+CVE-2019-0708	Manipulation	nan	File	Decoy File	Identification	File
+CVE-2019-0708	Manipulation	nan	File	File Analysis	Identification	File
+CVE-2019-0708	Manipulation	nan	File	File Removal	Eradication	File
+CVE-2019-0708	Manipulation	nan	File	File Integrity Monitoring	Identification	File
+CVE-2019-0708	Manipulation	nan	File	Restore File	Recovery	File
+CVE-2019-0708	Manipulation	nan	File	User Session Init Config Analysis	Identification	File
+CVE-2019-0708	Manipulation	nan	File	Certificate Analysis	Identification	File
+CVE-2019-0708	Manipulation	nan	File	Container Image Analysis	Identification	File
+CVE-2019-0708	Manipulation	nan	File	Dynamic Analysis	Identification	File
+CVE-2019-0708	Manipulation	nan	File	Emulated File Analysis	Identification	File
+CVE-2019-0708	Manipulation	nan	File	Email Filtering	Containment	File
+CVE-2019-0708	Manipulation	nan	File	Email Removal	Eradication	File
+CVE-2019-0708	Manipulation	nan	File	Homoglyph Detection	Identification	File
+CVE-2019-0708	Manipulation	nan	File	Sender MTA Reputation Analysis	Identification	File
+CVE-2019-0708	Manipulation	nan	File	Sender Reputation Analysis	Identification	File
+CVE-2019-0708	Manipulation	nan	File	Restore Email	Recovery	File
+CVE-2019-0708	Manipulation	nan	File	Executable Allowlisting	Containment	File
+CVE-2019-0708	Manipulation	nan	File	Executable Denylisting	Containment	File
+CVE-2019-0708	Manipulation	nan	File	System File Analysis	Identification	File
+CVE-2019-0708	Manipulation	nan	Executable File	Dynamic Analysis	Identification	File
+CVE-2019-0708	Manipulation	nan	Executable File	Emulated File Analysis	Identification	File
+CVE-2019-0708	Manipulation	nan	Executable File	Executable Allowlisting	Containment	File
+CVE-2019-0708	Manipulation	nan	Executable File	Executable Denylisting	Containment	File
+CVE-2019-0708	Manipulation	nan	Executable File	File Encryption	Containment	File
+CVE-2019-0708	Manipulation	nan	Executable File	Local File Permissions	Identification	File
+CVE-2019-0708	Manipulation	nan	Executable File	Decoy File	Identification	File
+CVE-2019-0708	Manipulation	nan	Executable File	File Analysis	Identification	File
+CVE-2019-0708	Manipulation	nan	Executable File	File Removal	Eradication	File
+CVE-2019-0708	Manipulation	nan	Executable File	File Integrity Monitoring	Identification	File
+CVE-2019-0708	Manipulation	nan	Executable File	Restore File	Recovery	File
+CVE-2019-0708	Manipulation	nan	Network Traffic	Client-server Payload Profiling	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Network Traffic Community Deviation	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Per Host Download-Upload Ratio Analysis	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Protocol Metadata Anomaly Detection	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Remote Terminal Session Detection	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	User Geolocation Logon Pattern Analysis	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Network Traffic Filtering	Containment	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Administrative Network Activity Analysis	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Connection Attempt Analysis	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Broadcast Domain Isolation	Containment	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	IPC Traffic Analysis	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	DNS Denylisting	Containment	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	DNS Traffic Analysis	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	DNS Allowlisting	Containment	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Forward Resolution Domain Denylisting	Containment	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Reverse Resolution IP Denylisting	Containment	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	File Carving	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Inbound Traffic Filtering	Containment	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Inbound Session Volume Analysis	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Forward Resolution IP Denylisting	Containment	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Reverse Resolution Domain Denylisting	Containment	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Relay Pattern Analysis	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	RPC Traffic Analysis	Identification	Network
+CVE-2019-0708	Manipulation	nan	Network Traffic	Outbound Traffic Filtering	Containment	Network

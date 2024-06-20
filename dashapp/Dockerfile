@@ -20,7 +20,7 @@ RUN apt-get update && apt-get -y upgrade && apt-get -y install sudo && sudo addu
    && pip3 install dash==2.17.0 \
    && pip3 install dash_core_components==2.0.0 \
    && pip3 install dash_html_components==2.0.0 \
-   && pip3 install scipy==1.13.1 \
+   && pip3 install scipy==1.10.1 \
    && pip3 install Requests==2.32.3 \
    && pip3 install scikit_learn==1.3.2 \
    && pip3 install gensim==4.3.2 \
