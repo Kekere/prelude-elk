@@ -33,6 +33,30 @@ services:
       - /var/run/docker.socket:/var/run/docker.socket
       - /var/lib/docker:/var/lib/docker
     container_name: apache
+  elasticsearch:
+    image: "elasticsearch:7.9.2"
+    environment:
+      - discovery.type=single-node
+      - cluster.routing.allocation.disk.threshold_enabled=true
+      - cluster.routing.allocation.disk.watermark.low=65%
+      - cluster.routing.allocation.disk.watermark.high=70%
+      - xpack.security.enabled=true
+      - xpack.security.audit.enabled=true
+      - ELASTIC_PASSWORD=prelude
+    networks:
+      alerts:
+         ipv4_address: 172.31.0.4
+      injector2logs:
+      logs:
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - elasticsearch:/usr/share/elasticsearch/data
+      #- ./files/usr/share/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    ports:
+      - "9200:9200"
   injector:
     image: "logstash:7.9.2"
     depends_on:
@@ -90,31 +114,6 @@ services:
        - ELASTICSEARCH_PASSWORD=prelude
     #volumes:
       #- ./files/usr/share/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml:ro
-     
-  elasticsearch:
-    image: "elasticsearch:7.9.2"
-    environment:
-      - discovery.type=single-node
-      - cluster.routing.allocation.disk.threshold_enabled=true
-      - cluster.routing.allocation.disk.watermark.low=65%
-      - cluster.routing.allocation.disk.watermark.high=70%
-      - xpack.security.enabled=true
-      - xpack.security.audit.enabled=true
-      - ELASTIC_PASSWORD=prelude
-    networks:
-      alerts:
-         ipv4_address: 172.31.0.4
-      injector2logs:
-      logs:
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-    volumes:
-      - elasticsearch:/usr/share/elasticsearch/data
-      #- ./files/usr/share/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
-    ports:
-      - "9200:9200"
 
   db-alerts:
     image: "postgres:latest"
