@@ -7,24 +7,59 @@ es = Elasticsearch(
     http_auth=('elastic', 'prelude')  # If authentication is required
 )
 
-# Define the index, document ID, and the field to update
-index_name = 'target'
-doc_id = '4io8y48BkDfSyNAVh_uH'
-field_to_update = 'port'
-new_value = '80'
-
-# Prepare the update query
-update_body = {
-    'doc': {
-        field_to_update: new_value
-    }
+# Define the index and the search query
+index_name1 = 'target'
+# Define the index and the search query
+index_name2 = 'source'
+# Define the search query to get the last document
+query1 = {
+    'query': {
+        'match_all': {}
+    },
+    'sort': [
+        {'@timestamp': {'order': 'desc'}}
+    ],
+    'size': 1  # Limit the result to 1 document
 }
 
-try:
-    # Perform the update
-    response = es.update(index=index_name, id=doc_id, body=update_body)
-    print("Document updated successfully:", response)
-except NotFoundError:
-    print("Document not found.")
-except Exception as e:
-    print("Error updating document:", e)
+# Perform the search
+response1 = es.search(index=index_name1, body=query1)
+
+# Define the search query to get the last document
+query2 = {
+    'query': {
+        'match_all': {}
+    },
+    'sort': [
+        {'@timestamp': {'order': 'desc'}}
+    ],
+    'size': 1  # Limit the result to 1 document
+}
+
+# Perform the search
+response2 = es.search(index=index_name2, body=query2)
+
+# Print the last document
+if response1['hits']['hits']:
+    last_doc1 = response1['hits']['hits'][0]
+    address=last_doc1['_source']['address']
+    protocol=last_doc1['_source']['iana_protocol_name']
+    port=last_doc1['_source']['port']
+    severity=last_doc1['_source']['severity']
+    id=last_doc1['_id']
+    update_body = {
+        "doc":{
+            "port":"3389",
+            "iana_protocol_name":"tcp",
+            "address":"157.159.68.125",
+            "severity":"high"
+        }
+    }
+    es.update(index=index_name1,id=id,body=update_body)
+    print(id,address,protocol,port,severity)
+if response2['hits']['hits']:
+    last_doc2 = response2['hits']['hits'][0]
+    address2=last_doc2['_source']['address']
+    protocol2=last_doc2['_source']['iana_protocol_name']
+    port2=last_doc2['_source']['port']
+    print(address2,protocol2,port2)

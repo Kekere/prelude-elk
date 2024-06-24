@@ -546,15 +546,15 @@ def create_graph(G, pos,colors,labels,node_colors,data):
     print(elements)
     return elements
 
-def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_count,predecessors_count):
+def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_count,predecessors_count,net,act):
     t=0
     v_t=1
 
-    alertsinfo=take_alerts('/var/www/html/ADG/alerts.xlsx')
+    #alertsinfo=take_alerts('/var/www/html/ADG/alerts.xlsx')
 
-    net=list(alertsinfo[0])
+    #net=list(alertsinfo[0])
     #net=19
-    act=list(alertsinfo[1])
+    #act=list(alertsinfo[1])
     #act=15
     #print(act,net)
 
@@ -596,7 +596,14 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
                             if pred[1].split('(')[0]==countermeasure_list['Predicates'][counter].split('(')[0]:
                                 contpred=countermeasure_list['Countermeasures'][counter].split('(')[0]
                                 if contpred.startswith('patch'):
-                                    if str(pred[1].split('(')[1].split(',')[1]).split("'")[1]==countermeasure_list['CVE'][counter]:
+                                    vulide=pred[1].split('(')[1].split(',')[1]
+                                    # Define the regex pattern for CVE identifiers
+                                    cve_pattern = r'CVE-\d{4}-\d{4,7}'
+                                    #print(vul)
+                                    # Use re.findall to find all occurrences of the pattern in the text
+                                    #cve_identifiers = re.findall(cve_pattern, vul.split("'")[1])
+                                    cve_identifiers=re.findall(cve_pattern, vulide)
+                                    if len(cve_identifiers)!=0 and str(pred[1].split('(')[1].split(',')[1]).split("'")[1]==countermeasure_list['CVE'][counter]:
                                         listpredparam=pred[1].split('(')[1].split(')')[0].split(',')
                                         listcontrparam=countermeasure_list['Countermeasures'][counter].split('(')[1].split(')')[0].split(',')
                                         #if counter[0]==pred[1]:
@@ -650,7 +657,7 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
             DF_flow = pd.DataFrame(flow_matrix, index=range(1, flow_matrix.shape[0] + 1), columns=range(1, flow_matrix.shape[1] + 1))
             #display(DF_flow)
             #print(net,act)
-        if vector_value < level_occurrence:
+        if vector_value < level_occurrence and vector_value>0:
             predecessors_V=list(G.predecessors(j))
             for k in predecessors_V:
                 
@@ -668,7 +675,14 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
                                     contpred=countermeasure_list['Countermeasures'][counter].split('(')[0]
                                     #print(contpred)
                                     if contpred.startswith('patch'):
-                                        if str(pred[1].split('(')[1].split(',')[1]).split("'")[1]==countermeasure_list['CVE'][counter]:
+                                        vulide=pred[1].split('(')[1].split(',')[1]
+                                        # Define the regex pattern for CVE identifiers
+                                        cve_pattern = r'CVE-\d{4}-\d{4,7}'
+                                        #print(vul)
+                                        # Use re.findall to find all occurrences of the pattern in the text
+                                        #cve_identifiers = re.findall(cve_pattern, vul.split("'")[1])
+                                        cve_identifiers=re.findall(cve_pattern, vulide)
+                                        if len(cve_identifiers)!=0 and str(pred[1].split('(')[1].split(',')[1]).split("'")[1]==countermeasure_list['CVE'][counter]:
                                             listpredparam=pred[1].split('(')[1].split(')')[0].split(',')
                                             listcontrparam=countermeasure_list['Countermeasures'][counter].split('(')[1].split(')')[0].split(',')
                                             #if counter[0]==pred[1]:
@@ -850,6 +864,9 @@ def update_graph(n_intervals):
     timegen=get_file_creation_time(file_path)
     requestalerts.alerts()
     checknewalert=take_alerts('/var/www/html/ADG/alerts.xlsx')
+    net=list(checknewalert[0])
+    #net=19
+    act=list(checknewalert[1])
     #print(n_intervals)
     if len(checknewalert[0])!=0 or len(checknewalert[1])!=0:
             for i in range(len(checknewalert)):
@@ -893,7 +910,19 @@ def update_graph(n_intervals):
         new_colors = []
         datanew=[]
         #print(timegen)
-        up_G =enrich_graph(G,predicates,countermeasures_list,occcount,succ,pred)
+        print(len(net),len(act))
+        if len(net)!=0 or len(act)!=0:
+            print(countermeasures_list)
+            up_G =enrich_graph(G,predicates,countermeasures_list,occcount,succ,pred,net,act)
+        else:
+            countermeasures_list = pd.DataFrame(
+            {'Name': [],
+            'CVE': [],
+            'Countermeasures': [],
+            'Predicates': []
+            })
+            print(countermeasures_list)
+            up_G =enrich_graph(G,predicates,countermeasures_list,occcount,succ,pred,net,act)
         requestalerts.alerts()
         # determining the name of the file
         file_name = '/var/www/html/ADG/Flowmatrix2.xlsx'
@@ -903,6 +932,9 @@ def update_graph(n_intervals):
         new_G=up_G[0]
         #print(new_G)
         checknewalert=take_alerts('/var/www/html/ADG/alerts.xlsx')
+        net=list(checknewalert[0])
+        #net=19
+        act=list(checknewalert[1])
         #print(len(checknewalert[0]))
         if len(checknewalert[0])!=0 or len(checknewalert[1])!=0:
             for i in range(len(checknewalert)):
