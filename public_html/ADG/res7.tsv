@@ -1423,4 +1423,163 @@ CVE-2002-0348	Code Execution	nan	Digital Information Bearer	Connected Honeynet	I
 CVE-2002-0348	Code Execution	nan	Digital Information Bearer	Standalone Honeynet	Recovery	General
 CVE-2002-0348	Code Execution	nan	Digital Information Bearer	Message Authentication	Preparation	General
 CVE-2002-0348	Code Execution	nan	Digital Information Bearer	Message Encryption	Preparation	General
-CVE-2002-0348	Code Execution	nan	Digital Information Bearer	Shadow Stack Comparisons	Identification	General
+CVE-2002-0348	Code Execution	nan	Digital Information Bearer	Shadow Stack Comparisons	Identification	GeneralCVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Encryption	Containment	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Local File Permissions	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Decoy File	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Analysis	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Removal	Eradication	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Integrity Monitoring	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Restore File	Recovery	File
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Authentication Event Thresholding	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Resource Access Pattern Analysis	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Session Duration Analysis	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Code Segment Verification	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Memory Boundary Tracking	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Segment Execution Prevention	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Segment Address Offset Randomization	Containment	Process
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Stack Frame Canary Validation	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Shadow Stack Comparisons	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Encryption	Containment	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Local File Permissions	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Decoy File	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Analysis	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Removal	Eradication	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Integrity Monitoring	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Restore File	Recovery	File
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Authentication Event Thresholding	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Resource Access Pattern Analysis	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Session Duration Analysis	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Code Segment Verification	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Memory Boundary Tracking	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Segment Execution Prevention	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Segment Address Offset Randomization	Containment	Process
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Stack Frame Canary Validation	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Shadow Stack Comparisons	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Encryption	Containment	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Local File Permissions	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Decoy File	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Analysis	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Removal	Eradication	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Integrity Monitoring	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Restore File	Recovery	File
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Authentication Event Thresholding	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Resource Access Pattern Analysis	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Session Duration Analysis	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Code Segment Verification	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Memory Boundary Tracking	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Segment Execution Prevention	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Segment Address Offset Randomization	Containment	Process
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Stack Frame Canary Validation	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Shadow Stack Comparisons	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Encryption	Containment	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Local File Permissions	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Decoy File	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Analysis	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Removal	Eradication	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Integrity Monitoring	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Restore File	Recovery	File
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Authentication Event Thresholding	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Resource Access Pattern Analysis	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Session Duration Analysis	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Code Segment Verification	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Memory Boundary Tracking	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Segment Execution Prevention	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Segment Address Offset Randomization	Containment	Process
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Stack Frame Canary Validation	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Shadow Stack Comparisons	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Encryption	Containment	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Local File Permissions	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Decoy File	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Analysis	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Removal	Eradication	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Integrity Monitoring	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Restore File	Recovery	File
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Authentication Event Thresholding	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Resource Access Pattern Analysis	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Session Duration Analysis	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Code Segment Verification	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Memory Boundary Tracking	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Segment Execution Prevention	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Segment Address Offset Randomization	Containment	Process
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Stack Frame Canary Validation	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Shadow Stack Comparisons	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Encryption	Containment	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Local File Permissions	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Decoy File	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Analysis	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Removal	Eradication	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Integrity Monitoring	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Restore File	Recovery	File
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Authentication Event Thresholding	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Resource Access Pattern Analysis	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Session Duration Analysis	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Code Segment Verification	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Memory Boundary Tracking	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Segment Execution Prevention	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Segment Address Offset Randomization	Containment	Process
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Stack Frame Canary Validation	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Shadow Stack Comparisons	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Encryption	Containment	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Local File Permissions	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Decoy File	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Analysis	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Removal	Eradication	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Integrity Monitoring	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Restore File	Recovery	File
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Authentication Event Thresholding	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Resource Access Pattern Analysis	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Session Duration Analysis	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Code Segment Verification	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Memory Boundary Tracking	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Segment Execution Prevention	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Segment Address Offset Randomization	Containment	Process
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Stack Frame Canary Validation	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Shadow Stack Comparisons	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Encryption	Containment	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Local File Permissions	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Decoy File	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Analysis	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Removal	Eradication	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Integrity Monitoring	Identification	File
+CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Restore File	Recovery	File
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Authentication Event Thresholding	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Resource Access Pattern Analysis	Identification	General
+CVE-2013-3132	Authentication Bypass	Application	Authentication	Session Duration Analysis	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Code Segment Verification	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Memory Boundary Tracking	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Segment Execution Prevention	Identification	Process
+CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Segment Address Offset Randomization	Containment	Process
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Stack Frame Canary Validation	Identification	General
+CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Shadow Stack Comparisons	Identification	General
+CVE-2013-3200	Privilege Escalation	Host Operating System	Process Code Segment	Process Code Segment Verification	Identification	Process
+CVE-2013-3200	Privilege Escalation	Host Operating System	Process Code Segment	Memory Boundary Tracking	Identification	Process
+CVE-2013-3200	Privilege Escalation	Host Operating System	Process Code Segment	Process Segment Execution Prevention	Identification	Process
+CVE-2013-3200	Privilege Escalation	Host Operating System	Process Code Segment	Segment Address Offset Randomization	Containment	Process
+CVE-2013-3200	Privilege Escalation	Host Operating System	Stack Frame	Stack Frame Canary Validation	Identification	General
+CVE-2013-3200	Privilege Escalation	Host Operating System	Stack Frame	Shadow Stack Comparisons	Identification	General
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	File Encryption	Containment	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	Local File Permissions	Identification	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	Decoy File	Identification	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	File Analysis	Identification	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	File Removal	Eradication	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	File Integrity Monitoring	Identification	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	Restore File	Recovery	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Authentication	Authentication Event Thresholding	Identification	General
+CVE-2013-3200	Authentication Bypass	Host Operating System	Authentication	Resource Access Pattern Analysis	Identification	General
+CVE-2013-3200	Authentication Bypass	Host Operating System	Authentication	Session Duration Analysis	Identification	General
+CVE-2013-3200	Privilege Escalation	Host Operating System	Process Code Segment	Process Code Segment Verification	Identification	Process
+CVE-2013-3200	Privilege Escalation	Host Operating System	Process Code Segment	Memory Boundary Tracking	Identification	Process
+CVE-2013-3200	Privilege Escalation	Host Operating System	Process Code Segment	Process Segment Execution Prevention	Identification	Process
+CVE-2013-3200	Privilege Escalation	Host Operating System	Process Code Segment	Segment Address Offset Randomization	Containment	Process
+CVE-2013-3200	Privilege Escalation	Host Operating System	Stack Frame	Stack Frame Canary Validation	Identification	General
+CVE-2013-3200	Privilege Escalation	Host Operating System	Stack Frame	Shadow Stack Comparisons	Identification	General
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	File Encryption	Containment	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	Local File Permissions	Identification	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	Decoy File	Identification	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	File Analysis	Identification	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	File Removal	Eradication	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	File Integrity Monitoring	Identification	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Windows Shortcut File	Restore File	Recovery	File
+CVE-2013-3200	Authentication Bypass	Host Operating System	Authentication	Authentication Event Thresholding	Identification	General
+CVE-2013-3200	Authentication Bypass	Host Operating System	Authentication	Resource Access Pattern Analysis	Identification	General
+CVE-2013-3200	Authentication Bypass	Host Operating System	Authentication	Session Duration Analysis	Identification	General

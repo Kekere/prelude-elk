@@ -30,6 +30,7 @@ import nltk
 import numpy as np
 
 def extractcve(cveid):
+  print(cveid)
   # Define the NVD vulnerability URL
   nvd_url = "https://nvd.nist.gov/vuln/detail/"+cveid  # Replace with the URL of the specific CVE you want to extract information for
   response = requests.get(nvd_url)
@@ -806,10 +807,10 @@ def searchard(t):
 # Matching process starts here
 #Nouvelle approche
 parent_class_nameexec = "OffensiveTechnique"
-namefileexec='./offensive.tsv'
+namefileexec='/var/www/html/ADG/offensive.tsv'
 takesubclassof(namefileexec,parent_class_nameexec)
 #Nouvelle approche
-data = pd.read_csv("./offensive.tsv", sep="\t")
+data = pd.read_csv("/var/www/html/ADG/offensive.tsv", sep="\t")
 entitiesdef = [entity for entity in data["Nom"]]
 impacttechnique=[]
 imptechnique=[]
@@ -835,7 +836,6 @@ def askcveexist(val):
               WHERE{
                     ?i <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#hasIdentity> <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#"""+val+"""> .
                     ?im rdf:type <http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#VulnerabilityIdentifier> .
-                    
                 }"""
     #query is being run
     resultsList = graph.query(sparql)
@@ -855,14 +855,14 @@ def matchgraph(cve):
   # Récupération des individus de la classe
   entities = vdo.Vulnerability.instances()
   # Ouverture d'un fichier TSV pour écrire les résultats
-  with open("./vdo.tsv", "w") as f:
+  with open("/var/www/html/ADG/vdo.tsv", "w") as f:
       f.write("ID\tvulnerability\n")
       """for i, entity in enumerate(entities):
           print(entity)
           f.write("{}\t{}\n".format(i+1, "http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#"+entity.name))"""
       f.write("{}\t{}\n".format(1, "http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE"+cveid))
   #Nouvelle approche
-  datavdo = pd.read_csv("./vdo.tsv", sep="\t")
+  datavdo = pd.read_csv("/var/www/html/ADG/vdo.tsv", sep="\t")
   entitiesvdo = [entity for entity in datavdo["vulnerability"]]
   offensivetech=[]
   for off in techniquedef:
@@ -903,14 +903,14 @@ def matchgraph(cve):
   model = gensim.models.Word2Vec(corpusart, vector_size=200, window=5, min_count=1, workers=4, epochs=30)
 
   # Enregistrement du modèle
-  model.save("./word2vec.model")
+  model.save("/var/www/html/ADG/word2vec.model")
   #from gensim.models import Word2Vec
 
   # Entraînement du modèle word2vec
   modelart = gensim.models.Word2Vec(corpusart, vector_size=200, window=5, min_count=1, workers=4, epochs=30)
 
   # Enregistrement du modèle
-  modelart.save("./word2vecart.model")
+  modelart.save("/var/www/html/ADG/word2vecart.model")
 
 
   # Train a bigram detector.
@@ -918,15 +918,16 @@ def matchgraph(cve):
   # Apply the trained MWE detector to a corpus, using the result to train a Word2vec model.
   modela = gensim.models.Word2Vec(bigram_transformer[corpusart], min_count=1)
   # Enregistrement du modèle
-  modela.save("./word2veca.model")
+  modela.save("/var/www/html/ADG/word2veca.model")
   modeloff = gensim.models.Word2Vec(corpusoff, vector_size=250, window=5, min_count=1, workers=20, epochs=50)
 
-  modeloff.save("word2vecoff.model")
+  modeloff.save("/var/www/html/ADG/word2vecoff.model")
   modelimp = gensim.models.Word2Vec(corpusimp, vector_size=250, window=5, min_count=1, workers=20, epochs=150)
 
-  modelimp.save("./word2vecimp.model")
+  modelimp.save("/var/www/html/ADG/word2vecimp.model")
   askres=askcveexist(cveid)
-  print(askres)
+  print(cveid,askres)
+  #print(askres)
 
   if len(askres)!=0:
     
@@ -1098,8 +1099,8 @@ def matchgraph(cve):
 
     listresult=[]
     listresult2=[]
-    modeloff = gensim.models.Word2Vec.load("word2vecoff.model")
-    modelimp = gensim.models.Word2Vec.load("word2vecimp.model")
+    modeloff = gensim.models.Word2Vec.load("/var/www/html/ADG/word2vecoff.model")
+    modelimp = gensim.models.Word2Vec.load("/var/www/html/ADG/word2vecimp.model")
     for vul in range(len(listevul)):
       sentences_similarity = np.zeros(len(offensivetech))
       sentences_similarity2 = np.zeros(len(offensivetech))
@@ -1184,7 +1185,7 @@ def matchgraph(cve):
         for a in art:
           if a=='Digital Artifact' and len(art)==1:
             artifactss=searchard(a)
-            modelart = gensim.models.Word2Vec.load("word2vecart.model")
+            modelart = gensim.models.Word2Vec.load("/var/www/html/ADG/word2vecart.model")
             sentences_similarity3 = np.zeros(len(artifactss))
             for idx, sentence in enumerate(artifactss):
               context=listresultfinal[r]['Context']
@@ -1211,7 +1212,7 @@ def matchgraph(cve):
       else:
         artifactss=searchard('Digital Artifact')
         #print(artifactss)
-        modelart = gensim.models.Word2Vec.load("word2vecart.model")
+        modelart = gensim.models.Word2Vec.load("/var/www/html/ADG/word2vecart.model")
         sentences_similarity3 = np.zeros(len(artifactss))
         for idx, sentence in enumerate(artifactss):
           context=listresultfinal[r]['Context']
@@ -1237,7 +1238,7 @@ def matchgraph(cve):
         result3=heapq.nlargest(5, result3, key=lambda x:x[0])
         artifacts.append(result3[0][1])
       listresultfinal[r]['Artifact'] = artifacts
-    modelart = gensim.models.Word2Vec.load("word2vecart.model")
+    modelart = gensim.models.Word2Vec.load("/var/www/html/ADG/word2vecart.model")
     for vul in range(len(listresultfinal)):
       sentences_similarity3 = np.zeros(len(listresultfinal[vul]['Artifact']))
       for idx, sentence in enumerate(listresultfinal[vul]['Artifact']):
@@ -1357,7 +1358,7 @@ def matchgraph(cve):
     ]
 
     # File path to the existing TSV file
-    file_path = './res7.tsv'
+    file_path = '/var/www/html/ADG/res7.tsv'
 
     # Open the file in append mode
     with open(file_path, 'a', newline='') as file:
@@ -1376,7 +1377,7 @@ def matchgraph(cve):
       # Récupération des individus de la classe
       entities = vdo1.Vulnerability.instances()
       # Ouverture d'un fichier TSV pour écrire les résultats
-      with open("./vdo.tsv", "w") as f:
+      with open("/var/www/html/ADG/vdo.tsv", "w") as f:
           f.write("ID\tvulnerability\n")
           """for i, entity in enumerate(entities):
               print(entity)
@@ -1554,8 +1555,8 @@ def matchgraph(cve):
 
       listresult=[]
       listresult2=[]
-      modeloff = gensim.models.Word2Vec.load("./word2vecoff.model")
-      modelimp = gensim.models.Word2Vec.load("./word2vecimp.model")
+      modeloff = gensim.models.Word2Vec.load("/var/www/html/ADG/word2vecoff.model")
+      modelimp = gensim.models.Word2Vec.load("/var/www/html/ADG/word2vecimp.model")
       for vul in range(len(listevul)):
         sentences_similarity = np.zeros(len(offensivetech))
         sentences_similarity2 = np.zeros(len(offensivetech))
@@ -1640,7 +1641,7 @@ def matchgraph(cve):
           for a in art:
             if a=='Digital Artifact' and len(art)==1:
               artifactss=searchard(a)
-              modelart = gensim.models.Word2Vec.load("./word2vecart.model")
+              modelart = gensim.models.Word2Vec.load("/var/www/html/ADG/word2vecart.model")
               sentences_similarity3 = np.zeros(len(artifactss))
               for idx, sentence in enumerate(artifactss):
                 context=listresultfinal[r]['Context']
@@ -1669,7 +1670,7 @@ def matchgraph(cve):
                 artifacts.append(a)
         else:
           artifactss=searchard('Digital Artifact')
-          modelart = gensim.models.Word2Vec.load("./word2vecart.model")
+          modelart = gensim.models.Word2Vec.load("/var/www/html/ADG/word2vecart.model")
           sentences_similarity3 = np.zeros(len(artifactss))
           for idx, sentence in enumerate(artifactss):
             context=listresultfinal[r]['Context']
@@ -1695,7 +1696,7 @@ def matchgraph(cve):
           result3=heapq.nlargest(5, result3, key=lambda x:x[0])
           artifacts.append(result3[0][1])
         listresultfinal[r]['Artifact'] = artifacts
-      modelart = gensim.models.Word2Vec.load("./word2vecart.model")
+      modelart = gensim.models.Word2Vec.load("/var/www/html/ADG/word2vecart.model")
       for vul in range(len(listresultfinal)):
         sentences_similarity3 = np.zeros(len(listresultfinal[vul]['Artifact']))
         for idx, sentence in enumerate(listresultfinal[vul]['Artifact']):
@@ -1801,24 +1802,25 @@ def matchgraph(cve):
                             phase=""
       #output
       #Nouvelle approche
-      tsv_file = open("./countermeasureexec.tsv", "w")
-      tsv_writer = csv.writer(tsv_file, delimiter='\t')
-      print(datasetcounter)
-      tsv_writer.writerow(datasetcounter[0].keys()) # write the header
+      if len(datasecounter)!=0:
+        tsv_file = open("/var/www/html/ADG/countermeasureexec.tsv", "w")
+        tsv_writer = csv.writer(tsv_file, delimiter='\t')
+        print(datasetcounter)
+        tsv_writer.writerow(datasetcounter[0].keys()) # write the header
 
-      for row in datasetcounter: # write data rows
-          tsv_writer.writerow(row.values())
+        for row in datasetcounter: # write data rows
+            tsv_writer.writerow(row.values())
 
-      tsv_file.close()
-      # Convert JSON objects to a list of lists
-      data_to_write = [
-          [item["CVEID"], str(item["Method or Impact"]), item["Context"], item["Artifact"], item["Countermeasure"], item["Phase"], item["Category"]] for item in datasetcounter
-      ]
+        tsv_file.close()
+        # Convert JSON objects to a list of lists
+        data_to_write = [
+            [item["CVEID"], str(item["Method or Impact"]), item["Context"], item["Artifact"], item["Countermeasure"], item["Phase"], item["Category"]] for item in datasetcounter
+        ]
 
-      # File path to the existing TSV file
-      file_path = './res7.tsv'
+        # File path to the existing TSV file
+        file_path = '/var/www/html/ADG/res7.tsv'
 
-      # Open the file in append mode
-      with open(file_path, 'a', newline='') as file:
-          writer = csv.writer(file, delimiter='\t')
-          writer.writerows(data_to_write)
+        # Open the file in append mode
+        with open(file_path, 'a', newline='') as file:
+            writer = csv.writer(file, delimiter='\t')
+            writer.writerows(data_to_write)

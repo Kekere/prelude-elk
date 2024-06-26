@@ -5,6 +5,7 @@
 "Robot":["Nvidia Jetson"],
 "Axion":[""],
 "webServer":["WSUS","Antivirus", "Firewall Software", "Terminal", "Suricata","SIEM", "Group Policy"],
+"Windows_7":["WSUS","Internal Firewall", "SIEM", "WireShark","External Firewall", "Group Policy","Antivirus", "Terminal", "Suricata", "Firewall Software"],
 "Windows Server":["WSUS","Internal Firewall", "SIEM", "WireShark","External Firewall", "Group Policy","Antivirus", "Terminal", "Suricata", "Firewall Software"],
 "Windows":["Antivirus","SIEM","External Firewall", "Internal Firewall","Suricata","PowerShell","Firewall Software","Group Policy","WSUS"],
 "Linux":["Terminal","SIEM","Suricata"],
