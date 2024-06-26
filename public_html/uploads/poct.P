@@ -1,0 +1,11 @@
+attackerLocated('192.168.132.101').
+attackGoal(execCode('192.168.128.40',_)).
+hacl(_, _, _, _).
+advances('192.168.132.101','192.168.128.40').
+
+networkServiceInfo('192.168.132.101', 'windows_7', usb, 14135, 'andrew').
+vulExists('192.168.132.101', 'CVE-2013-3200', 'windows_7', remoteExploit, privEscalation).
+networkServiceInfo('192.168.128.40', vpnService, usb, 14135, 'andrew').
+hasAccount(Victim,'192.168.132.101',_).
+inCompetent(Victim).
+nfsExportInfo('192.168.128.40',_,_,'192.168.132.101').
