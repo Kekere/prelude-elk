@@ -1802,7 +1802,7 @@ def matchgraph(cve):
                             phase=""
       #output
       #Nouvelle approche
-      if len(datasecounter)!=0:
+      if len(datasetcounter)!=0:
         tsv_file = open("/var/www/html/ADG/countermeasureexec.tsv", "w")
         tsv_writer = csv.writer(tsv_file, delimiter='\t')
         print(datasetcounter)
