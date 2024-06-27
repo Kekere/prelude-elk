@@ -1384,7 +1384,7 @@ def matchgraph(cve):
               f.write("{}\t{}\n".format(i+1, "http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#"+entity.name))"""
           f.write("{}\t{}\n".format(1, "http://www.semanticweb.org/keren/ontologies/2022/6/untitled-ontology-4#CVE"+cveid))
       #Nouvelle approche
-      datavdo = pd.read_csv("./vdo.tsv", sep="\t")
+      datavdo = pd.read_csv("/var/www/html/ADG/vdo.tsv", sep="\t")
       entitiesvdo = [entity for entity in datavdo["vulnerability"]]
       transformer = RDF2VecTransformer(walkers=[RandomWalker(4, 1, with_reverse=False, n_jobs=2)],
                                     verbose=1,
