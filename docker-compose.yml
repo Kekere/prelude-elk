@@ -48,10 +48,23 @@ services:
          ipv4_address: 172.31.0.4
       injector2logs:
       logs:
+    logging:
+      driver: "json-file"
+      options:
+         max-size: "10m"
+         max-file: "3"
     ulimits:
       memlock:
         soft: -1
         hard: -1
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: '2g'
+        reservations:
+          cpus: '1.0'
+          memory: '2g'
     volumes:
       - elasticsearch:/usr/share/elasticsearch/data
       #- ./files/usr/share/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
@@ -71,6 +84,23 @@ services:
       - injector2logs
       - injector2lml
       - gui2injector
+    logging:
+      driver: "json-file"
+      options:
+         max-size: "10m"
+         max-file: "3"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: '2g'
+        reservations:
+          cpus: '1.0'
+          memory: '2g'
     volumes:
       - ./files/usr/share/logstash/pipeline/:/usr/share/logstash/pipeline/:ro
       - ./files/usr/share/logstash/template.json:/usr/share/logstash/template.json:ro
@@ -92,6 +122,23 @@ services:
          ipv4_address: 172.31.0.5
       injector2logs:
       logs:
+    logging:
+      driver: "json-file"
+      options:
+         max-size: "10m"
+         max-file: "3"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: '2g'
+        reservations:
+          cpus: '1.0'
+          memory: '2g'
     volumes:
       - ./files/usr/share/logstash/alertsdb/alerts:/usr/share/logstash/pipeline/alerts:ro
       - ./files/usr/share/logstash/jars/:/usr/share/logstash/jars/:ro
