@@ -49,9 +49,9 @@ if response1['hits']['hits']:
     id=last_doc1['_id']
     update_body = {
         "doc":{
-            "port":"3389",
+            "port":"80",
             "iana_protocol_name":"tcp",
-            "address":"157.159.68.125",
+            "address":"192.168.128.40",
             "severity":"high"
         }
     }

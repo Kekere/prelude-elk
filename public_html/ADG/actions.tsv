@@ -1,1 +1,61 @@
 	CVE ID	Action	Requirement	Impact	Complexity	Loss	Phase	Category
+0	CVE-2013-6966	list victims of security alert	['Suricata', 'SIEM']	4	4	0.2	2	0
+1	CVE-2013-6966	list host vulnerabilities	['Nessus', 'OpenVas', 'Rapid7']	4	3	0.2	2	0
+2	CVE-2013-6966	put compromised accounts on monitoring	['SIEM']	3	7	0.7	2	0
+3	CVE-2013-6966	patch vulnerability	['APT', 'YUM', 'WSUS']	4	3	0.0	3	0
+4	CVE-2013-6966	restore data from backup	['Rsync']	5	5	0.0	5	0
+5	CVE-2013-6966	quarantine file by format	['Antivirus']	4	4	0.0	3	3
+6	CVE-2013-6966	quarantine file by hash	['Antivirus']	4	4	0.0	3	3
+7	CVE-2013-6966	quarantine file by path	['Antivirus']	4	4	0.0	3	3
+8	CVE-2013-6966	quarantine file by content pattern	['Antivirus']	4	4	0.0	3	3
+9	CVE-2013-6966	list files created	['PowerShell', 'Terminal']	4	3	0.2	2	3
+10	CVE-2013-6966	list files modified	['Terminal', 'PowerShell']	4	3	0.2	2	3
+11	CVE-2013-6966	list files deleted	['Terminal', 'PowerShell']	4	3	0.2	2	3
+12	CVE-2013-6966	list files downloaded	['Terminal', 'PowerShell']	4	3	0.2	2	3
+13	CVE-2013-6966	list files with tampered timestamps	['Terminal', 'PowerShell']	4	4	0.2	2	3
+14	CVE-2013-6966	find file by path	['PowerShell', 'Terminal']	4	3	0.1	2	3
+15	CVE-2013-6966	find file by metadata	['Terminal', 'PowerShell']	3	4	0.2	2	3
+16	CVE-2013-6966	find file by hash	['Suricata']	4	4	0.2	2	3
+17	CVE-2013-6966	find file by format	['Suricata']	4	3	0.0	2	3
+18	CVE-2013-6966	find file by content pattern	['Suricata']	3	5	0.3	2	3
+19	CVE-2013-6966	collect file	['Rsync']	4	4	0.6	2	3
+20	CVE-2013-6966	analyse file hash	['md5sum', 'VirusTotal', 'Autopsy']	3	4	0.1	2	3
+21	CVE-2013-6966	analyse windows pe	['VirusTotal']	3	5	0.1	2	3
+22	CVE-2013-6966	analyse macos macho	['Mach-O Tools', 'codesign']	2	6	0.1	2	3
+23	CVE-2013-6966	analyse unix elf	['Autopsy']	3	5	0.1	2	3
+24	CVE-2013-6966	analyse ms office file	['VirusTotal']	3	5	0.1	2	3
+25	CVE-2013-6966	analyse pdf file	['VirusTotal']	3	5	0.1	2	3
+26	CVE-2013-6966	analyse script	['PowerShell']	3	6	0.1	2	3
+27	CVE-2013-6966	analyse jar	['Burp Suite']	3	6	0.1	2	3
+28	CVE-2013-6966	analyse filename	['Command-Line Tools', 'PowerShell']	4	4	0.1	2	3
+29	CVE-2013-6966	remove file	['PowerShell', 'Terminal']	5	2	0.005	4	3
+30	CVE-2013-6966	restore quarantined file	['Terminal', 'PowerShell']	3	4	0.0	5	3
+31	CVE-2013-6966	list hosts communicated with internal domain	['SIEM', 'Nmap']	4	3	0.2	2	1
+32	CVE-2013-6966	list hosts communicated with internal ip	['Nmap', 'SIEM']	4	3	0.2	2	1
+33	CVE-2013-6966	list hosts communicated with internal url	['Nmap', 'SIEM']	4	3	0.2	2	1
+34	CVE-2013-6966	analyse domain name	['Domain Registrars', 'VirusTotal', 'SSL Labs', 'Dig', 'URLVoid', 'NSLookup']	4	5	0.0	2	1
+35	CVE-2013-6966	analyse IP	['NSLookup', 'Splunk', 'Nmap']	4	6	0.0	2	1
+36	CVE-2013-6966	analyse uri	['Burp Suite', 'Wireshark', 'VirusTotal']	2	2	0.0	2	1
+37	CVE-2013-6966	list hosts communicated by port	['SIEM', 'Nmap']	4	3	0.2	2	1
+38	CVE-2013-6966	list hosts connected to vpn	['SIEM', 'Nmap']	3	4	0.4	2	1
+39	CVE-2013-6966	list hosts connected to intranet	['SIEM', 'Nmap']	4	3	0.3	2	1
+40	CVE-2013-6966	list data transferred	['Wireshark']	4	4	0.4	2	1
+41	CVE-2013-6966	collect transferred data	['Wireshark', 'Burp Suite']	4	5	0.5	2	1
+42	CVE-2013-6966	identify transferred data	['Suricata']	3	6	0.6	2	1
+43	CVE-2013-6966	list hosts communicated with external domain	['SIEM', 'Nmap']	4	4	0.3	2	1
+44	CVE-2013-6966	list hosts communicated with external ip	['SIEM', 'Nmap']	4	3	0.3	2	1
+45	CVE-2013-6966	list hosts communicated with external url	['Nmap', 'SIEM']	4	3	0.3	2	1
+46	CVE-2013-6966	find data transferred by content pattern	['Suricata']	3	6	0.2	2	1
+47	CVE-2013-6966	analyse user-agent	['PowerShell']	4	4	0.2	2	1
+48	CVE-2013-6966	list firewall rules	['Terminal', 'PowerShell']	2	2	0.0	2	1
+49	CVE-2013-6966	block external ip address	['External Firewall']	3	4	0.05	3	1
+50	CVE-2013-6966	block internal ip address	['Internal Firewall']	2	3	0.1	3	1
+51	CVE-2013-6966	block external domain	['External Firewall']	3	3	0.05	3	1
+52	CVE-2013-6966	block internal domain	['Internal Firewall']	2	3	0.2	3	1
+53	CVE-2013-6966	block external url	['External Firewall']	3	3	0.05	3	1
+54	CVE-2013-6966	block internal url	['Internal Firewall']	3	3	0.1	3	1
+55	CVE-2013-6966	block port external communication	['External Firewall']	4	4	0.2	3	1
+56	CVE-2013-6966	block port internal communication	['Internal Firewall']	4	3	0.4	3	1
+57	CVE-2013-6966	block user external communication	['External Firewall']	5	5	0.05	3	1
+58	CVE-2013-6966	block user internal communication	['External Firewall']	5	4	0.1	3	1
+59	CVE-2013-6966	block data transferring by content pattern	['Internal Firewall']	2	6	0.0	3	1

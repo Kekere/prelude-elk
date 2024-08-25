@@ -419,7 +419,7 @@ def find_play_list(G,predicates):
             })
         # determining the name of the file
         file_name = '/var/www/html/ADG/countermeasures.xlsx'
-        #print(countermeasure_list)
+        print(countermeasure_list)
         # saving the excel
         #print(countermeasure_list)
         countermeasure_list.to_excel(file_name)
@@ -550,13 +550,9 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
     t=0
     v_t=1
 
-    #alertsinfo=take_alerts('/var/www/html/ADG/alerts.xlsx')
-
-    #net=list(alertsinfo[0])
-    #net=19
-    #act=list(alertsinfo[1])
     #act=15
     #print(act,net)
+    print(net,act)
 
     new_G = nx.DiGraph()
     vectorlist2=[]
@@ -587,7 +583,9 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
         if vector_value == level_occurrence:
             successors_V=list(G.successors(j))
             for l in successors_V:
-                for pred in predicates:
+                if j<len(predicates):
+                    pred=predicates[l-1]
+                #for pred in predicates:
                     if pred[2]!='AND' and pred[0]==l and successors_count[l]>0:
                         #if pred[0]==l:
                             #print(pred[1])
@@ -660,11 +658,11 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
         if vector_value < level_occurrence and vector_value>0:
             predecessors_V=list(G.predecessors(j))
             for k in predecessors_V:
-                
                 flow_value_between_nodes = get_flow_value(flow_matrix, k-1, j-1)
-                #print(k,flow_value_between_nodes)
                 if flow_value_between_nodes==1:
-                    for pred in predicates:
+                    if j<len(predicates):
+                        pred=predicates[k-1]
+                    #for pred in predicates:
                         if pred[2]!='AND' and pred[0]==k:
                             #if pred[0]==k:
                             #print(countermeasure_list['Predicates'])
@@ -755,30 +753,13 @@ file_path = '/var/www/html/scriptphp/ARCS.CSV'  # Change this to your CSV file p
 csv_file = '/var/www/html/scriptphp/VERTICES.CSV'  # Replace 'data.csv' with your CSV file name
 G,predicates,G_multilevel,node_colors,data,pos,colors,labels=generate_graph(file_path,csv_file)
 #print(G)
-"""timegen=get_file_creation_time(file_path)
-requestalerts.alerts()
-checknewalert=take_alerts('/var/www/html/ADG/alerts.xlsx')
-if len(checknewalert[0])!=0 or len(checknewalert[1])!=0:
-        for i in range(len(checknewalert)):
-            checknewalert[i][np.isnan(checknewalert[i])] = int(0)
-#img_src = create_graph(G,pos,colors)
+
 occcount, succ, pred=pred_and_succ(G_multilevel)
 #print(occcount)
 countermeasures_list=find_play_list(G,predicates)
 #print(checknewalert)
-if len(checknewalert[1])==0 and len(checknewalert[0])==0 :
-        val=True
-else:
-    nets_equality_comparison = set(G[1])==set(list(checknewalert)[0])
-    acts_equality_comparison= set(G[2])==set(list(checknewalert)[1])
-    if nets_equality_comparison==False or acts_equality_comparison==False:
-        flow_matrix = convert_to_flow_matrix(G,list(checknewalert[0]),list(checknewalert[1]),predicates)
-        DF_flow = pd.DataFrame(flow_matrix, index=range(1, flow_matrix.shape[0] + 1), columns=range(1, flow_matrix.shape[1] + 1))
-        #print(DF_flow)
-        val=True
-    else:
-        val=False"""
-val=True
+#val=True
+#elements=create_graph(G,pos,colors,labels,node_colors,data)
 # Initialize the Dash app
 app = dash.Dash(__name__)
 # Define the app layout
@@ -843,6 +824,7 @@ app.layout = html.Div([
     ),
     html.Div(id='node-data')
 ])
+
 # Callback to update the graph periodically
 @app.callback(
     Output('cytoscape-graph', 'elements'),
@@ -873,7 +855,7 @@ def update_graph(n_intervals):
                 checknewalert[i][np.isnan(checknewalert[i])] = int(0)
     #img_src = create_graph(G,pos,colors)
     occcount, succ, pred=pred_and_succ(G_multilevel)
-    
+
     #print(occcount)
     #countermeasures_list=find_play_list(G,predicates)
     #print(checknewalert)
@@ -903,7 +885,8 @@ def update_graph(n_intervals):
     new_G=[]
     new_colors = []
     datanew=[]
-    
+    print(val,n_intervals)
+    print(countermeasures_list)
     if val==True:
         up_G=[]
         new_G=[]
@@ -930,7 +913,7 @@ def update_graph(n_intervals):
         up_G[3].to_excel(file_name)
 
         new_G=up_G[0]
-        #print(new_G)
+        print(new_G)
         checknewalert=take_alerts('/var/www/html/ADG/alerts.xlsx')
         net=list(checknewalert[0])
         #net=19

@@ -100,7 +100,19 @@ def alerts():
                 if address in params and port in params and protocol in params:
                     #print(params)
                     listaction.append(numbernodes[pred])
-
+            if typenode[pred]=="LEAF":
+                param=predicates[pred].split('(')[1].split(')')[0]
+                params=param.split(',')
+                for p in range(len(params)):
+                    val=params[p].split("'")
+                    if len(val)>1:
+                        params[p]=val[1]
+                    else:
+                        params[p]=val[0]
+                #print(params)
+                if address in params and port in params and protocol in params:
+                    #print(params)
+                    listleaf.append(numbernodes[pred])
     # Create a DataFrame from the lists
     df = pd.DataFrame({
         'Net': pd.Series(listleaf),

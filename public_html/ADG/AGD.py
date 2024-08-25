@@ -583,7 +583,9 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
         if vector_value == level_occurrence:
             successors_V=list(G.successors(j))
             for l in successors_V:
-                for pred in predicates:
+                if j<len(predicates):
+                    pred=predicates[l-1]
+                #for pred in predicates:
                     if pred[2]!='AND' and pred[0]==l and successors_count[l]>0:
                         #if pred[0]==l:
                             #print(pred[1])
@@ -658,57 +660,45 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
             for k in predecessors_V:
                 flow_value_between_nodes = get_flow_value(flow_matrix, k-1, j-1)
                 if flow_value_between_nodes==1:
-                    for pred in predicates:
-                        if pred[2]!='AND' and pred[0]==k:
+                    #if j<len(predicates):
+                    pred=predicates[k-1]
+                    #for pred in predicates:
+                    if pred[2]!='AND' and pred[0]==k:
                             #if pred[0]==k:
                             #print(countermeasure_list['Predicates'])
-                            for counter in range(len(countermeasure_list['Predicates'])):       
-                                #print(countermeasure_list['Predicates'][counter])                         
-                                if pred[1].split('(')[0]==countermeasure_list['Predicates'][counter].split('(')[0]:
-                                    #print(pred[1])
-                                    contpred=countermeasure_list['Countermeasures'][counter].split('(')[0]
-                                    #print(contpred)
-                                    if contpred.startswith('patch'):
-                                        vulide=pred[1].split('(')[1].split(',')[1]
-                                        # Define the regex pattern for CVE identifiers
-                                        cve_pattern = r'CVE-\d{4}-\d{4,7}'
-                                        #print(vul)
-                                        # Use re.findall to find all occurrences of the pattern in the text
-                                        #cve_identifiers = re.findall(cve_pattern, vul.split("'")[1])
-                                        cve_identifiers=re.findall(cve_pattern, vulide)
-                                        if len(cve_identifiers)!=0 and str(pred[1].split('(')[1].split(',')[1]).split("'")[1]==countermeasure_list['CVE'][counter]:
-                                            listpredparam=pred[1].split('(')[1].split(')')[0].split(',')
-                                            listcontrparam=countermeasure_list['Countermeasures'][counter].split('(')[1].split(')')[0].split(',')
-                                            #if counter[0]==pred[1]:
-                                            for i in range(len(listcontrparam)):
-                                                listcontrparam[i]=listpredparam[i]
-                                            countermeasure=str(countermeasure_list['Countermeasures'][counter].split('(')[0])+'('+', '.join(listcontrparam)+')'
-                                            nodenbr=str(pred[0])
-                                            #counterm=countermeasure+'('+nodenbr+')'
-                                            counterm=countermeasure
-                                            new_nodes.append(counterm)
-                                            new_edges.append((counterm, pred[0]))
-                                            predecesseur=list(G.predecessors(j))
-                                    if contpred.startswith('unblock') or contpred.startswith('restore') or contpred.startswith('enable'):
-                                        cont=list(countermeasure_list.loc[countermeasure_list['Countermeasures'] == 'patchVul(_host, _vulID, _program)', 'CVE'])
-                                        #commonlist=[x for x in countermeasure_list['CVE'] if x in ]
-                                        notinplay=[x.split('(')[1].split(',')[1].split("'")[1] for x in get_vulname(G,predicates) if x.split('(')[1].split(',')[1].split("'")[1] not in cont]
-                                        #print(cont)
-                                        if len(notinplay)==0:
-                                            listpredparam=pred[1].split('(')[1].split(')')[0].split(',')
-                                            listcontrparam=countermeasure_list['Countermeasures'][counter].split('(')[1].split(')')[0].split(',')
-                                            #if counter[0]==pred[1]:
-                                            for i in range(len(listcontrparam)):
-                                                listcontrparam[i]=listpredparam[i]
-                                            countermeasure=str(countermeasure_list['Countermeasures'][counter].split('(')[0])+'('+', '.join(listcontrparam)+')'
-                                            nodenbr=str(pred[0])
-                                            #counterm=countermeasure+'('+nodenbr+')'
-                                            counterm=countermeasure
-                                            new_nodes.append(counterm)
-                                            new_edges.append((counterm, pred[0]))
-                                            predecesseur=list(G.predecessors(j))
-                                            #for predi in predecesseur:
-                                    if contpred.startswith('find') or contpred.startswith('list') or contpred.startswith('block') or contpred.startswith('disable'):
+                        for counter in range(len(countermeasure_list['Predicates'])):       
+                            #print(countermeasure_list['Predicates'][counter])                         
+                            if pred[1].split('(')[0]==countermeasure_list['Predicates'][counter].split('(')[0]:
+                                #print(pred[1])
+                                contpred=countermeasure_list['Countermeasures'][counter].split('(')[0]
+                                #print(contpred)
+                                if contpred.startswith('patch'):
+                                    vulide=pred[1].split('(')[1].split(',')[1]
+                                    # Define the regex pattern for CVE identifiers
+                                    cve_pattern = r'CVE-\d{4}-\d{4,7}'
+                                    #print(vul)
+                                    # Use re.findall to find all occurrences of the pattern in the text
+                                    #cve_identifiers = re.findall(cve_pattern, vul.split("'")[1])
+                                    cve_identifiers=re.findall(cve_pattern, vulide)
+                                    if len(cve_identifiers)!=0 and str(pred[1].split('(')[1].split(',')[1]).split("'")[1]==countermeasure_list['CVE'][counter]:
+                                        listpredparam=pred[1].split('(')[1].split(')')[0].split(',')
+                                        listcontrparam=countermeasure_list['Countermeasures'][counter].split('(')[1].split(')')[0].split(',')
+                                        #if counter[0]==pred[1]:
+                                        for i in range(len(listcontrparam)):
+                                            listcontrparam[i]=listpredparam[i]
+                                        countermeasure=str(countermeasure_list['Countermeasures'][counter].split('(')[0])+'('+', '.join(listcontrparam)+')'
+                                        nodenbr=str(pred[0])
+                                        #counterm=countermeasure+'('+nodenbr+')'
+                                        counterm=countermeasure
+                                        new_nodes.append(counterm)
+                                        new_edges.append((counterm, pred[0]))
+                                        predecesseur=list(G.predecessors(j))
+                                if contpred.startswith('unblock') or contpred.startswith('restore') or contpred.startswith('enable'):
+                                    cont=list(countermeasure_list.loc[countermeasure_list['Countermeasures'] == 'patchVul(_host, _vulID, _program)', 'CVE'])
+                                    #commonlist=[x for x in countermeasure_list['CVE'] if x in ]
+                                    notinplay=[x.split('(')[1].split(',')[1].split("'")[1] for x in get_vulname(G,predicates) if x.split('(')[1].split(',')[1].split("'")[1] not in cont]
+                                    #print(cont)
+                                    if len(notinplay)==0:
                                         listpredparam=pred[1].split('(')[1].split(')')[0].split(',')
                                         listcontrparam=countermeasure_list['Countermeasures'][counter].split('(')[1].split(')')[0].split(',')
                                         #if counter[0]==pred[1]:
@@ -722,6 +712,20 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
                                         new_edges.append((counterm, pred[0]))
                                         predecesseur=list(G.predecessors(j))
                                         #for predi in predecesseur:
+                                if contpred.startswith('find') or contpred.startswith('list') or contpred.startswith('block') or contpred.startswith('disable'):
+                                    listpredparam=pred[1].split('(')[1].split(')')[0].split(',')
+                                    listcontrparam=countermeasure_list['Countermeasures'][counter].split('(')[1].split(')')[0].split(',')
+                                    #if counter[0]==pred[1]:
+                                    for i in range(len(listcontrparam)):
+                                        listcontrparam[i]=listpredparam[i]
+                                    countermeasure=str(countermeasure_list['Countermeasures'][counter].split('(')[0])+'('+', '.join(listcontrparam)+')'
+                                    nodenbr=str(pred[0])
+                                    #counterm=countermeasure+'('+nodenbr+')'
+                                    counterm=countermeasure
+                                    new_nodes.append(counterm)
+                                    new_edges.append((counterm, pred[0]))
+                                    predecesseur=list(G.predecessors(j))
+                                    #for predi in predecesseur:
             resconvert=update_to_flow_matrix(0,G,flow_matrix,j,net,act,predicates)
             flow_matrix=resconvert[0]
             DF_flow = pd.DataFrame(flow_matrix, index=range(1, flow_matrix.shape[0] + 1), columns=range(1, flow_matrix.shape[1] + 1))

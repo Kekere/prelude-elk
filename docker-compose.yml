@@ -38,7 +38,7 @@ services:
     environment:
       - discovery.type=single-node
       - cluster.routing.allocation.disk.threshold_enabled=true
-      - cluster.routing.allocation.disk.watermark.low=65%
+      - cluster.routing.allocation.disk.watermark.low=45%
       - cluster.routing.allocation.disk.watermark.high=70%
       - xpack.security.enabled=true
       - xpack.security.audit.enabled=true
@@ -48,38 +48,28 @@ services:
          ipv4_address: 172.31.0.4
       injector2logs:
       logs:
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     ulimits:
       memlock:
         soft: -1
         hard: -1
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: '4g'
+        reservations:
+          cpus: '0.5'
+          memory: '1g'
     volumes:
       - elasticsearch:/usr/share/elasticsearch/data
       #- ./files/usr/share/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
     ports:
       - "9200:9200"
-  injector:
-    image: "logstash:7.9.2"
-    depends_on:
-      - elasticsearch
-      - lml
-      - db-alerts
-    environment:
-      MONITORING_ENABLED:       "false"
-      xpack.monitoring.enabled: "false"
-      SYSLOG_TIMEZONE:          "${SYSLOG_TIMEZONE}"
-    networks:
-      - injector2logs
-      - injector2lml
-      - gui2injector
-    volumes:
-      - ./files/usr/share/logstash/pipeline/:/usr/share/logstash/pipeline/:ro
-      - ./files/usr/share/logstash/template.json:/usr/share/logstash/template.json:ro
-    ports:
-      - "6514:6514/tcp"
-      # Uncomment the next line to accept logs in the syslog format
-      # on UDP port 514.
-      - "6514:6514/udp"
-
   logstashalert:
     image: "logstash:7.9.2"
     depends_on:
@@ -92,29 +82,22 @@ services:
          ipv4_address: 172.31.0.5
       injector2logs:
       logs:
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: '2g'
+        reservations:
+          cpus: '0.5'
+          memory: '1g'
     volumes:
       - ./files/usr/share/logstash/alertsdb/alerts:/usr/share/logstash/pipeline/alerts:ro
       - ./files/usr/share/logstash/jars/:/usr/share/logstash/jars/:ro
-  
-  kibana:
-    image: "kibana:7.9.2"
-    ports:
-      - "5601:5601"
-    volumes:
-      - elasticsearch:/usr/share/kibana/data
-
-    depends_on:
-      - elasticsearch
-    networks:
-      - injector2logs
-      - logs
-    environment:
-       - ELASTICSEARCH_URL=http://localhost:9200
-       - ELASTICSEARCH_USERNAME=elastic
-       - ELASTICSEARCH_PASSWORD=prelude
-    #volumes:
-      #- ./files/usr/share/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml:ro
-
   db-alerts:
     image: "postgres:latest"
     environment:
@@ -130,7 +113,6 @@ services:
       - db-alerts:/var/lib/pgsql/data
     ports: 
       - "5432:5432"
-
   db-gui:
     image: "postgres:latest"
     environment:
@@ -143,7 +125,6 @@ services:
       - gui_db
     volumes:
       - db-gui:/var/lib/pgsql/data
-
   manager:
     depends_on:
       - db-alerts
@@ -160,7 +141,6 @@ services:
       alerts:
          ipv4_address: 172.31.0.6
       agents:
-
   correlator:
     depends_on:
       - manager
@@ -175,10 +155,11 @@ services:
       alerts:
          ipv4_address: 172.31.0.7
       agents:
-
   lml:
     depends_on:
       - manager
+    ports:
+      - "514:514"
     environment:
       SENSORS_PASSWORD_FILE:    /run/secrets/sensors
     secrets:
@@ -186,13 +167,11 @@ services:
     networks:
       - agents
       - injector2lml
-
   prewikka:
     depends_on:
       - db-alerts
       - db-gui
       - elasticsearch
-      - injector
       - manager
     environment:
       ALERTS_DB_PASSWORD_FILE:  /run/secrets/alerts_db
@@ -209,8 +188,6 @@ services:
       gui:
       gui2injector:
       logs:
-   
-
   prewikka-crontab:
     depends_on:
       - db-alerts

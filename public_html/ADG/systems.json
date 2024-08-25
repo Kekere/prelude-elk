@@ -4,6 +4,7 @@
 "DNS SEVER":["SIEM"],
 "Robot":["Nvidia Jetson"],
 "Axion":[""],
+"cisco":["WSUS","Antivirus", "Firewall Software", "Terminal", "Suricata","SIEM", "Group Policy","Internal Firewall","External Firewall"],
 "webServer":["WSUS","Antivirus", "Firewall Software", "Terminal", "Suricata","SIEM", "Group Policy"],
 "Windows_7":["WSUS","Internal Firewall", "SIEM", "WireShark","External Firewall", "Group Policy","Antivirus", "Terminal", "Suricata", "Firewall Software"],
 "Windows Server":["WSUS","Internal Firewall", "SIEM", "WireShark","External Firewall", "Group Policy","Antivirus", "Terminal", "Suricata", "Firewall Software"],
