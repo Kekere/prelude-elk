@@ -68,16 +68,19 @@ IncidentResponseOntologyPlaybook:Playbook_CVE-2005-1794 a IncidentResponseOntolo
     IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the IDCVE-2005-1794" .
 
 IncidentResponseOntologyPlaybook:Playbook_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook,
+<<<<<<< HEAD
         owl:NamedIndividual ;
     rdfs:label "Playbook : Response to CVE-2012-0002" ;
     IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2012-0002 ;
     IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2012-0002" .
 
 IncidentResponseOntologyPlaybook:Playbook_CVE-2013-3132 a IncidentResponseOntologyPlaybook:Playbook,
+=======
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
         owl:NamedIndividual ;
-    rdfs:label "Playbook : Response to CVE-2013-3132" ;
-    IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2013-3132 ;
-    IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2013-3132" .
+    rdfs:label "Playbook : Response to CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2012-0002 ;
+    IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2012-0002" .
 
 IncidentResponseOntologyPlaybook:Playbook_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook,
         owl:NamedIndividual ;
@@ -85,23 +88,11 @@ IncidentResponseOntologyPlaybook:Playbook_CVE-2013-3200 a IncidentResponseOntolo
     IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2013-3200 ;
     IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2013-3200" .
 
-IncidentResponseOntologyPlaybook:Playbook_CVE-2013-3205 a IncidentResponseOntologyPlaybook:Playbook,
+IncidentResponseOntologyPlaybook:Playbook_CVE-2013-6966 a IncidentResponseOntologyPlaybook:Playbook,
         owl:NamedIndividual ;
-    rdfs:label "Playbook : Response to CVE-2013-3205" ;
-    IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2013-3205 ;
-    IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2013-3205" .
-
-IncidentResponseOntologyPlaybook:Playbook_CVE-2014-3100 a IncidentResponseOntologyPlaybook:Playbook,
-        owl:NamedIndividual ;
-    rdfs:label "Playbook : Response to CVE-2014-3100" ;
-    IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2014-3100 ;
-    IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2014-3100" .
-
-IncidentResponseOntologyPlaybook:Playbook_CVE-2014-3132 a IncidentResponseOntologyPlaybook:Playbook,
-        owl:NamedIndividual ;
-    rdfs:label "Playbook : Response to CVE-2014-3132" ;
-    IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2014-3132 ;
-    IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2014-3132" .
+    rdfs:label "Playbook : Response to CVE-2013-6966" ;
+    IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2013-6966 ;
+    IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2013-6966" .
 
 IncidentResponseOntologyPlaybook:Playbook_CVE-2016-10609 a IncidentResponseOntologyPlaybook:Playbook,
         owl:NamedIndividual ;
@@ -7248,39 +7239,30 @@ IncidentResponseOntologyPlaybook:Step1_CVE-2005-1794 a IncidentResponseOntologyP
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2107 .
 
 IncidentResponseOntologyPlaybook:Step1_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook_Step,
+<<<<<<< HEAD
         owl:NamedIndividual ;
     rdfs:label "Step1_CVE-2012-0002" ;
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2012-0002 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2002 .
 
 IncidentResponseOntologyPlaybook:Step1_CVE-2013-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
+=======
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
         owl:NamedIndividual ;
-    rdfs:label "Step1_CVE-2013-3132" ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2405 ;
-    IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step2_CVE-2013-3132 .
+    rdfs:label "Step1_CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2012-0002 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2002 .
 
 IncidentResponseOntologyPlaybook:Step1_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
     rdfs:label "Step1_CVE-2013-3200" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2013-3200 ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2002 .
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2405 ;
+    IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step2_CVE-2013-3200 .
 
-IncidentResponseOntologyPlaybook:Step1_CVE-2013-3205 a IncidentResponseOntologyPlaybook:Playbook_Step,
+IncidentResponseOntologyPlaybook:Step1_CVE-2013-6966 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
-    rdfs:label "Step1_CVE-2013-3205" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2013-3205 ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2002 .
-
-IncidentResponseOntologyPlaybook:Step1_CVE-2014-3100 a IncidentResponseOntologyPlaybook:Playbook_Step,
-        owl:NamedIndividual ;
-    rdfs:label "Step1_CVE-2014-3100" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2014-3100 ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2002 .
-
-IncidentResponseOntologyPlaybook:Step1_CVE-2014-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
-        owl:NamedIndividual ;
-    rdfs:label "Step1_CVE-2014-3132" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2014-3132 ;
+    rdfs:label "Step1_CVE-2013-6966" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2013-6966 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2002 .
 
 IncidentResponseOntologyPlaybook:Step1_CVE-2016-10609 a IncidentResponseOntologyPlaybook:Playbook_Step,
@@ -7446,39 +7428,30 @@ IncidentResponseOntologyPlaybook:Step2_CVE-2005-1794 a IncidentResponseOntologyP
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3109 .
 
 IncidentResponseOntologyPlaybook:Step2_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook_Step,
+<<<<<<< HEAD
         owl:NamedIndividual ;
     rdfs:label "Step2_CVE-2012-0002" ;
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2012-0002 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3001 .
 
 IncidentResponseOntologyPlaybook:Step2_CVE-2013-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
+=======
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
         owl:NamedIndividual ;
-    rdfs:label "Step2_CVE-2013-3132" ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2309 ;
-    IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step3_CVE-2013-3132 .
+    rdfs:label "Step2_CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2012-0002 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3001 .
 
 IncidentResponseOntologyPlaybook:Step2_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
     rdfs:label "Step2_CVE-2013-3200" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2013-3200 ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3001 .
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2001 ;
+    IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step3_CVE-2013-3200 .
 
-IncidentResponseOntologyPlaybook:Step2_CVE-2013-3205 a IncidentResponseOntologyPlaybook:Playbook_Step,
+IncidentResponseOntologyPlaybook:Step2_CVE-2013-6966 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
-    rdfs:label "Step2_CVE-2013-3205" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2013-3205 ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3001 .
-
-IncidentResponseOntologyPlaybook:Step2_CVE-2014-3100 a IncidentResponseOntologyPlaybook:Playbook_Step,
-        owl:NamedIndividual ;
-    rdfs:label "Step2_CVE-2014-3100" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2014-3100 ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3001 .
-
-IncidentResponseOntologyPlaybook:Step2_CVE-2014-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
-        owl:NamedIndividual ;
-    rdfs:label "Step2_CVE-2014-3132" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2014-3132 ;
+    rdfs:label "Step2_CVE-2013-6966" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2013-6966 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3001 .
 
 IncidentResponseOntologyPlaybook:Step2_CVE-2016-10609 a IncidentResponseOntologyPlaybook:Playbook_Step,
@@ -7655,39 +7628,30 @@ IncidentResponseOntologyPlaybook:Step3_CVE-2005-1794 a IncidentResponseOntologyP
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA5105 .
 
 IncidentResponseOntologyPlaybook:Step3_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook_Step,
+<<<<<<< HEAD
         owl:NamedIndividual ;
     rdfs:label "Step3_CVE-2012-0002" ;
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2012-0002 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 .
 
 IncidentResponseOntologyPlaybook:Step3_CVE-2013-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
+=======
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
         owl:NamedIndividual ;
-    rdfs:label "Step3_CVE-2013-3132" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2013-3132 ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2001 .
+    rdfs:label "Step3_CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2012-0002 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 .
 
 IncidentResponseOntologyPlaybook:Step3_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
     rdfs:label "Step3_CVE-2013-3200" ;
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2013-3200 ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 .
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2309 .
 
-IncidentResponseOntologyPlaybook:Step3_CVE-2013-3205 a IncidentResponseOntologyPlaybook:Playbook_Step,
+IncidentResponseOntologyPlaybook:Step3_CVE-2013-6966 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
-    rdfs:label "Step3_CVE-2013-3205" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2013-3205 ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 .
-
-IncidentResponseOntologyPlaybook:Step3_CVE-2014-3100 a IncidentResponseOntologyPlaybook:Playbook_Step,
-        owl:NamedIndividual ;
-    rdfs:label "Step3_CVE-2014-3100" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2014-3100 ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 .
-
-IncidentResponseOntologyPlaybook:Step3_CVE-2014-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
-        owl:NamedIndividual ;
-    rdfs:label "Step3_CVE-2014-3132" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2014-3132 ;
+    rdfs:label "Step3_CVE-2013-6966" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2013-6966 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 .
 
 IncidentResponseOntologyPlaybook:Step3_CVE-2016-10609 a IncidentResponseOntologyPlaybook:Playbook_Step,
@@ -7856,34 +7820,27 @@ IncidentResponseOntologyPlaybook:Step4_CVE-2005-1794 a IncidentResponseOntologyP
     IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step5_CVE-2005-1794 .
 
 IncidentResponseOntologyPlaybook:Step4_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook_Step,
+<<<<<<< HEAD
         owl:NamedIndividual ;
     rdfs:label "Step4_CVE-2012-0002" ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
 
 IncidentResponseOntologyPlaybook:Step4_CVE-2013-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
+=======
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
         owl:NamedIndividual ;
-    rdfs:label "Step4_CVE-2013-3132" ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3404 ;
-    IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step5_CVE-2013-3132 .
+    rdfs:label "Step4_CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
 
 IncidentResponseOntologyPlaybook:Step4_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
     rdfs:label "Step4_CVE-2013-3200" ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3404 ;
+    IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step5_CVE-2013-3200 .
 
-IncidentResponseOntologyPlaybook:Step4_CVE-2013-3205 a IncidentResponseOntologyPlaybook:Playbook_Step,
+IncidentResponseOntologyPlaybook:Step4_CVE-2013-6966 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
-    rdfs:label "Step4_CVE-2013-3205" ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
-
-IncidentResponseOntologyPlaybook:Step4_CVE-2014-3100 a IncidentResponseOntologyPlaybook:Playbook_Step,
-        owl:NamedIndividual ;
-    rdfs:label "Step4_CVE-2014-3100" ;
-    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
-
-IncidentResponseOntologyPlaybook:Step4_CVE-2014-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
-        owl:NamedIndividual ;
-    rdfs:label "Step4_CVE-2014-3132" ;
+    rdfs:label "Step4_CVE-2013-6966" ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
 
 IncidentResponseOntologyPlaybook:Step4_CVE-2016-10609 a IncidentResponseOntologyPlaybook:Playbook_Step,
@@ -8030,10 +7987,10 @@ IncidentResponseOntologyPlaybook:Step5_CVE-2005-1794 a IncidentResponseOntologyP
     rdfs:label "Step5_CVE-2005-1794" ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
 
-IncidentResponseOntologyPlaybook:Step5_CVE-2013-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
+IncidentResponseOntologyPlaybook:Step5_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
-    rdfs:label "Step5_CVE-2013-3132" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step6_CVE-2013-3132 ;
+    rdfs:label "Step5_CVE-2013-3200" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step6_CVE-2013-3200 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3301 .
 
 IncidentResponseOntologyPlaybook:Step5_CVE-2016-10609 a IncidentResponseOntologyPlaybook:Playbook_Step,
@@ -8115,10 +8072,10 @@ IncidentResponseOntologyPlaybook:Step5_CVE-2023-5604 a IncidentResponseOntologyP
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step6_CVE-2023-5604 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA5401 .
 
-IncidentResponseOntologyPlaybook:Step6_CVE-2013-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
+IncidentResponseOntologyPlaybook:Step6_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
-    rdfs:label "Step6_CVE-2013-3132" ;
-    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step7_CVE-2013-3132 ;
+    rdfs:label "Step6_CVE-2013-3200" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step7_CVE-2013-3200 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA4301 .
 
 IncidentResponseOntologyPlaybook:Step6_CVE-2021-1500 a IncidentResponseOntologyPlaybook:Playbook_Step,
@@ -9587,20 +9544,6 @@ IncidentResponseOntologyPlaybook:Exfiltration a mitre:OffensiveTactic,
     mitre:display-order 13 ;
     rdfs:comment "https://attack.mitre.org/tactics/TA0010/" .
 
-IncidentResponseOntologyPlaybook:External_Firewall a IncidentResponseOntologyPlaybook:Requirement,
-        owl:NamedIndividual ;
-    rdfs:label "External Firewall" .
-
-IncidentResponseOntologyPlaybook:Initial_Access a mitre:OffensiveTactic,
-        owl:NamedIndividual ;
-    mitre:attack-id "TA0001" ;
-    mitre:display-order 3 ;
-    rdfs:comment "https://attack.mitre.org/tactics/TA0001/" .
-
-IncidentResponseOntologyPlaybook:Internal_Firewall a IncidentResponseOntologyPlaybook:Requirement,
-        owl:NamedIndividual ;
-    rdfs:label "Internal Firewall" .
-
 IncidentResponseOntologyPlaybook:RA2002 a owl:NamedIndividual,
         uco:Action ;
     rdfs:label "list host vulnerabilities" ;
@@ -9616,11 +9559,19 @@ IncidentResponseOntologyPlaybook:RA2002 a owl:NamedIndividual,
     rdfs:comment """Get information about a specific host existing vulnerabilities, or about vulnerabilities it had at a particular time in the past
 """@en .
 
-IncidentResponseOntologyPlaybook:Lateral_Movement a mitre:OffensiveTactic,
+IncidentResponseOntologyPlaybook:External_Firewall a IncidentResponseOntologyPlaybook:Requirement,
         owl:NamedIndividual ;
-    mitre:attack-id "TA0008" ;
-    mitre:display-order 10 ;
-    rdfs:comment "https://attack.mitre.org/tactics/TA0008/" .
+    rdfs:label "External Firewall" .
+
+IncidentResponseOntologyPlaybook:Initial_Access a mitre:OffensiveTactic,
+        owl:NamedIndividual ;
+    mitre:attack-id "TA0001" ;
+    mitre:display-order 3 ;
+    rdfs:comment "https://attack.mitre.org/tactics/TA0001/" .
+
+IncidentResponseOntologyPlaybook:Internal_Firewall a IncidentResponseOntologyPlaybook:Requirement,
+        owl:NamedIndividual ;
+    rdfs:label "Internal Firewall" .
 
 mitre:OffensiveTactic a owl:Class ;
     rdfs:label "Offensive Tactic" ;
@@ -9649,6 +9600,7 @@ IncidentResponseOntologyPlaybook:RA3001 a owl:NamedIndividual,
     rdfs:comment """Patch a vulnerability in an asset
 """@en .
 
+<<<<<<< HEAD
 IncidentResponseOntologyPlaybook:Containment a IncidentResponseOntologyPlaybook:Incident_Response_Phase,
         owl:NamedIndividual ;
     rdfs:label "Containment" ;
@@ -9659,6 +9611,25 @@ IncidentResponseOntologyPlaybook:Impact a mitre:OffensiveTactic,
     mitre:attack-id "TA0040" ;
     mitre:display-order 14 ;
     rdfs:comment "https://attack.mitre.org/tactics/TA0040/" .
+=======
+IncidentResponseOntologyPlaybook:Lateral_Movement a mitre:OffensiveTactic,
+        owl:NamedIndividual ;
+    mitre:attack-id "TA0008" ;
+    mitre:display-order 10 ;
+    rdfs:comment "https://attack.mitre.org/tactics/TA0008/" .
+
+mitre:OffensiveTactic a owl:Class ;
+    rdfs:label "Offensive Tactic" ;
+    rdfs:comment "Tactics represent the \"why\" of an ATT&CK technique or sub-technique. It is the adversary's tactical goal: the reason for performing an action. For example, an adversary may want to achieve credential access." ;
+    rdfs:isDefinedBy <https://attack.mitre.org/docs/ATTACK_Design_and_Philosophy_March_2020.pdf> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty mitre:display-order ;
+            owl:someValuesFrom xsd:integer ],
+        [ a owl:Restriction ;
+            owl:onProperty mitre:enabled-by ;
+            owl:someValuesFrom mitre:OffensiveTechnique ],
+        mitre:ATTACKThing .
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
 
 IncidentResponseOntologyPlaybook:RA6001 a owl:NamedIndividual,
         uco:Action ;

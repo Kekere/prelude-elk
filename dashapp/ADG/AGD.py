@@ -583,7 +583,9 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
         if vector_value == level_occurrence:
             successors_V=list(G.successors(j))
             for l in successors_V:
-                for pred in predicates:
+                if j<len(predicates):
+                    pred=predicates[l-1]
+                #for pred in predicates:
                     if pred[2]!='AND' and pred[0]==l and successors_count[l]>0:
                         #if pred[0]==l:
                             #print(pred[1])
@@ -658,7 +660,9 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
             for k in predecessors_V:
                 flow_value_between_nodes = get_flow_value(flow_matrix, k-1, j-1)
                 if flow_value_between_nodes==1:
-                    for pred in predicates:
+                    if j<len(predicates):
+                        pred=predicates[k-1]
+                    #for pred in predicates:
                         if pred[2]!='AND' and pred[0]==k:
                             #if pred[0]==k:
                             #print(countermeasure_list['Predicates'])

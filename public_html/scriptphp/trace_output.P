@@ -42,7 +42,11 @@ meta(cvss,2).
 meta(attackGoal,1).
 meta(advances,2).
 
+<<<<<<< HEAD
 attack(physicalDamage(_h4553)).
+=======
+attack(physicalDamage(_h4561)).
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
 
 possible_duplicate_trace_step(because(13,rule_desc('direct network access',1.0),netAccess('157.159.68.125',tcp,'3389'),[hacl('157.159.68.75','157.159.68.125',tcp,'3389'),attackerLocated('157.159.68.75')])).
 
@@ -68,7 +72,13 @@ possible_duplicate_trace_step(because(5,rule_desc('Remote login on host by reusi
 
 possible_duplicate_trace_step(because(4,rule_desc('Obtain control of network traffic',0.5),obtainControl('157.159.68.97',admin),[ipv6Able('157.159.68.97'),execCode('157.159.68.75',admin),isAdmin(admin)])).
 
+<<<<<<< HEAD
 possible_duplicate_trace_step(because(3,rule_desc('Modify bus info',0.5),modify('157.159.68.97',_h4708),[obtainControl('157.159.68.97',admin)])).
 
 possible_duplicate_trace_step(because(2,rule_desc('Physical damage',0.5),physicalDamage(_h4553),[modify('157.159.68.97',_h4708)])).
+=======
+possible_duplicate_trace_step(because(3,rule_desc('Modify bus info',0.5),modify('157.159.68.97',_h4716),[obtainControl('157.159.68.97',admin)])).
+
+possible_duplicate_trace_step(because(2,rule_desc('Physical damage',0.5),physicalDamage(_h4561),[modify('157.159.68.97',_h4716)])).
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
 

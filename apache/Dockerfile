@@ -36,7 +36,7 @@ RUN apt-get update && apt-get -y upgrade && apt-get -y install sudo && sudo addu
    && apt-get -y install curl \
    && apt-get -y install python \
    && apt-get -y install pip \
-   && pip install confluent-kafka \
+   && pip install confluent-kafka==1.3.0 \
    && pip install kafka-python \
    && pip install owlready2 \
    && pip install rdflib \

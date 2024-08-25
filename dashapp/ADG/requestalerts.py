@@ -109,6 +109,27 @@ def alerts():
                         else:
                             params[p]=val[0]
                     #print(params)
+<<<<<<< HEAD
+                    listaction.append(numbernodes[pred])
+            if typenode[pred]=="LEAF":
+                param=predicates[pred].split('(')[1].split(')')[0]
+                params=param.split(',')
+                for p in range(len(params)):
+                    val=params[p].split("'")
+                    if len(val)>1:
+                        params[p]=val[1]
+                    else:
+                        params[p]=val[0]
+                #print(params)
+                if address in params and port in params and protocol in params:
+                    #print(params)
+                    listleaf.append(numbernodes[pred])
+    # Create a DataFrame from the lists
+    df = pd.DataFrame({
+        'Net': pd.Series(listleaf),
+        'Act': pd.Series(listaction)
+    })
+=======
                     if address in params and port in params and protocol in params:
                         #print(params)
                         listaction.append(numbernodes[pred])
@@ -118,6 +139,7 @@ def alerts():
             'Net': pd.Series(listleaf),
             'Act': pd.Series(listaction)
         })
+>>>>>>> 537ca7c3ab2d22f9b75f72da03c5e4cf31b13d66
 
         # Define the path to save the Excel file
         excel_file_path = '/var/www/html/ADG/alerts.xlsx'
