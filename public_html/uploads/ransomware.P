@@ -1,0 +1,9 @@
+attackerLocated(internet).
+attackGoal(netAccess('192.168.128.40',tcp,80)).
+hacl(internet, '192.168.132.101', _, _).
+hacl('192.168.132.101','192.168.128.40', _, _).
+hacl('192.168.132.101',internet, _, _).
+advances('192.168.132.101','192.168.128.40').
+inCompetent(Victim).
+hasAccount(Victim,'192.168.132.101',user).
+vulExists('192.168.132.101','CVE-2013-6966','cisco',remoteClient,privEscalation).

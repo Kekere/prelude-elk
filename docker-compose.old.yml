@@ -1,0 +1,316 @@
+version: '3.1'
+services:
+  php:
+    build: 
+      context: ./
+      dockerfile: php/Dockerfile
+      args:
+       PHP_VERSION: ${PHP_VERSION}
+    networks:
+      backend:
+      alerts:
+         ipv4_address: 172.31.0.10
+    volumes:
+      - ./public_html/:/var/www/html/
+    container_name: php
+  apache:
+    build:
+      context: ./
+      dockerfile: apache/Dockerfile
+      args:
+       APACHE_VERSION: ${APACHE_VERSION}
+
+    networks:
+      frontend:
+      backend:
+      alerts:
+         ipv4_address: 172.31.0.11
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./public_html/:/var/www/html/
+      - ./confluent/:/var/www/html/confluent/
+      - /var/run/docker.socket:/var/run/docker.socket
+      - /var/lib/docker:/var/lib/docker
+    container_name: apache
+  elasticsearch:
+    image: "elasticsearch:7.9.2"
+    environment:
+      - discovery.type=single-node
+      - cluster.routing.allocation.disk.threshold_enabled=true
+      - cluster.routing.allocation.disk.watermark.low=45%
+      - cluster.routing.allocation.disk.watermark.high=70%
+      - xpack.security.enabled=true
+      - xpack.security.audit.enabled=true
+      - ELASTIC_PASSWORD=prelude
+    networks:
+      alerts:
+         ipv4_address: 172.31.0.4
+      injector2logs:
+      logs:
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: '4g'
+        reservations:
+          cpus: '0.5'
+          memory: '1g'
+    volumes:
+      - elasticsearch:/usr/share/elasticsearch/data
+      #- ./files/usr/share/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    ports:
+      - "9200:9200"
+  injector:
+    image: "logstash:7.9.2"
+    depends_on:
+      - elasticsearch
+      - lml
+      - db-alerts
+    environment:
+      MONITORING_ENABLED:       "false"
+      xpack.monitoring.enabled: "false"
+      SYSLOG_TIMEZONE:          "${SYSLOG_TIMEZONE}"
+    networks:
+      - injector2logs
+      - injector2lml
+      - gui2injector
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: '2g'
+        reservations:
+          cpus: '0.5'
+          memory: '1g'
+    volumes:
+      - ./files/usr/share/logstash/pipeline/:/usr/share/logstash/pipeline/:ro
+      - ./files/usr/share/logstash/template.json:/usr/share/logstash/template.json:ro
+    ports:
+      - "6514:6514/tcp"
+      # Uncomment the next line to accept logs in the syslog format
+      # on UDP port 514.
+      - "6514:6514/udp"
+
+  logstashalert:
+    image: "logstash:7.9.2"
+    depends_on:
+      - elasticsearch
+      - db-alerts
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      alerts:
+         ipv4_address: 172.31.0.5
+      injector2logs:
+      logs:
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: '2g'
+        reservations:
+          cpus: '0.5'
+          memory: '1g'
+    volumes:
+      - ./files/usr/share/logstash/alertsdb/alerts:/usr/share/logstash/pipeline/alerts:ro
+      - ./files/usr/share/logstash/jars/:/usr/share/logstash/jars/:ro
+  
+  kibana:
+    image: "kibana:7.9.2"
+    ports:
+      - "5601:5601"
+    volumes:
+      - elasticsearch:/usr/share/kibana/data
+
+    depends_on:
+      - elasticsearch
+    networks:
+      - injector2logs
+      - logs
+    environment:
+       - ELASTICSEARCH_URL=http://localhost:9200
+       - ELASTICSEARCH_USERNAME=elastic
+       - ELASTICSEARCH_PASSWORD=prelude
+    #volumes:
+      #- ./files/usr/share/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml:ro
+
+  db-alerts:
+    image: "postgres:latest"
+    environment:
+      POSTGRES_DB:              prelude
+      POSTGRES_USER:            prelude
+      POSTGRES_PASSWORD_FILE:   /run/secrets/alerts_db
+    networks:
+      alerts:
+         ipv4_address: 172.31.0.3
+    secrets:
+      - alerts_db
+    volumes:
+      - db-alerts:/var/lib/pgsql/data
+    ports: 
+      - "5432:5432"
+
+  db-gui:
+    image: "postgres:latest"
+    environment:
+      POSTGRES_DB:              prewikka
+      POSTGRES_USER:            prewikka
+      POSTGRES_PASSWORD_FILE:   /run/secrets/gui_db
+    networks:
+      - gui
+    secrets:
+      - gui_db
+    volumes:
+      - db-gui:/var/lib/pgsql/data
+
+  manager:
+    depends_on:
+      - db-alerts
+    environment:
+      ALERTS_DB_PASSWORD_FILE:  /run/secrets/alerts_db
+      SENSORS_PASSWORD_FILE:    /run/secrets/sensors
+    secrets:
+      - sensors
+      - alerts_db
+    ports:
+      - "5553:5553"
+      - "4690:4690"
+    networks:
+      alerts:
+         ipv4_address: 172.31.0.6
+      agents:
+
+  correlator:
+    depends_on:
+      - manager
+      - db-alerts
+    environment:
+      ALERTS_DB_PASSWORD_FILE:  /run/secrets/alerts_db
+      SENSORS_PASSWORD_FILE:    /run/secrets/sensors
+    secrets:
+      - alerts_db
+      - sensors
+    networks:
+      alerts:
+         ipv4_address: 172.31.0.7
+      agents:
+
+  lml:
+    depends_on:
+      - manager
+    environment:
+      SENSORS_PASSWORD_FILE:    /run/secrets/sensors
+    secrets:
+      - sensors
+    networks:
+      - agents
+      - injector2lml
+
+  prewikka:
+    depends_on:
+      - db-alerts
+      - db-gui
+      - elasticsearch
+      - injector
+      - manager
+    environment:
+      ALERTS_DB_PASSWORD_FILE:  /run/secrets/alerts_db
+      GUI_DB_PASSWORD_FILE:     /run/secrets/gui_db
+      SYSLOG_TIMEZONE:          "${SYSLOG_TIMEZONE}"
+    ports:
+      - "80:80"
+    secrets:
+      - alerts_db
+      - gui_db
+    networks:
+      alerts:
+         ipv4_address: 172.31.0.8
+      gui:
+      gui2injector:
+      logs:
+   
+
+  prewikka-crontab:
+    depends_on:
+      - db-alerts
+      - db-gui
+      - elasticsearch
+      - manager
+    environment:
+      ALERTS_DB_PASSWORD_FILE:  /run/secrets/alerts_db
+      GUI_DB_PASSWORD_FILE:     /run/secrets/gui_db
+    secrets:
+      - alerts_db
+      - gui_db
+    networks:
+      alerts:
+         ipv4_address: 172.31.0.9
+      gui:
+      logs:
+  adg:
+    build:
+      context: ./
+      dockerfile: dashapp/Dockerfile
+    networks:
+      frontend:
+      backend:
+      alerts:
+         ipv4_address: 172.31.0.20
+    ports:
+      - "8050:8050"
+    volumes:
+      - ./public_html/:/var/www/html/
+    container_name: adg
+
+
+volumes:
+  db-alerts:
+    driver: local
+  db-gui:
+    driver: local
+  elasticsearch:
+    driver: local
+  data:
+
+networks:
+  agents:
+  alerts:
+    ipam:
+      config:
+        - subnet: 172.31.0.0/16
+  gui:
+  gui2injector:
+  injector2lml:
+  injector2logs:
+  logs:
+  frontend:
+  backend:
+
+
+secrets:
+  alerts_db:
+    file: secrets/alerts_db
+  gui_db:
+    file: secrets/gui_db
+  sensors:
+    file: secrets/sensors
