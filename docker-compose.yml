@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   php:
-    build: 
+    build:
       context: ./
       dockerfile: php/Dockerfile
       args:
@@ -111,7 +111,7 @@ services:
       - alerts_db
     volumes:
       - db-alerts:/var/lib/pgsql/data
-    ports: 
+    ports:
       - "5432:5432"
   db-gui:
     image: "postgres:latest"

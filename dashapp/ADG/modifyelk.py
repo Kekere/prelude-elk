@@ -51,7 +51,7 @@ if response1['hits']['hits']:
         "doc":{
             "port":"80",
             "iana_protocol_name":"tcp",
-            "address":"192.168.128.40",
+            "address":"192.168.32.192",
             "severity":"high"
         }
     }
