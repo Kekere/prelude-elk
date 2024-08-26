@@ -1,325 +1,95 @@
 {
     "nodes": [
         {
-            "id": 5,
-            "group": 3,
-            "label": "hacl('192.168.32.192','192.168.32.192',tcp,'443'):1"
-        },
-        {
-            "id": 4,
-            "group": 2,
-            "label": "RULE 12 (multi-hop access):0"
-        },
-        {
-            "id": 1,
-            "group": 1,
-            "label": "execCode('192.168.32.192',someUser):0"
-        },
-        {
             "id": 3,
-            "group": 1,
-            "label": "netAccess('192.168.32.192',tcp,'443'):0"
-        },
-        {
-            "id": 6,
-            "group": 2,
-            "label": "RULE 12 (multi-hop access):0"
-        },
-        {
-            "id": 11,
             "group": 3,
-            "label": "attackerLocated(internet):1"
-        },
-        {
-            "id": 10,
-            "group": 2,
-            "label": "RULE 29 (Browsing a malicious website):0"
-        },
-        {
-            "id": 12,
-            "group": 3,
-            "label": "hacl('192.168.32.192',internet,httpProtocol,httpPort):1"
-        },
-        {
-            "id": 13,
-            "group": 3,
-            "label": "inCompetent('192.168.32.192_victim'):1"
-        },
-        {
-            "id": 9,
-            "group": 1,
-            "label": "accessMaliciousInput('192.168.32.192','192.168.32.192_victim',network_camera_firmware):0"
-        },
-        {
-            "id": 8,
-            "group": 2,
-            "label": "RULE 10 (remote exploit for a client program):0"
-        },
-        {
-            "id": 14,
-            "group": 3,
-            "label": "hasAccount('192.168.32.192_victim','192.168.32.192',user):1"
-        },
-        {
-            "id": 15,
-            "group": 4,
-            "label": "vulExists('192.168.32.192','CVE-2021-31986',network_camera_firmware,remoteClient,privEscalation):1"
-        },
-        {
-            "id": 7,
-            "group": 1,
-            "label": "execCode('192.168.32.192',user):0"
-        },
-        {
-            "id": 16,
-            "group": 2,
-            "label": "RULE 10 (remote exploit for a client program):0"
-        },
-        {
-            "id": 17,
-            "group": 4,
-            "label": "vulExists('192.168.32.192','CVE-2021-31987',network_camera_firmware,remoteClient,privEscalation):1"
-        },
-        {
-            "id": 18,
-            "group": 2,
-            "label": "RULE 10 (remote exploit for a client program):0"
-        },
-        {
-            "id": 19,
-            "group": 4,
-            "label": "vulExists('192.168.32.192','CVE-2021-31988',network_camera_firmware,remoteClient,privEscalation):1"
-        },
-        {
-            "id": 22,
-            "group": 2,
-            "label": "RULE 15 (Access a host through executing code on the machine):0"
-        },
-        {
-            "id": 21,
-            "group": 1,
-            "label": "canAccessHost('192.168.32.192'):0"
-        },
-        {
-            "id": 23,
-            "group": 2,
-            "label": "RULE 15 (Access a host through executing code on the machine):0"
-        },
-        {
-            "id": 20,
-            "group": 2,
-            "label": "RULE 7 (When a principal is compromised any machine he has an account on will also be compromised):0"
-        },
-        {
-            "id": 25,
-            "group": 2,
-            "label": "RULE 19 (password sniffing):0"
-        },
-        {
-            "id": 24,
-            "group": 1,
-            "label": "principalCompromised('192.168.32.192_victim'):0"
-        },
-        {
-            "id": 27,
-            "group": 3,
-            "label": "hacl(internet,'192.168.32.192',tcp,'443'):1"
-        },
-        {
-            "id": 26,
-            "group": 2,
-            "label": "RULE 13 (direct network access):0"
+            "label": "hacl('192.168.132.101','192.168.128.40',tcp,80):1"
         },
         {
             "id": 2,
             "group": 2,
-            "label": "RULE 9 (remote exploit of a server program):0"
-        },
-        {
-            "id": 28,
-            "group": 3,
-            "label": "networkServiceInfo('192.168.32.192',no_products,tcp,'443',someUser):1"
-        },
-        {
-            "id": 29,
-            "group": 4,
-            "label": "vulExists('192.168.32.192','CVE-XXXX-XXXX',no_products,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 30,
-            "group": 2,
-            "label": "RULE 9 (remote exploit of a server program):0"
-        },
-        {
-            "id": 31,
-            "group": 3,
-            "label": "networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser):1"
-        },
-        {
-            "id": 32,
-            "group": 4,
-            "label": "vulExists('192.168.32.192','CVE-2021-3449',openssl,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 33,
-            "group": 2,
-            "label": "RULE 9 (remote exploit of a server program):0"
-        },
-        {
-            "id": 34,
-            "group": 4,
-            "label": "vulExists('192.168.32.192','CVE-2021-3450',openssl,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 35,
-            "group": 2,
-            "label": "RULE 9 (remote exploit of a server program):0"
-        },
-        {
-            "id": 36,
-            "group": 4,
-            "label": "vulExists('192.168.32.192','CVE-2021-3711',openssl,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 37,
-            "group": 2,
-            "label": "RULE 9 (remote exploit of a server program):0"
-        },
-        {
-            "id": 38,
-            "group": 4,
-            "label": "vulExists('192.168.32.192','CVE-2021-3712',openssl,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 39,
-            "group": 2,
-            "label": "RULE 9 (remote exploit of a server program):0"
-        },
-        {
-            "id": 40,
-            "group": 4,
-            "label": "vulExists('192.168.32.192','CVE-2022-1292',openssl,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 41,
-            "group": 2,
-            "label": "RULE 9 (remote exploit of a server program):0"
-        },
-        {
-            "id": 42,
-            "group": 4,
-            "label": "vulExists('192.168.32.192','CVE-2022-2068',openssl,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 46,
-            "group": 3,
-            "label": "hacl('192.168.32.192','192.168.32.192',tcp,'80'):1"
-        },
-        {
-            "id": 45,
-            "group": 2,
             "label": "RULE 12 (multi-hop access):0"
         },
         {
-            "id": 44,
+            "id": 8,
+            "group": 3,
+            "label": "attackerLocated(internet):1"
+        },
+        {
+            "id": 7,
+            "group": 2,
+            "label": "RULE 29 (Browsing a malicious website):0"
+        },
+        {
+            "id": 9,
+            "group": 3,
+            "label": "hacl('192.168.132.101',internet,httpProtocol,httpPort):1"
+        },
+        {
+            "id": 10,
+            "group": 3,
+            "label": "inCompetent(_):1"
+        },
+        {
+            "id": 6,
             "group": 1,
-            "label": "netAccess('192.168.32.192',tcp,'80'):0"
+            "label": "accessMaliciousInput('192.168.132.101',_,cisco):0"
         },
         {
-            "id": 47,
+            "id": 5,
             "group": 2,
-            "label": "RULE 12 (multi-hop access):0"
+            "label": "RULE 10 (remote exploit for a client program):0"
         },
         {
-            "id": 49,
+            "id": 11,
             "group": 3,
-            "label": "hacl(internet,'192.168.32.192',tcp,'80'):1"
+            "label": "hasAccount(_,'192.168.132.101',user):1"
         },
         {
-            "id": 48,
+            "id": 12,
+            "group": 4,
+            "label": "vulExists('192.168.132.101','CVE-2013-6966',cisco,remoteClient,privEscalation):1"
+        },
+        {
+            "id": 4,
+            "group": 1,
+            "label": "execCode('192.168.132.101',user):0"
+        },
+        {
+            "id": 15,
             "group": 2,
-            "label": "RULE 13 (direct network access):0"
+            "label": "RULE 15 (Access a host through executing code on the machine):0"
         },
         {
-            "id": 43,
+            "id": 14,
+            "group": 1,
+            "label": "canAccessHost('192.168.132.101'):0"
+        },
+        {
+            "id": 13,
             "group": 2,
-            "label": "RULE 9 (remote exploit of a server program):0"
+            "label": "RULE 7 (When a principal is compromised any machine he has an account on will also be compromised):0"
         },
         {
-            "id": 50,
-            "group": 3,
-            "label": "networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser):1"
-        },
-        {
-            "id": 51,
+            "id": 17,
             "group": 2,
-            "label": "RULE 9 (remote exploit of a server program):0"
+            "label": "RULE 19 (password sniffing):0"
         },
         {
-            "id": 52,
-            "group": 2,
-            "label": "RULE 9 (remote exploit of a server program):0"
+            "id": 16,
+            "group": 1,
+            "label": "principalCompromised(_):0"
         },
         {
-            "id": 53,
-            "group": 2,
-            "label": "RULE 9 (remote exploit of a server program):0"
-        },
-        {
-            "id": 54,
-            "group": 2,
-            "label": "RULE 9 (remote exploit of a server program):0"
-        },
-        {
-            "id": 55,
-            "group": 2,
-            "label": "RULE 9 (remote exploit of a server program):0"
+            "id": 1,
+            "group": 1,
+            "label": "netAccess('192.168.128.40',tcp,80):0"
         }
     ],
     "links": [
         {
-            "source": 5,
-            "target": 4
-        },
-        {
-            "source": 1,
-            "target": 4
-        },
-        {
-            "source": 4,
-            "target": 3
-        },
-        {
-            "source": 5,
-            "target": 6
-        },
-        {
-            "source": 11,
-            "target": 10
-        },
-        {
-            "source": 12,
-            "target": 10
-        },
-        {
-            "source": 13,
-            "target": 10
-        },
-        {
-            "source": 10,
-            "target": 9
-        },
-        {
-            "source": 9,
-            "target": 8
-        },
-        {
-            "source": 14,
-            "target": 8
-        },
-        {
-            "source": 15,
-            "target": 8
+            "source": 3,
+            "target": 2
         },
         {
             "source": 8,
@@ -327,78 +97,10 @@
         },
         {
             "source": 9,
-            "target": 16
-        },
-        {
-            "source": 14,
-            "target": 16
-        },
-        {
-            "source": 17,
-            "target": 16
-        },
-        {
-            "source": 16,
             "target": 7
         },
         {
-            "source": 9,
-            "target": 18
-        },
-        {
-            "source": 14,
-            "target": 18
-        },
-        {
-            "source": 19,
-            "target": 18
-        },
-        {
-            "source": 18,
-            "target": 7
-        },
-        {
-            "source": 1,
-            "target": 22
-        },
-        {
-            "source": 22,
-            "target": 21
-        },
-        {
-            "source": 7,
-            "target": 23
-        },
-        {
-            "source": 23,
-            "target": 21
-        },
-        {
-            "source": 21,
-            "target": 20
-        },
-        {
-            "source": 14,
-            "target": 20
-        },
-        {
-            "source": 7,
-            "target": 25
-        },
-        {
-            "source": 14,
-            "target": 25
-        },
-        {
-            "source": 25,
-            "target": 24
-        },
-        {
-            "source": 24,
-            "target": 20
-        },
-        {
-            "source": 20,
+            "source": 10,
             "target": 7
         },
         {
@@ -407,262 +109,62 @@
         },
         {
             "source": 6,
-            "target": 3
-        },
-        {
-            "source": 27,
-            "target": 26
+            "target": 5
         },
         {
             "source": 11,
-            "target": 26
+            "target": 5
         },
         {
-            "source": 26,
-            "target": 3
+            "source": 12,
+            "target": 5
         },
         {
-            "source": 3,
-            "target": 2
+            "source": 5,
+            "target": 4
         },
         {
-            "source": 28,
-            "target": 2
+            "source": 4,
+            "target": 15
         },
         {
-            "source": 29,
+            "source": 15,
+            "target": 14
+        },
+        {
+            "source": 14,
+            "target": 13
+        },
+        {
+            "source": 11,
+            "target": 13
+        },
+        {
+            "source": 4,
+            "target": 17
+        },
+        {
+            "source": 11,
+            "target": 17
+        },
+        {
+            "source": 17,
+            "target": 16
+        },
+        {
+            "source": 16,
+            "target": 13
+        },
+        {
+            "source": 13,
+            "target": 4
+        },
+        {
+            "source": 4,
             "target": 2
         },
         {
             "source": 2,
-            "target": 1
-        },
-        {
-            "source": 3,
-            "target": 30
-        },
-        {
-            "source": 31,
-            "target": 30
-        },
-        {
-            "source": 32,
-            "target": 30
-        },
-        {
-            "source": 30,
-            "target": 1
-        },
-        {
-            "source": 3,
-            "target": 33
-        },
-        {
-            "source": 31,
-            "target": 33
-        },
-        {
-            "source": 34,
-            "target": 33
-        },
-        {
-            "source": 33,
-            "target": 1
-        },
-        {
-            "source": 3,
-            "target": 35
-        },
-        {
-            "source": 31,
-            "target": 35
-        },
-        {
-            "source": 36,
-            "target": 35
-        },
-        {
-            "source": 35,
-            "target": 1
-        },
-        {
-            "source": 3,
-            "target": 37
-        },
-        {
-            "source": 31,
-            "target": 37
-        },
-        {
-            "source": 38,
-            "target": 37
-        },
-        {
-            "source": 37,
-            "target": 1
-        },
-        {
-            "source": 3,
-            "target": 39
-        },
-        {
-            "source": 31,
-            "target": 39
-        },
-        {
-            "source": 40,
-            "target": 39
-        },
-        {
-            "source": 39,
-            "target": 1
-        },
-        {
-            "source": 3,
-            "target": 41
-        },
-        {
-            "source": 31,
-            "target": 41
-        },
-        {
-            "source": 42,
-            "target": 41
-        },
-        {
-            "source": 41,
-            "target": 1
-        },
-        {
-            "source": 46,
-            "target": 45
-        },
-        {
-            "source": 1,
-            "target": 45
-        },
-        {
-            "source": 45,
-            "target": 44
-        },
-        {
-            "source": 46,
-            "target": 47
-        },
-        {
-            "source": 7,
-            "target": 47
-        },
-        {
-            "source": 47,
-            "target": 44
-        },
-        {
-            "source": 49,
-            "target": 48
-        },
-        {
-            "source": 11,
-            "target": 48
-        },
-        {
-            "source": 48,
-            "target": 44
-        },
-        {
-            "source": 44,
-            "target": 43
-        },
-        {
-            "source": 50,
-            "target": 43
-        },
-        {
-            "source": 32,
-            "target": 43
-        },
-        {
-            "source": 43,
-            "target": 1
-        },
-        {
-            "source": 44,
-            "target": 51
-        },
-        {
-            "source": 50,
-            "target": 51
-        },
-        {
-            "source": 34,
-            "target": 51
-        },
-        {
-            "source": 51,
-            "target": 1
-        },
-        {
-            "source": 44,
-            "target": 52
-        },
-        {
-            "source": 50,
-            "target": 52
-        },
-        {
-            "source": 36,
-            "target": 52
-        },
-        {
-            "source": 52,
-            "target": 1
-        },
-        {
-            "source": 44,
-            "target": 53
-        },
-        {
-            "source": 50,
-            "target": 53
-        },
-        {
-            "source": 38,
-            "target": 53
-        },
-        {
-            "source": 53,
-            "target": 1
-        },
-        {
-            "source": 44,
-            "target": 54
-        },
-        {
-            "source": 50,
-            "target": 54
-        },
-        {
-            "source": 40,
-            "target": 54
-        },
-        {
-            "source": 54,
-            "target": 1
-        },
-        {
-            "source": 44,
-            "target": 55
-        },
-        {
-            "source": 50,
-            "target": 55
-        },
-        {
-            "source": 42,
-            "target": 55
-        },
-        {
-            "source": 55,
             "target": 1
         }
     ]

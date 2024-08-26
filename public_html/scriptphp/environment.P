@@ -7,7 +7,7 @@
 
 :-load_dyn('running_rules.P').
 
-:-load_dyn('../uploads/nessus.P').
+:-load_dyn('../uploads/poct.P').
 
 :-assert(traceMode(completeTrace2)).
 

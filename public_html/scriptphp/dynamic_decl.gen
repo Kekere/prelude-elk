@@ -1,114 +1,52 @@
-<<<<<<< HEAD
-:-(dynamic(inCompetent(_h3931))).
-=======
-<<<<<<< HEAD
-:-(dynamic(inCompetent(_h3939))).
-
-:-(dynamic(competent(_h3939))).
-
-:-(dynamic(clientProgram(_h3939,_h3940))).
-
-:-(dynamic(vulExists(_h3939,_h3940,_h3941))).
-
-:-(dynamic(vulProperty(_h3939,_h3940,_h3941))).
-
-:-(dynamic(hacl(_h3939,_h3940,_h3941,_h3942))).
-
-:-(dynamic(attackerLocated(_h3939))).
-
-:-(dynamic(hasAccount(_h3939,_h3940,_h3941))).
-
-:-(dynamic(networkServiceInfo(_h3939,_h3940,_h3941,_h3942,_h3943))).
-
-:-(dynamic(setuidProgramInfo(_h3939,_h3940,_h3941))).
-
-:-(dynamic(nfsExportInfo(_h3939,_h3940,_h3941,_h3942))).
-
-:-(dynamic(nfsMounted(_h3939,_h3940,_h3941,_h3942,_h3943))).
-
-:-(dynamic(localFileProtection(_h3939,_h3940,_h3941,_h3942))).
-
-:-(dynamic(dependsOn(_h3939,_h3940,_h3941))).
-
-:-(dynamic(installed(_h3939,_h3940))).
-
-:-(dynamic(bugHyp(_h3939,_h3940,_h3941,_h3942))).
-
-:-(dynamic(vulExists(_h3939,_h3940,_h3941,_h3942,_h3943))).
-
-:-(dynamic(canAccessFile(_h3939,_h3940,_h3941,_h3942))).
-
-:-(dynamic(isWebServer(_h3939))).
-
-:-(dynamic(hasCredentialsOnMemory(_h3939,_h3940))).
-
-:-(dynamic(isAdmin(_h3939))).
-
-:-(dynamic(ipv6Able(_h3939))).
-
-:-(dynamic(isActive(_h3939,_h3940))).
-
-:-(dynamic(awsUserProperty(_h3939,_h3940))).
-
-:-(dynamic(hasAccessKeyOnMemory(_h3939,_h3940))).
-
-:-(dynamic(trace_step(_h3883,_h3884))).
-=======
 :-(dynamic(inCompetent(_h3947))).
->>>>>>> b9e4b3071f9dba13088ff856a05571a741931dab
 
-:-(dynamic(competent(_h3931))).
+:-(dynamic(competent(_h3947))).
 
-:-(dynamic(clientProgram(_h3931,_h3932))).
+:-(dynamic(clientProgram(_h3947,_h3948))).
 
-:-(dynamic(vulExists(_h3931,_h3932,_h3933))).
+:-(dynamic(vulExists(_h3947,_h3948,_h3949))).
 
-:-(dynamic(vulProperty(_h3931,_h3932,_h3933))).
+:-(dynamic(vulProperty(_h3947,_h3948,_h3949))).
 
-:-(dynamic(hacl(_h3931,_h3932,_h3933,_h3934))).
+:-(dynamic(hacl(_h3947,_h3948,_h3949,_h3950))).
 
-:-(dynamic(attackerLocated(_h3931))).
+:-(dynamic(attackerLocated(_h3947))).
 
-:-(dynamic(hasAccount(_h3931,_h3932,_h3933))).
+:-(dynamic(hasAccount(_h3947,_h3948,_h3949))).
 
-:-(dynamic(networkServiceInfo(_h3931,_h3932,_h3933,_h3934,_h3935))).
+:-(dynamic(networkServiceInfo(_h3947,_h3948,_h3949,_h3950,_h3951))).
 
-:-(dynamic(setuidProgramInfo(_h3931,_h3932,_h3933))).
+:-(dynamic(setuidProgramInfo(_h3947,_h3948,_h3949))).
 
-:-(dynamic(nfsExportInfo(_h3931,_h3932,_h3933,_h3934))).
+:-(dynamic(nfsExportInfo(_h3947,_h3948,_h3949,_h3950))).
 
-:-(dynamic(nfsMounted(_h3931,_h3932,_h3933,_h3934,_h3935))).
+:-(dynamic(nfsMounted(_h3947,_h3948,_h3949,_h3950,_h3951))).
 
-:-(dynamic(localFileProtection(_h3931,_h3932,_h3933,_h3934))).
+:-(dynamic(localFileProtection(_h3947,_h3948,_h3949,_h3950))).
 
-:-(dynamic(dependsOn(_h3931,_h3932,_h3933))).
+:-(dynamic(dependsOn(_h3947,_h3948,_h3949))).
 
-:-(dynamic(installed(_h3931,_h3932))).
+:-(dynamic(installed(_h3947,_h3948))).
 
-:-(dynamic(bugHyp(_h3931,_h3932,_h3933,_h3934))).
+:-(dynamic(bugHyp(_h3947,_h3948,_h3949,_h3950))).
 
-:-(dynamic(vulExists(_h3931,_h3932,_h3933,_h3934,_h3935))).
+:-(dynamic(vulExists(_h3947,_h3948,_h3949,_h3950,_h3951))).
 
-:-(dynamic(canAccessFile(_h3931,_h3932,_h3933,_h3934))).
+:-(dynamic(canAccessFile(_h3947,_h3948,_h3949,_h3950))).
 
-:-(dynamic(isWebServer(_h3931))).
+:-(dynamic(isWebServer(_h3947))).
 
-:-(dynamic(hasCredentialsOnMemory(_h3931,_h3932))).
+:-(dynamic(hasCredentialsOnMemory(_h3947,_h3948))).
 
-:-(dynamic(isAdmin(_h3931))).
+:-(dynamic(isAdmin(_h3947))).
 
-:-(dynamic(ipv6Able(_h3931))).
+:-(dynamic(ipv6Able(_h3947))).
 
-:-(dynamic(isActive(_h3931,_h3932))).
+:-(dynamic(isActive(_h3947,_h3948))).
 
-:-(dynamic(awsUserProperty(_h3931,_h3932))).
+:-(dynamic(awsUserProperty(_h3947,_h3948))).
 
-:-(dynamic(hasAccessKeyOnMemory(_h3931,_h3932))).
+:-(dynamic(hasAccessKeyOnMemory(_h3947,_h3948))).
 
-<<<<<<< HEAD
-:-(dynamic(trace_step(_h3875,_h3876))).
-=======
 :-(dynamic(trace_step(_h3891,_h3892))).
->>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
->>>>>>> b9e4b3071f9dba13088ff856a05571a741931dab
 
