@@ -51,13 +51,8 @@ services:
     logging:
       driver: "json-file"
       options:
-<<<<<<< HEAD
-         max-size: "10m"
-         max-file: "3"
-=======
         max-size: "10m"
         max-file: "3"
->>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
     ulimits:
       memlock:
         soft: -1
@@ -66,65 +61,15 @@ services:
       resources:
         limits:
           cpus: '1.0'
-<<<<<<< HEAD
-          memory: '2g'
-        reservations:
-          cpus: '1.0'
-          memory: '2g'
-=======
           memory: '4g'
         reservations:
           cpus: '0.5'
           memory: '1g'
->>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
     volumes:
       - elasticsearch:/usr/share/elasticsearch/data
       #- ./files/usr/share/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
     ports:
       - "9200:9200"
-<<<<<<< HEAD
-  injector:
-    image: "logstash:7.9.2"
-    depends_on:
-      - elasticsearch
-      - lml
-      - db-alerts
-    environment:
-      MONITORING_ENABLED:       "false"
-      xpack.monitoring.enabled: "false"
-      SYSLOG_TIMEZONE:          "${SYSLOG_TIMEZONE}"
-    networks:
-      - injector2logs
-      - injector2lml
-      - gui2injector
-    logging:
-      driver: "json-file"
-      options:
-         max-size: "10m"
-         max-file: "3"
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-    deploy:
-      resources:
-        limits:
-          cpus: '1.0'
-          memory: '2g'
-        reservations:
-          cpus: '1.0'
-          memory: '2g'
-    volumes:
-      - ./files/usr/share/logstash/pipeline/:/usr/share/logstash/pipeline/:ro
-      - ./files/usr/share/logstash/template.json:/usr/share/logstash/template.json:ro
-    ports:
-      - "6514:6514/tcp"
-      # Uncomment the next line to accept logs in the syslog format
-      # on UDP port 514.
-      - "6514:6514/udp"
-
-=======
->>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
   logstashalert:
     image: "logstash:7.9.2"
     depends_on:
@@ -140,30 +85,16 @@ services:
     logging:
       driver: "json-file"
       options:
-<<<<<<< HEAD
-         max-size: "10m"
-         max-file: "3"
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-=======
         max-size: "10m"
         max-file: "3"
->>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
     deploy:
       resources:
         limits:
           cpus: '1.0'
           memory: '2g'
         reservations:
-<<<<<<< HEAD
-          cpus: '1.0'
-          memory: '2g'
-=======
           cpus: '0.5'
           memory: '1g'
->>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
     volumes:
       - ./files/usr/share/logstash/alertsdb/alerts:/usr/share/logstash/pipeline/alerts:ro
       - ./files/usr/share/logstash/jars/:/usr/share/logstash/jars/:ro
