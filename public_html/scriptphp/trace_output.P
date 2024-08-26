@@ -42,7 +42,15 @@ meta(cvss,2).
 meta(attackGoal,1).
 meta(advances,2).
 
+<<<<<<< HEAD
 attack(execCode('192.168.32.192',user)).
+=======
+<<<<<<< HEAD
+attack(physicalDamage(_h4553)).
+=======
+attack(physicalDamage(_h4561)).
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
+>>>>>>> b9e4b3071f9dba13088ff856a05571a741931dab
 
 possible_duplicate_trace_step(because(13,rule_desc('direct network access',1.0),netAccess('192.168.32.192',tcp,'443'),[hacl(internet,'192.168.32.192',tcp,'443'),attackerLocated(internet)])).
 
@@ -68,6 +76,7 @@ possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server pr
 
 possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.32.192',someUser),[netAccess('192.168.32.192',tcp,'80'),networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser),vulExists('192.168.32.192','CVE-2022-2068',openssl,remoteExploit,privEscalation)])).
 
+<<<<<<< HEAD
 possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.32.192',someUser),[netAccess('192.168.32.192',tcp,'80'),networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser),vulExists('192.168.32.192','CVE-2022-2068',openssl,remoteExploit,privEscalation)])).
 
 possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.32.192',someUser),[netAccess('192.168.32.192',tcp,'443'),networkServiceInfo('192.168.32.192',openssl,tcp,'443',someUser),vulExists('192.168.32.192','CVE-2022-2068',openssl,remoteExploit,privEscalation)])).
@@ -3565,4 +3574,15 @@ possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server pr
 possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.32.192',someUser),[netAccess('192.168.32.192',tcp,'80'),networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser),vulExists('192.168.32.192','CVE-2021-3449',openssl,remoteExploit,privEscalation)])).
 
 possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.32.192',someUser),[netAccess('192.168.32.192',tcp,'80'),networkServiceInfo('192.168.32.192',openssl,tcp,'80',someUser),vulExists('192.168.32.192','CVE-2021-3449',openssl,remoteExploit,privEscalation)])).
+=======
+<<<<<<< HEAD
+possible_duplicate_trace_step(because(3,rule_desc('Modify bus info',0.5),modify('157.159.68.97',_h4708),[obtainControl('157.159.68.97',admin)])).
+
+possible_duplicate_trace_step(because(2,rule_desc('Physical damage',0.5),physicalDamage(_h4553),[modify('157.159.68.97',_h4708)])).
+=======
+possible_duplicate_trace_step(because(3,rule_desc('Modify bus info',0.5),modify('157.159.68.97',_h4716),[obtainControl('157.159.68.97',admin)])).
+
+possible_duplicate_trace_step(because(2,rule_desc('Physical damage',0.5),physicalDamage(_h4561),[modify('157.159.68.97',_h4716)])).
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
+>>>>>>> b9e4b3071f9dba13088ff856a05571a741931dab
 

@@ -68,6 +68,15 @@ IncidentResponseOntologyPlaybook:Playbook_CVE-2005-1794 a IncidentResponseOntolo
     IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the IDCVE-2005-1794" .
 
 IncidentResponseOntologyPlaybook:Playbook_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook,
+<<<<<<< HEAD
+        owl:NamedIndividual ;
+    rdfs:label "Playbook : Response to CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2012-0002 ;
+    IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2012-0002" .
+
+IncidentResponseOntologyPlaybook:Playbook_CVE-2013-3132 a IncidentResponseOntologyPlaybook:Playbook,
+=======
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
         owl:NamedIndividual ;
     rdfs:label "Playbook : Response to CVE-2012-0002" ;
     IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2012-0002 ;
@@ -7230,6 +7239,15 @@ IncidentResponseOntologyPlaybook:Step1_CVE-2005-1794 a IncidentResponseOntologyP
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2107 .
 
 IncidentResponseOntologyPlaybook:Step1_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook_Step,
+<<<<<<< HEAD
+        owl:NamedIndividual ;
+    rdfs:label "Step1_CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2012-0002 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2002 .
+
+IncidentResponseOntologyPlaybook:Step1_CVE-2013-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
+=======
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
         owl:NamedIndividual ;
     rdfs:label "Step1_CVE-2012-0002" ;
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2012-0002 ;
@@ -7410,6 +7428,15 @@ IncidentResponseOntologyPlaybook:Step2_CVE-2005-1794 a IncidentResponseOntologyP
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3109 .
 
 IncidentResponseOntologyPlaybook:Step2_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook_Step,
+<<<<<<< HEAD
+        owl:NamedIndividual ;
+    rdfs:label "Step2_CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2012-0002 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3001 .
+
+IncidentResponseOntologyPlaybook:Step2_CVE-2013-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
+=======
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
         owl:NamedIndividual ;
     rdfs:label "Step2_CVE-2012-0002" ;
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2012-0002 ;
@@ -7601,6 +7628,15 @@ IncidentResponseOntologyPlaybook:Step3_CVE-2005-1794 a IncidentResponseOntologyP
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA5105 .
 
 IncidentResponseOntologyPlaybook:Step3_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook_Step,
+<<<<<<< HEAD
+        owl:NamedIndividual ;
+    rdfs:label "Step3_CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2012-0002 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 .
+
+IncidentResponseOntologyPlaybook:Step3_CVE-2013-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
+=======
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
         owl:NamedIndividual ;
     rdfs:label "Step3_CVE-2012-0002" ;
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2012-0002 ;
@@ -7784,6 +7820,14 @@ IncidentResponseOntologyPlaybook:Step4_CVE-2005-1794 a IncidentResponseOntologyP
     IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step5_CVE-2005-1794 .
 
 IncidentResponseOntologyPlaybook:Step4_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook_Step,
+<<<<<<< HEAD
+        owl:NamedIndividual ;
+    rdfs:label "Step4_CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
+
+IncidentResponseOntologyPlaybook:Step4_CVE-2013-3132 a IncidentResponseOntologyPlaybook:Playbook_Step,
+=======
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
         owl:NamedIndividual ;
     rdfs:label "Step4_CVE-2012-0002" ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
@@ -9529,6 +9573,18 @@ IncidentResponseOntologyPlaybook:Internal_Firewall a IncidentResponseOntologyPla
         owl:NamedIndividual ;
     rdfs:label "Internal Firewall" .
 
+mitre:OffensiveTactic a owl:Class ;
+    rdfs:label "Offensive Tactic" ;
+    rdfs:comment "Tactics represent the \"why\" of an ATT&CK technique or sub-technique. It is the adversary's tactical goal: the reason for performing an action. For example, an adversary may want to achieve credential access." ;
+    rdfs:isDefinedBy <https://attack.mitre.org/docs/ATTACK_Design_and_Philosophy_March_2020.pdf> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty mitre:display-order ;
+            owl:someValuesFrom xsd:integer ],
+        [ a owl:Restriction ;
+            owl:onProperty mitre:enabled-by ;
+            owl:someValuesFrom mitre:OffensiveTechnique ],
+        mitre:ATTACKThing .
+
 IncidentResponseOntologyPlaybook:RA3001 a owl:NamedIndividual,
         uco:Action ;
     rdfs:label "patch vulnerability" ;
@@ -9544,6 +9600,18 @@ IncidentResponseOntologyPlaybook:RA3001 a owl:NamedIndividual,
     rdfs:comment """Patch a vulnerability in an asset
 """@en .
 
+<<<<<<< HEAD
+IncidentResponseOntologyPlaybook:Containment a IncidentResponseOntologyPlaybook:Incident_Response_Phase,
+        owl:NamedIndividual ;
+    rdfs:label "Containment" ;
+    rdfs:comment "Correspond to the NIST incident response lifecycle." .
+
+IncidentResponseOntologyPlaybook:Impact a mitre:OffensiveTactic,
+        owl:NamedIndividual ;
+    mitre:attack-id "TA0040" ;
+    mitre:display-order 14 ;
+    rdfs:comment "https://attack.mitre.org/tactics/TA0040/" .
+=======
 IncidentResponseOntologyPlaybook:Lateral_Movement a mitre:OffensiveTactic,
         owl:NamedIndividual ;
     mitre:attack-id "TA0008" ;
@@ -9561,6 +9629,7 @@ mitre:OffensiveTactic a owl:Class ;
             owl:onProperty mitre:enabled-by ;
             owl:someValuesFrom mitre:OffensiveTechnique ],
         mitre:ATTACKThing .
+>>>>>>> 6cf1b8db3912f6bd3f06ac3c7426e06f93f51613
 
 IncidentResponseOntologyPlaybook:RA6001 a owl:NamedIndividual,
         uco:Action ;
@@ -9582,17 +9651,6 @@ IncidentResponseOntologyPlaybook:RA6002 a owl:NamedIndividual,
     IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Post-Event_Activity ;
     IncidentResponseOntologyPlaybook:react-id "RA6002" ;
     rdfs:comment "Conduct Lessons Learned exercise"@en .
-
-IncidentResponseOntologyPlaybook:Containment a IncidentResponseOntologyPlaybook:Incident_Response_Phase,
-        owl:NamedIndividual ;
-    rdfs:label "Containment" ;
-    rdfs:comment "Correspond to the NIST incident response lifecycle." .
-
-IncidentResponseOntologyPlaybook:Impact a mitre:OffensiveTactic,
-        owl:NamedIndividual ;
-    mitre:attack-id "TA0040" ;
-    mitre:display-order 14 ;
-    rdfs:comment "https://attack.mitre.org/tactics/TA0040/" .
 
 IncidentResponseOntologyPlaybook:SIEM a IncidentResponseOntologyPlaybook:Requirement,
         owl:NamedIndividual ;
@@ -9616,14 +9674,6 @@ IncidentResponseOntologyPlaybook:Command_and_Control a mitre:OffensiveTactic,
     mitre:display-order 12 ;
     rdfs:comment "https://attack.mitre.org/tactics/TA0011/" .
 
-IncidentResponseOntologyPlaybook:Playbook a owl:Class ;
-    rdfs:label "Playbook" ;
-    rdfs:comment "A Playbook is a list of required actions needed to perform to response to a security alert." ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass IncidentResponseOntologyPlaybook:Playbook_Step ;
-            owl:onProperty IncidentResponseOntologyPlaybook:has_coa ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
-
 IncidentResponseOntologyPlaybook:Resource_Development a mitre:OffensiveTactic,
         owl:NamedIndividual ;
     mitre:attack-id "TA0042" ;
@@ -9635,6 +9685,14 @@ IncidentResponseOntologyPlaybook:Discovery a mitre:OffensiveTactic,
     mitre:attack-id "TA0007" ;
     mitre:display-order 9 ;
     rdfs:comment "https://attack.mitre.org/tactics/TA0007/" .
+
+IncidentResponseOntologyPlaybook:Playbook a owl:Class ;
+    rdfs:label "Playbook" ;
+    rdfs:comment "A Playbook is a list of required actions needed to perform to response to a security alert." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass IncidentResponseOntologyPlaybook:Playbook_Step ;
+            owl:onProperty IncidentResponseOntologyPlaybook:has_coa ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
 
 IncidentResponseOntologyPlaybook:Reconnaissance a mitre:OffensiveTactic,
         owl:NamedIndividual ;
