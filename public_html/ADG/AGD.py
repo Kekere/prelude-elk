@@ -586,7 +586,7 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
                 if j<len(predicates):
                     pred=predicates[l-1]
                 #for pred in predicates:
-                    if pred[2]!='AND' and pred[0]==l and successors_count[l]>0:
+                    if pred[2]!='AND' and pred[0]==l and len(list(G.successors(l)))>0:
                         #if pred[0]==l:
                             #print(pred[1])
                         for counter in range(len(countermeasure_list['Predicates'])):

@@ -61,6 +61,18 @@ IncidentResponseOntologyPlaybook:Playbook_CVE-2005-1794 a IncidentResponseOntolo
     IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2005-1794 ;
     IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the IDCVE-2005-1794" .
 
+IncidentResponseOntologyPlaybook:Playbook_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook,
+        owl:NamedIndividual ;
+    rdfs:label "Playbook : Response to CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2012-0002 ;
+    IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2012-0002" .
+
+IncidentResponseOntologyPlaybook:Playbook_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook,
+        owl:NamedIndividual ;
+    rdfs:label "Playbook : Response to CVE-2013-3200" ;
+    IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2013-3200 ;
+    IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2013-3200" .
+
 IncidentResponseOntologyPlaybook:Playbook_CVE-2013-6966 a IncidentResponseOntologyPlaybook:Playbook,
         owl:NamedIndividual ;
     rdfs:label "Playbook : Response to CVE-2013-6966" ;
@@ -7163,6 +7175,18 @@ IncidentResponseOntologyPlaybook:Step1_CVE-2005-1794 a IncidentResponseOntologyP
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2005-1794 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2107 .
 
+IncidentResponseOntologyPlaybook:Step1_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step1_CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2012-0002 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2002 .
+
+IncidentResponseOntologyPlaybook:Step1_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step1_CVE-2013-3200" ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2405 ;
+    IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step2_CVE-2013-3200 .
+
 IncidentResponseOntologyPlaybook:Step1_CVE-2013-6966 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
     rdfs:label "Step1_CVE-2013-6966" ;
@@ -7282,6 +7306,18 @@ IncidentResponseOntologyPlaybook:Step2_CVE-2005-1794 a IncidentResponseOntologyP
     rdfs:label "Step2_CVE-2005-1794" ;
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2005-1794 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3109 .
+
+IncidentResponseOntologyPlaybook:Step2_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step2_CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2012-0002 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3001 .
+
+IncidentResponseOntologyPlaybook:Step2_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step2_CVE-2013-3200" ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2001 ;
+    IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step3_CVE-2013-3200 .
 
 IncidentResponseOntologyPlaybook:Step2_CVE-2013-6966 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
@@ -7414,6 +7450,18 @@ IncidentResponseOntologyPlaybook:Step3_CVE-2005-1794 a IncidentResponseOntologyP
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2005-1794 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA5105 .
 
+IncidentResponseOntologyPlaybook:Step3_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step3_CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2012-0002 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 .
+
+IncidentResponseOntologyPlaybook:Step3_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step3_CVE-2013-3200" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2013-3200 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2309 .
+
 IncidentResponseOntologyPlaybook:Step3_CVE-2013-6966 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
     rdfs:label "Step3_CVE-2013-6966" ;
@@ -7538,6 +7586,17 @@ IncidentResponseOntologyPlaybook:Step4_CVE-2005-1794 a IncidentResponseOntologyP
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 ;
     IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step5_CVE-2005-1794 .
 
+IncidentResponseOntologyPlaybook:Step4_CVE-2012-0002 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step4_CVE-2012-0002" ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
+
+IncidentResponseOntologyPlaybook:Step4_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step4_CVE-2013-3200" ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3404 ;
+    IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step5_CVE-2013-3200 .
+
 IncidentResponseOntologyPlaybook:Step4_CVE-2013-6966 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
     rdfs:label "Step4_CVE-2013-6966" ;
@@ -7652,6 +7711,12 @@ IncidentResponseOntologyPlaybook:Step5_CVE-2005-1794 a IncidentResponseOntologyP
     rdfs:label "Step5_CVE-2005-1794" ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
 
+IncidentResponseOntologyPlaybook:Step5_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step5_CVE-2013-3200" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step6_CVE-2013-3200 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3301 .
+
 IncidentResponseOntologyPlaybook:Step5_CVE-2016-10609 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
     rdfs:label "Step5_CVE-2016-10609" ;
@@ -7730,6 +7795,12 @@ IncidentResponseOntologyPlaybook:Step5_CVE-2023-5604 a IncidentResponseOntologyP
     rdfs:label "Step5_CVE-2023-5604" ;
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step6_CVE-2023-5604 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA5401 .
+
+IncidentResponseOntologyPlaybook:Step6_CVE-2013-3200 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step6_CVE-2013-3200" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step7_CVE-2013-3200 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA4301 .
 
 IncidentResponseOntologyPlaybook:Step6_CVE-2021-1500 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
@@ -8071,19 +8142,6 @@ IncidentResponseOntologyPlaybook:RA2104 a owl:NamedIndividual,
     rdfs:comment """Analyse a domain name
 """@en .
 
-IncidentResponseOntologyPlaybook:RA2309 a owl:NamedIndividual,
-        uco:Action ;
-    rdfs:label "find file by format" ;
-    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
-    IncidentResponseOntologyPlaybook:has_complexity_level 3 ;
-    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
-    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Suricata ;
-    IncidentResponseOntologyPlaybook:is_automated true ;
-    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Detection_and_Analysis ;
-    IncidentResponseOntologyPlaybook:react-id "RA2309" ;
-    rdfs:comment """Find a file by its format
-"""@en .
-
 IncidentResponseOntologyPlaybook:RA3101 a owl:NamedIndividual,
         uco:Action ;
     rdfs:label "block external ip address" ;
@@ -8096,20 +8154,6 @@ IncidentResponseOntologyPlaybook:RA3101 a owl:NamedIndividual,
     IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Containment ;
     IncidentResponseOntologyPlaybook:react-id "RA3101" ;
     rdfs:comment """Block an external IP address from being accessed by corporate assets
-"""@en .
-
-IncidentResponseOntologyPlaybook:RA3301 a owl:NamedIndividual,
-        uco:Action ;
-    rdfs:label "quarantine file by format" ;
-    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
-    IncidentResponseOntologyPlaybook:has_complexity_level 4 ;
-    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
-    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Antivirus ;
-    IncidentResponseOntologyPlaybook:is_automated true ;
-    IncidentResponseOntologyPlaybook:is_linked_to_recovery_action IncidentResponseOntologyPlaybook:RA5301 ;
-    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Containment ;
-    IncidentResponseOntologyPlaybook:react-id "RA3301" ;
-    rdfs:comment """Quarantine a file by its format
 """@en .
 
 IncidentResponseOntologyPlaybook:RA5101 a owl:NamedIndividual,
@@ -8395,6 +8439,33 @@ IncidentResponseOntologyPlaybook:RA2105 a owl:NamedIndividual,
     IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Detection_and_Analysis ;
     IncidentResponseOntologyPlaybook:react-id "RA2105" ;
     rdfs:comment """Analyse an IP address
+"""@en .
+
+IncidentResponseOntologyPlaybook:RA2309 a owl:NamedIndividual,
+        uco:Action ;
+    rdfs:label "find file by format" ;
+    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
+    IncidentResponseOntologyPlaybook:has_complexity_level 3 ;
+    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
+    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Suricata ;
+    IncidentResponseOntologyPlaybook:is_automated true ;
+    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Detection_and_Analysis ;
+    IncidentResponseOntologyPlaybook:react-id "RA2309" ;
+    rdfs:comment """Find a file by its format
+"""@en .
+
+IncidentResponseOntologyPlaybook:RA3301 a owl:NamedIndividual,
+        uco:Action ;
+    rdfs:label "quarantine file by format" ;
+    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
+    IncidentResponseOntologyPlaybook:has_complexity_level 4 ;
+    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
+    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Antivirus ;
+    IncidentResponseOntologyPlaybook:is_automated true ;
+    IncidentResponseOntologyPlaybook:is_linked_to_recovery_action IncidentResponseOntologyPlaybook:RA5301 ;
+    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Containment ;
+    IncidentResponseOntologyPlaybook:react-id "RA3301" ;
+    rdfs:comment """Quarantine a file by its format
 """@en .
 
 IncidentResponseOntologyPlaybook:RA5102 a owl:NamedIndividual,
@@ -8743,20 +8814,6 @@ IncidentResponseOntologyPlaybook:Log_Files a IncidentResponseOntologyPlaybook:Re
         owl:NamedIndividual ;
     rdfs:label "Log Files" .
 
-IncidentResponseOntologyPlaybook:RA4301 a owl:NamedIndividual,
-        uco:Action ;
-    rdfs:label "remove file" ;
-    IncidentResponseOntologyPlaybook:generatesLoss "0.005"^^xsd:float ;
-    IncidentResponseOntologyPlaybook:has_complexity_level 2 ;
-    IncidentResponseOntologyPlaybook:has_impact_score 5 ;
-    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:PowerShell,
-        IncidentResponseOntologyPlaybook:Terminal ;
-    IncidentResponseOntologyPlaybook:is_automated true ;
-    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Eradication ;
-    IncidentResponseOntologyPlaybook:react-id "RA4301" ;
-    rdfs:comment """Remove a specific file from a (remote) host or a system
-"""@en .
-
 IncidentResponseOntologyPlaybook:RA5105 a owl:NamedIndividual,
         uco:Action ;
     rdfs:label "unblock blocked user" ;
@@ -8856,18 +8913,18 @@ IncidentResponseOntologyPlaybook:RA2306 a owl:NamedIndividual,
     rdfs:comment """Find a file by its path (including its name)
 """@en .
 
-IncidentResponseOntologyPlaybook:RA3404 a owl:NamedIndividual,
+IncidentResponseOntologyPlaybook:RA4301 a owl:NamedIndividual,
         uco:Action ;
-    rdfs:label "block process by executable format" ;
-    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
-    IncidentResponseOntologyPlaybook:has_complexity_level 3 ;
-    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
-    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Policy_Group ;
+    rdfs:label "remove file" ;
+    IncidentResponseOntologyPlaybook:generatesLoss "0.005"^^xsd:float ;
+    IncidentResponseOntologyPlaybook:has_complexity_level 2 ;
+    IncidentResponseOntologyPlaybook:has_impact_score 5 ;
+    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:PowerShell,
+        IncidentResponseOntologyPlaybook:Terminal ;
     IncidentResponseOntologyPlaybook:is_automated true ;
-    IncidentResponseOntologyPlaybook:is_linked_to_recovery_action IncidentResponseOntologyPlaybook:RA5401 ;
-    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Containment ;
-    IncidentResponseOntologyPlaybook:react-id "RA3404" ;
-    rdfs:comment """Block a process execution by its executable format
+    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Eradication ;
+    IncidentResponseOntologyPlaybook:react-id "RA4301" ;
+    rdfs:comment """Remove a specific file from a (remote) host or a system
 """@en .
 
 IncidentResponseOntologyPlaybook:T1021 a mitre:OffensiveTechnique,
@@ -8935,20 +8992,6 @@ IncidentResponseOntologyPlaybook:RA2107 a owl:NamedIndividual,
     rdfs:comment """List hosts communicating by a specific port at the moment or at a particular time in the past
 """@en .
 
-IncidentResponseOntologyPlaybook:RA2405 a owl:NamedIndividual,
-        uco:Action ;
-    rdfs:label "find process by executable format" ;
-    IncidentResponseOntologyPlaybook:generatesLoss "0.3"^^xsd:float ;
-    IncidentResponseOntologyPlaybook:has_complexity_level 3 ;
-    IncidentResponseOntologyPlaybook:has_impact_score 5 ;
-    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:PowerShell,
-        IncidentResponseOntologyPlaybook:Terminal ;
-    IncidentResponseOntologyPlaybook:is_automated true ;
-    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Detection_and_Analysis ;
-    IncidentResponseOntologyPlaybook:react-id "RA2405" ;
-    rdfs:comment """Find a process that is being executed at the moment or at a particular time in the past by its executable format
-"""@en .
-
 IncidentResponseOntologyPlaybook:RA3109 a owl:NamedIndividual,
         uco:Action ;
     rdfs:label "block user external communication" ;
@@ -8961,6 +9004,20 @@ IncidentResponseOntologyPlaybook:RA3109 a owl:NamedIndividual,
     IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Containment ;
     IncidentResponseOntologyPlaybook:react-id "RA3109" ;
     rdfs:comment """Block a user for external communications
+"""@en .
+
+IncidentResponseOntologyPlaybook:RA3404 a owl:NamedIndividual,
+        uco:Action ;
+    rdfs:label "block process by executable format" ;
+    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
+    IncidentResponseOntologyPlaybook:has_complexity_level 3 ;
+    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
+    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Policy_Group ;
+    IncidentResponseOntologyPlaybook:is_automated true ;
+    IncidentResponseOntologyPlaybook:is_linked_to_recovery_action IncidentResponseOntologyPlaybook:RA5401 ;
+    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Containment ;
+    IncidentResponseOntologyPlaybook:react-id "RA3404" ;
+    rdfs:comment """Block a process execution by its executable format
 """@en .
 
 IncidentResponseOntologyPlaybook:T1036 a mitre:OffensiveTechnique,
@@ -8998,33 +9055,18 @@ IncidentResponseOntologyPlaybook:Eradication a IncidentResponseOntologyPlaybook:
     rdfs:label "Eradication" ;
     rdfs:comment "Correspond to the NIST incident response lifecycle." .
 
-IncidentResponseOntologyPlaybook:RA2001 a owl:NamedIndividual,
+IncidentResponseOntologyPlaybook:RA2405 a owl:NamedIndividual,
         uco:Action ;
-    rdfs:label "list victims of security alert" ;
-    IncidentResponseOntologyPlaybook:generatesLoss "0.2"^^xsd:float ;
-    IncidentResponseOntologyPlaybook:has_complexity_level 4 ;
-    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
-    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:SIEM,
-        IncidentResponseOntologyPlaybook:Suricata ;
-    IncidentResponseOntologyPlaybook:is_automated true ;
-    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Detection_and_Analysis ;
-    IncidentResponseOntologyPlaybook:react-id "RA2001" ;
-    rdfs:comment """List victims of a security alert
-"""@en .
-
-IncidentResponseOntologyPlaybook:RA2002 a owl:NamedIndividual,
-        uco:Action ;
-    rdfs:label "list host vulnerabilities" ;
-    IncidentResponseOntologyPlaybook:generatesLoss "0.2"^^xsd:float ;
+    rdfs:label "find process by executable format" ;
+    IncidentResponseOntologyPlaybook:generatesLoss "0.3"^^xsd:float ;
     IncidentResponseOntologyPlaybook:has_complexity_level 3 ;
-    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
-    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Nessus,
-        IncidentResponseOntologyPlaybook:OpenVas,
-        IncidentResponseOntologyPlaybook:Rapid7 ;
+    IncidentResponseOntologyPlaybook:has_impact_score 5 ;
+    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:PowerShell,
+        IncidentResponseOntologyPlaybook:Terminal ;
     IncidentResponseOntologyPlaybook:is_automated true ;
     IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Detection_and_Analysis ;
-    IncidentResponseOntologyPlaybook:react-id "RA2002" ;
-    rdfs:comment """Get information about a specific host existing vulnerabilities, or about vulnerabilities it had at a particular time in the past
+    IncidentResponseOntologyPlaybook:react-id "RA2405" ;
+    rdfs:comment """Find a process that is being executed at the moment or at a particular time in the past by its executable format
 """@en .
 
 IncidentResponseOntologyPlaybook:T a swrl:Variable .
@@ -9055,6 +9097,35 @@ IncidentResponseOntologyPlaybook:Incident_Response_Phase a owl:Class ;
     rdfs:label "Incident Response Phase" ;
     rdfs:comment "It correspond to the incident response phase defined by the NIST (ie Preparation, Detection & Analysis, Containment, Eradication & Recovery, Post-Event activities)" ;
     rdfs:isDefinedBy "https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-61r2.pdf" .
+
+IncidentResponseOntologyPlaybook:RA2001 a owl:NamedIndividual,
+        uco:Action ;
+    rdfs:label "list victims of security alert" ;
+    IncidentResponseOntologyPlaybook:generatesLoss "0.2"^^xsd:float ;
+    IncidentResponseOntologyPlaybook:has_complexity_level 4 ;
+    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
+    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:SIEM,
+        IncidentResponseOntologyPlaybook:Suricata ;
+    IncidentResponseOntologyPlaybook:is_automated true ;
+    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Detection_and_Analysis ;
+    IncidentResponseOntologyPlaybook:react-id "RA2001" ;
+    rdfs:comment """List victims of a security alert
+"""@en .
+
+IncidentResponseOntologyPlaybook:RA2002 a owl:NamedIndividual,
+        uco:Action ;
+    rdfs:label "list host vulnerabilities" ;
+    IncidentResponseOntologyPlaybook:generatesLoss "0.2"^^xsd:float ;
+    IncidentResponseOntologyPlaybook:has_complexity_level 3 ;
+    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
+    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Nessus,
+        IncidentResponseOntologyPlaybook:OpenVas,
+        IncidentResponseOntologyPlaybook:Rapid7 ;
+    IncidentResponseOntologyPlaybook:is_automated true ;
+    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Detection_and_Analysis ;
+    IncidentResponseOntologyPlaybook:react-id "RA2002" ;
+    rdfs:comment """Get information about a specific host existing vulnerabilities, or about vulnerabilities it had at a particular time in the past
+"""@en .
 
 IncidentResponseOntologyPlaybook:RA5401 a owl:NamedIndividual,
         uco:Action ;
@@ -9103,21 +9174,6 @@ IncidentResponseOntologyPlaybook:Policy_Group a IncidentResponseOntologyPlaybook
         owl:NamedIndividual ;
     rdfs:label "Group Policy" .
 
-IncidentResponseOntologyPlaybook:RA3001 a owl:NamedIndividual,
-        uco:Action ;
-    rdfs:label "patch vulnerability" ;
-    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
-    IncidentResponseOntologyPlaybook:has_complexity_level 3 ;
-    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
-    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:APT,
-        IncidentResponseOntologyPlaybook:WSUS,
-        IncidentResponseOntologyPlaybook:YUM ;
-    IncidentResponseOntologyPlaybook:is_automated true ;
-    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Containment ;
-    IncidentResponseOntologyPlaybook:react-id "RA3001" ;
-    rdfs:comment """Patch a vulnerability in an asset
-"""@en .
-
 IncidentResponseOntologyPlaybook:T1564 a mitre:OffensiveTechnique,
         owl:NamedIndividual ;
     rdfs:label "Hide Artifacts" ;
@@ -9144,6 +9200,21 @@ IncidentResponseOntologyPlaybook:VirusTotal a <http://securityOrchestrationOntol
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty IncidentResponseOntologyPlaybook:execute ;
             owl:someValuesFrom IncidentResponseOntologyPlaybook:Command ] .
+
+IncidentResponseOntologyPlaybook:RA3001 a owl:NamedIndividual,
+        uco:Action ;
+    rdfs:label "patch vulnerability" ;
+    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
+    IncidentResponseOntologyPlaybook:has_complexity_level 3 ;
+    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
+    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:APT,
+        IncidentResponseOntologyPlaybook:WSUS,
+        IncidentResponseOntologyPlaybook:YUM ;
+    IncidentResponseOntologyPlaybook:is_automated true ;
+    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Containment ;
+    IncidentResponseOntologyPlaybook:react-id "RA3001" ;
+    rdfs:comment """Patch a vulnerability in an asset
+"""@en .
 
 IncidentResponseOntologyPlaybook:Suricata a <http://securityOrchestrationOntology.com#IDS>,
         owl:NamedIndividual ;
@@ -9186,27 +9257,6 @@ IncidentResponseOntologyPlaybook:Mail_Client a IncidentResponseOntologyPlaybook:
         owl:NamedIndividual ;
     rdfs:label "Mail Client" .
 
-IncidentResponseOntologyPlaybook:RA6001 a owl:NamedIndividual,
-        uco:Action ;
-    rdfs:label "develop incident report" ;
-    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
-    IncidentResponseOntologyPlaybook:has_complexity_level 4 ;
-    IncidentResponseOntologyPlaybook:has_impact_score 3 ;
-    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Google_Docs ;
-    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Post-Event_Activity ;
-    IncidentResponseOntologyPlaybook:react-id "RA6001" ;
-    rdfs:comment "Develop the incident report"@en .
-
-IncidentResponseOntologyPlaybook:RA6002 a owl:NamedIndividual,
-        uco:Action ;
-    rdfs:label "conduct lessons learned exercise" ;
-    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
-    IncidentResponseOntologyPlaybook:has_complexity_level 6 ;
-    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
-    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Post-Event_Activity ;
-    IncidentResponseOntologyPlaybook:react-id "RA6002" ;
-    rdfs:comment "Conduct Lessons Learned exercise"@en .
-
 IncidentResponseOntologyPlaybook:Recovery a IncidentResponseOntologyPlaybook:Incident_Response_Phase,
         owl:NamedIndividual ;
     rdfs:label "Recovery" ;
@@ -9233,6 +9283,27 @@ IncidentResponseOntologyPlaybook:Command a owl:Class ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass <https://ontology.unifiedcyberontology.org/uco/tool/Tool#Tool> ;
             owl:onProperty IncidentResponseOntologyPlaybook:executed_by ] .
+
+IncidentResponseOntologyPlaybook:RA6001 a owl:NamedIndividual,
+        uco:Action ;
+    rdfs:label "develop incident report" ;
+    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
+    IncidentResponseOntologyPlaybook:has_complexity_level 4 ;
+    IncidentResponseOntologyPlaybook:has_impact_score 3 ;
+    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Google_Docs ;
+    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Post-Event_Activity ;
+    IncidentResponseOntologyPlaybook:react-id "RA6001" ;
+    rdfs:comment "Develop the incident report"@en .
+
+IncidentResponseOntologyPlaybook:RA6002 a owl:NamedIndividual,
+        uco:Action ;
+    rdfs:label "conduct lessons learned exercise" ;
+    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
+    IncidentResponseOntologyPlaybook:has_complexity_level 6 ;
+    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
+    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Post-Event_Activity ;
+    IncidentResponseOntologyPlaybook:react-id "RA6002" ;
+    rdfs:comment "Conduct Lessons Learned exercise"@en .
 
 IncidentResponseOntologyPlaybook:T1546 a mitre:OffensiveTechnique,
         owl:NamedIndividual ;

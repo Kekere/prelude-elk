@@ -49,11 +49,11 @@ if response1['hits']['hits']:
     id=last_doc1['_id']
     update_body = {
         "doc":{
-            "port":"80",
+            "port":"35324",
             "iana_protocol_name"
             :"tcp",
-            "address":"192.168.128.40",
-            "severity":"high"
+            "address":"192.168.245.24",
+            "severity":"low"
         }
     }
     es.update(index=index_name1,id=id,body=update_body)

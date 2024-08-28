@@ -42,63 +42,23 @@ meta(cvss,2).
 meta(attackGoal,1).
 meta(advances,2).
 
-attack(execCode('192.168.128.40',root)).
+attack(execCode('192.168.245.24',andrew)).
 
-possible_duplicate_trace_step(because(13,rule_desc('direct network access',1.0),netAccess('192.168.132.101',usb,14135),[hacl('192.168.132.101','192.168.132.101',usb,14135),attackerLocated('192.168.132.101')])).
+possible_duplicate_trace_step(because(13,rule_desc('direct network access',1.0),netAccess('192.168.245.24',tcp,35324),[hacl('13.225.195.118','192.168.245.24',tcp,35324),attackerLocated('13.225.195.118')])).
 
-possible_duplicate_trace_step(because(14,rule_desc('direct on-host access',1.0),netAccess('192.168.132.101',usb,14135),[attackerLocated('192.168.132.101')])).
+possible_duplicate_trace_step(because(13,rule_desc('direct network access',1.0),netAccess('192.168.245.24',tcp,35324),[hacl('13.225.195.118','192.168.245.24',tcp,35324),attackerLocated('13.225.195.118')])).
 
-possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.132.101',andrew),[netAccess('192.168.132.101',usb,14135),networkServiceInfo('192.168.132.101',windows_7,usb,14135,andrew),vulExists('192.168.132.101','CVE-2013-3200',windows_7,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.245.24',andrew),[netAccess('192.168.245.24',tcp,35324),networkServiceInfo('192.168.245.24',microsoft,tcp,35324,andrew),vulExists('192.168.245.24','CVE-2012-0002',microsoft,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.132.101',andrew),[netAccess('192.168.132.101',usb,14135),networkServiceInfo('192.168.132.101',windows_7,usb,14135,andrew),vulExists('192.168.132.101','CVE-2013-3200',windows_7,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(12,rule_desc('multi-hop access',0.5),netAccess('192.168.245.24',tcp,35324),[hacl('192.168.245.24','192.168.245.24',tcp,35324),advances('192.168.245.24','192.168.245.24'),execCode('192.168.245.24',andrew)])).
 
-possible_duplicate_trace_step(because(19,rule_desc('password sniffing',0.80000000000000004),principalCompromised(_h4721),[execCode('192.168.132.101',andrew),hasAccount(_h4721,'192.168.132.101',andrew)])).
+possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.245.24',andrew),[netAccess('192.168.245.24',tcp,35324),networkServiceInfo('192.168.245.24',microsoft,tcp,35324,andrew),vulExists('192.168.245.24','CVE-2012-0002',microsoft,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(15,rule_desc('Access a host through executing code on the machine',1.0),canAccessHost('192.168.132.101'),[execCode('192.168.132.101',andrew)])).
+possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.245.24',andrew),[netAccess('192.168.245.24',tcp,35324),networkServiceInfo('192.168.245.24',microsoft,tcp,35324,andrew),vulExists('192.168.245.24','CVE-2012-0002',microsoft,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(7,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('192.168.132.101',_h4983),[canAccessHost('192.168.132.101'),hasAccount(_h5091,'192.168.132.101',_h4983),principalCompromised(_h5091)])).
+possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.245.24',andrew),[netAccess('192.168.245.24',tcp,35324),networkServiceInfo('192.168.245.24',microsoft,tcp,35324,andrew),vulExists('192.168.245.24','CVE-2012-0002',microsoft,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(7,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('192.168.132.101',root),[canAccessHost('192.168.132.101'),hasAccount(_h4817,'192.168.132.101',root),principalCompromised(_h4817)])).
+possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.245.24',andrew),[netAccess('192.168.245.24',tcp,35324),networkServiceInfo('192.168.245.24',microsoft,tcp,35324,andrew),vulExists('192.168.245.24','CVE-2012-0002',microsoft,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(7,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('192.168.132.101',_h4872),[canAccessHost('192.168.132.101'),hasAccount(_h5468,'192.168.132.101',_h4872),principalCompromised(_h5468)])).
-
-possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.132.101',andrew),[netAccess('192.168.132.101',usb,14135),networkServiceInfo('192.168.132.101',windows_7,usb,14135,andrew),vulExists('192.168.132.101','CVE-2013-3200',windows_7,remoteExploit,privEscalation)])).
-
-possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.132.101',andrew),[netAccess('192.168.132.101',usb,14135),networkServiceInfo('192.168.132.101',windows_7,usb,14135,andrew),vulExists('192.168.132.101','CVE-2013-3200',windows_7,remoteExploit,privEscalation)])).
-
-possible_duplicate_trace_step(because(24,rule_desc('NFS shell',0.80000000000000004),accessFile('192.168.128.40',write,_h5325),[hacl('192.168.132.101','192.168.128.40',nfsProtocol,nfsPort),nfsExportInfo('192.168.128.40',_h5325,write,'192.168.132.101'),execCode('192.168.132.101',_h5406)])).
-
-possible_duplicate_trace_step(because(24,rule_desc('NFS shell',0.80000000000000004),accessFile('192.168.128.40',write,_h5325),[hacl('192.168.132.101','192.168.128.40',nfsProtocol,nfsPort),nfsExportInfo('192.168.128.40',_h5325,write,'192.168.132.101'),execCode('192.168.132.101',andrew)])).
-
-possible_duplicate_trace_step(because(12,rule_desc('multi-hop access',0.5),netAccess('192.168.132.101',usb,14135),[hacl('192.168.132.101','192.168.132.101',usb,14135),advances('192.168.132.101','192.168.132.101'),execCode('192.168.132.101',_h5265)])).
-
-possible_duplicate_trace_step(because(12,rule_desc('multi-hop access',0.5),netAccess('192.168.132.101',usb,14135),[hacl('192.168.132.101','192.168.132.101',usb,14135),advances('192.168.132.101','192.168.132.101'),execCode('192.168.132.101',andrew)])).
-
-possible_duplicate_trace_step(because(18,rule_desc('password sniffing',0.80000000000000004),principalCompromised(_h4721),[execCode('192.168.132.101',root),hasAccount(_h4721,'192.168.132.101',_h4775)])).
-
-possible_duplicate_trace_step(because(7,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('192.168.132.101',_h4872),[canAccessHost('192.168.132.101'),hasAccount(_h5468,'192.168.132.101',_h4872),principalCompromised(_h5468)])).
-
-possible_duplicate_trace_step(because(7,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('192.168.132.101',_h4983),[canAccessHost('192.168.132.101'),hasAccount(_h5091,'192.168.132.101',_h4983),principalCompromised(_h5091)])).
-
-possible_duplicate_trace_step(because(7,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('192.168.132.101',root),[canAccessHost('192.168.132.101'),hasAccount(_h4817,'192.168.132.101',root),principalCompromised(_h4817)])).
-
-possible_duplicate_trace_step(because(11,rule_desc('Trojan horse installation',0.80000000000000004),execCode('192.168.128.40',root),[accessFile('192.168.128.40',write,_h5325)])).
-
-possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.132.101',andrew),[netAccess('192.168.132.101',usb,14135),networkServiceInfo('192.168.132.101',windows_7,usb,14135,andrew),vulExists('192.168.132.101','CVE-2013-3200',windows_7,remoteExploit,privEscalation)])).
-
-possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.132.101',andrew),[netAccess('192.168.132.101',usb,14135),networkServiceInfo('192.168.132.101',windows_7,usb,14135,andrew),vulExists('192.168.132.101','CVE-2013-3200',windows_7,remoteExploit,privEscalation)])).
-
-possible_duplicate_trace_step(because(15,rule_desc('Access a host through executing code on the machine',1.0),canAccessHost('192.168.132.101'),[execCode('192.168.132.101',_h5861)])).
-
-possible_duplicate_trace_step(because(19,rule_desc('password sniffing',0.80000000000000004),principalCompromised(_h4721),[execCode('192.168.132.101',_h5815),hasAccount(_h4721,'192.168.132.101',_h5815)])).
-
-possible_duplicate_trace_step(because(12,rule_desc('multi-hop access',0.5),netAccess('192.168.132.101',usb,14135),[hacl('192.168.128.40','192.168.132.101',usb,14135),advances('192.168.128.40','192.168.132.101'),execCode('192.168.128.40',root)])).
-
-possible_duplicate_trace_step(because(24,rule_desc('NFS shell',0.80000000000000004),accessFile('192.168.128.40',write,_h4819),[hacl('192.168.132.101','192.168.128.40',nfsProtocol,nfsPort),nfsExportInfo('192.168.128.40',_h4819,write,'192.168.132.101'),execCode('192.168.132.101',andrew)])).
-
-possible_duplicate_trace_step(because(24,rule_desc('NFS shell',0.80000000000000004),accessFile('192.168.128.40',write,_h4819),[hacl('192.168.132.101','192.168.128.40',nfsProtocol,nfsPort),nfsExportInfo('192.168.128.40',_h4819,write,'192.168.132.101'),execCode('192.168.132.101',_h4898)])).
-
-possible_duplicate_trace_step(because(11,rule_desc('Trojan horse installation',0.80000000000000004),execCode('192.168.128.40',root),[accessFile('192.168.128.40',write,_h4819)])).
-
-possible_duplicate_trace_step(because(11,rule_desc('Trojan horse installation',0.80000000000000004),execCode('192.168.128.40',root),[accessFile('192.168.128.40',write,_h4771)])).
+possible_duplicate_trace_step(because(9,rule_desc('remote exploit of a server program',1.0),execCode('192.168.245.24',andrew),[netAccess('192.168.245.24',tcp,35324),networkServiceInfo('192.168.245.24',microsoft,tcp,35324,andrew),vulExists('192.168.245.24','CVE-2012-0002',microsoft,remoteExploit,privEscalation)])).
 
