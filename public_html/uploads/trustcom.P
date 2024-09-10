@@ -1,0 +1,9 @@
+attackerLocated('10.0.20.66').
+attackGoal(execCode('10.0.11.100',user)).
+
+hacl('10.0.20.66', '10.0.11.100', tcp, 8080).
+inCompetent('Bob').
+hasAccount('Bob', '10.0.11.100', user).
+networkServiceInfo('10.0.11.100', 'http-proxy', tcp, 8080, user).
+
+vulExists('10.0.11.100', 'CVE-2021-26868', 'scadabr', remoteExploit, privEscalation).

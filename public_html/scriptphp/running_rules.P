@@ -109,6 +109,15 @@ interaction_rule(
    0.5)).
 
 interaction_rule(
+   (principalCompromised(Victim) :-
+      inCompetent(Victim),
+      netAccess(_host, _protocol, _port),
+      hasAccount(Victim, _host, _user)),
+  rule_desc('Bruteforce attack',
+   0.5
+)).
+
+interaction_rule(
    (physicalDamage(_bus) :-
 	modify(_host, _info)),
    rule_desc('Physical damage',
@@ -177,6 +186,14 @@ interaction_rule(
 	networkServiceInfo(H, Software, Protocol, Port, Perm),
 	netAccess(H, Protocol, Port)),
   rule_desc('remote exploit of a server program',
+  1.0)).
+
+interaction_rule(
+  (execCode(H, Perm) :-
+	vulExists(H, _, Software, remoteExploit, privEscalation),
+	hasAccount(Victim, H, Perm),
+	principalCompromised(Victim)),
+  rule_desc('unrestricted upload of file with dangerous type',
   1.0)).
 
 interaction_rule(
