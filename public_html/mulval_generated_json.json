@@ -3,77 +3,52 @@
         {
             "id": 5,
             "group": 3,
-            "label": "hasAccount('Bob','10.0.11.100',user):1"
+            "label": "hacl('192.168.245.24','192.168.245.24',tcp,35324):1"
         },
         {
             "id": 4,
             "group": 2,
-            "label": "RULE 2 (Bruteforce attack):0"
-        },
-        {
-            "id": 8,
-            "group": 3,
-            "label": "hacl('10.0.20.66','10.0.11.100',tcp,8080):1"
-        },
-        {
-            "id": 7,
-            "group": 2,
-            "label": "RULE 15 (direct network access):0"
-        },
-        {
-            "id": 9,
-            "group": 3,
-            "label": "attackerLocated('10.0.20.66'):1"
-        },
-        {
-            "id": 6,
-            "group": 1,
-            "label": "netAccess('10.0.11.100',tcp,8080):0"
-        },
-        {
-            "id": 10,
-            "group": 3,
-            "label": "inCompetent('Bob'):1"
-        },
-        {
-            "id": 3,
-            "group": 1,
-            "label": "principalCompromised('Bob'):0"
+            "label": "RULE 12 (multi-hop access):0"
         },
         {
             "id": 1,
             "group": 1,
-            "label": "execCode('10.0.11.100',user):0"
+            "label": "execCode('192.168.245.24',andrew):0"
         },
         {
-            "id": 11,
+            "id": 3,
+            "group": 1,
+            "label": "netAccess('192.168.245.24',tcp,35324):0"
+        },
+        {
+            "id": 7,
+            "group": 3,
+            "label": "hacl('13.225.195.118','192.168.245.24',tcp,35324):1"
+        },
+        {
+            "id": 6,
             "group": 2,
-            "label": "RULE 21 (password sniffing):0"
+            "label": "RULE 13 (direct network access):0"
+        },
+        {
+            "id": 8,
+            "group": 3,
+            "label": "attackerLocated('13.225.195.118'):1"
         },
         {
             "id": 2,
             "group": 2,
-            "label": "RULE 11 (unrestricted upload of file with dangerous type):0"
+            "label": "RULE 9 (remote exploit of a server program):0"
         },
         {
-            "id": 12,
+            "id": 9,
+            "group": 3,
+            "label": "networkServiceInfo('192.168.245.24',microsoft,tcp,35324,andrew):1"
+        },
+        {
+            "id": 10,
             "group": 4,
-            "label": "vulExists('10.0.11.100','CVE-2021-26868',scadabr,remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 15,
-            "group": 2,
-            "label": "RULE 17 (Access a host through executing code on the machine):0"
-        },
-        {
-            "id": 14,
-            "group": 1,
-            "label": "canAccessHost('10.0.11.100'):0"
-        },
-        {
-            "id": 13,
-            "group": 2,
-            "label": "RULE 8 (When a principal is compromised any machine he has an account on will also be compromised):0"
+            "label": "vulExists('192.168.245.24','CVE-2012-0002',microsoft,remoteExploit,privEscalation):1"
         }
     ],
     "links": [
@@ -82,23 +57,7 @@
             "target": 4
         },
         {
-            "source": 8,
-            "target": 7
-        },
-        {
-            "source": 9,
-            "target": 7
-        },
-        {
-            "source": 7,
-            "target": 6
-        },
-        {
-            "source": 6,
-            "target": 4
-        },
-        {
-            "source": 10,
+            "source": 1,
             "target": 4
         },
         {
@@ -106,15 +65,15 @@
             "target": 3
         },
         {
-            "source": 1,
-            "target": 11
+            "source": 7,
+            "target": 6
         },
         {
-            "source": 5,
-            "target": 11
+            "source": 8,
+            "target": 6
         },
         {
-            "source": 11,
+            "source": 6,
             "target": 3
         },
         {
@@ -122,39 +81,15 @@
             "target": 2
         },
         {
-            "source": 5,
+            "source": 9,
             "target": 2
         },
         {
-            "source": 12,
+            "source": 10,
             "target": 2
         },
         {
             "source": 2,
-            "target": 1
-        },
-        {
-            "source": 1,
-            "target": 15
-        },
-        {
-            "source": 15,
-            "target": 14
-        },
-        {
-            "source": 14,
-            "target": 13
-        },
-        {
-            "source": 5,
-            "target": 13
-        },
-        {
-            "source": 3,
-            "target": 13
-        },
-        {
-            "source": 13,
             "target": 1
         }
     ]
