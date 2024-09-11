@@ -97,11 +97,35 @@ IncidentResponseOntologyPlaybook:Playbook_CVE-2021-21277 a IncidentResponseOntol
     IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2021-21277 ;
     IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2021-21277" .
 
+IncidentResponseOntologyPlaybook:Playbook_CVE-2021-26868 a IncidentResponseOntologyPlaybook:Playbook,
+        owl:NamedIndividual ;
+    rdfs:label "Playbook : Response to CVE-2021-26868" ;
+    IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2021-26868 ;
+    IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2021-26868" .
+
 IncidentResponseOntologyPlaybook:Playbook_CVE-2021-31839 a IncidentResponseOntologyPlaybook:Playbook,
         owl:NamedIndividual ;
     rdfs:label "Playbook : Response to CVE-2021-31839" ;
     IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2021-31839 ;
     IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the IDCVE-2021-31839" .
+
+IncidentResponseOntologyPlaybook:Playbook_CVE-2021-31986 a IncidentResponseOntologyPlaybook:Playbook,
+        owl:NamedIndividual ;
+    rdfs:label "Playbook : Response to CVE-2021-31986" ;
+    IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2021-31986 ;
+    IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2021-31986" .
+
+IncidentResponseOntologyPlaybook:Playbook_CVE-2021-31987 a IncidentResponseOntologyPlaybook:Playbook,
+        owl:NamedIndividual ;
+    rdfs:label "Playbook : Response to CVE-2021-31987" ;
+    IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2021-31987 ;
+    IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2021-31987" .
+
+IncidentResponseOntologyPlaybook:Playbook_CVE-2021-31988 a IncidentResponseOntologyPlaybook:Playbook,
+        owl:NamedIndividual ;
+    rdfs:label "Playbook : Response to CVE-2021-31988" ;
+    IncidentResponseOntologyPlaybook:has_coa IncidentResponseOntologyPlaybook:Step1_CVE-2021-31988 ;
+    IncidentResponseOntologyPlaybook:has_description "This playbook is intended to answer the vulnerability identified by the ID CVE-2021-31988" .
 
 IncidentResponseOntologyPlaybook:Playbook_CVE-2021-3449 a IncidentResponseOntologyPlaybook:Playbook,
         owl:NamedIndividual ;
@@ -7205,11 +7229,35 @@ IncidentResponseOntologyPlaybook:Step1_CVE-2021-1500 a IncidentResponseOntologyP
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2405 ;
     IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step2_CVE-2021-1500 .
 
+IncidentResponseOntologyPlaybook:Step1_CVE-2021-26868 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step1_CVE-2021-26868" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2021-26868 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2002 .
+
 IncidentResponseOntologyPlaybook:Step1_CVE-2021-31839 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
     rdfs:label "Step1_CVE-2021-31839" ;
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2021-31839 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2405 .
+
+IncidentResponseOntologyPlaybook:Step1_CVE-2021-31986 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step1_CVE-2021-31986" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2021-31986 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2002 .
+
+IncidentResponseOntologyPlaybook:Step1_CVE-2021-31987 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step1_CVE-2021-31987" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2021-31987 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2002 .
+
+IncidentResponseOntologyPlaybook:Step1_CVE-2021-31988 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step1_CVE-2021-31988" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step2_CVE-2021-31988 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2002 .
 
 IncidentResponseOntologyPlaybook:Step1_CVE-2021-3449 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
@@ -7343,11 +7391,35 @@ IncidentResponseOntologyPlaybook:Step2_CVE-2021-21277 a IncidentResponseOntology
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2021-21277 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA2001 .
 
+IncidentResponseOntologyPlaybook:Step2_CVE-2021-26868 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step2_CVE-2021-26868" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2021-26868 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3001 .
+
 IncidentResponseOntologyPlaybook:Step2_CVE-2021-31839 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
     rdfs:label "Step2_CVE-2021-31839" ;
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2021-31839 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3404 .
+
+IncidentResponseOntologyPlaybook:Step2_CVE-2021-31986 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step2_CVE-2021-31986" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2021-31986 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3001 .
+
+IncidentResponseOntologyPlaybook:Step2_CVE-2021-31987 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step2_CVE-2021-31987" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2021-31987 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3001 .
+
+IncidentResponseOntologyPlaybook:Step2_CVE-2021-31988 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step2_CVE-2021-31988" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step3_CVE-2021-31988 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3001 .
 
 IncidentResponseOntologyPlaybook:Step2_CVE-2021-3449 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
@@ -7486,11 +7558,35 @@ IncidentResponseOntologyPlaybook:Step3_CVE-2021-21277 a IncidentResponseOntology
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3001 ;
     IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step4_CVE-2021-21277 .
 
+IncidentResponseOntologyPlaybook:Step3_CVE-2021-26868 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step3_CVE-2021-26868" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2021-26868 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 .
+
 IncidentResponseOntologyPlaybook:Step3_CVE-2021-31839 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
     rdfs:label "Step3_CVE-2021-31839" ;
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2021-31839 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA5401 .
+
+IncidentResponseOntologyPlaybook:Step3_CVE-2021-31986 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step3_CVE-2021-31986" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2021-31986 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 .
+
+IncidentResponseOntologyPlaybook:Step3_CVE-2021-31987 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step3_CVE-2021-31987" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2021-31987 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 .
+
+IncidentResponseOntologyPlaybook:Step3_CVE-2021-31988 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step3_CVE-2021-31988" ;
+    IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step4_CVE-2021-31988 ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 .
 
 IncidentResponseOntologyPlaybook:Step3_CVE-2021-3449 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
@@ -7620,11 +7716,31 @@ IncidentResponseOntologyPlaybook:Step4_CVE-2021-21277 a IncidentResponseOntology
     IncidentResponseOntologyPlaybook:has_next IncidentResponseOntologyPlaybook:Step5_CVE-2021-21277 ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA3404 .
 
+IncidentResponseOntologyPlaybook:Step4_CVE-2021-26868 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step4_CVE-2021-26868" ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
+
 IncidentResponseOntologyPlaybook:Step4_CVE-2021-31839 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
     rdfs:label "Step4_CVE-2021-31839" ;
     IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6001 ;
     IncidentResponseOntologyPlaybook:parallel IncidentResponseOntologyPlaybook:Step5_CVE-2021-31839 .
+
+IncidentResponseOntologyPlaybook:Step4_CVE-2021-31986 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step4_CVE-2021-31986" ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
+
+IncidentResponseOntologyPlaybook:Step4_CVE-2021-31987 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step4_CVE-2021-31987" ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
+
+IncidentResponseOntologyPlaybook:Step4_CVE-2021-31988 a IncidentResponseOntologyPlaybook:Playbook_Step,
+        owl:NamedIndividual ;
+    rdfs:label "Step4_CVE-2021-31988" ;
+    IncidentResponseOntologyPlaybook:is_action IncidentResponseOntologyPlaybook:RA6002 .
 
 IncidentResponseOntologyPlaybook:Step4_CVE-2021-3449 a IncidentResponseOntologyPlaybook:Playbook_Step,
         owl:NamedIndividual ;
@@ -9112,21 +9228,6 @@ IncidentResponseOntologyPlaybook:RA2001 a owl:NamedIndividual,
     rdfs:comment """List victims of a security alert
 """@en .
 
-IncidentResponseOntologyPlaybook:RA2002 a owl:NamedIndividual,
-        uco:Action ;
-    rdfs:label "list host vulnerabilities" ;
-    IncidentResponseOntologyPlaybook:generatesLoss "0.2"^^xsd:float ;
-    IncidentResponseOntologyPlaybook:has_complexity_level 3 ;
-    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
-    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Nessus,
-        IncidentResponseOntologyPlaybook:OpenVas,
-        IncidentResponseOntologyPlaybook:Rapid7 ;
-    IncidentResponseOntologyPlaybook:is_automated true ;
-    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Detection_and_Analysis ;
-    IncidentResponseOntologyPlaybook:react-id "RA2002" ;
-    rdfs:comment """Get information about a specific host existing vulnerabilities, or about vulnerabilities it had at a particular time in the past
-"""@en .
-
 IncidentResponseOntologyPlaybook:RA5401 a owl:NamedIndividual,
         uco:Action ;
     rdfs:label "unblock blocked process" ;
@@ -9201,21 +9302,6 @@ IncidentResponseOntologyPlaybook:VirusTotal a <http://securityOrchestrationOntol
             owl:onProperty IncidentResponseOntologyPlaybook:execute ;
             owl:someValuesFrom IncidentResponseOntologyPlaybook:Command ] .
 
-IncidentResponseOntologyPlaybook:RA3001 a owl:NamedIndividual,
-        uco:Action ;
-    rdfs:label "patch vulnerability" ;
-    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
-    IncidentResponseOntologyPlaybook:has_complexity_level 3 ;
-    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
-    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:APT,
-        IncidentResponseOntologyPlaybook:WSUS,
-        IncidentResponseOntologyPlaybook:YUM ;
-    IncidentResponseOntologyPlaybook:is_automated true ;
-    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Containment ;
-    IncidentResponseOntologyPlaybook:react-id "RA3001" ;
-    rdfs:comment """Patch a vulnerability in an asset
-"""@en .
-
 IncidentResponseOntologyPlaybook:Suricata a <http://securityOrchestrationOntology.com#IDS>,
         owl:NamedIndividual ;
     rdfs:label "Suricata" ;
@@ -9245,6 +9331,21 @@ IncidentResponseOntologyPlaybook:T1574 a mitre:OffensiveTechnique,
 IncidentResponseOntologyPlaybook:Wireshark a IncidentResponseOntologyPlaybook:Requirement,
         owl:NamedIndividual ;
     rdfs:label "Wireshark" .
+
+IncidentResponseOntologyPlaybook:RA2002 a owl:NamedIndividual,
+        uco:Action ;
+    rdfs:label "list host vulnerabilities" ;
+    IncidentResponseOntologyPlaybook:generatesLoss "0.2"^^xsd:float ;
+    IncidentResponseOntologyPlaybook:has_complexity_level 3 ;
+    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
+    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Nessus,
+        IncidentResponseOntologyPlaybook:OpenVas,
+        IncidentResponseOntologyPlaybook:Rapid7 ;
+    IncidentResponseOntologyPlaybook:is_automated true ;
+    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Detection_and_Analysis ;
+    IncidentResponseOntologyPlaybook:react-id "RA2002" ;
+    rdfs:comment """Get information about a specific host existing vulnerabilities, or about vulnerabilities it had at a particular time in the past
+"""@en .
 
 IncidentResponseOntologyPlaybook:T1218 a mitre:OffensiveTechnique,
         owl:NamedIndividual ;
@@ -9284,26 +9385,20 @@ IncidentResponseOntologyPlaybook:Command a owl:Class ;
             owl:onClass <https://ontology.unifiedcyberontology.org/uco/tool/Tool#Tool> ;
             owl:onProperty IncidentResponseOntologyPlaybook:executed_by ] .
 
-IncidentResponseOntologyPlaybook:RA6001 a owl:NamedIndividual,
+IncidentResponseOntologyPlaybook:RA3001 a owl:NamedIndividual,
         uco:Action ;
-    rdfs:label "develop incident report" ;
+    rdfs:label "patch vulnerability" ;
     IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
-    IncidentResponseOntologyPlaybook:has_complexity_level 4 ;
-    IncidentResponseOntologyPlaybook:has_impact_score 3 ;
-    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Google_Docs ;
-    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Post-Event_Activity ;
-    IncidentResponseOntologyPlaybook:react-id "RA6001" ;
-    rdfs:comment "Develop the incident report"@en .
-
-IncidentResponseOntologyPlaybook:RA6002 a owl:NamedIndividual,
-        uco:Action ;
-    rdfs:label "conduct lessons learned exercise" ;
-    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
-    IncidentResponseOntologyPlaybook:has_complexity_level 6 ;
+    IncidentResponseOntologyPlaybook:has_complexity_level 3 ;
     IncidentResponseOntologyPlaybook:has_impact_score 4 ;
-    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Post-Event_Activity ;
-    IncidentResponseOntologyPlaybook:react-id "RA6002" ;
-    rdfs:comment "Conduct Lessons Learned exercise"@en .
+    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:APT,
+        IncidentResponseOntologyPlaybook:WSUS,
+        IncidentResponseOntologyPlaybook:YUM ;
+    IncidentResponseOntologyPlaybook:is_automated true ;
+    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Containment ;
+    IncidentResponseOntologyPlaybook:react-id "RA3001" ;
+    rdfs:comment """Patch a vulnerability in an asset
+"""@en .
 
 IncidentResponseOntologyPlaybook:T1546 a mitre:OffensiveTechnique,
         owl:NamedIndividual ;
@@ -9332,6 +9427,27 @@ IncidentResponseOntologyPlaybook:Initial_Access a mitre:OffensiveTactic,
 IncidentResponseOntologyPlaybook:Internal_Firewall a IncidentResponseOntologyPlaybook:Requirement,
         owl:NamedIndividual ;
     rdfs:label "Internal Firewall" .
+
+IncidentResponseOntologyPlaybook:RA6001 a owl:NamedIndividual,
+        uco:Action ;
+    rdfs:label "develop incident report" ;
+    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
+    IncidentResponseOntologyPlaybook:has_complexity_level 4 ;
+    IncidentResponseOntologyPlaybook:has_impact_score 3 ;
+    IncidentResponseOntologyPlaybook:has_requirement IncidentResponseOntologyPlaybook:Google_Docs ;
+    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Post-Event_Activity ;
+    IncidentResponseOntologyPlaybook:react-id "RA6001" ;
+    rdfs:comment "Develop the incident report"@en .
+
+IncidentResponseOntologyPlaybook:RA6002 a owl:NamedIndividual,
+        uco:Action ;
+    rdfs:label "conduct lessons learned exercise" ;
+    IncidentResponseOntologyPlaybook:generatesLoss "0.0"^^xsd:float ;
+    IncidentResponseOntologyPlaybook:has_complexity_level 6 ;
+    IncidentResponseOntologyPlaybook:has_impact_score 4 ;
+    IncidentResponseOntologyPlaybook:part_of_IR_stage IncidentResponseOntologyPlaybook:Post-Event_Activity ;
+    IncidentResponseOntologyPlaybook:react-id "RA6002" ;
+    rdfs:comment "Conduct Lessons Learned exercise"@en .
 
 IncidentResponseOntologyPlaybook:Lateral_Movement a mitre:OffensiveTactic,
         owl:NamedIndividual ;
@@ -9366,6 +9482,12 @@ IncidentResponseOntologyPlaybook:SIEM a IncidentResponseOntologyPlaybook:Require
         owl:NamedIndividual ;
     rdfs:label "SIEM" .
 
+IncidentResponseOntologyPlaybook:Execution a mitre:OffensiveTactic,
+        owl:NamedIndividual ;
+    mitre:attack-id "TA0002" ;
+    mitre:display-order 4 ;
+    rdfs:comment "https://attack.mitre.org/tactics/TA0002/" .
+
 IncidentResponseOntologyPlaybook:Playbook a owl:Class ;
     rdfs:label "Playbook" ;
     rdfs:comment "A Playbook is a list of required actions needed to perform to response to a security alert." ;
@@ -9373,12 +9495,6 @@ IncidentResponseOntologyPlaybook:Playbook a owl:Class ;
             owl:onClass IncidentResponseOntologyPlaybook:Playbook_Step ;
             owl:onProperty IncidentResponseOntologyPlaybook:has_coa ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
-
-IncidentResponseOntologyPlaybook:Execution a mitre:OffensiveTactic,
-        owl:NamedIndividual ;
-    mitre:attack-id "TA0002" ;
-    mitre:display-order 4 ;
-    rdfs:comment "https://attack.mitre.org/tactics/TA0002/" .
 
 IncidentResponseOntologyPlaybook:Collection a mitre:OffensiveTactic,
         owl:NamedIndividual ;
