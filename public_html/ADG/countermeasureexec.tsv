@@ -1,17 +1,44 @@
 CVEID	Method or Impact	Context	Artifact	Countermeasure	Phase	Category
-CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Encryption	Containment	File
-CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Local File Permissions	Identification	File
-CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Decoy File	Identification	File
-CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Analysis	Identification	File
-CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Removal	Eradication	File
-CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	File Integrity Monitoring	Identification	File
-CVE-2013-3132	Authentication Bypass	Application	Windows Shortcut File	Restore File	Recovery	File
-CVE-2013-3132	Authentication Bypass	Application	Authentication	Authentication Event Thresholding	Identification	General
-CVE-2013-3132	Authentication Bypass	Application	Authentication	Resource Access Pattern Analysis	Identification	General
-CVE-2013-3132	Authentication Bypass	Application	Authentication	Session Duration Analysis	Identification	General
-CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Code Segment Verification	Identification	Process
-CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Memory Boundary Tracking	Identification	Process
-CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Process Segment Execution Prevention	Identification	Process
-CVE-2013-3132	Privilege Escalation	Application	Process Code Segment	Segment Address Offset Randomization	Containment	Process
-CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Stack Frame Canary Validation	Identification	General
-CVE-2013-3132	Privilege Escalation	Application	Stack Frame	Shadow Stack Comparisons	Identification	General
+CVE-2021-26828	Code Execution	Application	Application	Asset Vulnerability Enumeration	Identification	General
+CVE-2021-26828	Code Execution	Application	Application	Software Update	Containment	General
+CVE-2021-26828	Code Execution	Application	Application	Restore Software	Recovery	General
+CVE-2021-26828	Privilege Escalation	Application	Process Code Segment	Process Code Segment Verification	Identification	Process
+CVE-2021-26828	Privilege Escalation	Application	Process Code Segment	Memory Boundary Tracking	Identification	Process
+CVE-2021-26828	Privilege Escalation	Application	Process Code Segment	Process Segment Execution Prevention	Identification	Process
+CVE-2021-26828	Privilege Escalation	Application	Process Code Segment	Segment Address Offset Randomization	Containment	Process
+CVE-2021-26828	Privilege Escalation	Application	Stack Frame	Stack Frame Canary Validation	Identification	General
+CVE-2021-26828	Privilege Escalation	Application	Stack Frame	Shadow Stack Comparisons	Identification	General
+CVE-2021-26828	Discovery	Application	Create Process	Process Spawn Analysis	Identification	Process
+CVE-2021-26828	Discovery	Application	Create Process	Executable Allowlisting	Identification	Process
+CVE-2021-26828	Discovery	Application	Create Process	Executable Denylisting	Identification	Process
+CVE-2021-26828	Discovery	Application	Create Process	Hardware-based Process Isolation	Identification	Process
+CVE-2021-26828	Discovery	Application	Create Process	Mandatory Access Control	Identification	Process
+CVE-2021-26828	Discovery	Application	Create Process	System Call Analysis	Identification	Process
+CVE-2021-26828	Discovery	Application	Create Process	System Call Filtering	Containment	Process
+CVE-2021-26828	Discovery	Application	Get Running Processes	System Call Analysis	Identification	Process
+CVE-2021-26828	Discovery	Application	Get Running Processes	System Call Filtering	Containment	Process
+CVE-2021-26828	Manipulation	Application	File	File Encryption	Containment	File
+CVE-2021-26828	Manipulation	Application	File	Local File Permissions	Identification	File
+CVE-2021-26828	Manipulation	Application	File	Decoy File	Identification	File
+CVE-2021-26828	Manipulation	Application	File	File Analysis	Identification	File
+CVE-2021-26828	Manipulation	Application	File	File Removal	Eradication	File
+CVE-2021-26828	Manipulation	Application	File	File Integrity Monitoring	Identification	File
+CVE-2021-26828	Manipulation	Application	File	Restore File	Recovery	File
+CVE-2021-26828	Manipulation	Application	Executable File	Dynamic Analysis	Identification	File
+CVE-2021-26828	Manipulation	Application	Executable File	Emulated File Analysis	Identification	File
+CVE-2021-26828	Manipulation	Application	Executable File	Executable Allowlisting	Containment	File
+CVE-2021-26828	Manipulation	Application	Executable File	Executable Denylisting	Containment	File
+CVE-2021-26828	Manipulation	Application	Executable File	File Encryption	Containment	File
+CVE-2021-26828	Manipulation	Application	Executable File	Local File Permissions	Identification	File
+CVE-2021-26828	Manipulation	Application	Executable File	Decoy File	Identification	File
+CVE-2021-26828	Manipulation	Application	Executable File	File Analysis	Identification	File
+CVE-2021-26828	Manipulation	Application	Executable File	File Removal	Eradication	File
+CVE-2021-26828	Manipulation	Application	Executable File	File Integrity Monitoring	Identification	File
+CVE-2021-26828	Manipulation	Application	Executable File	Restore File	Recovery	File
+CVE-2021-26828	Manipulation	Application	Network Traffic	Client-server Payload Profiling	Identification	Network
+CVE-2021-26828	Manipulation	Application	Network Traffic	Network Traffic Community Deviation	Identification	Network
+CVE-2021-26828	Manipulation	Application	Network Traffic	Per Host Download-Upload Ratio Analysis	Identification	Network
+CVE-2021-26828	Manipulation	Application	Network Traffic	Protocol Metadata Anomaly Detection	Identification	Network
+CVE-2021-26828	Manipulation	Application	Network Traffic	Remote Terminal Session Detection	Identification	Network
+CVE-2021-26828	Manipulation	Application	Network Traffic	User Geolocation Logon Pattern Analysis	Identification	Network
+CVE-2021-26828	Manipulation	Application	Network Traffic	Network Traffic Filtering	Containment	Network

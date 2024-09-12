@@ -1424,3 +1424,6 @@ CVE-2002-0348	Code Execution	nan	Digital Information Bearer	Standalone Honeynet	
 CVE-2002-0348	Code Execution	nan	Digital Information Bearer	Message Authentication	Preparation	General
 CVE-2002-0348	Code Execution	nan	Digital Information Bearer	Message Encryption	Preparation	General
 CVE-2002-0348	Code Execution	nan	Digital Information Bearer	Shadow Stack Comparisons	Identification	General
+CVE-2021-26828	Code Execution	Application	Application	Asset Vulnerability Enumeration	Identification	General
+CVE-2021-26828	Code Execution	Application	Application	Software Update	Containment	General
+CVE-2021-26828	Code Execution	Application	Application	Restore Software	Recovery	General

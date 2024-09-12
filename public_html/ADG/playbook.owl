@@ -337,6 +337,9 @@
         <NamedIndividual IRI="#External_Firewall"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Fail2Ban"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#External_IP_Address"/>
     </Declaration>
     <Declaration>
@@ -3319,6 +3322,10 @@
     <ClassAssertion>
         <Class IRI="#Requirement"/>
         <NamedIndividual IRI="#External_Firewall"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Requirement"/>
+        <NamedIndividual IRI="#Fail2Ban"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Artifact"/>
@@ -9046,6 +9053,11 @@
         <ObjectProperty IRI="#has_requirement"/>
         <NamedIndividual IRI="#RA3101"/>
         <NamedIndividual IRI="#External_Firewall"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_requirement"/>
+        <NamedIndividual IRI="#RA3101"/>
+        <NamedIndividual IRI="#Fail2Ban"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#is_linked_to_recovery_action"/>
@@ -21217,6 +21229,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#External_Firewall</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">External Firewall</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Fail2Ban</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Fail2Ban</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>

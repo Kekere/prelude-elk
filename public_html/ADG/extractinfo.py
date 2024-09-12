@@ -117,7 +117,7 @@ def extractcve(cveid):
   if len(a[0])!=0:
     impactmethod='Authentication_Bypass'
   operating_system=np.array(["rt","gold","debian","server","microsoft","windows","ios","aix","aleris","allegroe","os","android","ubuntu","debian","linux","mac","macos","fedora"])
-  software_noun=np.array(["keycloak","openfind","tracker","wordpress","cloud","zimbra","teclib","zebra","soft","unity","word","webex","excel","explorer","office","apache","acrobat","control","modicon","bank","financial","symantec","s-cms","ibm","adobe","realnetworks","trend micro","hp","blue coat","samba","ca","apache","firefox","antivirus","application","smart","app","freeware","sap","mobile","vbscript","digital","client","mcafee","cardio"])
+  software_noun=np.array(["scadabr","keycloak","openfind","tracker","wordpress","cloud","zimbra","teclib","zebra","soft","unity","word","webex","excel","explorer","office","apache","acrobat","control","modicon","bank","financial","symantec","s-cms","ibm","adobe","realnetworks","trend micro","hp","blue coat","samba","ca","apache","firefox","antivirus","application","smart","app","freeware","sap","mobile","vbscript","digital","client","mcafee","cardio"])
   context=''
   t = np.where([operating_system == i for i in tokens])
   v = np.where([software_noun == i for i in tokens])

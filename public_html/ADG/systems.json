@@ -32,5 +32,6 @@
 "Opendesign":["WSUS","SIEM"],
 "MacOS":["Terminal","Nessus","SIEM","APT"],
 "openssl":["Terminal","Nessus","SIEM","APT"],
-"network_camera_firmware":["APT","SIEM","Nessus","Suricata","Terminal","Antivirus","Nmap"]
+"network_camera_firmware":["APT","SIEM","Nessus","Suricata","Terminal","Antivirus","Nmap"],
+"scadabr":["Firewall Software", "SIEM", "Suricata", "Terminal", "Fail2Ban"]
 }

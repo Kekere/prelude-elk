@@ -1,10 +1,17 @@
-1,"execCode('192.168.245.24',andrew)","OR",0
-2,"RULE 9 (remote exploit of a server program)","AND",0
-3,"netAccess('192.168.245.24',tcp,35324)","OR",0
-4,"RULE 12 (multi-hop access)","AND",0
-5,"hacl('192.168.245.24','192.168.245.24',tcp,35324)","LEAF",1
-6,"RULE 13 (direct network access)","AND",0
-7,"hacl('13.225.195.118','192.168.245.24',tcp,35324)","LEAF",1
-8,"attackerLocated('13.225.195.118')","LEAF",1
-9,"networkServiceInfo('192.168.245.24',microsoft,tcp,35324,andrew)","LEAF",1
-10,"vulExists('192.168.245.24','CVE-2012-0002',microsoft,remoteExploit,privEscalation)","LEAF",1
+1,"execCode('10.0.11.100',user)","OR",0
+2,"RULE 10 (remote exploit of a server program)","AND",0
+3,"netAccess('10.0.11.100',tcp,8080)","OR",0
+4,"RULE 15 (direct network access)","AND",0
+5,"hacl('10.0.20.66','10.0.11.100',tcp,8080)","LEAF",1
+6,"attackerLocated('10.0.20.66')","LEAF",1
+7,"networkServiceInfo('10.0.11.100',scadabr,tcp,8080,user)","LEAF",1
+8,"vulExists('10.0.11.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation)","LEAF",1
+9,"RULE 11 (unrestricted upload of file with dangerous type)","AND",0
+10,"principalCompromised('Bob')","OR",0
+11,"RULE 2 (Bruteforce attack)","AND",0
+12,"hasAccount('Bob','10.0.11.100',user)","LEAF",1
+13,"inCompetent('Bob')","LEAF",1
+14,"RULE 21 (password sniffing)","AND",0
+15,"RULE 8 (When a principal is compromised any machine he has an account on will also be compromised)","AND",0
+16,"canAccessHost('10.0.11.100')","OR",0
+17,"RULE 17 (Access a host through executing code on the machine)","AND",0
