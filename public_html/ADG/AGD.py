@@ -403,12 +403,15 @@ def find_play_list(G,predicates):
                     # Remove empty rows
                     #filtered_df = filtered_df.dropna()
                     if len(counter)!=0:
-                        countermeasures.append(counter['Countermeasures Predicates'].values[0])
-                        attackpredicates.append(counter['Attack Predicates'].values[0])
-                        c=c+1
-                        counterid='C'+str(c)
-                        cid.append(counterid)
-                        vulid.append(play['CVE'].split("'")[1])
+                        for i in range(len(counter)):
+                            print(counter['Countermeasures Predicates'].values[i])
+                            print(len(counter))
+                            countermeasures.append(counter['Countermeasures Predicates'].values[i])
+                            attackpredicates.append(counter['Attack Predicates'].values[i])
+                            c=c+1
+                            counterid='C'+str(c)
+                            cid.append(counterid)
+                            vulid.append(play['CVE'].split("'")[1])
                         #print(counterid)
 
         countermeasure_list = pd.DataFrame(

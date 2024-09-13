@@ -102,3 +102,17 @@ possible_duplicate_trace_step(because(8,rule_desc('When a principal is compromis
 
 possible_duplicate_trace_step(because(17,rule_desc('Access a host through executing code on the machine',1.0),canAccessHost('10.0.11.100'),[execCode('10.0.11.100',user)])).
 
+possible_duplicate_trace_step(because(14,rule_desc('multi-hop access',0.5),netAccess('10.0.11.10',tcp,22),[hacl('10.0.11.100','10.0.11.10',tcp,22),advances('10.0.11.100','10.0.11.10'),execCode('10.0.11.100',user)])).
+
+possible_duplicate_trace_step(because(14,rule_desc('multi-hop access',0.5),netAccess('10.0.11.10',tcp,22),[hacl('10.0.11.100','10.0.11.10',tcp,22),advances('10.0.11.100','10.0.11.10'),execCode('10.0.11.100',user)])).
+
+possible_duplicate_trace_step(because(14,rule_desc('multi-hop access',0.5),netAccess('10.0.11.10',tcp,22),[hacl('10.0.11.100','10.0.11.10',tcp,22),advances('10.0.11.100','10.0.11.10'),execCode('10.0.11.100',user)])).
+
+possible_duplicate_trace_step(because(14,rule_desc('multi-hop access',0.5),netAccess('10.0.11.10',tcp,22),[hacl('10.0.11.100','10.0.11.10',tcp,22),advances('10.0.11.100','10.0.11.10'),execCode('10.0.11.100',user)])).
+
+possible_duplicate_trace_step(because(14,rule_desc('multi-hop access',0.5),netAccess('10.0.11.10',tcp,22),[hacl('10.0.11.100','10.0.11.10',tcp,22),advances('10.0.11.100','10.0.11.10'),execCode('10.0.11.100',user)])).
+
+possible_duplicate_trace_step(because(14,rule_desc('multi-hop access',0.5),netAccess('10.0.11.10',tcp,22),[hacl('10.0.11.100','10.0.11.10',tcp,22),advances('10.0.11.100','10.0.11.10'),execCode('10.0.11.100',user)])).
+
+possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('10.0.11.10',user),[netAccess('10.0.11.10',tcp,22),networkServiceInfo('10.0.11.10',openssh,tcp,22,user),vulExists('10.0.11.10','CVE-2023-48795',openssh,remoteExploit,privEscalation)])).
+
