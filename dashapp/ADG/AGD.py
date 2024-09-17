@@ -122,10 +122,14 @@ def convert_to_flow_matrix(graph,net,act,predicates):
     num_nodes = graph.number_of_nodes()
     flow_matrix = np.zeros((num_nodes, num_nodes), dtype=int)
     predica= [predic[0] for predic in predicates if predic[1].startswith('vulExists')]
+    located= [predic[0] for predic in predicates if predic[1].startswith('attackerLocated')]
     #print(net,act)
     for edge in graph.edges:
         source, target = edge
         if source in predica:
+            #print(source,target)
+            flow_matrix[source-1][target-1] = 1
+        if source in located:
             #print(source,target)
             flow_matrix[source-1][target-1] = 1
         if source in net or source in act:

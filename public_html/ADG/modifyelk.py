@@ -53,7 +53,7 @@ if response1['hits']['hits']:
             "iana_protocol_name"
             :"tcp",
             "address":"10.0.11.100",
-            "severity":"high"
+            "severity":"low"
         }
     }
     es.update(index=index_name1,id=id,body=update_body)
