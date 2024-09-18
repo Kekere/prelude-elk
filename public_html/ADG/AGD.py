@@ -326,7 +326,7 @@ def find_play_list(G,predicates):
     for v in vulner:
         vul=v.split(',')[1]
         # Define the regex pattern for CVE identifiers
-        cve_pattern = r'CVE-\d{4}-\d{4,7}'
+        cve_pattern = r'CVE-[A-Za-z0-9]{4}-[A-Za-z0-9]{4,7}'
         #print(vul)
         # Use re.findall to find all occurrences of the pattern in the text
         #cve_identifiers = re.findall(cve_pattern, vul.split("'")[1])
