@@ -70,7 +70,7 @@ def alerts():
     numbernodes=df["Nodes"]
     listleaf=[]
     listaction=[]
-    if severity=='low':
+    if severity=='low' or severity=='None':
         for pred in range(len(predicates)):
             if typenode[pred]=="LEAF":
                 param=predicates[pred].split('(')[1].split(')')[0]
