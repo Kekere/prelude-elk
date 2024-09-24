@@ -62,4 +62,5 @@ if response2['hits']['hits']:
     address2=last_doc2['_source']['address']
     protocol2=last_doc2['_source']['iana_protocol_name']
     port2=last_doc2['_source']['port']
-    print(address2,protocol2,port2)
+    severity2=last_doc2['_source']['severity']
+    print(address2,protocol2,port2,severity2)

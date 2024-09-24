@@ -54,13 +54,14 @@ def alerts():
         address2=last_doc2['_source']['address']
         protocol2=last_doc2['_source']['iana_protocol_name']
         port2=last_doc2['_source']['port']
-        print(address2,protocol2,port2)
+        severity2=last_doc2['_source']['severity']
+        print(address2,protocol2,port2,severity2)
     else:
         print("No documents found in the index.")
 
     # Define the path to your CSV file
     excel_file_path = '/var/www/html/ADG/AGpredicates.xlsx'
-
+    #excel_file_path = 'AGpredicates.xlsx'
     # Read the CSV file into a DataFrame
     df = pd.read_excel(excel_file_path)
 
@@ -82,7 +83,7 @@ def alerts():
                     else:
                         params[p]=val[0]
                 #print(params)
-                if address in params and port in params and protocol in params:
+                if address in params and str(port) in params and protocol in params:
                     #print(params)
                     listleaf.append(numbernodes[pred])
     else:
@@ -97,7 +98,7 @@ def alerts():
                     else:
                         params[p]=val[0]
                 #print(params)
-                if address in params and port in params and protocol in params:
+                if address in params and str(port) in params and protocol in params:
                     #print(params)
                     listaction.append(numbernodes[pred])
             if typenode[pred]=="LEAF":
@@ -110,21 +111,88 @@ def alerts():
                     else:
                         params[p]=val[0]
                 #print(params)
-                if address in params and port in params and protocol in params:
+                if address in params and str(port) in params and protocol in params:
                     #print(params)
                     listleaf.append(numbernodes[pred])
 
+    if len(listaction)!=0 or len(listleaf)!=0:
+        print(listaction)
+        # Create a DataFrame from the lists
+        df = pd.DataFrame({
+            'Net': pd.Series(listleaf),
+            'Act': pd.Series(listaction)
+        })
 
+        # Define the path to save the Excel file
+        excel_file_path = '/var/www/html/ADG/alerts.xlsx'
+
+        # Write the DataFrame to an Excel file
+        df.to_excel(excel_file_path, index=False)
+
+        print(f'Data successfully written to {excel_file_path}')
+    else:
+        #print(address2,port2,protocol2)
+        if severity2=='low' or severity2=='None':
+            for pred in range(len(predicates)):
+                print(pred)
+                if typenode[pred]=="LEAF":
+                    param=predicates[pred].split('(')[1].split(')')[0]
+                    params=param.split(',')
+                    for p in range(len(params)):
+                        val=params[p].split("'")
+                        if len(val)>1:
+                            params[p]=val[1]
+                        else:
+                            params[p]=val[0]
+                    #print(params, address2, port2, protocol2)
+                    #if address2 in params and port2 in params and protocol2 in params:
+                    if address2 in params and protocol2 in params and str(port2) in params:
+                        #print(params)
+                        listleaf.append(numbernodes[pred])
+        else:
+            for pred in range(len(predicates)):
+                if typenode[pred]=="OR":
+                    param=predicates[pred].split('(')[1].split(')')[0]
+                    params=param.split(',')
+                    for p in range(len(params)):
+                        val=params[p].split("'")
+                        if len(val)>1:
+                            params[p]=val[1]
+                        else:
+                            params[p]=val[0]
+                    #print(params, address2, str(port2), protocol2)
+                    #if address2 in params and port2 in params and protocol2 in params:
+                    if address2 in params and protocol2 in params and str(port2) in params:
+                        #print(params, str(port2))
+                        listaction.append(numbernodes[pred])
+                if typenode[pred]=="LEAF":
+                    param=predicates[pred].split('(')[1].split(')')[0]
+                    params=param.split(',')
+                    for p in range(len(params)):
+                        val=params[p].split("'")
+                        if len(val)>1:
+                            params[p]=val[1]
+                        else:
+                            params[p]=val[0]
+                    #print(params)
+                    #if address2 in params and port2 in params and protocol2 in params:
+                    if address2 in params and protocol2 in params and str(port2) in params:
+                        #print(params)
+                        listleaf.append(numbernodes[pred])
+    print(listleaf)
+    print(listaction)
+    #if len(listaction)!=0 or len(listleaf)!=0:
     # Create a DataFrame from the lists
-    df = pd.DataFrame({
-        'Net': pd.Series(listleaf),
-        'Act': pd.Series(listaction)
-    })
+    if len(listaction)!=0 or len(listleaf)!=0:
+        df = pd.DataFrame({
+            'Net': pd.Series(listleaf),
+            'Act': pd.Series(listaction)
+        })
 
-    # Define the path to save the Excel file
-    excel_file_path = '/var/www/html/ADG/alerts.xlsx'
+        # Define the path to save the Excel file
+        excel_file_path = '/var/www/html/ADG/alerts.xlsx'
 
-    # Write the DataFrame to an Excel file
-    df.to_excel(excel_file_path, index=False)
+        # Write the DataFrame to an Excel file
+        df.to_excel(excel_file_path, index=False)
 
-    print(f'Data successfully written to {excel_file_path}')
+        print(f'Data successfully written to {excel_file_path}')
