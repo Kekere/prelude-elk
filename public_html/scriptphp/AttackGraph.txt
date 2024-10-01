@@ -1,41 +1,55 @@
-1,"execCode('10.0.11.100',user)","OR",0
+1,"execCode('10.0.11.72',user)","OR",0
 2,"RULE 10 (remote exploit of a server program)","AND",0
-3,"netAccess('10.0.11.100',tcp,8080)","OR",0
-4,"RULE 15 (direct network access)","AND",0
-5,"hacl('10.0.20.66','10.0.11.100',tcp,8080)","LEAF",1
+3,"netAccess('10.0.11.72',tcp,22)","OR",0
+4,"RULE 14 (multi-hop access)","AND",0
+5,"hacl('10.0.11.100','10.0.11.72',tcp,22)","LEAF",1
 4,5,-1
-6,"attackerLocated('10.0.20.66')","LEAF",1
+6,"execCode('10.0.11.100',user)","OR",0
+7,"RULE 10 (remote exploit of a server program)","AND",0
+8,"netAccess('10.0.11.100',tcp,8080)","OR",0
+9,"RULE 15 (direct network access)","AND",0
+10,"hacl('10.0.20.0','10.0.11.100',tcp,8080)","LEAF",1
+9,10,-1
+11,"attackerLocated('10.0.20.0')","LEAF",1
+9,11,-1
+8,9,-1
+7,8,-1
+12,"networkServiceInfo('10.0.11.100',scadabr,tcp,8080,user)","LEAF",1
+7,12,-1
+13,"vulExists('10.0.11.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation)","LEAF",1
+7,13,-1
+6,7,-1
+14,"RULE 11 (unrestricted upload of file with dangerous type)","AND",0
+15,"principalCompromised('Bob')","OR",0
+16,"RULE 2 (Bruteforce attack)","AND",0
+17,"hasAccount('Bob','10.0.11.100',user)","LEAF",1
+16,17,-1
+16,8,-1
+18,"inCompetent('Bob')","LEAF",1
+16,18,-1
+15,16,-1
+19,"RULE 21 (password sniffing)","AND",0
+19,6,-1
+19,17,-1
+15,19,-1
+14,15,-1
+14,17,-1
+14,13,-1
+6,14,-1
+20,"RULE 8 (When a principal is compromised any machine he has an account on will also be compromised)","AND",0
+21,"canAccessHost('10.0.11.100')","OR",0
+22,"RULE 17 (Access a host through executing code on the machine)","AND",0
+22,6,-1
+21,22,-1
+20,21,-1
+20,17,-1
+20,15,-1
+6,20,-1
 4,6,-1
 3,4,-1
 2,3,-1
-7,"networkServiceInfo('10.0.11.100',scadabr,tcp,8080,user)","LEAF",1
-2,7,-1
-8,"vulExists('10.0.11.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation)","LEAF",1
-2,8,-1
+23,"networkServiceInfo('10.0.11.72',sshd,tcp,22,user)","LEAF",1
+2,23,-1
+24,"vulExists('10.0.11.72','CVE-2023-48795',sshd,remoteExploit,privEscalation)","LEAF",1
+2,24,-1
 1,2,-1
-9,"RULE 11 (unrestricted upload of file with dangerous type)","AND",0
-10,"principalCompromised('Bob')","OR",0
-11,"RULE 2 (Bruteforce attack)","AND",0
-12,"hasAccount('Bob','10.0.11.100',user)","LEAF",1
-11,12,-1
-11,3,-1
-13,"inCompetent('Bob')","LEAF",1
-11,13,-1
-10,11,-1
-14,"RULE 21 (password sniffing)","AND",0
-14,1,-1
-14,12,-1
-10,14,-1
-9,10,-1
-9,12,-1
-9,8,-1
-1,9,-1
-15,"RULE 8 (When a principal is compromised any machine he has an account on will also be compromised)","AND",0
-16,"canAccessHost('10.0.11.100')","OR",0
-17,"RULE 17 (Access a host through executing code on the machine)","AND",0
-17,1,-1
-16,17,-1
-15,16,-1
-15,12,-1
-15,10,-1
-1,15,-1

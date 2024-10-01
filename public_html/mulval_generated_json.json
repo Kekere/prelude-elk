@@ -3,22 +3,102 @@
         {
             "id": 5,
             "group": 3,
-            "label": "hacl('10.0.20.66','10.0.11.100',tcp,8080):1"
+            "label": "hacl('10.0.11.100','10.0.11.72',tcp,22):1"
         },
         {
             "id": 4,
             "group": 2,
+            "label": "RULE 14 (multi-hop access):0"
+        },
+        {
+            "id": 10,
+            "group": 3,
+            "label": "hacl('10.0.20.0','10.0.11.100',tcp,8080):1"
+        },
+        {
+            "id": 9,
+            "group": 2,
             "label": "RULE 15 (direct network access):0"
         },
         {
-            "id": 6,
+            "id": 11,
             "group": 3,
-            "label": "attackerLocated('10.0.20.66'):1"
+            "label": "attackerLocated('10.0.20.0'):1"
+        },
+        {
+            "id": 8,
+            "group": 1,
+            "label": "netAccess('10.0.11.100',tcp,8080):0"
+        },
+        {
+            "id": 7,
+            "group": 2,
+            "label": "RULE 10 (remote exploit of a server program):0"
+        },
+        {
+            "id": 12,
+            "group": 3,
+            "label": "networkServiceInfo('10.0.11.100',scadabr,tcp,8080,user):1"
+        },
+        {
+            "id": 13,
+            "group": 4,
+            "label": "vulExists('10.0.11.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation):1"
+        },
+        {
+            "id": 6,
+            "group": 1,
+            "label": "execCode('10.0.11.100',user):0"
+        },
+        {
+            "id": 17,
+            "group": 3,
+            "label": "hasAccount('Bob','10.0.11.100',user):1"
+        },
+        {
+            "id": 16,
+            "group": 2,
+            "label": "RULE 2 (Bruteforce attack):0"
+        },
+        {
+            "id": 18,
+            "group": 3,
+            "label": "inCompetent('Bob'):1"
+        },
+        {
+            "id": 15,
+            "group": 1,
+            "label": "principalCompromised('Bob'):0"
+        },
+        {
+            "id": 19,
+            "group": 2,
+            "label": "RULE 21 (password sniffing):0"
+        },
+        {
+            "id": 14,
+            "group": 2,
+            "label": "RULE 11 (unrestricted upload of file with dangerous type):0"
+        },
+        {
+            "id": 22,
+            "group": 2,
+            "label": "RULE 17 (Access a host through executing code on the machine):0"
+        },
+        {
+            "id": 21,
+            "group": 1,
+            "label": "canAccessHost('10.0.11.100'):0"
+        },
+        {
+            "id": 20,
+            "group": 2,
+            "label": "RULE 8 (When a principal is compromised any machine he has an account on will also be compromised):0"
         },
         {
             "id": 3,
             "group": 1,
-            "label": "netAccess('10.0.11.100',tcp,8080):0"
+            "label": "netAccess('10.0.11.72',tcp,22):0"
         },
         {
             "id": 2,
@@ -26,70 +106,121 @@
             "label": "RULE 10 (remote exploit of a server program):0"
         },
         {
-            "id": 7,
+            "id": 23,
             "group": 3,
-            "label": "networkServiceInfo('10.0.11.100',scadabr,tcp,8080,user):1"
+            "label": "networkServiceInfo('10.0.11.72',sshd,tcp,22,user):1"
         },
         {
-            "id": 8,
+            "id": 24,
             "group": 4,
-            "label": "vulExists('10.0.11.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation):1"
+            "label": "vulExists('10.0.11.72','CVE-2023-48795',sshd,remoteExploit,privEscalation):1"
         },
         {
             "id": 1,
             "group": 1,
-            "label": "execCode('10.0.11.100',user):0"
-        },
-        {
-            "id": 12,
-            "group": 3,
-            "label": "hasAccount('Bob','10.0.11.100',user):1"
-        },
-        {
-            "id": 11,
-            "group": 2,
-            "label": "RULE 2 (Bruteforce attack):0"
-        },
-        {
-            "id": 13,
-            "group": 3,
-            "label": "inCompetent('Bob'):1"
-        },
-        {
-            "id": 10,
-            "group": 1,
-            "label": "principalCompromised('Bob'):0"
-        },
-        {
-            "id": 14,
-            "group": 2,
-            "label": "RULE 21 (password sniffing):0"
-        },
-        {
-            "id": 9,
-            "group": 2,
-            "label": "RULE 11 (unrestricted upload of file with dangerous type):0"
-        },
-        {
-            "id": 17,
-            "group": 2,
-            "label": "RULE 17 (Access a host through executing code on the machine):0"
-        },
-        {
-            "id": 16,
-            "group": 1,
-            "label": "canAccessHost('10.0.11.100'):0"
-        },
-        {
-            "id": 15,
-            "group": 2,
-            "label": "RULE 8 (When a principal is compromised any machine he has an account on will also be compromised):0"
+            "label": "execCode('10.0.11.72',user):0"
         }
     ],
     "links": [
         {
             "source": 5,
             "target": 4
+        },
+        {
+            "source": 10,
+            "target": 9
+        },
+        {
+            "source": 11,
+            "target": 9
+        },
+        {
+            "source": 9,
+            "target": 8
+        },
+        {
+            "source": 8,
+            "target": 7
+        },
+        {
+            "source": 12,
+            "target": 7
+        },
+        {
+            "source": 13,
+            "target": 7
+        },
+        {
+            "source": 7,
+            "target": 6
+        },
+        {
+            "source": 17,
+            "target": 16
+        },
+        {
+            "source": 8,
+            "target": 16
+        },
+        {
+            "source": 18,
+            "target": 16
+        },
+        {
+            "source": 16,
+            "target": 15
+        },
+        {
+            "source": 6,
+            "target": 19
+        },
+        {
+            "source": 17,
+            "target": 19
+        },
+        {
+            "source": 19,
+            "target": 15
+        },
+        {
+            "source": 15,
+            "target": 14
+        },
+        {
+            "source": 17,
+            "target": 14
+        },
+        {
+            "source": 13,
+            "target": 14
+        },
+        {
+            "source": 14,
+            "target": 6
+        },
+        {
+            "source": 6,
+            "target": 22
+        },
+        {
+            "source": 22,
+            "target": 21
+        },
+        {
+            "source": 21,
+            "target": 20
+        },
+        {
+            "source": 17,
+            "target": 20
+        },
+        {
+            "source": 15,
+            "target": 20
+        },
+        {
+            "source": 20,
+            "target": 6
         },
         {
             "source": 6,
@@ -104,83 +235,15 @@
             "target": 2
         },
         {
-            "source": 7,
+            "source": 23,
             "target": 2
         },
         {
-            "source": 8,
+            "source": 24,
             "target": 2
         },
         {
             "source": 2,
-            "target": 1
-        },
-        {
-            "source": 12,
-            "target": 11
-        },
-        {
-            "source": 3,
-            "target": 11
-        },
-        {
-            "source": 13,
-            "target": 11
-        },
-        {
-            "source": 11,
-            "target": 10
-        },
-        {
-            "source": 1,
-            "target": 14
-        },
-        {
-            "source": 12,
-            "target": 14
-        },
-        {
-            "source": 14,
-            "target": 10
-        },
-        {
-            "source": 10,
-            "target": 9
-        },
-        {
-            "source": 12,
-            "target": 9
-        },
-        {
-            "source": 8,
-            "target": 9
-        },
-        {
-            "source": 9,
-            "target": 1
-        },
-        {
-            "source": 1,
-            "target": 17
-        },
-        {
-            "source": 17,
-            "target": 16
-        },
-        {
-            "source": 16,
-            "target": 15
-        },
-        {
-            "source": 12,
-            "target": 15
-        },
-        {
-            "source": 10,
-            "target": 15
-        },
-        {
-            "source": 15,
             "target": 1
         }
     ]

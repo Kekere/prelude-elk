@@ -7,7 +7,7 @@
 
 :-load_dyn('running_rules.P').
 
-:-load_dyn('../uploads/trustcom.P').
+:-load_dyn('../uploads/journal.P').
 
 :-assert(traceMode(completeTrace2)).
 
