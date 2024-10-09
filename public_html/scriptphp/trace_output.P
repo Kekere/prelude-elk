@@ -52,15 +52,13 @@ possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server p
 
 possible_duplicate_trace_step(because(15,rule_desc('direct network access',1.0),netAccess('10.0.11.100',tcp,8080),[hacl('10.0.20.0','10.0.11.100',tcp,8080),attackerLocated('10.0.20.0')])).
 
-possible_duplicate_trace_step(because(16,rule_desc('direct on-host access',1.0),netAccess('10.0.20.0',_h4780,_h4781),[attackerLocated('10.0.20.0')])).
+possible_duplicate_trace_step(because(16,rule_desc('direct on-host access',1.0),netAccess('10.0.20.0',_h4772,_h4773),[attackerLocated('10.0.20.0')])).
 
 possible_duplicate_trace_step(because(2,rule_desc('Bruteforce attack',0.5),principalCompromised('Bob'),[hasAccount('Bob','10.0.11.100',user),netAccess('10.0.11.100',tcp,8080),inCompetent('Bob')])).
 
 possible_duplicate_trace_step(because(21,rule_desc('password sniffing',0.80000000000000004),principalCompromised('Bob'),[execCode('10.0.11.100',user),hasAccount('Bob','10.0.11.100',user)])).
 
 possible_duplicate_trace_step(because(17,rule_desc('Access a host through executing code on the machine',1.0),canAccessHost('10.0.11.100'),[execCode('10.0.11.100',user)])).
-
-possible_duplicate_trace_step(because(22,rule_desc('',1),logInService('10.0.11.100',tcp,22),[networkServiceInfo('10.0.11.100',sshd,tcp,22,user)])).
 
 possible_duplicate_trace_step(because(8,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('10.0.11.100',user),[canAccessHost('10.0.11.100'),hasAccount('Bob','10.0.11.100',user),principalCompromised('Bob')])).
 
@@ -122,9 +120,9 @@ possible_duplicate_trace_step(because(21,rule_desc('password sniffing',0.8000000
 
 possible_duplicate_trace_step(because(17,rule_desc('Access a host through executing code on the machine',1.0),canAccessHost('10.0.11.100'),[execCode('10.0.11.100',user)])).
 
-possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('10.0.11.72',user),[netAccess('10.0.11.72',tcp,22),networkServiceInfo('10.0.11.72',sshd,tcp,22,user),vulExists('10.0.11.72','CVE-2023-48795',sshd,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('10.0.11.72',user),[netAccess('10.0.11.72',tcp,22),networkServiceInfo('10.0.11.72',openssh,tcp,22,user),vulExists('10.0.11.72','CVE-2023-48795',openssh,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('10.0.11.72',user),[netAccess('10.0.11.72',tcp,22),networkServiceInfo('10.0.11.72',sshd,tcp,22,user),vulExists('10.0.11.72','CVE-2023-48795',sshd,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('10.0.11.72',user),[netAccess('10.0.11.72',tcp,22),networkServiceInfo('10.0.11.72',openssh,tcp,22,user),vulExists('10.0.11.72','CVE-2023-48795',openssh,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('10.0.11.72',user),[netAccess('10.0.11.72',tcp,22),networkServiceInfo('10.0.11.72',sshd,tcp,22,user),vulExists('10.0.11.72','CVE-2023-48795',sshd,remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('10.0.11.72',user),[netAccess('10.0.11.72',tcp,22),networkServiceInfo('10.0.11.72',openssh,tcp,22,user),vulExists('10.0.11.72','CVE-2023-48795',openssh,remoteExploit,privEscalation)])).
 

@@ -8,9 +8,9 @@ hacl('10.0.11.70','10.0.11.72',tcp,22).
 inCompetent('Bob').
 hasAccount('Bob','10.0.11.100',user).
 networkServiceInfo('10.0.11.100','http-proxy',tcp,8080,user).
-networkServiceInfo('10.0.11.100','sshd',tcp,22,user).
-networkServiceInfo('10.0.11.70','sshd',tcp,22,user).
-networkServiceInfo('10.0.11.72','sshd',tcp,22,user).
+networkServiceInfo('10.0.11.100','openssh',tcp,22,user).
+networkServiceInfo('10.0.11.70','openssh',tcp,22,user).
+networkServiceInfo('10.0.11.72','openssh',tcp,22,user).
 networkServiceInfo('10.0.11.100','scadabr',tcp,8080,user).
 vulExists('10.0.11.100','CVE-2021-26828','scadabr',remoteExploit,privEscalation).
-vulExists('10.0.11.72','CVE-2023-48795','sshd',remoteExploit,privEscalation).
+vulExists('10.0.11.72','CVE-2023-48795','openssh',remoteExploit,privEscalation).

@@ -326,7 +326,8 @@ def find_play_list(G,predicates):
     for v in vulner:
         vul=v.split(',')[1]
         # Define the regex pattern for CVE identifiers
-        cve_pattern = r'CVE-[A-Za-z0-9]{4}-[A-Za-z0-9]{4,7}'
+        #cve_pattern = r'CVE-[A-Za-z0-9]{4}-[A-Za-z0-9]{4,7}'
+        cve_pattern = r'CVE-\d{4}-\d{4,7}'
         #print(vul)
         # Use re.findall to find all occurrences of the pattern in the text
         #cve_identifiers = re.findall(cve_pattern, vul.split("'")[1])
@@ -763,7 +764,16 @@ G,predicates,G_multilevel,node_colors,data,pos,colors,labels=generate_graph(file
 
 occcount, succ, pred=pred_and_succ(G_multilevel)
 #print(occcount)
+start_time1 = time.time()
 countermeasures_list=find_play_list(G,predicates)
+end_time1 = time.time()
+
+# Calculate the elapsed time
+elapsed_time1 = end_time1 - start_time1
+        
+# Save the result to a file
+with open('/var/www/html/ADG/time_gen.txt', 'w') as f:
+    f.write(f'Time taken: {elapsed_time1:.6f} seconds\n')
 #print(checknewalert)
 #val=True
 #elements=create_graph(G,pos,colors,labels,node_colors,data)
@@ -839,6 +849,7 @@ app.layout = html.Div([
 )
 
 def update_graph(n_intervals):  
+    #start_time = time.time()
     file_path,csv_file=[],[]
     G,predicates,G_multilevel,node_colors,data,pos,colors,labels=nx.DiGraph(),[],[],[],[],[],[],[]
     occcount, succ, pred=[],[],[]
@@ -868,7 +879,16 @@ def update_graph(n_intervals):
     #print(checknewalert)
     if len(checknewalert[1])==0 and len(checknewalert[0])==0 :
             n_intervals=0
+            start_time1=time.time()
             countermeasures_list=find_play_list(G,predicates)
+            end_time1 = time.time()
+
+            # Calculate the elapsed time
+            elapsed_time1 = end_time1 - start_time1
+            print(elapsed_time1)        
+            # Save the result to a file
+            with open('/var/www/html/ADG/time_gen.txt', 'w') as f:
+                f.write(f'Time taken: {elapsed_time1:.6f} seconds\n')
             val=True
     else:
         nets_equality_comparison = set(G[1])==set(list(checknewalert)[0])
@@ -878,7 +898,16 @@ def update_graph(n_intervals):
             DF_flow = pd.DataFrame(flow_matrix, index=range(1, flow_matrix.shape[0] + 1), columns=range(1, flow_matrix.shape[1] + 1))
             #print(DF_flow)
             n_intervals=0
+            start_time1=time.time()
             countermeasures_list=find_play_list(G,predicates)
+            end_time1 = time.time()
+
+            # Calculate the elapsed time
+            elapsed_time1 = end_time1 - start_time1
+            print(elapsed_time1)        
+            # Save the result to a file
+            with open('/var/www/html/ADG/time_gen.txt', 'w') as f:
+                f.write(f'Time taken: {elapsed_time1:.6f} seconds\n')
             val=True
         else:
             val=False
@@ -888,6 +917,7 @@ def update_graph(n_intervals):
     #print(val)
     #print(G)
     #print(n_intervals,val)
+    start_time = time.time()
     up_G=[]
     new_G=[]
     new_colors = []
@@ -978,6 +1008,15 @@ def update_graph(n_intervals):
             val=True
         #img_src = create_graph(new_G,pos,new_colors,labels,node_colors,datanew)
         #print(img_src)
+        end_time = time.time()
+
+        # Calculate the elapsed time
+        elapsed_time = end_time - start_time
+                
+        # Save the result to a file
+        print(elapsed_time)
+        with open('/var/www/html/ADG/time_result.txt', 'w') as f:
+            f.write(f'Time taken: {elapsed_time:.6f} seconds\n')
         return create_graph(new_G,pos,new_colors,labels,node_colors,datanew)
     else:
         # Return the same image if no update is needed

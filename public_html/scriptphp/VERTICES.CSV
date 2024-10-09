@@ -20,5 +20,5 @@
 20,"RULE 8 (When a principal is compromised any machine he has an account on will also be compromised)","AND",0
 21,"canAccessHost('10.0.11.100')","OR",0
 22,"RULE 17 (Access a host through executing code on the machine)","AND",0
-23,"networkServiceInfo('10.0.11.72',sshd,tcp,22,user)","LEAF",1
-24,"vulExists('10.0.11.72','CVE-2023-48795',sshd,remoteExploit,privEscalation)","LEAF",1
+23,"networkServiceInfo('10.0.11.72',openssh,tcp,22,user)","LEAF",1
+24,"vulExists('10.0.11.72','CVE-2023-48795',openssh,remoteExploit,privEscalation)","LEAF",1

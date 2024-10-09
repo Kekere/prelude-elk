@@ -48,8 +48,8 @@
 4,6,-1
 3,4,-1
 2,3,-1
-23,"networkServiceInfo('10.0.11.72',sshd,tcp,22,user)","LEAF",1
+23,"networkServiceInfo('10.0.11.72',openssh,tcp,22,user)","LEAF",1
 2,23,-1
-24,"vulExists('10.0.11.72','CVE-2023-48795',sshd,remoteExploit,privEscalation)","LEAF",1
+24,"vulExists('10.0.11.72','CVE-2023-48795',openssh,remoteExploit,privEscalation)","LEAF",1
 2,24,-1
 1,2,-1

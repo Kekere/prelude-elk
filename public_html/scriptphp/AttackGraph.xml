@@ -260,13 +260,13 @@
 </vertex>
 <vertex>
 <id>23</id>
-<fact>networkServiceInfo('10.0.11.72',sshd,tcp,22,user)</fact>
+<fact>networkServiceInfo('10.0.11.72',openssh,tcp,22,user)</fact>
 <metric>1</metric>
 <type>LEAF</type>
 </vertex>
 <vertex>
 <id>24</id>
-<fact>vulExists('10.0.11.72','CVE-2023-48795',sshd,remoteExploit,privEscalation)</fact>
+<fact>vulExists('10.0.11.72','CVE-2023-48795',openssh,remoteExploit,privEscalation)</fact>
 <metric>1</metric>
 <type>LEAF</type>
 </vertex>
