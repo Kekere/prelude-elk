@@ -124,20 +124,48 @@ def convert_to_flow_matrix(graph,net,act,predicates):
     predica= [predic[0] for predic in predicates if predic[1].startswith('vulExists')]
     located= [predic[0] for predic in predicates if predic[1].startswith('attackerLocated')]
     #print(net,act)
+    targets=[]
     for edge in graph.edges:
         source, target = edge
         if source in predica:
             #print(source,target)
+            targets.append(target)
             flow_matrix[source-1][target-1] = 1
         if source in located:
             #print(source,target)
+            targets.append(target)
             flow_matrix[source-1][target-1] = 1
         if source in net or source in act:
+            targets.append(target)
             flow_matrix[source-1][target-1] = 1
           #else:
             #if source==int(vul) or source==int(net) or source==int(act):
               #flow_matrix[source-1][target-1] = 1
+        # Count how many times each value appears in targets
+        target_counts = {value: targets.count(value) for value in set(targets)}
 
+        # Convert the target counts to JSON format
+        json_data = json.dumps(target_counts, indent=4)
+        print("Target counts in JSON format:")
+        print(json_data)
+        # Compare the count of edges with matching levels in targets
+        matching_edges_count = {value: 0 for value in target_counts}
+        edges=G_multilevel.edges(data=True)
+        for edge in edges:
+            level = edge[2]['level'][0]
+            if level in matching_edges_count:
+                matching_edges_count[level] += 1
+        print("\nComparison of matching edges count with target counts:")
+        for value, count in target_counts.items():
+            edge_count = matching_edges_count.get(value, 0)
+            print(f"Value: {value}, Target count: {count}, Matching edges count: {edge_count}")
+            if count==edge_count:
+                succ=list(graph.successors(value))
+                for s in succ:
+                    flow_matrix[value-1][s-1] = 1
+                    succs=list(graph.successors(s))
+                    for su in succs:
+                        flow_matrix[s-1][su-1] = 1
     return flow_matrix
 
 def remove_prefix(full_name):
@@ -674,6 +702,9 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
                     if pred[2]!='AND' and pred[0]==k:
                             #if pred[0]==k:
                             #print(countermeasure_list['Predicates'])
+                        #acts.append(l)
+                        #flow_matrix = convert_to_flow_matrix(G,net,act,predicates)
+                        #DF_flow = pd.DataFrame(flow_matrix, index=range(1, flow_matrix.shape[0] + 1), columns=range(1, flow_matrix.shape[1] + 1))
                         for counter in range(len(countermeasure_list['Predicates'])):       
                             #print(countermeasure_list['Predicates'][counter])                         
                             if pred[1].split('(')[0]==countermeasure_list['Predicates'][counter].split('(')[0]:
