@@ -146,8 +146,8 @@ def convert_to_flow_matrix(graph,net,act,predicates):
 
         # Convert the target counts to JSON format
         json_data = json.dumps(target_counts, indent=4)
-        print("Target counts in JSON format:")
-        print(json_data)
+        #print("Target counts in JSON format:")
+        #print(json_data)
         # Compare the count of edges with matching levels in targets
         matching_edges_count = {value: 0 for value in target_counts}
         edges=G_multilevel.edges(data=True)
@@ -155,10 +155,10 @@ def convert_to_flow_matrix(graph,net,act,predicates):
             level = edge[2]['level'][0]
             if level in matching_edges_count:
                 matching_edges_count[level] += 1
-        print("\nComparison of matching edges count with target counts:")
+        #print("\nComparison of matching edges count with target counts:")
         for value, count in target_counts.items():
             edge_count = matching_edges_count.get(value, 0)
-            print(f"Value: {value}, Target count: {count}, Matching edges count: {edge_count}")
+            #print(f"Value: {value}, Target count: {count}, Matching edges count: {edge_count}")
             if count==edge_count:
                 succ=list(graph.successors(value))
                 for s in succ:
@@ -437,8 +437,8 @@ def find_play_list(G,predicates):
                     #filtered_df = filtered_df.dropna()
                     if len(counter)!=0:
                         for i in range(len(counter)):
-                            print(counter['Countermeasures Predicates'].values[i])
-                            print(len(counter))
+                            #print(counter['Countermeasures Predicates'].values[i])
+                            #print(len(counter))
                             countermeasures.append(counter['Countermeasures Predicates'].values[i])
                             attackpredicates.append(counter['Attack Predicates'].values[i])
                             c=c+1
@@ -455,7 +455,7 @@ def find_play_list(G,predicates):
             })
         # determining the name of the file
         file_name = '/var/www/html/ADG/countermeasures.xlsx'
-        print(countermeasure_list)
+        #print(countermeasure_list)
         # saving the excel
         #print(countermeasure_list)
         countermeasure_list.to_excel(file_name)
@@ -568,7 +568,7 @@ def create_graph(G, pos,colors,labels,node_colors,data):
         col=node_colors[data[get_position_of_sublist(data,node)][2]]
         type_n=data[get_position_of_sublist(data,node)][2]
         if type(node)==int:
-            print(col,labels[node])
+            #print(col,labels[node])
             elements.append({
                 'data': {'id': str(node), 'label': str(labels[node]), 'type':type_n}
             })
@@ -579,7 +579,7 @@ def create_graph(G, pos,colors,labels,node_colors,data):
     for edge in G.edges():
         #print(edge)
         elements.append({'data': {'source': str(edge[0]), 'target': str(edge[1])}})
-    print(elements)
+    #print(elements)
     return elements
 
 def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_count,predecessors_count,net,act):
@@ -588,7 +588,7 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
 
     #act=15
     #print(act,net)
-    print(net,act)
+    #print(net,act)
 
     new_G = nx.DiGraph()
     vectorlist2=[]
@@ -637,10 +637,12 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
                                     # Use re.findall to find all occurrences of the pattern in the text
                                     #cve_identifiers = re.findall(cve_pattern, vul.split("'")[1])
                                     cve_identifiers=re.findall(cve_pattern, vulide)
+                                    
                                     if len(cve_identifiers)!=0 and str(pred[1].split('(')[1].split(',')[1]).split("'")[1]==countermeasure_list['CVE'][counter]:
                                         listpredparam=pred[1].split('(')[1].split(')')[0].split(',')
                                         listcontrparam=countermeasure_list['Countermeasures'][counter].split('(')[1].split(')')[0].split(',')
                                         #if counter[0]==pred[1]:
+                                        
                                         for i in range(len(listcontrparam)):
                                             listcontrparam[i]=listpredparam[i]
                                         countermeasure=str(countermeasure_list['Countermeasures'][counter].split('(')[0])+'('+', '.join(listcontrparam)+')'
@@ -650,13 +652,18 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
                                         new_nodes.append(counterm)
                                         new_edges.append((counterm, pred[0]))
                                         predecesseur=list(G.predecessors(j))
+                                #print(contpred)
                                 if contpred.startswith('unblock') or contpred.startswith('restore') or contpred.startswith('enable'):
                                     #print(get_vulname(G))
-                                    cont=list(countermeasure_list.loc[countermeasure_list['Countermeasures'] == 'patchVul(_host, _vulID, _program)', 'CVE'])
+                                    cont=list(countermeasure_list.loc[countermeasure_list['Countermeasures'] == 'patchVulnerability(_machine, _vulID, _program)', 'CVE'])
+                                    #print(countermeasure_list.loc[countermeasure_list['Countermeasures']=='patchVulnerability(_machine, _vulID _program)', 'CVE'],cont)
                                     #commonlist=[x for x in countermeasure_list['CVE'] if x in ]
                                     notinplay=[x.split('(')[1].split(',')[1].split("'")[1] for x in get_vulname(G,predicates) if x.split('(')[1].split(',')[1].split("'")[1] not in cont]
+                                    #print(notinplay)
+                                    #print(len(notinplay))
                                     if len(notinplay)==0:
                                         listpredparam=pred[1].split('(')[1].split(')')[0].split(',')
+                                        print(listpredparam)
                                         listcontrparam=countermeasure_list['Countermeasures'][counter].split('(')[1].split(')')[0].split(',')
                                         #if counter[0]==pred[1]:
                                         for i in range(len(listcontrparam)):
@@ -712,17 +719,21 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
                                 contpred=countermeasure_list['Countermeasures'][counter].split('(')[0]
                                 #print(contpred)
                                 if contpred.startswith('patch'):
+                                    #print(contpred)
                                     vulide=pred[1].split('(')[1].split(',')[1]
+                                    #print(vulide)
                                     # Define the regex pattern for CVE identifiers
                                     cve_pattern = r'CVE-\d{4}-\d{4,7}'
                                     #print(vul)
                                     # Use re.findall to find all occurrences of the pattern in the text
                                     #cve_identifiers = re.findall(cve_pattern, vul.split("'")[1])
                                     cve_identifiers=re.findall(cve_pattern, vulide)
+                                    
                                     if len(cve_identifiers)!=0 and str(pred[1].split('(')[1].split(',')[1]).split("'")[1]==countermeasure_list['CVE'][counter]:
                                         listpredparam=pred[1].split('(')[1].split(')')[0].split(',')
                                         listcontrparam=countermeasure_list['Countermeasures'][counter].split('(')[1].split(')')[0].split(',')
                                         #if counter[0]==pred[1]:
+                                        
                                         for i in range(len(listcontrparam)):
                                             listcontrparam[i]=listpredparam[i]
                                         countermeasure=str(countermeasure_list['Countermeasures'][counter].split('(')[0])+'('+', '.join(listcontrparam)+')'
@@ -732,13 +743,16 @@ def enrich_graph(G,predicates,countermeasure_list,occurencecount,successors_coun
                                         new_nodes.append(counterm)
                                         new_edges.append((counterm, pred[0]))
                                         predecesseur=list(G.predecessors(j))
+                                #print(contpred)
                                 if contpred.startswith('unblock') or contpred.startswith('restore') or contpred.startswith('enable'):
-                                    cont=list(countermeasure_list.loc[countermeasure_list['Countermeasures'] == 'patchVul(_host, _vulID, _program)', 'CVE'])
+                                    cont=list(countermeasure_list.loc[countermeasure_list['Countermeasures'] == 'patchVulnerability(_machine, _vulID _program)', 'CVE'])
+                                    #print(countermeasure_list.loc[countermeasure_list['Countermeasures']=='patchVulnerability(_machine, _vulID _program)', 'CVE'],cont)
                                     #commonlist=[x for x in countermeasure_list['CVE'] if x in ]
                                     notinplay=[x.split('(')[1].split(',')[1].split("'")[1] for x in get_vulname(G,predicates) if x.split('(')[1].split(',')[1].split("'")[1] not in cont]
                                     #print(cont)
                                     if len(notinplay)==0:
                                         listpredparam=pred[1].split('(')[1].split(')')[0].split(',')
+                                        print(listpredparam)
                                         listcontrparam=countermeasure_list['Countermeasures'][counter].split('(')[1].split(')')[0].split(',')
                                         #if counter[0]==pred[1]:
                                         for i in range(len(listcontrparam)):
@@ -916,7 +930,7 @@ def update_graph(n_intervals):
 
             # Calculate the elapsed time
             elapsed_time1 = end_time1 - start_time1
-            print(elapsed_time1)        
+            #print(elapsed_time1)        
             # Save the result to a file
             with open('/var/www/html/ADG/time_gen.txt', 'w') as f:
                 f.write(f'Time taken: {elapsed_time1:.6f} seconds\n')
@@ -935,7 +949,7 @@ def update_graph(n_intervals):
 
             # Calculate the elapsed time
             elapsed_time1 = end_time1 - start_time1
-            print(elapsed_time1)        
+            #print(elapsed_time1)        
             # Save the result to a file
             with open('/var/www/html/ADG/time_gen.txt', 'w') as f:
                 f.write(f'Time taken: {elapsed_time1:.6f} seconds\n')
@@ -953,17 +967,17 @@ def update_graph(n_intervals):
     new_G=[]
     new_colors = []
     datanew=[]
-    print(val,n_intervals)
-    print(countermeasures_list)
+    #print(val,n_intervals)
+    #print(countermeasures_list)
     if val==True:
         up_G=[]
         new_G=[]
         new_colors = []
         datanew=[]
         #print(timegen)
-        print(len(net),len(act))
+        #print(len(net),len(act))
         if len(net)!=0 or len(act)!=0:
-            print(countermeasures_list)
+            #print(countermeasures_list)
             up_G =enrich_graph(G,predicates,countermeasures_list,occcount,succ,pred,net,act)
         else:
             countermeasures_list = pd.DataFrame(
@@ -972,7 +986,7 @@ def update_graph(n_intervals):
             'Countermeasures': [],
             'Predicates': []
             })
-            print(countermeasures_list)
+            #print(countermeasures_list)
             up_G =enrich_graph(G,predicates,countermeasures_list,occcount,succ,pred,net,act)
         requestalerts.alerts()
         # determining the name of the file
@@ -981,7 +995,7 @@ def update_graph(n_intervals):
         up_G[3].to_excel(file_name)
 
         new_G=up_G[0]
-        print(new_G)
+        #print(new_G)
         checknewalert=take_alerts('/var/www/html/ADG/alerts.xlsx')
         net=list(checknewalert[0])
         #net=19
@@ -1045,7 +1059,7 @@ def update_graph(n_intervals):
         elapsed_time = end_time - start_time
                 
         # Save the result to a file
-        print(elapsed_time)
+        #print(elapsed_time)
         with open('/var/www/html/ADG/time_result.txt', 'w') as f:
             f.write(f'Time taken: {elapsed_time:.6f} seconds\n')
         return create_graph(new_G,pos,new_colors,labels,node_colors,datanew)

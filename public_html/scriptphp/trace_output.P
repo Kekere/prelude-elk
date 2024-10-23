@@ -42,33 +42,81 @@ meta(cvss,2).
 meta(attackGoal,1).
 meta(advances,2).
 
-attack(physicalDamage(_h4561)).
+attack(execCode('10.0.13.37',lea)).
 
-possible_duplicate_trace_step(because(15,rule_desc('direct network access',1.0),netAccess('157.159.68.125',tcp,'3389'),[hacl('157.159.68.75','157.159.68.125',tcp,'3389'),attackerLocated('157.159.68.75')])).
+possible_duplicate_trace_step(because(18,rule_desc('direct network access',1.0),netAccess('10.0.13.151',tcp,3389),[hacl('10.0.13.0','10.0.13.151',tcp,3389),attackerLocated('10.0.13.0')])).
 
-possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2019-0708','windows remote_desktop_protocol',remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.13.151',user),[netAccess('10.0.13.151',tcp,3389),networkServiceInfo('10.0.13.151',rdp,tcp,3389,user),vulExists('10.0.13.151','CVE-2019-0708',rdp,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(7,rule_desc('Credentials harvesting of the last user connected remotely',1.0),harvestCredentials('157.159.68.125',admin),[hasCredentialsOnMemory('157.159.68.125',admin),execCode('157.159.68.125',olivia)])).
+possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.13.151',user),[netAccess('10.0.13.151',tcp,3389),networkServiceInfo('10.0.13.151',rdp,tcp,3389,user),vulExists('10.0.13.151','CVE-2019-0708',rdp,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2019-0708','windows remote_desktop_protocol',remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(17,rule_desc('multi-hop access',0.5),netAccess('10.0.18.100',tcp,8080),[hacl('10.0.13.151','10.0.18.100',tcp,8080),advances('10.0.13.151','10.0.18.100'),execCode('10.0.13.151',user)])).
 
-possible_duplicate_trace_step(because(6,rule_desc('Remote login on host by reusing credentials',0.5),execCode('157.159.68.75',admin),[harvestCredentials('157.159.68.125',admin),hacl('157.159.68.75','157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.75',windows,tcp,'3389',admin)])).
+possible_duplicate_trace_step(because(17,rule_desc('multi-hop access',0.5),netAccess('10.0.13.32',tcp,22),[hacl('10.0.13.151','10.0.13.32',tcp,22),advances('10.0.13.151','10.0.13.32'),execCode('10.0.13.151',user)])).
 
-possible_duplicate_trace_step(because(6,rule_desc('Remote login on host by reusing credentials',0.5),execCode('157.159.68.75',admin),[harvestCredentials('157.159.68.125',admin),hacl('157.159.68.75','157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.75',windows,tcp,'3389',admin)])).
+possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.18.100',lea),[netAccess('10.0.18.100',tcp,8080),networkServiceInfo('10.0.18.100',scadabr,tcp,8080,lea),vulExists('10.0.18.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(14,rule_desc('multi-hop access',0.5),netAccess('157.159.68.125',tcp,'3389'),[hacl('157.159.68.75','157.159.68.125',tcp,'3389'),advances('157.159.68.75','157.159.68.125'),execCode('157.159.68.75',admin)])).
+possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.18.100',lea),[netAccess('10.0.18.100',tcp,8080),networkServiceInfo('10.0.18.100',scadabr,tcp,8080,lea),vulExists('10.0.18.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2019-0708','windows remote_desktop_protocol',remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.18.100',lea),[netAccess('10.0.18.100',tcp,8080),networkServiceInfo('10.0.18.100',scadabr,tcp,8080,lea),vulExists('10.0.18.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(10,rule_desc('remote exploit of a server program',1.0),execCode('157.159.68.125',olivia),[netAccess('157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',olivia),vulExists('157.159.68.125','CVE-2019-0708','windows remote_desktop_protocol',remoteExploit,privEscalation)])).
+possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.13.32',user),[netAccess('10.0.13.32',tcp,22),networkServiceInfo('10.0.13.32',openssh,tcp,22,user),vulExists('10.0.13.32','CVE-2023-48795',openssh,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(7,rule_desc('Credentials harvesting of the last user connected remotely',1.0),harvestCredentials('157.159.68.125',admin),[hasCredentialsOnMemory('157.159.68.125',admin),execCode('157.159.68.125',olivia)])).
+possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.13.32',user),[netAccess('10.0.13.32',tcp,22),networkServiceInfo('10.0.13.32',openssh,tcp,22,user),vulExists('10.0.13.32','CVE-2023-48795',openssh,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(6,rule_desc('Remote login on host by reusing credentials',0.5),execCode('157.159.68.75',admin),[harvestCredentials('157.159.68.125',admin),hacl('157.159.68.75','157.159.68.125',tcp,'3389'),networkServiceInfo('157.159.68.75',windows,tcp,'3389',admin)])).
+possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.13.32',user),[netAccess('10.0.13.32',tcp,22),networkServiceInfo('10.0.13.32',openssh,tcp,22,user),vulExists('10.0.13.32','CVE-2023-48795',openssh,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(5,rule_desc('Obtain control of network traffic',0.5),obtainControl('157.159.68.97',admin),[ipv6Able('157.159.68.97'),execCode('157.159.68.75',admin),isAdmin(admin)])).
+possible_duplicate_trace_step(because(3,rule_desc('DoS',0.5),dos('10.0.13.32'),[execCode('10.0.13.32',user),execCode('10.0.13.151',user),hacl('10.0.13.151','10.0.13.32',tcp,22)])).
 
-possible_duplicate_trace_step(because(4,rule_desc('Modify bus info',0.5),modify('157.159.68.97',_h4716),[obtainControl('157.159.68.97',admin)])).
+possible_duplicate_trace_step(because(24,rule_desc('password sniffing',0.80000000000000004),principalCompromised(_h4899),[execCode('10.0.18.100',lea),hasAccount(_h4899,'10.0.18.100',lea)])).
 
-possible_duplicate_trace_step(because(3,rule_desc('Physical damage',0.5),physicalDamage(_h4561),[modify('157.159.68.97',_h4716)])).
+possible_duplicate_trace_step(because(17,rule_desc('multi-hop access',0.5),netAccess('10.0.13.37',tcp,22),[hacl('10.0.18.100','10.0.13.37',tcp,22),advances('10.0.18.100','10.0.13.37'),execCode('10.0.18.100',lea)])).
+
+possible_duplicate_trace_step(because(17,rule_desc('multi-hop access',0.5),netAccess('10.0.13.30',tcp,22),[hacl('10.0.13.32','10.0.13.30',tcp,22),advances('10.0.13.32','10.0.13.30'),execCode('10.0.13.32',user)])).
+
+possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.13.37',lea),[netAccess('10.0.13.37',tcp,22),networkServiceInfo('10.0.13.37',openssh,tcp,22,lea),vulExists('10.0.13.37','CVE-2013-48795',openssh,remoteExploit,privEscalation)])).
+
+possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.13.30',user),[netAccess('10.0.13.30',tcp,22),networkServiceInfo('10.0.13.30',openssh,tcp,22,user),vulExists('10.0.13.30','CVE-2023-48795',openssh,remoteExploit,privEscalation)])).
+
+possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.13.30',user),[netAccess('10.0.13.30',tcp,22),networkServiceInfo('10.0.13.30',openssh,tcp,22,user),vulExists('10.0.13.30','CVE-2023-48795',openssh,remoteExploit,privEscalation)])).
+
+possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.13.30',user),[netAccess('10.0.13.30',tcp,22),networkServiceInfo('10.0.13.30',openssh,tcp,22,user),vulExists('10.0.13.30','CVE-2023-48795',openssh,remoteExploit,privEscalation)])).
+
+possible_duplicate_trace_step(because(20,rule_desc('Access a host through executing code on the machine',1.0),canAccessHost('10.0.18.100'),[execCode('10.0.18.100',lea)])).
+
+possible_duplicate_trace_step(because(11,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('10.0.18.100',lea),[canAccessHost('10.0.18.100'),hasAccount(_h7616,'10.0.18.100',lea),principalCompromised(_h7616)])).
+
+possible_duplicate_trace_step(because(11,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('10.0.18.100',lea),[canAccessHost('10.0.18.100'),hasAccount(_h6886,'10.0.18.100',lea),principalCompromised(_h6886)])).
+
+possible_duplicate_trace_step(because(11,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('10.0.18.100',lea),[canAccessHost('10.0.18.100'),hasAccount(_h8127,'10.0.18.100',lea),principalCompromised(_h8127)])).
+
+possible_duplicate_trace_step(because(3,rule_desc('DoS',0.5),dos('10.0.13.30'),[execCode('10.0.13.30',user),execCode('10.0.13.32',user),hacl('10.0.13.32','10.0.13.30',tcp,22)])).
+
+possible_duplicate_trace_step(because(20,rule_desc('Access a host through executing code on the machine',1.0),canAccessHost('10.0.18.100'),[execCode('10.0.18.100',lea)])).
+
+possible_duplicate_trace_step(because(17,rule_desc('multi-hop access',0.5),netAccess('10.0.18.100',tcp,8080),[hacl('10.0.13.30','10.0.18.100',tcp,8080),advances('10.0.13.30','10.0.18.100'),execCode('10.0.13.30',user)])).
+
+possible_duplicate_trace_step(because(17,rule_desc('multi-hop access',0.5),netAccess('10.0.13.37',tcp,22),[hacl('10.0.18.100','10.0.13.37',tcp,22),advances('10.0.18.100','10.0.13.37'),execCode('10.0.18.100',lea)])).
+
+possible_duplicate_trace_step(because(24,rule_desc('password sniffing',0.80000000000000004),principalCompromised(_h4899),[execCode('10.0.18.100',lea),hasAccount(_h4899,'10.0.18.100',lea)])).
+
+possible_duplicate_trace_step(because(4,rule_desc('Keylogger',0.5),logOn('10.0.18.100',lea),[hasAccount(_h8083,'10.0.18.100',lea),dos('10.0.13.30'),hacl('10.0.13.30','10.0.18.100',tcp,8080)])).
+
+possible_duplicate_trace_step(because(4,rule_desc('Keylogger',0.5),logOn('10.0.18.100',lea),[hasAccount(_h7572,'10.0.18.100',lea),dos('10.0.13.30'),hacl('10.0.13.30','10.0.18.100',tcp,8080)])).
+
+possible_duplicate_trace_step(because(4,rule_desc('Keylogger',0.5),logOn('10.0.18.100',lea),[hasAccount(_h5564,'10.0.18.100',lea),dos('10.0.13.30'),hacl('10.0.13.30','10.0.18.100',tcp,8080)])).
+
+possible_duplicate_trace_step(because(5,rule_desc('Keylogger',0.5),execCode('10.0.18.100',lea),[networkServiceInfo('10.0.18.100',scadabr,tcp,8080,lea),vulExists('10.0.18.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation),logOn('10.0.18.100',lea)])).
+
+possible_duplicate_trace_step(because(5,rule_desc('Keylogger',0.5),execCode('10.0.18.100',lea),[networkServiceInfo('10.0.18.100',scadabr,tcp,8080,lea),vulExists('10.0.18.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation),logOn('10.0.18.100',lea)])).
+
+possible_duplicate_trace_step(because(5,rule_desc('Keylogger',0.5),execCode('10.0.18.100',lea),[networkServiceInfo('10.0.18.100',scadabr,tcp,8080,lea),vulExists('10.0.18.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation),logOn('10.0.18.100',lea)])).
+
+possible_duplicate_trace_step(because(24,rule_desc('password sniffing',0.80000000000000004),principalCompromised(_h4899),[execCode('10.0.18.100',lea),hasAccount(_h4899,'10.0.18.100',lea)])).
+
+possible_duplicate_trace_step(because(20,rule_desc('Access a host through executing code on the machine',1.0),canAccessHost('10.0.18.100'),[execCode('10.0.18.100',lea)])).
+
+possible_duplicate_trace_step(because(17,rule_desc('multi-hop access',0.5),netAccess('10.0.13.37',tcp,22),[hacl('10.0.18.100','10.0.13.37',tcp,22),advances('10.0.18.100','10.0.13.37'),execCode('10.0.18.100',lea)])).
+
+possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.13.37',lea),[netAccess('10.0.13.37',tcp,22),networkServiceInfo('10.0.13.37',openssh,tcp,22,lea),vulExists('10.0.13.37','CVE-2013-48795',openssh,remoteExploit,privEscalation)])).
 

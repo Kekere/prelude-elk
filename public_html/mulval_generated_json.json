@@ -1,188 +1,258 @@
 {
     "nodes": [
         {
-            "id": 7,
-            "group": 3,
-            "label": "ipv6Able('157.159.68.97'):1"
-        },
-        {
-            "id": 6,
-            "group": 2,
-            "label": "RULE 5 (Obtain control of network traffic):0"
-        },
-        {
-            "id": 12,
-            "group": 3,
-            "label": "hasCredentialsOnMemory('157.159.68.125',admin):1"
-        },
-        {
-            "id": 11,
-            "group": 2,
-            "label": "RULE 7 (Credentials harvesting of the last user connected remotely):0"
-        },
-        {
-            "id": 17,
-            "group": 3,
-            "label": "hacl('157.159.68.75','157.159.68.125',tcp,'3389'):1"
-        },
-        {
-            "id": 16,
-            "group": 2,
-            "label": "RULE 14 (multi-hop access):0"
-        },
-        {
-            "id": 8,
-            "group": 1,
-            "label": "execCode('157.159.68.75',admin):0"
-        },
-        {
-            "id": 15,
-            "group": 1,
-            "label": "netAccess('157.159.68.125',tcp,'3389'):0"
-        },
-        {
-            "id": 18,
-            "group": 2,
-            "label": "RULE 15 (direct network access):0"
-        },
-        {
-            "id": 19,
-            "group": 3,
-            "label": "attackerLocated('157.159.68.75'):1"
-        },
-        {
-            "id": 14,
-            "group": 2,
-            "label": "RULE 10 (remote exploit of a server program):0"
-        },
-        {
-            "id": 20,
-            "group": 3,
-            "label": "networkServiceInfo('157.159.68.125','windows remote_desktop_protocol',tcp,'3389',olivia):1"
-        },
-        {
-            "id": 21,
-            "group": 4,
-            "label": "vulExists('157.159.68.125','CVE-2019-0708','windows remote_desktop_protocol',remoteExploit,privEscalation):1"
-        },
-        {
-            "id": 13,
-            "group": 1,
-            "label": "execCode('157.159.68.125',olivia):0"
-        },
-        {
-            "id": 10,
-            "group": 1,
-            "label": "harvestCredentials('157.159.68.125',admin):0"
-        },
-        {
-            "id": 9,
-            "group": 2,
-            "label": "RULE 6 (Remote login on host by reusing credentials):0"
-        },
-        {
-            "id": 22,
-            "group": 3,
-            "label": "networkServiceInfo('157.159.68.75',windows,tcp,'3389',admin):1"
-        },
-        {
-            "id": 23,
-            "group": 3,
-            "label": "isAdmin(admin):1"
-        },
-        {
             "id": 5,
-            "group": 1,
-            "label": "obtainControl('157.159.68.97',admin):0"
+            "group": 3,
+            "label": "hacl('10.0.18.100','10.0.13.37',tcp,22):1"
         },
         {
             "id": 4,
             "group": 2,
-            "label": "RULE 4 (Modify bus info):0"
+            "label": "RULE 17 (multi-hop access):0"
+        },
+        {
+            "id": 6,
+            "group": 1,
+            "label": "execCode('10.0.18.100',lea):0"
+        },
+        {
+            "id": 9,
+            "group": 2,
+            "label": "RULE 20 (Access a host through executing code on the machine):0"
+        },
+        {
+            "id": 8,
+            "group": 1,
+            "label": "canAccessHost('10.0.18.100'):0"
+        },
+        {
+            "id": 7,
+            "group": 2,
+            "label": "RULE 11 (When a principal is compromised any machine he has an account on will also be compromised):0"
+        },
+        {
+            "id": 10,
+            "group": 3,
+            "label": "hasAccount(_,'10.0.18.100',lea):1"
+        },
+        {
+            "id": 12,
+            "group": 2,
+            "label": "RULE 24 (password sniffing):0"
+        },
+        {
+            "id": 11,
+            "group": 1,
+            "label": "principalCompromised(_):0"
+        },
+        {
+            "id": 16,
+            "group": 3,
+            "label": "hacl('10.0.13.151','10.0.18.100',tcp,8080):1"
+        },
+        {
+            "id": 15,
+            "group": 2,
+            "label": "RULE 17 (multi-hop access):0"
+        },
+        {
+            "id": 21,
+            "group": 3,
+            "label": "hacl('10.0.13.0','10.0.13.151',tcp,3389):1"
+        },
+        {
+            "id": 20,
+            "group": 2,
+            "label": "RULE 18 (direct network access):0"
+        },
+        {
+            "id": 22,
+            "group": 3,
+            "label": "attackerLocated('10.0.13.0'):1"
+        },
+        {
+            "id": 19,
+            "group": 1,
+            "label": "netAccess('10.0.13.151',tcp,3389):0"
+        },
+        {
+            "id": 18,
+            "group": 2,
+            "label": "RULE 13 (remote exploit of a server program):0"
+        },
+        {
+            "id": 23,
+            "group": 3,
+            "label": "networkServiceInfo('10.0.13.151',rdp,tcp,3389,user):1"
+        },
+        {
+            "id": 24,
+            "group": 4,
+            "label": "vulExists('10.0.13.151','CVE-2019-0708',rdp,remoteExploit,privEscalation):1"
+        },
+        {
+            "id": 17,
+            "group": 1,
+            "label": "execCode('10.0.13.151',user):0"
+        },
+        {
+            "id": 14,
+            "group": 1,
+            "label": "netAccess('10.0.18.100',tcp,8080):0"
+        },
+        {
+            "id": 26,
+            "group": 3,
+            "label": "hacl('10.0.13.30','10.0.18.100',tcp,8080):1"
+        },
+        {
+            "id": 25,
+            "group": 2,
+            "label": "RULE 17 (multi-hop access):0"
+        },
+        {
+            "id": 31,
+            "group": 3,
+            "label": "hacl('10.0.13.32','10.0.13.30',tcp,22):1"
+        },
+        {
+            "id": 30,
+            "group": 2,
+            "label": "RULE 17 (multi-hop access):0"
+        },
+        {
+            "id": 36,
+            "group": 3,
+            "label": "hacl('10.0.13.151','10.0.13.32',tcp,22):1"
+        },
+        {
+            "id": 35,
+            "group": 2,
+            "label": "RULE 17 (multi-hop access):0"
+        },
+        {
+            "id": 34,
+            "group": 1,
+            "label": "netAccess('10.0.13.32',tcp,22):0"
+        },
+        {
+            "id": 33,
+            "group": 2,
+            "label": "RULE 13 (remote exploit of a server program):0"
+        },
+        {
+            "id": 37,
+            "group": 3,
+            "label": "networkServiceInfo('10.0.13.32',openssh,tcp,22,user):1"
+        },
+        {
+            "id": 38,
+            "group": 4,
+            "label": "vulExists('10.0.13.32','CVE-2023-48795',openssh,remoteExploit,privEscalation):1"
+        },
+        {
+            "id": 32,
+            "group": 1,
+            "label": "execCode('10.0.13.32',user):0"
+        },
+        {
+            "id": 29,
+            "group": 1,
+            "label": "netAccess('10.0.13.30',tcp,22):0"
+        },
+        {
+            "id": 28,
+            "group": 2,
+            "label": "RULE 13 (remote exploit of a server program):0"
+        },
+        {
+            "id": 39,
+            "group": 3,
+            "label": "networkServiceInfo('10.0.13.30',openssh,tcp,22,user):1"
+        },
+        {
+            "id": 40,
+            "group": 4,
+            "label": "vulExists('10.0.13.30','CVE-2023-48795',openssh,remoteExploit,privEscalation):1"
+        },
+        {
+            "id": 27,
+            "group": 1,
+            "label": "execCode('10.0.13.30',user):0"
+        },
+        {
+            "id": 13,
+            "group": 2,
+            "label": "RULE 13 (remote exploit of a server program):0"
+        },
+        {
+            "id": 41,
+            "group": 3,
+            "label": "networkServiceInfo('10.0.18.100',scadabr,tcp,8080,lea):1"
+        },
+        {
+            "id": 42,
+            "group": 4,
+            "label": "vulExists('10.0.18.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation):1"
+        },
+        {
+            "id": 43,
+            "group": 2,
+            "label": "RULE 5 (Keylogger):0"
+        },
+        {
+            "id": 45,
+            "group": 2,
+            "label": "RULE 4 (Keylogger):0"
+        },
+        {
+            "id": 47,
+            "group": 2,
+            "label": "RULE 3 (DoS):0"
+        },
+        {
+            "id": 46,
+            "group": 1,
+            "label": "dos('10.0.13.30'):0"
+        },
+        {
+            "id": 44,
+            "group": 1,
+            "label": "logOn('10.0.18.100',lea):0"
         },
         {
             "id": 3,
             "group": 1,
-            "label": "modify('157.159.68.97',_):0"
+            "label": "netAccess('10.0.13.37',tcp,22):0"
         },
         {
             "id": 2,
             "group": 2,
-            "label": "RULE 3 (Physical damage):0"
+            "label": "RULE 13 (remote exploit of a server program):0"
+        },
+        {
+            "id": 48,
+            "group": 3,
+            "label": "networkServiceInfo('10.0.13.37',openssh,tcp,22,lea):1"
+        },
+        {
+            "id": 49,
+            "group": 4,
+            "label": "vulExists('10.0.13.37','CVE-2013-48795',openssh,remoteExploit,privEscalation):1"
         },
         {
             "id": 1,
             "group": 1,
-            "label": "physicalDamage(_):0"
+            "label": "execCode('10.0.13.37',lea):0"
         }
     ],
     "links": [
         {
-            "source": 7,
-            "target": 6
+            "source": 5,
+            "target": 4
         },
         {
-            "source": 12,
-            "target": 11
-        },
-        {
-            "source": 17,
-            "target": 16
-        },
-        {
-            "source": 8,
-            "target": 16
-        },
-        {
-            "source": 16,
-            "target": 15
-        },
-        {
-            "source": 17,
-            "target": 18
-        },
-        {
-            "source": 19,
-            "target": 18
-        },
-        {
-            "source": 18,
-            "target": 15
-        },
-        {
-            "source": 15,
-            "target": 14
-        },
-        {
-            "source": 20,
-            "target": 14
-        },
-        {
-            "source": 21,
-            "target": 14
-        },
-        {
-            "source": 14,
-            "target": 13
-        },
-        {
-            "source": 13,
-            "target": 11
-        },
-        {
-            "source": 11,
-            "target": 10
-        },
-        {
-            "source": 10,
-            "target": 9
-        },
-        {
-            "source": 17,
-            "target": 9
-        },
-        {
-            "source": 22,
+            "source": 6,
             "target": 9
         },
         {
@@ -191,18 +261,206 @@
         },
         {
             "source": 8,
+            "target": 7
+        },
+        {
+            "source": 10,
+            "target": 7
+        },
+        {
+            "source": 6,
+            "target": 12
+        },
+        {
+            "source": 10,
+            "target": 12
+        },
+        {
+            "source": 12,
+            "target": 11
+        },
+        {
+            "source": 11,
+            "target": 7
+        },
+        {
+            "source": 7,
             "target": 6
         },
         {
+            "source": 16,
+            "target": 15
+        },
+        {
+            "source": 21,
+            "target": 20
+        },
+        {
+            "source": 22,
+            "target": 20
+        },
+        {
+            "source": 20,
+            "target": 19
+        },
+        {
+            "source": 19,
+            "target": 18
+        },
+        {
             "source": 23,
+            "target": 18
+        },
+        {
+            "source": 24,
+            "target": 18
+        },
+        {
+            "source": 18,
+            "target": 17
+        },
+        {
+            "source": 17,
+            "target": 15
+        },
+        {
+            "source": 15,
+            "target": 14
+        },
+        {
+            "source": 26,
+            "target": 25
+        },
+        {
+            "source": 31,
+            "target": 30
+        },
+        {
+            "source": 36,
+            "target": 35
+        },
+        {
+            "source": 17,
+            "target": 35
+        },
+        {
+            "source": 35,
+            "target": 34
+        },
+        {
+            "source": 34,
+            "target": 33
+        },
+        {
+            "source": 37,
+            "target": 33
+        },
+        {
+            "source": 38,
+            "target": 33
+        },
+        {
+            "source": 33,
+            "target": 32
+        },
+        {
+            "source": 32,
+            "target": 30
+        },
+        {
+            "source": 30,
+            "target": 29
+        },
+        {
+            "source": 29,
+            "target": 28
+        },
+        {
+            "source": 39,
+            "target": 28
+        },
+        {
+            "source": 40,
+            "target": 28
+        },
+        {
+            "source": 28,
+            "target": 27
+        },
+        {
+            "source": 27,
+            "target": 25
+        },
+        {
+            "source": 25,
+            "target": 14
+        },
+        {
+            "source": 14,
+            "target": 13
+        },
+        {
+            "source": 41,
+            "target": 13
+        },
+        {
+            "source": 42,
+            "target": 13
+        },
+        {
+            "source": 13,
+            "target": 6
+        },
+        {
+            "source": 41,
+            "target": 43
+        },
+        {
+            "source": 42,
+            "target": 43
+        },
+        {
+            "source": 10,
+            "target": 45
+        },
+        {
+            "source": 27,
+            "target": 47
+        },
+        {
+            "source": 32,
+            "target": 47
+        },
+        {
+            "source": 31,
+            "target": 47
+        },
+        {
+            "source": 47,
+            "target": 46
+        },
+        {
+            "source": 46,
+            "target": 45
+        },
+        {
+            "source": 26,
+            "target": 45
+        },
+        {
+            "source": 45,
+            "target": 44
+        },
+        {
+            "source": 44,
+            "target": 43
+        },
+        {
+            "source": 43,
             "target": 6
         },
         {
             "source": 6,
-            "target": 5
-        },
-        {
-            "source": 5,
             "target": 4
         },
         {
@@ -211,6 +469,14 @@
         },
         {
             "source": 3,
+            "target": 2
+        },
+        {
+            "source": 48,
+            "target": 2
+        },
+        {
+            "source": 49,
             "target": 2
         },
         {

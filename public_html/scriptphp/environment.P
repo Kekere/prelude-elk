@@ -7,7 +7,7 @@
 
 :-load_dyn('running_rules.P').
 
-:-load_dyn('../uploads/ifipsec.P').
+:-load_dyn('../uploads/incyber.P').
 
 :-assert(traceMode(completeTrace2)).
 

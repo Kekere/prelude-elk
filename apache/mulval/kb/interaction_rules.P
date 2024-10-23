@@ -117,6 +117,30 @@ interaction_rule(
     0.5)).
 
 interaction_rule(
+    (dos(_host) :-
+    	hacl(_h,_host,_protocol, _port),
+        execCode(_h, _user),
+        execCode(_host, _user)),
+    rule_desc('DoS',
+    0.5)).
+
+interaction_rule(
+    (logOn(_host,_user) :-
+    	hacl(_h,_host, _protocol, _port),
+    	dos(_h),
+        hasAccount(Victim,_host, _user)),
+    rule_desc('Keylogger',
+    0.5)).
+
+interaction_rule(
+    (execCode(_host,_user) :-
+    	logOn(_host,_user),
+        vulExists(_host, _, Software, remoteExploit, privEscalation),
+	networkServiceInfo(_host, Software, Protocol, Port, _user)),
+    rule_desc('Keylogger',
+    0.5)).
+
+interaction_rule(
    (physicalDamage(_bus) :-
 	modify(_host, _info)),
    rule_desc('Physical damage',
@@ -189,7 +213,7 @@ interaction_rule(
 
 interaction_rule(
   (execCode(H, Perm) :-
-      vulExists(H, _, Software, remoteExploit, privEscalation),
+      vulExists(H, _, Software, remoteExploit, writeDirect),
       hasAccount(Victim, H, Perm),
       principalCompromised(Victim)),
   rule_desc('unrestricted upload of file with dangerous type',
@@ -312,7 +336,7 @@ interaction_rule(
 	networkServiceInfo(H, sshd, Protocol, Port, _)),
   rule_desc('',
   1)).
-
+  
 interaction_rule(
   (logInService(H, Protocol, Port) :-
 	networkServiceInfo(H, vpnService, Protocol, Port, _)),
