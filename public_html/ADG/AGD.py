@@ -403,7 +403,7 @@ def find_play_list(G,predicates):
                                     #print(cve_file)
                                     with open(cve_file, 'w') as file:
                                         json.dump(jsoncve, file, indent=4)
-                                        #print(vul)
+
                                     generateplaybook.genplay(vul.split("'")[1])
                                     ontology2 = Graph()
                                     ontology2.parse(path, format="ttl")

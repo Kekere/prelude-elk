@@ -94,7 +94,7 @@ for res in result:
                             arraylist.append(pred+'(_host, program)') 
                 else:
                     if res.startswith('execCode') or res.startswith('netAccess') or res.startswith('accessFile'):
-                        if 'Process' in pred:
+                        if 'Process' in pred or 'Vulnerabilities' in pred:
                             arraylist.append(pred+'(_host)')          
                     if 'vul' in res.split(')')[0].split('(')[0]:
                         #print(res)

@@ -244,7 +244,7 @@ To connect the agent with Prelude execute these following commands:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ sudo prelude-admin register suricata "idmef:w admin:r" 0.0.0.0:5553 --uid 0 --gid 0
 
-$ sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i enp0s3
+$ sudo LD_LIBRARY_PATH=/usr/local/lib /usr/local/bin/suricata -c /usr/local/etc/suricata/suricata.yaml -i ens256 -i ens192
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Developer mode

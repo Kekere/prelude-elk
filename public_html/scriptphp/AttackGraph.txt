@@ -2,107 +2,132 @@
 2,"RULE 13 (remote exploit of a server program)","AND",0
 3,"netAccess('10.0.13.37',tcp,22)","OR",0
 4,"RULE 17 (multi-hop access)","AND",0
-5,"hacl('10.0.18.100','10.0.13.37',tcp,22)","LEAF",1
+5,"hacl('10.0.13.30','10.0.13.37',tcp,22)","LEAF",1
 4,5,-1
-6,"execCode('10.0.18.100',lea)","OR",0
-7,"RULE 11 (When a principal is compromised any machine he has an account on will also be compromised)","AND",0
-8,"canAccessHost('10.0.18.100')","OR",0
-9,"RULE 20 (Access a host through executing code on the machine)","AND",0
-9,6,-1
-8,9,-1
-7,8,-1
-10,"hasAccount(_,'10.0.18.100',lea)","LEAF",1
-7,10,-1
-11,"principalCompromised(_)","OR",0
-12,"RULE 24 (password sniffing)","AND",0
-12,6,-1
-12,10,-1
-11,12,-1
-7,11,-1
-6,7,-1
-13,"RULE 13 (remote exploit of a server program)","AND",0
-14,"netAccess('10.0.18.100',tcp,8080)","OR",0
-15,"RULE 17 (multi-hop access)","AND",0
-16,"hacl('10.0.13.151','10.0.18.100',tcp,8080)","LEAF",1
-15,16,-1
-17,"execCode('10.0.13.151',user)","OR",0
-18,"RULE 13 (remote exploit of a server program)","AND",0
-19,"netAccess('10.0.13.151',tcp,3389)","OR",0
-20,"RULE 18 (direct network access)","AND",0
-21,"hacl('10.0.13.0','10.0.13.151',tcp,3389)","LEAF",1
-20,21,-1
-22,"attackerLocated('10.0.13.0')","LEAF",1
-20,22,-1
-19,20,-1
-18,19,-1
-23,"networkServiceInfo('10.0.13.151',rdp,tcp,3389,user)","LEAF",1
-18,23,-1
-24,"vulExists('10.0.13.151','CVE-2019-0708',rdp,remoteExploit,privEscalation)","LEAF",1
-18,24,-1
-17,18,-1
-15,17,-1
+6,"execCode('10.0.13.30',lea)","OR",0
+7,"RULE 13 (remote exploit of a server program)","AND",0
+8,"netAccess('10.0.13.30',tcp,22)","OR",0
+9,"RULE 17 (multi-hop access)","AND",0
+10,"hacl('10.0.13.32','10.0.13.30',tcp,22)","LEAF",1
+9,10,-1
+11,"execCode('10.0.13.32',user)","OR",0
+12,"RULE 13 (remote exploit of a server program)","AND",0
+13,"netAccess('10.0.13.32',tcp,22)","OR",0
+14,"RULE 17 (multi-hop access)","AND",0
+15,"hacl('10.0.13.151','10.0.13.32',tcp,22)","LEAF",1
 14,15,-1
-25,"RULE 17 (multi-hop access)","AND",0
-26,"hacl('10.0.13.30','10.0.18.100',tcp,8080)","LEAF",1
-25,26,-1
-27,"execCode('10.0.13.30',user)","OR",0
-28,"RULE 13 (remote exploit of a server program)","AND",0
-29,"netAccess('10.0.13.30',tcp,22)","OR",0
-30,"RULE 17 (multi-hop access)","AND",0
-31,"hacl('10.0.13.32','10.0.13.30',tcp,22)","LEAF",1
-30,31,-1
-32,"execCode('10.0.13.32',user)","OR",0
-33,"RULE 13 (remote exploit of a server program)","AND",0
-34,"netAccess('10.0.13.32',tcp,22)","OR",0
-35,"RULE 17 (multi-hop access)","AND",0
-36,"hacl('10.0.13.151','10.0.13.32',tcp,22)","LEAF",1
-35,36,-1
-35,17,-1
-34,35,-1
-33,34,-1
-37,"networkServiceInfo('10.0.13.32',openssh,tcp,22,user)","LEAF",1
-33,37,-1
-38,"vulExists('10.0.13.32','CVE-2023-48795',openssh,remoteExploit,privEscalation)","LEAF",1
-33,38,-1
-32,33,-1
-30,32,-1
-29,30,-1
-28,29,-1
-39,"networkServiceInfo('10.0.13.30',openssh,tcp,22,user)","LEAF",1
-28,39,-1
-40,"vulExists('10.0.13.30','CVE-2023-48795',openssh,remoteExploit,privEscalation)","LEAF",1
-28,40,-1
-27,28,-1
-25,27,-1
-14,25,-1
+16,"execCode('10.0.13.151',user)","OR",0
+17,"RULE 13 (remote exploit of a server program)","AND",0
+18,"netAccess('10.0.13.151',tcp,3389)","OR",0
+19,"RULE 18 (direct network access)","AND",0
+20,"hacl('10.0.13.0','10.0.13.151',tcp,3389)","LEAF",1
+19,20,-1
+21,"attackerLocated('10.0.13.0')","LEAF",1
+19,21,-1
+18,19,-1
+17,18,-1
+22,"networkServiceInfo('10.0.13.151',rdp,tcp,3389,user)","LEAF",1
+17,22,-1
+23,"vulExists('10.0.13.151','CVE-2019-0708',rdp,remoteExploit,privEscalation)","LEAF",1
+17,23,-1
+16,17,-1
+14,16,-1
 13,14,-1
-41,"networkServiceInfo('10.0.18.100',scadabr,tcp,8080,lea)","LEAF",1
-13,41,-1
-42,"vulExists('10.0.18.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation)","LEAF",1
-13,42,-1
-6,13,-1
-43,"RULE 5 (Keylogger)","AND",0
-43,41,-1
-43,42,-1
-44,"logOn('10.0.18.100',lea)","OR",0
-45,"RULE 4 (Keylogger)","AND",0
-45,10,-1
-46,"dos('10.0.13.30')","OR",0
-47,"RULE 3 (DoS)","AND",0
-47,27,-1
-47,32,-1
-47,31,-1
-46,47,-1
-45,46,-1
-45,26,-1
-44,45,-1
+12,13,-1
+24,"networkServiceInfo('10.0.13.32',openssh,tcp,22,user)","LEAF",1
+12,24,-1
+25,"vulExists('10.0.13.32','CVE-2023-48795',openssh,remoteExploit,privEscalation)","LEAF",1
+12,25,-1
+11,12,-1
+9,11,-1
+8,9,-1
+26,"RULE 17 (multi-hop access)","AND",0
+27,"hacl('10.0.18.100','10.0.13.30',tcp,22)","LEAF",1
+26,27,-1
+28,"execCode('10.0.18.100',lea)","OR",0
+29,"RULE 11 (When a principal is compromised any machine he has an account on will also be compromised)","AND",0
+30,"canAccessHost('10.0.18.100')","OR",0
+31,"RULE 20 (Access a host through executing code on the machine)","AND",0
+31,28,-1
+30,31,-1
+29,30,-1
+32,"hasAccount(_,'10.0.18.100',lea)","LEAF",1
+29,32,-1
+33,"principalCompromised(_)","OR",0
+34,"RULE 24 (password sniffing)","AND",0
+34,28,-1
+34,32,-1
+33,34,-1
+29,33,-1
+28,29,-1
+35,"RULE 13 (remote exploit of a server program)","AND",0
+36,"netAccess('10.0.18.100',tcp,8080)","OR",0
+37,"RULE 17 (multi-hop access)","AND",0
+38,"hacl('10.0.13.151','10.0.18.100',tcp,8080)","LEAF",1
+37,38,-1
+37,16,-1
+36,37,-1
+39,"RULE 17 (multi-hop access)","AND",0
+40,"hacl('10.0.13.30','10.0.18.100',tcp,8080)","LEAF",1
+39,40,-1
+39,6,-1
+36,39,-1
+41,"RULE 17 (multi-hop access)","AND",0
+41,40,-1
+42,"execCode('10.0.13.30',user)","OR",0
+43,"RULE 13 (remote exploit of a server program)","AND",0
+43,8,-1
+44,"networkServiceInfo('10.0.13.30',openssh,tcp,22,user)","LEAF",1
 43,44,-1
-6,43,-1
+45,"vulExists('10.0.13.30','CVE-2023-48795',openssh,remoteExploit,privEscalation)","LEAF",1
+43,45,-1
+42,43,-1
+41,42,-1
+36,41,-1
+35,36,-1
+46,"networkServiceInfo('10.0.18.100',scadabr,tcp,8080,lea)","LEAF",1
+35,46,-1
+47,"vulExists('10.0.18.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation)","LEAF",1
+35,47,-1
+28,35,-1
+48,"RULE 5 (Keylogger)","AND",0
+48,46,-1
+48,47,-1
+49,"logOn('10.0.18.100',lea)","OR",0
+50,"RULE 4 (Keylogger)","AND",0
+50,32,-1
+51,"dos('10.0.13.30')","OR",0
+52,"RULE 3 (DoS)","AND",0
+52,6,-1
+52,28,-1
+52,27,-1
+51,52,-1
+53,"RULE 3 (DoS)","AND",0
+53,42,-1
+53,11,-1
+53,10,-1
+51,53,-1
+50,51,-1
+50,40,-1
+49,50,-1
+48,49,-1
+28,48,-1
+26,28,-1
+8,26,-1
+7,8,-1
+54,"networkServiceInfo('10.0.13.30',openssh,tcp,22,lea)","LEAF",1
+7,54,-1
+7,45,-1
+6,7,-1
 4,6,-1
 3,4,-1
+55,"RULE 17 (multi-hop access)","AND",0
+55,5,-1
+55,42,-1
+3,55,-1
 2,3,-1
-48,"networkServiceInfo('10.0.13.37',openssh,tcp,22,lea)","LEAF",1
-2,48,-1
-49,"vulExists('10.0.13.37','CVE-2013-48795',openssh,remoteExploit,privEscalation)","LEAF",1
-2,49,-1
+56,"networkServiceInfo('10.0.13.37',openssh,tcp,22,lea)","LEAF",1
+2,56,-1
+57,"vulExists('10.0.13.37','CVE-2023-48795',openssh,remoteExploit,privEscalation)","LEAF",1
+2,57,-1
 1,2,-1

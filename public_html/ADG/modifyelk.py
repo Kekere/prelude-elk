@@ -1,3 +1,4 @@
+
 from elasticsearch import Elasticsearch
 from elasticsearch.exceptions import NotFoundError
 
@@ -53,7 +54,7 @@ if response1['hits']['hits']:
             "iana_protocol_name"
             :"tcp",
             "address":"10.0.13.37",
-            "severity":"low"
+            "severity":"high"
         }
     }
     es.update(index=index_name1,id=id,body=update_body)
