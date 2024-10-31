@@ -58,7 +58,7 @@ possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server p
 
 possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.13.32',user),[netAccess('10.0.13.32',tcp,22),networkServiceInfo('10.0.13.32',openssh,tcp,22,user),vulExists('10.0.13.32','CVE-2023-48795',openssh,remoteExploit,privEscalation)])).
 
-possible_duplicate_trace_step(because(24,rule_desc('password sniffing',0.80000000000000004),principalCompromised(_h5144),[execCode('10.0.18.100',lea),hasAccount(_h5144,'10.0.18.100',lea)])).
+possible_duplicate_trace_step(because(24,rule_desc('password sniffing',0.80000000000000004),principalCompromised(_h5154),[execCode('10.0.18.100',lea),hasAccount(_h5154,'10.0.18.100',lea)])).
 
 possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.18.100',lea),[netAccess('10.0.18.100',tcp,8080),networkServiceInfo('10.0.18.100',scadabr,tcp,8080,lea),vulExists('10.0.18.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation)])).
 
@@ -74,15 +74,15 @@ possible_duplicate_trace_step(because(17,rule_desc('multi-hop access',0.5),netAc
 
 possible_duplicate_trace_step(because(20,rule_desc('Access a host through executing code on the machine',1.0),canAccessHost('10.0.18.100'),[execCode('10.0.18.100',lea)])).
 
-possible_duplicate_trace_step(because(11,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('10.0.18.100',lea),[canAccessHost('10.0.18.100'),hasAccount(_h8149,'10.0.18.100',lea),principalCompromised(_h8149)])).
+possible_duplicate_trace_step(because(11,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('10.0.18.100',lea),[canAccessHost('10.0.18.100'),hasAccount(_h8159,'10.0.18.100',lea),principalCompromised(_h8159)])).
 
-possible_duplicate_trace_step(because(11,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('10.0.18.100',lea),[canAccessHost('10.0.18.100'),hasAccount(_h7539,'10.0.18.100',lea),principalCompromised(_h7539)])).
+possible_duplicate_trace_step(because(11,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('10.0.18.100',lea),[canAccessHost('10.0.18.100'),hasAccount(_h7549,'10.0.18.100',lea),principalCompromised(_h7549)])).
 
-possible_duplicate_trace_step(because(11,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('10.0.18.100',lea),[canAccessHost('10.0.18.100'),hasAccount(_h8465,'10.0.18.100',lea),principalCompromised(_h8465)])).
+possible_duplicate_trace_step(because(11,rule_desc('When a principal is compromised any machine he has an account on will also be compromised',0.5),execCode('10.0.18.100',lea),[canAccessHost('10.0.18.100'),hasAccount(_h8475,'10.0.18.100',lea),principalCompromised(_h8475)])).
 
 possible_duplicate_trace_step(because(3,rule_desc('DoS',0.5),dos('10.0.13.32'),[execCode('10.0.13.32',user),execCode('10.0.13.151',user),hacl('10.0.13.151','10.0.13.32',tcp,22)])).
 
-possible_duplicate_trace_step(because(24,rule_desc('password sniffing',0.80000000000000004),principalCompromised(_h5144),[execCode('10.0.18.100',lea),hasAccount(_h5144,'10.0.18.100',lea)])).
+possible_duplicate_trace_step(because(24,rule_desc('password sniffing',0.80000000000000004),principalCompromised(_h5154),[execCode('10.0.18.100',lea),hasAccount(_h5154,'10.0.18.100',lea)])).
 
 possible_duplicate_trace_step(because(13,rule_desc('remote exploit of a server program',1.0),execCode('10.0.13.30',lea),[netAccess('10.0.13.30',tcp,22),networkServiceInfo('10.0.13.30',openssh,tcp,22,lea),vulExists('10.0.13.30','CVE-2023-48795',openssh,remoteExploit,privEscalation)])).
 
@@ -122,11 +122,11 @@ possible_duplicate_trace_step(because(20,rule_desc('Access a host through execut
 
 possible_duplicate_trace_step(because(3,rule_desc('DoS',0.5),dos('10.0.13.30'),[execCode('10.0.13.30',lea),execCode('10.0.18.100',lea),hacl('10.0.18.100','10.0.13.30',tcp,22)])).
 
-possible_duplicate_trace_step(because(4,rule_desc('Keylogger',0.5),logOn('10.0.18.100',lea),[hasAccount(_h4978,'10.0.18.100',lea),dos('10.0.13.30'),hacl('10.0.13.30','10.0.18.100',tcp,8080)])).
+possible_duplicate_trace_step(because(4,rule_desc('Keylogger',0.5),logOn('10.0.18.100',lea),[hasAccount(_h4988,'10.0.18.100',lea),dos('10.0.13.30'),hacl('10.0.13.30','10.0.18.100',tcp,8080)])).
 
-possible_duplicate_trace_step(because(4,rule_desc('Keylogger',0.5),logOn('10.0.18.100',lea),[hasAccount(_h8105,'10.0.18.100',lea),dos('10.0.13.30'),hacl('10.0.13.30','10.0.18.100',tcp,8080)])).
+possible_duplicate_trace_step(because(4,rule_desc('Keylogger',0.5),logOn('10.0.18.100',lea),[hasAccount(_h8115,'10.0.18.100',lea),dos('10.0.13.30'),hacl('10.0.13.30','10.0.18.100',tcp,8080)])).
 
-possible_duplicate_trace_step(because(4,rule_desc('Keylogger',0.5),logOn('10.0.18.100',lea),[hasAccount(_h5687,'10.0.18.100',lea),dos('10.0.13.30'),hacl('10.0.13.30','10.0.18.100',tcp,8080)])).
+possible_duplicate_trace_step(because(4,rule_desc('Keylogger',0.5),logOn('10.0.18.100',lea),[hasAccount(_h5697,'10.0.18.100',lea),dos('10.0.13.30'),hacl('10.0.13.30','10.0.18.100',tcp,8080)])).
 
 possible_duplicate_trace_step(because(5,rule_desc('Keylogger',0.5),execCode('10.0.18.100',lea),[networkServiceInfo('10.0.18.100',scadabr,tcp,8080,lea),vulExists('10.0.18.100','CVE-2021-26828',scadabr,remoteExploit,privEscalation),logOn('10.0.18.100',lea)])).
 
@@ -138,7 +138,7 @@ possible_duplicate_trace_step(because(5,rule_desc('Keylogger',0.5),execCode('10.
 
 possible_duplicate_trace_step(because(3,rule_desc('DoS',0.5),dos('10.0.18.100'),[execCode('10.0.18.100',lea),execCode('10.0.13.30',lea),hacl('10.0.13.30','10.0.18.100',tcp,8080)])).
 
-possible_duplicate_trace_step(because(24,rule_desc('password sniffing',0.80000000000000004),principalCompromised(_h5144),[execCode('10.0.18.100',lea),hasAccount(_h5144,'10.0.18.100',lea)])).
+possible_duplicate_trace_step(because(24,rule_desc('password sniffing',0.80000000000000004),principalCompromised(_h5154),[execCode('10.0.18.100',lea),hasAccount(_h5154,'10.0.18.100',lea)])).
 
 possible_duplicate_trace_step(because(20,rule_desc('Access a host through executing code on the machine',1.0),canAccessHost('10.0.18.100'),[execCode('10.0.18.100',lea)])).
 

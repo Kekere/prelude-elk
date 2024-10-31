@@ -129,7 +129,7 @@ interaction_rule(
     	hacl(_h,_host, _protocol, _port),
     	dos(_h),
         hasAccount(Victim,_host, _user)),
-    rule_desc('Keylogger',
+    rule_desc('Log on',
     0.5)).
 
 interaction_rule(
