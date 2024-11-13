@@ -264,7 +264,9 @@ Follow this link to install and configure Nessus 8.15.7 : https://docs.tenable.c
 License
 -------
 If you use this repository please cite our contributions: 
+
 Saint-Hilaire, K., Cuppens, F., Cuppens, N., Garcia-Alfaro, J. (2024). Automated Enrichment of Logical Attack Graphs via Formal Ontologies. In: Meyer, N., Grocholewska-Czuryło, A. (eds) ICT Systems Security and Privacy Protection. SEC 2023. IFIP Advances in Information and Communication Technology, vol 679. Springer, Cham. https://doi.org/10.1007/978-3-031-56326-3_5
+
 Saint-Hilaire, K. A., Neal, C., Cuppens, F., Cuppens-Boulahia, N., & Bassi, F. (2024, December). Attack-Defense Graph Generation: Instantiating Incident Response Actions on Attack Graphs. In IEEE International Conference on Trust, Security and Privacy in Computing and Communications.
 
 We inspire from this dockerized prelude version https://github.com/fpoirotte/docker-prelude-siem released under the MIT license.
